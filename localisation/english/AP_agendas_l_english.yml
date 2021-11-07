@@ -1,0 +1,16 @@
+﻿l_english:
+##########################################################################
+# agendas
+##########################################################################
+ agenda_AP_admin_focus:0 "Administrative Focus"
+ agenda_AP_admin_focus_desc:0 "To long has our administration been too ineffective. It is time to change that."
+ agenda_AP_diplo_focus:0 "Diplomatic Focus"
+ agenda_AP_diplo_focus_desc:0 "Getting is a lot better then taking, as it just saves the hassle of property damage let us work to achieve that."
+ agenda_AP_equallity:0 "True Equality"
+ agenda_AP_equallity_desc:0 "Our goal is to make a system were we all are truely equal."
+ agenda_AP_autocracy:0 "Birthright reinforced"
+ agenda_AP_autocracy_desc:0 "We cannot let people forget that our right to rule is our birthright. As is theres to toil the lands."
+ agenda_AP_branch_office:0 "External business focus"
+ agenda_ap_brachh_office_desc:0 "We should focus on the business to be had with the populace of other empires."
+ agenda_AP_hearts_minds:0 "Hearts and minds"
+ agenda_AP_hearts_minds_desc:0 "To rule an empire is to guide millions of beings. We can only work together if they allow us to govern."

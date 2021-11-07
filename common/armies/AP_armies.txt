@@ -1,20 +1,26 @@
 # an odd copy of the assualt army
 conscript_army = {
+	icon = gfx_army_type_conscript
 	damage = 1.25
 	health = 0.90
 	morale = 1.10
 	morale_damage = 1.25
-	collateral_damage = 1.50
+	collateral_damage = 1.10
 	war_exhaustion = 1.2
 	time = 20
-	icon_frame = 5
 	has_species = yes
 	potential = {
 		is_gestalt = no
-        OR = {
-            has_policy_flag = AP_conscription_mandatory
-			has_policy_flag = AP_conscription_war_time
-        }
+		owner = {
+			OR = {
+				has_policy_flag = AP_conscription_mandatory
+				has_policy_flag = AP_conscription_war_time
+			}
+			OR = {			
+				has_policy_flag = AP_condition_red
+				has_policy_flag = AP_condition_void
+			}
+		}
 	}
 	resources = {
 		category = armies
@@ -28,7 +34,3 @@ conscript_army = {
 		}
 	}
 }
-#        OR = {
-#           has_policy_flag = AP_conscription_mandetory
-#			has_policy_flag = AP_conscription_war_time
-#        }

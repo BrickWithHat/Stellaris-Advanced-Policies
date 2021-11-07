@@ -1,43 +1,32 @@
 # Thanks to those wonderfull lads at the stellaris discord,
-# i learned that copying a term is not an overwrite but an addition.
+# i learned from some people that copying a term is not an overwrite but an addition.
 # I bloody love those people
 ##########################################################################
-
 on_game_start_country = {
-    events = {
-        AP_ESSM_A.1
-        AP_ESSM_A.2
-        AP_ESSM_A.3
-        AP_ESSM_A.4
-        AP_ESSM_C.1
-        AP_ESSM_C.2
-        AP_ESSM_C.3
-        AP_ESSM_C.4
-        AP_ESSM_E.1
-        AP_ESSM_E.2
-        AP_ESSM_E.3
-        AP_ESSM_E.4
-    }
+	events = {
+		AP_flag.1
+		AP_civic.1
+	}
 }
 
 on_policy_changed = {
-    events = {
-        AP_ESSM_A.1
-        AP_ESSM_A.2
-        AP_ESSM_A.3
-        AP_ESSM_A.4
-        AP_ESSM_C.1
-        AP_ESSM_C.2
-        AP_ESSM_C.3
-        AP_ESSM_C.4
-        AP_ESSM_E.1
-        AP_ESSM_E.2
-        AP_ESSM_E.3
-        AP_ESSM_E.4
-    }
+	events = {
+	}
 }
+
 on_monthly_pulse_country = {
-    events = {
-        AP_PD.1
-    }
+	events = {
+	}
+}
+
+on_war_won = {
+	events = {
+		AP_PDEC.1
+	}
+}
+
+on_war_lost = {
+	events = {
+		AP_PDEC.1
+	}
 }

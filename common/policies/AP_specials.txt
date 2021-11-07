@@ -1,0 +1,185 @@
+##########################################################################
+# Panic listing
+##########################################################################
+AP_policy_panic = {
+	potential = {
+		is_country_type = default
+		is_ai = no
+	}
+	option = {
+		name = "AP_condition_green"
+		valid = {
+		}
+		policy_flags = {
+			AP_condition_green
+		}
+		modifier = {
+			planet_stability_add = 5
+		}
+	}
+	option = {
+		name = "AP_condition_yellow"
+		valid = {
+			OR = {
+				is_country_type = default
+			}
+		}
+		policy_flags = {
+			AP_condition_yellow
+		}
+	}
+	option = {
+		name = "AP_condition_red"
+		valid = {
+			OR = {
+				has_policy_flag = AP_condition_yellow
+				has_policy_flag = AP_condition_red
+				is_gestalt = yes
+			}
+		}
+		policy_flags = {
+			AP_condition_red
+		}
+	}
+	option = {
+		name = "AP_condition_void"
+		valid = {
+			OR = {
+				is_gestalt = yes
+				has_policy_flag = AP_condition_red
+				has_policy_flag = AP_condition_void
+				AP_has_encountered_crisis = yes
+			}
+		}
+		policy_flags = {
+			AP_condition_void
+		}
+	}
+}
+
+##########################################################################
+# Civic Accompany Policies
+##########################################################################
+AP_citizen_service = {
+	potential = {
+		has_valid_civic = civic_citizen_service
+		is_ai = no
+	}
+	option = {
+		name = AP_citizen_service_normal
+		modifier = {
+			country_starbase_capacity_add = 1
+			country_command_limit_add = 20
+		}
+	}
+	option = {
+		name = AP_citizen_service_combat
+		modifier = {
+			ship_starting_experience_add = 50
+			army_starting_experience_add = 50
+		}
+	}
+	option = {
+		name = AP_citizen_service_logistics
+		modifier = {
+			starbase_shipyard_build_cost_mult = -0.1
+			starbase_upgrade_cost_mult = -0.2
+			country_command_limit_add = 10
+		}
+	}
+}
+
+AP_feudal = {
+	potential = {
+		has_valid_civic = civic_feudal_realm
+		is_ai = no
+	}
+	option = {
+		name = AP_feudal_law
+		modifier = {
+			country_admin_cap_mult = 0.1
+			leader_skill_levels = 3
+		}
+	}
+	option = {
+		name = AP_feudal_material
+		modifier = {
+			planet_jobs_produces_mult = 0.2
+			species_leader_exp_gain = -0.1
+			leader_skill_levels = -1
+		}
+	}
+	option = {
+		name = AP_feudal_combat
+		modifier = {
+			leader_skill_levels = 1
+			general_skill_levels = 2
+			admiral_skill_levels = 2
+			species_leader_exp_gain = 0.25
+			leader_age = -20
+		}
+	}
+}
+
+AP_police_state = {
+	potential = {
+		has_valid_civic = civic_police_state
+		is_ai = no
+	}
+	option = {
+		name = AP_police_state_passive
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.1
+			pop_amenities_usage_mult = -0.05
+			intel_encryption_add = 1
+		}
+	}
+	option = {
+		name = AP_police_state_intervene
+		modifier = {
+			planet_crime_mult = -0.05
+			piracy_suppression_mult = 5
+			pop_government_ethic_attraction = 0.1
+		}
+	}
+	option = {
+		name = AP_police_state_aggresive
+		modifier = {
+			planet_crime_mult = -0.1
+			intel_decryption_add = 1
+			pop_growth_speed = -0.05
+		}
+	}
+}
+
+AP_byzantine = {
+	potential = {
+		has_valid_civic = civic_byzantine_bureaucracy
+		is_ai = no
+	}
+	option = {
+		name = AP_byzantine_legislate
+		modifier = {
+			pop_housing_usage_mult = -0.1
+			pop_amenities_usage_mult = -0.05
+			pop_citizen_happiness = -0.05
+		}
+	}
+	option = {
+		name = AP_byzantine_rights
+		modifier = {
+			pop_citizen_happiness = 0.05
+			pop_growth_speed = 0.05
+			pop_cat_specialist_political_power = 0.5
+			pop_cat_worker_political_power = 1
+		}
+	}
+	option = {
+		name = AP_byzantine_benefits
+		modifier = {
+			pop_happiness = 0.05
+			pop_government_ethic_attraction = 0.1
+			pop_housing_usage_mult = 0.05
+		}
+	}
+}

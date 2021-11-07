@@ -1,7 +1,7 @@
 ##########################################################################
 # Decisions
 ##########################################################################
-AP_harsh_quota = {
+AP_planetary_quota = {
 	owned_planets_only = yes
 	sound = event_air_raid_siren
 	icon = decision_resources
@@ -13,27 +13,96 @@ AP_harsh_quota = {
 	}
 	potential = {
 		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
 			is_regular_empire = yes
+			is_ai = no
 		}
 	}
 	allow = {
-		OR = {
-			owner = {
-				is_at_war = yes
-				is_authoritarian = yes
-				has_policy_flag = AP_condition_yellow
-				has_policy_flag = AP_condition_red
-				has_policy_flag = AP_condition_void
+		owner = {
+			has_resource = {
+				type = influence
+				amount >= 50
 			}
 		}
-		NOR = {
-			has_modifier = planet_quota_set
+		NOT = {
+			has_modifier = planet_quota_fulfilled
+			has_modifier = planet_quota_abolished
+			has_modifier = planet_quota_failed
 		}
 	}
 	effect = {
 		add_modifier = {
-			modifier = planet_quota_set
-			days = 1800
+			modifier = planet_quota_planned
+		}
+		planet_event = {
+			id = AP_PQ.1
+			days = 10
+			random = 10
+		}
+		hidden_effect = {
+			owner = {
+				set_country_flag = quota_active
+			}
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+AP_abolish_planetary_quota = {
+	owned_planets_only = yes
+	sound = event_air_raid_siren
+	icon = decision_resources_cancel
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		hidden_trigger = {
+			NOT = {
+				has_modifier = planet_quota_fulfilled
+				has_modifier = planet_quota_abolished
+				has_modifier = planet_quota_failed
+			}
+			owner = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			owner = {
+				has_country_flag = quota_active
+			}
+		}
+		owner = {
+			has_resource = {
+				type = influence
+				amount >= 50
+			}
+		}
+		OR = {
+			has_modifier = planet_quota_planned
+			has_modifier = planet_quota_phase_1
+			has_modifier = planet_quota_phase_2
+			has_modifier = planet_quota_phase_3
+		}
+	}
+	effect = {
+		hidden_effect = {
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+		}
+		planet_event = {
+			id = AP_PQ.2
 		}
 	}
 	ai_weight = {
@@ -51,6 +120,11 @@ AP_conscription = {
 	potential = {
 		owner = {
 			is_regular_empire = yes
+			is_ai = no
+		}
+		NOR = {
+			has_modifier = planet_conscription
+			has_planet_flag = AP_planet_concripted
 		}
 	}
 	allow = {
@@ -67,31 +141,85 @@ AP_conscription = {
 				}
 			}
 		}
-		NOR = {
-			has_modifier = planet_conscription
-		}
 	}
 	effect = {
 		add_modifier = {
 			modifier = planet_conscription
 		}
-		planet_event = {
-			id = AP_PD.1
-		}
-		planet_event = {
-			id = AP_PD.2
-		}
-		planet_event = {
-			id = AP_PD.3
-		}
-		planet_event = {
-			id = AP_PD.4
-		}
-		planet_event = {
-			id = AP_PD.5
+		hidden_effect = {
+			planet_event = {
+				id = AP_PD.1
+			}
+			planet_event = {
+				id = AP_PD.2
+			}
+			planet_event = {
+				id = AP_PD.3
+			}
+			planet_event = {
+				id = AP_PD.4
+			}
+			planet_event = {
+				id = AP_PD.5
+			}
 		}
 	}
 	ai_weight = {
 		weight = 0
 	}
+}
+
+##########################################################################
+# Civic Related
+##########################################################################
+AP_mobile_constrution_deploy = {
+	owned_planets_only = yes
+	icon = decision_mining_station
+	sound = event_administrative_work
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			has_valid_civic = civic_AP_mobile_construction
+			has_modifier = country_mobile_construction_packed
+		}
+	}
+	allow = {
+	}
+	effect = {
+		owner = {
+			remove_modifier = country_mobile_construction_packed
+		}
+		add_modifier = {
+			modifier = planet_mobile_construction_deployed
+		}
+	}
+	enactment_time = 60
+}
+
+AP_mobile_constrution_pack = {
+	owned_planets_only = yes
+	icon = decision_mining_station
+	sound = event_administrative_work
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			has_valid_civic = civic_AP_mobile_construction
+		}
+		has_modifier = planet_mobile_construction_deployed
+	}
+	allow = {
+	}
+	effect = {
+		remove_modifier = planet_mobile_construction_deployed
+		owner = {
+			add_modifier = {
+				modifier = country_mobile_construction_packed
+			}
+		}
+	}
+	enactment_time = 60
 }

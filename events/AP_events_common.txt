@@ -1,0 +1,42 @@
+##########################################################################
+# Key components
+##########################################################################
+namespace = AP_flag
+country_event = {
+	id = AP_flag.1
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = {
+			has_global_flag = AP_installed
+		}
+	}
+	immediate = {
+		set_global_flag = AP_installed
+	}
+}
+##########################################################################
+# civic components
+##########################################################################
+namespace = AP_civic
+country_event = {
+	id = AP_civic.1
+	hide_window = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = {
+			has_country_flag = AP_construction_installed
+		}
+		owner = {
+			has_civic = civic_AP_mobile_construction
+		}
+	}
+	immediate = {
+		capital_scope = {
+			add_modifier = {
+				modifier = planet_mobile_construction_deployed
+			}
+		}
+		set_country_flag = AP_construction_installed
+	}
+}

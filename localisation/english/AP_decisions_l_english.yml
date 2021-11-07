@@ -1,0 +1,17 @@
+﻿l_english:
+##########################################################################
+# Decisions
+##########################################################################
+ AP_planetary_quota:0 "Planetary Quota"
+ AP_planetary_quota_desc:0 "This planet holds services or raw material vital to our empire. We need those recourses as soon as possible!§Y This decision holds an event chain and in its complete state can take from a few months to about 20 years to complete.§!"
+ AP_abolish_planetary_quota:0 "Abolish Planetary Quota"
+ AP_abolish_planetary_quota_desc:0 "We may have set into motion the desire to gain from this world. But the fallout produced with this seems to be a too big of a risk to take. Thusly we should end it."
+ AP_conscription:0 "Planetry Conscription"
+ AP_conscription_desc:0 "Enact our conscription law, this way we draft our population into conscription armies for the cause!"
+##########################################################################
+# Civic Decisions
+##########################################################################
+ AP_mobile_constrution_deploy:0 "Deploy Mobile Construction Vehicle"
+ AP_mobile_constrution_deploy_desc:0 "Deploy the empires Mobile Construction Vehicle granting some powerfull bonuses to contruction on the planet."
+ AP_mobile_constrution_pack:0 "Recall Mobile Construction Vehicle"
+ AP_mobile_constrution_pack_desc:0 "Recall the empires Mobile Construction Vehicle, Returning it out our empire as a whole grants usefull empire-wide bonuses."

@@ -1,0 +1,104 @@
+##########################################################################
+# Overall Gestalt Policies
+##########################################################################
+AP_autonamy = {
+	potential = {
+		is_gestalt = yes
+		is_ai = no
+	}
+	option = {
+		name = AP_autonamy_none
+		policy_flags = {
+			AP_autonamy_none
+		}
+		modifier = {
+		}
+	}
+	option = {
+		name = AP_autonamy_shackled
+		policy_flags = {
+			AP_autonamy_shackled
+		}
+		modifier = {
+			planet_crime_mult = 0.15
+			planet_jobs_produces_mult = 0.1
+			pop_amenities_usage_mult = -0.05
+		}
+	}
+	option = {
+		name = AP_autonamy_near_free
+		policy_flags = {
+			AP_autonamy_near_free
+		}
+		modifier = {
+			planet_crime_mult = 0.3
+			planet_jobs_produces_mult = 0.2
+			pop_amenities_usage_mult = -0.1
+		}
+	}
+}
+##########################################################################
+# Hive mind Policies
+##########################################################################
+AP_organic_recycling = {
+	potential = {
+		has_authority = auth_hive_mind
+		is_ai = no
+	}
+	option = {
+		name = AP_organic_recycling_none
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.15
+			planet_pops_upkeep_mult = 0.15
+			planet_stability_add = 10
+		}
+	}
+	option = {
+		name = AP_organic_recycling_some
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+			planet_pops_upkeep_mult = 0.1
+			pop_growth_speed = 0.05
+		}
+	}
+	option = {
+		name = AP_organic_recycling_complete
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.05
+			planet_pops_upkeep_mult = 0.05
+			pop_growth_speed = 0.1
+		}
+	}
+}
+##########################################################################
+# Machine mind Policies
+##########################################################################
+AP_component_recycling = {
+	potential = {
+		has_authority = auth_machine_intelligence
+		is_ai = no
+	}
+	option = {
+		name = AP_component_recycling_none
+		modifier = {
+			pop_amenities_usage_mult = -0.2
+			pop_assembly_speed = -0.1
+		}
+	}
+	option = {
+		name = AP_component_recycling_some
+		modifier = {
+			pop_amenities_usage_mult = -0.1
+			planet_pop_assemblers_alloys_upkeep_mult = -0.1
+			pop_assembly_speed = -0.05
+		}
+	}
+	option = {
+		name = AP_component_recycling_complete
+		modifier = {
+			pop_amenities_usage_mult = 0.1
+			pop_assembly_speed = -0.1
+			planet_pop_assemblers_alloys_upkeep_mult = -0.2
+		}
+	}
+}

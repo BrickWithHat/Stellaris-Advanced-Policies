@@ -1,0 +1,50 @@
+civic_AP_advanced_administration_corporate = {
+	description = "civic_AP_advanced_administration_corporate_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			value = auth_corporate
+		}
+	}
+	possible = {
+	}
+	random_weight = {
+		base = 2
+	}
+	modifier = {
+		edict_length_mult = 0.2
+		edicts_cost_mult = -0.2
+		leader_skill_levels = 1
+		country_edict_cap_add = 1
+	}
+}
+
+civiv_AP_grand_architecture_corporate = {
+	description = "civiv_AP_grand_architecture_corporate_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			value = auth_corporate
+		}
+	}
+	possible = {
+	}
+	random_weight = {
+		base = 3
+	}
+	modifier = {
+		planet_building_build_speed_mult = -0.1
+		planet_buildings_upkeep_mult = 0.05
+		country_unity_produces_mult = 0.1
+		pop_happiness = 0.05
+		planet_jobs_produces_mult = 0.05
+	}
+}

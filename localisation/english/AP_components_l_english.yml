@@ -1,0 +1,9 @@
+﻿l_english:
+# Trigger texts
+ AP_has_encountered_crisis:0 "Has encountered an §Yunexpected§! opponent..."
+ AP_has_superior_opponent:0 "Has an §Ydangerous§! opponent..."
+
+# Component stuff
+ conscript_army_plural:0 "Conscript Armies"
+ conscript_army:0 "Conscript Army" 
+ conscript_army_desc:0 "While not the most hardiest of folk, they atleast show a suprising willingness to fight as a unit."

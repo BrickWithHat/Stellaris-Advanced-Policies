@@ -1,0 +1,129 @@
+##########################################################################
+# unemployment policy
+##########################################################################
+AP_unemployment = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_unemployment_no_aid
+		valid = {
+			is_egalitarian = no
+		}
+		policy_flags = {
+			AP_unemployment_no_aid
+		}
+		modifier = {
+			pop_government_ethic_attraction = -0.1
+			planet_pops_upkeep_mult = -0.1
+			pop_political_power = -0.1
+		}
+	}
+	option = {
+		name = AP_unemployment_aid
+		valid = {
+		}
+		policy_flags = {
+			AP_unemployment_aid
+		}
+		modifier = {
+			planet_pops_upkeep_mult = 0.05
+			pop_government_ethic_attraction = 0.05
+			planet_resettlement_unemployed_mult = 0.5
+			pop_resettlement_cost_mult = -0.25
+		}
+	}
+	option = {
+		name = AP_unemployment_shared_burden
+		valid = {
+		}
+		policy_flags = {
+			AP_unemployment_shared_burden
+		}
+		modifier = {
+			planet_pops_upkeep_mult = 0.1
+			pop_government_ethic_attraction = 0.2
+			planet_resettlement_unemployed_mult = 1
+			pop_resettlement_cost_mult = -0.5
+		}
+	}
+}
+
+##########################################################################
+# Relgious policy
+##########################################################################
+AP_religion = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_religion_banned
+		valid = {
+			is_spiritualist = no
+		}
+		policy_flags = {
+			AP_religion_banned
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.1
+			planet_researchers_produces_mult = 0.1
+			country_influence_produces_add = 0.5
+		}
+	}
+	option = {
+		name = AP_religion_tolerated
+		valid = {
+			NOT = {
+				has_valid_civic = civic_imperial_cult
+				has_valid_civic = civic_exalted_priesthood
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult
+				has_valid_civic = civic_death_cult_corporate
+			}
+		}
+		policy_flags = {
+			AP_religion_tolerated
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.05
+			planet_researchers_produces_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_religion_endorsed
+		valid = {
+			NOT = {
+				has_valid_civic = civic_imperial_cult
+				has_valid_civic = civic_exalted_priesthood
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult
+				has_valid_civic = civic_death_cult_corporate
+			}
+		}
+		policy_flags = {
+			AP_religion_endorsed
+		}
+		modifier = {
+			spiritualist_attraction = 0.05
+			country_unity_produces_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_religion_enforced
+		valid = {
+			is_spiritualist = yes
+		}
+		policy_flags = {
+			AP_religion_enforced
+		}
+		modifier = {
+			spiritualist_attraction = 0.1
+			country_unity_produces_mult = 0.1
+			country_influence_produces_add = 0.5
+		}
+	}
+}

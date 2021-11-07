@@ -1,0 +1,272 @@
+##########################################################################
+# education policies
+##########################################################################
+AP_education_privledge = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = "AP_education_privledge_all"
+		policy_flags = {
+			AP_education_privledge_all
+		}
+		valid = {
+			is_xenophobe = no
+			is_unfriendly = no
+		}
+		modifier = {
+			pop_happiness = 0.05
+			planet_jobs_worker_produces_mult = 0.05
+		}
+	}
+	option = {
+		name = "AP_education_privledge_citizen"
+		policy_flags = {
+			AP_education_privledge_citizen
+		}
+		valid = {
+		}
+		modifier = {
+			pop_citizen_happiness = 0.05
+			planet_jobs_specialist_produces_mult = 0.05
+		}
+	}
+	option = {
+		name = "AP_education_privledge_elite"
+		policy_flags = {
+			AP_education_privledge_elite
+		}
+		valid = {
+			is_egalitarian = no
+			is_authoritarian = yes
+		}
+		modifier = {
+			pop_cat_ruler_happiness = 0.05
+			pop_cat_specialist_political_power = -0.05
+			pop_cat_worker_political_power = -0.1
+			pop_cat_slave_political_power = -0.1
+		}
+	}
+}
+
+AP_education_stance_all = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_education_stance_all_none
+		policy_flags = {
+			AP_education_stance_all_none
+		}
+		valid = {
+		}
+	}
+	option = {
+		name = "AP_education_stance_all_token"
+		policy_flags = {
+			AP_education_stance_all_token
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.2
+			pop_cat_worker_political_power = 0.1
+			planet_crime_mult = 0.2
+		}
+	}
+	option = {
+		name = "AP_education_stance_all_basic"
+		policy_flags = {
+			AP_education_stance_all_basic
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+			pop_cat_worker_political_power = 0.05
+			planet_crime_mult = 0.1
+		}
+	}
+	option = {
+		name = "AP_education_stance_all_encouraged"
+		policy_flags = {
+			AP_education_stance_all_encouraged
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.1
+			planet_amenities_mult = -0.1
+		}
+	}
+	option = {
+		name = "AP_education_stance_all_vital"
+		policy_flags = {
+			AP_education_stance_all_vital
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.2
+			planet_amenities_mult = -0.2
+		}
+	}
+}
+
+AP_education_stance_citizen = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_education_stance_citizen_none
+		policy_flags = {
+			AP_education_stance_citizen_none
+		}
+		valid = {
+		}
+	}
+	option = {
+		name = "AP_education_stance_citizen_token"
+		policy_flags = {
+			AP_education_stance_citizen_token
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.2
+			planet_jobs_worker_produces_mult = 0.1
+			planet_crime_mult = 0.2
+		}
+	}
+	option = {
+		name = "AP_education_stance_citizen_basic"
+		policy_flags = {
+			AP_education_stance_citizen_basic
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.1
+			planet_jobs_worker_produces_mult = 0.05
+			planet_crime_mult = 0.1
+		}
+	}
+	option = {
+		name = "AP_education_stance_citizen_encouraged"
+		policy_flags = {
+			AP_education_stance_citizen_encouraged
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.05
+			planet_jobs_ruler_produces_mult = 0.05
+			pop_cat_specialist_happiness = 0.05
+			pop_cat_ruler_happiness = 0.05
+			planet_amenities_mult = -0.15
+		}
+	}
+	option = {
+		name = "AP_education_stance_citizen_vital"
+		policy_flags = {
+			AP_education_stance_citizen_vital
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.1
+			planet_jobs_ruler_produces_mult = 0.1
+			pop_cat_specialist_happiness = 0.1
+			pop_cat_ruler_happiness = 0.1
+			planet_amenities_mult = -0.3
+		}
+	}
+}
+
+AP_education_stance_elite = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_education_stance_elite_none
+		policy_flags = {
+			AP_education_stance_elite_none
+		}
+		valid = {
+		}
+	}
+	option = {
+		name = "AP_education_stance_elite_token"
+		policy_flags = {
+			AP_education_stance_elite_token
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			pop_cat_slave_political_power = -0.2
+			pop_cat_worker_political_power = -0.2
+			pop_cat_specialist_political_power = -0.1
+			species_leader_exp_gain = -0.1
+		}
+	}
+	option = {
+		name = "AP_education_stance_elite_basic"
+		policy_flags = {
+			AP_education_stance_elite_basic
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			pop_cat_slave_political_power = -0.1
+			pop_cat_worker_political_power = -0.1
+			pop_cat_specialist_political_power = -0.05
+			species_leader_exp_gain = -0.05
+		}
+	}
+	option = {
+		name = "AP_education_stance_elite_encouraged"
+		policy_flags = {
+			AP_education_stance_elite_encouraged
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			leader_skill_levels = 2
+			pop_cat_ruler_happiness = 0.05
+			leaders_upkeep_mult = 0.1
+		}
+	}
+	option = {
+		name = "AP_education_stance_elite_vital"
+		policy_flags = {
+			AP_education_stance_elite_vital
+		}
+		valid = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			leader_skill_levels = 4
+			pop_cat_ruler_happiness = 0.1
+			leaders_upkeep_mult = 0.2
+		}
+	}
+}
