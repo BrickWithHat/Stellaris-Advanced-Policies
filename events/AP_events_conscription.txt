@@ -1,0 +1,88 @@
+##########################################################################
+# Conscription events
+##########################################################################
+namespace = AP_PDEC
+country_event = {
+	id = AP_PDEC.1
+	picture = GFX_evt_announcement
+	hide_window = no
+	title = AP_PDEC.1_name
+	desc = AP_PDEC.1_desc
+	picture = GFX_evt_arguing_senate
+	location = from
+	is_triggered_only = yes
+	show_sound = militarist_warlord_intro
+	trigger = {
+
+	}
+	option = {
+		name = AP_PDEC.1.1
+		allow = {
+		}
+		hidden_effect = {
+
+		}
+	}
+	option = {
+		name = AP_PDEC.1.2
+		allow = {
+			is_pacifist = no
+		}
+		custom_tooltip = AP_PDEC.1.2_tooltip
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = AP_PDEC.1.3
+		allow = {
+			has_policy_flag = AP_conscription_mandatory
+			is_pacifist = no
+		}
+		custom_tooltip = AP_PDEC.1.3_tooltip
+		hidden_effect = {
+		}
+	}
+}
+
+namespace = AP_CR
+# planet modifier attacher
+planet_event = {
+	id = AP_CR.1
+	is_triggered_only = yes
+	picture = GFX_evt_arena
+	title = AP_CR.11_name
+	desc = {
+		text = AP_CR.11_desc
+		trigger = {
+			is_militarist = no
+		}
+	}
+	desc = {
+		text = AP_CR.12_desc
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	option = {
+		name = AP_CR.11_name
+		trigger = {
+			is_militarist = no
+		}
+	}
+	option = {
+		name = AP_CR.12_name
+		trigger = {
+			is_militarist = yes
+		}
+	}
+}
+
+# conscript army detector and deleting them
+fleet_event = {
+	id = AP_CR.2
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+
+	}
+}

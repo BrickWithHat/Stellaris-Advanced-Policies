@@ -1,0 +1,174 @@
+##########################################################################
+# War policies
+##########################################################################
+AP_war_stance = {
+	potential = {
+		is_country_type = default
+		is_ai = no
+	}
+	option = {
+		name = "AP_war_stance_passive"
+		valid = {
+			is_militarist = no
+			is_unfriendly = no
+		}
+		modifier = {
+			pop_happiness = 0.1
+			country_alloys_produces_mult = -0.2
+			planet_jobs_unity_produces_mult = 0.1
+		}
+		policy_flags = {
+			AP_war_stance_passive
+		}
+	}
+	option = {
+		name = "AP_war_stance_light"
+		valid = {
+			is_militarist = no
+			is_unfriendly = no
+		}
+		modifier = {
+			planet_stability_add = 5
+			pop_happiness = 0.05
+			country_alloys_produces_mult = -0.05
+		}
+		policy_flags = {
+			AP_war_stance_light
+		}
+	}
+	option = {
+		name = "AP_war_stance_pre_emptive"
+		valid = {
+			OR = {
+				has_policy_flag = first_contact_attack_allowed
+				is_at_war = yes
+				is_militarist = yes
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+			}
+		}
+		modifier = {
+			country_alloys_produces_mult = 0.05
+			ships_upkeep_mult = -0.05
+		}
+		policy_flags = {
+			AP_war_stance_pre_emptive
+		}
+	}
+	option = {
+		name = "AP_war_stance_aggresive"
+		valid = {
+			OR = {
+				is_militarist = yes
+				OR = {
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				OR = {
+					is_at_war = yes
+					is_unfriendly = yes
+				}
+			}
+		}
+		modifier = {
+			country_alloys_produces_mult = 0.1
+			country_minerals_produces_mult = 0.05
+			ships_upkeep_mult = -0.1
+			country_naval_cap_mult = 0.05
+			country_consumer_goods_produces_mult = -0.1
+		}
+		policy_flags = {
+			AP_war_stance_aggresive
+		}
+	}
+	option = {
+		name = "AP_war_stance_emergency"
+		valid = {
+			has_policy_flag = AP_condition_void
+			OR = {
+				AP_has_encountered_crisis = yes
+				is_at_war = yes
+			}
+		}
+		modifier = {
+			country_alloys_produces_mult = 0.5
+			country_minerals_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+			pop_demotion_time_mult = -0.25
+			starbase_shipyard_build_speed_mult = 0.25
+			ships_upkeep_mult = -0.2
+			country_naval_cap_mult = 0.1
+			pop_amenities_usage_mult = 0.1
+		}
+		policy_flags = {
+			AP_war_stance_emergency
+		}
+	}
+}
+
+AP_conscription = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_conscription_illegal
+		policy_flags = {
+			AP_conscription_illegal
+		}
+		valid = {
+			is_militarist = no
+			is_unfriendly = no
+		}
+		modifier = {
+			planet_stability_add = 5
+			pop_government_ethic_attraction = 0.05
+		}
+	}
+	option = {
+		name = AP_conscription_war_time
+		policy_flags = {
+			AP_conscription_war_time
+		}
+		valid = {
+			OR = {
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				is_pacifist = no
+			}
+		}
+		modifier = {
+			country_consumer_goods_produces_mult = 0.025
+			country_alloys_produces_mult = 0.025
+		}
+	}
+	option = {
+		name = AP_conscription_mandatory
+		policy_flags = {
+			AP_conscription_mandatory
+		}
+		valid = {
+			OR = {
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				is_militarist = yes
+				is_unfriendly = yes
+			}
+		}
+		modifier = {
+			country_starbase_capacity_add = 2
+			country_naval_cap_mult = 0.05
+			pop_ethic_militarist_attraction_mult = 0.1
+		}
+	}
+}

@@ -1,0 +1,36 @@
+spriteTypes = {
+	spriteType = {
+		name = "gfx_edicts_agenda"
+		texturefile = "gfx/interface/icons/edicts/agenda.dds"
+	}
+	spriteType = {
+		name = "gfx_edicts_alert"
+		texturefile = "gfx/interface/icons/edicts/alert.dds"
+	}
+	spriteType = {
+		name = "gfx_edicts_shield"
+		texturefile = "gfx/interface/icons/edicts/shield.dds"
+	}
+	spriteType = {
+		name = "gfx_edicts_ship"
+		texturefile = "gfx/interface/icons/edicts/ship.dds"
+	}
+	spriteType = {
+		name = "gfx_edicts_grapes"
+		texturefile = "gfx/interface/icons/edicts/grapes.dds"
+	}
+	spriteType = {
+		name = "gfx_army_type_conscript"
+		sprite_sheet_sprite_type = "GFX_army_icons"
+		default_frame = 5
+	}
+	spritetype = {
+		name = "pm_resources_cancel"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds"
+	}
+	spritetype = {
+		name = "decision_resources_cancel"
+		textureFile = "gfx/interface/icons/decisions/decision_resources_cancel.dds"
+	}
+}
+

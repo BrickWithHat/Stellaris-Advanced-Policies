@@ -1,106 +1,195 @@
+##########################################################################
 # Not gonna lie, i did most of this while drunk,
 # looking back i think that i never did such simple and practical terms.
 # should really do that more often.
-# 
 ##########################################################################
-# Education for all modifiers
+# icon frame 3 is red
+# icon frame 2 is yellow
+# icon frame 1 is green
+# i swear, i will forget this more then my own birthday which already is at the count of 23
 ##########################################################################
-edu_all_token = {
-	pop_amenities_usage_mult = 0.05
-	planet_crime_mult = 0.15
-	pop_government_ethic_attraction = 0.05
+# Conscription
+##########################################################################
+planet_conscription = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_victorious_army.dds
 }
 
-edu_all_basic = {
-	pop_government_ethic_attraction = 0.1
-	planet_jobs_worker_produces_mult = 0.05
+planet_conscript_returned = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds
+	pop_happiness = 0.1
+	pop_cat_worker_happiness = 0.1
+	pop_government_ethic_attraction = 0.25
+	planet_crime_mult = -0.2
 }
 
-edu_all_encouraged = {
-	country_consumer_goods_produces_mult = -0.05
-	pop_government_ethic_attraction = 0.15
-	species_leader_exp_gain = 0.2
+planet_conscript_return_meh = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds
 	planet_jobs_worker_produces_mult = 0.1
-}
-
-edu_all_vital = {
-	country_consumer_goods_produces_mult = -0.1
-	pop_government_ethic_attraction = 0.2
-	planet_jobs_worker_produces_mult = 0.15
-	leaders_upkeep_mult = -0.05
-	species_leader_exp_gain = 0.25
-	leader_skill_levels = 1
-}
-
-##########################################################################
-# Education for citizens
-##########################################################################
-edu_cit_token = {
-	pop_amenities_usage_mult = 0.1
-	planet_crime_mult = 0.1
-	planet_pops_upkeep_mult = 0.05
-	pop_government_ethic_attraction = 0.05
-}
-
-edu_cit_basic = {
-	species_leader_exp_gain = -0.05
-	pop_government_ethic_attraction = 0.1
-	planet_jobs_worker_produces_mult = 0.025
-}
-
-edu_cit_encouraged = {
-	pop_government_ethic_attraction = 0.15
-	planet_jobs_worker_produces_mult = 0.05
-}
-
-edu_cit_vital = {
-	country_consumer_goods_produces_mult = -0.05
-	pop_government_ethic_attraction = 0.2
-	leaders_upkeep_mult = -0.1
-	species_leader_exp_gain = 0.2
-	leader_skill_levels = 2
-}
-
-##########################################################################
-# Education for the elite/ruling class
-##########################################################################
-edu_elite_token = {
-	pop_amenities_usage_mult = 0.1
-	planet_crime_mult = 0.1
-	leaders_upkeep_mult = 0.05
-	pop_government_ethic_attraction = 0.05
-}
-
-edu_elite_basic = {
-	pop_government_ethic_attraction = 0.1
-}
-
-edu_elite_encouraged = {
-	pop_government_ethic_attraction = 0.15
-}
-
-edu_elite_vital = {
-	pop_government_ethic_attraction = 0.2
-	leaders_upkeep_mult = -0.15
-	species_leader_exp_gain = 0.15
-	leader_skill_levels = 3
+	planet_crime_mult = -0.1
 }
 
 ##########################################################################
 # Decisions
 ##########################################################################
-planet_conscription = {
-	icon_frame = 3
-	icon = gfx/interface/icons/planet_modifiers/pm_victorious_army.dds
-	
+planet_quota_planned = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_default.dds
 }
-planet_quota_set = {
-	icon_frame = 3
+
+planet_quota_phase_1 = {
+	icon_frame = 2
 	icon = gfx/interface/icons/planet_modifiers/pm_resources.dds
-	planet_jobs_worker_produces_mult = 1
-	planet_jobs_specialist_produces_mult = 0.50
-	pop_cat_worker_happiness = -0.30
+	planet_jobs_worker_produces_mult = 0.25
+	planet_jobs_specialist_produces_mult = 0.1
+	pop_cat_worker_happiness = -0.1
+	pop_cat_specialist_happiness = -0.05
+	pop_amenities_usage_mult = 0.1
+}
+
+planet_quota_phase_2 = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_resources.dds
+	planet_jobs_worker_produces_mult = 0.5
+	planet_jobs_specialist_produces_mult = 0.25
+	pop_cat_worker_happiness = -0.2
+	pop_cat_specialist_happiness = -0.1
+	pop_cat_ruler_happiness = -0.05
+	pop_amenities_usage_mult = 0.2
+}
+
+planet_quota_phase_3 = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_resources.dds
+	planet_jobs_worker_produces_mult = 0.8
+	planet_jobs_specialist_produces_mult = 0.4
+	pop_cat_worker_happiness = -0.3
 	pop_cat_specialist_happiness = -0.15
 	pop_cat_ruler_happiness = -0.05
+	pop_amenities_usage_mult = 0.3
+}
+
+planet_quota_fulfilled = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds
+	planet_jobs_worker_produces_mult = 0.5
+	planet_jobs_specialist_produces_mult = 0.25
+	pop_cat_worker_happiness = 0.2
+	pop_cat_specialist_happiness = 0.1
+	pop_growth_speed = 0.1
+	pop_cat_worker_political_power = 3
+}
+
+planet_quota_failed = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds
+	pop_cat_worker_happiness = -0.05
+	pop_cat_specialist_happiness = -0.05
+	planet_crime_add = 20
+}
+
+planet_quota_abolished = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds
+	pop_cat_worker_happiness = 0.1
+	pop_cat_specialist_happiness = 0.05
+	pop_growth_speed = 0.05
+}
+
+##########################################################################
+# Events
+##########################################################################
+planet_encourage_populace = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_atmospheric_entry.dds
+	pop_happiness = 0.2
+	planet_stability_add = 10
+	planet_amenities_add = 20
+}
+
+planet_discouraged_populace = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_derelict_interior.dds
+	planet_crime_add = 10
+	pop_amenities_usage_mult = 0.1
+	pop_growth_speed = -0.2
+}
+
+planet_organized_strike = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_planet_separatist_supporter.dds
+	planet_jobs_produces_mult = -0.5
+	pop_growth_speed = -0.2
+	pop_assembly_speed = -0.5
+}
+
+planet_hunger_strike = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_hunger_strike.dds
+	planet_pops_food_upkeep_mult = -0.1
+	planet_jobs_produces_mult = -0.25
+	pop_growth_speed = -0.5
+	pop_assembly_speed = -1
+}
+
+planet_mass_riot = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_unrest.dds
+	planet_crime_mult = 1
+	planet_crime_add = 50
 	pop_amenities_usage_mult = 0.25
+	pop_housing_usage_base = -10
+	job_criminal_add = 5
+}
+
+planet_labor_shortage = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_archaeology.dds
+	pop_growth_speed = 0.25
+	planet_jobs_produces_mult = -0.1
+}
+
+planet_infrastructure_investment = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_drilling_for_gas.dds
+	planet_district_city_build_speed_mult = -0.25
+	planet_building_build_speed_mult = -0.2
+	planet_buildings_cost_mult = -0.5
+}
+
+planet_lack_of_oversight = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_smugglers_in_bar.dds
+	planet_crime_mult = 0.2
+	planet_jobs_produces_mult = -0.25
+	pop_growth_speed = -0.1
+}
+
+country_troops_dismissed = {
+	icon = gfx/interface/icons/modifiers/mod_army_disengage_chance_mult.dds
+	army_attack_health_mult = -0.25
+	army_attack_morale_mult = -0.25
+	army_defense_health_mult = 0.25
+	army_defense_morale_mult = 0.25
+	planet_army_build_time_mult = 0.5
+}
+
+##########################################################################
+# Civics
+##########################################################################
+planet_mobile_construction_deployed = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds
+	planet_clear_blocker_time_mult = -0.2
+	planet_building_build_speed_mult = 0.2
+	planet_buildings_cost_mult = -0.3
+	planet_district_city_build_speed_mult = 0.25
+}
+country_mobile_construction_packed = {
+	icon = gfx/interface/icons/modifiers/mod_consecrated_world_green.dds
+	trade_value_mult = 0.1
+	planet_building_build_speed_mult = 0.1
+	planet_buildings_cost_mult = -0.2
 }

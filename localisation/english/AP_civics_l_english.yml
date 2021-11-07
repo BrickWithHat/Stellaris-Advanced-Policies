@@ -1,0 +1,25 @@
+﻿l_english:
+##########################################################################
+# Civics
+##########################################################################
+ civic_AP_advanced_administration:0 "Advanced Administration"
+ civic_AP_advanced_administration_desc:0 "The government has found many ways to enchance its efficiency. Making them slightly better in a lot of area's."
+ civic_AP_advanced_administration_effects:0 "Your §Ygovernemt§! has become more efficient the most other empires granting you:"
+ civic_AP_advanced_administration_corporate:0 "$civic_AP_advanced_administration$"
+ civic_AP_advanced_administration_corporate_desc:0 "$civic_AP_advanced_administration_desc$"
+ civic_AP_advanced_administration_corporate_effects:0 "$civic_AP_advanced_administration_effects$"
+
+ civiv_AP_grand_architecture:0 "Grand Architecture"
+ civiv_AP_grand_architecture_desc:0 "Our empire believes that all buildings should be made to display our power. To that end we build to inspire!"
+ civiv_AP_grand_architecture_effects:0 "Our grand buildings may require some upkeep, but they do really inspire our populace."
+ civiv_AP_grand_architecture_corporate:0 "$civiv_AP_grand_architecture$"
+ civiv_AP_grand_architecture_corporate_desc:0 "$civiv_AP_grand_architecture_desc$"
+ civiv_AP_grand_architecture_corporate_effects:0 "$civiv_AP_grand_architecture_effects$s"
+
+ civic_AP_war_complex:0 "Industrial War-Complex"
+ civic_AP_war_complex_desc:0 "This empire has been geared to mass war, it looks down on its civilians as a means to fund its armies."
+ civic_AP_war_complex_effects:0 "The army is our extension into the stars. Let them march forward with all our might!"
+
+ civic_AP_mobile_construction:0 "Mobile Construction Vehicle"
+ civic_AP_mobile_construction_desc:0 "This empire has come to a point where there main construction comes from mobile construction yards. Though most of these are fairly small. They hold 1 with such scale it can build entire cities in a very short span of time. This vehicle can be moved to any colonized world within the empire."
+ civic_AP_mobile_construction_effects:0 "Spawns a §YMobile Construction Yard§! modifier on your capital world which can be relocated at your leisure. The planet it is preset on will recieved a big construction boost. Alternatively it can be moved to your country as a whole. This will grant less powerfull, but global benefits."

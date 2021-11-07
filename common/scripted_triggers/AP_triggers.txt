@@ -1,6 +1,9 @@
 ######################################################################
 # Genuine triggers
 ######################################################################
+# Root = target country
+# This = country
+# From = communications
 AP_has_encountered_crisis = {
 	custom_tooltip = AP_has_encountered_crisis
 	hidden_trigger = {
@@ -26,14 +29,18 @@ AP_has_encountered_crisis = {
 	}
 }
 
+# I really should work this stuff out better at some point
+# as it really does not do what i want it to do.
 AP_has_superior_opponent = {
 	custom_tooltip = AP_has_superior_opponent
 	hidden_trigger = {
 		is_at_war = yes
 		OR = {
 			any_war = {
-				has_total_war_cb = yes
-				$aggresors_fleet$ > $defenders_fleet$
+				using_war_goal = {
+					type = wg_end_threat_crisis
+					owner = ROOT
+				}
 			}
 		}
 		OR = {
