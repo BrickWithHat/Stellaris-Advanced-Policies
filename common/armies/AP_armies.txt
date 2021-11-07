@@ -5,19 +5,14 @@ conscript_army = {
 	morale = 1.10
 	morale_damage = 1.25
 	collateral_damage = 1.50
-	war_exhaustion = 1.10
+	war_exhaustion = 1.2
 	time = 20
 	icon_frame = 5
 	has_species = yes
-	prerequisites = {
-		owner = {
-			is_country_type = default
-			is_gestalt = no
-		}
-	}
 	potential = {
+		is_gestalt = no
         OR = {
-            has_policy_flag = AP_conscription_mandetory
+            has_policy_flag = AP_conscription_mandatory
 			has_policy_flag = AP_conscription_war_time
         }
 	}

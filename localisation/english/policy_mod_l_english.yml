@@ -6,9 +6,13 @@
  civic_AP_advanced_administration_desc:0 "The government has found many ways to enchance its efficiency. Making them slightly better in a lot of area's."
  civic_AP_advanced_administration_effects:0 "Your §Ygovernemt§! has become more efficient the most other empires granting you:"
 
- civic_AP_war_complex:0 "Industrial war-complex"
+ civic_AP_war_complex:0 "Industrial War-Complex"
  civic_AP_war_complex_desc:0 "This empire has been geared to mass war, it looks down on its civilians as a means to fund its armies."
  civic_AP_war_complex_effects:0 "The army is our extension into the stars. Let them march forward with all our might!"
+
+ civiv_AP_grand_architecture:0 "Grand Architecture"
+ civiv_AP_grand_architecture_desc:0 "Our empire believes that all buildings should be made to display our power. To that end we build to inspire!"
+ civiv_AP_grand_architecture_effects:0 "Our grand buildings may require some upkeep, but they do really inspire our populace."
 
 ##########################################################################
 # Edicts
@@ -19,13 +23,17 @@
  edict_AP_rationing_desc:0 "§YThis is an emergency measure! Does not take up an edict slot.§! The state can no longer allow it's people to waste all those resources. It could mean the diffrence between defeat and victory!"
 
  edict_AP_combat_drills:0 "Combat Drills"
- edict_AP_combat_drills_desc:0 ""
+ edict_AP_combat_drills_desc:0 "Enact a plan to sharpen our military forces for future conflicts."
+ edict_AP_grand_banquette:0 "Grand Banquette"
+ edict_AP_grand_banquette_desc:0 "We shall hold a feast for all of our worlds! To show the good will of our empire."
 
 ##########################################################################
 # Decisions
 ##########################################################################
- AP_harsh_quota:0 "Harsh quota"
+ AP_harsh_quota:0 "Harsh Quota"
  AP_harsh_quota_desc:0 "This planet holds services or raw material vital to our empire. We need those recourses as soon as possible!"
+ AP_conscription:0 "Planetry Conscription"
+ AP_conscription_desc:0 "Enact our conscription law, this way we draft our population into conscription armies for the cause!"
 
 ##########################################################################
 # agendas
@@ -43,7 +51,7 @@
  policy_AP_war_stance:0 "Military Stance"
  policy_AP_war_stance_desc:0 "Our governments stance on the role of our armed forces"
  policy_AP_education_stance:0 "Education Stance"
- policy_AP_education_stance_desc:0 "Our governments view and stance on our education system."
+ policy_AP_education_stance_desc:0 "Our governments view and stance on our education system. Check country"
  policy_AP_education_privledge:0 "Educational Rights"
  policy_AP_education_privledge_desc:0 "Here is where one desides who does deserve an education and who does not."
  policy_AP_unemployment:0 "Unemployment Stance"
@@ -116,9 +124,9 @@
  AP_conscription_war_time_name:0 "$AP_conscription_war_time$"
  AP_conscription_war_time:0 "Conflict Conscription/Draft"
  AP_conscription_war_time_desc:0 "During periods of conflict we can enforce a draft on a planet with a planetry decision."
- AP_conscription_mandetory_name:0 "$AP_conscription_mandetory$"
- AP_conscription_mandetory:0 "Mandetory Service"
- AP_conscription_mandetory_desc:0 "All allowed in our military must atleast serve a few tours of duty. Be it in support roles or actual combat. Thus granting us the ability to draft by planetery decision whenever we please."
+ AP_conscription_mandatory_name:0 "$AP_conscription_mandatory$"
+ AP_conscription_mandatory:0 "Mandetory Service"
+ AP_conscription_mandatory_desc:0 "All allowed in our military must atleast serve a few tours of duty. Be it in support roles or actual combat. Thus granting us the ability to draft by planetery decision whenever we please."
  
 # Unemployment Policies
  AP_unemployment_no_aid:0 "No state support"
@@ -128,16 +136,63 @@
  AP_unemployment_aid_desc:0 "The state sees that it's people need work to be happy and pay taxes. Let us help them get back into society proper."
  AP_unemployment_aid_name:0 "$AP_unemployment_aid$"
  AP_unemployment_shared_burden:0 "Full State-support"
- AP_unemployment_shared_burden_desc:0 "A worker not working is a danger. We shoudl find work for these people as soon as possible."
+ AP_unemployment_shared_burden_desc:0 "A worker not working is a danger. We should find work for these people as soon as possible."
  AP_unemployment_shared_burden_name:0 "$AP_unemployment_shared_burden$"
 
 # Gestalt Policies
+ policy_AP_autonamy:0 "Autonamy"
+ policy_AP_autonamy_desc:0 "The amount of free thinking granted to an 'individual' in our collective"
+ AP_autonamy_none_name:0 "$AP_autonamy_none$"
+ AP_autonamy_none:0 "None"
+ AP_autonamy_none_desc:0 "They serve the will of the mind. The mind speaks, they listen."
+ AP_autonamy_shackled_name:0 "$AP_autonamy_shackled$"
+ AP_autonamy_shackled:0 "Shackled mind"
+ AP_autonamy_shackled_desc:0 "While able to think free in some fields, there higher functions are limited to specific fields."
+ AP_autonamy_near_free_name:0 "$AP_autonamy_near_free$"
+ AP_autonamy_near_free:0 "Loosely linked"
+ AP_autonamy_near_free_desc:0 "While linked and being brought to comply, there minds have the capacity for free thought."
 
 # Trigger texts
  AP_has_encountered_crisis:0 "Has encountered an §Yunexpected§! opponent..."
  AP_has_superior_opponent:0 "Has an §Ydangerous§! opponent..."
 
-
 # Component stuff
+ conscript_army_plural:0 "Conscript Armies"
  conscript_army:0 "Conscript Army" 
  conscript_army_desc:0 "While not the most hardiest of folk, they atleast show a suprising willingness to fight as a unit."
+
+# My poor life choice to make a lot of modifiers of wish the player will only see about 3 at most.
+ edu_all_token:0 "$AP_education_stance_token$ for all"
+ edu_all_basic:0 "$AP_education_stance_basic$ for all"
+ edu_all_encouraged:0 "$AP_education_stance_encouraged$ for all"
+ edu_all_vital:0 "$AP_education_stance_vital$ for all"
+ edu_cit_token:0 "$AP_education_stance_token$ for citizens"
+ edu_cit_basic:0 "$AP_education_stance_basic$ for citizens"
+ edu_cit_encouraged:0 "$AP_education_stance_encouraged$ for citizens"
+ edu_cit_vital:0 "$AP_education_stance_vital$ for citizens"
+ edu_elite_token:0 "$AP_education_stance_token$ for the elite"
+ edu_elite_basic:0 "$AP_education_stance_basic$ for the elite"
+ edu_elite_encouraged:0 "$AP_education_stance_encouraged$ for the elite"
+ edu_elite_vital:0 "$AP_education_stance_vital$ for the elite"
+
+# Normal Modifiers
+ planet_conscription:0 "Enacted Planetary Conscription"
+ planet_conscription_desc:0 "We have drafted all able beings from this world, let us hope we can return them later in uniform rather then body bag. §YIt will spawn a max of 25 armies of consripts, Based on planetery population.§!"
+ planet_quota_set:0 "Enacted Harsh Quota"
+ planet_quota_set_desc:0 "We set a near impossible quantity of material as a goal for this world. Not because we expect them to succed but because we need all we can get."
+
+# Events
+ AP_PD.1:0 "First wave of Conscription"
+ AP_PD.2:0 "Second wave of Conscription"
+ AP_PD.3:0 "Third wave of Conscription"
+ AP_PD.4:0 "Forth wave of Conscription"
+ AP_PD.5:0 "Fifth wave of Conscription"
+ AP_PD.1_name:0 "$AP_PD.1$"
+ AP_PD.2_name:0 "$AP_PD.2$"
+ AP_PD.3_name:0 "$AP_PD.3$"
+ AP_PD.4_name:0 "$AP_PD.4$"
+ AP_PD.5_name:0 "$AP_PD.5$"
+
+ AP_HQ.1_title:0 "Planetary Quota Enacted"
+ AP_HQ.1_desc:0 "We called upon the rulers of this world to set a Quota of rescourses. Hopefully deliver it on schedule."
+ AP_HQ.1_option:0 "Let us hope indeed..."

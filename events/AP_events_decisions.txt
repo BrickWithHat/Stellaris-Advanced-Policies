@@ -1,0 +1,151 @@
+##########################################################################
+# Conscription Decision
+##########################################################################
+namespace = AP_PD
+planet_event = {
+	id = AP_PD.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_modifier = planet_conscription
+	}
+	immediate = {
+		set_owner = event_target:planet_owners
+		while = {
+			count = 5
+			create_army = {
+				owner = owner
+				type = conscript_army
+				species = owner_species
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = AP_PD.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		AND = {
+			has_modifier = planet_conscription
+			planet = {
+				num_pops > 20
+			}
+		}
+	}
+	immediate = {
+		set_owner = event_target:planet_owners
+		while = {
+			count = 5
+			create_army = {
+				owner = owner
+				type = conscript_army
+				species = owner_species
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = AP_PD.3
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		AND = {
+			has_modifier = planet_conscription
+			planet = {
+				num_pops > 30
+			}
+		}
+	}
+	immediate = {
+		set_owner = event_target:planet_owners
+		while = {
+			count = 5
+			create_army = {
+				owner = owner
+				type = conscript_army
+				species = owner_species
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = AP_PD.4
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		AND = {
+			has_modifier = planet_conscription
+			planet = {
+				num_pops > 40
+			}
+		}
+	}
+	immediate = {
+		set_owner = event_target:planet_owners
+		while = {
+			count = 5
+			create_army = {
+				owner = owner
+				type = conscript_army
+				species = owner_species
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = AP_PD.5
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		AND = {
+			has_modifier = planet_conscription
+			planet = {
+				num_pops > 50
+			}
+		}
+	}
+	immediate = {
+		set_owner = event_target:planet_owners
+		while = {
+			count = 5
+			create_army = {
+				owner = owner
+				type = conscript_army
+				species = owner_species
+			}
+		}
+	}
+}
+
+##########################################################################
+# Harsh Quota
+##########################################################################
+namespace = AP_HQ
+planet_event = {
+	id = AP_HQ.1
+	is_triggered_only = yes
+	title = AP_HQ.1_title
+	desc = AP_HQ.1_desc
+	picture = GFX_evt_busy_spaceport
+	location = from
+	trigger = {
+		has_modifier = planet_quota_set
+	}
+	immediate = {
+	}
+	option = {
+		name = AP_HQ.1_option
+		trigger = {
+		}
+		allow = {
+			planet = {
+				has_owner = yes
+			}
+		}
+	}
+}
