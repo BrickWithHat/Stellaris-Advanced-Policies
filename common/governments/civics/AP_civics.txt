@@ -1,0 +1,72 @@
+civic_AP_advanced_administration = {
+	description = "civic_AP_advanced_administration_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+		}
+	}
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_barbaric_despoilers
+			}
+			NOT = {
+				value = civic_fanatic_purifiers
+			}
+			NOT = {
+				value = civic_death_cult
+			}
+		}
+	}
+	random_weight = {
+		base = 5
+	}
+	modifier = {
+		edict_length_mult = 0.2
+		edicts_cost_mult = -0.2
+		leader_skill_levels = 1
+		country_edict_cap_add = 1
+	}
+}
+
+civic_AP_war_complex = {
+	description = "civic_AP_war_complex_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+		civics = {
+			NOT = {
+				value = civic_fanatic_purifiers
+			}
+		}
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+		}
+	}
+	modifier = {
+		country_alloys_produces_mult = 0.2
+		country_naval_cap_mult = 0.1
+		country_consumer_goods_produces_mult = -0.05
+	}
+	random_weight = {
+		base = 5
+	}
+}

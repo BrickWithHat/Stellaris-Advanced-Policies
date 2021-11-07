@@ -1,0 +1,122 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+# i could remove this line but honestly i am way to lazy for that.
+# ok, i will add a new line just to be spitefull.
+@EdictPerpetual = -1
+@EdictDurationDefault = 3600
+@EdictDurationShort = 1800
+@EdictDurationLong = 5400
+#################
+# Toggle Edicts
+#################
+AP_tight_admin = {
+	length = @EdictPerpetual
+	icon = "gfx_edicts_agenda"
+	edict_cap_usage = 1
+	resources = {
+		category = edicts
+		cost = {
+			#Activation Cost
+			trigger = {
+				NOT = {
+					has_edict = AP_tight_admin
+				}
+			}
+			influence = 50
+			energy = 1000
+		}
+		cost = {
+			#Deactivation Cost
+			trigger = {
+				has_edict = AP_tight_admin
+			}
+			influence = 100
+			energy = 2500
+		}
+	}
+	potential = {
+		OR = {
+			has_valid_civic = civic_byzantine_bureaucracy
+			has_valid_civic = civic_AP_advanced_administration
+			has_valid_civic = civic_efficient_bureaucracy
+			has_technology = tech_adaptive_bureaucracy
+		}
+	}
+	modifier = {
+		country_admin_cap_mult = 0.1
+		building_time_mult = -0.1
+		local_trade_protection_add = 5
+	}
+}
+
+AP_rationing = {
+	length = @EdictPerpetual
+	icon = "gfx_edicts_alert"
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			#Activation Cost
+			trigger = {
+				NOT = {
+					has_edict = AP_rationing
+				}
+			}
+			influence = 20
+		}
+		cost = {
+			#Deactivation Cost
+			trigger = {
+				has_edict = AP_rationing
+			}
+			energy = 500
+		}
+	}
+	modifier = {
+		planet_pops_upkeep_mult = -0.1
+		pop_happiness = -0.1
+	}
+	potential = {
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+		OR = {
+			is_at_war = yes
+			is_authoritarian = yes
+			is_militarist = yes
+		}
+	}
+}
+
+#################
+# Temporary Edicts
+#################
+AP_combat_drills = {
+	length = @EdictDurationShort
+	icon = "gfx_edicts_ship"
+	resources = {
+		category = edicts
+		cost = {
+			alloys = 500
+			food = 100
+		}
+	}
+	modifier = {
+		ship_starting_experience_add = 100
+		ship_experience_gain_mult = 0.1
+		planet_army_build_speed_mult = 0.1
+		army_experience_gain_mult = 0.05
+	}
+	potential = {
+		OR = {
+			NOR = {
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"
+				has_valid_civic = "civic_inwards_perfection"
+			}
+			is_at_war = yes
+			is_country_type = default
+		}
+	}
+}

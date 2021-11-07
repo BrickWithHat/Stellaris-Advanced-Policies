@@ -1,0 +1,35 @@
+##########################################################################
+# Decisions
+##########################################################################
+AP_harsh_quota = {
+	owned_planets_only = yes
+	sound = event_air_raid_siren
+	icon = decision_resources
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+		OR = {
+			is_at_war = yes
+			is_authoritarian = yes
+			is_militarist = yes
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = planet_food_boost
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = "planet_food_boost"
+			days = 3600
+		}
+	}
+}
