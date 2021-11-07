@@ -7,9 +7,9 @@
 @EdictDurationDefault = 3600
 @EdictDurationShort = 1800
 @EdictDurationLong = 5400
-#################
+##########################################################################
 # Toggle Edicts
-#################
+##########################################################################
 AP_tight_admin = {
 	length = @EdictPerpetual
 	icon = "gfx_edicts_agenda"
@@ -95,9 +95,9 @@ AP_rationing = {
 	}
 }
 
-#################
+##########################################################################
 # Temporary Edicts
-#################
+##########################################################################
 AP_combat_drills = {
 	length = @EdictDurationShort
 	icon = "gfx_edicts_ship"
@@ -106,6 +106,18 @@ AP_combat_drills = {
 		cost = {
 			alloys = 500
 			food = 100
+		}
+	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = alloys
+				amount >= 500
+			}
+			has_resource = {
+				type = food
+				amount >= 100
+			}
 		}
 	}
 	modifier = {
@@ -138,6 +150,43 @@ AP_combat_drills = {
 	}
 }
 
+AP_grand_banquette_lithoid = {
+	length = @EdictDurationShort
+	icon = gfx_edicts_grapes
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			minerals = 5000
+			influence = 50
+		}
+	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = minerals
+				amount >= 5000
+			}
+			has_resource = {
+				type = influence
+				amount >= 50
+			}
+		}
+	}
+	potential = {
+		owner_main_species = {
+			is_lithoid = yes
+		}
+		is_gestalt = no
+	}
+	modifier = {
+		pop_happiness = 0.1
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
 AP_grand_banquette = {
 	length = @EdictDurationShort
 	icon = gfx_edicts_grapes
@@ -149,13 +198,126 @@ AP_grand_banquette = {
 			influence = 50
 		}
 	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = food
+				amount >= 5000
+			}
+			has_resource = {
+				type = influence
+				amount >= 50
+			}
+		}
+	}
 	potential = {
+		owner_main_species = {
+			is_lithoid = no
+		}
 		is_gestalt = no
 	}
 	modifier = {
-		pop_happiness = 0.10
+		pop_happiness = 0.1
 	}
 	ai_weight = {
 		weight = 0
+	}
+}
+
+AP_nobility = {
+	length = @EdictDurationDefault
+	icon = gfx_edicts_grapes
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			energy = 5000
+		}
+	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = energy
+				amount >= 5000
+			}
+		}
+	}
+	potential = {
+		owner = {
+			OR = {
+				has_authority = auth_imperial
+				has_civic = civic_aristocratic_elite
+			}
+		}
+	}
+	modifier = {
+		pop_cat_worker_political_power = -0.2
+		pop_cat_slave_political_power = -1
+		pop_cat_ruler_happiness = 0.05
+		leaders_upkeep_mult = -0.25
+	}
+}
+
+AP_greener_pasture = {
+	length = @EdictDurationDefault
+	icon = "gfx_edicts_agenda"
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			energy = 2000
+			consumer_goods = 500
+		}
+	}
+	potential = {
+		has_technology = tech_planetary_unification
+		is_gestalt = no
+	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = energy
+				amount >= 2000
+			}
+			has_resource = {
+				type = consumer_goods
+				amount >= 500
+			}
+		}
+	}
+	modifier = {
+		planet_migration_all_mult = 0.25
+		planet_resettlement_unemployed_mult = 1
+		country_resettlement_cost_mult = -0.5
+		pop_demotion_time_mult = -0.25
+	}
+}
+
+AP_propaganda_campaign = {
+	length = @EdictDurationDefault
+	icon = "gfx_edicts_agenda"
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			energy = 2500
+		}
+	}
+	potential = {
+		has_technology = tech_planetary_unification
+		is_gestalt = no
+	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = energy
+				amount >= 2500
+			}
+		}
+	}
+	modifier = {
+		planet_stability_add = 5
+		pop_government_ethic_attraction = 0.5
+		pop_ethics_shift_speed_mult = 0.25
 	}
 }

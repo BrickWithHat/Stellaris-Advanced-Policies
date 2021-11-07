@@ -42,9 +42,34 @@
  country_troops_dismissed_desc:0 "We recently dismissed a sizable part of our armed ground forces."
  planet_lack_of_oversight:0 "Lack of oversight"
  planet_lack_of_oversight_desc:0 "This planet is known for having lacking administration. As a result some material or even people go missing every so often."
+ planet_laying_down:0 "Laying Down"
+ planet_laying_down_desc:0 "The populace of this world has found little reason to care for the demands of there higher-ups. Feel snubbed for there lack of social mobility they refuse to do more then is essential or there direct survival. As a result they rather waste there time away in there homes refusing to contribute to our society."
 
 # civic related
  planet_mobile_construction_deployed:0 "Mobile Construction Vehicle"
  planet_mobile_construction_deployed_desc:0 "This world has the presence of the main empires Construction Vehicle, granting sizable boosts to contruction and infrastructure planet-wide."
  country_mobile_construction_packed:0 "Country Construction Vehicle"
  country_mobile_construction_packed_desc:0 "The empire has chosen to move its main Construction Vehicle acorss it empire frequently. Granting a small boost to construction empire-wide. With the added benefit of the construction yard aiding in the increase in trade."
+
+# broken ass base game modifiers that i guess i should fix
+ mod_planet_jobs_alloys_upkeep_mult:0 "£job_foundry£ [GetAlloyProducerPlural] Upkeep"
+ mod_planet_metallurgists_unity_produces_add:0 "£unity£ $unity$ per £job_foundry£ [GetAlloyProducerPlural]"
+ mod_planet_jobs_consumer_goods_upkeep_mult:0 "£job_artisan£ [GetArtisanPlural] Upkeep"
+ mod_planet_artisans_unity_produces_add:0 "£unity£ $unity$ per £job_artisan£ [GetArtisanPlural]"
+ mod_planet_miners_unity_produces_add:0 "£unity£ $unity$ per £job_miner£ [GetMinerPlural]"
+ mod_planet_technician_unity_produces_add:0 "£unity£ $unity$ per £job_technician£ [GetTechnicianPlural]"
+ mod_planet_jobs_minerals_upkeep_mult:0 "£minerals£ Mineral upkeep for Planet Jobs"
+
+# Decision Modifiers
+ planet_trail_by_fire:0 "Trail by fire"
+ planet_trail_by_fire_desc:0 "This world has been selected to start a cultural festival of fire! Here many warriors will gather and fight only sometimes to the death. While it is dangerous beyond believe it does attact quite the crowd and is quite the spectical."
+ planet_generation_of_peace:0 "Generation of Peace"
+ planet_generation_of_peace_desc:0 "It has been a very long time since people even saw what war looked like. It is a proud achievement and in on this world the prosperity caused by this peace surfaced."
+ planet_grand_sports_games:0 "Grand Sports Games"
+ planet_grand_sports_games_desc:0 "A grand competition of all known sports will be held on this planet! This kind of an event tends to attract a lot of attention from both commercial and regular civilians flocking to the site."
+ planet_benevolant_gesture:0 "Benevolant Gesture"
+ planet_benevolant_gesture_desc:0 "The elites of this world have made it clear in there recent actions that they genuinely care about the populace. This has had a welcoming effect on the populace as a whole."
+ planet_rite_of_the_heavens:0 "Rite of the Heavens"
+ planet_rite_of_the_heavens_desc:0 "A great gathering of religous leaders has gathered here to spread the word of there faith. They come in mass to grand this world and it populace its blessings."
+ planet_competition_of_the_minds:0 "Competition of the minds"
+ planet_competition_of_the_minds_desc:0 "This world has be designated for a discussion between the intelectuals. This has attracted many who are interested in this field."

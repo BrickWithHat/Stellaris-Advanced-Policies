@@ -24,13 +24,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	## Fast appoarch
@@ -134,13 +154,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	## Dismiss some troops
@@ -254,13 +294,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	immediate = {
@@ -457,13 +517,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	## Does not have a labor shortage
@@ -555,13 +635,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	immediate = {
@@ -671,13 +771,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	## negotiate approach
@@ -840,13 +960,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	## Passing the check to see if the organized strike modifier has expired
@@ -1117,13 +1257,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	immediate = {
@@ -1304,13 +1464,33 @@ planet_event = {
 		}
 	}
 	abort_effect = {
-		set_variable = {
-			which = quota_abolish
-			value = 1
-		}
-		planet_event = {
-			id = AP_PQ.2
-			days = 5
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+				set_variable = {
+					which = quota_abolish
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+					days = 5
+				}
+			}
+			set_variable = {
+				which = quota_abolish
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
 		}
 	}
 	## Checks if player has failed and assigns correct variables

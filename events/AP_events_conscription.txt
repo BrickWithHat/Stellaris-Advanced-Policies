@@ -54,25 +54,34 @@ planet_event = {
 	desc = {
 		text = AP_CR.11_desc
 		trigger = {
-			is_militarist = no
+			owner = {
+				is_militarist = no
+			}
+			
 		}
 	}
 	desc = {
 		text = AP_CR.12_desc
 		trigger = {
-			is_militarist = yes
+			owner = {
+				is_militarist = yes
+			}
 		}
 	}
 	option = {
 		name = AP_CR.11_name
 		trigger = {
-			is_militarist = no
+			owner = {
+				is_militarist = no
+			}
 		}
 	}
 	option = {
 		name = AP_CR.12_name
 		trigger = {
-			is_militarist = yes
+			owner = {
+				is_militarist = yes
+			}
 		}
 	}
 }
