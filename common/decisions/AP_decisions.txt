@@ -1,5 +1,9 @@
+# These are timers set for decisions timers being 2, 5 & 10 years repectivly
+@shortlength = 720
+@mediumlength = 1800
+@longlength = 3200
 ##########################################################################
-# Decisions
+# Decisions with events
 ##########################################################################
 AP_planetary_quota = {
 	owned_planets_only = yes
@@ -21,12 +25,6 @@ AP_planetary_quota = {
 		}
 	}
 	allow = {
-		owner = {
-			has_resource = {
-				type = influence
-				amount >= 50
-			}
-		}
 		NOT = {
 			has_modifier = planet_quota_fulfilled
 			has_modifier = planet_quota_abolished
@@ -79,12 +77,6 @@ AP_abolish_planetary_quota = {
 		hidden_trigger = {
 			owner = {
 				has_country_flag = quota_active
-			}
-		}
-		owner = {
-			has_resource = {
-				type = influence
-				amount >= 50
 			}
 		}
 		OR = {
@@ -166,6 +158,206 @@ AP_conscription = {
 	}
 	ai_weight = {
 		weight = 0
+	}
+}
+
+##########################################################################
+# Decisions without events
+##########################################################################
+AP_trail_by_fire = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_alien_propaganda
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		owner = {
+			is_militarist = yes
+			is_ai = no
+		}
+	}
+	allow = {
+		planet = {
+			NOT = {
+				has_building = building_colony_shelter
+				has_building = building_hab_capital
+			}
+			NOT = {
+				has_modifier = planet_trail_by_fire
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_trail_by_fire
+			days = @mediumlength
+		}
+	}
+}
+
+AP_generation_of_peace = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_alien_propaganda
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		owner = {
+			is_pacifist = yes
+			is_ai = no
+		}
+	}
+	allow = {
+		planet = {
+			NOT = {
+				has_modifier = planet_generation_of_peace
+			}
+		}
+		owner = {
+			is_at_war = no
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_generation_of_peace
+			days = @mediumlength
+		}
+	}
+}
+
+AP_grand_sports_games = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_arcology_project
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		owner = {
+			is_egalitarian = yes
+			is_ai = no
+		}
+	}
+	allow = {
+		planet = {
+			NOT = {
+				has_modifier = planet_grand_sports_games
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_grand_sports_games
+			days = @mediumlength
+		}
+	}
+}
+
+AP_benevolant_gesture = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_arcology_project
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		owner = {
+			is_authoritarian = yes
+			is_ai = no
+		}
+	}
+	allow = {
+		planet = {
+			NOT = {
+				has_modifier = planet_benevolant_gesture
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_benevolant_gesture
+			days = @mediumlength
+		}
+	}
+}
+
+AP_rite_of_the_heavens = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_medieval_alien_civilization
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		owner = {
+			is_spiritualist = yes
+			is_ai = no
+		}
+	}
+	allow = {
+		planet = {
+			NOT = {
+				has_modifier = planet_rite_of_the_heavens
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_rite_of_the_heavens
+			days = @mediumlength
+		}
+	}
+}
+
+AP_competition_of_the_minds = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_alien_propaganda
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	potential = {
+		owner = {
+			is_materialist = yes
+			is_ai = no
+		}
+	}
+	allow = {
+		planet = {
+			NOT = {
+				has_building = building_colony_shelter
+				has_building = building_hab_capital
+			}
+			NOT = {
+				has_modifier = planet_competition_of_the_minds
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_competition_of_the_minds
+			days = @mediumlength
+		}
 	}
 }
 

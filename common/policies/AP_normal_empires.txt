@@ -1,6 +1,3 @@
-##########################################################################
-# unemployment policy
-##########################################################################
 AP_unemployment = {
 	potential = {
 		is_country_type = default
@@ -18,7 +15,7 @@ AP_unemployment = {
 		modifier = {
 			pop_government_ethic_attraction = -0.1
 			planet_pops_upkeep_mult = -0.1
-			pop_political_power = -0.1
+			pop_political_power = -0.25
 		}
 	}
 	option = {
@@ -51,9 +48,6 @@ AP_unemployment = {
 	}
 }
 
-##########################################################################
-# Relgious policy
-##########################################################################
 AP_religion = {
 	potential = {
 		is_country_type = default
@@ -91,6 +85,7 @@ AP_religion = {
 		modifier = {
 			pop_government_ethic_attraction = 0.05
 			planet_researchers_produces_mult = 0.05
+			country_influence_produces_add = 0.25
 		}
 	}
 	option = {
@@ -110,6 +105,7 @@ AP_religion = {
 		modifier = {
 			spiritualist_attraction = 0.05
 			country_unity_produces_mult = 0.05
+			country_influence_produces_add = 0.25
 		}
 	}
 	option = {
@@ -124,6 +120,60 @@ AP_religion = {
 			spiritualist_attraction = 0.1
 			country_unity_produces_mult = 0.1
 			country_influence_produces_add = 0.5
+		}
+	}
+}
+
+AP_weapons_law = {
+	potential = {
+		is_ai = no
+		is_gestalt = no
+		is_country_type = default
+	}
+	option = {
+		name = AP_weapons_law_government_only
+		valid = {
+			is_militarist = no
+		}
+		modifier = {
+			starbase_trade_protection_range_add = 2
+			planet_crime_mult = -0.2
+			planet_amenities_mult = 0.05
+			leader_age = 10
+		}
+	}
+	option = {
+		name = AP_weapons_law_permit
+		modifier = {
+			starbase_trade_protection_range_add = 1
+			planet_crime_mult = -0.05
+			ship_starting_experience_add = 50
+			army_starting_experience_add = 50
+			army_experience_gain_mult = 0.5
+			ship_experience_gain_mult = 0.5
+		}
+	}
+	option = {
+		name = AP_weapons_law_permit_easy
+		modifier = {
+			ship_starting_experience_add = 100
+			army_starting_experience_add = 100
+			general_skill_levels = 2
+			admiral_skill_levels = 2
+		}
+	}
+	option = {
+		name = AP_weapons_law_free
+		valid = {
+			is_pacifist = no
+		}
+		modifier = {
+			ship_starting_experience_add = 250
+			army_starting_experience_add = 250
+			army_damage_mult = 0.1
+			army_defense_damage_mult = 0.1
+			leader_skill_levels = 1
+			leader_age = -10
 		}
 	}
 }

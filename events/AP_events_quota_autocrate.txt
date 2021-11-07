@@ -1,5 +1,976 @@
 namespace = AP_PQ
+## start of the event chain for autocrate line
 planet_event = {
 	id = AP_PQ.300
 	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_busy_spaceport
+	title = AP_PQ.300_title
+	desc = AP_PQ.300_desc
+	trigger = {
+		has_modifier = planet_quota_planned
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	## slow approach
+	option = {
+		name = AP_PQ.300_1
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.302
+				days = 180
+			}
+		}
+	}
+	## fast approach
+	option = {
+		name = AP_PQ.300_2
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.301
+				days = 30
+				random = 30
+			}
+		}
+	}
+}
+
+## Fast check for labor availability for Phase 1
+planet_event = {
+	id = AP_PQ.301
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_alien_propaganda
+	title = AP_PQ.301_title
+	desc = AP_PQ.301_desc
+	trigger = {
+		has_modifier = planet_quota_planned
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_planned
+		add_modifier = {
+			modifier = planet_quota_phase_1
+		}
+	}
+	## No action
+	option = {
+		name = AP_PQ.301_1
+		hidden_effect = {
+			add_modifier = {
+				modifier = planet_labor_shortage
+				days = 360
+			}
+			change_variable = {
+				which = quota_delay
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+	## Force locals to work
+	option = {
+		name = AP_PQ.301_2
+		hidden_effect = {
+			add_modifier = {
+				modifier = planet_discouraged_populace
+				days = 360
+			}
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+	## Special slaver guilds
+	option = {
+		name = AP_PQ.301_3
+		trigger = {
+			owner = {
+				has_civic = civic_slaver_guilds
+			}
+		}
+		allow = {
+			owner = {
+				has_resource = {
+					type = energy
+					amount >= 500
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+	## Special indentured servitude
+	option = {
+		name = AP_PQ.301_3
+		trigger = {
+			owner = {
+				has_civic = civic_indentured_assets
+			}
+		}
+		allow = {
+			owner = {
+				has_resource = {
+					type = energy
+					amount >= 500
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+	## Special has reanimators
+	option = {
+		name = AP_PQ.301_3
+		trigger = {
+			owner = {
+				has_civic = civic_reanimated_armies
+			}
+		}
+		allow = {
+			owner = {
+				has_resource = {
+					type = energy
+					amount >= 500
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -500
+				society_research = 500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+	## Special has slaves
+	option = {
+		name = AP_PQ.301_4
+		trigger = {
+			any_owned_pop = {
+				is_enslaved = yes
+			}
+		}
+		hidden_effect = {
+			add_modifier = {
+				modifier = planet_discouraged_populace
+				days = 180
+			}
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+}
+
+## Slow for Phase 1
+planet_event = {
+	id = AP_PQ.302
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_alien_propaganda
+	title = AP_PQ.302_title
+	desc = AP_PQ.302_desc
+	trigger = {
+		has_modifier = planet_quota_planned
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_planned
+		add_modifier = {
+			modifier = planet_quota_phase_1
+		}
+	}
+	option = {
+		name = AP_PQ.302_1
+		trigger = {
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.303
+				days = 360
+				random = 360
+			}
+		}
+	}
+}
+
+## This is a check inbetween phase 1 and phase 2 to see if the player can keep there workers motivated
+planet_event = {
+	id = AP_PQ.303
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_alien_segregation
+	title = AP_PQ.303_title
+	desc = AP_PQ.303_desc
+	trigger = {
+		has_modifier = planet_quota_phase_1
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	## Do nothing
+	option = {
+		name = AP_PQ.303_1
+		hidden_effect = {
+			IF = {
+				limit = {
+					any_owned_pop = {
+						is_pop_category = worker
+						happiness >= 60
+					}
+				}
+				else = {
+					planet_event = {
+						id = AP_PQ.304
+						days = 360
+						random = 180
+					}
+				}
+				planet_event = {
+					id = AP_PQ.305
+					days = 360
+					random = 180
+				}
+			}
+		}
+	}
+	## invest in some benefits
+	option = {
+		name = AP_PQ.303_2
+		allow = {
+			owner = {
+				has_resource = {
+					type = consumer_goods
+					amount >= 1000
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				consumer_goods = -1000
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+	## give em the boot
+	option = {
+		name = AP_PQ.303_3
+		hidden_effect = {
+			IF = {
+				limit = {
+					# Checks for one of these 2 to be true
+					OR = {
+						# Checks if there are soldiers and if there are defensive armies (essentially a police army check)
+						AND = {
+							any_owned_pop = {
+								soldier_job_check_trigger = no
+							}
+							any_planet_army = {
+								is_defensive_army = yes
+							}
+						}
+						# Checks for crime equil or lower then 1% and if the planet stability if at minimum 60%
+						AND = {
+							planet_crime <= 1
+							planet_stability >= 60
+						}
+					}
+				}
+				planet_event = {
+					id = AP_PQ.305
+					days = 360
+					random = 180
+				}
+			}
+			else = {
+				planet_event = {
+					id = AP_PQ.304
+					days = 360
+					random = 180
+				}
+			}
+		}
+	}
+	## Special repression option (Police State)
+	option = {
+		name = AP_PQ.303_4
+		trigger = {
+			owner = {
+				has_civic = civic_police_state
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+	## Special repression option (Landed Nobility)
+	option = {
+		name = AP_PQ.303_4
+		trigger = {
+			owner = {
+				has_civic = civic_landed_nobility
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+	## Special Patriotism (Nationalistic Zeal)
+	option = {
+		name = AP_PQ.303_5
+		trigger = {
+			owner = {
+				has_civic = civic_nationalistic_zeal
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+	## Special Patriotism (Brand Loyalty)
+	option = {
+		name = AP_PQ.303_5
+		trigger = {
+			owner = {
+				has_civic = civic_brand_loyalty
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+	## Special Patriotism (Imperial Cult)
+	option = {
+		name = AP_PQ.303_5
+		trigger = {
+			owner = {
+				has_civic = civic_imperial_cult
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+	## Special Patriotism (Gospel of the Masses)
+	option = {
+		name = AP_PQ.303_5
+		trigger = {
+			owner = {
+				has_civic = civic_gospel_of_the_masses
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.305
+				days = 360
+				random = 180
+			}
+		}
+	}
+}
+
+## This is the negative outcome for entering phase 2
+planet_event = {
+	id = AP_PQ.304
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_throne_room
+	title = AP_PQ.304_title
+	desc = AP_PQ.304_desc
+	trigger = {
+		has_modifier = planet_quota_phase_1
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_phase_1
+		add_modifier = {
+			modifier = planet_quota_phase_2
+		}
+	}
+	option = {
+		name = AP_PQ.304_1
+		add_modifier = {
+			modifier = planet_laying_down
+			days = 3600
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.306
+				days = 720
+				random = 360
+			}
+			change_variable = {
+				which = quota_delay
+				value = 1
+			}
+		}
+	}
+}
+
+## This is the positive outcome for entering phase 2
+planet_event = {
+	id = AP_PQ.305
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_arguing_senate
+	title = AP_PQ.305_title
+	desc = AP_PQ.305_desc
+	trigger = {
+		has_modifier = planet_quota_phase_1
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_phase_1
+		add_modifier = {
+			modifier = planet_quota_phase_2
+		}
+	}
+	option = {
+		name = AP_PQ.305_1
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.306
+				days = 720
+				random = 360
+			}
+		}
+	}
+}
+
+## This is the inbetween for phase 2 and 3
+planet_event = {
+	id = AP_PQ.306
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_spy_network
+	title = AP_PQ.306_title
+	desc = AP_PQ.306_desc
+	trigger = {
+		has_modifier = planet_quota_phase_2
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = AP_PQ.306_1
+		hidden_effect = {
+			IF = {
+				limit = {
+					planet_devastation <= 1
+					planet_crime <= 1
+					planet_stability >= 50
+				}
+				else = {
+					planet_event = {
+						id = AP_PQ.307
+						days = 360
+						random = 180
+					}
+				}
+				planet_event = {
+					id = AP_PQ.308
+					days = 360
+					random = 180
+				}
+			}
+		}
+	}
+}
+
+## this is the fail option for reaching phase 3
+planet_event = {
+	id = AP_PQ.307
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_collapsing_roof
+	title = AP_PQ.307_title
+	desc = AP_PQ.307_desc
+	trigger = {
+		has_modifier = planet_quota_phase_2
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_phase_2
+		add_modifier = {
+			modifier = planet_quota_phase_3
+		}
+	}
+	option = {
+		name = AP_PQ.307_1
+		owner = {
+			add_resource = {
+				energy = -750
+				consumer_goods = -250
+				alloys = -250
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.309
+				days = 720
+				random = 180
+			}
+		}
+	}
+}
+
+## this is success option for reaching phase 3
+planet_event = {
+	id = AP_PQ.308
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_busy_spaceport
+	title = AP_PQ.308_title
+	desc = AP_PQ.308_desc
+	trigger = {
+		has_modifier = planet_quota_phase_2
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_phase_2
+		add_modifier = {
+			modifier = planet_quota_phase_3
+		}
+	}
+	option = {
+		name = AP_PQ.308_1
+		owner = {
+			add_resource = {
+				energy = 1250
+				consumer_goods = 500
+				alloys = 500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.309
+				days = 720
+				random = 180
+			}
+		}
+	}
+}
+
+## the silent assigning of either success or failure based the amount of delay counter
+planet_event = {
+	id = AP_PQ.309
+	is_triggered_only = yes
+	location = from
+	trigger = {
+		has_modifier = planet_quota_phase_2
+		check_variable = {
+			which = quota_autocracy
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		IF = {
+			limit = {
+				# fail condtion is having 2 of delay counter
+				check_variable = {
+					which = quota_delay
+					value >= 2
+				}
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+			}
+			else = {
+				set_variable = {
+					which = quota_success
+					value = 1
+				}
+				planet_event = {
+					id = AP_PQ.2
+				}
+			}
+		}
+	}
 }

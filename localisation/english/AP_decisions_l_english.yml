@@ -1,6 +1,6 @@
 ﻿l_english:
 ##########################################################################
-# Decisions
+# Decisions with event chains
 ##########################################################################
  AP_planetary_quota:0 "Planetary Quota"
  AP_planetary_quota_desc:0 "This planet holds services or raw material vital to our empire. We need those recourses as soon as possible!§Y This decision holds an event chain and in its complete state can take from a few months to about 20 years to complete.§!"
@@ -8,6 +8,23 @@
  AP_abolish_planetary_quota_desc:0 "We may have set into motion the desire to gain from this world. But the fallout produced with this seems to be a too big of a risk to take. Thusly we should end it."
  AP_conscription:0 "Planetry Conscription"
  AP_conscription_desc:0 "Enact our conscription law, this way we draft our population into conscription armies for the cause!"
+
+##########################################################################
+# Decisions without event chains
+##########################################################################
+ AP_trail_by_fire:0 "Begin the Trail by Fire"
+ AP_trail_by_fire_desc:0 "Our culture demands we sharpen our martial abilities. To do this is a must, in the past we arranged a means of letting our warriors fight in special locations. This world is bound to have sufficient locations for our warriors to enact there trails."
+ AP_generation_of_peace:0 "Generation of Peace"
+ AP_generation_of_peace_desc:0 "Declare this world to have prospered under your reign of peace. Attracting investors and other potential benifactors."
+ AP_grand_sports_games:0 "Enact Grand Sports Games"
+ AP_grand_sports_games_desc:0 "We have gotten the suggestion somewhat frequently now to start an event with our citizens. To promote competion in sports.But on an empire wide scale."
+ AP_benevolant_gesture:0 "Benevolant Gesture"
+ AP_benevolant_gesture_desc:0 "It is widely known that most of the people are beneath us. But even so, last i checked even they do something to aid in our society. Let us for a change give them that recognition."
+ AP_rite_of_the_heavens:0 "Enact Rite of the Heavens"
+ AP_rite_of_the_heavens_desc:0 "Give the word that this world is ment for a true blessing. Thus attracting some religious leaders to go to this world."
+ AP_competition_of_the_minds:0 "Enact a Compitition of minds"
+ AP_competition_of_the_minds_desc:0 "This world is a prime candidate for many minds to gather and discuss new findings."
+
 ##########################################################################
 # Civic Decisions
 ##########################################################################

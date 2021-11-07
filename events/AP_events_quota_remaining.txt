@@ -1133,7 +1133,7 @@ planet_event = {
 			}
 		}
 	}
-	## Failing special (death cult)
+	## Failing special (Death cult)
 	option = {
 		name = AP_PQ.407_fail_2
 		trigger = {
@@ -1165,7 +1165,7 @@ planet_event = {
 			}
 		}
 	}
-	## Failing special (death cult corporate)
+	## Failing special (Death cult corporate)
 	option = {
 		name = AP_PQ.407_fail_2
 		trigger = {
@@ -1330,6 +1330,7 @@ planet_event = {
 		}
 	}
 }
+
 ## AP_PQ.408 is a silent check to assign the correct variable then proceed with ending
 planet_event = {
 	id = AP_PQ.408
@@ -1363,11 +1364,11 @@ planet_event = {
 	## Checks if player has failed and assigns correct variables
 	immediate = {
 		IF = {
-			limit = { 
+			limit = {
 				# fail condtion is having 2 of delay counter
 				check_variable = {
 					which = quota_delay
-					value = 2
+					value >= 2
 				}
 			}
 			set_variable = {

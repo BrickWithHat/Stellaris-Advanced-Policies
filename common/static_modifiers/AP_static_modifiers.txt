@@ -32,7 +32,7 @@ planet_conscript_return_meh = {
 }
 
 ##########################################################################
-# Decisions
+# Planetary Quota
 ##########################################################################
 planet_quota_planned = {
 	icon_frame = 2
@@ -104,8 +104,8 @@ planet_quota_abolished = {
 planet_encourage_populace = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_atmospheric_entry.dds
-	pop_happiness = 0.2
-	planet_stability_add = 10
+	pop_happiness = 0.1
+	planet_stability_add = 5
 	planet_amenities_add = 20
 }
 
@@ -154,8 +154,8 @@ planet_labor_shortage = {
 planet_infrastructure_investment = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_drilling_for_gas.dds
-	planet_district_city_build_speed_mult = -0.25
-	planet_building_build_speed_mult = -0.2
+	planet_district_city_build_speed_mult = 0.25
+	planet_building_build_speed_mult = 0.2
 	planet_buildings_cost_mult = -0.5
 }
 
@@ -165,6 +165,14 @@ planet_lack_of_oversight = {
 	planet_crime_mult = 0.2
 	planet_jobs_produces_mult = -0.25
 	pop_growth_speed = -0.1
+}
+
+planet_laying_down = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
+	planet_pops_upkeep_mult = -0.25
+	planet_jobs_produces_mult = -0.75
+	pop_growth_speed = -0.25
 }
 
 country_troops_dismissed = {
@@ -187,9 +195,77 @@ planet_mobile_construction_deployed = {
 	planet_buildings_cost_mult = -0.3
 	planet_district_city_build_speed_mult = 0.25
 }
+
 country_mobile_construction_packed = {
 	icon = gfx/interface/icons/modifiers/mod_consecrated_world_green.dds
 	trade_value_mult = 0.1
 	planet_building_build_speed_mult = 0.1
 	planet_buildings_cost_mult = -0.2
 }
+
+##########################################################################
+# Planetary Decisions
+##########################################################################
+planet_trail_by_fire = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds
+	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
+	pop_growth_from_immigration = 0.25
+	planet_army_build_speed_mult = 0.5
+	army_starting_experience_add = 250
+	pop_growth_speed = -0.05
+}
+
+planet_generation_of_peace = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds
+	trade_value_mult = 0.25
+	pop_growth_speed = 0.05
+	pop_growth_from_immigration = 0.05
+	planet_jobs_specialist_produces_mult = 0.1
+	planet_jobs_worker_produces_mult = 0.1
+}
+
+planet_grand_sports_games = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
+	trade_value_mult = 0.1
+	pop_growth_from_immigration = 0.5
+	planet_migration_all_mult = 1
+	planet_amenities_mult = 0.2
+	planet_jobs_worker_produces_mult = 0.25
+}
+
+planet_benevolant_gesture = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
+	planet_jobs_ruler_produces_mult = 0.5
+	planet_amenities_mult = 0.25
+	planet_crime_mult = -0.1
+	pop_happiness = 0.1
+}
+
+planet_rite_of_the_heavens = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_medieval_alien_civilization.dds
+	planet_jobs_unity_produces_mult = 0.2
+	spiritualist_attraction = 0.25
+	pop_happiness = 0.1
+	trade_value_mult = 0.1
+	pop_growth_from_immigration = 0.25
+}
+
+planet_competition_of_the_minds = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_medieval_alien_civilization.dds
+	planet_jobs_unity_produces_mult = 0.1
+	planet_researchers_upkeep_mult = -0.2
+	country_physics_research_produces_add = 25
+	country_society_research_produces_add = 25
+	country_engineering_research_produces_add = 25
+}
+
+##########################################################################
+# Edicts
+##########################################################################

@@ -40,3 +40,15 @@ country_event = {
 		set_country_flag = AP_construction_installed
 	}
 }
+##########################################################################
+# policy components
+##########################################################################
+namespace = AP_policy
+# 
+country_event = {
+	id = AP_policy.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+	}
+}

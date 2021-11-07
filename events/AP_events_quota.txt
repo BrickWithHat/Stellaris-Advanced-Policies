@@ -59,14 +59,14 @@ planet_event = {
 		}
 	}
 	## autocrate desc
-	# desc = {
-	# 	text = AP_PQ.1_autocrate_desc
-	# 	trigger = {
-	# 		owner = {
-	# 			is_authoritarian = yes
-	# 		}
-	# 	}
-	# }
+	desc = {
+		text = AP_PQ.1_autocrate_desc
+		trigger = {
+			owner = {
+				is_authoritarian = yes
+			}
+		}
+	}
 	# ## emergency desc
 	# desc = {
 	# 	text = AP_PQ.1_emergency_desc
@@ -89,7 +89,6 @@ planet_event = {
 	# 		}
 	# 	}
 	# }
-
 	## militarist at war option (complete)
 	option = {
 		name = AP_PQ.1_militarist_option
@@ -106,7 +105,6 @@ planet_event = {
 					}
 					is_at_war = yes
 				}
-
 			}
 		}
 		hidden_effect = {
@@ -121,26 +119,26 @@ planet_event = {
 			}
 		}
 	}
-	# ## Autocrate option
-	# option = {
-	# 	name = AP_PQ.1_autocrate_option
-	# 	trigger = {
-	# 		owner = {
-	# 			is_authoritarian = yes
-	# 		}
-	# 	}
-	# 	hidden_effect = {
-	# 		set_variable = {
-	# 			which = quota_autocracy
-	# 			value = 1
-	# 		}
-	# 		planet_event = {
-	# 			id = AP_PQ.300
-	# 			days = 30
-	# 			random = 20
-	# 		}
-	# 	}
-	# }
+	## Autocrate option
+	option = {
+		name = AP_PQ.1_autocrate_option
+		trigger = {
+			owner = {
+				is_authoritarian = yes
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = quota_autocracy
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.300
+				days = 30
+				random = 20
+			}
+		}
+	}
 	## remaining option 
 	option = {
 		name = AP_PQ.1_remainging_option
@@ -290,9 +288,8 @@ planet_event = {
 			}
 			clear_variable = quota_delay
 			clear_variable = quota_fail
-
 			clear_variable = quota_military
-			# clear_variable = quota_autocracy
+			clear_variable = quota_autocracy
 			clear_variable = quota_remaining
 			# clear_variable = quota_emergency
 			# clear_variable = quota_egalitarian
@@ -306,7 +303,7 @@ planet_event = {
 			}
 		}
 	}
-	## pre mature option
+	## abolish option
 	option = {
 		name = AP_PQ.2_abolish_1
 		trigger = {
@@ -326,9 +323,8 @@ planet_event = {
 			}
 			clear_variable = quota_delay
 			clear_variable = quota_abolish
-
 			clear_variable = quota_military
-			# clear_variable = quota_autocracy
+			clear_variable = quota_autocracy
 			clear_variable = quota_remaining
 			# clear_variable = quota_emergency
 			# clear_variable = quota_egalitarian
@@ -365,9 +361,8 @@ planet_event = {
 			}
 			clear_variable = quota_delay
 			clear_variable = quota_success
-
 			clear_variable = quota_military
-			# clear_variable = quota_autocracy
+			clear_variable = quota_autocracy
 			clear_variable = quota_remaining
 			# clear_variable = quota_emergency
 			# clear_variable = quota_egalitarian

@@ -60,6 +60,213 @@ AP_policy_panic = {
 ##########################################################################
 # Civic Accompany Policies
 ##########################################################################
+AP_cutthroat_politics = {
+	potential = {
+		has_valid_civic = civic_cutthroat_politics
+		is_ai = no
+	}
+	option = {
+		name = AP_cutthroat_politics_anti_corruption
+		modifier = {
+			empire_size_pops_mult = -0.1
+			leaders_upkeep_mult = -0.05
+		}
+	}
+	option = {
+		name = AP_cutthroat_politics_soft_power
+		modifier = {
+			country_election_influence_cost_mult = -0.25
+			species_leader_exp_gain = 0.1
+		}
+	}
+	option = {
+		name = AP_cutthroat_politics_promotion
+		modifier = {
+			leader_skill_levels = 1
+			planet_jobs_produces_mult = 0.05
+		}
+	}
+}
+
+AP_environmentalist = {
+	potential = {
+		has_valid_civic = civic_environmentalist
+		is_ai = no
+	}
+	option = {
+		name = AP_environmentalist_preserve
+		modifier = {
+			terraforming_cost_mult = -0.1
+			planet_building_build_speed_mult = -0.1
+			planet_buildings_upkeep_mult = -0.2
+		}
+	}
+	option = {
+		name = AP_environmentalist_symbyotic
+		modifier = {
+			pop_environment_tolerance = 0.1
+			planet_farmers_food_produces_add = 1
+		}
+	}
+	option = {
+		name = AP_environmentalist_resourse_shortage
+		modifier = {
+			planet_jobs_produces_mult = 0.05
+			planet_buildings_upkeep_mult = -0.1
+		}
+	}
+}
+
+AP_efficient_bureaucracy = {
+	potential = {
+		has_valid_civic = civic_efficient_bureaucracy
+		is_ai = no
+	}
+	option = {
+		name = AP_efficient_bureaucracy_local
+		modifier = {
+			leaders_upkeep_mult = -0.2
+			governor_skill_levels = 2
+		}
+	}
+	option = {
+		name = AP_efficient_bureaucracy_mentality
+		modifier = {
+			pop_growth_speed = 0.05
+			empire_size_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_efficient_bureaucracy_legal
+		modifier = {
+			job_enforcer_per_pop = 0.04
+			pop_cat_specialist_happiness = 0.05
+		}
+	}
+}
+
+AP_functional_architecture = {
+	potential = {
+		has_valid_civic = civic_functional_architecture
+		is_ai = no
+	}
+	option = {
+		name = AP_functional_architecture_resource_shortage
+		modifier = {
+			planet_jobs_minerals_upkeep_mult = -0.1
+			planet_building_build_speed_mult = -0.2
+		}
+	}
+	option = {
+		name = AP_functional_architecture_need
+		modifier = {
+			planet_housing_mult = 0.1
+			planet_amenities_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_functional_architecture_cheap
+		modifier = {
+			planet_building_build_speed_mult = 0.1
+			empire_size_districts_mult = -0.1
+			planet_buildings_upkeep_mult = 0.1
+		}
+	}
+}
+
+AP_mining_guild = {
+	potential = {
+		has_valid_civic = civic_mining_guilds
+		is_ai = no
+	}
+	option = {
+		name = AP_mining_guild_jewels
+		modifier = {
+			envoy_improve_relations_mult = 0.1
+			country_trust_growth = 0.05
+			trade_value_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_mining_guild_industry
+		modifier = {
+			planet_jobs_alloys_upkeep_mult = -0.2
+			planet_metallurgists_unity_produces_add = 1
+			planet_jobs_consumer_goods_upkeep_mult = -0.2
+			planet_artisans_unity_produces_add = 1
+		}
+	}
+	option = {
+		name = AP_mining_guild_construction
+		modifier = {
+			planet_buildings_cost_mult = -0.2
+			planet_buildings_upkeep_mult = -0.05
+			planet_districts_cost_mult = -0.2
+			planet_districts_upkeep_mult = -0.05
+		}
+	}
+}
+
+AP_aristocratic_elite = {
+	potential = {
+		has_valid_civic = civic_aristocratic_elite
+	}
+	option = {
+		name = AP_aristocratic_elite_loyalty
+		modifier = {
+			country_trust_growth = 0.1
+			country_trust_cap_add = 20
+			envoys_add = 1
+		}
+	}
+	option = {
+		name = AP_aristocratic_elite_birth
+		modifier = {
+			country_unity_produces_mult = 0.1
+			job_noble_per_pop = 0.025
+		}
+	}
+	option = {
+		name = AP_aristocratic_elite_inherited
+		modifier = {
+			species_leader_exp_gain = 0.2
+			leaders_cost_mult = -0.25
+			leaders_upkeep_mult = -0.1
+			leader_age = -20
+		}
+	}
+}
+
+AP_beacon_of_liberty = {
+	potential = {
+		has_valid_civic = civic_beacon_of_liberty
+	}
+	option = {
+		name = AP_beacon_of_liberty_honoured_actions
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.1
+			planet_jobs_ruler_produces_mult = 0.1
+			pop_cat_worker_happiness = 0.05
+		}
+	}
+	option = {
+		name = AP_beacon_of_liberty_genuinely_nice
+		modifier = {
+			envoy_improve_relations_mult = 0.25
+			diplo_weight_pops_mult = 0.1
+			diplo_weight_envoys_mult = 0.2
+			country_trade_attractiveness = 0.1
+		}
+	}
+	option = {
+		name = AP_beacon_of_liberty_equality
+		modifier = {
+			planet_migration_all_mult = 0.2
+			pop_government_ethic_attraction = 0.2
+		}
+	}
+}
+
 AP_citizen_service = {
 	potential = {
 		has_valid_civic = civic_citizen_service
@@ -85,6 +292,38 @@ AP_citizen_service = {
 			starbase_shipyard_build_cost_mult = -0.1
 			starbase_upgrade_cost_mult = -0.2
 			country_command_limit_add = 10
+		}
+	}
+}
+
+AP_coporate_dominion = {
+	potential = {
+		has_valid_civic = civic_corporate_dominion
+	}
+	option = {
+		name = AP_coporate_dominion_profit
+		modifier = {
+			trade_value_mult = 0.2
+			local_trade_protection_add = 10
+			country_trade_fee = -0.05
+		}
+	}
+	option = {
+		name = AP_coporate_dominion_influence
+		modifier = {
+			country_trade_attractiveness = 0.25
+			country_border_friction_mult = -0.1
+			country_subject_acceptance_add = 50
+		}
+	}
+	option = {
+		name = AP_coporate_dominion_dominating
+		modifier = {
+			max_rivalries = 1
+			country_insult_efficiency = 1
+			envoy_harm_relations_mult = 0.2
+			envoy_improve_relations_mult = 0.2
+			country_trade_attractiveness = 0.5
 		}
 	}
 }
@@ -180,6 +419,36 @@ AP_byzantine = {
 			pop_happiness = 0.05
 			pop_government_ethic_attraction = 0.1
 			pop_housing_usage_mult = 0.05
+		}
+	}
+}
+
+AP_idealistic_foundation = {
+	potential = {
+		has_valid_civic = civic_idealistic_foundation
+		is_ai = no
+	}
+	option = {
+		name = AP_idealistic_foundation_rural
+		modifier = {
+			planet_farmers_unity_produces_add = 0.1
+			planet_miners_unity_produces_add = 0.1
+			planet_technician_unity_produces_add = 0.1
+		}
+	}
+	option = {
+		name = AP_idealistic_foundation_urban
+		modifier = {
+			pop_housing_usage_mult = -0.1
+			pop_growth_from_immigration = 0.5
+		}
+	}
+	option = {
+		name = AP_idealistic_foundation_space
+		modifier = {
+			pop_environment_tolerance = 0.1
+			planet_migration_all_mult = 0.1
+			starbase_trade_protection_add = 5
 		}
 	}
 }

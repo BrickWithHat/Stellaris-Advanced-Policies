@@ -11,6 +11,7 @@ on_game_start_country = {
 
 on_policy_changed = {
 	events = {
+
 	}
 }
 

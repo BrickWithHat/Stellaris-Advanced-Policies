@@ -4,8 +4,10 @@ agenda_AP_admin_focus = {
 		modifier = {
 			factor = 1.5
 			OR = {
-				has_civic = civic_AP_advanced_administration
-				has_civic = civic_byzantine_bureaucracy
+				owner = {
+					has_civic = civic_AP_advanced_administration
+					has_civic = civic_byzantine_bureaucracy
+				}
 			}
 		}
 		modifier = {
@@ -42,7 +44,9 @@ agenda_AP_diplo_focus = {
 		}
 		modifier = {
 			factor = 1.5
-			has_civic = civic_diplomatic_corps
+			owner = {
+				has_civic = civic_diplomatic_corps
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -50,7 +54,9 @@ agenda_AP_diplo_focus = {
 		}
 		modifier = {
 			factor = 0
-			is_xenophobe = yes
+			owner = {
+				is_xenophobe = yes
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -58,7 +64,9 @@ agenda_AP_diplo_focus = {
 		}
 		modifier = {
 			factor = 0.5
-			is_militarist = yes
+			owner = {
+				is_militarist = yes
+			}
 		}
 	}
 	modifier = {
@@ -73,27 +81,39 @@ agenda_AP_equallity = {
 		weight = 100
 		modifier = {
 			factor = 2
-			has_civic = civic_shared_burden
+			owner = {
+				has_civic = civic_shared_burden
+			}
 		}
 		modifier = {
 			factor = 1.5
-			is_egalitarian = yes
+			owner = {
+				is_egalitarian = yes
+			}
 		}
 		modifier = {
 			factor = 0.5
-			is_xenophobe = yes
+			owner = {
+				is_xenophobe = yes
+			}
 		}
 		modifier = {
 			factor =  2
-			has_authority = auth_democratic
+			owner = {
+				has_authority = auth_democratic
+			}
 		}
 		modifier = {
 			factor = 0
-			is_authoritarian = yes
+			owner = {
+				is_authoritarian = yes
+			}
 		}
 		modifier = {
 			factor = 0
-			has_authority = auth_imperial
+			owner = {
+				has_authority = auth_imperial
+			}
 		}
 	}
 	modifier = {
@@ -108,19 +128,27 @@ agenda_AP_autocracy = {
 		weight = 100
 		modifier = {
 			factor = 0
-			is_egalitarian = yes
+			owner = {
+				is_egalitarian = yes
+			}
 		}
 		modifier = {
 			factor = 0
-			has_authority = auth_democratic
+			owner = {
+				has_authority = auth_democratic
+			}
 		}
 		modifier = {
 			factor = 2
-			has_authority = auth_dictatorial
+			owner = {
+				has_authority = auth_dictatorial
+			}
 		}
 		modifier = {
 			factor = 2
-			has_authority = auth_imperial
+			owner = {
+				has_authority = auth_imperial
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -139,15 +167,21 @@ agenda_AP_branch_office = {
 		weight = 100
 		modifier = {
 			factor = 0
-			is_megacorp = no
+			owner = {
+				is_megacorp = no
+			}
 		}
 		modifier = {
 			weight = 1.5
-			is_xenophile = yes
+			owner = {
+				is_xenophile = yes
+			}
 		}
 		modifier = {
 			weight = 0.5
-			is_xenophobe = yes
+			owner = {
+				is_xenophobe = yes
+			}
 		}
 		modifier = {
 			factor = 2
@@ -172,11 +206,15 @@ agenda_AP_hearts_minds = {
 		weight = 100
 		modifier = {
 			factor = 2
-			is_egalitarian = yes
+			owner = {
+				is_egalitarian = yes
+			}
 		}
 		modifier = {
 			factor = 2
-			is_egalitarian = yes
+			owner = {
+				is_egalitarian = yes
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -185,9 +223,11 @@ agenda_AP_hearts_minds = {
 		modifier = {
 			factor = 2
 			OR = {
-				has_civic = civic_exalted_priesthood
-				has_civic = civic_gospel_of_the_masses
-				has_civic = civic_philosopher_king
+				owner = {
+					has_civic = civic_exalted_priesthood
+					has_civic = civic_gospel_of_the_masses
+					has_civic = civic_philosopher_king
+				}
 			}
 		}
 	}
