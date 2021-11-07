@@ -1,0 +1,39 @@
+# an odd copy of the assualt army
+conscript_army = {
+	damage = 1.25
+	health = 0.90
+	morale = 1.10
+	morale_damage = 1.25
+	collateral_damage = 1.50
+	war_exhaustion = 1.10
+	time = 20
+	icon_frame = 5
+	has_species = yes
+	prerequisites = {
+		owner = {
+			is_country_type = default
+			is_gestalt = no
+		}
+	}
+	potential = {
+        OR = {
+            has_policy_flag = AP_conscription_mandetory
+			has_policy_flag = AP_conscription_war_time
+        }
+	}
+	resources = {
+		category = armies
+		cost = {
+			minerals = 50
+            food = 10
+		}
+		upkeep = {
+			food = 0.7
+			energy = 0.3
+		}
+	}
+}
+#        OR = {
+#           has_policy_flag = AP_conscription_mandetory
+#			has_policy_flag = AP_conscription_war_time
+#        }

@@ -1,0 +1,47 @@
+######################################################################
+# Genuine triggers
+######################################################################
+AP_has_encountered_crisis = {
+	custom_tooltip = AP_has_encountered_crisis
+	hidden_trigger = {
+		OR = {
+			has_global_flag = ai_invasion_happened
+			has_global_flag = extradimensional_invasion_happened
+			has_global_flag = prethoryn_invasion_happened
+		}
+		OR = {
+			any_relation = {
+				has_communications = root
+				is_country_type = gray_goo
+			}
+			any_relation = {
+				has_communications = root
+				is_country_type = awakened_fallen_empire
+			}
+			any_relation = {
+				has_communications = root
+				is_country_type = awakened_marauders
+			}
+		}
+	}
+}
+
+AP_has_superior_opponent = {
+	custom_tooltip = AP_has_superior_opponent
+	hidden_trigger = {
+		is_at_war = yes
+		OR = {
+			any_war = {
+				has_total_war_cb = yes
+				$aggresors_fleet$ > $defenders_fleet$
+			}
+		}
+		OR = {
+			fleet_power > 0
+		}
+	}
+}
+
+######################################################################
+# Tests with a side of minor implosion of my test games (sorry playtesters)
+######################################################################

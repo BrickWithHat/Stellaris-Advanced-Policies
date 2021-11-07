@@ -1,0 +1,116 @@
+# Government Requirements
+# -----------------------
+#
+# playable = { host_has_dlc = "Federations" }
+#
+# Government authorities and civics use a custom list syntax instead of normal
+# triggers in potential and possible to specify valid combinations:
+#
+#
+#	possible = {
+#       
+#		ethics = {
+#			# All of these are required:
+#			value = ethic_1
+#			value = ethic_2
+#
+#			# One of these is required:
+#			OR = {
+#				text = translation_key		# optional, overrides the auto-generated tooltip text
+#				value = ethic_3
+#				value = ethic_4
+#			}
+#
+#			# This one must not be present:
+#			NOT = {
+#				text = translation_key		# optional
+#				value = ethic_5
+#				# May contain only one value!
+#			}
+#
+#			# None of these must be present:
+#			NOR = {
+#				text = translation_key		# optional
+#				value = ethic_6
+#				value = ethic_7
+#			}
+#		}
+#
+#		country_type = { ... }
+#
+#		authority = { ... }
+#
+#		civics = { ... }
+#
+#       # Outer scope is implicitly AND, which means that the result from all specified ethics, country_type, authority or civics blocks must be true
+#       # However, it's also possible to add inner OR or AND blocks:
+#       OR = {
+#            # Only one of these need to be present:
+#           authority = { value = my_authority }
+#			civics = { value = my_civic }
+#       
+#           # OR/AND blocks can be nested. In this case, that means that if the AND block is fulfilled, the outer OR block will also be fulfilled,
+#           # since the OR block only requires one of its constituents to be fulfilled
+#           AND = {
+#               ethics = { value = ethic_1 }
+#               civics = { my_other_civic }
+#           }
+#       }
+#
+#		text = translation_key				# optional
+#	}
+#
+#
+# Authorities support:
+#   - country_type
+#   - ethics
+#
+# Civics support:
+#   - country_type
+#   - ethics
+#   - authority
+#   - civics
+#
+# Species classes support:
+#   - country_type
+#   - ethics
+#   - authority
+#   - civics
+#
+#-----------------------
+# Example civic
+#-----------------------
+#civic_example = {
+#	playable = {}								# AND trigger, no scope; use this to prevent the civic from being selectable by the player (UI)
+#	potential = {}								# requirements list, see ../readme_requirements.txt
+#	possible = {}								# requirements list, see ../readme_requirements.txt
+#	pickable_at_start = yes / no				# default: yes
+#	modification = yes / no						# default: yes, set to no to prevent adding or removing this after creation of the empire
+#
+#	random_weight = { base = 5 }				# scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
+#
+#	modifier = {}								# modifier added to the country if the civic is selected and valid
+#	can_build_ruler_ship = yes / no				# default: no
+#	traits = { trait = ... }					# default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
+#	has_secondary_species = {					# default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
+#		traits = { trait = ... }					# default: empty; trait set to enforce on the secondary species. They cannot be removed, but more can be added if points/picks permit
+#	}
+#	is_origin = yes / no 						# default: no, set to yes if civic should be treated as an Origin
+#
+#	swap_type = {								# triggered name/desc/custom desc based on species class, no scope
+#		name = ...
+#		description = ...						# the description is the effects tab not the flavour text you num-nuts.
+#		trigger = {
+#			local_human_species_class = ..
+#		}
+#	}
+#	ai_playable = {}							# Similar to "playable", for AI
+#}
+#custom_tooltip = {
+#	custom_tooltip =  my_localisation_key
+#	hidden_trigger = { <stuff_to_hide> }
+#    text = <always_displays>
+#    success_text = <displays green check and this text when trigger passes>
+#    fail_text = <displays red X and this text when trigger fails>
+#    <any amount of triggers>
+#}
