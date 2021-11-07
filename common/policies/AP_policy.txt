@@ -29,8 +29,7 @@ AP_policy_panic = {
 		name = "AP_condition_yellow"
 		valid = {
 			OR = {
-				has_policy_flag = AP_condition_green
-				is_gestalt = yes
+				is_country_type = default
 			}
 		}
 		policy_flags = {
@@ -42,6 +41,7 @@ AP_policy_panic = {
 		valid = {
 			OR = {
 				has_policy_flag = AP_condition_yellow
+				has_policy_flag = AP_condition_red
 				is_gestalt = yes
 			}
 		}
@@ -55,6 +55,7 @@ AP_policy_panic = {
 			OR = {
 				is_gestalt = yes
 				has_policy_flag = AP_condition_red
+				has_policy_flag = AP_condition_void
 				AP_has_encountered_crisis = yes
 			}
 		}
@@ -80,7 +81,7 @@ AP_war_stance = {
 		modifier = {
 			pop_happiness = 0.1
 			country_alloys_produces_mult = -0.2
-			planet_jobs_unity_produces_mult = 0.10
+			planet_jobs_unity_produces_mult = 0.1
 		}
 		policy_flags = {
 			AP_war_stance_passive
@@ -200,11 +201,13 @@ AP_conscription = {
 		}
 		valid = {
 			OR = {
-				has_policy_flag = AP_condition_yellow
-				has_policy_flag = AP_condition_red
-				has_policy_flag = AP_condition_void
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				is_pacifist = no
 			}
-			is_militarist = yes
 		}
 		modifier = {
 			country_consumer_goods_produces_mult = 0.025
@@ -212,17 +215,20 @@ AP_conscription = {
 		}
 	}
 	option = {
-		name = AP_conscription_mandetory
+		name = AP_conscription_mandatory
 		policy_flags = {
-			AP_conscription_mandetory
+			AP_conscription_mandatory
 		}
 		valid = {
 			OR = {
-				has_policy_flag = AP_condition_yellow
-				has_policy_flag = AP_condition_red
-				has_policy_flag = AP_condition_void
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				is_militarist = yes
+				is_unfriendly = yes
 			}
-			is_militarist = yes
 		}
 		modifier = {
 			country_starbase_capacity_add = 2
@@ -250,6 +256,8 @@ AP_education_privledge = {
 			is_unfriendly = no
 		}
 		modifier = {
+			pop_happiness = 0.1
+			planet_jobs_worker_produces_mult = 0.05
 		}
 	}
 	option = {
@@ -261,6 +269,8 @@ AP_education_privledge = {
 			is_egalitarian = no
 		}
 		modifier = {
+			pop_citizen_happiness = 0.05
+			planet_jobs_specialist_produces_mult = 0.05
 		}
 	}
 	option = {
@@ -273,6 +283,10 @@ AP_education_privledge = {
 			is_authoritarian = yes
 		}
 		modifier = {
+			pop_cat_ruler_happiness = 0.05
+			pop_cat_specialist_political_power = -0.05
+			pop_cat_worker_political_power = -0.1
+			pop_cat_slave_political_power = -0.1
 		}
 	}
 }
@@ -291,7 +305,6 @@ AP_education_stance = {
 			is_materialist = no
 		}
 		modifier = {
-			
 		}
 	}
 	option = {
@@ -326,6 +339,9 @@ AP_education_stance = {
 	}
 }
 
+##########################################################################
+# unemployment policy
+##########################################################################
 AP_unemployment = {
 	potential = {
 		is_country_type = default
@@ -362,7 +378,6 @@ AP_unemployment = {
 	option = {
 		name = AP_unemployment_shared_burden
 		valid = {
-			is_country_type = default
 		}
 		policy_flags = {
 			AP_unemployment_shared_burden
@@ -372,6 +387,46 @@ AP_unemployment = {
 			pop_government_ethic_attraction = 0.2
 			planet_resettlement_unemployed_mult = 1
 			pop_resettlement_cost_mult = -0.5
+		}
+	}
+}
+
+##########################################################################
+# Gestalt Policies
+#
+######
+AP_autonamy = {
+	potential = {
+		is_gestalt = yes
+	}
+	option = {
+		name = AP_autonamy_none
+		policy_flags = {
+			AP_autonamy_none
+		}
+		modifier = {
+		}
+	}
+	option = {
+		name = AP_autonamy_shackled
+		policy_flags = {
+			AP_autonamy_shackled
+		}
+		modifier = {
+			planet_crime_mult = 0.15
+			planet_jobs_produces_mult = 0.1
+			pop_amenities_usage_mult = -0.05
+		}
+	}
+	option = {
+		name = AP_autonamy_near_free
+		policy_flags = {
+			AP_autonamy_near_free
+		}
+		modifier = {
+			planet_crime_mult = 0.3
+			planet_jobs_produces_mult = 0.2
+			pop_amenities_usage_mult = -0.1
 		}
 	}
 }

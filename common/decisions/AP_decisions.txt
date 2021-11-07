@@ -12,24 +12,86 @@ AP_harsh_quota = {
 		}
 	}
 	potential = {
-		NOT = {
-			has_ethic = ethic_gestalt_consciousness
-		}
-		OR = {
-			is_at_war = yes
-			is_authoritarian = yes
-			is_militarist = yes
+		owner = {
+			is_regular_empire = yes
 		}
 	}
 	allow = {
-		NOT = {
-			has_modifier = planet_food_boost
+		OR = {
+			owner = {
+				is_at_war = yes
+				is_authoritarian = yes
+				has_policy_flag = AP_condition_yellow
+				has_policy_flag = AP_condition_red
+				has_policy_flag = AP_condition_void
+			}
+		}
+		NOR = {
+			has_modifier = planet_quota_set
 		}
 	}
 	effect = {
 		add_modifier = {
-			modifier = "planet_food_boost"
-			days = 3600
+			modifier = planet_quota_set
+			days = 1800
 		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+AP_conscription = {
+	owned_planets_only = yes
+	sound = event_air_raid_siren_02
+	icon = decision_victorious_army
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			is_regular_empire = yes
+		}
+	}
+	allow = {
+		OR = {
+			AND = {
+				owner = {
+					has_policy_flag = AP_conscription_war_time
+					is_at_war = yes
+				}
+			}
+			AND = {
+				owner = {
+					has_policy_flag = AP_conscription_mandatory
+				}
+			}
+		}
+		NOR = {
+			has_modifier = planet_conscription
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_conscription
+		}
+		planet_event = {
+			id = AP_PD.1
+		}
+		planet_event = {
+			id = AP_PD.2
+		}
+		planet_event = {
+			id = AP_PD.3
+		}
+		planet_event = {
+			id = AP_PD.4
+		}
+		planet_event = {
+			id = AP_PD.5
+		}
+	}
+	ai_weight = {
+		weight = 0
 	}
 }
