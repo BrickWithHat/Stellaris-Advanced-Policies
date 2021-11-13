@@ -190,9 +190,9 @@ AP_mining_guild = {
 	option = {
 		name = AP_mining_guild_industry
 		modifier = {
-			planet_jobs_alloys_upkeep_mult = -0.2
+			planet_metallurgists_upkeep_mult = -0.2
 			planet_metallurgists_unity_produces_add = 1
-			planet_jobs_consumer_goods_upkeep_mult = -0.2
+			planet_artisans_upkeep_mult = -0.2
 			planet_artisans_unity_produces_add = 1
 		}
 	}
@@ -207,9 +207,46 @@ AP_mining_guild = {
 	}
 }
 
+AP_agrarian_idyll = {
+	potential = {
+		has_valid_civic = civic_agrarian_idyll
+		is_ai = no
+	}
+	option = {
+		name = AP_agrarian_idyll_food
+		modifier = {
+			pop_happiness = 0.05
+			planet_farmers_unity_produces_add = 1
+		}
+	}
+	option = {
+		name = AP_agrarian_idyll_mineral
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.1
+			planet_miners_unity_produces_add = 1
+		}
+	}
+	option = {
+		name = AP_agrarian_idyll_energy
+		modifier = {
+			planet_technician_energy_produces_mult = 0.1
+			planet_technician_unity_produces_add = 1
+		}
+	}
+	option = {
+		name = AP_agrarian_idyll_industry
+		modifier = {
+			pop_happiness = -0.05
+			planet_metallurgists_alloys_produces_mult = 0.25
+			planet_artisans_consumer_goods_produces_mult = 0.25
+		}
+	}
+}
+
 AP_aristocratic_elite = {
 	potential = {
 		has_valid_civic = civic_aristocratic_elite
+		is_ai = no
 	}
 	option = {
 		name = AP_aristocratic_elite_loyalty
@@ -240,6 +277,7 @@ AP_aristocratic_elite = {
 AP_beacon_of_liberty = {
 	potential = {
 		has_valid_civic = civic_beacon_of_liberty
+		is_ai = no
 	}
 	option = {
 		name = AP_beacon_of_liberty_honoured_actions
@@ -299,6 +337,7 @@ AP_citizen_service = {
 AP_coporate_dominion = {
 	potential = {
 		has_valid_civic = civic_corporate_dominion
+		is_ai = no
 	}
 	option = {
 		name = AP_coporate_dominion_profit
@@ -324,6 +363,91 @@ AP_coporate_dominion = {
 			envoy_harm_relations_mult = 0.2
 			envoy_improve_relations_mult = 0.2
 			country_trade_attractiveness = 0.5
+		}
+	}
+}
+
+AP_corvee_system = {
+	potential = {
+		has_valid_civic = civic_corvee_system
+		is_ai = no
+	}
+	option = {
+		name = AP_corvee_system_labor
+		modifier = {
+			planet_jobs_upkeep_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_corvee_system_growth
+		modifier = {
+			pop_growth_speed = 0.1
+			pop_growth_from_immigration = 0.25
+		}
+	}
+	option = {
+		name = AP_corvee_system_political
+		modifier = {
+			pop_cat_worker_political_power = -0.25
+			pop_cat_slave_political_power = -0.1
+		}
+	}
+}
+
+AP_distinguished_admiralty = {
+	potential = {
+		has_valid_civic = civic_distinguished_admiralty
+		is_ai = no
+	}
+	option = {
+		name = AP_distinguished_admiralty_teaching
+		modifier = {
+			leader_skill_levels = 2
+			leader_skills_spawn = 1
+			leaders_upkeep_mult = -0.2
+		}
+	}
+	option = {
+		name = AP_distinguished_admiralty_cohesion
+		modifier = {
+			country_unity_produces_mult = 0.1
+			trade_value_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_distinguished_admiralty_expansion
+		modifier = {
+			country_war_exhaustion_mult = -0.1
+			shipclass_military_build_cost_mult = -0.05
+		}
+	}
+}
+
+AP_exalted_priest = {
+	potential = {
+		has_valid_civic = civic_exalted_priesthood
+		is_ai = no
+	}
+	option = {
+		name = AP_exalted_priest_heresy
+		modifier = {
+			planet_priests_influence_produces_add = 0.01
+			planet_amenities_add = 10
+		}
+	}
+	option = {
+		name = AP_exalted_priest_policing
+		modifier = {
+			country_unity_produces_add = 30
+			planet_stability_add = 5
+			planet_crime_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_exalted_priest_indocternation
+		modifier = {
+			pop_government_ethic_attraction = 0.2
+			country_unity_produces_mult = 0.1
 		}
 	}
 }
@@ -360,6 +484,224 @@ AP_feudal = {
 	}
 }
 
+AP_free_haven = {
+	potential = {
+		has_valid_civic = civic_free_haven
+		is_ai = no
+	}
+	option = {
+		name = AP_free_haven_equal
+		modifier = {
+			pop_demotion_time_mult = -0.1
+			pop_happiness = 0.05
+			planet_stability_add = 5
+			planet_crime_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_free_haven_care
+		modifier = {
+			pop_environment_tolerance = 0.05
+			planet_pops_upkeep_mult = -0.05
+		}
+	}
+	option = {
+		name = AP_free_haven_workers
+		modifier = {
+			planet_pops_organics_upkeep_mult = -0.2
+			planet_migration_all_mult = 0.5
+			planet_crime_mult = 0.05
+		}
+	}
+}
+
+AP_idealistic_foundation = {
+	potential = {
+		has_valid_civic = civic_idealistic_foundation
+		is_ai = no
+	}
+	option = {
+		name = AP_idealistic_foundation_rural
+		modifier = {
+			planet_farmers_unity_produces_add = 0.1
+			planet_miners_unity_produces_add = 0.1
+			planet_technician_unity_produces_add = 0.1
+		}
+	}
+	option = {
+		name = AP_idealistic_foundation_urban
+		modifier = {
+			pop_housing_usage_mult = -0.1
+			pop_growth_from_immigration = 0.5
+		}
+	}
+	option = {
+		name = AP_idealistic_foundation_space
+		modifier = {
+			pop_environment_tolerance = 0.1
+			planet_migration_all_mult = 0.1
+			starbase_trade_protection_add = 5
+		}
+	}
+}
+
+AP_imperial_cult = {
+	potential = {
+		has_valid_civic = civic_imperial_cult
+		is_ai = no
+	}
+	option = {
+		name = AP_imperial_cult_true_faith
+		modifier = {
+			planet_priests_produces_mult = 0.25
+			edicts_cost_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_imperial_cult_divine
+		modifier = {
+			job_high_priest_per_pop = 0.01
+			job_priest_per_pop = 0.025
+			planet_priests_consumer_goods_upkeep_add = -1
+		}
+	}
+	option = {
+		name = AP_imperial_cult_zealots
+		modifier = {
+			army_defense_morale_mult = 0.25
+			army_attack_morale_mult = 0.25
+			ship_fire_rate_mult = 0.05
+		}
+		policy_flags = {
+			AP_imperial_zealots
+		}
+	}
+}
+
+AP_meritocracy = {
+	potential = {
+		has_valid_civic = civic_meritocracy
+		is_ai = no
+	}
+	option = {
+		name = AP_meritocracy_leaders
+		modifier = {
+			leader_age = 15
+			leader_skill_levels = 2
+			country_leader_pool_size = 1
+		}
+	}
+	option = {
+		name = AP_meritocracy_population
+		modifier = {
+			species_leader_exp_gain = 0.1
+			planet_jobs_worker_produces_mult = 0.1
+			planet_pops_organics_upkeep_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_meritocracy_potential
+		modifier = {
+			leader_skill_levels = 5
+			species_leader_exp_gain = 0.5
+			country_leader_pool_size = -1
+			leaders_cost_mult = 1
+		}
+	}
+}
+
+AP_nationalistic_zeal = {
+	potential = {
+		has_valid_civic = civic_nationalistic_zeal
+		is_ai = no
+	}
+	option = {
+		name = AP_nationalistic_zeal_pride
+		modifier = {
+			starbase_upgrade_speed_mult = 0.1
+			starbase_upgrade_cost_mult = -0.2
+			starbase_modules_cost_mult = -0.2
+			country_ship_upgrade_cost_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_nationalistic_zeal_intrusion
+		modifier = {
+			ship_damage_against_starbases_mult = 0.25
+			ship_speed_mult = 0.1
+			ship_sensor_range_add = 1
+		}
+	}
+	option = {
+		name = AP_nationalistic_zeal_mass_drill
+		modifier = {
+			job_soldier_per_pop = 0.04
+			planet_soldiers_engineering_research_produces_add = 0.5
+			planet_soldiers_physics_research_produces_add = 0.5
+			planet_soldiers_consumer_goods_upkeep_add = 0.5
+		}
+	}
+}
+
+AP_parliamentary_system = {
+	potential = {
+		has_valid_civic = civic_parliamentary_system
+		is_ai = no
+	}
+	option = {
+		name = AP_parliamentary_system_all_voices
+		modifier = {
+			leader_age = 5
+			planet_jobs_produces_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_parliamentary_system_respected_talks
+		modifier = {
+			species_leader_exp_gain = 0.1
+			edicts_cost_mult = -0.2
+		}
+	}
+	option = {
+		name = AP_parliamentary_system_influence
+		modifier = {
+			country_election_influence_cost_mult = -0.25
+			leader_skill_levels = 1
+		}
+	}
+}
+
+AP_philosopher_king = {
+	potential = {
+		has_valid_civic = civic_philosopher_king
+		is_ai = no
+	}
+	option = {
+		name = AP_philosopher_king_cooperative
+		modifier = {
+			species_leader_exp_gain = 0.05
+			leader_skill_levels = 2
+			leaders_upkeep_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_philosopher_king_tyrant
+		modifier = {
+			country_influence_produces_mult = 0.1
+			leaders_upkeep_mult = -0.1
+			species_leader_exp_gain = -0.05
+		}
+	}
+	option = {
+		name = AP_philosopher_king_benevolant
+		modifier = {
+			pop_government_ethic_attraction = 0.25
+			leader_age = 10
+			leaders_cost_mult = 0.1
+		}
+	}
+}
+
 AP_police_state = {
 	potential = {
 		has_valid_civic = civic_police_state
@@ -387,6 +729,258 @@ AP_police_state = {
 			planet_crime_mult = -0.1
 			intel_decryption_add = 1
 			pop_growth_speed = -0.05
+		}
+	}
+}
+
+AP_shadow_council = {
+	potential = {
+		has_valid_civic = civic_shadow_council
+		is_ai = no
+	}
+	option = {
+		name = AP_shadow_council_agenda
+		modifier = {
+			planet_jobs_ruler_produces_mult = 0.25
+			pop_demotion_time_mult = -0.25
+			planet_buildings_cost_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_shadow_council_oppresors
+		modifier = {
+			planet_jobs_produces_mult = 0.05
+			country_energy_produces_mult = 0.1
+			country_minerals_produces_mult = 0.1
+			pop_happiness = -0.05
+		}
+	}
+	option = {
+		name = AP_shadow_council_guardians
+		modifier = {
+			ship_orbit_upkeep_mult = -0.1
+			armies_upkeep_mult = -0.25
+			ship_fire_rate_mult = 0.1
+		}
+	}
+}
+
+AP_slaver_guilds = {
+	potential = {
+		has_valid_civic = civic_slaver_guilds
+		is_ai = no
+	}
+	option = {
+		name = AP_slaver_guilds_fear_mongers
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.1
+			slave_market_cost_mult = -0.25
+			pop_category_slave_upkeep_mult = -0.1
+			pop_cat_slave_happiness = -0.05
+		}
+	}
+	option = {
+		name = AP_slaver_guilds_debt_collectors
+		modifier = {
+			pop_category_slave_energy_produces_add = 0.5
+			pop_cat_slave_happiness = 0.05
+			pop_cat_slave_political_power = 0.5
+		}
+	}
+	option = {
+		name = AP_slaver_guilds_lower_class
+		modifier = {
+			pop_ethic_authoritarian_attraction_mult = 0.25
+			planet_jobs_upkeep_mult = -0.25
+			planet_pops_upkeep_mult = -0.1
+		}
+	}
+}
+
+AP_technocracy ={
+	potential = {
+		has_valid_civic = civic_technocracy
+		is_ai = no
+	}
+	option = {
+		name = AP_technocracy_overal
+		modifier ={
+			num_tech_alternatives_add = 1
+			all_technology_research_speed = 0.1
+		}
+	}
+	option = {
+		name = AP_technocracy_physics
+		modifier ={
+			country_physics_research_produces_mult = 0.25
+			country_energy_produces_mult = 0.05
+			planet_sensor_range_add = 1
+			ship_sensor_range_add = 2
+		}
+	}
+	option = {
+		name = AP_technocracy_society
+		modifier ={
+			country_society_research_produces_mult = 0.25
+			country_unity_produces_mult = 0.15
+			planet_amenities_mult = 0.15
+		}
+	}
+	option = {
+		name = AP_technocracy_engineering
+		modifier ={
+			country_engineering_research_produces_mult = 0.25
+			planet_jobs_consumer_goods_produces_mult = 0.1
+			planet_jobs_alloys_produces_mult = 0.1
+			planet_districts_upkeep_mult = -0.1
+		}
+	}
+}
+
+AP_warrior_culture = {
+	potential = {
+		has_valid_civic = civic_warrior_culture
+		is_ai = no
+	}
+	option = {
+		name = AP_warrior_culture_honour
+		modifier = {
+			country_command_limit_add = 10
+			pop_happiness = 0.05
+			country_border_friction_mult = 0.25
+		}
+	}
+	option = {
+		name = AP_warrior_culture_duty
+		modifier = {
+			country_subject_acceptance_add = 25
+			country_alloys_produces_mult = 0.05
+			planet_stability_add = 5
+		}
+	}
+	option = {
+		name = AP_warrior_culture_redemption
+		modifier = {
+			ship_fire_rate_mult = 0.25
+			country_command_limit_add = 10
+			country_border_friction_mult = 0.5
+			pop_happiness = -0.1
+		}
+	}
+}
+
+AP_catalytic_processing = {
+	potential = {
+		has_valid_civic = civic_catalytic_processing
+		is_ai = no
+	}
+	option = {
+		name = AP_catalytic_processing_excess
+		modifier = {
+			planet_metallurgists_alloys_produces_mult = 0.5
+			planet_metallurgists_food_upkeep_mult = 0.25
+		}
+	}
+	option = {
+		name = AP_catalytic_processing_efficiency
+		modifier = {
+			country_alloys_produces_mult = 0.25
+			country_consumer_goods_produces_mult = 0.25
+			country_food_produces_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_catalytic_processing_inovation
+		modifier = {
+			category_biology_research_speed_mult = 0.2
+			country_society_research_produces_mult = 0.1
+			all_technology_research_speed = 0.05
+		}
+	}
+}
+
+AP_idyllic_bloom = {
+	potential = {
+		has_valid_civic = civic_idyllic_bloom
+		is_ai = no
+	}
+	option = {
+		name = AP_idyllic_bloom_nature_first
+		modifier = {
+			planet_pops_organics_upkeep_mult = -0.1
+			planet_districts_upkeep_mult = -0.1
+			planet_districts_cost_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_idyllic_bloom_cultural
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.25
+			planet_stability_add = 10
+		}
+	}
+	option = {
+		name = AP_idyllic_bloom_survival
+		modifier = {
+			terraform_speed_mult = 0.25
+			terraforming_cost_mult = -0.1
+			planet_building_build_speed_mult = -0.1
+		}
+	}
+}
+
+AP_master_crafters = {
+	potential = {
+		has_valid_civic = civic_crafters
+		is_ai = no
+	}
+	option = {
+		name = AP_master_crafters_quality
+		modifier = {
+			planet_artisans_unity_produces_add = 1
+			pop_happiness = 0.05
+		}
+	}
+	option = {
+		name = AP_master_crafters_quantity
+		modifier = {
+			planet_artisans_consumer_goods_produces_mult = 0.25
+			planet_artisans_upkeep_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_master_crafters_knowledge
+		modifier = {
+			country_engineering_tech_research_speed = 0.1
+			country_engineering_research_produces_mult = 0.05
+		}
+	}
+}
+
+AP_pleasure_seekers = {
+	potential = {
+		has_valid_civic = civic_pleasure_seekers
+		is_ai = no
+	}
+	option = {
+		name = AP_pleasure_seekers_entitled
+		modifier = {
+			pop_government_ethic_attraction = 0.25
+			pop_cat_slave_happiness = -0.1
+		}
+	}
+	option = {
+		name = AP_pleasure_seekers_reward
+		modifier = {
+			planet_jobs_produces_mult = 0.25
+			pop_happiness = -0.1
+		}
+	}
+	option = {
+		name = AP_pleasure_seekers_open_mind
+		modifier = {
+			planet_researchers_produces_mult = 0.25
+			planet_jobs_unity_produces_mult = 0.1
 		}
 	}
 }
@@ -423,32 +1017,31 @@ AP_byzantine = {
 	}
 }
 
-AP_idealistic_foundation = {
+AP_merchant_guilds = {
 	potential = {
-		has_valid_civic = civic_idealistic_foundation
+		has_valid_civic = civic_merchant_guilds
 		is_ai = no
 	}
 	option = {
-		name = AP_idealistic_foundation_rural
+		name = AP_merchant_guilds_public_enterprise
 		modifier = {
-			planet_farmers_unity_produces_add = 0.1
-			planet_miners_unity_produces_add = 0.1
-			planet_technician_unity_produces_add = 0.1
+			planet_sensor_range_add = 1
+			ship_speed_mult = 0.25
+			country_trade_fee = -0.05
 		}
 	}
 	option = {
-		name = AP_idealistic_foundation_urban
+		name = AP_merchant_guilds_naturals
 		modifier = {
-			pop_housing_usage_mult = -0.1
-			pop_growth_from_immigration = 0.5
+			country_trade_attractiveness = 1
+			trade_value_mult = 0.25
 		}
 	}
 	option = {
-		name = AP_idealistic_foundation_space
+		name = AP_merchant_guilds_greedy
 		modifier = {
-			pop_environment_tolerance = 0.1
-			planet_migration_all_mult = 0.1
-			starbase_trade_protection_add = 5
+			country_energy_produces_mult = 0.25
+			pop_happiness = -0.05
 		}
 	}
 }

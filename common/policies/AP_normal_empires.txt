@@ -15,7 +15,7 @@ AP_unemployment = {
 		modifier = {
 			pop_government_ethic_attraction = -0.1
 			planet_pops_upkeep_mult = -0.1
-			pop_political_power = -0.25
+			pop_political_power = -0.1
 		}
 	}
 	option = {
@@ -44,6 +44,7 @@ AP_unemployment = {
 			pop_government_ethic_attraction = 0.2
 			planet_resettlement_unemployed_mult = 1
 			pop_resettlement_cost_mult = -0.5
+			pop_political_power = 0.1
 		}
 	}
 }

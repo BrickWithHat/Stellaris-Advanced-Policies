@@ -1,4 +1,4 @@
-version="1.0.5"
+version="1.0.6"
 tags={
 	"Overhaul"
 	"Economy"
@@ -6,6 +6,7 @@ tags={
 	"Utilities"
 	"Military"
 	"Balance"
+	"Government"
 }
 name="Advanced Policies"
 picture="thumbnail.png"

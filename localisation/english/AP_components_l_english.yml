@@ -7,3 +7,6 @@
  conscript_army_plural:0 "Conscript Armies"
  conscript_army:0 "Conscript Army" 
  conscript_army_desc:0 "While not the most hardiest of folk, they atleast show a suprising willingness to fight as a unit."
+ religious_mob_plural:0 "Religious mobs"
+ religious_mob:0 "Religious mob"
+ religious_mob_desc:0 "An unruly mob of zealots being driven forward by a war-priest. While not very well trained there are a lot of them."

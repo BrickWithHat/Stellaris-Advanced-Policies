@@ -51,14 +51,26 @@
  country_mobile_construction_packed:0 "Country Construction Vehicle"
  country_mobile_construction_packed_desc:0 "The empire has chosen to move its main Construction Vehicle acorss it empire frequently. Granting a small boost to construction empire-wide. With the added benefit of the construction yard aiding in the increase in trade."
 
-# broken ass base game modifiers that i guess i should fix
- mod_planet_jobs_alloys_upkeep_mult:0 "£job_foundry£ [GetAlloyProducerPlural] Upkeep"
+# broken ass base game modifiers that i guess i should fix cause the auto generator seems to lack a local generator #FeelsBadMan
+ mod_planet_jobs_alloys_upkeep_mult:0 "£alloys£ $alloys$ $mod_planet_jobs_upkeep_mult$"
  mod_planet_metallurgists_unity_produces_add:0 "£unity£ $unity$ per £job_foundry£ [GetAlloyProducerPlural]"
- mod_planet_jobs_consumer_goods_upkeep_mult:0 "£job_artisan£ [GetArtisanPlural] Upkeep"
+ mod_planet_metallurgists_alloys_produces_mult:0 "£job_foundry£ [GetAlloyProducerPlural] multiplied by"
+ mod_planet_jobs_consumer_goods_upkeep_mult:0 "£consumer_goods£ $consumer_goods$ $mod_planet_jobs_upkeep_mult$"
+ mod_planet_metallurgists_upkeep_mult:0 "£job_foundry£ [GetAlloyProducerPlural] Upkeep"
+ mod_planet_metallurgists_food_upkeep_mult:0 "£job_foundry£ [GetAlloyProducerPlural] £food£ $food$ Upkeep"
+ mod_planet_artisans_upkeep_mult:0 "£job_artisan£ [GetArtisanPlural] Upkeep"
+ mod_planet_artisans_consumer_goods_produces_mult:0 "£job_artisan£ [GetArtisanPlural] multiplied by"
  mod_planet_artisans_unity_produces_add:0 "£unity£ $unity$ per £job_artisan£ [GetArtisanPlural]"
  mod_planet_miners_unity_produces_add:0 "£unity£ $unity$ per £job_miner£ [GetMinerPlural]"
  mod_planet_technician_unity_produces_add:0 "£unity£ $unity$ per £job_technician£ [GetTechnicianPlural]"
  mod_planet_jobs_minerals_upkeep_mult:0 "£minerals£ Mineral upkeep for Planet Jobs"
+ mod_planet_priests_influence_produces_add:0 "£influence£ $influence$ per [GetPriestIcon] [GetPriest]"
+ mod_planet_priests_consumer_goods_upkeep_add:0 "£consumer_goods£ $consumer_goods$ Upkeep reduction for [GetPriestIcon] [GetPriest]"
+ mod_planet_soldiers_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ per £job_soldier£ $job_soldier_plural$"
+ mod_planet_soldiers_physics_research_produces_add:0 "£physics_research£ $physics_research$ per £job_soldier£ $job_soldier_plural$"
+ mod_planet_soldiers_consumer_goods_upkeep_add:0 "£consumer_goods£ $consumer_goods$ upkeep per £job_soldier£ $job_soldier_plural$"
+ mod_pop_category_rulers_produces_mult:0 "£pop_cat_ruler£ $pop_cat_ruler$ Resource production multiplier"
+ mod_pop_category_slave_energy_produces_add:0 "£energy£ $energy$ per £pop_cat_slave£ $pop_cat_slave$"
 
 # Decision Modifiers
  planet_trail_by_fire:0 "Trail by fire"
