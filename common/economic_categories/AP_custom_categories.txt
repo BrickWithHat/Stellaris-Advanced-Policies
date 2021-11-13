@@ -1,0 +1,44 @@
+##########################################################################
+# Parents
+##########################################################################
+planet_pops = {
+    parent = planets
+}
+planet_jobs = {
+    parent = planets
+}
+##########################################################################
+# Jobs
+##########################################################################
+planet_priests = {
+    icon = "job_priest"
+    parent = planet_jobs
+    generate_add_modifiers = {
+		produces
+        upkeep
+	}
+}
+planet_soldiers = {
+    icon = "job_soldier"
+	parent = planet_jobs
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+}
+##########################################################################
+# Pop categories
+##########################################################################
+pop_category_rulers = {
+	parent = planet_pops
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+}
+pop_category_slave = {
+    parent = planet_pops
+    generate_add_modifiers = {
+        produces
+    }
+}

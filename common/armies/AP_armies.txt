@@ -1,11 +1,10 @@
-# an odd copy of the assualt army
 conscript_army = {
 	icon = gfx_army_type_conscript
 	damage = 1.25
-	health = 0.90
-	morale = 1.10
+	health = 0.9
+	morale = 1.1
 	morale_damage = 1.25
-	collateral_damage = 1.10
+	collateral_damage = 1.1
 	war_exhaustion = 1.2
 	time = 20
 	has_species = yes
@@ -16,7 +15,7 @@ conscript_army = {
 				has_policy_flag = AP_conscription_mandatory
 				has_policy_flag = AP_conscription_war_time
 			}
-			OR = {			
+			OR = {
 				has_policy_flag = AP_condition_red
 				has_policy_flag = AP_condition_void
 			}
@@ -26,11 +25,42 @@ conscript_army = {
 		category = armies
 		cost = {
 			minerals = 50
-            food = 10
+			food = 10
 		}
 		upkeep = {
 			food = 0.7
 			energy = 0.3
+		}
+	}
+}
+
+religious_mob = {
+	icon = gfx_army_type_conscript
+	damage = 0.75
+	health = 0.5
+	morale = 1.5
+	morale_damage = 0.5
+	collateral_damage = 2
+	war_exhaustion = 2
+	time = 10
+	has_species = yes
+	potential = {
+		owner = {
+			has_valid_civic = civic_imperial_cult
+		}
+	}
+	allow = {
+		owner = {
+			has_policy_flag = AP_imperial_zealots
+		}
+	}
+	resources = {
+		category = armies
+		cost = {
+			energy = 50
+		}
+		upkeep = {
+			energy = 1
 		}
 	}
 }
