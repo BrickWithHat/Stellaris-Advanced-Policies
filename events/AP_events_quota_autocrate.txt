@@ -908,6 +908,7 @@ planet_event = {
 ## the silent assigning of either success or failure based the amount of delay counter
 planet_event = {
 	id = AP_PQ.309
+	hide_window = yes
 	is_triggered_only = yes
 	location = from
 	trigger = {
