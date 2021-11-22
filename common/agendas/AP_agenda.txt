@@ -12,19 +12,19 @@ agenda_AP_admin_focus = {
 		}
 		modifier = {
 			factor = 2
-			leader_class = "governor"
+			leader_class = governor
 		}
 		modifier = {
 			factor = 0.5
-			leader_class = "envoy"
+			leader_class = envoy
 		}
 		modifier = {
 			factor = 0
-			leader_class = "general"
+			leader_class = general
 		}
 		modifier = {
 			factor = 0
-			leader_class = "admiral"
+			leader_class = admiral
 		}
 	}
 	modifier = {
@@ -37,7 +37,7 @@ agenda_AP_diplo_focus = {
 	weight_modifier = {
 		weight = 100
 		modifier = {
-			factor = 1
+			factor = 1.2
 			from = {
 				is_xenophile = yes
 			}
@@ -57,10 +57,6 @@ agenda_AP_diplo_focus = {
 			owner = {
 				is_xenophobe = yes
 			}
-		}
-		modifier = {
-			factor = 1.5
-			pop_faction = { is_pop_faction_type = xenoist }
 		}
 		modifier = {
 			factor = 0.5
@@ -185,7 +181,7 @@ agenda_AP_branch_office = {
 		}
 		modifier = {
 			factor = 2
-			leader_class = "envoy"
+			leader_class = envoy
 		}
 		modifier = {
 			factor = 1.5
@@ -208,6 +204,16 @@ agenda_AP_hearts_minds = {
 			factor = 2
 			owner = {
 				is_egalitarian = yes
+			}
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				OR = {
+					has_civic = civic_barbaric_despoilers
+					has_civic = civic_warrior_culture
+					has_civic = civic_criminal_heritage
+				}
 			}
 		}
 		modifier = {

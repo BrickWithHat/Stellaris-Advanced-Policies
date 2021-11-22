@@ -1,5 +1,6 @@
 namespace = AP_PQ
 planet_event = {
 	id = AP_PQ.600
+	hide_window = yes
 	is_triggered_only = yes
 }
