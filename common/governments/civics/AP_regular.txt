@@ -74,8 +74,8 @@ civic_AP_war_complex = {
 	}
 }
 
-civiv_AP_grand_architecture = {
-	description = "civiv_AP_grand_architecture_effects"
+civic_AP_grand_architecture = {
+	description = "civic_AP_grand_architecture_effects"
 	potential = {
 		ethics = {
 			NOT = {
@@ -122,17 +122,47 @@ civic_AP_mobile_construction = {
 				value = origin_shattered_ring
 				value = origin_life_seeded
 				value = origin_scion
-				value = origin_clone_army
+				value = origin_ocean_paradise
 			}
 		}
 		civics = {
 			NOR = {
 				value = civic_agrarian_idyll
-				value = civiv_AP_grand_architecture
+				value = civic_AP_grand_architecture
 				value = civic_crafters
 				value = civic_functional_architecture
+				value = civic_anglers
 			}
 		}
 	}
 	modification = no
+}
+
+civic_AP_ancient_remnants = {
+	description = "civic_AP_ancient_remnants_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+	}
+	possible = {
+		origin = {
+			NOT = {
+				value = origin_default
+				value = origin_mechanists
+				value = origin_scion
+			}
+		}
+	}
+	modifier = {
+		all_technology_research_speed = 0.75
+		num_tech_alternatives_add = -2
+	}
 }

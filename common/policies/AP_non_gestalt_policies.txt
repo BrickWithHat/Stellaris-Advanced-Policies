@@ -1,0 +1,595 @@
+##########################################################################
+# Social policies
+##########################################################################
+AP_unemployment = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_unemployment_no_aid
+		valid = {
+			is_egalitarian = no
+		}
+		policy_flags = {
+			AP_unemployment_no_aid
+		}
+		modifier = {
+			pop_government_ethic_attraction = -0.1
+			planet_pops_upkeep_mult = -0.1
+			pop_political_power = -0.1
+		}
+	}
+	option = {
+		name = AP_unemployment_aid
+		valid = {
+		}
+		policy_flags = {
+			AP_unemployment_aid
+		}
+		modifier = {
+			planet_pops_upkeep_mult = 0.05
+			pop_government_ethic_attraction = 0.05
+			planet_resettlement_unemployed_mult = 0.5
+			pop_resettlement_cost_mult = -0.25
+		}
+	}
+	option = {
+		name = AP_unemployment_shared_burden
+		valid = {
+		}
+		policy_flags = {
+			AP_unemployment_shared_burden
+		}
+		modifier = {
+			planet_pops_upkeep_mult = 0.1
+			pop_government_ethic_attraction = 0.2
+			planet_resettlement_unemployed_mult = 1
+			pop_resettlement_cost_mult = -0.5
+			pop_political_power = 0.1
+		}
+	}
+}
+
+AP_religion = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_religion_banned
+		valid = {
+			is_spiritualist = no
+		}
+		policy_flags = {
+			AP_religion_banned
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.1
+			planet_researchers_produces_mult = 0.1
+			country_influence_produces_add = 0.5
+		}
+	}
+	option = {
+		name = AP_religion_tolerated
+		valid = {
+			NOT = {
+				has_valid_civic = civic_imperial_cult
+				has_valid_civic = civic_exalted_priesthood
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult
+				has_valid_civic = civic_death_cult_corporate
+			}
+		}
+		policy_flags = {
+			AP_religion_tolerated
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.05
+			planet_researchers_produces_mult = 0.05
+			country_influence_produces_add = 0.25
+		}
+	}
+	option = {
+		name = AP_religion_endorsed
+		valid = {
+			NOT = {
+				has_valid_civic = civic_imperial_cult
+				has_valid_civic = civic_exalted_priesthood
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult
+				has_valid_civic = civic_death_cult_corporate
+			}
+		}
+		policy_flags = {
+			AP_religion_endorsed
+		}
+		modifier = {
+			spiritualist_attraction = 0.05
+			country_unity_produces_mult = 0.05
+			country_influence_produces_add = 0.25
+		}
+	}
+	option = {
+		name = AP_religion_enforced
+		valid = {
+			is_spiritualist = yes
+		}
+		policy_flags = {
+			AP_religion_enforced
+		}
+		modifier = {
+			spiritualist_attraction = 0.1
+			country_unity_produces_mult = 0.1
+			country_influence_produces_add = 0.5
+		}
+	}
+}
+
+##########################################################################
+# education policies
+##########################################################################
+AP_education_privledge = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = "AP_education_privledge_all"
+		policy_flags = {
+			AP_education_privledge_all
+		}
+		valid = {
+			is_xenophobe = no
+			is_unfriendly = no
+		}
+		modifier = {
+			pop_happiness = 0.05
+			planet_jobs_worker_produces_mult = 0.05
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_policy = {
+					policy = AP_education_stance_merged
+					option = AP_education_stance_merged_token_all
+					cooldown = no
+				}
+			}
+		}
+	}
+	option = {
+		name = "AP_education_privledge_citizen"
+		policy_flags = {
+			AP_education_privledge_citizen
+		}
+		valid = {
+		}
+		modifier = {
+			pop_citizen_happiness = 0.05
+			planet_jobs_specialist_produces_mult = 0.05
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_policy = {
+					policy = AP_education_stance_merged
+					option = AP_education_stance_merged_token_citizen
+					cooldown = no
+				}
+			}
+		}
+	}
+	option = {
+		name = "AP_education_privledge_elite"
+		policy_flags = {
+			AP_education_privledge_elite
+		}
+		valid = {
+			is_egalitarian = no
+			is_authoritarian = yes
+		}
+		modifier = {
+			pop_cat_ruler_happiness = 0.05
+			pop_cat_specialist_political_power = -0.05
+			pop_cat_worker_political_power = -0.1
+			pop_cat_slave_political_power = -0.1
+		}
+		on_enabled = {
+			hidden_effect = {
+				set_policy = {
+					policy = AP_education_stance_merged
+					option = AP_education_stance_merged_token_elite
+					cooldown = no
+				}
+			}
+		}
+	}
+}
+
+AP_education_stance_merged = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	##########################################################################
+	# All Segment
+	##########################################################################
+	option = {
+		name = AP_education_stance_merged_token_all
+		potential = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.2
+			pop_cat_worker_political_power = 0.1
+			planet_crime_mult = 0.2
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_basic_all
+		potential = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_worker_produces_mult = 0.1
+			pop_cat_worker_political_power = 0.05
+			planet_crime_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_encouraged_all
+		potential = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.1
+			planet_amenities_mult = -0.1
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_vital_all
+		potential = {
+			has_policy_flag = AP_education_privledge_all
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.2
+			planet_amenities_mult = -0.2
+		}
+	}
+	##########################################################################
+	# Citizen Segment
+	##########################################################################
+	option = {
+		name = AP_education_stance_merged_token_citizen
+		potential = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.2
+			planet_jobs_worker_produces_mult = 0.1
+			planet_crime_mult = 0.2
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_basic_citizen
+		potential = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.1
+			planet_jobs_worker_produces_mult = 0.05
+			planet_crime_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_encouraged_citizen
+		potential = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.05
+			planet_jobs_ruler_produces_mult = 0.05
+			pop_cat_specialist_happiness = 0.05
+			pop_cat_ruler_happiness = 0.05
+			planet_amenities_mult = -0.15
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_vital_citizen
+		potential = {
+			has_policy_flag = AP_education_privledge_citizen
+		}
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.1
+			planet_jobs_ruler_produces_mult = 0.1
+			pop_cat_specialist_happiness = 0.1
+			pop_cat_ruler_happiness = 0.1
+			planet_amenities_mult = -0.3
+		}
+	}
+	##########################################################################
+	# Elite Segment
+	##########################################################################
+	option = {
+		name = AP_education_stance_merged_token_elite
+		potential = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			pop_cat_slave_political_power = -0.2
+			pop_cat_worker_political_power = -0.2
+			pop_cat_specialist_political_power = -0.1
+			species_leader_exp_gain = -0.1
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_basic_elite
+		potential = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			pop_cat_slave_political_power = -0.1
+			pop_cat_worker_political_power = -0.1
+			pop_cat_specialist_political_power = -0.05
+			species_leader_exp_gain = -0.05
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_encouraged_elite
+		potential = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			leader_skill_levels = 2
+			pop_cat_ruler_happiness = 0.05
+			leaders_upkeep_mult = 0.1
+		}
+	}
+	option = {
+		name = AP_education_stance_merged_vital_elite
+		potential = {
+			has_policy_flag = AP_education_privledge_elite
+		}
+		modifier = {
+			leader_skill_levels = 4
+			pop_cat_ruler_happiness = 0.1
+			leaders_upkeep_mult = 0.2
+		}
+	}
+}
+
+##########################################################################
+# War policies
+##########################################################################
+AP_war_stance = {
+	potential = {
+		is_country_type = default
+		is_ai = no
+	}
+	option = {
+		name = "AP_war_stance_passive"
+		valid = {
+			is_militarist = no
+			is_unfriendly = no
+		}
+		modifier = {
+			tradition_cost_empire_size_mult = -0.1
+			country_consumer_goods_produces_mult = 0.2
+			country_unity_produces_mult = 0.1
+			country_alloys_produces_mult = -0.2
+		}
+		policy_flags = {
+			AP_war_stance_passive
+		}
+	}
+	option = {
+		name = "AP_war_stance_light"
+		valid = {
+			is_militarist = no
+			is_unfriendly = no
+		}
+		modifier = {
+			tradition_cost_empire_size_mult = -0.05
+			planet_stability_add = 5
+			country_alloys_produces_mult = -0.05
+		}
+		policy_flags = {
+			AP_war_stance_light
+		}
+	}
+	option = {
+		name = "AP_war_stance_pre_emptive"
+		valid = {
+			OR = {
+				has_policy_flag = first_contact_attack_allowed
+				is_at_war = yes
+				is_militarist = yes
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+			}
+		}
+		modifier = {
+			starbase_shipyard_build_speed_mult = 0.05
+			country_alloys_produces_mult = 0.05
+			ships_upkeep_mult = -0.05
+		}
+		policy_flags = {
+			AP_war_stance_pre_emptive
+		}
+	}
+	option = {
+		name = "AP_war_stance_aggresive"
+		valid = {
+			OR = {
+				is_militarist = yes
+				OR = {
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				OR = {
+					is_at_war = yes
+					is_unfriendly = yes
+				}
+			}
+		}
+		modifier = {
+			country_alloys_produces_mult = 0.1
+			country_minerals_produces_mult = 0.05
+			ships_upkeep_mult = -0.1
+			starbase_shipyard_build_speed_mult = 0.1
+			country_naval_cap_mult = 0.05
+			country_consumer_goods_produces_mult = -0.1
+		}
+		policy_flags = {
+			AP_war_stance_aggresive
+		}
+	}
+	option = {
+		name = "AP_war_stance_emergency"
+		valid = {
+			has_policy_flag = AP_condition_void
+			OR = {
+				AP_has_encountered_crisis = yes
+				is_at_war = yes
+			}
+		}
+		modifier = {
+			country_alloys_produces_mult = 0.5
+			country_minerals_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+			pop_demotion_time_mult = -0.25
+			starbase_shipyard_build_speed_mult = 0.25
+			ships_upkeep_mult = -0.2
+			country_naval_cap_mult = 0.1
+			pop_amenities_usage_mult = 0.1
+			country_consumer_goods_produces_mult = -0.1
+		}
+		policy_flags = {
+			AP_war_stance_emergency
+		}
+	}
+}
+
+AP_conscription = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+		is_ai = no
+	}
+	option = {
+		name = AP_conscription_illegal
+		policy_flags = {
+			AP_conscription_illegal
+		}
+		valid = {
+			is_militarist = no
+			is_unfriendly = no
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.05
+			planet_stability_add = 5
+		}
+	}
+	option = {
+		name = AP_conscription_war_time
+		policy_flags = {
+			AP_conscription_war_time
+		}
+		valid = {
+			OR = {
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				is_pacifist = no
+			}
+		}
+		modifier = {
+			country_consumer_goods_produces_mult = 0.05
+			country_alloys_produces_mult = 0.05
+		}
+	}
+	option = {
+		name = AP_conscription_mandatory
+		policy_flags = {
+			AP_conscription_mandatory
+		}
+		valid = {
+			OR = {
+				OR = {
+					has_policy_flag = AP_condition_yellow
+					has_policy_flag = AP_condition_red
+					has_policy_flag = AP_condition_void
+				}
+				is_militarist = yes
+				is_unfriendly = yes
+			}
+		}
+		modifier = {
+			pop_ethic_militarist_attraction_mult = 0.1
+			country_starbase_capacity_add = 2
+			country_naval_cap_mult = 0.05
+		}
+	}
+}
+
+AP_weapons_law = {
+	potential = {
+		is_ai = no
+		is_gestalt = no
+		is_country_type = default
+	}
+	option = {
+		name = AP_weapons_law_government_only
+		valid = {
+			is_militarist = no
+		}
+		modifier = {
+			starbase_trade_protection_range_add = 2
+			planet_crime_mult = -0.2
+			planet_amenities_mult = 0.05
+			leader_age = 10
+		}
+	}
+	option = {
+		name = AP_weapons_law_permit
+		modifier = {
+			starbase_trade_protection_range_add = 1
+			planet_crime_mult = -0.05
+			ship_starting_experience_add = 50
+			army_starting_experience_add = 50
+			army_experience_gain_mult = 0.5
+			ship_experience_gain_mult = 0.5
+		}
+	}
+	option = {
+		name = AP_weapons_law_permit_easy
+		modifier = {
+			ship_starting_experience_add = 100
+			army_starting_experience_add = 100
+			general_skill_levels = 2
+			admiral_skill_levels = 2
+		}
+	}
+	option = {
+		name = AP_weapons_law_free
+		valid = {
+			is_pacifist = no
+		}
+		modifier = {
+			ship_starting_experience_add = 250
+			army_starting_experience_add = 250
+			army_damage_mult = 0.1
+			army_defense_damage_mult = 0.1
+			leader_skill_levels = 1
+			leader_age = -10
+		}
+	}
+}

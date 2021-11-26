@@ -1,5 +1,7 @@
 ﻿l_english:
-# Civic Accompany Policies
+##########################################################################
+# Normal Empire Civic Accompany Policies
+##########################################################################
  policy_AP_cutthroat_politics:0 "Interal Politics"
  policy_AP_cutthroat_politics_desc:0 "We may have a society that is renowned for its intrigue, but that does not mean we do it for fun. We have our reasons..."
  AP_cutthroat_politics_anti_corruption:0 "Fear of corruption"
@@ -156,6 +158,15 @@
  AP_imperial_cult_zealots_desc:0 "Our borders are infested with vile heretics, This should and can not stand. We must take action! §YGrants access to the §!§R'Religous Mob'§!§Y army for recruitment.§!"
  AP_imperial_zealots_name:0 "$AP_imperial_cult_zealots$"
 
+ policy_AP_inwards_perfection:0 "Inwards Focus"
+ policy_AP_inwards_perfection_desc:0 "We prefer spending our time looking inwards. But what is it we are looking for?"
+ AP_inwards_perfection_silence:0 "True Silence"
+ AP_inwards_perfection_silence_desc:0 "To accept the silence is to know peace."
+ AP_inwards_perfection_learning:0 "Inner Understanding"
+ AP_inwards_perfection_learning_desc:0 "Learning form the past to be prepared for the future."
+ AP_inwards_perfection_joy:0 "Eternal Happiness"
+ AP_inwards_perfection_joy_desc:0 "Happiness of mind is happiness in body."
+
  policy_AP_meritocracy:0 "Merrit for Promotion"
  policy_AP_meritocracy_desc:0 "Our empire has always excelled in finding individuals who are at bare minimum beyond capable for there roles. Let us continue that role and expand upon it."
  AP_meritocracy_leaders:0 "The next Generation"
@@ -257,6 +268,15 @@
  AP_idyllic_bloom_survival:0 "Surival Orianted"
  AP_idyllic_bloom_survival_desc:0 "Our goal is signular to survive preferably by the means already layed bare infront of us."
 
+ policy_AP_fanatic_purifiers:0 "Purification Policy"
+ policy_AP_fanatic_purifiers_desc:0 ""
+ AP_fanatic_purifiers_explore:0 "Discover the Impurity"
+ AP_fanatic_purifiers_explore_desc:0 "Go forth and claim us new lands."
+ AP_fanatic_purifiers_build:0 "Prepare for the Kill"
+ AP_fanatic_purifiers_build_desc:0 "We must be armed to deal with the interlopers. There existance shall not be suffered for long."
+ AP_fanatic_purifiers_kill:0 "Eradicate the Impure"
+ AP_fanatic_purifiers_kill_desc:0 "KILL, KILL, KILL, MAIM, MAIM, MURDER!"
+
  policy_AP_master_crafters:0 "Artificers Guild"
  policy_AP_master_crafters_desc:0 "The Guild of Artificers might be its own entity but it can certainly be influenced from our government. This influence can be expressed in many ways to benefit our empire as a whole."
  AP_master_crafters_quality:0 "Quality over all"
@@ -275,6 +295,24 @@
  AP_pleasure_seekers_open_mind:0 "Mind widening"
  AP_pleasure_seekers_open_mind_desc:0 "It is a vital means of keeping our mental state as wide and alert as possible. Without it we sadly begin to gather what most would consider tunnel vision."
 
+ policy_AP_pompous_purists:0 "Diplomatic Purity Policy"
+ policy_AP_pompous_purists_desc:0 "We are simply superior to these savages around us."
+ AP_pompous_purists_pompous:0 "Status Quo"
+ AP_pompous_purists_pompous_desc:0 "We live, We work, We move forward. Let us not be bothered by those meddlesome savages."
+ AP_pompous_purists_superior_in_all:0 "Fact of Superiority"
+ AP_pompous_purists_superior_in_all_desc:0 "Well if we are going to interact with the lesser species might as well make clear who is the better of the lot."
+ AP_pompous_purists_schedule:0 "Scheduled Diplomacy"
+ AP_pompous_purists_schedule_desc:0 "We should plan our interactions ahead of time, This allows us to prepare for the lesser races and prove our superiority right there on the spot."
+
+ policy_AP_barbaric_despoilers:0 "Code of Barberism"
+ policy_AP_barbaric_despoilers_desc:0 "We may hold few things sacred as an empire. Killing, slavery, extortian and more. But one rule is set, you listen to your leader or get killed."
+ AP_barbaric_despoilers_raid:0 "Focus: Raid"
+ AP_barbaric_despoilers_raid_desc:0 "We must take what is rightfully ours!"
+ AP_barbaric_despoilers_settle:0 "Focus: Settle"
+ AP_barbaric_despoilers_settle_desc:0 "Even raiders need a staging grond, be it a station to repair and relax at or to re-arm. We need to increase our infrastructe to enable our raiders to do what they do best."
+ AP_barbaric_despoilers_exploit:0 "Focus: Exploit"
+ AP_barbaric_despoilers_exploit_desc:0 "Our holds are full, now to use them to our ends. The spoils are sweet and our profit even sweeter!"
+
  policy_AP_byzantine:0 "Byzantine Bureaucracy"
  policy_AP_byzantine_desc:0 "The reason our Bureaucracy is so Byzantian in nature, function and form."
  AP_byzantine_legislate:0 "Legislation"
@@ -292,3 +330,124 @@
  AP_merchant_guilds_naturals_desc:0 "Compared to the other races the art of a good deal seems to come naterul to us. Making it all seem trivial."
  AP_merchant_guilds_greedy:0 "Consuming Greed"
  AP_merchant_guilds_greedy_desc:0 "Credits, The liveblood of our empire. The credits must flow."
+
+ policy_AP_shared_burden:0 "Distribution of Resources"
+ policy_AP_shared_burden_desc:0 ""
+ AP_shared_burden_knowledge:0 "Focus: Knowledge"
+ AP_shared_burden_knowledge_desc:0 "Our aim is to grasp into the stars, yet our understanding of it is based entirely on our experiences. Let us make new experiences to light the way."
+ AP_shared_burden_hard_times:0 "Focus: Survival"
+ AP_shared_burden_hard_times_desc:0 "Recently we have hit a bump in our plans, we must be ready to hold our empire together."
+ AP_shared_burden_progress:0 "Focus: Progress"
+ AP_shared_burden_progress_desc:0 "True progress comes in steps, only one step at a time can we move forward with our plans."
+ AP_shared_burden_utopia:0 "Focus: Aim for Utopia"
+ AP_shared_burden_utopia_desc:0 "We must aim for true Utopia, no death, no disease. Our place among the stars is secure and steady and all will be granted equal."
+
+ policy_AP_diplomatic_corps:0 "Diplomatic Corps Policy"
+ policy_AP_diplomatic_corps_desc:0 ""
+ AP_diplomatic_corps_discussion:0 "The middle road"
+ AP_diplomatic_corps_discussion_desc:0 "In most cases we cannot gather what we truely want. Yet even so we always comprimise to make both parties equally happy or more common equally unhappy."
+ AP_diplomatic_corps_experiences:0 "Experience in debate"
+ AP_diplomatic_corps_experiences_desc:0 "To gather knowledge form merely one source is folly, we must widen our views to see the full spectrum of what the universe has to offer for us to grow."
+ AP_diplomatic_corps_infiltration:0 "Trust-based Inflitration"
+ AP_diplomatic_corps_infiltration_desc:0 "Keep your friends close, but your enemies closer. There is a very good reason this saying crosses between species across the galaxy."
+
+ policy_AP_memorialists:0 "Catalog of Repose"
+ policy_AP_memorialists_desc:0 "Our Repose buildings hold vast data core's as they study the past, but how we use that knowledge is based entirely on our demands."
+ AP_memorialists_the_past:0 "Knowledge of the past"
+ AP_memorialists_the_past_desc:0 "The knowledge of those that came before is vastly superior to ours. We shoudl gather what we can and learn as much as we can. This foresight will benefit us greatly the longer we progress with it."
+ AP_memorialists_the_present:0 "Prepare for the Present"
+ AP_memorialists_the_present_desc:0 "To be ready is to know what is coming, The cycle of death and rebith will continue with or without us. Better be prepared the risk anniliation."
+ AP_memorialists_the_future:0 "Prediction of the Future"
+ AP_memorialists_the_future_desc:0 "We have gained enough knowledge to prepare for future events, some easier to predict then others. But any and all mayor problems can be identified before they even arrise."
+
+ policy_AP_reanimators:0 "Necromancy Focus"
+ policy_AP_reanimators_desc:0 "Our focus on necromancy is a cornerstone of our society, yet it appears as if we are one of the few who posses this knowledge. How should we proceed with using our edge in this galaxy?"
+ AP_reanimators_inner_focus:0 "Inwards Focus"
+ AP_reanimators_inner_focus_desc:0 "To focus our crafts inwards is to hone our skills in all matters Necrotic."
+ AP_reanimators_outer_focus:0 "Outward Focus"
+ AP_reanimators_outer_focus_desc:0 "To focus our necrotic might outwards is to show true dominace of our abilities."
+
+ policy_AP_death_cult:0 "Cult of Death"
+ policy_AP_death_cult_desc:0 "Death is part of all things, Even the mightiest being will die given the right time or conditions. To that end how do we focus our worship on our pantheon of death?"
+ AP_death_cult_rebirth:0 "Greater Rebirth"
+ AP_death_cult_rebirth_desc:0 "We might die but we will always rise a-new with greater abilities then before. Making every life a stepping stone towards a stronger species."
+ AP_death_cult_true_death:0 "Only Death"
+ AP_death_cult_true_death_desc:0 "Death is the only constant, it must be enforced where the order is at risk. That is our duty."
+
+ policy_AP_anglers:0 "Ocean Harvest Policy"
+ policy_AP_anglers_desc:0 "Our vast oceans are our homes, we live, we die and build all in the oceans. It is our duty to guard it and uphold its continued survival. We protect the ocean provides plenty of raw resources for our ever expanding empire."
+ AP_anglers_culture:0 "Cultural Focused"
+ AP_anglers_culture_desc:0 "The cultural significance of the ocean cannot be denied, it is a great way of getting us closer to our populace and uniting our planets."
+ AP_anglers_trade:0 "Trade Focused"
+ AP_anglers_trade_desc:0 "The riches we find in the deep seem to be rather rare across the galaxy, this can be used to our advantage. Be it for diplomatic ends or simply monetery gains."
+ AP_anglers_mineral:0 "Resources Focused"
+ AP_anglers_mineral_desc:0 "We require the vast holds of material goods from the deep. There will be dangers but the value it creates is beyond imagening."
+
+##########################################################################
+# MegaCorp Civic policies
+##########################################################################
+ policy_AP_indentured_assets:0 "Asset Policy"
+ policy_AP_indentured_assets_desc:0 "Our assets might be working there debt off for as long as they live, but that does not mean we cannot alter there contracts."
+ AP_indentured_assets_fear_mongers:0 "$AP_slaver_guilds_fear_mongers$"
+ AP_indentured_assets_fear_mongers_desc:0 "$AP_slaver_guilds_fear_mongers_desc$"
+ AP_indentured_assets_debt_collectors:0 "$AP_slaver_guilds_debt_collectors$"
+ AP_indentured_assets_debt_collectors_desc:0 "$AP_slaver_guilds_debt_collectors_desc$"
+ AP_indentured_assets_lower_class:0 "$AP_slaver_guilds_lower_class$"
+ AP_indentured_assets_lower_class_desc:0 "$AP_slaver_guilds_lower_class_desc$"
+
+ policy_AP_catalytic_processing_megacorp:0 "$policy_AP_catalytic_processing$"
+ policy_AP_catalytic_processing_megacorp_desc:0 "$policy_AP_catalytic_processing_desc$"
+ AP_catalytic_processing_megacorp_excess:0 "$AP_catalytic_processing_excess$"
+ AP_catalytic_processing_megacorp_excess_desc:0 "$AP_catalytic_processing_excess_desc$"
+ AP_catalytic_processing_megacorp_efficiency:0 "$AP_catalytic_processing_efficiency$"
+ AP_catalytic_processing_megacorp_efficiency_desc:0 "$AP_catalytic_processing_efficiency_desc$"
+ AP_catalytic_processing_megacorp_inovation:0 "$AP_catalytic_processing_inovation$"
+ AP_catalytic_processing_megacorp_inovation_desc:0 "$AP_catalytic_processing_inovation_desc$"
+
+##########################################################################
+# Gestalt Civic policies
+##########################################################################
+
+##########################################################################
+# Custom Civic policies
+##########################################################################
+ policy_AP_advanced_administration:0 "Administrative Policy"
+ policy_AP_advanced_administration_desc:0 "Our administration is already made to work like fine clockwork but beyond that we can focus its efforts on one area to increase it ability."
+ AP_advanced_administration_benefits:0 "Benefits for the populace"
+ AP_advanced_administration_benefits_desc:0 "Let us put our bureaucrats to work on improving the happiness of our populace."
+ AP_advanced_administration_long_term:0 "Long-term Planning"
+ AP_advanced_administration_long_term_desc:0 "Our plans for the future are to ensure the safety and prosperity of our populace."
+ AP_advanced_administration_cataloging:0 "Administrating an Empire"
+ AP_advanced_administration_cataloging_desc:0 "We file everything, as long as we can find it back it helps us a lot."
+
+ policy_AP_industrial_war_complex:0 "Industrial Complex Stance"
+ policy_AP_industrial_war_complex_desc:0 "Our great industrial complex is a great bastion of industry. Yet it can only work so much in the given time."
+ AP_industrial_war_complex_production:0 "Production Orianted"
+ AP_industrial_war_complex_production_desc:0 "We must ensure the factories run all the time."
+ AP_industrial_war_complex_ships:0 "Ship Construction"
+ AP_industrial_war_complex_ships_desc:0 "To ensure our survival we must have fleets capable of fighting for our survival."
+ AP_industrial_war_complex_civilian:0 "Peace-time"
+ AP_industrial_war_complex_civilian_desc:0 "The times are now calmer so our factories can shift gears towards more cilivian uses."
+
+ policy_AP_grand_architecture:0 "Architectural Law"
+ policy_AP_grand_architecture_desc:0 "Our grand designs tower over all other buildings we have created, But the style and requirements are "
+ AP_grand_architecture_improvement:0 "Infrastructure Focus"
+ AP_grand_architecture_improvement_desc:0 "While our buildings are the greatest known to the galaxy, our infrastructure still has a long way to go. Let us focus on it to enhance our empire as a whole."
+ AP_grand_architecture_ecology:0 "Ecological Focus"
+ AP_grand_architecture_ecology_desc:0 "There has been a proposal pending for a while, it suggests a mix of our buildings with nature. This way we improve our planets and the quality of all life on it."
+
+ policy_AP_mobile_construction:0 "Mobile Construction Policy"
+ policy_AP_mobile_construction_desc:0 "Our mobile construction vehicles are few and far between. As it stands we only have a few simple sites with out main vehicle being directly guides by us."
+ AP_mobile_construction_civilian:0 "Civilian only"
+ AP_mobile_construction_civilian_desc:0 "Its purpose should be limeted to civilian use only."
+ AP_mobile_construction_military:0 "Military use"
+ AP_mobile_construction_military_desc:0 "We should invest in allowing our vehicles to enhance our military abilities."
+
+ policy_AP_ancient_remnants:0 "Cataloging the before"
+ policy_AP_ancient_remnants_desc:0 "Only recently have we confirmed that we once were a true space-faring empire. But the extent of knowledge rediscovered is beyong measure. We should tread carefully to make sure we understand what we are doing."
+ AP_ancient_remnants_hidden_past:0 "The hidden past"
+ AP_ancient_remnants_hidden_past_desc:0 "Uncovering the past is a key to understanding where our forebearers failed. This is not just a key towards better technology but to our history as a species."
+ AP_ancient_remnants_reclimation:0 "Reclimation"
+ AP_ancient_remnants_reclimation_desc:0 "Our ancestors appear to have lost much, as there desendents however we do appear to have a claim to a lot of regions now inhabited by other races."
+ AP_ancient_remnants_reconstruction:0 "Reconstruction"
+ AP_ancient_remnants_reconstruction_desc:0 "We should aspire to rebuild what we lost. Our empire will regain its lost glory."
