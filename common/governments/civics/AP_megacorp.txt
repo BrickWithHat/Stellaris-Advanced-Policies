@@ -23,8 +23,8 @@ civic_AP_advanced_administration_corporate = {
 	}
 }
 
-civiv_AP_grand_architecture_corporate = {
-	description = "civiv_AP_grand_architecture_corporate_effects"
+civic_AP_grand_architecture_corporate = {
+	description = "civic_AP_grand_architecture_corporate_effects"
 	potential = {
 		ethics = {
 			NOT = {
