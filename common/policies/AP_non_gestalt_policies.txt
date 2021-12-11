@@ -1159,6 +1159,7 @@ AP_conscription = {
 	potential = {
 		is_country_type = default
 		is_gestalt = no
+
 	}
 	option = {
 		name = AP_conscription_illegal
