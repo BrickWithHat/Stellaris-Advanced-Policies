@@ -420,7 +420,7 @@ planet_event = {
 		name = AP_PQ.202_3
 		trigger = {
 			owner = {
-				has_civic = civiv_AP_grand_architecture
+				has_valid_civic = civic_AP_grand_architecture
 			}
 		}
 		allow = {
@@ -458,7 +458,7 @@ planet_event = {
 		name = AP_PQ.202_3
 		trigger = {
 			owner = {
-				has_civic = civiv_AP_grand_architecture_corporate
+				has_valid_civic = civic_AP_grand_architecture_corporate
 			}
 		}
 		allow = {

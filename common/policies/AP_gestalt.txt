@@ -4,7 +4,6 @@
 AP_autonamy = {
 	potential = {
 		is_gestalt = yes
-		is_ai = no
 	}
 	option = {
 		name = AP_autonamy_none
@@ -12,6 +11,20 @@ AP_autonamy = {
 			AP_autonamy_none
 		}
 		modifier = {
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_one_mind
+					has_valid_civic = civic_hive_subsumed_will
+					has_valid_civic = civic_machine_unitary_cohesion
+					has_valid_civic = civic_machine_terminator
+					has_valid_civic = civic_machine_assimilator
+				}
+			}
 		}
 	}
 	option = {
@@ -20,9 +33,21 @@ AP_autonamy = {
 			AP_autonamy_shackled
 		}
 		modifier = {
-			planet_crime_mult = 0.15
+			planet_crime_no_happiness_add = 10
 			planet_jobs_produces_mult = 0.1
 			pop_amenities_usage_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_memorialist
+					has_valid_civic = civic_machine_memorialist
+					has_valid_civic = civic_machine_introspective
+					has_valid_civic = civic_machine_predictive_analysis
+				}
+			}
 		}
 	}
 	option = {
@@ -31,9 +56,21 @@ AP_autonamy = {
 			AP_autonamy_near_free
 		}
 		modifier = {
-			planet_crime_mult = 0.3
+			planet_crime_no_happiness_add = 15
 			planet_jobs_produces_mult = 0.2
 			pop_amenities_usage_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_divided_attention
+					has_valid_civic = civic_hive_empath
+					has_valid_civic = civic_machine_delegated_functions
+					has_valid_civic = civic_machine_servitor
+				}
+			}
 		}
 	}
 }
@@ -43,7 +80,6 @@ AP_autonamy = {
 AP_organic_recycling = {
 	potential = {
 		has_authority = auth_hive_mind
-		is_ai = no
 	}
 	option = {
 		name = AP_organic_recycling_none
@@ -51,6 +87,41 @@ AP_organic_recycling = {
 			planet_jobs_worker_produces_mult = 0.15
 			planet_pops_upkeep_mult = 0.15
 			planet_stability_add = 10
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					owner_main_species = {
+						has_trait = trait_wasteful
+						has_trait = trait_deviants
+						has_trait = trait_syncretic_proles
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				owner_main_species = {
+					has_trait = trait_conservational
+				}
+			}
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_resilient
+				}
+			}
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					OR = {
+						has_trait = trait_clone_soldier_fertile
+						has_trait = trait_clone_soldier_infertile
+						has_trait = trait_clone_soldier_infertile_full_potential
+					}
+				}
+			}
 		}
 	}
 	option = {
@@ -60,6 +131,43 @@ AP_organic_recycling = {
 			planet_pops_upkeep_mult = 0.1
 			pop_growth_speed = 0.05
 		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					owner_main_species = {
+						has_trait = trait_plantoid_radiotrophic
+						has_trait = trait_plantoid_phototrophic
+						has_trait = trait_plantoid_budding
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_conservational
+				}
+			}
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_communal
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_agrarian
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_quick_learners
+				}
+			}
+		}
 	}
 	option = {
 		name = AP_organic_recycling_complete
@@ -67,6 +175,31 @@ AP_organic_recycling = {
 			planet_jobs_worker_produces_mult = 0.05
 			planet_pops_upkeep_mult = 0.05
 			pop_growth_speed = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					owner_main_species = {
+						has_trait = trait_void_dweller_1
+						has_trait = trait_necrophage
+						has_trait = trait_survivor
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				owner_main_species = {
+					has_trait = trait_conservational
+				}
+			}
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_communal
+				}
+			}
 		}
 	}
 }
@@ -76,29 +209,95 @@ AP_organic_recycling = {
 AP_component_recycling = {
 	potential = {
 		has_authority = auth_machine_intelligence
-		is_ai = no
 	}
 	option = {
 		name = AP_component_recycling_none
 		modifier = {
-			pop_amenities_usage_mult = -0.2
-			pop_assembly_speed = -0.1
+			pop_amenities_usage_mult = -0.15
+			country_alloys_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_emotion_emulators
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_streamlined_protocols
+				}
+			}
+			modifier = {
+				factor = 0
+				owner_main_species = {
+					has_trait = trait_robot_recycled
+				}
+			}
 		}
 	}
 	option = {
 		name = AP_component_recycling_some
 		modifier = {
-			pop_amenities_usage_mult = -0.1
-			planet_pop_assemblers_alloys_upkeep_mult = -0.1
-			pop_assembly_speed = -0.05
+			pop_amenities_usage_mult = 0.05
+			country_alloys_produces_mult = 0.2
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_harvesters
+				}
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_robot_logic_engines
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_learning_algorithms
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_recycled
+				}
+			}
 		}
 	}
 	option = {
 		name = AP_component_recycling_complete
 		modifier = {
 			pop_amenities_usage_mult = 0.1
-			pop_assembly_speed = -0.1
-			planet_pop_assemblers_alloys_upkeep_mult = -0.2
+			country_alloys_produces_mult = 0.33
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				owner_main_species = {
+					has_trait = trait_robot_recycled
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_custom_made
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_high_maintenance
+				}
+			}
 		}
 	}
 }

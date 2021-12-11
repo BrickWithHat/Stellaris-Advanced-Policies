@@ -49,7 +49,7 @@ AP_tight_admin = {
 		local_trade_protection_add = 5
 	}
 	ai_weight = {
-		weight = 0
+		weight = @EdictMedPrio
 	}
 }
 
@@ -90,8 +90,13 @@ AP_rationing = {
 			is_militarist = yes
 		}
 	}
+	# AI should not use this
 	ai_weight = {
-		weight = 0
+		weight = 1
+		modifier = {
+			factor = 0
+			is_ai = yes
+		}
 	}
 }
 
@@ -135,17 +140,70 @@ AP_combat_drills = {
 			}
 			is_at_war = yes
 			is_country_type = default
+			is_gestalt = no
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = @EdictMedPrio
 		modifier = {
 			is_at_war = yes
-			factor = 10
+			factor = 2
 		}
 		modifier = {
 			is_militarist = yes
 			factor = 4
+		}
+	}
+}
+
+AP_dirty_bomb = {
+	length = @EdictDurationShort
+	icon = "gfx_edicts_ship"
+	resources = {
+		category = edicts
+		cost = {
+			energy = 1500
+		}
+	}
+	allow = {
+		owner = {
+			has_resource = {
+				type = energy
+				amount >= 1500
+			}
+			has_technology = tech_interstellar_fleet_traditions
+		}
+	}
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	modifier = {
+		ship_orbital_bombardment_mult = 1
+		country_trust_cap_add = -25
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			OR = {
+				is_at_war = no
+				has_ai_personality = fanatic_befrienders
+				has_ai_personality = federation_builders
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = ancient_rebuilder
+			}
+		}
+		modifier = {
+			factor = 5
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				def_war_exhaustion_sum >= 50
+				off_war_exhaustion_sum >= 50
+			}
 		}
 	}
 }
@@ -183,7 +241,7 @@ AP_grand_banquette_lithoid = {
 		pop_happiness = 0.1
 	}
 	ai_weight = {
-		weight = 0
+		weight = @EdictMedPrio
 	}
 }
 
@@ -220,7 +278,7 @@ AP_grand_banquette = {
 		pop_happiness = 0.1
 	}
 	ai_weight = {
-		weight = 0
+		weight = @EdictMedPrio
 	}
 }
 
@@ -256,6 +314,9 @@ AP_nobility = {
 		pop_cat_ruler_happiness = 0.05
 		leaders_upkeep_mult = -0.25
 	}
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
 }
 
 AP_greener_pasture = {
@@ -270,7 +331,7 @@ AP_greener_pasture = {
 		}
 	}
 	potential = {
-		has_technology = tech_planetary_unification
+		is_country_type = default
 		is_gestalt = no
 	}
 	allow = {
@@ -283,6 +344,7 @@ AP_greener_pasture = {
 				type = consumer_goods
 				amount >= 500
 			}
+			has_technology = tech_planetary_unification
 		}
 	}
 	modifier = {
@@ -290,6 +352,9 @@ AP_greener_pasture = {
 		planet_resettlement_unemployed_mult = 1
 		country_resettlement_cost_mult = -0.5
 		pop_demotion_time_mult = -0.25
+	}
+	ai_weight = {
+		weight = @EdictHighPrio
 	}
 }
 
@@ -304,7 +369,7 @@ AP_propaganda_campaign = {
 		}
 	}
 	potential = {
-		has_technology = tech_planetary_unification
+		is_country_type = default
 		is_gestalt = no
 	}
 	allow = {
@@ -313,11 +378,21 @@ AP_propaganda_campaign = {
 				type = energy
 				amount >= 2500
 			}
+			has_technology = tech_planetary_unification
 		}
 	}
 	modifier = {
 		planet_stability_add = 5
 		pop_government_ethic_attraction = 0.5
 		pop_ethics_shift_speed_mult = 0.25
+	}
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				happiness_planet < 50 
+			}
+		}
 	}
 }

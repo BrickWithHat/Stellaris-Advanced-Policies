@@ -4,7 +4,6 @@
 AP_indentured_assets ={
 	potential = {
 		has_valid_civic = civic_indentured_assets
-		is_ai = no
 	}
 	option = {
 		name = AP_indentured_assets_fear_mongers
@@ -36,7 +35,6 @@ AP_indentured_assets ={
 AP_catalytic_processing_megacorp = {
 	potential = {
 		has_valid_civic = civic_corporate_catalytic_processing
-		is_ai = no
 	}
 	option = {
 		name = AP_catalytic_processing_megacorp_excess

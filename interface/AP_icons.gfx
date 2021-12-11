@@ -29,8 +29,16 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds"
 	}
 	spritetype = {
-		name = "decision_resources_cancel"
-		textureFile = "gfx/interface/icons/decisions/decision_resources_cancel.dds"
+		name = "gfx_jobs_worker_educator"
+		textureFile = "gfx/interface/icons/jobs/job_worker_educator.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_specialist_educator"
+		textureFile = "gfx/interface/icons/jobs/job_specialist_educator.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_ruler_educator"
+		textureFile = "gfx/interface/icons/jobs/job_ruler_educator.dds"
 	}
 }
 

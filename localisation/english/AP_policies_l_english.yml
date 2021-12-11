@@ -31,6 +31,7 @@
  policy_AP_weapons_law:0 "Weapons Law"
  policy_AP_weapons_law_desc:0 "Our empire has a few options when it comes to handling the weapons within our borders."
 
+
 # Panic Stance
  AP_condition_green:0 "Status Quo"
  AP_condition_green_name:0 "$AP_condition_green$"
@@ -143,13 +144,22 @@
 
 # Weapons policies
  AP_weapons_law_government_only:0 "Government only"
+ AP_weapons_law_government_only_name:0 "$AP_weapons_law_government_only$"
  AP_weapons_law_government_only_desc:0 "All weapons must be tightly controlled, They are a danger to our society and must be guarded from missuse."
  AP_weapons_law_permit:0 "Basic Permit"
+ AP_weapons_law_permit_name:0 "$AP_weapons_law_permit$"
  AP_weapons_law_permit_desc:0 "In theory anyone can own a weapon as long as you get tested to be worthy of it. As missuse is a grave crime."
  AP_weapons_law_permit_easy:0 "Simple Permit"
+ AP_weapons_law_permit_easy_name:0 "$AP_weapons_law_permit_easy"
  AP_weapons_law_permit_easy_desc:0 "While we officially check for who owns what weapon, in practice we are a lot more loose about this."
  AP_weapons_law_free:0 "Free Ownership"
+ AP_weapons_law_free_name:0 "$AP_weapons_law_free$"
  AP_weapons_law_free_desc:0 "To keep track of all the weapons in our empire is an impossible task. On top of that our culture demands we hold them close."
+
+
+
+
+
 
 # Gestalt Policies
  policy_AP_autonamy:0 "Autonomy"
@@ -177,7 +187,7 @@
  policy_AP_component_recycling_desc:0 "Sometimes we leave material from ourselfs behind. We did not really have any direct reason to deal with it until now."
  AP_component_recycling_none:0 "Priority: Zero"
  AP_component_recycling_none_desc:0 "We have more important matters to attent to then dealing with left over components"
- AP_component_recycling_some:0 "Priority: Large scale only"
+ AP_component_recycling_some:0 "Priority: Occasional Scrapping"
  AP_component_recycling_some_desc:0 "Some of these materials are definatly usefull for other drones. We can save the production cost in recourses by just using what we already have."
  AP_component_recycling_complete:0 "Priority: Mass recycling"
  AP_component_recycling_complete_desc:0 "Materials already owned but unused should be used. Let us give purpose to what we already have."

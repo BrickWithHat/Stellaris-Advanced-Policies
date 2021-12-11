@@ -20,7 +20,8 @@ AP_planetary_quota = {
 			NOT = {
 				has_country_flag = quota_active
 			}
-			is_regular_empire = yes
+			is_country_type = default
+			is_gestalt = no
 			is_ai = no
 		}
 	}
@@ -177,7 +178,6 @@ AP_trail_by_fire = {
 	potential = {
 		owner = {
 			is_militarist = yes
-			is_ai = no
 		}
 	}
 	allow = {
@@ -197,6 +197,9 @@ AP_trail_by_fire = {
 			days = @mediumlength
 		}
 	}
+	ai_weight = {
+		weight = 1
+	}
 }
 
 AP_generation_of_peace = {
@@ -212,7 +215,6 @@ AP_generation_of_peace = {
 	potential = {
 		owner = {
 			is_pacifist = yes
-			is_ai = no
 		}
 	}
 	allow = {
@@ -231,6 +233,9 @@ AP_generation_of_peace = {
 			days = @mediumlength
 		}
 	}
+	ai_weight = {
+		weight = 1
+	}
 }
 
 AP_grand_sports_games = {
@@ -246,7 +251,6 @@ AP_grand_sports_games = {
 	potential = {
 		owner = {
 			is_egalitarian = yes
-			is_ai = no
 		}
 	}
 	allow = {
@@ -261,6 +265,9 @@ AP_grand_sports_games = {
 			modifier = planet_grand_sports_games
 			days = @mediumlength
 		}
+	}
+	ai_weight = {
+		weight = 1
 	}
 }
 
@@ -277,7 +284,6 @@ AP_benevolant_gesture = {
 	potential = {
 		owner = {
 			is_authoritarian = yes
-			is_ai = no
 		}
 	}
 	allow = {
@@ -292,6 +298,9 @@ AP_benevolant_gesture = {
 			modifier = planet_benevolant_gesture
 			days = @mediumlength
 		}
+	}
+	ai_weight = {
+		weight = 1
 	}
 }
 
@@ -308,7 +317,6 @@ AP_rite_of_the_heavens = {
 	potential = {
 		owner = {
 			is_spiritualist = yes
-			is_ai = no
 		}
 	}
 	allow = {
@@ -323,6 +331,9 @@ AP_rite_of_the_heavens = {
 			modifier = planet_rite_of_the_heavens
 			days = @mediumlength
 		}
+	}
+	ai_weight = {
+		weight = 1
 	}
 }
 
@@ -339,7 +350,6 @@ AP_competition_of_the_minds = {
 	potential = {
 		owner = {
 			is_materialist = yes
-			is_ai = no
 		}
 	}
 	allow = {
@@ -358,6 +368,9 @@ AP_competition_of_the_minds = {
 			modifier = planet_competition_of_the_minds
 			days = @mediumlength
 		}
+	}
+	ai_weight = {
+		weight = 1
 	}
 }
 
