@@ -8,6 +8,8 @@
  edict_AP_rationing_desc:0 "§YThis is an emergency measure! Does not take up an edict slot.§! The state can no longer allow it's people to waste all those resources. It could mean the diffrence between defeat and victory!"
  edict_AP_combat_drills:0 "Combat Drills"
  edict_AP_combat_drills_desc:0 "Enact a plan to sharpen our military forces for future conflicts."
+ edict_AP_dirty_bomb:0 "Dirty Bombs"
+ edict_AP_dirty_bomb_desc:0 "We can enhance our orbital bombartment payloads considerably. Yet it leaves our reputation somewhat damaged."
  edict_AP_grand_banquette:0 "Grand Banquette"
  edict_AP_grand_banquette_desc:0 "We shall hold a feast for all of our worlds! To show the good will of our empire."
  edict_AP_grand_banquette_lithoid:0 "$edict_AP_grand_banquette$"

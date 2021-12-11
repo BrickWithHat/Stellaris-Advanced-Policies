@@ -26,4 +26,4 @@
 
  civic_AP_ancient_remnants:0 "Ancient Remnants"
  civic_AP_ancient_remnants_desc:0 "Our empire used to span the stars, we were its rulers. Now we have been forced back. But our ancestors left us a gift..."
- civic_AP_ancient_remnants_effects:0 "We have a big stash of ancient technology to base our research on. While this knowledge is invalauble we sadly have no control over what we find next."
+ civic_AP_ancient_remnants_effects:0 "§YSpawns a very strong planetary Deposit on your capital world. This Deposit provide a set amount of §!£job_evaluator£ $job_ancient_archeoligist$§Y jobs based on the size of the capital building. These give 10% research speed per job.§!"

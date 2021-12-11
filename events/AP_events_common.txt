@@ -15,40 +15,81 @@ country_event = {
 		set_global_flag = AP_installed
 	}
 }
+
 ##########################################################################
 # civic components
 ##########################################################################
 namespace = AP_civic
+# Mobile Construction Vehicle civic setup
 country_event = {
 	id = AP_civic.1
 	hide_window = yes
-	fire_only_once = yes
+	fire_only_once = no
 	trigger = {
-		NOT = {
-			has_country_flag = AP_construction_installed
-		}
 		owner = {
-			has_civic = civic_AP_mobile_construction
+			has_valid_civic = civic_AP_mobile_construction
+			NOT = {
+				has_country_flag = AP_construction_installed
+			}
 		}
 	}
 	immediate = {
-		capital_scope = {
-			add_modifier = {
-				modifier = planet_mobile_construction_deployed
+		owner = {
+			capital_scope = {
+				add_modifier = {
+					modifier = planet_mobile_construction_deployed
+				}
 			}
+			set_country_flag = AP_construction_installed
 		}
-		set_country_flag = AP_construction_installed
 	}
 }
-##########################################################################
-# policy components
-##########################################################################
-namespace = AP_policy
-# 
+
+# Ancient Remnants Civic
 country_event = {
-	id = AP_policy.1
+	id = AP_civic.2
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		owner = {
+			has_valid_civic = civic_AP_ancient_remnants
+			NOT = {
+				has_country_flag = AP_ancient_remnant_installed
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					has_valid_civic = civic_AP_ancient_remnants
+				}
+			}
+			owner = {
+				set_country_flag = AP_ancient_remnant_installed
+				capital_scope = {
+					add_deposit = d_ancient_site
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_valid_civic = civic_AP_ancient_remnants
+					OR = {
+						is_pacifist = yes
+						is_xenophile = yes
+						has_valid_civic = civic_free_haven
+						has_valid_civic = civic_idealistic_foundation
+					}
+				}
+			}
+			owner = {
+				set_ai_personality = ancient_rebuilder
+			}
+			else = {
+				set_ai_personality = ancient_reclaimer
+			}
+		}
 	}
 }

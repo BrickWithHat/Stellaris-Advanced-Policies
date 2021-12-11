@@ -6,6 +6,7 @@ on_game_start_country = {
 	events = {
 		AP_flag.1
 		AP_civic.1
+		AP_civic.2
 	}
 }
 

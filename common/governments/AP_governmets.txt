@@ -1,0 +1,77 @@
+# Ancient Collective
+gov_ancient_collective = {
+	ruler_title = RT_CHANCELLOR
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+	possible = {
+		has_valid_civic = civic_AP_ancient_remnants
+		is_authoritarian = no
+	}
+	weight = {
+		base = 900
+		modifier = {
+			factor = 4
+			has_ethic = ethic_fanatic_egalitarian
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_egalitarian
+		}
+	}
+}
+# Ancient Imperium
+gov_ancient_imperium = {
+	ruler_title = RT_CELESTIAL_EMPEROR
+	ruler_title_female = RT_CELESTIAL_EMPRESS
+	heir_title = RT_PRIMARCH
+	heir_title_female = RT_PRIMARCH_FEMALE
+
+	use_regnal_names = no
+	dynastic_last_names = yes
+	possible = {
+		has_valid_civic = civic_AP_ancient_remnants
+		OR = {
+			has_authority = auth_imperial
+			is_authoritarian = yes
+		}
+	}
+	weight = {
+		base = 900
+		modifier = {
+			factor = 4
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+	}
+}
+# Ancient Warhost
+gov_ancient_warhost = {
+	ruler_title = RT_BLOODLORD
+	heir_title = RT_COORDINATOR
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+	possible = {
+		has_valid_civic = civic_AP_ancient_remnants
+	}
+	weight = {
+		base = 900
+		modifier = {
+			factor = 4
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 0.5
+			is_militarist = no
+		}
+	}
+
+}

@@ -136,6 +136,9 @@ civic_AP_mobile_construction = {
 		}
 	}
 	modification = no
+	ai_playable = {
+		is_ironman = yes
+	}
 }
 
 civic_AP_ancient_remnants = {
@@ -154,15 +157,20 @@ civic_AP_ancient_remnants = {
 	}
 	possible = {
 		origin = {
-			NOT = {
+			NOR = {
 				value = origin_default
-				value = origin_mechanists
 				value = origin_scion
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_fanatic_purifiers
+				value = civic_death_cult
+				value = civic_barbaric_despoilers
 			}
 		}
 	}
 	modifier = {
-		all_technology_research_speed = 0.75
 		num_tech_alternatives_add = -2
 	}
 }

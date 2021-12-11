@@ -1,0 +1,27 @@
+﻿l_english: 
+##########################################################################
+# Civic jobs
+##########################################################################
+ job_ancient_archeoligist:0 "Ancient Archeoligist"
+ job_ancient_archeoligist_plural:0 "Ancient Archeoligist"
+ job_ancient_archeoligist_desc:0 "Ancient Archeolgists look for old pieces of technolgy and try and learn there secrets what ever they might be."
+##########################################################################
+# Policy jobs
+##########################################################################
+ job_worker_educator:0 "Educator"
+ job_worker_educator_plural:0 "Educators"
+ job_worker_educator_desc:0 "Educators provide the most accepted form of education in its society. There goal is to arm the next generation with knowledge deemed usefull for there succes in there society."
+ mod_job_worker_educator_add:0 "£job_worker_educator£ $job_worker_educator$ jobs added"
+ mod_job_worker_educator_per_pop:0 "Adds £job_worker_educator£ $job_worker_educator$ job for every §Y10§! £pops£ pops"
+
+ job_specialist_educator:0 "$job_worker_educator$"
+ job_specialist_educator_plural:0 "$job_worker_educator_plural$"
+ job_specialist_educator_desc:0 "$job_worker_educator_desc$"
+ mod_job_specialist_educator_add:0 "$pop_cat_specialist$ £job_specialist_educator£ $job_worker_educator$ jobs added"
+  mod_job_specialist_educator_per_pop:0 "Adds £job_specialist_educator£ $job_worker_educator$ job for every §Y25§! £pops£ pops"
+
+ job_ruler_educator:0 "$job_worker_educator$"
+ job_ruler_educator_plural:0 "$job_worker_educator_plural$"
+ job_ruler_educator_desc:0 "$job_worker_educator_desc$"
+ mod_job_ruler_educator_add:0 "$pop_cat_ruler$ £job_ruler_educator£ $job_worker_educator$ jobs added"
+ mod_job_ruler_educator_per_pop:0 "Adds £job_ruler_educator£ $job_worker_educator$ job for every §Y40§! £pops£ pops"

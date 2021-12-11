@@ -2,8 +2,27 @@
 # Trigger texts
  AP_has_encountered_crisis:0 "Has encountered an §Yunexpected§! opponent..."
  AP_has_superior_opponent:0 "Has an §Ydangerous§! opponent..."
+ AP_is_occupied:0 "Has owned planets being occupied."
 
-# Component stuff
+# Deposits
+ d_ancient_site:0 "Ancient Cashe"
+ d_ancient_site_desc:0 "This stronghold is a secure location where most of the ancient knowledge of our the forebearers is kept for study."
+
+# Governments
+ gov_ancient_collective:0 "Ancient Collective"
+ gov_ancient_collective_desc:0 "This form of governemt is an ancient form of directed political power. While riddled with unique oddities in its governance style due to the total age of the governemt as a whole. It does clearly function in a more uniquely efficient and somewhat alien manner."
+ gov_ancient_imperium:0 "Ancient Imperium"
+ gov_ancient_imperium_desc:0 "An Ancient Imperium is a form of government designed eons ago and left to evolve for longer then recorded history. While it functions in unique and alien ways. It still functions with suprising efficiency."
+ gov_ancient_warhost:0 "Ancient Warhost"
+ gov_ancient_warhost_desc:0 "An Ancient Warhost government is a governemt stepped in militarist tradition and strife. No one can lead without proving they are capable. Thusly there leaders are fierce and hardend veterans of many battles. Yet the culture surrounding these is older then most recorded history itself."
+
+# AI Personalities
+ personality_ancient_reclaimer:0 "Remnant Reclaimers"
+ personality_ancient_reclaimer_desc:0 "This empire has been known to have had a golden age long before there current era, There history is truely ancient with remnants of there long gone technology being left on there homeworld. This while making some aspects of there culture truely ancient there desire to rule the galaxy once more is the only constant so far."
+ personality_ancient_rebuilder:0 "Remnant Rebuilders"
+ personality_ancient_rebuilder_desc:0 "This empire is a rebuilding remnant form a species that originally ruled vast portions of the galaxy. They appear to have learned from there previous mistakes and are willing to interact with others as long as there interests are served."
+
+# Armies stuff
  conscript_army_plural:0 "Conscript Armies"
  conscript_army:0 "Conscript Army" 
  conscript_army_desc:0 "While not the most hardiest of folk, they atleast show a suprising willingness to fight as a unit."

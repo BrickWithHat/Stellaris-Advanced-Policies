@@ -4,13 +4,24 @@
 # Root = target country
 # This = country
 # From = communications
+#
+# Checks for any of the known 'dangerous' potential crisis that can spawn.
 AP_has_encountered_crisis = {
 	custom_tooltip = AP_has_encountered_crisis
 	hidden_trigger = {
 		OR = {
-			has_global_flag = ai_invasion_happened
-			has_global_flag = extradimensional_invasion_happened
 			has_global_flag = prethoryn_invasion_happened
+			has_global_flag = extradimensional_invasion_happened
+			has_global_flag = ai_invasion_happened
+			has_global_flag = active_gray_goo
+			has_global_flag = great_khan_announcement
+			has_global_flag = sleepers_awake_happened
+			has_global_flag = galactic_crisis_happened
+		}
+		NOR = {
+			has_global_flag = prethoryn_invasion_defeated
+			has_global_flag = extradimensional_invasion_defeated
+			has_global_flag = ai_invasion_defeated
 		}
 		OR = {
 			any_relation = {
@@ -24,13 +35,25 @@ AP_has_encountered_crisis = {
 			any_relation = {
 				has_communications = root
 				is_country_type = awakened_marauders
+				
+			}
+		}
+	}
+}
+# A simple check to see if this empire has any owned worlds that are being occupied.
+AP_is_occupied = {
+	custom_tooltip = AP_is_occupied
+	hidden_trigger = {
+		owner = {
+			is_at_war = yes
+			any_owned_planet = {
+				is_occupied_flag = yes
 			}
 		}
 	}
 }
 
-# I really should work this stuff out better at some point
-# as it really does not do what i want it to do.
+# I really should work this stuff out better at some point as it really does not do what i want it to do.
 AP_has_superior_opponent = {
 	custom_tooltip = AP_has_superior_opponent
 	hidden_trigger = {
@@ -52,3 +75,4 @@ AP_has_superior_opponent = {
 ######################################################################
 # Tests with a side of minor implosion of my test games (sorry playtesters)
 ######################################################################
+
