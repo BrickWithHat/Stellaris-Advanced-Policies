@@ -153,6 +153,11 @@
  AP_weapons_law_free_name:0 "$AP_weapons_law_free$"
  AP_weapons_law_free_desc:0 "To keep track of all the weapons in our empire is an impossible task. On top of that our culture demands we hold them close."
 
+
+
+
+
+
 # Gestalt Policies
  policy_AP_autonamy:0 "£pop£Autonomy"
  policy_AP_autonamy_desc:0 "The amount of free thinking granted to an 'individual' in our collective"

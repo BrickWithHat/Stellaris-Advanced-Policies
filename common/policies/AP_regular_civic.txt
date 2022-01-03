@@ -1,18 +1,75 @@
 ##########################################################################
+# Panic listing
+##########################################################################
+AP_policy_panic = {
+	potential = {
+		is_country_type = default
+		is_ai = no
+	}
+	option = {
+		name = "AP_condition_green"
+		valid = {
+		}
+		policy_flags = {
+			AP_condition_green
+		}
+		modifier = {
+			planet_stability_add = 5
+		}
+	}
+	option = {
+		name = "AP_condition_yellow"
+		valid = {
+			OR = {
+				is_country_type = default
+			}
+		}
+		policy_flags = {
+			AP_condition_yellow
+		}
+	}
+	option = {
+		name = "AP_condition_red"
+		valid = {
+			OR = {
+				has_policy_flag = AP_condition_yellow
+				has_policy_flag = AP_condition_red
+				is_gestalt = yes
+			}
+		}
+		policy_flags = {
+			AP_condition_red
+		}
+	}
+	option = {
+		name = "AP_condition_void"
+		valid = {
+			OR = {
+				is_gestalt = yes
+				has_policy_flag = AP_condition_red
+				has_policy_flag = AP_condition_void
+				AP_has_encountered_crisis = yes
+			}
+		}
+		policy_flags = {
+			AP_condition_void
+		}
+	}
+}
+
+##########################################################################
 # Normal Civic Policies
 ##########################################################################
 AP_cutthroat_politics = {
 	potential = {
 		has_valid_civic = civic_cutthroat_politics
+		is_ai = no
 	}
 	option = {
 		name = AP_cutthroat_politics_anti_corruption
 		modifier = {
 			empire_size_pops_mult = -0.1
 			leaders_upkeep_mult = -0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -21,9 +78,6 @@ AP_cutthroat_politics = {
 			country_election_influence_cost_mult = -0.25
 			species_leader_exp_gain = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_cutthroat_politics_promotion
@@ -31,15 +85,13 @@ AP_cutthroat_politics = {
 			leader_skill_levels = 1
 			planet_jobs_produces_mult = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_environmentalist = {
 	potential = {
 		has_valid_civic = civic_environmentalist
+		is_ai = no
 	}
 	option = {
 		name = AP_environmentalist_preserve
@@ -48,18 +100,12 @@ AP_environmentalist = {
 			planet_building_build_speed_mult = -0.1
 			planet_buildings_upkeep_mult = -0.2
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_environmentalist_symbyotic
 		modifier = {
 			pop_environment_tolerance = 0.1
 			planet_farmers_food_produces_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -68,24 +114,19 @@ AP_environmentalist = {
 			planet_jobs_produces_mult = 0.05
 			planet_buildings_upkeep_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_efficient_bureaucracy = {
 	potential = {
 		has_valid_civic = civic_efficient_bureaucracy
+		is_ai = no
 	}
 	option = {
 		name = AP_efficient_bureaucracy_local
 		modifier = {
 			leaders_upkeep_mult = -0.2
 			governor_skill_levels = 2
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -94,9 +135,6 @@ AP_efficient_bureaucracy = {
 			pop_growth_speed = 0.05
 			empire_size_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_efficient_bureaucracy_legal
@@ -104,15 +142,13 @@ AP_efficient_bureaucracy = {
 			job_enforcer_per_pop = 0.04
 			pop_cat_specialist_happiness = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_functional_architecture = {
 	potential = {
 		has_valid_civic = civic_functional_architecture
+		is_ai = no
 	}
 	option = {
 		name = AP_functional_architecture_resource_shortage
@@ -120,18 +156,12 @@ AP_functional_architecture = {
 			planet_jobs_minerals_upkeep_mult = -0.1
 			planet_building_build_speed_mult = -0.2
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_functional_architecture_need
 		modifier = {
 			planet_housing_mult = 0.1
 			planet_amenities_mult = 0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -141,15 +171,13 @@ AP_functional_architecture = {
 			empire_size_districts_mult = -0.1
 			planet_buildings_upkeep_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_mining_guild = {
 	potential = {
 		has_valid_civic = civic_mining_guilds
+		is_ai = no
 	}
 	option = {
 		name = AP_mining_guild_jewels
@@ -157,9 +185,6 @@ AP_mining_guild = {
 			envoy_improve_relations_mult = 0.1
 			country_trust_growth = 0.05
 			trade_value_mult = 0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -170,9 +195,6 @@ AP_mining_guild = {
 			planet_artisans_upkeep_mult = -0.2
 			planet_artisans_unity_produces_add = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_mining_guild_construction
@@ -182,24 +204,19 @@ AP_mining_guild = {
 			planet_districts_cost_mult = -0.2
 			planet_districts_upkeep_mult = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_agrarian_idyll = {
 	potential = {
 		has_valid_civic = civic_agrarian_idyll
+		is_ai = no
 	}
 	option = {
 		name = AP_agrarian_idyll_food
 		modifier = {
 			pop_happiness = 0.05
 			planet_farmers_unity_produces_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -208,18 +225,12 @@ AP_agrarian_idyll = {
 			planet_miners_minerals_produces_mult = 0.1
 			planet_miners_unity_produces_add = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_agrarian_idyll_energy
 		modifier = {
 			planet_technician_energy_produces_mult = 0.1
 			planet_technician_unity_produces_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -229,15 +240,13 @@ AP_agrarian_idyll = {
 			planet_metallurgists_alloys_produces_mult = 0.25
 			planet_artisans_consumer_goods_produces_mult = 0.25
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_aristocratic_elite = {
 	potential = {
 		has_valid_civic = civic_aristocratic_elite
+		is_ai = no
 	}
 	option = {
 		name = AP_aristocratic_elite_loyalty
@@ -246,18 +255,12 @@ AP_aristocratic_elite = {
 			country_trust_cap_add = 20
 			envoys_add = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_aristocratic_elite_birth
 		modifier = {
 			country_unity_produces_mult = 0.1
 			job_noble_per_pop = 0.025
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -268,15 +271,13 @@ AP_aristocratic_elite = {
 			leaders_upkeep_mult = -0.1
 			leader_age = -20
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_beacon_of_liberty = {
 	potential = {
 		has_valid_civic = civic_beacon_of_liberty
+		is_ai = no
 	}
 	option = {
 		name = AP_beacon_of_liberty_honoured_actions
@@ -284,9 +285,6 @@ AP_beacon_of_liberty = {
 			planet_jobs_specialist_produces_mult = 0.1
 			planet_jobs_ruler_produces_mult = 0.1
 			pop_cat_worker_happiness = 0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -297,9 +295,6 @@ AP_beacon_of_liberty = {
 			diplo_weight_envoys_mult = 0.2
 			country_trade_attractiveness = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_beacon_of_liberty_equality
@@ -307,15 +302,13 @@ AP_beacon_of_liberty = {
 			planet_migration_all_mult = 0.2
 			pop_government_ethic_attraction = 0.2
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_citizen_service = {
 	potential = {
 		has_valid_civic = civic_citizen_service
+		is_ai = no
 	}
 	option = {
 		name = AP_citizen_service_normal
@@ -323,18 +316,12 @@ AP_citizen_service = {
 			country_starbase_capacity_add = 1
 			country_command_limit_add = 20
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_citizen_service_combat
 		modifier = {
 			ship_starting_experience_add = 50
 			army_starting_experience_add = 50
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -344,15 +331,13 @@ AP_citizen_service = {
 			starbase_upgrade_cost_mult = -0.2
 			country_command_limit_add = 10
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_coporate_dominion = {
 	potential = {
 		has_valid_civic = civic_corporate_dominion
+		is_ai = no
 	}
 	option = {
 		name = AP_coporate_dominion_profit
@@ -361,9 +346,6 @@ AP_coporate_dominion = {
 			local_trade_protection_add = 10
 			country_trade_fee = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_coporate_dominion_influence
@@ -371,9 +353,6 @@ AP_coporate_dominion = {
 			country_trade_attractiveness = 0.25
 			country_border_friction_mult = -0.1
 			country_subject_acceptance_add = 50
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -385,23 +364,18 @@ AP_coporate_dominion = {
 			envoy_improve_relations_mult = 0.2
 			country_trade_attractiveness = 0.5
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_corvee_system = {
 	potential = {
 		has_valid_civic = civic_corvee_system
+		is_ai = no
 	}
 	option = {
 		name = AP_corvee_system_labor
 		modifier = {
 			planet_jobs_upkeep_mult = -0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -410,9 +384,6 @@ AP_corvee_system = {
 			pop_growth_speed = 0.1
 			pop_growth_from_immigration = 0.25
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_corvee_system_political
@@ -420,15 +391,13 @@ AP_corvee_system = {
 			pop_cat_worker_political_power = -0.25
 			pop_cat_slave_political_power = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_distinguished_admiralty = {
 	potential = {
 		has_valid_civic = civic_distinguished_admiralty
+		is_ai = no
 	}
 	option = {
 		name = AP_distinguished_admiralty_teaching
@@ -437,18 +406,12 @@ AP_distinguished_admiralty = {
 			leader_skills_spawn = 1
 			leaders_upkeep_mult = -0.2
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_distinguished_admiralty_cohesion
 		modifier = {
 			country_unity_produces_mult = 0.1
 			trade_value_mult = 0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -457,24 +420,19 @@ AP_distinguished_admiralty = {
 			country_war_exhaustion_mult = -0.1
 			shipclass_military_build_cost_mult = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_exalted_priest = {
 	potential = {
 		has_valid_civic = civic_exalted_priesthood
+		is_ai = no
 	}
 	option = {
 		name = AP_exalted_priest_heresy
 		modifier = {
 			planet_priests_influence_produces_add = 0.01
 			planet_amenities_add = 10
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -484,9 +442,6 @@ AP_exalted_priest = {
 			planet_stability_add = 5
 			planet_crime_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_exalted_priest_indocternation
@@ -494,24 +449,19 @@ AP_exalted_priest = {
 			pop_government_ethic_attraction = 0.2
 			country_unity_produces_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_feudal = {
 	potential = {
 		has_valid_civic = civic_feudal_realm
+		is_ai = no
 	}
 	option = {
 		name = AP_feudal_law
 		modifier = {
 			country_admin_cap_mult = 0.1
 			leader_skill_levels = 3
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -520,9 +470,6 @@ AP_feudal = {
 			planet_jobs_produces_mult = 0.2
 			species_leader_exp_gain = -0.1
 			leader_skill_levels = -1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -534,15 +481,13 @@ AP_feudal = {
 			species_leader_exp_gain = 0.25
 			leader_age = -20
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_free_haven = {
 	potential = {
 		has_valid_civic = civic_free_haven
+		is_ai = no
 	}
 	option = {
 		name = AP_free_haven_equal
@@ -552,18 +497,12 @@ AP_free_haven = {
 			planet_stability_add = 5
 			planet_crime_mult = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_free_haven_care
 		modifier = {
 			pop_environment_tolerance = 0.05
 			planet_pops_upkeep_mult = -0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -573,15 +512,13 @@ AP_free_haven = {
 			planet_migration_all_mult = 0.5
 			planet_crime_mult = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_idealistic_foundation = {
 	potential = {
 		has_valid_civic = civic_idealistic_foundation
+		is_ai = no
 	}
 	option = {
 		name = AP_idealistic_foundation_rural
@@ -590,18 +527,12 @@ AP_idealistic_foundation = {
 			planet_miners_unity_produces_add = 0.1
 			planet_technician_unity_produces_add = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_idealistic_foundation_urban
 		modifier = {
 			pop_housing_usage_mult = -0.1
 			pop_growth_from_immigration = 0.5
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -611,24 +542,19 @@ AP_idealistic_foundation = {
 			planet_migration_all_mult = 0.1
 			starbase_trade_protection_add = 5
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_imperial_cult = {
 	potential = {
 		has_valid_civic = civic_imperial_cult
+		is_ai = no
 	}
 	option = {
 		name = AP_imperial_cult_true_faith
 		modifier = {
 			planet_priests_produces_mult = 0.25
 			edicts_cost_mult = -0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -637,9 +563,6 @@ AP_imperial_cult = {
 			job_high_priest_per_pop = 0.01
 			job_priest_per_pop = 0.025
 			planet_priests_consumer_goods_upkeep_add = -1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -652,24 +575,19 @@ AP_imperial_cult = {
 		policy_flags = {
 			AP_imperial_zealots
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_inwards_perfection = {
 	potential = {
 		has_valid_civic = civic_inwards_perfection
+		is_ai = no
 	}
 	option = {
 		name = AP_inwards_perfection_silence
 		modifier = {
 			edict_length_mult = 0.5
 			planet_stability_add = 5
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -678,9 +596,6 @@ AP_inwards_perfection = {
 			species_leader_exp_gain = 0.25
 			job_researcher_per_pop = 0.066
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_inwards_perfection_joy
@@ -688,15 +603,13 @@ AP_inwards_perfection = {
 			biological_pop_happiness = 0.1
 			planet_pops_organics_upkeep_mult = -0.25
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_meritocracy = {
 	potential = {
 		has_valid_civic = civic_meritocracy
+		is_ai = no
 	}
 	option = {
 		name = AP_meritocracy_leaders
@@ -705,9 +618,6 @@ AP_meritocracy = {
 			leader_skill_levels = 2
 			country_leader_pool_size = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_meritocracy_population
@@ -715,9 +625,6 @@ AP_meritocracy = {
 			species_leader_exp_gain = 0.1
 			planet_jobs_worker_produces_mult = 0.1
 			planet_pops_organics_upkeep_mult = -0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -728,15 +635,13 @@ AP_meritocracy = {
 			country_leader_pool_size = -1
 			leaders_cost_mult = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_nationalistic_zeal = {
 	potential = {
 		has_valid_civic = civic_nationalistic_zeal
+		is_ai = no
 	}
 	option = {
 		name = AP_nationalistic_zeal_pride
@@ -746,9 +651,6 @@ AP_nationalistic_zeal = {
 			starbase_modules_cost_mult = -0.2
 			country_ship_upgrade_cost_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_nationalistic_zeal_intrusion
@@ -756,9 +658,6 @@ AP_nationalistic_zeal = {
 			ship_damage_against_starbases_mult = 0.25
 			ship_speed_mult = 0.1
 			ship_sensor_range_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -769,24 +668,19 @@ AP_nationalistic_zeal = {
 			planet_soldiers_physics_research_produces_add = 0.5
 			planet_soldiers_consumer_goods_upkeep_add = 0.5
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_parliamentary_system = {
 	potential = {
 		has_valid_civic = civic_parliamentary_system
+		is_ai = no
 	}
 	option = {
 		name = AP_parliamentary_system_all_voices
 		modifier = {
 			leader_age = 5
 			planet_jobs_produces_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -795,9 +689,6 @@ AP_parliamentary_system = {
 			species_leader_exp_gain = 0.1
 			edicts_cost_mult = -0.2
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_parliamentary_system_influence
@@ -805,15 +696,13 @@ AP_parliamentary_system = {
 			country_election_influence_cost_mult = -0.25
 			leader_skill_levels = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_philosopher_king = {
 	potential = {
 		has_valid_civic = civic_philosopher_king
+		is_ai = no
 	}
 	option = {
 		name = AP_philosopher_king_cooperative
@@ -821,9 +710,6 @@ AP_philosopher_king = {
 			species_leader_exp_gain = 0.05
 			leader_skill_levels = 2
 			leaders_upkeep_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -833,9 +719,6 @@ AP_philosopher_king = {
 			leaders_upkeep_mult = -0.1
 			species_leader_exp_gain = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_philosopher_king_benevolant
@@ -844,15 +727,13 @@ AP_philosopher_king = {
 			leader_age = 10
 			leaders_cost_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_police_state = {
 	potential = {
 		has_valid_civic = civic_police_state
+		is_ai = no
 	}
 	option = {
 		name = AP_police_state_passive
@@ -860,9 +741,6 @@ AP_police_state = {
 			planet_jobs_unity_produces_mult = 0.1
 			pop_amenities_usage_mult = -0.05
 			intel_encryption_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -872,9 +750,6 @@ AP_police_state = {
 			piracy_suppression_mult = 5
 			pop_government_ethic_attraction = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_police_state_aggresive
@@ -883,15 +758,13 @@ AP_police_state = {
 			intel_decryption_add = 1
 			pop_growth_speed = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_shadow_council = {
 	potential = {
 		has_valid_civic = civic_shadow_council
+		is_ai = no
 	}
 	option = {
 		name = AP_shadow_council_agenda
@@ -899,9 +772,6 @@ AP_shadow_council = {
 			planet_jobs_ruler_produces_mult = 0.25
 			pop_demotion_time_mult = -0.25
 			planet_buildings_cost_mult = -0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -912,9 +782,6 @@ AP_shadow_council = {
 			country_minerals_produces_mult = 0.1
 			pop_happiness = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_shadow_council_guardians
@@ -923,15 +790,13 @@ AP_shadow_council = {
 			armies_upkeep_mult = -0.25
 			ship_fire_rate_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_slaver_guilds = {
 	potential = {
 		has_valid_civic = civic_slaver_guilds
+		is_ai = no
 	}
 	option = {
 		name = AP_slaver_guilds_fear_mongers
@@ -941,9 +806,6 @@ AP_slaver_guilds = {
 			pop_category_slave_upkeep_mult = -0.1
 			pop_cat_slave_happiness = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_slaver_guilds_debt_collectors
@@ -951,9 +813,6 @@ AP_slaver_guilds = {
 			pop_category_slave_energy_produces_add = 0.5
 			pop_cat_slave_happiness = 0.05
 			pop_cat_slave_political_power = 0.5
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -963,35 +822,19 @@ AP_slaver_guilds = {
 			planet_jobs_upkeep_mult = -0.25
 			planet_pops_upkeep_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
-	}
-	option = {
-		name = AP_slaver_guilds_prestige
-		modifier = {
-			pop_cat_ruler_political_power = 0.5
-			pop_cat_slave_happiness = 0.1
-			pop_category_slave_upkeep_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_technocracy = {
 	potential = {
 		has_valid_civic = civic_technocracy
+		is_ai = no
 	}
 	option = {
 		name = AP_technocracy_overal
 		modifier = {
 			num_tech_alternatives_add = 1
 			all_technology_research_speed = 0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1002,9 +845,6 @@ AP_technocracy = {
 			planet_sensor_range_add = 1
 			ship_sensor_range_add = 2
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_technocracy_society
@@ -1012,9 +852,6 @@ AP_technocracy = {
 			country_society_research_produces_mult = 0.25
 			country_unity_produces_mult = 0.15
 			planet_amenities_mult = 0.15
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1025,15 +862,13 @@ AP_technocracy = {
 			planet_jobs_alloys_produces_mult = 0.1
 			planet_districts_upkeep_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
 AP_warrior_culture = {
 	potential = {
 		has_valid_civic = civic_warrior_culture
+		is_ai = no
 	}
 	option = {
 		name = AP_warrior_culture_honour
@@ -1042,9 +877,6 @@ AP_warrior_culture = {
 			pop_happiness = 0.05
 			country_border_friction_mult = 0.25
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_warrior_culture_duty
@@ -1052,9 +884,6 @@ AP_warrior_culture = {
 			country_subject_acceptance_add = 25
 			country_alloys_produces_mult = 0.05
 			planet_stability_add = 5
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1065,9 +894,6 @@ AP_warrior_culture = {
 			country_border_friction_mult = 0.5
 			pop_happiness = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1075,15 +901,13 @@ AP_warrior_culture = {
 AP_catalytic_processing = {
 	potential = {
 		has_valid_civic = civic_catalytic_processing
+		is_ai = no
 	}
 	option = {
 		name = AP_catalytic_processing_excess
 		modifier = {
 			planet_metallurgists_alloys_produces_mult = 0.5
 			planet_metallurgists_food_upkeep_mult = 0.25
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1093,9 +917,6 @@ AP_catalytic_processing = {
 			country_alloys_produces_mult = 0.25
 			country_food_produces_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_catalytic_processing_inovation
@@ -1104,9 +925,6 @@ AP_catalytic_processing = {
 			country_society_research_produces_mult = 0.1
 			all_technology_research_speed = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1114,6 +932,7 @@ AP_catalytic_processing = {
 AP_idyllic_bloom = {
 	potential = {
 		has_valid_civic = civic_idyllic_bloom
+		is_ai = no
 	}
 	option = {
 		name = AP_idyllic_bloom_nature_first
@@ -1122,18 +941,12 @@ AP_idyllic_bloom = {
 			planet_districts_upkeep_mult = -0.1
 			planet_districts_cost_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_idyllic_bloom_cultural
 		modifier = {
 			planet_jobs_unity_produces_mult = 0.25
 			planet_stability_add = 10
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1143,9 +956,6 @@ AP_idyllic_bloom = {
 			terraforming_cost_mult = -0.1
 			planet_building_build_speed_mult = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1153,6 +963,7 @@ AP_idyllic_bloom = {
 AP_fanatic_purifiers = {
 	potential = {
 		has_valid_civic = civic_fanatic_purifiers
+		is_ai = no
 	}
 	option = {
 		name = AP_fanatic_purifiers_explore
@@ -1160,9 +971,6 @@ AP_fanatic_purifiers = {
 			planet_sensor_range_add = 2
 			science_ship_survey_speed = 0.5
 			ship_sensor_range_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1173,18 +981,12 @@ AP_fanatic_purifiers = {
 			planet_farmers_food_produces_mult = 0.1
 			ship_starting_experience_add = 200
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_fanatic_purifiers_kill
 		modifier = {
 			ship_orbital_bombardment_mult = 0.33
 			ship_speed_mult = 0.33
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 }
@@ -1193,15 +995,13 @@ AP_fanatic_purifiers = {
 AP_master_crafters = {
 	potential = {
 		has_valid_civic = civic_crafters
+		is_ai = no
 	}
 	option = {
 		name = AP_master_crafters_quality
 		modifier = {
 			planet_artisans_unity_produces_add = 1
 			pop_happiness = 0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1210,18 +1010,12 @@ AP_master_crafters = {
 			planet_artisans_consumer_goods_produces_mult = 0.25
 			planet_artisans_upkeep_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_master_crafters_knowledge
 		modifier = {
 			country_engineering_tech_research_speed = 0.1
 			country_engineering_research_produces_mult = 0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 }
@@ -1230,15 +1024,13 @@ AP_master_crafters = {
 AP_pleasure_seekers = {
 	potential = {
 		has_valid_civic = civic_pleasure_seekers
+		is_ai = no
 	}
 	option = {
 		name = AP_pleasure_seekers_entitled
 		modifier = {
 			pop_government_ethic_attraction = 0.25
 			pop_cat_slave_happiness = -0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1247,18 +1039,12 @@ AP_pleasure_seekers = {
 			planet_jobs_produces_mult = 0.25
 			pop_happiness = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_pleasure_seekers_open_mind
 		modifier = {
 			planet_researchers_produces_mult = 0.25
 			planet_jobs_unity_produces_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 }
@@ -1267,6 +1053,7 @@ AP_pleasure_seekers = {
 AP_pompous_purists = {
 	potential = {
 		has_valid_civic = civic_pompous_purists
+		is_ai = no
 	}
 	option = {
 		name = AP_pompous_purists_pompous
@@ -1275,18 +1062,12 @@ AP_pompous_purists = {
 			intel_encryption_add = 1
 			envoys_add = -1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_pompous_purists_superior_in_all
 		modifier = {
 			country_subject_acceptance_add = 25
 			diplo_weight_envoys_mult = 0.25
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1295,9 +1076,6 @@ AP_pompous_purists = {
 			country_trust_cap_add = 25
 			intel_decryption_add = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1305,6 +1083,7 @@ AP_pompous_purists = {
 AP_barbaric_despoilers = {
 	potential = {
 		has_valid_civic = civic_barbaric_despoilers
+		is_ai = no
 	}
 	option = {
 		name = AP_barbaric_despoilers_raid
@@ -1312,9 +1091,6 @@ AP_barbaric_despoilers = {
 			ship_orbital_bombardment_mult = 0.25
 			army_attack_damage_mult = 0.33
 			army_collateral_damage_mult = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1325,18 +1101,12 @@ AP_barbaric_despoilers = {
 			starbase_upgrade_cost_mult = -0.25
 			starbase_upgrade_speed_mult = 0.33
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_barbaric_despoilers_exploit
 		modifier = {
 			pop_category_slave_unity_produces_add = 0.1
 			pop_category_slave_upkeep_mult = -0.5
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 }
@@ -1345,6 +1115,7 @@ AP_barbaric_despoilers = {
 AP_byzantine = {
 	potential = {
 		has_valid_civic = civic_byzantine_bureaucracy
+		is_ai = no
 	}
 	option = {
 		name = AP_byzantine_legislate
@@ -1352,9 +1123,6 @@ AP_byzantine = {
 			pop_housing_usage_mult = -0.1
 			pop_amenities_usage_mult = -0.05
 			pop_citizen_happiness = -0.05
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1365,9 +1133,6 @@ AP_byzantine = {
 			pop_cat_specialist_political_power = 0.5
 			pop_cat_worker_political_power = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_byzantine_benefits
@@ -1376,9 +1141,6 @@ AP_byzantine = {
 			pop_government_ethic_attraction = 0.1
 			pop_housing_usage_mult = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1386,6 +1148,7 @@ AP_byzantine = {
 AP_merchant_guilds = {
 	potential = {
 		has_valid_civic = civic_merchant_guilds
+		is_ai = no
 	}
 	option = {
 		name = AP_merchant_guilds_public_enterprise
@@ -1394,18 +1157,12 @@ AP_merchant_guilds = {
 			ship_speed_mult = 0.25
 			country_trade_fee = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_merchant_guilds_naturals
 		modifier = {
 			country_trade_attractiveness = 1
 			trade_value_mult = 0.25
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1414,9 +1171,6 @@ AP_merchant_guilds = {
 			country_energy_produces_mult = 0.25
 			pop_happiness = -0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1424,15 +1178,13 @@ AP_merchant_guilds = {
 AP_shared_burden = {
 	potential = {
 		has_valid_civic = civic_shared_burden
+		is_ai = no
 	}
 	option = {
 		name = AP_shared_burden_knowledge
 		modifier = {
 			all_technology_research_speed = 0.1
 			country_unity_produces_add = 25
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1442,9 +1194,6 @@ AP_shared_burden = {
 			planet_jobs_upkeep_mult = -0.2
 			pop_happiness = -0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_shared_burden_progress
@@ -1452,9 +1201,6 @@ AP_shared_burden = {
 			planet_stability_add = -5
 			pop_happiness = 0.05
 			country_unity_produces_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1464,9 +1210,6 @@ AP_shared_burden = {
 			planet_pops_organics_upkeep_mult = -0.25
 			country_unity_produces_mult = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1474,6 +1217,7 @@ AP_shared_burden = {
 AP_diplomatic_corps = {
 	potential = {
 		has_valid_civic = civic_diplomatic_corps
+		is_ai = no
 	}
 	option = {
 		name = AP_diplomatic_corps_discussion
@@ -1481,18 +1225,12 @@ AP_diplomatic_corps = {
 			envoy_improve_relations_mult = 0.33
 			country_trust_cap_add = 25
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_diplomatic_corps_experiences
 		modifier = {
 			species_leader_exp_gain = 0.1
 			diplo_action_acceptance_add = 25
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1502,9 +1240,6 @@ AP_diplomatic_corps = {
 			intel_decryption_add = 1
 			espionage_operation_speed_mult = 0.33
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1512,6 +1247,7 @@ AP_diplomatic_corps = {
 AP_memorialists = {
 	potential = {
 		has_valid_civic = civic_memorialist
+		is_ai = no
 	}
 	option = {
 		name = AP_memorialists_the_past
@@ -1519,9 +1255,6 @@ AP_memorialists = {
 			planet_death_chronicler_physics_research_produces_add = 2
 			planet_death_chronicler_society_research_produces_add = 2
 			planet_death_chronicler_engineering_research_produces_add = 2
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1531,18 +1264,12 @@ AP_memorialists = {
 			country_unity_produces_mult = 0.05
 			pop_happiness = 0.05
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_memorialists_the_future
 		modifier = {
 			all_technology_research_speed = 0.15
 			envoys_add = 1
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 }
@@ -1551,6 +1278,7 @@ AP_memorialists = {
 AP_reanimators = {
 	potential = {
 		has_valid_civic = civic_reanimated_armies
+		is_ai = no
 	}
 	option = {
 		name = AP_reanimators_inner_focus
@@ -1559,9 +1287,6 @@ AP_reanimators = {
 			planet_colony_development_speed_mult = 0.2
 			army_defense_health_mult = 0.33
 			army_defense_damage_mult = 0.33
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1574,9 +1299,6 @@ AP_reanimators = {
 			max_rivalries = 1
 			intel_encryption_add = 1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1584,6 +1306,7 @@ AP_reanimators = {
 AP_death_cult = {
 	potential = {
 		has_valid_civic = civic_death_cult
+		is_ai = no
 	}
 	option = {
 		name = AP_death_cult_rebirth
@@ -1592,9 +1315,6 @@ AP_death_cult = {
 			leader_skill_levels = 3
 			pop_growth_speed = 0.1
 			leader_age = -20
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1605,9 +1325,6 @@ AP_death_cult = {
 			ship_fire_rate_mult = 0.05
 			ships_upkeep_mult = -0.33
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 }
 
@@ -1615,15 +1332,13 @@ AP_death_cult = {
 AP_anglers = {
 	potential = {
 		has_valid_civic = civic_anglers
+		is_ai = no
 	}
 	option = {
 		name = AP_anglers_culture
 		modifier = {
 			planet_farmers_unity_produces_add = 1
 			planet_districts_cost_mult = -0.25
-		}
-		AI_weight = {
-			weight = 1
 		}
 	}
 	option = {
@@ -1633,9 +1348,6 @@ AP_anglers = {
 			country_trade_attractiveness = 0.5
 			trade_value_mult = 0.1
 		}
-		AI_weight = {
-			weight = 1
-		}
 	}
 	option = {
 		name = AP_anglers_mineral
@@ -1643,564 +1355,6 @@ AP_anglers = {
 			planet_jobs_energy_produces_mult = 0.2
 			planet_jobs_minerals_produces_mult = 0.2
 			pop_happiness = -0.05
-		}
-		AI_weight = {
-			weight = 1
-		}
-	}
-}
-##########################################################################
-# Custom Civic policies (For Advanced Policies)
-##########################################################################
-AP_advanced_administration = {
-	potential = {
-		OR = {
-			has_valid_civic = civic_AP_advanced_administration
-			has_valid_civic = civic_AP_advanced_administration_corporate
-		}
-	}
-	option = {
-		name = AP_advanced_administration_benefits
-		modifier = {
-			pop_happiness = 0.05
-			planet_amenities_mult = 0.33
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				OR = {
-					is_egalitarian = yes
-					has_valid_civic = civic_pleasure_seekers
-					has_valid_civic = civic_corporate_hedonism
-				}
-			}
-			modifier = {
-				factor = 2
-				is_xenophile = yes
-			}
-			modifier = {
-				factor = 0.5
-				is_authoritarian = yes
-			}
-			modifier = {
-				factor = 2
-				has_ai_personality_behaviour = multispecies
-			}
-		}
-	}
-	option = {
-		name = AP_advanced_administration_long_term
-		modifier = {
-			pop_housing_usage_mult = -0.1
-			planet_buildings_cost_mult = -0.1
-			planet_districts_cost_mult = -0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				has_ai_personality_behaviour = multispecies
-			}
-		}
-	}
-	option = {
-		name = AP_advanced_administration_cataloging
-		modifier = {
-			pop_government_ethic_attraction = 0.25
-			empire_size_penalty_mult = -0.33
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				is_authoritarian = yes
-			}
-			modifier = {
-				factor = 0.5
-				OR = {
-					is_egalitarian = yes
-					has_valid_civic = civic_pleasure_seekers
-					has_valid_civic = civic_corporate_hedonism
-				}
-			}
-		}
-	}
-}
-
-AP_industrial_war_complex = {
-	potential = {
-		has_valid_civic = civic_AP_war_complex
-	}
-	option = {
-		name = AP_industrial_war_complex_production
-		modifier = {
-			planet_jobs_produces_mult = 0.1
-			planet_jobs_upkeep_mult = 0.05
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				NOT = {
-					has_ethic = ethic_fanatic_militarist
-				}
-			}
-			modifier = {
-				factor = 2
-				is_spiritualist = yes
-			}
-		}
-	}
-	option = {
-		name = AP_industrial_war_complex_ships
-		modifier = {
-			starbase_shipyard_build_time_mult = -0.2
-			starbase_shipyard_build_cost_mult = -0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				has_ai_personality_behaviour = opportunist
-			}
-			modifier = {
-				factor = 2
-				has_ai_personality_behaviour = slaver
-			}
-		}
-	}
-	option = {
-		name = AP_industrial_war_complex_civilian
-		modifier = {
-			pop_growth_speed = 0.05
-			planet_amenities_mult = 0.1
-			planet_stability_add = 5
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 100
-				is_at_war = no
-			}
-		}
-	}
-}
-
-AP_grand_architecture = {
-	potential = {
-		OR = {
-			has_valid_civic = civic_AP_grand_architecture
-			has_valid_civic = civic_AP_grand_architecture_corporate
-		}
-	}
-	option = {
-		name = AP_grand_architecture_improvement
-		modifier = {
-			planet_building_build_speed_mult = 0.1
-			planet_buildings_upkeep_mult = -0.05
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				owner_main_species = {
-					OR = {
-						has_trait = trait_adaptive
-						has_trait = trait_adaptive_lithoid
-					}
-				}
-			}
-			modifier = {
-				factor = 2
-				has_valid_civic = civic_technocracy
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_industrious
-				}
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_industrious
-				}
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_natural_engineers
-				}
-			}
-			modifier = {
-				factor = 0.5
-				owner_main_species = {
-					has_trait = trait_conformists
-				}
-			}
-		}
-	}
-	option = {
-		name = AP_grand_architecture_ecology
-		modifier = {
-			planet_jobs_food_produces_mult = 0.25
-			pop_environment_tolerance = 0.05
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				owner_main_species = {
-					has_trait = trait_conservational
-				}
-			}
-			modifier = {
-				factor = 2
-				has_valid_civic = civic_environmentalist
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_natural_sociologists
-				}
-			}
-			modifier = {
-				factor = 0.5
-				owner_main_species = {
-					has_trait = trait_resilient
-				}
-			}
-		}
-	}
-}
-
-AP_mobile_construction = {
-	potential = {
-		has_valid_civic = civic_AP_mobile_construction
-	}
-	option = {
-		name = AP_mobile_construction_civilian
-		modifier = {
-			terraform_speed_mult = 0.25
-			country_unity_produces_mult = 0.1
-			planet_amenities_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 2
-				is_militarist = no
-			}
-			modifier = {
-				factor = 5
-				owner_main_species = {
-					has_trait = trait_weak
-				}
-			}
-			modifier = {
-				factor = 2
-				is_pacifist = yes
-			}
-			modifier = {
-				factor = 10
-				is_at_war = no
-				is_militarist = no
-			}
-		}
-	}
-	option = {
-		name = AP_mobile_construction_military
-		modifier = {
-			army_starting_experience_add = 100
-			ship_starting_experience_add = 100
-			planet_army_build_speed_mult = 0.5
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 10
-				is_at_war = yes
-			}
-			modifier = {
-				factor = 5
-				is_militarist = yes
-			}
-		}
-	}
-}
-
-AP_ancient_remnants = {
-	potential = {
-		has_valid_civic = civic_AP_ancient_remnants
-	}
-	option = {
-		name = AP_ancient_remnants_hidden_past
-		modifier = {
-			planet_miners_minor_artifacts_produces_add = 0.01
-			planet_jobs_produces_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 10
-				is_materialist = yes
-			}
-			modifier = {
-				factor = 5
-				is_pacifist = yes
-			}
-			modifier = {
-				factor = 2
-				is_spiritualist = yes
-			}
-		}
-	}
-	option = {
-		name = AP_ancient_remnants_reclimation
-		modifier = {
-			country_claim_influence_cost_mult = -0.33
-			ship_fire_rate_mult = 0.2
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 10
-				is_militarist = yes
-			}
-			modifier = {
-				factor = 10
-				is_xenophobe = yes
-			}
-			modifier = {
-				factor = 4
-				is_spiritualist = yes
-			}
-			modifier = {
-				factor = 0
-				is_pacifist = yes
-			}
-		}
-	}
-	option = {
-		name = AP_ancient_remnants_reconstruction
-		modifier = {
-			country_minerals_produces_mult = 0.1
-			starbase_upgrade_cost_mult = -0.33
-			pop_happiness = 0.05
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 10
-				is_pacifist = yes
-			}
-			modifier = {
-				factor = 5
-				is_xenophile = yes
-			}
-			modifier = {
-				factor = 2
-				is_spiritualist = yes
-			}
-		}
-	}
-}
-
-AP_workers_ethic = {
-	potential = {
-		OR = {
-			has_valid_civic = civic_AP_workers_ethic
-			has_valid_civic = civic_AP_workers_ethic_corporate
-		}
-	}
-	option = {
-		name = AP_workers_ethic_family
-		modifier = {
-			pop_growth_speed = 0.1
-			pop_housing_usage_mult = 0.25
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				owner_main_species = {
-					has_trait = trait_communal
-				}
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_natural_sociologists
-				}
-			}
-			modifier = {
-				factor = 0
-				owner_main_species = {
-					has_trait = trait_solitary
-				}
-			}
-		}
-	}
-	option = {
-		name = AP_workers_ethic_loyalty
-		modifier = {
-			planet_stability_add = 5
-			planet_crime_mult = -0.25
-			planet_pops_upkeep_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				OR = {
-					has_valid_civic = civic_nationalistic_zeal
-					has_valid_civic = civic_brand_loyalty
-				}
-			}
-			modifier = {
-				factor = 2
-				has_valid_civic = civic_merchant_guilds
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_sedentary
-				}
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_conformists
-				}
-			}
-			modifier = {
-				factor = 0
-				owner_main_species = {
-					has_trait = trait_unruly
-				}
-			}
-		}
-	}
-	option = {
-		name = AP_workers_ethic_reward
-		modifier = {
-			pop_growth_from_immigration = 0.33
-			pop_happiness = 0.05
-			planet_pops_consumer_goods_upkeep_mult = 0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				OR = {
-					has_valid_civic = civic_idealistic_foundation
-					has_valid_civic = civic_ruthless_competition
-				}
-			}
-			modifier = {
-				factor = 2
-				has_valid_civic = civic_meritocracy
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_nomadic
-				}
-			}
-			modifier = {
-				factor = 2
-				owner_main_species = {
-					has_trait = trait_docile
-				}
-			}
-		}
-	}
-}
-
-AP_good_education = {
-	potential = {
-		OR = {
-			has_valid_civic = civic_AP_good_education
-			has_valid_civic = civic_AP_good_education_corporate
-		}
-	}
-	option = {
-		name = AP_good_education_the_next_gen
-		modifier = {
-			pop_growth_speed = 0.05
-			pop_happiness = 0.05
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 2
-				is_xenophile = yes
-			}
-			modifier = {
-				factor = 2
-				is_egalitarian = yes
-			}
-			modifier = {
-				factor = 1.5
-				is_pacifist = yes
-			}
-			modifier = {
-				factor = 0.5
-				is_militarist = yes
-			}
-		}
-	}
-	option = {
-		name = AP_good_education_progress
-		modifier = {
-			planet_researchers_produces_mult = 0.1
-			planet_job_educator_upkeep_mult = 0.25
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 2
-				is_materialist = yes
-			}
-			modifier = {
-				factor = 2
-				is_egalitarian = yes
-			}
-			modifier = {
-				factor = 2
-				is_militarist = yes
-			}
-			modifier = {
-				factor = 0.5
-				is_authoritarian = yes
-			}
-		}
-	}
-	option = {
-		name = AP_good_education_tradition
-		modifier = {
-			leaders_cost_mult = -0.25
-			species_leader_exp_gain = 0.1
-		}
-		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 2
-				is_authoritarian = yes
-			}
-			modifier = {
-				factor = 2
-				is_spiritualist = yes
-			}
-			modifier = {
-				factor = 2
-				is_militarist = yes
-			}
-			modifier = {
-				factor = 0
-				is_materialist = yes
-			}
 		}
 	}
 }

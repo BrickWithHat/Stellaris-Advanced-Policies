@@ -4,6 +4,7 @@ ancient_archaeologists = {
 	clothes_texture_index = 3
 	building_icon = building_wildcat_miners
 	icon = evaluator
+
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
@@ -11,10 +12,12 @@ ancient_archaeologists = {
 		is_sapient = yes
 		is_enslaved = no
 	}
+
 	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
+
 	resources = {
 		category = planet_jobs
 		produces = {
@@ -87,7 +90,6 @@ ancient_archaeologists = {
 		}
 	}
 }
-
 ancient_archaeologists_drone = {
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER

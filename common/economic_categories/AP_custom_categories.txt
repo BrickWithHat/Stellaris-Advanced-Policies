@@ -32,6 +32,16 @@ planet_death_chronicler = {
     parent = planet_jobs
     generate_add_modifiers = {
         produces
+        upkeep
+    }
+}
+##########################################################################
+# Pop categories
+##########################################################################
+pop_category_rulers = {
+	parent = planet_pops
+    generate_mult_modifiers = {
+        produces
     }
 }
 ##########################################################################
