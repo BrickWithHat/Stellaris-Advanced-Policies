@@ -8,6 +8,7 @@
  AP_abolish_planetary_quota_desc:0 "We may have set into motion the desire to gain from this world. But the fallout produced with this seems to be a too big of a risk to take. Thusly we should end it."
  AP_conscription:0 "Planetry Conscription"
  AP_conscription_desc:0 "Enact our conscription law, this way we draft our population into conscription armies for the cause!"
+ AP_conscription_effect_desc:0 "Will spawn between 5-25 conscript units in orbit based on the planet population. Will only trigger on the end of the month."
 
 ##########################################################################
 # Decisions without event chains
@@ -26,9 +27,13 @@
  AP_competition_of_the_minds_desc:0 "This world is a prime candidate for many minds to gather and discuss new findings."
 
 ##########################################################################
-# Civic Decisions
+# Civic/Origin Decisions
 ##########################################################################
  AP_mobile_constrution_deploy:0 "Deploy Mobile Construction Vehicle"
  AP_mobile_constrution_deploy_desc:0 "Deploy the empires Mobile Construction Vehicle granting some powerfull bonuses to contruction on the planet."
  AP_mobile_constrution_pack:0 "Recall Mobile Construction Vehicle"
  AP_mobile_constrution_pack_desc:0 "Recall the empires Mobile Construction Vehicle, Returning it out our empire as a whole grants usefull empire-wide bonuses."
+ AP_excavate_the_planet:0 "Excavate the planet"
+ AP_excavate_the_planet_desc:0 "We have yet to properly excavate the inner layers of this planet. Doing so will grant us more build space and make our people feel more at home."
+ AP_connect_underground:0 "Improve the Underground"
+ AP_connect_underground_desc:0 "We have dug enough for us to have massive cities but there connections are not yet up to the correct standard. Let us improve these connections."

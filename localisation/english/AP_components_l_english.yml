@@ -7,14 +7,22 @@
 # Deposits
  d_ancient_site:0 "Ancient Cashe"
  d_ancient_site_desc:0 "This stronghold is a secure location where most of the ancient knowledge of our the forebearers is kept for study."
+ d_underground_cities:0 "Underground City Complex"
+ d_underground_cities_desc:0 "This Complex used to be a bunch of big cities, all linked together through long and wide caves. After many years they all grew so close together they became one big city."
+ d_underground_city:0 "Underground City"
+ d_underground_city_desc:0 "A single underground city housing our population."
 
 # Governments
  gov_ancient_collective:0 "Ancient Collective"
  gov_ancient_collective_desc:0 "This form of governemt is an ancient form of directed political power. While riddled with unique oddities in its governance style due to the total age of the governemt as a whole. It does clearly function in a more uniquely efficient and somewhat alien manner."
  gov_ancient_imperium:0 "Ancient Imperium"
- gov_ancient_imperium_desc:0 "An Ancient Imperium is a form of government designed eons ago and left to evolve for longer then recorded history. While it functions in unique and alien ways. It still functions with suprising efficiency."
+ gov_ancient_imperium_desc:0 "An Ancient Imperium is a form of government designed eons ago and left to change for longer then the species has recorded history. While it functions in unique and alien ways. It still functions with suprising efficiency."
  gov_ancient_warhost:0 "Ancient Warhost"
- gov_ancient_warhost_desc:0 "An Ancient Warhost government is a governemt stepped in militarist tradition and strife. No one can lead without proving they are capable. Thusly there leaders are fierce and hardend veterans of many battles. Yet the culture surrounding these is older then most recorded history itself."
+ gov_ancient_warhost_desc:0 "An Ancient Warhost government is a governemt stepped in militarist tradition and strife. No one can lead without proving they are capable. Thusly there leaders are fierce and hardend veterans of many battles. Yet the culture surrounding these is older then most of the species recorded history itself."
+
+# Start screens
+ AP_START_SCREEN_CHILDREN_OF_THE_DARKNESS:0 "Since the beginning of our civilization has the surface of [GetHomeWorldName] been alive with our natural predators. While our people had hard times learning to live among the surface dwellers they often hid inside some of the more common caves on the planet. They learned fast that these went deeper then expected and held the ability to foster live we bent to our survival.\n\nMany centuries have passed since those lessons have been learned, while most retreated towards the depths those few that remained died out. Reasuring our previous expepectations. Now with a vast network of caves having littered the planet and us having used our technology to reclaim the surface we now turn our gaze up further. We learned many secrets from the deep dark, now we leave the deep and reach onto the void a darkness not uncommon to us."
+ AP_START_SCREEN_ANCIENT_REMNANTS:0 "Many eons ago the [GetSpeciesAdj] evolved on a distant planet far off in the depths of the galaxy. We were a leftover of an empire older then our recorded history. Our ancestors found there relics, while there intentions were initially to merely despose of there rivals. They gained knowledge on a level far beyond what they could even comprehend. The sheer madness that seeded caused these people to try and destroy the relics. Yet in the fracturing of this knowledge they left the pieces accross the entire planet. Seeding the early nations of [GetHomeWorldName] with many abilities.\n\n After great conflict and the realization our knowledge is based on another civilization lost to us. We banded together in a collective which would later grow into our current empire. The knowledge gleamed in our early years gave us much to ponder."
 
 # AI Personalities
  personality_ancient_reclaimer:0 "Remnant Reclaimers"

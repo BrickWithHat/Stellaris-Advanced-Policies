@@ -1,6 +1,0 @@
-namespace = AP_PQ
-planet_event = {
-	id = AP_PQ.500
-	hide_window = yes
-	is_triggered_only = yes
-}

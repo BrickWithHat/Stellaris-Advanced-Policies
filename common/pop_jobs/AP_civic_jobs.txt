@@ -1,10 +1,9 @@
-ancient_archeoligist = {
+ancient_archaeologists = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	clothes_texture_index = 3
 	building_icon = building_wildcat_miners
 	icon = evaluator
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
@@ -12,12 +11,10 @@ ancient_archeoligist = {
 		is_sapient = yes
 		is_enslaved = no
 	}
-
 	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
-
 	resources = {
 		category = planet_jobs
 		produces = {
@@ -37,11 +34,15 @@ ancient_archeoligist = {
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
-			has_living_standard = { type = living_standard_academic_privilege }
+			has_living_standard = {
+				type = living_standard_academic_privilege
+			}
 		}
 		modifier = {
 			factor = 3
@@ -74,7 +75,7 @@ ancient_archeoligist = {
 		}
 		modifier = {
 			factor = 2
-			has_job = ancient_archeoligist
+			has_job = ancient_archaeologists
 		}
 		modifier = {
 			factor = 1.5
@@ -83,6 +84,95 @@ ancient_archeoligist = {
 		modifier = {
 			factor = 2
 			has_trait = trait_psionic
+		}
+	}
+}
+
+ancient_archaeologists_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_wildcat_miners
+	icon = evaluator
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_drone_job
+	possible = {
+		NOT = {
+			has_trait = trait_nerve_stapled
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			physics_research = 5
+			engineering_research = 5
+			society_research = 5
+		}
+		upkeep = {
+			consumer_goods = 2.5
+		}
+	}
+	country_modifier = {
+		all_technology_research_speed = 0.1
+	}
+	weight = {
+		weight = @complex_drone_job_weight
+		modifier = {
+			factor = 3
+			has_trait = trait_erudite
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_intelligent
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_natural_engineers
+				has_trait = trait_natural_physicists
+				has_trait = trait_natural_sociologists
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_presapient_proles
+			}
+		}
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = {
+				has_valid_civic = civic_machine_assimilator
+			}
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				owner = {
+					is_ai = yes
+					has_resource = {
+						type = minerals
+						amount < 500
+					}
+					has_monthly_income = {
+						resource = minerals
+						value < 25
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_necrophage
 		}
 	}
 }

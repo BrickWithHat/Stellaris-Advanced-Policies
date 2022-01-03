@@ -34,18 +34,13 @@ planet_event = {
 	trigger = {
 		has_modifier = planet_quota_planned
 	}
-	## militarist at war desc (complete)
+	## militarist at war desc
 	desc = {
 		text = AP_PQ.1_militarist_desc
 		exclusive_trigger = {
 			owner = {
 				is_at_war = yes
 				is_militarist = yes
-				NAND = {
-					has_policy_flag = AP_condition_yellow
-					has_policy_flag = AP_condition_red
-					has_policy_flag = AP_condition_void
-				}
 			}
 		}
 	}
@@ -67,28 +62,15 @@ planet_event = {
 			}
 		}
 	}
-	# ## emergency desc
-	# desc = {
-	# 	text = AP_PQ.1_emergency_desc
-	# 	exclusive_trigger = {
-	# 		owner = {
-	# 			OR = {
-	# 				has_policy_flag = AP_condition_yellow
-	# 				has_policy_flag = AP_condition_red
-	# 				has_policy_flag = AP_condition_void
-	# 			}
-	# 		}
-	# 	}
-	# }
-	## egalitarion desc
-	# desc = {
-	# 	text = AP_PQ.1_ega_desc
-	# 	trigger = {
-	# 		owner = {
-	# 			is_egalitarian = yes
-	# 		}
-	# 	}
-	# }
+	# egalitarion desc
+	desc = {
+		text = AP_PQ.1_ega_desc
+		trigger = {
+			owner = {
+				is_egalitarian = yes
+			}
+		}
+	}
 	## militarist at war option (complete)
 	option = {
 		name = AP_PQ.1_militarist_option
@@ -161,51 +143,27 @@ planet_event = {
 			}
 		}
 	}
-	# ## emergency option
-	# option = {
-	# 	name = AP_PQ.1_emergency_option
-	# 	exclusive_trigger = {
-	# 		owner = {
-	# 			OR = {
-	# 				has_policy_flag = AP_condition_yellow
-	# 				has_policy_flag = AP_condition_red
-	# 				has_policy_flag = AP_condition_void
-	# 			}
-	# 		}
-	# 	}
-	# 	hidden_effect = {
-	# 		planet_event = {
-	# 			id = AP_PQ.500
-	# 			days = 30
-	# 			random = 30
-	# 		}
-	# 		set_variable = {
-	# 			which = quota_emergency
-	# 			value = 1
-	# 		}
-	# 	}
-	# }
-	# ## egalitarian option
-	# option = {
-	# 	name = AP_PQ.1_ega_option
-	# 	trigger = {
-	# 		owner = {
-	# 			is_gestalt = no
-	# 			is_egalitarian = yes
-	# 		}
-	# 	}
-	# 	hidden_effect = {
-	# 		set_variable = {
-	# 			which = quota_egalitarian
-	# 			value = 1
-	# 		}
-	# 		planet_event = {
-	# 			id = AP_PQ.600
-	# 			days = 30
-	# 			random = 30
-	# 		}
-	# 	}
-	# }
+	## egalitarian option
+	option = {
+		name = AP_PQ.1_ega_option
+		trigger = {
+			owner = {
+				is_gestalt = no
+				is_egalitarian = yes
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = quota_egalitarian
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.500
+				days = 30
+				random = 30
+			}
+		}
+	}
 }
 
 ## closing of the event chain
@@ -226,15 +184,15 @@ planet_event = {
 			OR = {
 				check_variable = {
 					which = quota_fail
-					value = 1
+					value > 0
 				}
 				check_variable = {
 					which = quota_success
-					value = 1
+					value > 0
 				}
 				check_variable = {
 					which = quota_abolish
-					value = 1
+					value > 0
 				}
 			}
 		}
@@ -291,8 +249,7 @@ planet_event = {
 			clear_variable = quota_military
 			clear_variable = quota_autocracy
 			clear_variable = quota_remaining
-			# clear_variable = quota_emergency
-			# clear_variable = quota_egalitarian
+			clear_variable = quota_egalitarian
 			owner = {
 				remove_country_flag = quota_active
 				add_resource = {
@@ -326,8 +283,7 @@ planet_event = {
 			clear_variable = quota_military
 			clear_variable = quota_autocracy
 			clear_variable = quota_remaining
-			# clear_variable = quota_emergency
-			# clear_variable = quota_egalitarian
+			clear_variable = quota_egalitarian
 			owner = {
 				remove_country_flag = quota_active
 			}
@@ -364,8 +320,7 @@ planet_event = {
 			clear_variable = quota_military
 			clear_variable = quota_autocracy
 			clear_variable = quota_remaining
-			# clear_variable = quota_emergency
-			# clear_variable = quota_egalitarian
+			clear_variable = quota_egalitarian
 			owner = {
 				remove_country_flag = quota_active
 			}

@@ -93,3 +93,28 @@ country_event = {
 		}
 	}
 }
+
+##########################################################################
+# Origin components
+##########################################################################
+namespace = AP_origin
+# Start-up for the Children of the Darkness Origin
+country_event = {
+	id = AP_origin.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_origin = AP_children_of_the_darkness
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_origin = AP_children_of_the_darkness
+			}
+			capital_scope = {
+				add_deposit = d_underground_cities
+				set_planet_flag = AP_cave_full
+			}
+		}
+	}
+}

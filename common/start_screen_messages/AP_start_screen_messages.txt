@@ -1,0 +1,17 @@
+# Origin Children of the Darkness
+part = {
+	location = 1
+	localization = "AP_START_SCREEN_CHILDREN_OF_THE_DARKNESS"
+	trigger = {
+		has_origin = AP_children_of_the_darkness
+	}
+}
+
+# Has Ancient Remnats civic
+part = {
+	location = 1
+	localization = "AP_START_SCREEN_ANCIENT_REMNANTS"
+	trigger = {
+		has_civic = civic_AP_ancient_remnants
+	}
+}

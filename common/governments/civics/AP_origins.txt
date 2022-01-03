@@ -1,0 +1,28 @@
+AP_children_of_the_darkness = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_AP_children_of_the_darkness.dds"
+	picture = GFX_origin_AP_children_of_the_darkness
+	description = "AP_children_of_the_darkness_effects"
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_agrarian_idyll
+				value = civic_anglers
+				value = civic_idyllic_bloom
+			}
+		}
+		authority = {
+			NOR = {
+				value = auth_ancient_machine_intelligence
+				value = auth_hive_mind
+			}
+		}
+	}
+	modifier = {
+		pop_environment_tolerance = -0.25
+		planet_colony_development_speed_mult = 0.25
+	}
+	random_weight = {
+		base = 5
+	}
+}

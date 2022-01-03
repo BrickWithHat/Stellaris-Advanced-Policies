@@ -967,6 +967,17 @@ AP_slaver_guilds = {
 			weight = 1
 		}
 	}
+	option = {
+		name = AP_slaver_guilds_prestige
+		modifier = {
+			pop_cat_ruler_political_power = 0.5
+			pop_cat_slave_happiness = 0.1
+			pop_category_slave_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
 }
 
 AP_technocracy = {
@@ -1638,6 +1649,7 @@ AP_anglers = {
 		}
 	}
 }
+
 ##########################################################################
 # Custom Civic policies (For Advanced Policies)
 ##########################################################################
@@ -1656,6 +1668,26 @@ AP_advanced_administration = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					is_egalitarian = yes
+					has_valid_civic = civic_pleasure_seekers
+					has_valid_civic = civic_corporate_hedonism
+				}
+			}
+			modifier = {
+				factor = 2
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 2
+				has_ai_personality_behaviour = multispecies
+			}
 		}
 	}
 	option = {
@@ -1667,6 +1699,10 @@ AP_advanced_administration = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				has_ai_personality_behaviour = multispecies
+			}
 		}
 	}
 	option = {
@@ -1677,6 +1713,18 @@ AP_advanced_administration = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					is_egalitarian = yes
+					has_valid_civic = civic_pleasure_seekers
+					has_valid_civic = civic_corporate_hedonism
+				}
+			}
 		}
 	}
 }
@@ -1693,6 +1741,16 @@ AP_industrial_war_complex = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				NOT = {
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+			modifier = {
+				factor = 2
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -1703,6 +1761,14 @@ AP_industrial_war_complex = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				has_ai_personality_behaviour = opportunist
+			}
+			modifier = {
+				factor = 2
+				has_ai_personality_behaviour = slaver
+			}
 		}
 	}
 	option = {
@@ -1714,6 +1780,10 @@ AP_industrial_war_complex = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 100
+				is_at_war = no
+			}
 		}
 	}
 }
@@ -1733,6 +1803,43 @@ AP_grand_architecture = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					OR = {
+						has_trait = trait_adaptive
+						has_trait = trait_adaptive_lithoid
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				has_valid_civic = civic_technocracy
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_industrious
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_industrious
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_natural_engineers
+				}
+			}
+			modifier = {
+				factor = 0.5
+				owner_main_species = {
+					has_trait = trait_conformists
+				}
+			}
 		}
 	}
 	option = {
@@ -1743,6 +1850,28 @@ AP_grand_architecture = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_conservational
+				}
+			}
+			modifier = {
+				factor = 2
+				has_valid_civic = civic_environmentalist
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_natural_sociologists
+				}
+			}
+			modifier = {
+				factor = 0.5
+				owner_main_species = {
+					has_trait = trait_resilient
+				}
+			}
 		}
 	}
 }
@@ -1760,6 +1889,25 @@ AP_mobile_construction = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_militarist = no
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_weak
+				}
+			}
+			modifier = {
+				factor = 2
+				is_pacifist = yes
+			}
+			modifier = {
+				factor = 10
+				is_at_war = no
+				is_militarist = no
+			}
 		}
 	}
 	option = {
@@ -1771,6 +1919,14 @@ AP_mobile_construction = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 5
+				is_militarist = yes
+			}
 		}
 	}
 }
@@ -1784,10 +1940,21 @@ AP_ancient_remnants = {
 		modifier = {
 			planet_miners_minor_artifacts_produces_add = 0.01
 			planet_jobs_produces_mult = 0.1
-
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 5
+				is_pacifist = yes
+			}
+			modifier = {
+				factor = 2
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -1798,17 +1965,244 @@ AP_ancient_remnants = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_militarist = yes
+			}
+			modifier = {
+				factor = 10
+				is_xenophobe = yes
+			}
+			modifier = {
+				factor = 4
+				is_spiritualist = yes
+			}
+			modifier = {
+				factor = 0
+				is_pacifist = yes
+			}
 		}
 	}
 	option = {
 		name = AP_ancient_remnants_reconstruction
 		modifier = {
 			country_minerals_produces_mult = 0.1
-			starbase_constructions_cost_mult = -0.33
+			starbase_upgrade_cost_mult = -0.33
 			pop_happiness = 0.05
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_pacifist = yes
+			}
+			modifier = {
+				factor = 5
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 2
+				is_spiritualist = yes
+			}
+		}
+	}
+}
+
+AP_workers_ethic = {
+	potential = {
+		OR = {
+			has_valid_civic = civic_AP_workers_ethic
+			has_valid_civic = civic_AP_workers_ethic_corporate
+		}
+	}
+	option = {
+		name = AP_workers_ethic_family
+		modifier = {
+			pop_growth_speed = 0.1
+			pop_housing_usage_mult = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_communal
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_natural_sociologists
+				}
+			}
+			modifier = {
+				factor = 0
+				owner_main_species = {
+					has_trait = trait_solitary
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_workers_ethic_loyalty
+		modifier = {
+			planet_stability_add = 5
+			planet_crime_mult = -0.25
+			planet_pops_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					has_valid_civic = civic_nationalistic_zeal
+					has_valid_civic = civic_brand_loyalty
+				}
+			}
+			modifier = {
+				factor = 2
+				has_valid_civic = civic_merchant_guilds
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_sedentary
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_conformists
+				}
+			}
+			modifier = {
+				factor = 0
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_workers_ethic_reward
+		modifier = {
+			pop_growth_from_immigration = 0.33
+			pop_happiness = 0.05
+			planet_pops_consumer_goods_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					has_valid_civic = civic_idealistic_foundation
+					has_valid_civic = civic_ruthless_competition
+				}
+			}
+			modifier = {
+				factor = 2
+				has_valid_civic = civic_meritocracy
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_nomadic
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_docile
+				}
+			}
+		}
+	}
+}
+
+AP_good_education = {
+	potential = {
+		OR = {
+			has_valid_civic = civic_AP_good_education
+			has_valid_civic = civic_AP_good_education_corporate
+		}
+	}
+	option = {
+		name = AP_good_education_the_next_gen
+		modifier = {
+			pop_growth_speed = 0.05
+			pop_happiness = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 1.5
+				is_pacifist = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_militarist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_good_education_progress
+		modifier = {
+			planet_researchers_produces_mult = 0.1
+			planet_job_educator_upkeep_mult = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 2
+				is_militarist = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_authoritarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_good_education_tradition
+		modifier = {
+			leaders_cost_mult = -0.25
+			species_leader_exp_gain = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 2
+				is_spiritualist = yes
+			}
+			modifier = {
+				factor = 2
+				is_militarist = yes
+			}
+			modifier = {
+				factor = 0
+				is_materialist = yes
+			}
+
 		}
 	}
 }

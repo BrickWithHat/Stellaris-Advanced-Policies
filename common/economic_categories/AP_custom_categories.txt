@@ -1,5 +1,5 @@
 ##########################################################################
-# Parents
+# Parents (Disabled so it does not overwrite and thus not cause silly bugs)
 ##########################################################################
 # planet_pops = {
 #     parent = planets
@@ -17,6 +17,7 @@ planet_priests = {
 		produces
         upkeep
 	}
+
 }
 planet_soldiers = {
     icon = "job_soldier"
@@ -31,22 +32,31 @@ planet_death_chronicler = {
     parent = planet_jobs
     generate_add_modifiers = {
         produces
-        upkeep
     }
 }
 ##########################################################################
 # Pop categories
 ##########################################################################
-pop_category_rulers = {
-	parent = planet_pops
-    generate_mult_modifiers = {
-        produces
-        upkeep
-    }
-}
+# pop_category_rulers = {
+# 	parent = planet_pops
+#     generate_mult_modifiers = {
+#         produces
+#         upkeep
+#     }
+# }
 pop_category_slave = {
     parent = planet_pops
     generate_add_modifiers = {
         produces
+    }
+}
+##########################################################################
+# Custom jobs
+##########################################################################
+planet_job_educator = { # Is an parent to all Educator jobs
+    parent = planet_jobs
+    generate_mult_modifiers = {
+        produces
+        upkeep
     }
 }

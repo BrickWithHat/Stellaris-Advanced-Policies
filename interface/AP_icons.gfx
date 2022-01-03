@@ -29,6 +29,10 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds"
 	}
 	spritetype = {
+		name = "gfx_education_icon"
+		textureFile = "gfx/interface/icons/education.dds"
+	}
+	spritetype = {
 		name = "gfx_jobs_worker_educator"
 		textureFile = "gfx/interface/icons/jobs/job_worker_educator.dds"
 	}
@@ -40,5 +44,9 @@ spriteTypes = {
 		name = "gfx_jobs_ruler_educator"
 		textureFile = "gfx/interface/icons/jobs/job_ruler_educator.dds"
 	}
+	spritetype = {
+		name = "GFX_origin_AP_children_of_the_darkness"
+		textureFile = "gfx/event_pictures/origins/origin_AP_children_of_the_darkness.dds"
+		alwaysTransparent = yes
+	}
 }
-

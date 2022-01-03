@@ -10,7 +10,6 @@ planet_event = {
 		has_modifier = planet_conscription
 	}
 	immediate = {
-		set_planet_flag = AP_planet_concripted
 		set_owner = event_target:planet_owners
 		while = {
 			count = 5
