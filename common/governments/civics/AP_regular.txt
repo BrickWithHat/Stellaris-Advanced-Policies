@@ -174,3 +174,60 @@ civic_AP_ancient_remnants = {
 		num_tech_alternatives_add = -2
 	}
 }
+
+civic_AP_workers_ethic = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+	}
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_pleasure_seekers
+			}
+		}
+	}
+	modifier = {
+		pop_cat_worker_political_power = 1
+		planet_jobs_produces_mult = 0.1
+		pop_happiness = -0.05
+	}
+}
+
+civic_AP_good_education = {
+	description = "civic_AP_good_education_effect"
+	potential = {
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_slaver_guilds
+				value = civic_aristocratic_elite
+				value = civic_barbaric_despoilers
+			}
+		}
+	}
+	modifier = {
+		planet_job_educator_produces_mult = 0.33
+		planet_job_educator_upkeep_mult = -0.5
+		leader_skill_levels = 2
+	}
+}

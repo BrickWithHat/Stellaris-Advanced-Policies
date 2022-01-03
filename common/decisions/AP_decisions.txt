@@ -103,65 +103,6 @@ AP_abolish_planetary_quota = {
 	}
 }
 
-AP_conscription = {
-	owned_planets_only = yes
-	sound = event_air_raid_siren_02
-	icon = decision_victorious_army
-	resources = {
-		category = decisions
-	}
-	potential = {
-		owner = {
-			is_regular_empire = yes
-			is_ai = no
-		}
-		NOR = {
-			has_modifier = planet_conscription
-			has_planet_flag = AP_planet_concripted
-		}
-	}
-	allow = {
-		OR = {
-			AND = {
-				owner = {
-					has_policy_flag = AP_conscription_war_time
-					is_at_war = yes
-				}
-			}
-			AND = {
-				owner = {
-					has_policy_flag = AP_conscription_mandatory
-				}
-			}
-		}
-	}
-	effect = {
-		add_modifier = {
-			modifier = planet_conscription
-		}
-		hidden_effect = {
-			planet_event = {
-				id = AP_PD.1
-			}
-			planet_event = {
-				id = AP_PD.2
-			}
-			planet_event = {
-				id = AP_PD.3
-			}
-			planet_event = {
-				id = AP_PD.4
-			}
-			planet_event = {
-				id = AP_PD.5
-			}
-		}
-	}
-	ai_weight = {
-		weight = 0
-	}
-}
-
 ##########################################################################
 # Decisions without events
 ##########################################################################
@@ -375,8 +316,82 @@ AP_competition_of_the_minds = {
 }
 
 ##########################################################################
+# Policy related Decisions
+##########################################################################
+AP_conscription = {
+	owned_planets_only = yes
+	sound = event_air_raid_siren_02
+	icon = decision_victorious_army
+	resources = {
+		category = decisions
+		cost = {
+			influence = 10
+		}
+	}
+	potential = {
+		owner = {
+			is_regular_empire = yes
+			is_ai = no
+		}
+		NOT = {
+			has_modifier = planet_conscription
+		}
+	}
+	allow = {
+		OR = {
+			AND = {
+				owner = {
+					has_policy_flag = AP_conscription_war_time
+					is_at_war = yes
+				}
+			}
+			AND = {
+				owner = {
+					has_policy_flag = AP_conscription_mandatory
+				}
+			}
+		}
+		owner = {
+			has_resource = {
+				type = influence
+				amount >= 10
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_conscription
+			days = 5400
+		}
+		custom_tooltip = AP_conscription_effect_desc
+		hidden_effect = {
+			planet_event = {
+				id = AP_PD.1
+			}
+			planet_event = {
+				id = AP_PD.2
+			}
+			planet_event = {
+				id = AP_PD.3
+			}
+			planet_event = {
+				id = AP_PD.4
+			}
+			planet_event = {
+				id = AP_PD.5
+			}
+		}
+	}
+	enactment_time = 60
+	ai_weight = {
+		weight = 0
+	}
+}
+
+##########################################################################
 # Civic Related
 ##########################################################################
+# Mobile Construction civic related
 AP_mobile_constrution_deploy = {
 	owned_planets_only = yes
 	icon = decision_mining_station
@@ -427,4 +442,76 @@ AP_mobile_constrution_pack = {
 		}
 	}
 	enactment_time = 60
+}
+
+##########################################################################
+# Origin Related
+##########################################################################
+# Children of the Darkness origin expansion 
+AP_excavate_the_planet = {
+	owned_planets_only = yes
+	icon = decision_drilling_for_gas
+	sound = event_construction
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		count_deposits = {
+			count < 6
+			type = d_underground_city
+		}
+		NOT = {
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_city
+			has_planet_flag = seismic_disturbance
+			has_deposit = d_underground_cities
+		}
+	}
+	allow = {
+		NAND = {
+			is_planet_class = pc_ocean
+			count_deposits = {
+				count >= 2
+				type = d_underground_city
+			}
+		}
+	}
+	effect = {
+		add_deposit = d_underground_city
+	}
+	enactment_time = 360
+}
+
+# Children of the Darkness the ability to link the 6 cities into one bigger city
+AP_connect_underground = {
+	owned_planets_only = yes
+	icon = decision_alien_propaganda
+	sound = event_construction
+	resources = {
+		category = decisions
+	}
+	potential = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		has_deposit = d_underground_city
+	}
+	allow = {
+		count_deposits = {
+			count = 6
+			type = d_underground_city
+		}
+	}
+	effect = {
+		while = {
+			count = 6
+			remove_deposit = d_underground_city
+		}
+		add_deposit = d_underground_cities
+	}
+	enactment_time = 720
 }

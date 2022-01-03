@@ -48,3 +48,56 @@ civic_AP_grand_architecture_corporate = {
 		planet_jobs_produces_mult = 0.05
 	}
 }
+
+civic_AP_workers_ethic_corporate = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			value = auth_corporate
+		}
+	}
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_corporate_hedonism
+			}
+		}
+	}
+	modifier = {
+		pop_cat_worker_political_power = 1
+		planet_jobs_produces_mult = 0.1
+		pop_happiness = -0.05
+	}
+}
+
+civic_AP_good_education_corporate = {
+	description = "civic_AP_good_education_effect"
+	potential = {
+		authority = {
+			value = auth_corporate
+		}
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_slaver_guilds
+				value = civic_aristocratic_elite
+				value = civic_barbaric_despoilers
+			}
+		}
+	}
+	modifier = {
+		planet_job_educator_produces_mult = 0.33
+		planet_job_educator_upkeep_mult = -0.5
+		leader_skill_levels = 2
+	}
+}

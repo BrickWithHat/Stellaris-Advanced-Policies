@@ -28,6 +28,8 @@
  planet_encourage_populace_desc:0 "The populace of this world is thrilled due to recent events!"
  planet_discouraged_populace:0 "Discouraged populace"
  planet_discouraged_populace_desc:0 "The populace of this world is filled with sadness and dissapointment due to recent events."
+ planet_unhappy_populace:0 "Unhappy Populace"
+ planet_unhappy_populace_desc:0 "The populace of this world unhappy with there government and wish for them to know it."
  planet_organized_strike:0 "Planet-wide worker strikes"
  planet_organized_strike_desc:0 "A lot of people are laying down there work to protest on mass. The result is that most of the world has just shut down."
  planet_mass_riot:0 "Mass riots"
@@ -38,12 +40,18 @@
  planet_labor_shortage_desc:0 "This planet suffers from a labor shortage on a planet-wide scale. It government however seems to try and fix it though."
  planet_infrastructure_investment:0 "Infrastructure investment"
  planet_infrastructure_investment_desc:0 "The state has cleared funding for a planet wide infrastructure project. This has caused a great cost saver for the local investors."
- country_troops_dismissed:0 "Army troops Dismissed"
- country_troops_dismissed_desc:0 "We recently dismissed a sizable part of our armed ground forces."
  planet_lack_of_oversight:0 "Lack of oversight"
  planet_lack_of_oversight_desc:0 "This planet is known for having lacking administration. As a result some material or even people go missing every so often."
  planet_laying_down:0 "Laying Down"
  planet_laying_down_desc:0 "The populace of this world has found little reason to care for the demands of there higher-ups. Feel snubbed for there lack of social mobility they refuse to do more then is essential or there direct survival. As a result they rather waste there time away in there homes refusing to contribute to our society."
+ planet_lower_production_quota:0 "Lowered Production Quota"
+ planet_lower_production_quota_desc:0 "The higher-ups of this world have deemed it needed to slow production for the well-being of its populace."
+ country_troops_dismissed:0 "Army troops Dismissed"
+ country_troops_dismissed_desc:0 "We recently dismissed a sizable part of our armed ground forces."
+ country_worker_bonus:0 "Workers United!"
+ country_science_bonus:0 "Unparalleled Understanding"
+ country_culture_bonus:0 "Greater Renaissance"
+ country_quota_fullfilled:0 "Improved Production lines"
 
 # civic related
  planet_mobile_construction_deployed:0 "Mobile Construction Vehicle"
@@ -73,14 +81,21 @@
  mod_planet_death_chronicler_physics_research_produces_add:0 "£physics_research£ $physics_research$ per £job_death_chronicler£ $job_death_chronicler$"
  mod_planet_death_chronicler_society_research_produces_add:0 "£society_research£ $society_research$ per £job_death_chronicler£ $job_death_chronicler$"
  mod_planet_death_chronicler_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ per £job_death_chronicler£ $job_death_chronicler$"
- mod_pop_category_rulers_produces_mult:0 "£pop_cat_ruler£ $pop_cat_ruler$ Resource production multiplier"
+ mod_pop_category_rulers_produces_mult:0 "£pop_cat_ruler£ $pop_cat_ruler$ Resource production multiplied by"
  mod_pop_category_slave_unity_produces_add:0 "£unity£ $unity$ per £pop_cat_slave£ $pop_cat_slave$"
  mod_pop_category_slave_energy_produces_add:0 "£energy£ $energy$ per £pop_cat_slave£ $pop_cat_slave$"
  mod_shipclass_military_build_cost_mult:0 "Military Ship build cost"
  mod_planet_pops_food_upkeep_mult:0 "£food£ $food$ upkeep for £pops£ $pops$"
 
 # Custom modifiers based on my own stuff like jobs
- mod_job_ancient_archeoligist_add:0 "£job_evaluator£ $job_ancient_archeoligist_plural$ jobs added"
+ mod_job_ancient_archaeologists_add:0 "£job_evaluator£ $job_ancient_archaeologists_plural$ jobs added"
+ mod_job_ancient_archaeologists_drone_add:0 "£job_evaluator£ $job_ancient_archaeologists_drone_plural$ jobs added"
+ mod_job_worker_educator_per_pop:0 "Adds £job_worker_educator£ $job_worker_educator$ job for every §Y10§! £pops£ pops"
+ mod_job_specialist_educator_per_pop:0 "Adds £job_specialist_educator£ $job_worker_educator$ job for every §Y25§! £pops£ pops"
+ mod_job_ruler_educator_per_pop:0 "Adds £job_ruler_educator£ $job_worker_educator$ job for every §Y40§! £pops£ pops"
+
+ mod_planet_job_educator_produces_mult:0 "(£job_worker_educator£ £job_specialist_educator£ £job_ruler_educator£) $job_worker_educator$ Resource production multiplied by"
+ mod_planet_job_educator_upkeep_mult:0 "(£job_worker_educator£ £job_specialist_educator£ £job_ruler_educator£) $job_worker_educator$ job Upkeep"
 
 # Decision Modifiers
  planet_trail_by_fire:0 "Trail by fire"

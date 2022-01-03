@@ -98,6 +98,13 @@ planet_quota_abolished = {
 	pop_growth_speed = 0.05
 }
 
+country_quota_fullfilled = {
+	icon = gfx/interface/icons/modifiers/mod_leader_species_exp_gain.dds
+	planet_jobs_produces_mult = 0.1
+	planet_jobs_upkeep_mult = -0.05
+	pop_growth_speed = 0.1
+}
+
 ##########################################################################
 # Events
 ##########################################################################
@@ -115,6 +122,13 @@ planet_discouraged_populace = {
 	planet_crime_add = 10
 	pop_amenities_usage_mult = 0.1
 	pop_growth_speed = -0.2
+}
+
+planet_unhappy_populace = {
+	icon_frame = 3
+	icon = gfx/interface/icons/planet_modifiers/pm_derelict_interior.dds
+	planet_stability_add = -5
+	pop_happiness = -0.2
 }
 
 planet_organized_strike = {
@@ -175,6 +189,15 @@ planet_laying_down = {
 	pop_growth_speed = -0.25
 }
 
+planet_lower_production_quota = {
+	icon_frame = 2
+	icon = gfx/interface/icons/planet_modifiers/pm_default.dds
+	planet_jobs_produces_mult = -0.3
+	pop_cat_worker_happiness = 0.1
+	pop_cat_specialist_happiness = 0.05
+	pop_cat_ruler_happiness = 0.05
+}
+
 country_troops_dismissed = {
 	icon = gfx/interface/icons/modifiers/mod_army_disengage_chance_mult.dds
 	army_attack_health_mult = -0.25
@@ -182,6 +205,26 @@ country_troops_dismissed = {
 	army_defense_health_mult = 0.25
 	army_defense_morale_mult = 0.25
 	planet_army_build_time_mult = 0.5
+}
+
+country_worker_bonus = {
+	icon = gfx/interface/icons/modifiers/mod_pop_housing_usage_mult.dds
+	planet_jobs_produces_mult = 0.25
+	planet_amenities_mult = 0.2
+}
+
+country_science_bonus = {
+	icon = gfx/interface/icons/modifiers/mod_ship_anomaly_research_speed.dds
+	planet_researchers_produces_mult = 0.33
+	all_technology_research_speed = 0.1
+	science_ship_survey_speed = 0.33
+}
+
+country_culture_bonus = {
+	icon = gfx/interface/icons/modifiers/mod_pop_political_power.dds
+	country_unity_produces_mult = 0.5
+	country_influence_produces_add = 1
+	pop_happiness = 0.1
 }
 
 ##########################################################################
@@ -202,7 +245,6 @@ country_mobile_construction_packed = {
 	planet_building_build_speed_mult = 0.1
 	planet_buildings_cost_mult = -0.2
 }
-
 ##########################################################################
 # Planetary Decisions
 ##########################################################################
@@ -265,7 +307,3 @@ planet_competition_of_the_minds = {
 	country_society_research_produces_add = 25
 	country_engineering_research_produces_add = 25
 }
-
-##########################################################################
-# Edicts
-##########################################################################

@@ -18,13 +18,12 @@
  AP_PQ.1_militarist_desc:0 "With the war going on we have looked at our worlds in hopes of finding a means of gathering material for the war effort. In doing so the world of §Y[Root.GetName]§! had peeked many eyes. To that end we and set up a plan to begin a schedule of gathering extra material and labor from this world."
  AP_PQ.1_autocrate_desc:0 "We send our demands towards the planet of §Y[Root.GetName]§! to increase our material gain from this world. As we speak they appear to be processing this request and are fully ontop of it. It shall be interesting indeed to hear there decisions in this. As it is expected most rulers of this world are unlikely to give up there material wealth with ease."
  AP_PQ.1_remaining_desc:0 "We called upon the rulers of §Y[Root.GetName]§! see about getting a Quota enacted. As our empire always can use more material. We will be sending our plans towards the local leaders within the hour. While they mule over it trying to plan it out for further details we should work on our empire as a whole."
- AP_PQ.1_emergency_desc:0 "Having officially declared a state of emergency has had mixed effects, but now that we are trying to get more material out the planet §Y[Root.GetName]§! has caused an uproar. Its populace seems to be happy to contribute given the scenario our empire is in."
- AP_PQ.1_ega_desc:0 "We asked the representative of §Y[Root.GetName]§! to see about getting a Quota enacted due to these hard times. Hopefully they can see it done and aid us."
+ AP_PQ.1_ega_desc:0 "With the declaration having passed and becoming public. Many are questioning the motive of our decree. While the opposition has called it an attempt to undermine our true valeau's our people are eager to hear it purpose. As the inhabitants of §Y[Root.GetName]§! are waiting for the full decree to arrive and made public once it is send to the planet."
  AP_PQ.1_militarist_option:0 "We need those materials for the war effort!"
  AP_PQ.1_autocrate_option:0 "They better not do something stupid."
  AP_PQ.1_remainging_option:0 "Let us hope indeed..."
  AP_PQ.1_emergency_option:0 "Any material gained is usefull at this point."
- AP_PQ.1_ega_option:0 "Let us hope indeed..."
+ AP_PQ.1_ega_option:0 "Let us not make them wait too long."
 
  AP_PQ.2_title:0 "Planetary Quota: Resolved"
  AP_PQ.2_fail:0 "Our goal to gather more material and labor from §Y[Root.GetName]§! has failed. While we did manage to gain a sizable amount of material from the raw production we still did not reach our goal. Maybe next time it comes to pass we may be better equiped to deal with the problems that crippled us in our time of need."
@@ -91,6 +90,51 @@
  AP_PQ.207_3:0 "Unfortunate"
  AP_PQ.207_4:0 "§BAll hope may not be lost.§!"
 
+# Planetary Quota (Autocratic)
+ AP_PQ.300_title:0 "Planetary Quota: Planning Phase"
+ AP_PQ.300_desc:0 "The plans for our material quota has been send to the world of §Y[Root.GetName]§!, the local rulers have shown great interest in our demand. They appear to be eager to exploit the populace for more material and labor. However there have been a few requesting caution in the process. There fears are mainly caused by there own experience with lacking recruitment pools of specialist workers. Something which they do claim is something they can overcome with some time."
+ AP_PQ.300_1:0 "Take your time and do it proper."
+ AP_PQ.300_2:0 "It needs to be done yesterday!"
+
+ AP_PQ.301_title:0 "Planetary Quota: Lack of Labor"
+ AP_PQ.301_desc:0 "We have gained reports from §Y[Root.GetName]§! that they have run into a problem. They seem to have a severe labour shortage, while it mainly is due to a lack specialists. They claim they can fix it in due time but it would effect our plans severely if we do not act."
+ AP_PQ.301_1:0 "If it fixes itself we do not need to intervene."
+ AP_PQ.301_2:0 "Get some locals and force them to do the job."
+ AP_PQ.301_3:0 "§BI think we all know where this goes...§!"
+ AP_PQ.301_4:0 "§BGuess we need to crack the whip.§!"
+
+ AP_PQ.302_title:0 "Planetary Quota: Phase 1 Integration"
+ AP_PQ.302_desc:0 "With the uneventfull passing of the integration of the Planterary Quota. We have now increased the production capabilities of all jobs on the planet. With a sizable chunk of the material being shipped out to our direct stockpiles. The rest being stored on §Y[Root.GetName]§! until we get arround to moving the large quanity."
+ AP_PQ.302_1:0 "Wonderfull!"
+
+ AP_PQ.303_title:0 "Planetary Quota: A cause worth working for?"
+ AP_PQ.303_desc:0 "We have gained a new report from §Y[Root.GetName]§! regarding our Quota. It does appear as if our total productivity on the planet is starting to drop. Some speculation has been attached to the report regarding the possible cause of this. Most evidence hints that the populace sees little reason to work more then is needed to survive. As a result they only do the bare minimum before then leaving. This has slowed the economy and production of §Y[Root.GetName]§! significintly."
+ AP_PQ.303_1:0 "A minor set-back nothing to worry about."
+ AP_PQ.303_2:0 "Maybe we should give them something genuine for there work."
+ AP_PQ.303_3:0 "Crack down on this silly principle please."
+ AP_PQ.303_4:0 "§BMaybe we should remind them who is in charge.§!"
+ AP_PQ.303_5:0 "§BRemind them of our duty to our empire!§!"
+
+ AP_PQ.304_title:0 "Planetary Quota: A refusing workforce"
+ AP_PQ.304_desc:0 "We have a new devolpments regarding the planet §Y[Root.GetName]§!. Firstly we have managed to begin phase 2 of this project with in related news our workers do appear as to not give it there all anymore. It looks like they simply have lost most reason to work as hard as they used to. Productivity is now at an all time low since the Quota was enacted. While the rulers of §Y[Root.GetName]§! are confident they can sort this out they do not have any clue about how long it will take. During which this will effect our plans for the Quota rather harshly. "
+ AP_PQ.304_1:0 "1 Step forward, 2 steps back..."
+
+ AP_PQ.305_title:0 "Planetary Quota: A cause"
+ AP_PQ.305_desc:0 "We have a new devolpment regarding the workers attitude on the planet §Y[Root.GetName]§!. It appears that most if not all have regained there senses and returned back to there normal lives. With productivity having returned to it norm before this odd phenomenon took place. With our people having returned to the factories, farms and mines we see fit to proceed towards Phase 2. Thus ramping up production slowly again for our needs."
+ AP_PQ.305_1:0 "Keep it up people."
+
+ AP_PQ.306_title:0 "Planetary Quota: Status Report"
+ AP_PQ.306_desc:0 "A new report from the planet of §Y[Root.GetName]§! regarding our material and labour quota has been forwarded to us. It speaks of steady and solid progress towards the last phase. With a sizable excess of material being kept on planet till it completion. Once all the phases are complete and properly integrated this stockpile will be released to us in its entirety. As doing this with the stress of ramping up production is just not logisticl possible."
+ AP_PQ.306_1:0 "Wonderfull, keep it up."
+
+ AP_PQ.307_title:0 "Planetary Quota: Hijacked!"
+ AP_PQ.307_desc:0 "There has been a new report regarding an unique series of events on the planet of §Y[Root.GetName]§!. As it stands we are currently in phase 3, to start that we had scheduled a few cargo vessels to send us some material. Yet moments before there were ment to leave, it somehow got hijacked by a third party. While the crew is unharmed the vessels and all it contents appears to be lost to us. Local law enforcement appears to be onto of it but with little to go on. We fear this entire shipment might be lost to us."
+ AP_PQ.307_1:0 "Damn them!"
+
+ AP_PQ.308_title:0 "Planetary Quota: Phase 3 Integration"
+ AP_PQ.308_desc:0 "A report form §Y[Root.GetName]§! has arrived regarding the Quota. It claims that the last Phase is now in effect and functional accross the planet. Due the fact they have reached there limets in import required they have started shifting there focus now towards emptying there stockpiles on planet. With a few cargo vessels already having arrived at our main stockpiles and unloading as we speak."
+ AP_PQ.308_1:0 "Oh free goodies!"
+
 # Planetary Quota (remainging line)
  AP_PQ.400_title:0 "Planetary Quota: Planning"
  AP_PQ.400_desc:0 "The leaders of §Y[Root.GetName]§! have recieved and tinkered with our instructions. They claim to be able to intigrate it but warn for potential risks regarding the administrative capacity for §Y[Root.GetName]§!. They say we may not be able to keep up with the total produce that will be produced. Which could lead to a number of problems in many aspects least of which is a lose of the material."
@@ -140,50 +184,47 @@
  AP_PQ.407_fail_3:0 "§BThey could use the practice.§!"
  AP_PQ.407_fail_4:0 "§BYou smell that? Smells like profit.§!"
 
-# Planetary Quota (Autocratic)
- AP_PQ.300_title:0 "Planetary Quota: Planning Phase"
- AP_PQ.300_desc:0 "The plans for our material quota has been send to the world of §Y[Root.GetName]§!, the local rulers have shown great interest in our demand. They appear to be eager to exploit the populace for more material and labor. However there have been a few requesting caution in the process. There fears are mainly caused by there own experience with lacking recruitment pools of specialist workers. Something which they do claim is something they can overcome with some time."
- AP_PQ.300_1:0 "Take your time and do it proper."
- AP_PQ.300_2:0 "It needs to be done yesterday!"
+# Planetary Quota (Egalitarian line)
+ AP_PQ.500_title:0 "Planetary Quota: Purpose"
+ AP_PQ.500_desc:0 "Our goveners have recently come by and asked about our plans for Quota, while officially still not public giving the populace some direction with it might no be a bad idea. The Governer said that he can get that word out like a rumor thus paving the way and polling to see how the populace responds too. What will be our purpose?"
+ AP_PQ.500_1:0 "Progress of Knowledge"
+ AP_PQ.500_2:0 "Funding for large Projects"
+ AP_PQ.500_3:0 "This was a mistake, Stop this now."
 
- AP_PQ.301_title:0 "Planetary Quota: Lack of Labor"
- AP_PQ.301_desc:0 "We have gained reports from §Y[Root.GetName]§! that they have run into a problem. They seem to have a severe labour shortage, while it mainly is due to a lack specialists. They claim they can fix it in due time but it would effect our plans severely if we do not act."
- AP_PQ.301_1:0 "If it fixes itself we do not need to intervene."
- AP_PQ.301_2:0 "Get some locals and force them to do the job."
- AP_PQ.301_3:0 "§BI think we all know where this goes...§!"
- AP_PQ.301_4:0 "§BGuess we need to crack the whip.§!"
+ AP_PQ.510_title:0 "Planetary Quota: Purpose in Progress"
+ AP_PQ.510_desc:0 "With our declaration and agenda having been send and the populace prepared to an extent. We have send forth our goals to inovate where possible. The plans conjoured up by our leaders have seen fit to use §Y[Root.GetName]§! more as a testing ground. If this works as intended the principles we may learn here will be rolled out empire wide. While at the same time boosting local production considerably. The main risk is the population itself. The fact they are the ones carrying us forwards here. Therefor we should make sure there well-being is of vital importance."
+ AP_PQ.510_1:0 "Only one way to find out."
 
- AP_PQ.302_title:0 "Planetary Quota: Phase 1 Integration"
- AP_PQ.302_desc:0 "With the uneventfull passing of the integration of the Planterary Quota. We have now increased the production capabilities of all jobs on the planet. With a sizable chunk of the material being shipped out to our direct stockpiles. The rest being stored on §Y[Root.GetName]§! until we get arround to moving the large quanity."
- AP_PQ.302_1:0 "Wonderfull!"
+ AP_PQ.511_title:0 "Planetary Quota: Grumbling in the workplace"
+ AP_PQ.511_desc:0 "The first reports from §Y[Root.GetName]§! have filtered back to us. With the first phase looking rather promising regarding results of efficiency increases and productivity. Overal happiness of the populace has however suffered somewhat. While mostly contained in the workers class we should consider giving them some form of relieve. As it stands we cannot let them suffer if we can do something about it."
+ AP_PQ.511_1:0 "They can manage on there own."
+ AP_PQ.511_2:0 "Invest in some better conditions"
+ AP_PQ.511_3:0 "§BThey merely need some encouragement!§!"
 
- AP_PQ.303_title:0 "Planetary Quota: A cause worth working for?"
- AP_PQ.303_desc:0 "We have gained a new report from §Y[Root.GetName]§! regarding our Quota. It does appear as if our total productivity on the planet is starting to drop. Some speculation has been attached to the report regarding the possible cause of this. Most evidence hints that the populace sees little reason to work more then is needed to survive. As a result they only do the bare minimum before then leaving. This has slowed the economy and production of §Y[Root.GetName]§! significintly."
- AP_PQ.303_1:0 "A minor set-back nothing to worry about."
- AP_PQ.303_2:0 "Maybe we should give them something genuine for there work."
- AP_PQ.303_3:0 "Crack down on this silly principle please."
- AP_PQ.303_4:0 "§BMaybe we should remind them who is in charge.§!"
- AP_PQ.303_5:0 "§BRemind them of our duty to our empire!§!"
+ AP_PQ.512_title:0 "Planetary Quota: Phase 1 Completed"
+ AP_PQ.512_desc:0 "With phase 1 having been completed we are now entering a new part of the plan. The second phase is intended to ramp up all production accros the planet. Yet the results so far have been promising we should consider integrating some early lessons. This allows us to reap some early rewards from this project."
+ AP_PQ.512_1:0 "Let us improve productivity"
+ AP_PQ.512_2:0 "Improve our science and exploration"
+ AP_PQ.512_3:0 "See about getting some art and culture going"
 
- AP_PQ.304_title:0 "Planetary Quota: A refusing workforce"
- AP_PQ.304_desc:0 "We have a new devolpments regarding the planet §Y[Root.GetName]§!. Firstly we have managed to begin phase 2 of this project with in related news our workers do appear as to not give it there all anymore. It looks like they simply have lost most reason to work as hard as they used to. Productivity is now at an all time low since the Quota was enacted. While the rulers of §Y[Root.GetName]§! are confident they can sort this out they do not have any clue about how long it will take. During which this will effect our plans for the Quota rather harshly. "
- AP_PQ.304_1:0 "1 Step forward, 2 steps back..."
+ AP_PQ.513_title:0 "Planetary Quota: A matter of Logistics"
+ AP_PQ.513_desc:0 "With the second phase underway we came to a new discovery. Turns out we are producing so much the planets infrastructure is not hold up to the preassure. We have tried working on other means of solving this issue but so far no local effort has had any succes with the issue. Now that the reports have been delivered to us we have an opportunity to solve it for them by acting planet-wide. While this will have a higher up-front cost it might give us some more long term benefits."
+ AP_PQ.513_1:0 "Let the local government figure this out"
+ AP_PQ.513_2:0 "Maybe we should 'sponsor' some construction"
+ AP_PQ.513_3:0 "§BI don't know who designed it so poorly, but we really should fix it§!"
 
- AP_PQ.305_title:0 "Planetary Quota: A cause"
- AP_PQ.305_desc:0 "We have a new devolpment regarding the workers attitude on the planet §Y[Root.GetName]§!. It appears that most if not all have regained there senses and returned back to there normal lives. With productivity having returned to it norm before this odd phenomenon took place. With our people having returned to the factories, farms and mines we see fit to proceed towards Phase 2. Thus ramping up production slowly again for our needs."
- AP_PQ.305_1:0 "Keep it up people."
+ AP_PQ.514_title:0 "Planetary Quota: Phase 2 Completed"
+ AP_PQ.514_desc:0 "With the completion of the second phase of the Quota we are now entering the last phase. In this we are trying to stress test everything so far to it absolute limits. While we have had a few years pass now on §Y[Root.GetName]§! we are still working on making sure our production will maintain its productivity as long as possible. There has however been voiced some worries regarding the workers. As they bear the brunt of this effort there effort should not be forgotten."
+ AP_PQ.514_1:0 "There effort will not be forgotten"
 
- AP_PQ.306_title:0 "Planetary Quota: Status Report"
- AP_PQ.306_desc:0 "A new report from the planet of §Y[Root.GetName]§! regarding our material and labour quota has been forwarded to us. It speaks of steady and solid progress towards the last phase. With a sizable excess of material being kept on planet till it completion. Once all the phases are complete and properly integrated this stockpile will be released to us in its entirety. As doing this with the stress of ramping up production is just not logisticl possible."
- AP_PQ.306_1:0 "Wonderfull, keep it up."
+ AP_PQ.515_title:0 "Planetary Quota: An unpleasant suprise"
+ AP_PQ.515_desc:0 "With the integration of phase 3 of the Quota on the planet of §Y[Root.GetName]§! having been a few years past us now. We have come to a shocking discovery. Reports have filtered through that a lot of the populace has been starting to commit suicide. The sheer volume of this is down right shocking to both its people and those in charge of the Quota. While stopping so close near the end is a waste of there lives we should intereve now less we wish to lose more of our populace."
+ AP_PQ.515_1:0 "Loosen the standards at once!"
+ AP_PQ.515_2:0 "Improve there conditions this instance!"
+ AP_PQ.515_3:0 "§BLast i checked you were ment to die on my altar...§!"
+ AP_PQ.515_4:0 "§BReally? I though we had an agreement.§!"
+ AP_PQ.515_5:0 "§BThis is unacceptable sort this out now!§!"
 
- AP_PQ.307_title:0 "Planetary Quota: Hijacked!"
- AP_PQ.307_desc:0 "There has been a new report regarding an unique series of events on the planet of §Y[Root.GetName]§!. As it stands we are currently in phase 3, to start that we had scheduled a few cargo vessels to send us some material. Yet moments before there were ment to leave, it somehow got hijacked by a third party. While the crew is unharmed the vessels and all it contents appears to be lost to us. Local law enforcement appears to be onto of it but with little to go on. We fear this entire shipment might be lost to us."
- AP_PQ.307_1:0 "Damn them!"
-
- AP_PQ.308_title:0 "Planetary Quota: Phase 3 Integration"
- AP_PQ.308_desc:0 "A report form §Y[Root.GetName]§! has arrived regarding the Quota. It claims that the last Phase is now in effect and functional accross the planet. Due the fact they have reached there limets in import required they have started shifting there focus now towards emptying there stockpiles on planet. With a few cargo vessels already having arrived at our main stockpiles and unloading as we speak."
- AP_PQ.308_1:0 "Oh free goodies!"
 
 # Conscription event
  AP_PDEC.1_name:0 "End of the war"
@@ -199,3 +240,4 @@
  AP_CR.12_desc:0 "After a short flight towards there homeworld the conscripts have finally arrived. Yet the populace seems indiffrent towards them. They welcomed them back but not with the fervour we had hoped."
  AP_CR.12_name:0 "Wonderfull!"
  AP_CR.12_name:0 "A pity"
+
