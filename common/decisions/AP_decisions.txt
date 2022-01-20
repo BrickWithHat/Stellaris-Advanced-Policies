@@ -484,6 +484,52 @@ AP_excavate_the_planet = {
 		add_deposit = d_underground_city
 	}
 	enactment_time = 360
+	ai_weight = {
+		weight = 1
+		# If there are limeted districts available it should dig for more
+		modifier = {
+			factor = 10
+			free_district_slots <= 2
+		}
+		# Lower Habitability should be dealt with as soon as possible
+		modifier = {
+			factor = 2
+			planet = {
+				habitability = {
+					who = THIS
+					value <= 0.9
+				}
+			}
+		}
+		# Extra escalation as a means of ensuring it tries to rise the Habitability
+		modifier = {
+			factor = 2
+			planet = {
+				habitability = {
+					who = THIS
+					value <= 0.8
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			planet = {
+				habitability = {
+					who = THIS
+					value <= 0.7
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			planet = {
+				habitability = {
+					who = THIS
+					value <= 0.6
+				}
+			}
+		}
+	}
 }
 
 # Children of the Darkness the ability to link the 6 cities into one bigger city
@@ -514,4 +560,8 @@ AP_connect_underground = {
 		add_deposit = d_underground_cities
 	}
 	enactment_time = 720
+	# AI should always build this preferably as soon as possible
+	ai_weight = {
+		weight = 1000
+	}
 }

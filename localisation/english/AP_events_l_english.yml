@@ -225,7 +225,6 @@
  AP_PQ.515_4:0 "§BReally? I though we had an agreement.§!"
  AP_PQ.515_5:0 "§BThis is unacceptable sort this out now!§!"
 
-
 # Conscription event
  AP_PDEC.1_name:0 "End of the war"
  AP_PDEC.1_desc:0 "The war has come to an end, yet our conscript remain. Some of there officers have come forth asking us if they can be send back home. They claim there troops have had enough of war. Wishing to return to there loved ones and finally know peace once more."
@@ -241,3 +240,13 @@
  AP_CR.12_name:0 "Wonderfull!"
  AP_CR.12_name:0 "A pity"
 
+# Pop Faction Imperialists
+ AP_pop.10_title:0 "Disgrunted Politics"
+ AP_pop.10_desc:0 "Due to recent event and partial neglect of the political elite. The faction of §Y[Root.GetPopFactionName]§! has been plagued with interal strife. Causing rogue elements to sow discord accros our empire. While these elements are currently moderate they appear to escalte at an alarming rate. While something we cannot directly influence there structure or these elements we should be carefull about those elements. As interal security forces have already voiced there concern about there intention."
+ AP_pop.10_1:0 "We would do well to watch them closely"
+
+ AP_pop.11_title:0 "Dark dealings"
+ AP_pop.11_desc:0 "Recent events regarding the rogue elements of the politcal party of §Y[Root.GetPopFactionName]§! have been troubling. As it appears as if they are trying to gather arms. The blackmarket that trade in them are buzzing with activity to fill there demand, causing our enforcers to work overtime. While we intercept many of these mostly small arms. The fact remains that they are clearly up to something. People do not arm themselfs for no reason. The fact it is also highly illegal to own fire-arms with out the proper clearance makes this a grave offence in the court of law. \n In responds a special task-force has been assembled and send forward to locate and capture any and all involved in this arms-dealing. So far they have had massive success yet there sources are turning dry with very little proof of who made the purchase. We should tread carefull as a means of avoiding potential revolution from within our own ranks."
+
+ AP_pop.12_title:0 "A massing of Arms"
+ AP_pop.12_desc:0 ""

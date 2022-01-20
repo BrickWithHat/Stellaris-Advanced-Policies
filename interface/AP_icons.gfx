@@ -1,4 +1,5 @@
 spriteTypes = {
+	# Random Icons
 	spriteType = {
 		name = "gfx_edicts_agenda"
 		texturefile = "gfx/interface/icons/edicts/agenda.dds"
@@ -28,6 +29,7 @@ spriteTypes = {
 		name = "pm_resources_cancel"
 		textureFile = "gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds"
 	}
+	# Jobs
 	spritetype = {
 		name = "gfx_education_icon"
 		textureFile = "gfx/interface/icons/education.dds"
@@ -44,9 +46,68 @@ spriteTypes = {
 		name = "gfx_jobs_ruler_educator"
 		textureFile = "gfx/interface/icons/jobs/job_ruler_educator.dds"
 	}
+	# Origins/civics
 	spritetype = {
 		name = "GFX_origin_AP_children_of_the_darkness"
 		textureFile = "gfx/event_pictures/origins/origin_AP_children_of_the_darkness.dds"
 		alwaysTransparent = yes
+	}
+	# Traditions Community
+	spritetype = {
+		name = "GFX_tradition_category_icon_tradition_community"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_community.dds"
+	}
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_community"
+		textureFile = "gfx/interface/icons/traditions/tradition_tile/tradition_category_tile_community.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_community_greater_goal"
+		textureFile = "gfx/interface/icons/traditions/tradition_community_greater_goal.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_community_proper_relations"
+		textureFile = "gfx/interface/icons/traditions/tradition_community_proper_relations.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_community_pr_campaign"
+		textureFile = "gfx/interface/icons/traditions/tradition_community_pr_campaign.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_community_executive_order"
+		textureFile = "gfx/interface/icons/traditions/tradition_community_executive_order.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_community_political_enactment"
+		textureFile = "gfx/interface/icons/traditions/tradition_community_political_enactment.dds"
+	}
+	# Traditions Lordship
+	spritetype = {
+		name = "GFX_tradition_category_icon_tradition_lordship"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_lordship.dds"
+	}
+	spritetype = {
+		name = "GFX_tradition_category_bg_tradition_lordship"
+		textureFile = "gfx/interface/icons/traditions/tradition_tile/tradition_category_tile_lordship.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_lordship_benevolence"
+		textureFile = "gfx/interface/icons/traditions/tradition_lordship_benevolence.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_lordship_streamlined_tribute"
+		textureFile = "gfx/interface/icons/traditions/tradition_lordship_streamlined_tribute.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_lordship_understanding"
+		textureFile = "gfx/interface/icons/traditions/tradition_lordship_understanding.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_lordship_centralization"
+		textureFile = "gfx/interface/icons/traditions/tradition_lordship_centralization.dds"
+	}
+	spritetype = {
+		name = "GFX_tr_lordship_greater_knowledge"
+		textureFile = "gfx/interface/icons/traditions/tradition_lordship_greater_knowledge.dds"
 	}
 }

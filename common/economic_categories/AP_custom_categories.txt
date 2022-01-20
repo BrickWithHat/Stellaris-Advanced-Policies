@@ -32,15 +32,14 @@ planet_death_chronicler = {
     parent = planet_jobs
     generate_add_modifiers = {
         produces
-        upkeep
     }
 }
 ##########################################################################
-# Pop categories
+# Diplomatic Modifers
 ##########################################################################
-pop_category_rulers = {
-	parent = planet_pops
-    generate_mult_modifiers = {
+subjects = {
+	parent = diplomacy
+    generate_add_modifiers = {
         produces
     }
 }

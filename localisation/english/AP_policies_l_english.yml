@@ -7,7 +7,12 @@
  policy_AP_war_stance:0 "£ship_stats_piracy_supression£Military Stance"
  policy_AP_war_stance_desc:0 "Our governments stance on the role of our armed forces"
 
- policy_AP_education_privledge:0 "£opinion£Educational Rights"
+ policy_AP_tax_policy:0 "£amenities£Tax Policy"
+ policy_AP_tax_policy_desc:0 "How we tax our populace can make the diffrence in how we budget our empire. As such we should be sure we have set proper and understandable doctrines regarding taxation.§YThis policy Influences which $policy_AP_tax_amount$ you get access to.§!"
+ policy_AP_tax_amount:0 "£amenities£Tax Ratio"
+ policy_AP_tax_amount_desc:0 "We should consider how much we wish to tax our people. Doing so will give us proper income to fund our empire. §YThis policy is entirely based on which $policy_AP_tax_policy$ you pick.§!"
+
+ policy_AP_education_privledge:0 "£political_power£Educational Rights"
  policy_AP_education_privledge_desc:0 "Here is where one desides who does deserve an education and who does not. §YEffects which kind of Education Funding policy chart you get access to!§!"
  policy_AP_education_stance_merged:0 "£political_power£Education Funding"
  policy_AP_education_stance_merged_desc:0 "Here is where we can influence the extent of how much knowledge our people can access. The effects of this can be altered in the policy category §Y$policy_AP_education_privledge$§!."
@@ -153,10 +158,37 @@
  AP_weapons_law_free_name:0 "$AP_weapons_law_free$"
  AP_weapons_law_free_desc:0 "To keep track of all the weapons in our empire is an impossible task. On top of that our culture demands we hold them close."
 
+# Tax law Policies
+ AP_tax_policy_none_name:0 "$AP_tax_policy_none$"
+ AP_tax_policy_none:0 "Tax: None"
+ AP_tax_policy_none_desc:0 "We have no need for direct taxation, we can earn our funding through other means."
+ AP_tax_policy_flat_name:0 "$AP_tax_policy_flat$"
+ AP_tax_policy_flat:0 "Tax: Flat amount"
+ AP_tax_policy_flat_desc:0 "Everyone should contribute all should honour this simple contribution to the state."
+ AP_tax_policy_wealth_name:0 "$AP_tax_policy_wealth$"
+ AP_tax_policy_wealth:0 "Tax: Wealth Adjusted"
+ AP_tax_policy_wealth_desc:0 "The more wealth one has, the more they should pay. We should try and equalize the income from our people."
 
-
-
-
+ AP_tax_amount_none:0 "Tax: None"
+ AP_tax_amount_none_desc:0 "There is no need to tax our people."
+ AP_tax_amount_flat_low_name:0 "$AP_tax_amount_flat_low$"
+ AP_tax_amount_flat_low:0 "Flat Tax: Low"
+ AP_tax_amount_flat_low_desc:0 "We need little in direct contribution from our populace. As such let us not burden them needlessly."
+ AP_tax_amount_flat_medium_name:0 "$AP_tax_amount_flat_medium$"
+ AP_tax_amount_flat_medium:0 "Flat Tax: Medium"
+ AP_tax_amount_flat_medium_desc:0 "We might need some material wealth to fund our operations, Yet it is not worth crippling our empire over."
+ AP_tax_amount_flat_high_name:0 "$AP_tax_amount_flat_high$"
+ AP_tax_amount_flat_high:0 "Flat Tax: High"
+ AP_tax_amount_flat_high_desc:0 "We need a lot of resources to keep the empire going. Simply put we take wealth to hopefully reinvest in our empire."
+ AP_tax_amount_wealth_low_name:0 "$AP_tax_amount_wealth_low$"
+ AP_tax_amount_wealth_low:0 "Scaled Tax: Low"
+ AP_tax_amount_wealth_low_desc:0 "$AP_tax_amount_flat_low_desc$"
+ AP_tax_amount_wealth_medium_name:0 "$AP_tax_amount_wealth_medium$"
+ AP_tax_amount_wealth_medium:0 "Scaled Tax: Medium"
+ AP_tax_amount_wealth_medium_desc:0 "We should consider trying to get some wealth from the upper classes. The funding could aid us greatly in our future plans."
+ AP_tax_amount_wealth_high_name:0 "$AP_tax_amount_wealth_high$"
+ AP_tax_amount_wealth_high:0 "Scaled Tax: High"
+ AP_tax_amount_wealth_high_desc:0 "Turns out a very few individuals hold a sizable part of our nations total wealth. This should not stand, let us confescate that and redistribute it through-out our empire."
 
 # Gestalt Policies
  policy_AP_autonamy:0 "£pop£Autonomy"
@@ -175,9 +207,9 @@
  policy_AP_organic_recycling_desc:0 "We should ensure that we waste as little material or time to maxumize our potential."
  AP_organic_recycling_none:0 "No Recycling"
  AP_organic_recycling_none_desc:0 "We do not have reason to repurose organic matter left by our drones. It is waste of time."
- AP_organic_recycling_some:0 "Large scale only"
+ AP_organic_recycling_some:0 "Minor Recycling"
  AP_organic_recycling_some_desc:0 "While it takes some time the material available to us cannot be ignored."
- AP_organic_recycling_complete:0 "Repurpose for all"
+ AP_organic_recycling_complete:0 "Large Scale only"
  AP_organic_recycling_complete_desc:0 "Any organic matter can and will be repurposed for the hive. We feed, we grow, we expand."
 
  policy_AP_component_recycling:0 "£repair£Handling of scrap"

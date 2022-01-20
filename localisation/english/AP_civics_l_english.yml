@@ -26,7 +26,7 @@
 
  civic_AP_ancient_remnants:0 "Ancient Remnants"
  civic_AP_ancient_remnants_desc:0 "Our empire used to span the stars, we were its rulers. Now we have been forced back. But our ancestors left us a gift..."
- civic_AP_ancient_remnants_effects:0 "§YSpawns a very strong planetary Deposit on your capital world. This Deposit provide a set amount of §!£job_evaluator£ $job_ancient_archaeologists$§Y jobs based on the size of the capital building. These give 10% research speed per job allong with some science.§!"
+ civic_AP_ancient_remnants_effects:0 "Spawns a very strong §HPlanetary Deposit§! on your §HCapital§!. This §HDeposit§! provide a set amount of §Y£job_evaluator£ $job_ancient_archaeologists$§! jobs based on the size of the §Ycapital building§!. These give §Y10% research speed§! per job allong with some science."
 
  civic_AP_workers_ethic:0 "Workers Ethic"
  civic_AP_workers_ethic_desc:0 "The Government was build upon a thorough work mentality frequantly skipping breaks to put in that maximum effort. While this results in consider output gain. It does make people less happy in the long run."
@@ -44,4 +44,4 @@
 ##########################################################################
  AP_children_of_the_darkness:0 "Children of the Darkness"
  AP_children_of_the_darkness_desc:0 "This species always has had a hard time living on a planets surface. While they might not be a common sight on the planets surface, they are a very common sight underground. Digging out vast caverns and living off the gifts of the deep."
- AP_children_of_the_darkness_effects:0 "- Decreases base §Hhabitability§! on all colonizable §HPlanets§! but increased §HColony Devolpment Speed§!.\n - Gets access to the £decision£§H$AP_excavate_the_planet$§! Decision allowing for an increase in §Hhabitability§! and £planetsize£ §Hplanet-size§!. This can be done up to §H6 times§! unless it is an §HOcean world§! which can only be done §H2 times§!.\n - Starts with the §HUnderground Cities Complex§! Deposit on there homeworld."
+ AP_children_of_the_darkness_effects:0 "- Decreases base §Hhabitability§! by §R25%§! on all colonizable §HPlanets§! but increased §HColony Devolpment Speed§! by §G25%§!.\n - Gets access to the £decision£§H$AP_excavate_the_planet$§! Decision allowing for an increase in §Hhabitability§! and £planetsize£ §Hplanet-size§!. This can be done up to §H6 times§! unless it is an §HOcean world§! which can only be done §H2 times§!.\n - Starts with the §HUnderground Cities Complex§! Deposit on there homeworld.\n"

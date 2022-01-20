@@ -1,7 +1,6 @@
 # Ancient Collective
 gov_ancient_collective = {
 	ruler_title = RT_CHANCELLOR
-
 	use_regnal_names = yes
 	dynastic_last_names = yes
 	possible = {
@@ -20,13 +19,13 @@ gov_ancient_collective = {
 		}
 	}
 }
+
 # Ancient Imperium
 gov_ancient_imperium = {
 	ruler_title = RT_CELESTIAL_EMPEROR
 	ruler_title_female = RT_CELESTIAL_EMPRESS
 	heir_title = RT_PRIMARCH
 	heir_title_female = RT_PRIMARCH_FEMALE
-
 	use_regnal_names = no
 	dynastic_last_names = yes
 	possible = {
@@ -48,11 +47,11 @@ gov_ancient_imperium = {
 		}
 	}
 }
+
 # Ancient Warhost
 gov_ancient_warhost = {
 	ruler_title = RT_BLOODLORD
 	heir_title = RT_COORDINATOR
-
 	use_regnal_names = yes
 	dynastic_last_names = yes
 	possible = {
@@ -73,5 +72,4 @@ gov_ancient_warhost = {
 			is_militarist = no
 		}
 	}
-
 }

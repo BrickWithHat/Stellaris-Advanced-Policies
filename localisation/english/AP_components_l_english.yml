@@ -22,13 +22,17 @@
 
 # Start screens
  AP_START_SCREEN_CHILDREN_OF_THE_DARKNESS:0 "Since the beginning of our civilization has the surface of [GetHomeWorldName] been alive with our natural predators. While our people had hard times learning to live among the surface dwellers they often hid inside some of the more common caves on the planet. They learned fast that these went deeper then expected and held the ability to foster live we bent to our survival.\n\nMany centuries have passed since those lessons have been learned, while most retreated towards the depths those few that remained died out. Reasuring our previous expepectations. Now with a vast network of caves having littered the planet and us having used our technology to reclaim the surface we now turn our gaze up further. We learned many secrets from the deep dark, now we leave the deep and reach onto the void a darkness not uncommon to us."
- AP_START_SCREEN_ANCIENT_REMNANTS:0 "Many eons ago the [GetSpeciesAdj] evolved on a distant planet far off in the depths of the galaxy. We were a leftover of an empire older then our recorded history. Our ancestors found there relics, while there intentions were initially to merely despose of there rivals. They gained knowledge on a level far beyond what they could even comprehend. The sheer madness that seeded caused these people to try and destroy the relics. Yet in the fracturing of this knowledge they left the pieces accross the entire planet. Seeding the early nations of [GetHomeWorldName] with many abilities.\n\n After great conflict and the realization our knowledge is based on another civilization lost to us. We banded together in a collective which would later grow into our current empire. The knowledge gleamed in our early years gave us much to ponder."
+ AP_START_SCREEN_ANCIENT_REMNANTS:0 "\n With the discovery of ancient technologies on our homeworld layed bare by the search for there origin has taken us to the only place not explored by our kind. The very stars around us were once part of our ancestors yet there knowledge mostly lost to us. Now is our tale, a challange to overcome there mistakes and rise above there former glory."
 
 # AI Personalities
  personality_ancient_reclaimer:0 "Remnant Reclaimers"
  personality_ancient_reclaimer_desc:0 "This empire has been known to have had a golden age long before there current era, There history is truely ancient with remnants of there long gone technology being left on there homeworld. This while making some aspects of there culture truely ancient there desire to rule the galaxy once more is the only constant so far."
  personality_ancient_rebuilder:0 "Remnant Rebuilders"
  personality_ancient_rebuilder_desc:0 "This empire is a rebuilding remnant form a species that originally ruled vast portions of the galaxy. They appear to have learned from there previous mistakes and are willing to interact with others as long as there interests are served."
+ personality_depht_seekers:0 "Depth Seekers"
+ personality_depht_seekers_desc:0 "This empire has came form the darkest dephts of there homeworld and wish to learn more about the great beyond and the species abroad. While they do not mind cooperation, moving against them will draw there sight near immediatly."
+ personality_depht_conquerors:0 "Depth Conquerors"
+ personality_depht_conquerors_desc:0 "These people seem to have a great desire to gather more lands. As there current tunnelguards are as numerours as there are stars they seem poised to try and expand by whatever means available."
 
 # Armies stuff
  conscript_army_plural:0 "Conscript Armies"
@@ -37,3 +41,6 @@
  religious_mob_plural:0 "Religious mobs"
  religious_mob:0 "Religious mob"
  religious_mob_desc:0 "An unruly mob of zealots being driven forward by a war-priest. While not very well trained there are a lot of them."
+
+# Opinion Modifiers
+ opinion_community_PR:0 "PR Campaign"
