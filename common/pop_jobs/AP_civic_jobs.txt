@@ -90,6 +90,7 @@ ancient_archaeologists = {
 		}
 	}
 }
+
 ancient_archaeologists_drone = {
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER

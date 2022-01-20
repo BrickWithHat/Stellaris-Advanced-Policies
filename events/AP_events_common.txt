@@ -94,6 +94,7 @@ country_event = {
 		}
 	}
 }
+
 ##########################################################################
 # Origin components
 ##########################################################################
@@ -114,40 +115,6 @@ country_event = {
 			capital_scope = {
 				add_deposit = d_underground_cities
 				set_planet_flag = AP_cave_full
-			}
-		}
-	}
-	immediate = {
-		if = {
-			limit = {
-				owner = {
-					has_valid_civic = civic_AP_ancient_remnants
-				}
-			}
-			owner = {
-				set_country_flag = AP_ancient_remnant_installed
-				capital_scope = {
-					add_deposit = d_ancient_site
-				}
-			}
-		}
-		if = {
-			limit = {
-				owner = {
-					has_valid_civic = civic_AP_ancient_remnants
-					OR = {
-						is_pacifist = yes
-						is_xenophile = yes
-						has_valid_civic = civic_free_haven
-						has_valid_civic = civic_idealistic_foundation
-					}
-				}
-			}
-			owner = {
-				set_ai_personality = ancient_rebuilder
-			}
-			else = {
-				set_ai_personality = ancient_reclaimer
 			}
 		}
 	}
