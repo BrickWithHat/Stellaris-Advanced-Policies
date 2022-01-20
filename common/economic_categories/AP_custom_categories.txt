@@ -32,6 +32,7 @@ planet_death_chronicler = {
     parent = planet_jobs
     generate_add_modifiers = {
         produces
+        upkeep
     }
 }
 ##########################################################################

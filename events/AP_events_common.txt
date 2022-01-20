@@ -90,6 +90,7 @@ country_event = {
 			else = {
 				set_ai_personality = ancient_reclaimer
 			}
+			set_country_flag = AP_construction_installed
 		}
 	}
 }

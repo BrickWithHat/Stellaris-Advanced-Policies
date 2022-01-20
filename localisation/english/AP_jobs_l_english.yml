@@ -17,12 +17,10 @@
  job_worker_educator_desc:0 "Educators provide the most accepted form of education in its society. There goal is to arm the next generation with knowledge deemed usefull for there succes in there society."
  mod_job_worker_educator_add:0 "£job_worker_educator£ $job_worker_educator$ jobs added"
 
-
  job_specialist_educator:0 "$job_worker_educator$"
  job_specialist_educator_plural:0 "$job_worker_educator_plural$"
  job_specialist_educator_desc:0 "$job_worker_educator_desc$"
  mod_job_specialist_educator_add:0 "$pop_cat_specialist$ £job_specialist_educator£ $job_worker_educator$ jobs added"
-
 
  job_ruler_educator:0 "$job_worker_educator$"
  job_ruler_educator_plural:0 "$job_worker_educator_plural$"
