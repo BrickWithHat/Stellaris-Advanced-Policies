@@ -376,7 +376,7 @@
  AP_death_cult_true_death:0 "Only Death"
  AP_death_cult_true_death_desc:0 "Death is the only constant, it must be enforced where the order is at risk. That is our duty."
 
- policy_AP_anglers:0 "£mod_op_cat_government£Ocean Harvest Policy"
+policy_AP_anglers:0 "£mod_op_cat_government£Ocean Harvest Policy"
  policy_AP_anglers_desc:0 "Our vast oceans are our homes, we live, we die and build all in the oceans. It is our duty to guard it and uphold its continued survival. We protect the ocean provides plenty of raw resources for our ever expanding empire."
  AP_anglers_culture:0 "Cultural Focused"
  AP_anglers_culture_desc:0 "The cultural significance of the ocean cannot be denied, it is a great way of getting us closer to our populace and uniting our planets."
