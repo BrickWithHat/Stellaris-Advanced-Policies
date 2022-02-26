@@ -43,6 +43,12 @@ subjects = {
         produces
     }
 }
+commercial_pacts = {
+	parent = diplomacy
+    generate_mult_modifiers = {
+        upkeep
+    }
+}
 ##########################################################################
 # Pop categories
 ##########################################################################

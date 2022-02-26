@@ -86,6 +86,12 @@
  mod_pop_category_slave_energy_produces_add:0 "£energy£ $energy$ per £pop_cat_slave£ $pop_cat_slave$"
  mod_shipclass_military_build_cost_mult:0 "Military Ship build cost"
  mod_planet_pops_food_upkeep_mult:0 "£food£ $food$ upkeep for £pops£ $pops$"
+ mod_subjects_minerals_produces_add:0 "£minerals£ $minerals$ per §Yvassel§!"
+ mod_subjects_physics_research_produces_add:0 "£physics_research£ $physics_research$ per §Yvassel§!"
+ mod_subjects_society_research_produces_add:0 "£society_research£ $society_research$ per §Yvassel§!"
+ mod_subjects_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ per §Yvassel§!"
+ mod_leaders_unity_upkeep_mult:0 "§YLeader§! £unity£ $unity$ upkeep changed by"
+ mod_commercial_pacts_upkeep_mult:0 "Commercial Pact upkeep"
 
 # Custom modifiers based on my own stuff like jobs
  mod_job_ancient_archaeologists_add:0 "£job_evaluator£ $job_ancient_archaeologists_plural$ jobs added"

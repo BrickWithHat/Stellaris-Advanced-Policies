@@ -13,7 +13,6 @@
 AP_tight_admin = {
 	length = @EdictPerpetual
 	icon = "gfx_edicts_agenda"
-	edict_cap_usage = 1
 	resources = {
 		category = edicts
 		cost = {
@@ -23,7 +22,7 @@ AP_tight_admin = {
 					has_edict = AP_tight_admin
 				}
 			}
-			influence = 50
+			unity = 50
 			energy = 1000
 		}
 		cost = {
@@ -31,8 +30,12 @@ AP_tight_admin = {
 			trigger = {
 				has_edict = AP_tight_admin
 			}
-			influence = 100
-			energy = 2500
+		}
+		upkeep = {
+			trigger = {
+				has_edict = AP_tight_admin
+			}
+			unity = 10
 		}
 	}
 	potential = {
@@ -56,7 +59,6 @@ AP_tight_admin = {
 AP_rationing = {
 	length = @EdictPerpetual
 	icon = "gfx_edicts_alert"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
@@ -66,7 +68,7 @@ AP_rationing = {
 					has_edict = AP_rationing
 				}
 			}
-			influence = 20
+			unity = 20
 		}
 		cost = {
 			#Deactivation Cost
@@ -82,7 +84,7 @@ AP_rationing = {
 	}
 	potential = {
 		NOT = {
-			has_ethic = ethic_gestalt_consciousness
+			is_gestalt = yes
 		}
 		OR = {
 			is_at_war = yes
@@ -134,8 +136,7 @@ AP_combat_drills = {
 	potential = {
 		OR = {
 			NOR = {
-				has_ethic = "ethic_pacifist"
-				has_ethic = "ethic_fanatic_pacifist"
+				is_pacifist = yes
 				has_valid_civic = "civic_inwards_perfection"
 			}
 			is_at_war = yes
@@ -211,23 +212,21 @@ AP_dirty_bomb = {
 AP_grand_banquette_lithoid = {
 	length = @EdictDurationShort
 	icon = gfx_edicts_grapes
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
-			minerals = 5000
-			influence = 50
+			unity = 10
+		}
+		upkeep = {
+			minerals = 50
+			unity = 5
 		}
 	}
 	allow = {
 		owner = {
 			has_resource = {
-				type = minerals
-				amount >= 5000
-			}
-			has_resource = {
-				type = influence
-				amount >= 50
+				type = unity
+				amount >= 10
 			}
 		}
 	}
@@ -248,23 +247,21 @@ AP_grand_banquette_lithoid = {
 AP_grand_banquette = {
 	length = @EdictDurationShort
 	icon = gfx_edicts_grapes
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
-			food = 5000
-			influence = 50
+			unity = 10
+		}
+		upkeep = {
+			food = 50
+			unity = 5
 		}
 	}
 	allow = {
 		owner = {
 			has_resource = {
-				type = food
-				amount >= 5000
-			}
-			has_resource = {
-				type = influence
-				amount >= 50
+				type = unity
+				amount >= 10
 			}
 		}
 	}
@@ -285,18 +282,21 @@ AP_grand_banquette = {
 AP_nobility = {
 	length = @EdictDurationDefault
 	icon = gfx_edicts_grapes
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
-			energy = 5000
+			unity = 25
+		}
+		upkeep = {
+			unity = 15
+			energy = 20
 		}
 	}
 	allow = {
 		owner = {
 			has_resource = {
-				type = energy
-				amount >= 5000
+				type = unity
+				amount >= 25
 			}
 		}
 	}
@@ -322,12 +322,14 @@ AP_nobility = {
 AP_greener_pasture = {
 	length = @EdictDurationDefault
 	icon = "gfx_edicts_agenda"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
 			energy = 2000
 			consumer_goods = 500
+		}
+		upkeep = {
+			unity = 10
 		}
 	}
 	potential = {
@@ -366,6 +368,9 @@ AP_propaganda_campaign = {
 		category = edicts
 		cost = {
 			energy = 2500
+		}
+		upkeep = {
+			unity = 10
 		}
 	}
 	potential = {

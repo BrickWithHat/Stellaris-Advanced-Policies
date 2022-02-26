@@ -4,17 +4,17 @@
 ##########################################################################
  policy_AP_policy_panic:0 "£community_in_breach£National State"
  policy_AP_policy_panic_desc:0 "§YThis is an emergency measure! Only becomes available during periods or crisis.§! Event chain planned at later date..."
- policy_AP_war_stance:0 "£ship_stats_piracy_supression£Military Stance"
+ policy_AP_war_stance:0 "Military Stance"
  policy_AP_war_stance_desc:0 "Our governments stance on the role of our armed forces"
 
- policy_AP_tax_policy:0 "£amenities£Tax Policy"
+ policy_AP_tax_policy:0 "Tax Policy"
  policy_AP_tax_policy_desc:0 "How we tax our populace can make the diffrence in how we budget our empire. As such we should be sure we have set proper and understandable doctrines regarding taxation.§YThis policy Influences which $policy_AP_tax_amount$ you get access to.§!"
- policy_AP_tax_amount:0 "£amenities£Tax Ratio"
+ policy_AP_tax_amount:0 "Tax Ratio"
  policy_AP_tax_amount_desc:0 "We should consider how much we wish to tax our people. Doing so will give us proper income to fund our empire. §YThis policy is entirely based on which $policy_AP_tax_policy$ you pick.§!"
 
- policy_AP_education_privledge:0 "£political_power£Educational Rights"
+ policy_AP_education_privledge:0 "Educational Rights"
  policy_AP_education_privledge_desc:0 "Here is where one desides who does deserve an education and who does not. §YEffects which kind of Education Funding policy chart you get access to!§!"
- policy_AP_education_stance_merged:0 "£political_power£Education Funding"
+ policy_AP_education_stance_merged:0 "Education Funding"
  policy_AP_education_stance_merged_desc:0 "Here is where we can influence the extent of how much knowledge our people can access. The effects of this can be altered in the policy category §Y$policy_AP_education_privledge$§!."
 
  policy_AP_education_stance_all:0 "Mass Education Funding"
@@ -24,13 +24,13 @@
  policy_AP_education_stance_elite:0 "Elite Education Funding"
  policy_AP_education_stance_elite_desc:0 "$policy_AP_education_stance_all_desc$"
 
- policy_AP_unemployment:0 "£pop£Unemployment Stance"
+ policy_AP_unemployment:0 "Unemployment Stance"
  policy_AP_unemployment_desc:0 "Here we pick what is supposed to be done about the less fortunate of our empire."
- policy_AP_conscription:0 "£trade_protection£Conscription law"
+ policy_AP_conscription:0 "Conscription law"
  policy_AP_conscription_desc:0 "Who do we send to war and more importantly how."
- policy_AP_religion:0 "£stability£Religious Stance"
+ policy_AP_religion:0 "Religious Stance"
  policy_AP_religion_desc:0 "The view of the state on organized religion within our empire."
- policy_AP_weapons_law:0 "£ship_modifier£Weapons Law"
+ policy_AP_weapons_law:0 "Weapons Law"
  policy_AP_weapons_law_desc:0 "Our empire has a few options when it comes to handling the weapons within our borders."
 
 
@@ -191,7 +191,7 @@
  AP_tax_amount_wealth_high_desc:0 "Turns out a very few individuals hold a sizable part of our nations total wealth. This should not stand, let us confescate that and redistribute it through-out our empire."
 
 # Gestalt Policies
- policy_AP_autonamy:0 "£pop£Autonomy"
+ policy_AP_autonamy:0 "Autonomy"
  policy_AP_autonamy_desc:0 "The amount of free thinking granted to an 'individual' in our collective"
  AP_autonamy_none_name:0 "$AP_autonamy_none$"
  AP_autonamy_none:0 "None"
@@ -203,7 +203,7 @@
  AP_autonamy_near_free:0 "Loosely linked"
  AP_autonamy_near_free_desc:0 "While linked and being brought to comply, there minds have the capacity for free thought."
 
- policy_AP_organic_recycling:0 "£repair£Handling organic matter"
+ policy_AP_organic_recycling:0 "Handling organic matter"
  policy_AP_organic_recycling_desc:0 "We should ensure that we waste as little material or time to maxumize our potential."
  AP_organic_recycling_none:0 "No Recycling"
  AP_organic_recycling_none_desc:0 "We do not have reason to repurose organic matter left by our drones. It is waste of time."
@@ -212,7 +212,7 @@
  AP_organic_recycling_complete:0 "Large Scale only"
  AP_organic_recycling_complete_desc:0 "Any organic matter can and will be repurposed for the hive. We feed, we grow, we expand."
 
- policy_AP_component_recycling:0 "£repair£Handling of scrap"
+ policy_AP_component_recycling:0 "Handling of scrap"
  policy_AP_component_recycling_desc:0 "Sometimes we leave material from ourselfs behind. We did not really have any direct reason to deal with it until now."
  AP_component_recycling_none:0 "Priority: Zero"
  AP_component_recycling_none_desc:0 "We have more important matters to attent to then dealing with left over components"

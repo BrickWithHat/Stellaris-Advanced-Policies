@@ -12,7 +12,7 @@ AP_planetary_quota = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 1000
 		}
 	}
 	potential = {
@@ -59,7 +59,7 @@ AP_abolish_planetary_quota = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 250
 		}
 	}
 	potential = {
@@ -113,7 +113,7 @@ AP_trail_by_fire = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -150,7 +150,7 @@ AP_generation_of_peace = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -186,7 +186,7 @@ AP_grand_sports_games = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -219,7 +219,7 @@ AP_benevolant_gesture = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -252,7 +252,7 @@ AP_rite_of_the_heavens = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -285,7 +285,7 @@ AP_competition_of_the_minds = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -325,7 +325,7 @@ AP_conscription = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 10
+			unity = 100
 		}
 	}
 	potential = {
@@ -353,8 +353,8 @@ AP_conscription = {
 		}
 		owner = {
 			has_resource = {
-				type = influence
-				amount >= 10
+				type = unity
+				amount >= 100
 			}
 		}
 	}
@@ -454,6 +454,9 @@ AP_excavate_the_planet = {
 	sound = event_construction
 	resources = {
 		category = decisions
+		cost = {
+			unity = 50
+		}
 	}
 	potential = {
 		owner = {
@@ -539,6 +542,9 @@ AP_connect_underground = {
 	sound = event_construction
 	resources = {
 		category = decisions
+		cost = {
+			minerals = 1000
+		}
 	}
 	potential = {
 		owner = {
@@ -560,8 +566,15 @@ AP_connect_underground = {
 		add_deposit = d_underground_cities
 	}
 	enactment_time = 720
-	# AI should always build this preferably as soon as possible
+	# AI should proritise this whenever possible
 	ai_weight = {
-		weight = 1000
+		weight = 10
+		modifier = {
+			factor = 100
+			has_resource = {
+				type = minerals
+				amount >= 1500
+			}
+		}
 	}
 }

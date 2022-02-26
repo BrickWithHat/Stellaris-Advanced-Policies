@@ -4,10 +4,10 @@
  tradition_community_desc:0 "The best way to guide the galaxy is by making sure the people know we have there best interests at the appendige so let us work towards that."
  tr_community_adopt:0 "Community Tradition"
  tr_community_adopt_desc:0 "Improves §YPop Growth from Immigration§! by §G10%§!."
- tr_community_adopt_effect:0 "" # Game kept negging me about these even though they do not show up anywhere to my knowledge. Not even in the base game.
+ tr_community_adopt_effect:0 "Debug line" # Game kept negging me about these even though they do not show up anywhere to my knowledge. Not even in the base game.
  tr_community_finish:0 "Community Tradition Finished"
  tr_community_finish_desc:0 "Country influence income: §G+33%§!\nAscension Perks Unlocked: §G+1§!"
- tr_community_finish_effect:0 "" # Still useless
+ tr_community_finish_effect:0 "Debug line" # Still useless
 
  tr_community_greater_goal:0 "Great Goal"
  tr_community_greater_goal_delayed:0 "We must set a greater goal for ourself and our empire to see it thrive. Let none douth our cause in this galaxy!"
@@ -37,10 +37,10 @@
  tradition_lordship:0 "Lordship"
  tradition_lordship_desc:0 "Our guidance is truely what sets us apart we should invest in a proxy as a means of exerting indirect control."
  tr_lordship_adopt:0 "Lordship Tradition"
- tr_lordship_adopt_effect:0 "" # Still useless and nearly bothering me
+ tr_lordship_adopt_effect:0 "Debug line" # Still useless and nearly bothering me
  tr_lordship_adopt_desc:0 "§YBorder Friction§!: §G-25%§!"
  tr_lordship_finish:0 "Technology Sharing rate: §G+25%§!\nSubject Inigration cost:§G-25%§!\nAscension Perks Unlocked: §G+1§!"
- tr_lordship_finish_effect:0 "" # I blame confusing code but then again i do not know how to fix it.
+ tr_lordship_finish_effect:0 "Debug line" # I blame confusing code but then again i do not know how to fix it.
 
  tr_lordship_benevolence:0 "Greater Benevolence"
  tr_lordship_benevolence_desc:0 "Vassel/Tributary acceptance §G+10§!"
@@ -48,7 +48,7 @@
 
  tr_lordship_understanding:0 "Cultural Understanding"
  tr_lordship_understanding_desc:0 "§YSubject§! tax increased by §G+10%§!\nMax §YLeader§! skill level increased by §G+1§!."
- tr_lordship_understanding_delayed:0 "Our subjects culture, though clearly aliens is still something which can be exploited."
+ tr_lordship_understanding_delayed:0 "Our subjects culture, though clearly alien is still something which can be exploited."
 
  tr_lordship_centralization:0 "Subject Centralization"
  tr_lordship_centralization_desc:0 "§YSubject§! intigration time decreased by §G+10%§!"

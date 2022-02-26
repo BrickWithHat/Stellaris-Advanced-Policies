@@ -29,7 +29,7 @@
  civic_AP_ancient_remnants_effects:0 "Spawns a very strong §HPlanetary Deposit§! on your §HCapital§!. This §HDeposit§! provide a set amount of §Y£job_evaluator£ $job_ancient_archaeologists$§! jobs based on the size of the §Ycapital building§!. These give §Y10% research speed§! per job allong with some science."
 
  civic_AP_workers_ethic:0 "Workers Ethic"
- civic_AP_workers_ethic_desc:0 "The Government was build upon a thorough work mentality frequantly skipping breaks to put in that maximum effort. While this results in consider output gain. It does make people less happy in the long run."
+ civic_AP_workers_ethic_desc:0 "The Government was build upon a thorough work mentality frequantly skipping breaks to put in that maximum effort. While this results in consider output gain. It does however decrease overall happiness in the long run."
  civic_AP_workers_ethic_corporate:0 "Solid Corporate Culture"
  civic_AP_workers_ethic_corporate_desc:0 "This megacorp has as one of its corner stones that its employes work slightly harder then others which adds greatly to the bottom line. But does leave some employes less happy in the long run."
 
