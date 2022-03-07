@@ -52,7 +52,16 @@ spriteTypes = {
 		textureFile = "gfx/event_pictures/origins/origin_AP_children_of_the_darkness.dds"
 		alwaysTransparent = yes
 	}
+	spritetype = {
+		name = "GFX_origin_AP_sky_treaders"
+		textureFile = "gfx/event_pictures/origins/origin_AP_sky_treaders.dds"
+		alwaysTransparent = yes
+	}
 	# Traditions Community
+	spritetype = {
+		name = "GFX_tradition_hex_bg_tradition_community"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_hex_bg_blue.dds"
+	}
 	spritetype = {
 		name = "GFX_tradition_category_icon_tradition_community"
 		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_community.dds"
@@ -82,6 +91,10 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/traditions/tradition_community_political_enactment.dds"
 	}
 	# Traditions Lordship
+	spritetype = {
+		name = "GFX_tradition_hex_bg_tradition_lordship"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_hex_bg_orange.dds"
+	}
 	spritetype = {
 		name = "GFX_tradition_category_icon_tradition_lordship"
 		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_lordship.dds"

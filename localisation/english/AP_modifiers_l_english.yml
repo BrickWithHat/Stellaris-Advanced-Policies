@@ -52,6 +52,9 @@
  country_science_bonus:0 "Unparalleled Understanding"
  country_culture_bonus:0 "Greater Renaissance"
  country_quota_fullfilled:0 "Improved Production lines"
+ country_megastructure_bonus:0 "Mega-engineering Insights"
+ country_planet_focused_bonus:0 "Planet-engineering Insights"
+ country_recent_quota:0 "Recently Finished a Quota"
 
 # civic related
  planet_mobile_construction_deployed:0 "Mobile Construction Vehicle"
@@ -92,6 +95,7 @@
  mod_subjects_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ per §Yvassel§!"
  mod_leaders_unity_upkeep_mult:0 "§YLeader§! £unity£ $unity$ upkeep changed by"
  mod_commercial_pacts_upkeep_mult:0 "Commercial Pact upkeep"
+ mod_planet_branch_offices_unity_produces_add:0 "£unity£ $unity$ per Branch office"
 
 # Custom modifiers based on my own stuff like jobs
  mod_job_ancient_archaeologists_add:0 "£job_evaluator£ $job_ancient_archaeologists_plural$ jobs added"

@@ -64,3 +64,35 @@ religious_mob = {
 		}
 	}
 }
+
+gladiators = {
+	icon = GFX_army_type_assault
+	damage = 1
+	health = 1
+	morale = 2
+	morale_damage = 1.2
+	collateral_damage = 0.5
+	war_exhaustion = 0.5
+	time = 15
+	has_species = yes
+	potential = {
+		owner = {
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+	allow = {
+		owner = {
+			has_policy_flag = AP_warrior_culture_redemption
+		}
+		
+	}
+	resources = {
+		category = armies
+		upkeep = {
+			alloys = 0.1
+		}
+		cost = {
+			energy = 50	
+		}
+	}
+}

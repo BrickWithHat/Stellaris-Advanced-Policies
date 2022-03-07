@@ -30,6 +30,9 @@ AP_planetary_quota = {
 			has_modifier = planet_quota_fulfilled
 			has_modifier = planet_quota_abolished
 			has_modifier = planet_quota_failed
+			owner = {
+				has_modifier = country_recent_quota
+			}
 		}
 	}
 	effect = {
@@ -455,7 +458,7 @@ AP_excavate_the_planet = {
 	resources = {
 		category = decisions
 		cost = {
-			unity = 50
+			minerals = 250
 		}
 	}
 	potential = {
@@ -532,6 +535,33 @@ AP_excavate_the_planet = {
 				}
 			}
 		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 2500
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 5000
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 10000
+				}
+			}
+		}
 	}
 }
 
@@ -543,7 +573,7 @@ AP_connect_underground = {
 	resources = {
 		category = decisions
 		cost = {
-			minerals = 1000
+			minerals = 500
 		}
 	}
 	potential = {
@@ -570,10 +600,53 @@ AP_connect_underground = {
 	ai_weight = {
 		weight = 10
 		modifier = {
-			factor = 100
-			has_resource = {
-				type = minerals
-				amount >= 1500
+			factor = 10
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 500
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 2500
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 5000
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 10000
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			num_districts = {
+				type = district_mining
+				value >= 1
+			}
+		}
+		modifier = {
+			factor = 10
+			num_districts = {
+				type = district_mining
+				value >= 3
 			}
 		}
 	}
