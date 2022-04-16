@@ -400,7 +400,7 @@ AP_mobile_constrution_deploy = {
 	icon = decision_mining_station
 	sound = event_administrative_work
 	resources = {
-		category = decisions
+		category = AP_special_decisions
 	}
 	potential = {
 		owner = {
@@ -419,6 +419,27 @@ AP_mobile_constrution_deploy = {
 		}
 	}
 	enactment_time = 60
+	ai_weight = {
+		weight = 1
+		# More blockers to remove means a more attractice location to deploy
+		modifier = {
+			factor = 10
+			num_uncleared_blockers > 2
+		}
+		# The more districts to build the better the savings eh?
+		modifier = {
+			factor = 5
+			free_district_slots >= 5
+		}
+		# No deploying when all is already done
+		modifier = {
+			factor = 0
+			AND = {
+				free_district_slots <= 2
+				num_uncleared_blockers <= 2
+			}
+		}
+	}
 }
 
 AP_mobile_constrution_pack = {
@@ -426,7 +447,7 @@ AP_mobile_constrution_pack = {
 	icon = decision_mining_station
 	sound = event_administrative_work
 	resources = {
-		category = decisions
+		category = AP_special_decisions
 	}
 	potential = {
 		owner = {
@@ -445,6 +466,19 @@ AP_mobile_constrution_pack = {
 		}
 	}
 	enactment_time = 60
+	ai_weight = {
+		weight = 1
+		# AI cannot move the MCV while it is either building, or has more then 2 districts available to build
+		modifier = {
+			factor = 0
+			OR = {
+				has_building_construction = yes
+				NOT = {
+					free_district_slots <= 2
+				}
+			}
+		}
+	}
 }
 
 ##########################################################################
@@ -456,9 +490,9 @@ AP_excavate_the_planet = {
 	icon = decision_drilling_for_gas
 	sound = event_construction
 	resources = {
-		category = decisions
+		category = AP_special_decisions
 		cost = {
-			minerals = 250
+			minerals = 500
 		}
 	}
 	potential = {
@@ -571,9 +605,9 @@ AP_connect_underground = {
 	icon = decision_alien_propaganda
 	sound = event_construction
 	resources = {
-		category = decisions
+		category = AP_special_decisions
 		cost = {
-			minerals = 500
+			minerals = 1000
 		}
 	}
 	potential = {

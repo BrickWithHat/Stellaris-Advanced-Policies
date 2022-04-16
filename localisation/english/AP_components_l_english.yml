@@ -50,3 +50,8 @@
  trait_AP_tunneler_desc:0 "This species has evolved from the underground, They feel right at home in cavernous depths but do not fare well on most surfaces."
  trait_AP_migritory_flyer:0 "Migritory Flyer"
  trait_AP_migritory_flyer_desc:0 "This species has a tendincy to migrate and fly a lot. As such they do not need steady housing but require more services while they travel accros vast distances."
+
+# Misc
+ AP_special_decisions:0 "Unique Decisions"
+ planet_death_chronicler:0 "Death Chronicler"
+ planet_job_tunnel_lighter:0 "Tunnel Lighters"

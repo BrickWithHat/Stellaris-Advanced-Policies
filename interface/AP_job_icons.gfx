@@ -1,0 +1,31 @@
+spriteTypes = {
+	# Jobs
+	spritetype = {
+		name = "gfx_education_icon"
+		textureFile = "gfx/interface/icons/education.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_worker_educator"
+		textureFile = "gfx/interface/icons/jobs/job_worker_educator.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_specialist_educator"
+		textureFile = "gfx/interface/icons/jobs/job_specialist_educator.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_ruler_educator"
+		textureFile = "gfx/interface/icons/jobs/job_ruler_educator.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_specialist_tarrifs_clerk"
+		textureFile = "gfx/interface/icons/jobs/job_specialist_tarrifs_clerk.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_specialist_tunnel_lighter"
+		textureFile = "gfx/interface/icons/jobs/job_specialist_tunnel_lighter.dds"
+	}
+	spritetype = {
+		name = "gfx_jobs_complex_tunnel_lighter"
+		textureFile = "gfx/interface/icons/jobs/job_specialist_tunnel_lighter.dds"
+	}
+}

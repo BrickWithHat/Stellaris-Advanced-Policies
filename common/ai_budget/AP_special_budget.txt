@@ -1,0 +1,30 @@
+# A means for the AI to keep excivating the planet while other decisions might be denied by the AI_budget
+AP_decision_planet_excivation = {
+	resource = minerals
+	type = expenditure
+	category = AP_special_decisions
+	potential = {
+		has_origin = AP_children_of_the_darkness
+	}
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 500
+	}
+	static_max = {
+		base = 1000
+	}
+}
+# The ability to deploy the MCV even if the game is being a bit of prick about decisions
+AP_decision_MCV = {
+	resource = unity
+	type = expenditure
+	category = AP_special_decisions
+	potential = {
+		always = yes # Is always rather then civic specific because the MCV can be captured by other empires
+	}
+	fraction = {
+		weight = 1
+	}	
+}

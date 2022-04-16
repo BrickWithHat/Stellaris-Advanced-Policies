@@ -100,9 +100,14 @@
 # Custom modifiers based on my own stuff like jobs
  mod_job_ancient_archaeologists_add:0 "£job_evaluator£ $job_ancient_archaeologists_plural$ jobs added"
  mod_job_ancient_archaeologists_drone_add:0 "£job_evaluator£ $job_ancient_archaeologists_drone_plural$ jobs added"
- mod_job_worker_educator_per_pop:0 "Adds £job_worker_educator£ $job_worker_educator$ job for every §Y10§! £pops£ pops"
- mod_job_specialist_educator_per_pop:0 "Adds £job_specialist_educator£ $job_worker_educator$ job for every §Y25§! £pops£ pops"
- mod_job_ruler_educator_per_pop:0 "Adds £job_ruler_educator£ $job_worker_educator$ job for every §Y40§! £pops£ pops"
+ mod_job_worker_educator_per_pop:0 "Adds £job_worker_educator£ $job_worker_educator$ job for every §Y$VALUE$§! £pops£ pops"
+ mod_job_specialist_educator_per_pop:0 "Adds £job_specialist_educator£ $job_worker_educator$ job for every §Y$VALUE$§! £pops£ pops"
+ mod_job_ruler_educator_per_pop:0 "Adds £job_ruler_educator£ $job_worker_educator$ job for every §Y$VALUE$§! £pops£ pops"
+ mod_job_specialist_tarrifs_clerk_per_pop:0 "Adds £job_specialist_tarrifs_clerk£ $job_specialist_tarrifs_clerk$ job every §Y$VALUE$§! £pops£ pops" 
+ mod_job_specialist_tunnel_lighter_per_pop:0 "Adds £job_specialist_tunnel_lighter£ $job_specialist_tunnel_lighter$ job every §Y$VALUE$§! £pops£ pops"
+ mod_job_specialist_tunnel_lighter_per_pop_short:0 "\n§G+1§! £job_specialist_tunnel_lighter£ per $VALUE$ £pop£"
+ mod_job_complex_tunnel_lighter_per_pop:0 "Adds £job_specialist_tunnel_lighter£ $job_specialist_tunnel_lighter$ job every §Y$VALUE$§! £pops£ pops"
+ mod_job_complex_tunnel_lighter_per_pop_short:0 "\n§G+1§! £job_specialist_tunnel_lighter£ per $VALUE$ £pop£"
 
  mod_planet_job_educator_produces_mult:0 "(£job_worker_educator£ £job_specialist_educator£ £job_ruler_educator£) $job_worker_educator$ Resource production multiplied by"
  mod_planet_job_educator_upkeep_mult:0 "(£job_worker_educator£ £job_specialist_educator£ £job_ruler_educator£) $job_worker_educator$ job Upkeep"
