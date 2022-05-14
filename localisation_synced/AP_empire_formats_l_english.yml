@@ -1,0 +1,16 @@
+﻿l_default:
+# Ancient Remnants Components
+ format.AP.ancient.1:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>"
+ format.AP.ancient.2:0 "<imperial_gen_desc> <AP_ancient_desc> [This.GetSpeciesName] <imperial_gen>"
+ format.AP.ancient.3:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_mil>"
+ format.AP.ancient.4:0 "<imperial_mil_desc> <AP_ancient_desc> [This.GetSpeciesName] <dictatorial_mil>"
+
+ format.AP.ancient.species.1:0 "[This.GetSpeciesName] <democratic_gen>"
+ format.AP.ancient.species.2:0 "[This.GetSpeciesName] <imperial_gen>"
+ format.AP.ancient.species.3:0 "[This.GetSpeciesName] <democratic_mil>"
+ format.AP.ancient.species.4:0 "[This.GetSpeciesName] <dictatorial_mil>"
+
+# Children of the Darkness Components
+ format.AP.children.1:0 "<democratic_gen_desc> [This.Capital.GetName] <AP_darkness>"
+ format.AP.children.2:0 "<imperial_gen_desc> [This.Capital.GetName] <AP_darkness>"
+ format.AP.children.species.1:0 "[This.Capital.GetName] <AP_darkness>"

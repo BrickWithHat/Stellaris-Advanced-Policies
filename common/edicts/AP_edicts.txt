@@ -17,6 +17,7 @@ AP_rationing = {
 		category = edicts
 		upkeep = {
 			unity = 20
+			multiplier = value:edict_size_effect
 		}
 	}
 	modifier = {
@@ -45,16 +46,6 @@ AP_tight_admin = {
 	icon = "gfx_edicts_agenda"
 	resources = {
 		category = edicts
-		cost = {
-			unity = 50
-			energy = 1000
-			#Activation Cost
-			trigger = {
-				NOT = {
-					has_edict = AP_tight_admin
-				}
-			}
-		}
 		upkeep = {
 			unity = 10
 			multiplier = value:edict_size_effect
@@ -87,8 +78,8 @@ AP_combat_drills = {
 	resources = {
 		category = edicts
 		upkeep = {
-			alloys = 10
-			food = 5
+			alloys = 15
+			multiplier = value:edict_size_effect
 		}
 	}
 	modifier = {
@@ -128,6 +119,7 @@ AP_dirty_bomb = {
 		category = edicts
 		upkeep = {
 			energy = 25
+			multiplier = value:edict_size_effect
 		}
 	}
 	allow = {
@@ -177,6 +169,7 @@ AP_grand_banquette_lithoid = {
 		upkeep = {
 			minerals = 50
 			unity = 10
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -201,6 +194,7 @@ AP_grand_banquette = {
 		upkeep = {
 			food = 50
 			unity = 10
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -225,6 +219,7 @@ AP_nobility = {
 		upkeep = {
 			unity = 15
 			energy = 20
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -253,7 +248,7 @@ AP_greener_pasture = {
 		category = edicts
 		upkeep = {
 			consumer_goods = 5
-			multiplier = value:edict_size_effect*0.5
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -266,7 +261,7 @@ AP_greener_pasture = {
 		}
 	}
 	modifier = {
-		planet_migration_all_mult = 0.25
+		pop_growth_from_immigration = 0.25
 		planet_resettlement_unemployed_mult = 1
 		country_resettlement_cost_mult = -0.5
 		pop_demotion_time_mult = -0.25
