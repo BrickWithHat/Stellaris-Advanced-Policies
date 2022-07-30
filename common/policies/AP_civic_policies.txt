@@ -13,16 +13,44 @@ AP_cutthroat_politics = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				has_valid_civic = civic_police_state
+			}
+			modifier = {
+				factor = 0.5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
 		name = AP_cutthroat_politics_soft_power
 		modifier = {
-			country_election_influence_cost_mult = -0.25
+			leaders_unity_upkeep_mult = -0.1
 			species_leader_exp_gain = 0.1
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				count_owned_leader = {
+					count >= 10
+				}
+			}
+			modifier = {
+				factor = 0.5
+				count_owned_leader = {
+					count <= 7
+				}
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
@@ -33,6 +61,18 @@ AP_cutthroat_politics = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				has_valid_civic = civic_meritocracy
+			}
+			modifier = {
+				factor = 0.5
+				has_valid_civic = civic_landed_nobility
+			}
+			modifier = {
+				factor = 2
+				is_authoritarian = yes
+			}
 		}
 	}
 }
@@ -50,6 +90,20 @@ AP_environmentalist = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 4
+				owner_main_species = {
+					has_plantoids = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -60,6 +114,20 @@ AP_environmentalist = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 4
+				owner_main_species = {
+					has_plantoids = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -70,6 +138,10 @@ AP_environmentalist = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_xenophile = no
+			}
 		}
 	}
 }
@@ -86,6 +158,14 @@ AP_efficient_bureaucracy = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 2
+				is_xenophile = yes
+			}
 		}
 	}
 	option = {
@@ -95,7 +175,7 @@ AP_efficient_bureaucracy = {
 			empire_size_mult = -0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
 		}
 	}
 	option = {
@@ -106,6 +186,18 @@ AP_efficient_bureaucracy = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				has_valid_civic = civic_police_state
+			}
+			modifier = {
+				factor = 2
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_authoritarian = no
+			}
 		}
 	}
 }
@@ -122,6 +214,10 @@ AP_functional_architecture = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 0.5
+				is_xenophile = yes
+			}
 		}
 	}
 	option = {
@@ -131,7 +227,7 @@ AP_functional_architecture = {
 			planet_amenities_mult = 0.05
 		}
 		AI_weight = {
-			weight = 1
+			weight = 3
 		}
 	}
 	option = {
@@ -143,6 +239,14 @@ AP_functional_architecture = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 2
+				is_authoritarian = yes
+			}
 		}
 	}
 }
@@ -160,6 +264,18 @@ AP_mining_guild = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_charismatic
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_nomadic
+				}
+			}
 		}
 	}
 	option = {
@@ -172,6 +288,24 @@ AP_mining_guild = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_industrious
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					NOT = {
+						has_trait = trait_agrarian
+					}
+				}
+			}
 		}
 	}
 	option = {
@@ -184,6 +318,20 @@ AP_mining_guild = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					has_valid_civic = civic_AP_mobile_construction
+					has_valid_civic = civic_AP_grand_architecture
+					has_valid_civic = civic_functional_architecture
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_industrious
+				}
+			}
 		}
 	}
 }
@@ -200,6 +348,18 @@ AP_agrarian_idyll = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_agrarian
+				}
+			}
+			modifier = {
+				factor = 10
+				owner_main_species = {
+					has_trait = trait_traditional
+				}
+			}
 		}
 	}
 	option = {
@@ -210,6 +370,16 @@ AP_agrarian_idyll = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_industrious
+				}
+			}
+			modifier = {
+				factor = 25
+				is_lithoid = yes
+			}
 		}
 	}
 	option = {
@@ -220,6 +390,16 @@ AP_agrarian_idyll = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_ingenious
+				}
+			}
+			modifier = {
+				factor = 25
+				is_mechanical_empire = yes
+			}
 		}
 	}
 	option = {
@@ -231,6 +411,22 @@ AP_agrarian_idyll = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				NOT = {
+					owner_main_species = {
+						has_trait = trait_ingenious
+						has_trait = trait_industrious
+						has_trait = trait_agrarian
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_quarrelsome
+				}
+			}
 		}
 	}
 }
@@ -248,6 +444,14 @@ AP_aristocratic_elite = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 0
+				is_xenophobe = yes
+			}
 		}
 	}
 	option = {
@@ -255,9 +459,18 @@ AP_aristocratic_elite = {
 		modifier = {
 			country_unity_produces_mult = 0.1
 			job_noble_per_pop = 0.025
+			leader_age = -10
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 1.5
+				has_ethic = ethic_fanatic_authoritarian
+			}
+			modifier = {
+				factor = 2
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -270,6 +483,14 @@ AP_aristocratic_elite = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				has_ethic = ethic_fanatic_authoritarian
+			}
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
 		}
 	}
 }
@@ -286,7 +507,7 @@ AP_beacon_of_liberty = {
 			pop_cat_worker_happiness = 0.05
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
 		}
 	}
 	option = {
@@ -299,16 +520,30 @@ AP_beacon_of_liberty = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					is_pacifist = yes
+					is_xenophile = yes
+				}
+			}
 		}
 	}
 	option = {
 		name = AP_beacon_of_liberty_equality
 		modifier = {
-			planet_migration_all_mult = 0.2
+			pop_growth_from_immigration = 0.2
 			pop_government_ethic_attraction = 0.2
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					is_militarist = yes
+					is_materialist = yes
+				}
+			}
 		}
 	}
 }
@@ -324,7 +559,11 @@ AP_citizen_service = {
 			country_command_limit_add = 20
 		}
 		AI_weight = {
-			weight = 1
+			weight = 10
+			modifier = {
+				factor = 5
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -363,6 +602,14 @@ AP_coporate_dominion = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -374,6 +621,14 @@ AP_coporate_dominion = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_spiritualist = yes
+			}
+			modifier = {
+				factor = 5
+				is_xenophile = yes
+			}
 		}
 	}
 	option = {
@@ -383,10 +638,24 @@ AP_coporate_dominion = {
 			country_insult_efficiency = 1
 			envoy_harm_relations_mult = 0.2
 			envoy_improve_relations_mult = 0.2
-			country_trade_attractiveness = 0.5
+			country_trade_attractiveness = 0.25
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 5
+				is_militarist = yes
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_decadent
+				}
+			}
 		}
 	}
 }
@@ -402,6 +671,14 @@ AP_corvee_system = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 5
+				is_militarist = yes
+			}
 		}
 	}
 	option = {
@@ -412,6 +689,19 @@ AP_corvee_system = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				has_ai_personality = migrating_flock
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					OR = {
+						has_trait = trait_AP_migritory_flyer
+						has_trait = trait_nomadic
+					}
+				}
+			}
 		}
 	}
 	option = {
@@ -422,6 +712,14 @@ AP_corvee_system = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 5
+				is_spiritualist = yes
+			}
 		}
 	}
 }
@@ -439,6 +737,18 @@ AP_distinguished_admiralty = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_quick_learners
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_talented
+				}
+			}
 		}
 	}
 	option = {
@@ -449,6 +759,21 @@ AP_distinguished_admiralty = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				owner_main_species = {
+					has_trait = trait_traditional
+				}
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					OR = {
+						has_trait = trait_psionic
+						has_trait = trait_latent_psionic
+					}
+				}
+			}
 		}
 	}
 	option = {
@@ -459,6 +784,18 @@ AP_distinguished_admiralty = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_slow_learners
+				}
+			}
 		}
 	}
 }
@@ -475,17 +812,37 @@ AP_exalted_priest = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_xenophile = no
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_deviants
+				}
+			}
 		}
 	}
 	option = {
 		name = AP_exalted_priest_policing
 		modifier = {
-			country_unity_produces_add = 30
+			leaders_unity_cost_mult = -0.1
 			planet_stability_add = 5
 			planet_crime_mult = -0.1
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				has_valid_civic = civic_police_state
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
 		}
 	}
 	option = {
@@ -496,6 +853,16 @@ AP_exalted_priest = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_xenophobe = yes
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_traditional
+				}
+			}
 		}
 	}
 }
@@ -511,7 +878,7 @@ AP_feudal = {
 			leader_skill_levels = 3
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
 		}
 	}
 	option = {
@@ -523,6 +890,10 @@ AP_feudal = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -536,6 +907,10 @@ AP_feudal = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_militarist = yes
+			}
 		}
 	}
 }
@@ -554,6 +929,10 @@ AP_free_haven = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 15
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
@@ -563,18 +942,30 @@ AP_free_haven = {
 			planet_pops_upkeep_mult = -0.05
 		}
 		AI_weight = {
-			weight = 1
+			weight = 10
 		}
 	}
 	option = {
 		name = AP_free_haven_workers
 		modifier = {
 			planet_pops_organics_upkeep_mult = -0.2
-			planet_migration_all_mult = 0.5
+			pop_growth_from_immigration = 0.5
 			planet_crime_mult = 0.05
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 5
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 0.25
+				is_egalitarian = yes
+			}
 		}
 	}
 }
@@ -592,6 +983,23 @@ AP_idealistic_foundation = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					owner_main_species = {
+						has_trait = trait_agrarian
+						has_trait = trait_industrious
+						has_trait = trait_ingenious
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_agrarian_idyll
+					has_valid_civic = civic_inwards_perfection
+				}
+			}
 		}
 	}
 	option = {
@@ -602,17 +1010,48 @@ AP_idealistic_foundation = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_merchant_guilds
+					has_valid_civic = civic_technocracy
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					is_materialist = yes
+					is_spiritualist = yes
+				}
+			}
 		}
 	}
 	option = {
 		name = AP_idealistic_foundation_space
 		modifier = {
 			pop_environment_tolerance = 0.1
-			planet_migration_all_mult = 0.1
+			pop_growth_from_immigration = 0.1
 			starbase_trade_protection_add = 5
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 5
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					owner_main_species = {
+						has_trait = trait_AP_migritory_flyer
+						has_trait = trait_nomadic
+					}
+				}
+			}
 		}
 	}
 }
@@ -639,7 +1078,11 @@ AP_imperial_cult = {
 			planet_priests_consumer_goods_upkeep_add = -1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 10
+			modifier = {
+				factor = 0
+				is_at_war = yes
+			}
 		}
 	}
 	option = {
@@ -653,7 +1096,11 @@ AP_imperial_cult = {
 			AP_imperial_zealots
 		}
 		AI_weight = {
-			weight = 1
+			weight = 10
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
 		}
 	}
 }
@@ -665,11 +1112,11 @@ AP_inwards_perfection = {
 	option = {
 		name = AP_inwards_perfection_silence
 		modifier = {
-			edict_length_mult = 0.5
+			edicts_upkeep_mult = -0.25
 			planet_stability_add = 5
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -680,6 +1127,10 @@ AP_inwards_perfection = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -690,6 +1141,10 @@ AP_inwards_perfection = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_spiritualist = yes
+			}
 		}
 	}
 }
@@ -707,6 +1162,10 @@ AP_meritocracy = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
 		}
 	}
 	option = {
@@ -718,6 +1177,10 @@ AP_meritocracy = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
@@ -730,6 +1193,13 @@ AP_meritocracy = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					is_materialist = yes
+					is_spiritualist = yes
+				}
+			}
 		}
 	}
 }
@@ -748,6 +1218,20 @@ AP_nationalistic_zeal = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_spiritualist = yes
+			}
+			modifier = {
+				factor = 5
+				is_xenophobe = yes
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_conformists
+				}
+			}
 		}
 	}
 	option = {
@@ -759,6 +1243,18 @@ AP_nationalistic_zeal = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_xenophobe = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 5
+				is_at_war = yes
+			}
 		}
 	}
 	option = {
@@ -771,6 +1267,10 @@ AP_nationalistic_zeal = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_at_war = no
+			}
 		}
 	}
 }
@@ -787,6 +1287,10 @@ AP_parliamentary_system = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
@@ -796,17 +1300,28 @@ AP_parliamentary_system = {
 			edicts_cost_mult = -0.2
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
+			modifier = {
+				factor = 3
+				OR = {
+					is_materialist = yes
+					is_militarist = yes
+				}
+			}
 		}
 	}
 	option = {
 		name = AP_parliamentary_system_influence
 		modifier = {
-			country_election_influence_cost_mult = -0.25
+			leaders_unity_upkeep_mult = -0.1
 			leader_skill_levels = 1
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_egalitarian = no
+			}
 		}
 	}
 }
@@ -824,6 +1339,12 @@ AP_philosopher_king = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				NOT = {
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
 		}
 	}
 	option = {
@@ -835,6 +1356,14 @@ AP_philosopher_king = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				has_ethic = ethic_fanatic_authoritarian
+			}
+			modifier = {
+				factor = 2
+				is_xenophobe = yes
+			}
 		}
 	}
 	option = {
@@ -845,7 +1374,11 @@ AP_philosopher_king = {
 			leaders_cost_mult = 0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
+			modifier = {
+				factor = 3
+				is_xenophile = yes
+			}
 		}
 	}
 }
@@ -862,7 +1395,7 @@ AP_police_state = {
 			intel_encryption_add = 1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
 		}
 	}
 	option = {
@@ -874,6 +1407,18 @@ AP_police_state = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_deviants
+				}
+			}
+			modifier = {
+				factor = 5
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
 		}
 	}
 	option = {
@@ -885,6 +1430,14 @@ AP_police_state = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 5
+				is_spiritualist = yes
+			}
 		}
 	}
 }
@@ -901,7 +1454,7 @@ AP_shadow_council = {
 			planet_buildings_cost_mult = -0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -914,6 +1467,10 @@ AP_shadow_council = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
 		}
 	}
 	option = {
@@ -925,6 +1482,13 @@ AP_shadow_council = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					is_xenophobe = yes
+					is_egalitarian = yes
+				}
+			}
 		}
 	}
 }
@@ -943,6 +1507,10 @@ AP_slaver_guilds = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophobe = yes
+			}
 		}
 	}
 	option = {
@@ -954,6 +1522,16 @@ AP_slaver_guilds = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_thrifty
+				}
+			}
 		}
 	}
 	option = {
@@ -964,7 +1542,7 @@ AP_slaver_guilds = {
 			planet_pops_upkeep_mult = -0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -976,6 +1554,14 @@ AP_slaver_guilds = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					has_valid_civic = civic_imperial_cult
+					has_valid_civic = civic_philosopher_king
+					has_valid_civic = civic_landed_nobility
+				}
+			}
 		}
 	}
 }
@@ -997,9 +1583,8 @@ AP_technocracy = {
 	option = {
 		name = AP_technocracy_physics
 		modifier = {
-			country_physics_research_produces_mult = 0.25
+			country_physics_research_produces_mult = 0.15
 			country_energy_produces_mult = 0.05
-			planet_sensor_range_add = 1
 			ship_sensor_range_add = 2
 		}
 		AI_weight = {
@@ -1009,8 +1594,7 @@ AP_technocracy = {
 	option = {
 		name = AP_technocracy_society
 		modifier = {
-			country_society_research_produces_mult = 0.25
-			country_unity_produces_mult = 0.15
+			country_society_research_produces_mult = 0.15
 			planet_amenities_mult = 0.15
 		}
 		AI_weight = {
@@ -1020,9 +1604,8 @@ AP_technocracy = {
 	option = {
 		name = AP_technocracy_engineering
 		modifier = {
-			country_engineering_research_produces_mult = 0.25
-			planet_jobs_consumer_goods_produces_mult = 0.1
-			planet_jobs_alloys_produces_mult = 0.1
+			country_engineering_research_produces_mult = 0.15
+			planet_buildings_upkeep_mult = -0.1
 			planet_districts_upkeep_mult = -0.1
 		}
 		AI_weight = {
@@ -1043,7 +1626,7 @@ AP_warrior_culture = {
 			country_border_friction_mult = 0.25
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1055,6 +1638,13 @@ AP_warrior_culture = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					has_valid_civic = civic_citizen_service
+					has_valid_civic = civic_nationalistic_zeal
+				}
+			}
 		}
 	}
 	option = {
@@ -1067,11 +1657,15 @@ AP_warrior_culture = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_spiritualist = yes
+			}
 		}
 	}
 }
 
-# PLantoid DLC required
+# Plantoid DLC required
 AP_catalytic_processing = {
 	potential = {
 		has_valid_civic = civic_catalytic_processing
@@ -1079,22 +1673,26 @@ AP_catalytic_processing = {
 	option = {
 		name = AP_catalytic_processing_excess
 		modifier = {
-			planet_metallurgists_alloys_produces_mult = 0.5
-			planet_metallurgists_food_upkeep_mult = 0.25
+			planet_metallurgists_alloys_produces_mult = 0.25
+			planet_metallurgists_food_upkeep_mult = 0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
 		name = AP_catalytic_processing_efficiency
 		modifier = {
-			country_consumer_goods_produces_mult = 0.25
-			country_alloys_produces_mult = 0.25
-			country_food_produces_mult = 0.1
+			country_consumer_goods_produces_mult = 0.15
+			country_alloys_produces_mult = 0.15
+			country_food_produces_mult = 0.05
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 0.5
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -1106,11 +1704,15 @@ AP_catalytic_processing = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
 		}
 	}
 }
 
-# PLantoid DLC required
+# Plantoid DLC required
 AP_idyllic_bloom = {
 	potential = {
 		has_valid_civic = civic_idyllic_bloom
@@ -1124,6 +1726,10 @@ AP_idyllic_bloom = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophile = yes
+			}
 		}
 	}
 	option = {
@@ -1134,6 +1740,10 @@ AP_idyllic_bloom = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -1144,7 +1754,7 @@ AP_idyllic_bloom = {
 			planet_building_build_speed_mult = -0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 }
@@ -1163,6 +1773,11 @@ AP_fanatic_purifiers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				years_passed <= 50
+				is_at_war = no
+			}
 		}
 	}
 	option = {
@@ -1175,6 +1790,11 @@ AP_fanatic_purifiers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				years_passed <= 50
+				is_at_war = no
+			}
 		}
 	}
 	option = {
@@ -1185,6 +1805,10 @@ AP_fanatic_purifiers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_at_war = yes
+			}
 		}
 	}
 }
@@ -1201,7 +1825,7 @@ AP_master_crafters = {
 			pop_happiness = 0.05
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1212,6 +1836,10 @@ AP_master_crafters = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				has_valid_civic = civic_corporate_dominion
+			}
 		}
 	}
 	option = {
@@ -1222,6 +1850,10 @@ AP_master_crafters = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
 		}
 	}
 }
@@ -1239,6 +1871,10 @@ AP_pleasure_seekers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
 		}
 	}
 	option = {
@@ -1249,16 +1885,20 @@ AP_pleasure_seekers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
 		name = AP_pleasure_seekers_open_mind
 		modifier = {
-			planet_researchers_produces_mult = 0.25
-			planet_jobs_unity_produces_mult = 0.1
+			planet_researchers_produces_mult = 0.1
+			planet_jobs_unity_produces_mult = 0.05
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 }
@@ -1277,6 +1917,10 @@ AP_pompous_purists = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				years_passed <= 50
+			}
 		}
 	}
 	option = {
@@ -1286,7 +1930,7 @@ AP_pompous_purists = {
 			diplo_weight_envoys_mult = 0.25
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1297,6 +1941,10 @@ AP_pompous_purists = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				has_tradition = tr_subterfuge_adopt
+			}
 		}
 	}
 }
@@ -1315,6 +1963,14 @@ AP_barbaric_despoilers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				has_ethic = ethic_fanatic_militarist
+			}
+			modifier = {
+				factor = 5
+				is_at_war = yes
+			}
 		}
 	}
 	option = {
@@ -1327,6 +1983,10 @@ AP_barbaric_despoilers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophobe = yes
+			}
 		}
 	}
 	option = {
@@ -1337,6 +1997,10 @@ AP_barbaric_despoilers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
 		}
 	}
 }
@@ -1355,6 +2019,10 @@ AP_byzantine = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
 		}
 	}
 	option = {
@@ -1367,6 +2035,10 @@ AP_byzantine = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
@@ -1378,6 +2050,18 @@ AP_byzantine = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_decadent
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_deviants
+				}
+			}
 		}
 	}
 }
@@ -1396,6 +2080,14 @@ AP_merchant_guilds = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -1406,6 +2098,16 @@ AP_merchant_guilds = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_thrifty
+				}
+			}
+			modifier = {
+				factor = 2
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -1415,7 +2117,7 @@ AP_merchant_guilds = {
 			pop_happiness = -0.05
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 }
@@ -1429,10 +2131,14 @@ AP_shared_burden = {
 		name = AP_shared_burden_knowledge
 		modifier = {
 			all_technology_research_speed = 0.1
-			country_unity_produces_add = 25
+			leaders_unity_cost_mult = -0.1
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -1454,7 +2160,7 @@ AP_shared_burden = {
 			country_unity_produces_mult = 0.1
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1483,6 +2189,10 @@ AP_diplomatic_corps = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
 		}
 	}
 	option = {
@@ -1493,6 +2203,10 @@ AP_diplomatic_corps = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -1503,7 +2217,11 @@ AP_diplomatic_corps = {
 			espionage_operation_speed_mult = 0.33
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
+			modifier = {
+				factor = 0.25
+				is_xenophile = yes
+			}
 		}
 	}
 }
@@ -1522,6 +2240,10 @@ AP_memorialists = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_spiritualist = yes
+			}
 		}
 	}
 	option = {
@@ -1529,20 +2251,24 @@ AP_memorialists = {
 		modifier = {
 			tradition_cost_empire_size_mult = -0.25
 			country_unity_produces_mult = 0.05
-			pop_happiness = 0.05
+			planet_stability_add = 5
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
 		name = AP_memorialists_the_future
 		modifier = {
-			all_technology_research_speed = 0.15
+			all_technology_research_speed = 0.1
 			envoys_add = 1
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
 		}
 	}
 }
@@ -1561,7 +2287,7 @@ AP_reanimators = {
 			army_defense_damage_mult = 0.33
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1572,10 +2298,19 @@ AP_reanimators = {
 			army_attack_health_mult = 0.33
 			army_attack_damage_mult = 0.33
 			max_rivalries = 1
-			intel_encryption_add = 1
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 3
+				owner = {
+					is_unfriendly = yes
+				}
+			}
 		}
 	}
 }
@@ -1594,7 +2329,7 @@ AP_death_cult = {
 			leader_age = -20
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1607,6 +2342,10 @@ AP_death_cult = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				is_militarist = yes
+			}
 		}
 	}
 }
@@ -1619,11 +2358,11 @@ AP_anglers = {
 	option = {
 		name = AP_anglers_culture
 		modifier = {
-			planet_farmers_unity_produces_add = 1
+			planet_farmers_unity_produces_add = 0.5
 			planet_districts_cost_mult = -0.25
 		}
 		AI_weight = {
-			weight = 1
+			weight = 2
 		}
 	}
 	option = {
@@ -1635,6 +2374,16 @@ AP_anglers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_thrifty
+				}
+			}
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
 		}
 	}
 	option = {
@@ -1646,9 +2395,2035 @@ AP_anglers = {
 		}
 		AI_weight = {
 			weight = 1
+			modifier = {
+				factor = 10
+				is_lithoid = yes
+			}
 		}
 	}
 }
+
+##########################################################################
+# Megacorp Civic Policies (All required Megacorp DLC)
+##########################################################################
+AP_criminal_heritage = {
+	potential = {
+		has_valid_civic = civic_criminal_heritage
+	}
+	option = {
+		name = AP_criminal_heritage_practice
+		modifier = {
+			planet_branch_offices_cost_mult = -0.1
+			branch_office_criminal_syndicate_value_add = 0.33
+			planet_crime_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					owner_main_species = {
+								has_trait = trait_unruly		
+								has_trait = trait_deviants
+								has_trait = trait_quarrelsome
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_criminal_heritage_greed
+		modifier = {
+			branch_office_value_mult = 0.25
+			trade_value_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_criminal_heritage_middle_man
+		modifier = {
+			country_trust_cap_add = 10
+			country_trade_fee = -0.05
+			country_trade_attractiveness = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophile = yes
+			}
+		}
+	}
+}
+
+AP_franchising = {
+	potential = {
+		has_valid_civic = civic_franchising
+	}
+	option = {
+		name = AP_franchising_mass_profit
+		modifier = {
+			subject_tribute_mult = 0.25
+			country_trust_cap_add = 10
+			planet_branch_offices_cost_mult = -0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_franchising_PR_stunt
+		modifier = {
+			envoys_add = 1
+			envoy_improve_relations_mult = 0.25
+			intel_decryption_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_tradition = tr_diplomacy_adopt
+			}
+		}
+	}
+	option = {
+		name = AP_franchising_debt_collecting
+		modifier = {
+			country_vassal_naval_capacity_contribution_mult = 0.5
+			country_command_limit_add = 10
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				OR ={
+					is_militarist = yes
+					is_xenophobe = yes
+				}
+			}
+		}
+	}
+}
+
+AP_free_traders = {
+	potential = {
+		has_valid_civic = civic_free_traders
+	}
+	option = {
+		name = AP_free_traders_centralized
+		modifier = {
+			trade_value_mult = 0.25
+			empire_size_branch_office_mult = -0.33
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_free_traders_mixed
+		modifier = {
+			trade_value_mult = 0.1
+			branch_office_value_mult = 0.1
+			pop_government_ethic_attraction = 0.25
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_free_traders_decentralized
+		modifier = {
+			branch_office_value_mult = 0.25
+			diplo_action_acceptance_add = 10
+			commercial_pacts_upkeep_mult = -0.5
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				num_commercial_pacts >= 2
+			}
+		}
+	}
+}
+
+AP_private_prospectors = {
+	potential = {
+		has_valid_civic = civic_private_prospectors
+	}
+	option = {
+		name = AP_private_prospectors_wide
+		modifier = {
+			science_ship_survey_speed = 0.33
+			country_starbase_influence_cost_mult = -0.1
+			station_gatherers_cost_mult = -0.5
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_private_prospectors_tall
+		modifier = {
+			station_gatherers_produces_mult = 0.25
+			planet_jobs_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_trading_posts = {
+	potential = {
+		has_valid_civic = civic_trading_posts
+	}
+	option = {
+		name = AP_trading_posts_concealed_arms
+		modifier = {
+			ship_fire_rate_mult = 0.05
+			starbase_trade_protection_range_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_militarist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_trading_posts_diplo_hubs
+		modifier = {
+			trade_value_mult = 0.05
+			diplo_weight_pops_mult = 0.2
+			diplo_weight_economy_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophile = yes
+			}
+		}
+	}
+	option = {
+		name = AP_trading_posts_mass_trade
+		modifier = {
+			trade_value_mult = 0.1
+			starbase_trade_collection_range_add = 1
+			starbase_modules_cost_mult = -0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_brand_loyalty = {
+	potential = {
+		has_valid_civic = civic_brand_loyalty
+	}
+	option = {
+		name = AP_brand_loyalty_respected_action
+		modifier = {
+			planet_jobs_specialist_produces_mult = 0.1
+			planet_jobs_ruler_produces_mult = 0.1
+			pop_cat_worker_happiness = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_brand_loyalty_genuine_care
+		modifier = {
+			envoy_improve_relations_mult = 0.25
+			diplo_weight_pops_mult = 0.1
+			diplo_weight_envoys_mult = 0.2
+			country_trade_attractiveness = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_brand_loyalty_right_of_purchase
+		modifier = {
+			pop_growth_from_immigration = 0.25
+			pop_government_ethic_attraction = 0.2
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_gospel_of_the_masses = {
+	potential = {
+		has_valid_civic = civic_gospel_of_the_masses
+	}
+	option = {
+		name = AP_gospel_of_the_masses_believe_of_profit
+		modifier = {
+			country_trade_fee = -0.05
+			country_energy_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_gospel_of_the_masses_subversion
+		modifier = {
+			intel_decryption_add = 1
+			operations_cost_mult = -0.25
+			planet_crime_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_tradition = tr_subterfuge_adopt
+			}
+			modifier = {
+				factor = 3
+				has_valid_civic = civic_criminal_heritage
+			}
+		}
+	}
+}
+
+AP_indentured_assets = {
+	potential = {
+		has_valid_civic = civic_indentured_assets
+	}
+	option = {
+		name = AP_indentured_assets_fear_mongers
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.1
+			slave_market_cost_mult = -0.25
+			pop_category_slave_upkeep_mult = -0.1
+			pop_cat_slave_happiness = -0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					is_xenophobe = yes
+					is_militarist = yes	
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_indentured_assets_debt_collectors
+		modifier = {
+			pop_category_slave_energy_produces_add = 0.5
+			pop_cat_slave_happiness = 0.05
+			pop_cat_slave_political_power = 0.5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_indentured_assets_lower_class
+		modifier = {
+			pop_ethic_authoritarian_attraction_mult = 0.25
+			planet_jobs_upkeep_mult = -0.25
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
+		}
+	}
+}
+
+AP_media_conglomerate = {
+	potential = {
+		has_valid_civic = civic_media_conglomerate
+	}
+	option = {
+		name = AP_media_conglomerate_propaganda
+		modifier = {
+			pop_happiness = 0.05
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_media_conglomerate_PR
+		modifier = {
+			envoy_improve_relations_mult = 0.33
+			envoy_harm_relations_mult = 0.33
+			diplo_weight_envoys_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_galactic_community_member = yes
+			}
+			modifier = {
+				factor = 0.5
+				is_authoritarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_media_conglomerate_awareness
+		modifier = {
+			pop_political_power = 0.25
+			planet_jobs_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
+		}
+	}
+}
+
+AP_naval_contractors = {
+	potential = {
+		has_valid_civic = civic_naval_contractors
+	}
+	option = {
+		name = AP_naval_contractors_merchant_fleet
+		modifier = {
+			country_trade_fee = -0.05
+			starbase_trade_collection_range_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_at_war = no
+				is_militarist = yes	
+			}
+		}
+	}
+	option = {
+		name = AP_naval_contractors_arms_fleet
+		modifier = {
+			shipclass_military_build_cost_mult = -0.1
+			ship_corvette_cost_mult = -0.1
+			ship_destroyer_cost_mult = -0.1
+			starbase_shipyard_build_speed_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_at_war = yes
+			}
+		}
+	}
+	option = {
+		name = AP_naval_contractors_civilian_fleet
+		modifier = {
+			pop_growth_from_immigration = 0.25
+			planet_amenities_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_private_military_companies = {
+	potential = {
+		has_valid_civic = civic_private_military_companies
+	}
+	option = {
+		name = AP_private_military_companies_respect
+		modifier = {
+			country_command_limit_add = 10
+			pop_happiness = 0.05
+			country_border_friction_mult = 0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_private_military_companies_tradition
+		modifier = {
+			country_subject_acceptance_add = 25
+			country_alloys_produces_mult = 0.05
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_spiritualist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_private_military_companies_debt
+		modifier = {
+			ship_fire_rate_mult = 0.25
+			country_command_limit_add = 10
+			country_border_friction_mult = 0.5
+			pop_happiness = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+		}
+	}
+}
+
+AP_ruthless_competition = {
+	potential = {
+		has_valid_civic = civic_ruthless_competition
+	}
+	option = {
+		name = AP_ruthless_competition_training
+		modifier = {
+			leader_age = 15
+			leader_skill_levels = 2
+			country_leader_pool_size = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_ruthless_competition_population
+		modifier = {
+			species_leader_exp_gain = 0.1
+			planet_jobs_worker_produces_mult = 0.1
+			planet_pops_organics_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_ruthless_competition_potential
+		modifier = {
+			leader_skill_levels = 5
+			species_leader_exp_gain = 0.5
+			country_leader_pool_size = -1
+			leaders_cost_mult = 1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_catalytic_processing_megacorp = {
+	potential = {
+		has_valid_civic = civic_corporate_catalytic_processing
+	}
+	option = {
+		name = AP_catalytic_processing_megacorp_excess
+		modifier = {
+			planet_metallurgists_alloys_produces_mult = 0.5
+			planet_metallurgists_food_upkeep_mult = 0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_catalytic_processing_megacorp_efficiency
+		modifier = {
+			country_consumer_goods_produces_mult = 0.25
+			country_alloys_produces_mult = 0.25
+			country_food_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.5
+				is_spiritualist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_catalytic_processing_megacorp_inovation
+		modifier = {
+			category_biology_research_speed_mult = 0.2
+			country_society_research_produces_mult = 0.1
+			all_technology_research_speed = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+		}
+	}
+}
+
+# Humanoid DLC required
+AP_mastercraft_inc = {
+	potential = {
+		has_valid_civic = civic_corporate_crafters
+	}
+	option = {
+		name = AP_mastercraft_inc_quality
+		modifier = {
+			planet_artisans_unity_produces_add = 1
+			pop_happiness = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_mastercraft_inc_quantity
+		modifier = {
+			planet_artisans_consumer_goods_produces_mult = 0.25
+			planet_artisans_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				num_commercial_pacts >= 2
+			}
+		}
+	}
+	option = {
+		name = AP_mastercraft_inc_knowledge
+		modifier = {
+			country_engineering_tech_research_speed = 0.1
+			country_engineering_research_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+		}
+	}
+}
+
+# Humanoid DLC required
+AP_corporate_hedonism = {
+	potential = {
+		has_valid_civic = civic_corporate_hedonism
+	}
+	option = {
+		name = AP_corporate_hedonism_entiled
+		modifier = {
+			pop_government_ethic_attraction = 0.25
+			pop_cat_slave_happiness = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_authoritarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_corporate_hedonism_reward
+		modifier = {
+			planet_jobs_produces_mult = 0.25
+			pop_happiness = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_corporate_hedonism_open_mind
+		modifier = {
+			planet_researchers_produces_mult = 0.1
+			planet_jobs_unity_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+# Federations DLC required
+AP_public_relations_specialists = {
+	potential = {
+		has_valid_civic = civic_public_relations_specialists
+	}
+	option = {
+		name = AP_public_relations_specialists_discussion
+		modifier = {
+			envoy_improve_relations_mult = 0.33
+			country_trust_cap_add = 25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_egalitarian = yes
+			}
+		}
+	}
+	option = {
+		name = AP_public_relations_specialists_experiences
+		modifier = {
+			species_leader_exp_gain = 0.1
+			diplo_action_acceptance_add = 25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_public_relations_specialists_infiltration
+		modifier = {
+			country_trust_growth = 0.1
+			intel_decryption_add = 1
+			espionage_operation_speed_mult = 0.33
+		}
+		AI_weight = {
+			weight = 2
+			modifier = {
+				factor = 0.25
+				is_xenophile = yes
+			}
+		}
+	}
+}
+
+# Necroid DLC required
+AP_death_cult_corporate = {
+	potential = {
+		has_valid_civic = civic_death_cult_corporate
+	}
+	option = {
+		name = AP_death_cult_corporate_rebirth
+		modifier = {
+			species_leader_exp_gain = 0.33
+			leader_skill_levels = 3
+			pop_growth_speed = 0.1
+			leader_age = -20
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_death_cult_corporate_true_death
+		modifier = {
+			country_claim_influence_cost_mult = -0.1
+			country_starbase_capacity_mult = 0.25
+			ship_fire_rate_mult = 0.05
+			ships_upkeep_mult = -0.33
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_militarist = yes
+			}
+		}
+	}
+}
+
+# Necroid DLC required
+AP_permanent_employment = {
+	potential = {
+		has_valid_civic = civic_permanent_employment
+	}
+	option = {
+		name = AP_permanent_employment_inner_focus
+		modifier = {
+			colony_start_num_pops_add = 1
+			planet_colony_development_speed_mult = 0.2
+			army_defense_health_mult = 0.33
+			army_defense_damage_mult = 0.33
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_permanent_employment_outer_focus
+		modifier = {
+			envoy_improve_relations_mult = 0.1
+			envoy_harm_relations_mult = 0.1
+			army_attack_health_mult = 0.33
+			army_attack_damage_mult = 0.33
+			max_rivalries = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 3
+				owner = {
+					is_unfriendly = yes
+				}
+			}
+		}
+	}
+}
+
+# Aquatics DLC required
+AP_corporate_anglers = {
+	potential = {
+		has_valid_civic = civic_corporate_anglers
+	}
+	option = {
+		name = AP_corporate_anglers_culture
+		modifier = {
+			planet_farmers_unity_produces_add = 0.5
+			planet_districts_cost_mult = -0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_corporate_anglers_trade
+		modifier = {
+			envoy_improve_relations_mult = 0.33
+			country_trade_attractiveness = 0.5
+			trade_value_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_thrifty
+				}
+			}
+			modifier = {
+				factor = 3
+				is_materialist = yes
+			}
+		}
+	}
+	option = {
+		name = AP_corporate_anglers_minerals
+		modifier = {
+			planet_jobs_energy_produces_mult = 0.2
+			planet_jobs_minerals_produces_mult = 0.2
+			pop_happiness = -0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				is_lithoid = yes
+			}
+		}
+	}
+}
+
+##########################################################################
+# Organic Hive Civic Policies
+##########################################################################
+AP_ascetic = {
+	potential = {
+		has_valid_civic = civic_hive_ascetic
+	}
+	option = {
+		name = AP_ascetic_symbiot
+		modifier = {
+			country_food_produces_mult = -0.05
+			planet_jobs_complex_drone_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_ascetic_caretaker
+		modifier = {
+			planet_colony_development_speed_mult = -0.33
+			stations_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_ascetic_unimportant
+		modifier = {
+			leader_age = +5
+			leaders_cost_mult = -0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_docile
+				}
+			}
+		}
+	}
+}
+
+AP_divided_attention = {
+	potential = {
+		has_valid_civic = civic_hive_divided_attention
+	}
+	option = {
+		name = AP_divided_attention_compartment
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_divided_attention_mental_organs
+		modifier = {
+			country_unity_produces_mult = 0.1
+			planet_jobs_complex_drone_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					owner_main_species = {
+						has_trait = trait_docile
+						has_trait = trait_adaptive
+						has_trait = trait_extremely_adaptive
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_divided_attention_instinct
+		modifier = {
+			army_defense_health_mult = 0.5
+			planet_crime_no_happiness_add = -10
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_natural_neural_network = {
+	potential = {
+		has_valid_civic = civic_hive_natural_neural_network
+	}
+	option = {
+		name = AP_natural_neural_network_knowledge
+		modifier = {
+			intel_encryption_add = -1
+			intel_decryption_add = 1
+			job_brain_drone_per_pop = 0.04
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_natural_neural_network_secrecy
+		modifier = {
+			intel_encryption_add = 2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_one_mind = {
+	potential = {
+		has_valid_civic = civic_hive_one_mind
+	}
+	option = {
+		name = AP_one_mind_bound
+		modifier = {
+			planet_crime_no_happiness_add = -5
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_one_mind_enhancement
+		modifier = {
+			leader_skill_levels = +2
+			species_leader_exp_gain = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_origin = origin_progenitor_hive
+			}
+		}
+	}
+}
+
+AP_pooled_knowledge = {
+	potential = {
+		has_valid_civic = civic_hive_pooled_knowledge
+	}
+	option = {
+		name = AP_pooled_knowledge_afterlife
+		modifier = {
+			leader_skills_spawn = +1
+			leader_skill_levels = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_necrophage
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_pooled_knowledge_managed_autonomy
+		modifier = {
+			country_unity_produces_mult = 0.05
+			planet_jobs_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_policy_flag = AP_autonamy_near_free
+			}
+		}
+	}
+	option = {
+		name = AP_pooled_knowledge_deeper_understanding
+		modifier = {
+			all_technology_research_speed = 0.05
+			intel_decryption_add = +1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_strenght_of_legions = {
+	potential = {
+		has_valid_civic = civic_hive_strength_of_legions
+	}
+	option = {
+		name = AP_strenght_of_legions_evolotion
+		modifier = {
+			modify_species_cost_mult = -0.1
+			planet_pop_assembly_organic_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_strenght_of_legions_harsh_survival
+		modifier = {
+			pop_environment_tolerance = 0.1
+			planet_pops_upkeep_mult = -0.15
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_strenght_of_legions_expansion
+		modifier = {
+			country_claim_influence_cost_mult = -0.1
+			ship_orbital_bombardment_mult = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_unfriendly = yes
+			}
+		}
+	}
+}
+
+AP_subspace_ephapse = {
+	potential = {
+		has_valid_civic = civic_hive_subspace_ephapse
+	}
+	option = {
+		name = AP_subspace_ephapse_etherial_thoughts
+		modifier = {
+			country_base_influence_produces_add = +1
+			country_unity_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_subspace_ephapse_vision_beyond_sight
+		modifier = {
+			country_physics_tech_research_speed = 0.1
+			ship_anomaly_generation_chance_mult = 0.05
+			station_gatherers_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_subsumed_will = {
+	potential = {
+		has_valid_civic = civic_hive_subsumed_will
+	}
+	option = {
+		name = AP_subsumed_will_efficiency
+		modifier = {
+			edicts_upkeep_mult = -0.2
+			country_resettlement_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_subsumed_will_directed_control
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+			planet_jobs_complex_drone_produces_mult = 0.05
+			planet_pops_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_subsumed_will_beyond_survival
+		modifier = {
+			planet_jobs_society_research_produces_mult = 0.25
+			modify_species_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_nonadaptive
+				}
+			}
+		}
+	}
+}
+
+AP_devouring_swarm = {
+	potential = {
+		has_valid_civic = civic_hive_devouring_swarm
+	}
+	option = {
+		name = AP_devouring_swarm_growth
+		modifier = {
+			planet_pops_upkeep_mult = 0.25
+			ship_fire_rate_mult = -0.1
+			pop_growth_speed = 0.15
+			planet_pop_assembly_organic_mult = 0.15
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_devouring_swarm_hunger
+		modifier = {
+			planet_pops_upkeep_mult = 0.25
+			pop_growth_speed = -0.5
+			planet_pop_assembly_organic_mult = -0.5
+			pop_purge_speed = 0.25
+			ship_orbital_bombardment_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_organic_reprocessing = {
+	potential = {
+		has_valid_civic = civic_hive_catalytic_processing
+	}
+	option = {
+		name = AP_organic_reprocessing_practical
+		modifier = {
+			planet_jobs_food_produces_mult = 0.1
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		potential = {
+			is_lithoid = no
+		}
+		valid = {
+			NOT = {
+				has_policy_flag = AP_organic_recycling_none
+			}
+		}
+		name = AP_organic_reprocessing_recycling
+		modifier = {
+			country_alloys_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		potential = {
+			is_lithoid = yes
+		}
+		valid = {
+			NOT = {
+				has_policy_flag = AP_organic_recycling_none
+			}
+		}
+		name = AP_organic_reprocessing_repurpose
+		modifier = {
+			country_alloys_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_idyllic_bloom_hive = {
+	potential = {
+		has_valid_civic = civic_hive_idyllic_bloom
+	}
+	option = {
+		name = AP_idyllic_bloom_invasive
+		modifier = {
+			pop_growth_speed = 0.1
+			pop_amenities_usage_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_idyllic_bloom_dominance
+		modifier = {
+			terraforming_cost_mult = -0.25
+			terraform_speed_mult = 0.1
+			pop_environment_tolerance = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+# Federations DLC required
+AP_empath = {
+	potential = {
+		has_valid_civic = civic_hive_empath
+	}
+	option = {
+		name = AP_empath_seeker
+		modifier = {
+			science_ship_survey_speed = 0.25
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_empath_learner
+		modifier = {
+			job_brain_drone_per_pop = 0.04
+			ship_anomaly_research_speed_mult = 0.1
+			country_border_friction_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_empath_subversion
+		modifier = {
+			country_subject_acceptance_add = +5
+			intel_decryption_add = +1
+			intel_decryption_mult = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_overlord = yes
+			}
+		}
+	}
+}
+
+# Necroid DLC required
+AP_memorialists_hive = {
+	potential = {
+		has_valid_civic = civic_hive_memorialist
+	}
+	option = {
+		name = AP_memorialists_hive_the_past
+		modifier = {
+			country_physics_research_produces_mult = 0.15
+			country_society_research_produces_mult = 0.15
+			country_engineering_research_produces_mult = 0.15
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_memorialists_hive_the_present
+		modifier = {
+			tradition_cost_empire_size_mult = -0.25
+			country_unity_produces_mult = 0.05
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_memorialists_hive_the_future
+		modifier = {
+			all_technology_research_speed = 0.1
+			envoys_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+##########################################################################
+# Mechanical Hive Civic Policies
+##########################################################################
+AP_constructobot = {
+	potential = {
+		has_valid_civic = civic_machine_builder
+	}
+	option = {
+		name = AP_constructobot_resource_shortage
+		modifier = {
+			planet_jobs_minerals_upkeep_mult = -0.1
+			planet_building_build_speed_mult = -0.2
+		}
+		AI_weight = {
+			weight = 2
+			modifier = {
+				factor = 0.5
+				has_origin = origin_machine
+			}
+		}
+	}
+	option = {
+		name = AP_constructobot_need
+		modifier = {
+			planet_housing_mult = 0.1
+			planet_amenities_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_constructobot_cheap
+		modifier = {
+			planet_building_build_speed_mult = 0.1
+			empire_size_districts_mult = -0.1
+			planet_buildings_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				any_neighbor_country = {
+					is_rival = from
+				}
+			}
+		}
+	}
+}
+
+AP_delegated_functions = {
+	potential = {
+		has_valid_civic = civic_machine_delegated_functions
+	}
+	option = {
+		name = AP_delegated_functions_sum_of_our_parts
+		modifier = {
+			planet_amenities_mult = 0.05
+			planet_crime_no_happiness_add = -10
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_delegated_functions_makers_foresight
+		modifier = {
+			planet_pops_upkeep_mult = -0.05
+			modify_species_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+	option = {
+		name = AP_delegated_functions_practical
+		modifier = {
+			planet_jobs_produces_mult = 0.15
+			pop_amenities_usage_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_factory_overclock = {
+	potential = {
+		has_valid_civic = civic_machine_factory_overclock
+	}
+	option = {
+		name = AP_factory_overclock_directive
+		modifier = {
+			leader_age = +10
+			species_leader_exp_gain = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_streamlined_protocols
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_factory_overclock_limit
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+			planet_pops_upkeep_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_learning_algorithms
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_factory_overclock_expendable
+		modifier = {
+			planet_pops_upkeep_mult = -0.1
+			planet_crime_no_happiness_add = 10
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_introspective = {
+	potential = {
+		has_valid_civic = civic_machine_introspective
+	}
+	option = {
+		name = AP_introspective_purpose_routine
+		modifier = {
+			country_unity_produces_mult = 0.05
+			envoys_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_introspective_innovation_routine
+		modifier = {
+			intel_decryption_add = +1
+			country_base_influence_produces_add = +1
+		}
+		AI_weight = {
+			weight = 2
+			modifier = {
+				factor = 0.25
+				NOT = {
+					owner_main_species = {
+						has_trait = trait_robot_logic_engines
+					}
+				}
+			}
+		}
+	}
+}
+
+AP_maintenance_protocols = {
+	potential = {
+		has_valid_civic = civic_machine_maintenance_protocols
+	}
+	option = {
+		name = AP_maintenance_protocols_control
+		modifier = {
+			pop_amenities_usage_mult = -0.1
+			planet_crime_no_happiness_add = -10
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_maintenance_protocols_innovation
+		modifier = {
+			country_engineering_research_produces_mult = 0.1
+			pop_assembly_speed = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_efficient_processors
+				}
+			}
+		}
+	}
+}
+
+AP_ota_updates = {
+	potential = {
+		has_valid_civic = civic_machine_ota_updates
+	}
+	option = {
+		name = AP_ota_updates_hotjoin
+		modifier = {
+			leaders_unity_upkeep_mult = -0.25
+			planet_crime_no_happiness_add = -5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_ota_updates_peer_to_peer
+		modifier = {
+			intel_encryption_add = -1
+			pop_amenities_usage_mult = -0.15
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_rapid_replicator = {
+	potential = {
+		has_valid_civic = civic_machine_replication
+	}
+	option = {
+		name = AP_rapid_replicator_quantity
+		modifier = {
+			planet_pop_assembly_mult = 0.1
+			species_leader_exp_gain = -0.05
+			pop_amenities_usage_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_rapid_replicator_quality
+		modifier = {
+			planet_pop_assembly_mult = -0.1
+			species_leader_exp_gain = 0.25
+			leader_skill_levels = +2
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_rockbreakers = {
+	potential = {
+		has_valid_civic = civic_machine_rockbreakers
+	}
+	option = {
+		name = AP_rockbreakers_prospector
+		modifier = {
+			category_materials_research_speed_mult = 0.25
+			planet_sensor_range_add = +1
+			science_ship_survey_speed = 0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_rockbreakers_rationer
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.15
+			planet_pops_upkeep_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_rockbreakers_fabricator
+		modifier = {
+			planet_jobs_complex_drone_produces_mult = 0.15
+			planet_buildings_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+}
+
+AP_static_research_analysis = {
+	potential = {
+		has_valid_civic = civic_machine_predictive_analysis
+	}
+	option = {
+		name = AP_static_research_analysis_physics
+		modifier = {
+			country_physics_research_produces_mult = 0.1
+			science_ship_survey_speed = 0.1
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_static_research_analysis_society
+		modifier = {
+			country_society_research_produces_mult = 0.1
+			diplo_weight_mult = 0.05
+			envoys_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.5
+				is_unfriendly = yes
+			}
+		}
+	}
+	option = {
+		name = AP_static_research_analysis_engineering
+		modifier = {
+			country_engineering_research_produces_mult = 0.1
+			planet_buildings_upkeep_mult = -0.05
+			planet_districts_upkeep_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_unitary_cohesion = {
+	potential = {
+		has_valid_civic = civic_machine_unitary_cohesion
+	}
+	option = {
+		name = AP_unitary_cohesion_override
+		modifier = {
+			pop_amenities_usage_mult = -0.1
+			country_leader_pool_size = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_unitary_cohesion_as_one
+		modifier = {
+			species_leader_exp_gain = 0.05
+			planet_crime_no_happiness_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_warbots = {
+	potential = {
+		has_valid_civic = civic_machine_warbots
+	}
+	option = {
+		name = AP_warbots_core_directive
+		modifier = {
+			starbase_upgrade_cost_mult = -0.1
+			ship_military_cost_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_warbots_guardian
+		valid = {
+			NOT = {
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		modifier = {
+			starbase_upgrade_speed_mult = 0.25
+			ship_home_territory_fire_rate_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_valid_civic = civic_machine_terminator
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_warbots_eradicator
+		modifier = {
+			ship_speed_mult = 0.2
+			ship_fire_rate_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				is_unfriendly = yes
+			}
+		}
+	}
+}
+
+AP_zero_waste_protocols = {
+	potential = {
+		has_valid_civic = civic_machine_zero_waste_protocols
+	}
+	option = {
+		name = AP_zero_waste_protocols_jobs
+		modifier = {
+			planet_jobs_upkeep_mult = -0.2
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_mass_produced
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_zero_waste_protocols_space
+		modifier = {
+			station_gatherers_produces_mult = 0.1
+			station_gatherers_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_determined_exterminator = {
+	potential = {
+		has_valid_civic = civic_machine_terminator
+	}
+	option = {
+		name = AP_determined_exterminator_locate
+		modifier = {
+			planet_sensor_range_add = +1
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_determined_exterminator_build
+		modifier = {
+			planet_districts_cost_mult = -0.1
+			planet_buildings_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_determined_exterminator_eradicate
+		modifier = {
+			pop_purge_speed = 0.33
+			army_health = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+AP_driven_assimilator = {
+	potential = {
+		has_valid_civic = civic_machine_assimilator
+	}
+	option = {
+		name = AP_driven_assimilator_locate
+		modifier = {
+			planet_sensor_range_add = +1
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_driven_assimilator_build
+		modifier = {
+			planet_districts_cost_mult = -0.1
+			planet_buildings_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_driven_assimilator_assimilate
+		modifier = {
+			ship_fire_rate_mult = 0.05
+			army_collateral_damage_mult = -0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+AP_rogue_servitor = {
+	potential = {
+		has_valid_civic = civic_machine_servitor
+	}
+	option = {
+		name = AP_rogue_servitor_caretaker
+		modifier = {
+			envoys_add = +1
+			envoy_improve_relations_mult = 0.1
+			country_trust_cap_add = +10
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_rogue_servitor_obligated_to_serve
+		modifier = {
+			planet_bio_trophies_unity_produces_mult = 0.25
+			pop_amenities_usage_mult = 0.25
+			planet_housing_mult = +0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_emotion_emulators
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_rogue_servitor_savior
+		modifier = {
+			country_hostile_claim_influence_cost_mult = -0.33
+			ship_speed_mult = 0.1
+			ship_fire_rate_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_tradition = tr_supremacy_adopt
+			}
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_organic_reprocessing_machine = {
+	potential = {
+		has_valid_civic = civic_machine_catalytic_processing
+	}
+	option = {
+		name = AP_organic_reprocessing_machine_excess
+		modifier = {
+			planet_jobs_food_produces_mult = 0.1
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_organic_reprocessing_machine_reuse
+		modifier = {
+			country_alloys_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+# Necroid DLC required
+AP_memorialists_machine = {
+	potential = {
+		has_valid_civic = civic_machine_memorialist
+	}
+	option = {
+		name = AP_memorialists_machine_the_past
+		modifier = {
+			country_physics_research_produces_mult = 0.15
+			country_society_research_produces_mult = 0.15
+			country_engineering_research_produces_mult = 0.15
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_memorialists_machine_the_present
+		modifier = {
+			tradition_cost_empire_size_mult = -0.25
+			country_unity_produces_mult = 0.05
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_memorialists_machine_the_future
+		modifier = {
+			all_technology_research_speed = 0.1
+			envoys_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
 ##########################################################################
 # Custom Civic policies (For Advanced Policies)
 ##########################################################################
@@ -1743,7 +4518,7 @@ AP_industrial_war_complex = {
 			modifier = {
 				factor = 5
 				NOT = {
-					has_ethic = ethic_fanatic_militarist
+					is_militarist = yes
 				}
 			}
 			modifier = {
@@ -2200,6 +4975,58 @@ AP_good_education = {
 			modifier = {
 				factor = 0
 				is_materialist = yes
+			}
+		}
+	}
+}
+
+AP_ancestor_worship = {
+	potential = {
+		has_valid_civic = civic_AP_ancestor_worship
+	}
+	option = {
+		name = AP_ancestor_worship_saga
+		modifier = {
+			country_unity_produces_mult = 0.1
+			pop_happiness = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				years_passed >= 50
+			}
+			modifier = {
+				factor = 0
+				years_passed >= 100
+			}
+		}
+	}
+	option = {
+		name = AP_ancestor_worship_lessons
+		modifier = {
+			species_leader_exp_gain = 0.1
+			country_society_tech_research_speed = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				years_passed >= 100
+			}
+		}
+	}
+	option = {
+		name = AP_ancestor_worship_heeded_warning
+		modifier = {
+			country_starbase_influence_cost_mult = -0.1
+			station_gatherers_cost_mult = -0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				years_passed <= 50
 			}
 		}
 	}

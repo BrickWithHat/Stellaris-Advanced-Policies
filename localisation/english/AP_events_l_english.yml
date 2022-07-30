@@ -26,7 +26,7 @@
  AP_PQ.1_ega_option:0 "Let us not make them wait too long."
 
  AP_PQ.2_title:0 "Planetary Quota: Resolved"
- AP_PQ.2_fail:0 "Our goal to gather more material and labor from §Y[Root.GetName]§! has failed. While we did manage to gain a sizable amount of material from the raw production we still did not reach our goal. Maybe next time it comes to pass we may be better equiped to deal with the problems that crippled us in our time of need."
+ AP_PQ.2_fail:0 "Our goal to gather more material and labor from §Y[Root.GetName]§! has failed. While we did manage to gain a sizable amount of material from the raw production we still did not reach our goal. Maybe next time it comes to pass we may be better equiped to deal with the problems that crippled us in this project."
  AP_PQ.2_fail_1:0 "We did what we could."
 
  AP_PQ.2_abolish:0 "We ended our decree of the planetary quota of §Y[Root.GetName]§!. As this change is taking effect the people rejoiced. Not having to toil any longer for extended hours. Though the loss of the resources might be considerable, the loss of our people is even less acceptable."
@@ -186,7 +186,7 @@
 
 # Planetary Quota (Egalitarian line)
  AP_PQ.500_title:0 "Planetary Quota: Purpose"
- AP_PQ.500_desc:0 "Our goveners have recently come by and asked about our plans for Quota, while officially still not public giving the populace some direction with it might no be a bad idea. The Governer said that he can get that word out like a rumor thus paving the way and polling to see how the populace responds too. What will be our purpose?"
+ AP_PQ.500_desc:0 "Our goveners have recently come by and asked about our plans for Quota, while officially still not public giving the populace some direction with it might not be a bad idea. The Governer said that he can get that word out like a rumor thus paving the way and polling to see how the populace responds too. What will be our purpose?"
  AP_PQ.500_1:0 "Progress of Knowledge"
  AP_PQ.500_2:0 "Funding for large Projects"
  AP_PQ.500_3:0 "This was a mistake, Stop this now."
@@ -225,6 +225,59 @@
  AP_PQ.515_4:0 "§BReally? I though we had an agreement.§!"
  AP_PQ.515_5:0 "§BThis is unacceptable sort this out now!§!"
 
+ AP_PQ.520_title:0 "Planetary Quota: Project Enhancement"
+ AP_PQ.520_desc:0 "With the plans having been send forward to §Y[Root.GetName]§! we make ready to enhance our great projects. The local government has issued a few edicts to try and ready the material and people for the project. The expectation is that in around a year or so we can enact the first phase. In the meanwhile we should get ready to ship as much material and personal required to the world."
+ AP_PQ.520_1:0 "Begin the preperations!"
+
+ AP_PQ.521_title:0 "Planetary Quota: Phase 1"
+ AP_PQ.521_desc:0 "With the announcement of the Project enchancement plans the planet of §Y[Root.GetName]§! appears ready for initial action. With this the populace getting to work and the government trying to schedule things out properly we have high hopes for the project."
+ AP_PQ.521_1:0 "Keep us informed of further devolpments"
+
+ AP_PQ.522_title:0 "Planetary Quota: Mismanagement"
+ AP_PQ.522_desc:0 "We have gained word that the plans for our project enhancement have fallen a bit flat. The local government on §Y[Root.GetName]§! has reportedly failed to maintain the willingness in the populace to work. As such a decent number of people have already started to move to the edges of the cities to carve out a live in shanty towns. While low tech and not a direct threat they do breed crime and unwelcome behaviour. The growth of these can prove to become a problem for us in the long run."
+ AP_PQ.522_tooltip:0 "§YSome population might migrate to the edge of the cities and form slums§!"
+ AP_PQ.522_1:0 "A shame it has happened, but we have other matter to attend"
+ AP_PQ.522_2:0 "Pull some favors to prevent further problems"
+ AP_PQ.522_3:0 "§BThis means there is a vacant spot for governer it seems§!"
+ AP_PQ.522_4:0 "§BPrepare for a speech, il be broadcasting it within the hour§!"
+ AP_PQ.523_5:0 "§BAfter all that strife, this is where they stop?!§!"
+
+ AP_PQ.523_title:0 "Planetary Quota: Right on track"
+ AP_PQ.523_desc:0 "With the proper integration of the labour and material Quota in place on the planet of §Y[Root.GetName]§! we have gained some valueable insight. As most facilities are turning out material ready for our plans at great pace. We have even gained the oppertunity to extract the first amount now. The amount though not insignificant is still in the ramping up as part of the process."
+ AP_PQ.523_1:0 "Wonderfull! Keep this up"
+ AP_PQ.523_2:0 "Any Material is greatly welcomed!"
+ AP_PQ.523_3:0 "§BI have a hard time believing that is all they have§!"
+
+ AP_PQ.524_title:0 "Planetary Quota: Phase 2 is go"
+ AP_PQ.524_desc:0 "As of today phase 2 of the planetary Quota on the planet of §Y[Root.GetName]§! has been enacted. The first phase marked with a clear up tick in the industrial capacity of the world. With the next phase setting the bar even higher it is a valid question how this pans out. As it stands local officials have been hard at work maintaining both morale and infrastructure. There focus being only shifted as a reaction to current events."
+ AP_PQ.524_1:0 "Good progress, Onto the next phase"
+
+ AP_PQ.525_title:0 "Planetary Quota: Criminials running rampant"
+ AP_PQ.525_desc:0 "A worrying report from §Y[Root.GetName]§! has come through concerning a criminial orginization trying to leech of our project. To our knowledge they have grown increasingly in wealth and power due to raiding smaller targets consistently and rapidly. While they currently have not yet gone after mayor stockpiles they have grown in strenght and ability in a very short period.The local officials have asked for support in trying to arrest and apprehend these criminals."
+ AP_PQ.525_1:0 "Some minor criminals do not concern us move on"
+ AP_PQ.525_1_tooltip:0 "§YLow chance to catch the criminals and get the material back§!"
+ AP_PQ.525_2:0 "Locate and arrest these individuals before this gets out of hand"
+ AP_PQ.525_2_tooltip:0 "§YDecent chance to catch the criminals and get the material back§!"
+ AP_PQ.525_3:0 "§BRedicrect focus on arrest and intel gathering§!"
+ AP_PQ.525_4:0 "§BIsolate these criminials from society until they turn themselfs in§!"
+ AP_PQ.525_5:0 "§BLets give them a taste of real criminal networking§!"
+ AP_PQ.525_3_tooltip:0 "§YHigh chance to catch the criminals and get the material back§!"
+
+ AP_PQ.526_title:0 "Planetary Quota: Criminals apprehended"
+ AP_PQ.526_desc:0 "A report from §Y[Root.GetName]§! has filtered through that a notorious gang has been arrested today. These individuals have been in and out of trouble with the local authority for some time now. Yet since the start of our project there influence had grown considerably even openly raiding smaller targets. As of today that stops, in a brilliant move local police forces lured all members in one place and swooped in to arrest all red handed. Now with there threat gone the people of §Y[Root.GetName]§! seem reliefed that the street gang days are over."
+ AP_PQ.526_1:0 "Good, keep them locked up proper this time"
+
+ AP_PQ.527_title:0 "Planetary Quota: Phase 3 integration"
+ AP_PQ.527_desc:0 "With the continuous expanding of the planetary quota project on the planet of §Y[Root.GetName]§! has come a new chapter. Phase 3, the last of the scheduled phases has arrived. While some problems had been encountered like active criminal gangs trying to undermine our goals. All have been dealt with accordingly and now we step into the last scaling of production and labour. As it stands the stockpiles have offered to break open a bit earlier to supply us with a sampling of there alloy production. As there engineers appear to have ample material for there research."
+ AP_PQ.527_1:0 "So far no delays so might as well"
+ AP_PQ.527_2:0 "A welcome boon to be sure but lets keep our focus"
+ AP_PQ.527_3:0 "While not the best progress so far this is a welcome up tick"
+
+ AP_PQ.528_title:0 "Planetary Quota: A moment before the end"
+ AP_PQ.528_desc:0 "As the end of our planetary quota project nears we have only 2 tasks left to us. The first picking a priority where our accumilated resources and labour be spend. The second being a full and complete report about the failures and success of our plans. While the latter is still being worked on the resource distrubution can already begin. Our 2 options are a consinderable boost to our megastructure construction abilities or alternatively a great boon of construction material to build, terraform and improve our settled worlds."
+ AP_PQ.528_1:0 "Our ability to build around the stars ofcourse"
+ AP_PQ.528_2:0 "Our planet-based assets are our priority"
+
 # Conscription event
  AP_PDEC.1_name:0 "End of the war"
  AP_PDEC.1_desc:0 "The war has come to an end, yet our conscript remain. Some of there officers have come forth asking us if they can be send back home. They claim there troops have had enough of war. Wishing to return to there loved ones and finally know peace once more."
@@ -240,13 +293,12 @@
  AP_CR.12_name:0 "Wonderfull!"
  AP_CR.12_name:0 "A pity"
 
-# Pop Faction Imperialists
- AP_pop.10_title:0 "Disgrunted Politics"
- AP_pop.10_desc:0 "Due to recent event and partial neglect of the political elite. The faction of §Y[Root.GetPopFactionName]§! has been plagued with interal strife. Causing rogue elements to sow discord accros our empire. While these elements are currently moderate they appear to escalte at an alarming rate. While something we cannot directly influence there structure or these elements we should be carefull about those elements. As interal security forces have already voiced there concern about there intention."
- AP_pop.10_1:0 "We would do well to watch them closely"
-
- AP_pop.11_title:0 "Dark dealings"
- AP_pop.11_desc:0 "Recent events regarding the rogue elements of the politcal party of §Y[Root.GetPopFactionName]§! have been troubling. As it appears as if they are trying to gather arms. The blackmarket that trade in them are buzzing with activity to fill there demand, causing our enforcers to work overtime. While we intercept many of these mostly small arms. The fact remains that they are clearly up to something. People do not arm themselfs for no reason. The fact it is also highly illegal to own fire-arms with out the proper clearance makes this a grave offence in the court of law. \n In responds a special task-force has been assembled and send forward to locate and capture any and all involved in this arms-dealing. So far they have had massive success yet there sources are turning dry with very little proof of who made the purchase. We should tread carefull as a means of avoiding potential revolution from within our own ranks."
-
- AP_pop.12_title:0 "A massing of Arms"
- AP_pop.12_desc:0 ""
+# Flavour events
+ AP_effect.1_title:0 "Ancients Wake"
+ AP_effect.1_desc:0 "As the battle on our homeworld rages on, we have gained word of 3 gaint entities roaming the battlefield. Yet to our surpise they do not attack us. But our foe, while also looking like our ancient ancestors. Rumor among the ranks is that some scientists at the research bunker reactivated them. Whatever they are, they are putting up more resistance they the enemy has counted on. Driving them back while leaving a clear and horrendous trail of destruction."
+ AP_effect.1_1:0 "Guess our ancestors still watch over us"
+ AP_effect.1_2:0 "They do look a lot like us don't they?"
+ AP_effect.1_tooltip:0 "§Y3 Ancient Sentinals have reactivated on your home world.§!\n"
+ AP_effect.1_army_name:0 "Sentinal of Retribution"
+ AP_effect.2_army_name:0 "Sentinal of Protection"
+ AP_effect.3_army_name:0 "Sentinal of Desolation"

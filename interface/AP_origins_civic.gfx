@@ -1,0 +1,13 @@
+spriteTypes = {
+	# Origins/civics
+	spritetype = {
+		name = "GFX_origin_AP_children_of_the_darkness"
+		textureFile = "gfx/event_pictures/origins/origin_AP_children_of_the_darkness.dds"
+		alwaysTransparent = yes
+	}
+	spritetype = {
+		name = "GFX_origin_AP_sky_treaders"
+		textureFile = "gfx/event_pictures/origins/origin_AP_sky_treaders.dds"
+		alwaysTransparent = yes
+	}
+}

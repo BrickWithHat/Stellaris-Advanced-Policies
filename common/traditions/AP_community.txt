@@ -1,0 +1,90 @@
+tr_community_adopt = {
+	modifier = {
+		pop_growth_from_immigration = 0.1
+	}
+}
+
+tr_community_finish = {
+	modifier = {
+		country_influence_produces_mult = 0.33
+		ascension_perks_add = 1
+	}
+}
+
+tr_community_greater_goal = {
+	modifier = {
+		diplo_weight_mult = 0.05
+	}
+	ai_weight = {
+		factor = 10000
+	}
+}
+
+tr_community_proper_relations = {
+	modifier = {
+		country_trust_cap_add = 25
+		max_rivalries = +1
+	}
+	ai_weight = {
+		factor = 10000
+	}
+	
+	tradition_swap = {
+		name = tr_community_internal_affairs
+		inherit_effects = no
+		inherit_icon = yes
+		trigger = {
+			OR = {
+				is_unfriendly = yes
+				has_civic = civic_inwards_perfection
+			}
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.05
+		}
+	}
+}
+
+tr_community_pr_campaign = {
+	on_enabled = {
+		add_opinion_modifier = {
+			who = THIS
+			modifier = opinion_community_PR
+		}
+	}
+	possible = {
+		has_tradition = tr_community_greater_goal
+	}
+	modifier = {
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}
+
+tr_community_executive_order = {
+	possible = {
+		OR = {
+			has_tradition = tr_community_proper_relations
+			has_tradition = tr_community_greater_goal
+		}
+	}
+	modifier = {
+		edicts_cost_mult = -0.25
+	}
+	ai_weight = {
+		factor = 10000
+	}
+}
+
+tr_community_political_enactment = {
+	possible = {
+		has_tradition = tr_community_proper_relations
+	}
+	modifier = {
+		pop_government_ethic_attraction = 0.33
+	}
+	ai_weight = {
+		factor = 5000
+	}
+}

@@ -243,6 +243,7 @@ planet_event = {
 			remove_modifier = planet_quota_phase_3
 			add_modifier = {
 				modifier = planet_quota_failed
+				days = 900
 			}
 			clear_variable = quota_delay
 			clear_variable = quota_fail
@@ -256,6 +257,10 @@ planet_event = {
 					energy = 10000
 					minerals = 10000
 					alloys = 5000
+				}
+				add_modifier = {
+					modifier = country_AP_recent_quota
+					days = 900
 				}
 			}
 		}
@@ -286,6 +291,10 @@ planet_event = {
 			clear_variable = quota_egalitarian
 			owner = {
 				remove_country_flag = quota_active
+				add_modifier = {
+					modifier = country_AP_recent_quota
+					days = 180
+				}
 			}
 		}
 	}
@@ -303,7 +312,7 @@ planet_event = {
 				energy = 15000
 				minerals = 15000
 				alloys = 7500
-				influence = 100
+				unity = 1000
 			}
 		}
 		hidden_effect = {
@@ -313,7 +322,7 @@ planet_event = {
 			remove_modifier = planet_quota_phase_3
 			add_modifier = {
 				modifier = planet_quota_fulfilled
-				days = 720
+				days = 1800
 			}
 			clear_variable = quota_delay
 			clear_variable = quota_success
@@ -323,10 +332,15 @@ planet_event = {
 			clear_variable = quota_egalitarian
 			owner = {
 				remove_country_flag = quota_active
+				add_modifier = {
+					modifier = country_AP_recent_quota
+					days = 900
+				}
 			}
 		}
 	}
 }
+
 ##########################################################################
 # Military Line (AP_PQ.200)
 ##########################################################################
@@ -527,7 +541,7 @@ planet_event = {
 			}
 			owner = {
 				add_modifier = {
-					modifier = country_troops_dismissed
+					modifier = country_AP_troops_dismissed
 					days = 180
 				}
 			}
@@ -545,7 +559,7 @@ planet_event = {
 				random = 10
 			}
 			add_modifier = {
-				modifier = planet_labor_shortage
+				modifier = planet_AP_labor_shortage
 				days = 720
 			}
 		}
@@ -729,7 +743,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 240
 		}
 		hidden_effect = {
@@ -767,7 +781,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 360
 		}
 		hidden_effect = {
@@ -805,7 +819,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 720
 		}
 		hidden_effect = {
@@ -843,7 +857,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 720
 		}
 		hidden_effect = {
@@ -881,7 +895,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 720
 		}
 		hidden_effect = {
@@ -919,7 +933,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 720
 		}
 		hidden_effect = {
@@ -990,9 +1004,9 @@ planet_event = {
 		text = AP_PQ.203_pass_desc
 		exclusive_trigger = {
 			OR = {
-				has_modifier = planet_infrastructure_investment
+				has_modifier = planet_AP_infrastructure_investment
 				NOT = {
-					has_modifier = planet_labor_shortage
+					has_modifier = planet_AP_labor_shortage
 				}
 			}
 		}
@@ -1002,9 +1016,9 @@ planet_event = {
 		text = AP_PQ.203_fail_desc
 		exclusive_trigger = {
 			OR = {
-				has_modifier = planet_labor_shortage
+				has_modifier = planet_AP_labor_shortage
 				NOT = {
-					has_modifier = planet_infrastructure_investment
+					has_modifier = planet_AP_infrastructure_investment
 				}
 			}
 		}
@@ -1014,7 +1028,7 @@ planet_event = {
 		name = AP_PQ.203_1
 		exclusive_trigger = {
 			NOT = {
-				has_modifier = planet_labor_shortage
+				has_modifier = planet_AP_labor_shortage
 			}
 		}
 		owner = {
@@ -1035,7 +1049,7 @@ planet_event = {
 	option = {
 		name = AP_PQ.203_2
 		exclusive_trigger = {
-			has_modifier = planet_labor_shortage
+			has_modifier = planet_AP_labor_shortage
 		}
 		hidden_effect = {
 			planet_event = {
@@ -1253,7 +1267,7 @@ planet_event = {
 				random = 200
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 300
 			}
 		}
@@ -1270,7 +1284,7 @@ planet_event = {
 				random = 200
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 300
 			}
 		}
@@ -1290,7 +1304,7 @@ planet_event = {
 				random = 200
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 150
 			}
 		}
@@ -1310,7 +1324,7 @@ planet_event = {
 				random = 200
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 200
 			}
 		}
@@ -1330,7 +1344,7 @@ planet_event = {
 				random = 200
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 120
 			}
 		}
@@ -1350,7 +1364,7 @@ planet_event = {
 				random = 100
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 120
 			}
 		}
@@ -1370,7 +1384,7 @@ planet_event = {
 				random = 100
 			}
 			add_modifier = {
-				modifier = planet_organized_strike
+				modifier = planet_AP_organized_strike
 				days = 120
 			}
 		}
@@ -1435,7 +1449,7 @@ planet_event = {
 		text = AP_PQ.206_pass_desc
 		exclusive_trigger = {
 			NOT = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 	}
@@ -1443,7 +1457,7 @@ planet_event = {
 	desc = {
 		text = AP_PQ.206_fail_desc
 		exclusive_trigger = {
-			has_modifier = planet_organized_strike
+			has_modifier = planet_AP_organized_strike
 		}
 	}
 	## Passing option
@@ -1451,7 +1465,7 @@ planet_event = {
 		name = AP_PQ.206_1
 		trigger = {
 			NOT = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		hidden_effect = {
@@ -1465,7 +1479,7 @@ planet_event = {
 	option = {
 		name = AP_PQ.206_2
 		trigger = {
-			has_modifier = planet_organized_strike
+			has_modifier = planet_AP_organized_strike
 		}
 		random_owned_pop = {
 			kill_pop = yes
@@ -1475,9 +1489,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 750
 			}
 		}
@@ -1490,7 +1504,7 @@ planet_event = {
 				has_civic = civic_death_cult
 			}
 			hidden_trigger = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		owner = {
@@ -1506,9 +1520,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 690
 			}
 		}
@@ -1521,7 +1535,7 @@ planet_event = {
 				has_civic = civic_death_cult_corporate
 			}
 			hidden_trigger = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		random_owned_pop = {
@@ -1537,9 +1551,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 690
 			}
 		}
@@ -1552,7 +1566,7 @@ planet_event = {
 				has_civic = civic_barbaric_despoilers
 			}
 			hidden_trigger = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		random_owned_pop = {
@@ -1560,7 +1574,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				influence = 25
 				unity = 750
 			}
 		}
@@ -1569,9 +1583,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 660
 			}
 		}
@@ -1584,12 +1598,12 @@ planet_event = {
 				has_civic = civic_warrior_culture
 			}
 			hidden_trigger = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				influence = 25
 				unity = 750
 			}
 		}
@@ -1601,9 +1615,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 660
 			}
 		}
@@ -1616,13 +1630,13 @@ planet_event = {
 				has_civic = civic_criminal_heritage
 			}
 			hidden_trigger = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		owner = {
 			add_resource = {
 				energy = 1250
-				influence = 50
+				unity = 250
 			}
 		}
 		random_owned_pop = {
@@ -1633,9 +1647,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 660
 			}
 		}
@@ -1648,7 +1662,7 @@ planet_event = {
 				has_civic = civic_private_military_companies
 			}
 			hidden_trigger = {
-				has_modifier = planet_organized_strike
+				has_modifier = planet_AP_organized_strike
 			}
 		}
 		random_owned_pop = {
@@ -1657,7 +1671,7 @@ planet_event = {
 		owner = {
 			add_resource = {
 				energy = 1250
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -1665,9 +1679,9 @@ planet_event = {
 				id = AP_PQ.207
 				days = 720
 			}
-			remove_modifier = planet_organized_strike
+			remove_modifier = planet_AP_organized_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 660
 			}
 		}
@@ -1738,7 +1752,7 @@ planet_event = {
 		text = AP_PQ.207_normal
 		exclusive_trigger = {
 			NOT = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 		}
 	}
@@ -1746,7 +1760,7 @@ planet_event = {
 	desc = {
 		text = AP_PQ.207_delayed
 		exclusive_trigger = {
-			has_modifier = planet_mass_riot
+			has_modifier = planet_AP_mass_riot
 		}
 	}
 	## safe phase 3 option
@@ -1754,7 +1768,7 @@ planet_event = {
 		name = AP_PQ.207_1
 		trigger = {
 			NOT = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 		}
 		hidden_effect = {
@@ -1769,7 +1783,7 @@ planet_event = {
 		name = AP_PQ.207_2
 		trigger = {
 			NOT = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 			hidden_trigger = {
 				owner = {
@@ -1783,7 +1797,7 @@ planet_event = {
 				days = 1080
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 			}
 		}
 	}
@@ -1791,7 +1805,7 @@ planet_event = {
 	option = {
 		name = AP_PQ.207_3
 		trigger = {
-			has_modifier = planet_mass_riot
+			has_modifier = planet_AP_mass_riot
 		}
 		hidden_effect = {
 			planet_event = {
@@ -1802,7 +1816,7 @@ planet_event = {
 				which = quota_delay
 				value = 1
 			}
-			remove_modifier = planet_mass_riot
+			remove_modifier = planet_AP_mass_riot
 		}
 	}
 	## delayed phase 3 special option (Ruthless Competition)
@@ -1810,7 +1824,7 @@ planet_event = {
 		name = AP_PQ.207_4
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 			owner = {
 				has_civic = civic_ruthless_competition
@@ -1821,7 +1835,7 @@ planet_event = {
 				id = AP_PQ.208
 				days = 1080
 			}
-			remove_modifier = planet_mass_riot
+			remove_modifier = planet_AP_mass_riot
 		}
 	}
 	## delayed phase 3 special option (Brand Loyalty)
@@ -1829,7 +1843,7 @@ planet_event = {
 		name = AP_PQ.207_4
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 			owner = {
 				has_civic = civic_brand_loyalty
@@ -1840,7 +1854,7 @@ planet_event = {
 				id = AP_PQ.208
 				days = 1080
 			}
-			remove_modifier = planet_mass_riot
+			remove_modifier = planet_AP_mass_riot
 		}
 	}
 	## delayed phase 3 special option (Shared Burden)
@@ -1848,7 +1862,7 @@ planet_event = {
 		name = AP_PQ.207_4
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 			owner = {
 				has_civic = civic_shared_burden
@@ -1859,7 +1873,7 @@ planet_event = {
 				id = AP_PQ.208
 				days = 1080
 			}
-			remove_modifier = planet_mass_riot
+			remove_modifier = planet_AP_mass_riot
 		}
 	}
 	## delayed phase 3 special option (Meritocracy)
@@ -1867,7 +1881,7 @@ planet_event = {
 		name = AP_PQ.207_4
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_mass_riot
+				has_modifier = planet_AP_mass_riot
 			}
 			owner = {
 				has_civic = civic_meritocracy
@@ -1878,7 +1892,7 @@ planet_event = {
 				id = AP_PQ.208
 				days = 1080
 			}
-			remove_modifier = planet_mass_riot
+			remove_modifier = planet_AP_mass_riot
 		}
 	}
 }
@@ -2090,7 +2104,7 @@ planet_event = {
 		name = AP_PQ.301_1
 		hidden_effect = {
 			add_modifier = {
-				modifier = planet_labor_shortage
+				modifier = planet_AP_labor_shortage
 				days = 360
 			}
 			change_variable = {
@@ -2109,7 +2123,7 @@ planet_event = {
 		name = AP_PQ.301_2
 		hidden_effect = {
 			add_modifier = {
-				modifier = planet_discouraged_populace
+				modifier = planet_AP_discouraged_populace
 				days = 360
 			}
 			planet_event = {
@@ -2217,7 +2231,7 @@ planet_event = {
 		}
 		hidden_effect = {
 			add_modifier = {
-				modifier = planet_discouraged_populace
+				modifier = planet_AP_discouraged_populace
 				days = 180
 			}
 			planet_event = {
@@ -2587,7 +2601,7 @@ planet_event = {
 	option = {
 		name = AP_PQ.304_1
 		add_modifier = {
-			modifier = planet_laying_down
+			modifier = planet_AP_laying_down
 			days = 3600
 		}
 		hidden_effect = {
@@ -2944,6 +2958,7 @@ planet_event = {
 		}
 	}
 }
+
 ##########################################################################
 # 'Remaining' Line (AP_PQ.400)
 ##########################################################################
@@ -3016,7 +3031,7 @@ planet_event = {
 				days = 60
 				random = 30
 			}
-			set_planet_flag = planet_lack_of_oversight
+			set_planet_flag = planet_AP_lack_of_oversight
 		}
 	}
 	## Special help (discount (Meritocracy))
@@ -3170,7 +3185,7 @@ planet_event = {
 		name = AP_PQ.401_1
 		exclusive_trigger = {
 			NOT = {
-				has_planet_flag = planet_lack_of_oversight
+				has_planet_flag = planet_AP_lack_of_oversight
 			}
 		}
 		hidden_effect = {
@@ -3185,7 +3200,7 @@ planet_event = {
 	option = {
 		name = AP_PQ.401_2
 		exclusive_trigger = {
-			has_planet_flag = planet_lack_of_oversight
+			has_planet_flag = planet_AP_lack_of_oversight
 		}
 		hidden_effect = {
 			planet_event = {
@@ -3206,7 +3221,7 @@ planet_event = {
 	location = from
 	trigger = {
 		has_modifier = planet_quota_phase_1
-		has_planet_flag = planet_lack_of_oversight
+		has_planet_flag = planet_AP_lack_of_oversight
 		check_variable = {
 			which = quota_remaining
 			value = 1
@@ -3235,7 +3250,7 @@ planet_event = {
 		trigger = {
 		}
 		hidden_effect = {
-			remove_planet_flag = planet_lack_of_oversight
+			remove_planet_flag = planet_AP_lack_of_oversight
 			planet_event = {
 				id = AP_PQ.403
 				days = 210
@@ -3246,7 +3261,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_lack_of_oversight
+				modifier = planet_AP_lack_of_oversight
 				days = 230
 			}
 		}
@@ -3260,7 +3275,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			remove_planet_flag = planet_lack_of_oversight
+			remove_planet_flag = planet_AP_lack_of_oversight
 			planet_event = {
 				id = AP_PQ.403
 				days = 190
@@ -3271,7 +3286,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_lack_of_oversight
+				modifier = planet_AP_lack_of_oversight
 				days = 170
 			}
 		}
@@ -3285,7 +3300,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			remove_planet_flag = planet_lack_of_oversight
+			remove_planet_flag = planet_AP_lack_of_oversight
 			planet_event = {
 				id = AP_PQ.403
 				days = 190
@@ -3296,7 +3311,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_lack_of_oversight
+				modifier = planet_AP_lack_of_oversight
 				days = 170
 			}
 		}
@@ -3310,7 +3325,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			remove_planet_flag = planet_lack_of_oversight
+			remove_planet_flag = planet_AP_lack_of_oversight
 			planet_event = {
 				id = AP_PQ.403
 				days = 190
@@ -3321,7 +3336,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_lack_of_oversight
+				modifier = planet_AP_lack_of_oversight
 				days = 170
 			}
 		}
@@ -3335,7 +3350,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			remove_planet_flag = planet_lack_of_oversight
+			remove_planet_flag = planet_AP_lack_of_oversight
 			planet_event = {
 				id = AP_PQ.403
 				days = 190
@@ -3346,7 +3361,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_lack_of_oversight
+				modifier = planet_AP_lack_of_oversight
 				days = 170
 			}
 		}
@@ -3360,7 +3375,7 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			remove_planet_flag = planet_lack_of_oversight
+			remove_planet_flag = planet_AP_lack_of_oversight
 			planet_event = {
 				id = AP_PQ.403
 				days = 190
@@ -3371,7 +3386,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_lack_of_oversight
+				modifier = planet_AP_lack_of_oversight
 				days = 170
 			}
 		}
@@ -3478,7 +3493,7 @@ planet_event = {
 				value = 1
 			}
 			add_modifier = {
-				modifier = planet_discouraged_populace
+				modifier = planet_AP_discouraged_populace
 				days = 180
 			}
 		}
@@ -3499,7 +3514,7 @@ planet_event = {
 		owner = {
 			add_resource = {
 				energy = -2500
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3509,7 +3524,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 180
 			}
 		}
@@ -3524,7 +3539,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3534,7 +3549,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3549,7 +3564,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3559,7 +3574,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3574,7 +3589,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3584,7 +3599,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3599,7 +3614,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3609,7 +3624,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3624,7 +3639,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3634,7 +3649,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3649,7 +3664,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3659,7 +3674,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3674,7 +3689,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3684,7 +3699,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3699,7 +3714,7 @@ planet_event = {
 		}
 		owner = {
 			add_resource = {
-				influence = 50
+				unity = 250
 			}
 		}
 		hidden_effect = {
@@ -3709,7 +3724,7 @@ planet_event = {
 				random = 180
 			}
 			add_modifier = {
-				modifier = planet_encourage_populace
+				modifier = planet_AP_encourage_populace
 				days = 240
 			}
 		}
@@ -3811,7 +3826,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 400
 			}
 		}
@@ -3837,7 +3852,7 @@ planet_event = {
 			add_resource = {
 				consumer_goods = -500
 				food = -1000
-				influence = 25
+				unity = 1000
 			}
 		}
 		hidden_effect = {
@@ -3846,7 +3861,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 150
 			}
 		}
@@ -3868,7 +3883,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 200
 			}
 		}
@@ -3890,7 +3905,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 200
 			}
 		}
@@ -3912,7 +3927,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 200
 			}
 		}
@@ -3934,7 +3949,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 50
 			}
 		}
@@ -3956,7 +3971,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 50
 			}
 		}
@@ -3978,7 +3993,7 @@ planet_event = {
 				days = 360
 			}
 			add_modifier = {
-				modifier = planet_hunger_strike
+				modifier = planet_AP_hunger_strike
 				days = 50
 			}
 		}
@@ -3994,27 +4009,27 @@ planet_event = {
 		text = AP_PQ.407_pass
 		exclusive_trigger = {
 			NOT = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 		}
 	}
 	desc = {
 		text = AP_PQ.407_fail
 		exclusive_trigger = {
-			has_modifier = planet_hunger_strike
+			has_modifier = planet_AP_hunger_strike
 		}
 	}
 	picture = {
 		picture = GFX_evt_burning_city
 		trigger = {
-			has_modifier = planet_hunger_strike
+			has_modifier = planet_AP_hunger_strike
 		}
 	}
 	picture = {
 		picture = GFX_evt_colony_settlement
 		trigger = {
 			NOT = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 		}
 	}
@@ -4048,7 +4063,7 @@ planet_event = {
 		name = AP_PQ.407_pass
 		exclusive_trigger = {
 			NOT = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 		}
 		hidden_effect = {
@@ -4063,7 +4078,7 @@ planet_event = {
 	option = {
 		name = AP_PQ.407_fail_1
 		trigger = {
-			has_modifier = planet_hunger_strike
+			has_modifier = planet_AP_hunger_strike
 		}
 		random_owned_pop = {
 			kill_pop = yes
@@ -4074,9 +4089,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 360
 			}
 		}
@@ -4086,7 +4101,7 @@ planet_event = {
 		name = AP_PQ.407_fail_2
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 			owner = {
 				has_civic = civic_death_cult
@@ -4106,9 +4121,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 240
 			}
 		}
@@ -4118,7 +4133,7 @@ planet_event = {
 		name = AP_PQ.407_fail_2
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 			owner = {
 				has_civic = civic_death_cult_corporate
@@ -4138,9 +4153,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 240
 			}
 		}
@@ -4150,7 +4165,7 @@ planet_event = {
 		name = AP_PQ.407_fail_3
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 			owner = {
 				has_civic = civic_barbaric_despoilers
@@ -4171,9 +4186,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 240
 			}
 		}
@@ -4183,7 +4198,7 @@ planet_event = {
 		name = AP_PQ.407_fail_3
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 			owner = {
 				has_civic = civic_warrior_culture
@@ -4204,9 +4219,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 240
 			}
 		}
@@ -4216,7 +4231,7 @@ planet_event = {
 		name = AP_PQ.407_fail_4
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 			owner = {
 				has_civic = civic_criminal_heritage
@@ -4225,7 +4240,7 @@ planet_event = {
 		owner = {
 			add_resource = {
 				energy = 1250
-				influence = 50
+				unity = 750
 			}
 		}
 		random_owned_pop = {
@@ -4237,9 +4252,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 240
 			}
 		}
@@ -4249,7 +4264,7 @@ planet_event = {
 		name = AP_PQ.407_fail_4
 		trigger = {
 			hidden_trigger = {
-				has_modifier = planet_hunger_strike
+				has_modifier = planet_AP_hunger_strike
 			}
 			owner = {
 				has_civic = civic_private_military_companies
@@ -4258,7 +4273,7 @@ planet_event = {
 		owner = {
 			add_resource = {
 				energy = 1250
-				influence = 50
+				unity = 750
 			}
 		}
 		random_owned_pop = {
@@ -4270,9 +4285,9 @@ planet_event = {
 				days = 540
 				random = 180
 			}
-			remove_modifier = planet_hunger_strike
+			remove_modifier = planet_AP_hunger_strike
 			add_modifier = {
-				modifier = planet_mass_riot
+				modifier = planet_AP_mass_riot
 				days = 240
 			}
 		}
@@ -4339,6 +4354,7 @@ planet_event = {
 		}
 	}
 }
+
 ##########################################################################
 # Egalitarian Line (AP_PQ.500)
 ##########################################################################
@@ -4397,17 +4413,17 @@ planet_event = {
 			}
 		}
 	}
-	# # Project Focus
-	# option = {
-	# 	name = AP_PQ.500_2
-	# 	hidden_effect = {
-	# 		planet_event = {
-	# 			id = AP_PQ.520
-	# 			days = 30
-	# 			random = 30
-	# 		}
-	# 	}
-	# }
+	# Project Focus
+	option = {
+		name = AP_PQ.500_2
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.520
+				days = 30
+				random = 30
+			}
+		}
+	}
 	## Abolish
 	option = {
 		name = AP_PQ.500_3
@@ -4553,7 +4569,7 @@ planet_event = {
 						value = 1
 					}
 					add_modifier = {
-						modifier = planet_unhappy_populace
+						modifier = planet_AP_unhappy_populace
 						days = 1800
 					}
 					planet_event = {
@@ -4733,7 +4749,7 @@ planet_event = {
 		}
 		owner = {
 			add_modifier = {
-				modifier = country_worker_bonus
+				modifier = country_AP_worker_bonus
 				days = 1800
 			}
 		}
@@ -4754,7 +4770,7 @@ planet_event = {
 		}
 		owner = {
 			add_modifier = {
-				modifier = country_science_bonus
+				modifier = country_AP_science_bonus
 				days = 1800
 			}
 		}
@@ -4775,7 +4791,7 @@ planet_event = {
 		}
 		owner = {
 			add_modifier = {
-				modifier = country_culture_bonus
+				modifier = country_AP_culture_bonus
 				days = 1800
 			}
 		}
@@ -4861,7 +4877,7 @@ planet_event = {
 						random = 360
 					}
 					add_modifier = {
-						modifier = planet_discouraged_populace
+						modifier = planet_AP_discouraged_populace
 					}
 					change_variable = {
 						which = quota_delay
@@ -4881,7 +4897,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 900
 		}
 		allow = {
@@ -4919,7 +4935,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 1800
 		}
 		allow = {
@@ -4957,7 +4973,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 1800
 		}
 		allow = {
@@ -4995,7 +5011,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 1800
 		}
 		allow = {
@@ -5033,7 +5049,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_infrastructure_investment
+			modifier = planet_AP_infrastructure_investment
 			days = 1800
 		}
 		allow = {
@@ -5170,7 +5186,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_lower_production_quota
+			modifier = planet_AP_lower_production_quota
 			days = 1800
 		}
 		name = AP_PQ.515_1
@@ -5214,7 +5230,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_encourage_populace
+			modifier = planet_AP_encourage_populace
 			days = 1800
 		}
 		name = AP_PQ.515_2
@@ -5266,7 +5282,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_encourage_populace
+			modifier = planet_AP_encourage_populace
 			days = 720
 		}
 		name = AP_PQ.515_3
@@ -5294,7 +5310,7 @@ planet_event = {
 			}
 		}
 		add_modifier = {
-			modifier = planet_encourage_populace
+			modifier = planet_AP_encourage_populace
 			days = 720
 		}
 		name = AP_PQ.515_3
@@ -5465,6 +5481,9 @@ planet_event = {
 planet_event = {
 	id = AP_PQ.520
 	is_triggered_only = yes
+	title = AP_PQ.520_title
+	desc = AP_PQ.520_desc
+	picture = GFX_evt_announcement
 	location = from
 	trigger = {
 		check_variable = {
@@ -5501,13 +5520,26 @@ planet_event = {
 			}
 		}
 	}
-	hide_window = yes
+	option = {
+		name = AP_PQ.520_1
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.521
+				days = 360
+				random = 180
+			}
+		}
+	}
 }
 
+## First phase 
 planet_event = {
 	id = AP_PQ.521
 	is_triggered_only = yes
 	location = from
+	picture = GFX_evt_board_meeting
+	title = AP_PQ.521_title
+	desc = AP_PQ.521_desc
 	trigger = {
 		check_variable = {
 			which = quota_egalitarian
@@ -5543,13 +5575,49 @@ planet_event = {
 			}
 		}
 	}
-	hide_window = yes
+	immediate = {
+		remove_modifier = planet_quota_planned
+		add_modifier = {
+			modifier = planet_quota_phase_1
+		}
+	}
+	option = {
+		name = AP_PQ.521_1
+		hidden_effect = {
+			IF = {
+				limit = {
+					any_owned_pop = {
+						is_pop_category = worker
+						happiness >= 60
+					}
+				}
+				else = {
+					# Fail
+					planet_event = {
+						id = AP_PQ.522
+						days = 720
+						random = 360
+					}
+				}
+				# Succes
+				planet_event = {
+					id = AP_PQ.523
+					days = 720
+					random = 360
+				}
+			}
+		}
+	}
 }
 
+## Fail to pass first phase
 planet_event = {
 	id = AP_PQ.522
 	is_triggered_only = yes
 	location = from
+	title = AP_PQ.522_title
+	desc = AP_PQ.522_desc
+	picture = GFX_evt_decryption
 	trigger = {
 		check_variable = {
 			which = quota_egalitarian
@@ -5585,11 +5653,969 @@ planet_event = {
 			}
 		}
 	}
-	hide_window = yes
+	immediate = {
+		change_variable = {
+			which = quota_delay
+			value = 1
+		}
+	}
+	## concede and get 3 slums at the cost of 2 pop
+	option = {
+		name = AP_PQ.522_1
+		custom_tooltip = AP_PQ.522_tooltip
+		hidden_effect = {
+			while = {
+				random_owned_pop = {
+					kill_pop = yes
+				}
+				add_blocker = {
+					type = d_decrepit_dwellings
+				}
+				count = 2
+			}
+			add_blocker = {
+				type = d_decrepit_dwellings
+			}
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = -250
+			}
+		}
+	}
+	## Pull some favors and try to sort it out
+	option = {
+		name = AP_PQ.522_2
+		custom_tooltip = AP_PQ.522_tooltip
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+			add_blocker = {
+				type = d_decrepit_dwellings
+			}
+		}
+		# No cheaty ol pete here, no money no serive
+		allow = {
+			owner = {
+				has_resource = {
+					type = energy
+					amount >= 1000
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = -500
+				energy = -1000
+			}
+		}
+	}
+	## Special Meritocracy
+	option = {
+		name = AP_PQ.522_3
+		trigger = {
+			owner = {
+				has_valid_civic = civic_meritocracy
+			}
+		}
+		hidden_effect = {
+			add_blocker = {
+				type = d_decrepit_dwellings
+			}
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 250
+			}
+		}
+	}
+	## Special Efficient Bureaucracy
+	option = {
+		name = AP_PQ.522_3
+		trigger = {
+			owner = {
+				has_valid_civic = civic_efficient_bureaucracy
+			}
+		}
+		hidden_effect = {
+			add_blocker = {
+				type = d_decrepit_dwellings
+			}
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 250
+			}
+		}
+	}
+	## Special Idealist Foundation
+	option = {
+		name = AP_PQ.522_4
+		trigger = {
+			owner = {
+				has_valid_civic = civic_idealistic_foundation
+			}
+		}
+		hidden_effect = {
+			add_blocker = {
+				type = d_decrepit_dwellings
+			}
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 250
+			}
+		}
+	}
+	## Special Nationalist Zeal
+	option = {
+		name = AP_PQ.522_4
+		trigger = {
+			owner = {
+				has_valid_civic = civic_nationalistic_zeal
+			}
+		}
+		hidden_effect = {
+			add_blocker = {
+				type = d_decrepit_dwellings
+			}
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 250
+			}
+		}
+	}
+	## Special Shared Burden
+	option = {
+		name = AP_PQ.523_5
+		trigger = {
+			owner = {
+				has_valid_civic = civic_shared_burden
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+			while = {
+				count = 3
+				add_blocker = {
+					type = d_decrepit_dwellings
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = 1000
+			}
+		}
+	}
 }
 
+## Success for passing first phase
 planet_event = {
 	id = AP_PQ.523
+	is_triggered_only = yes
+	picture = GFX_evt_mining_operations
+	title = AP_PQ.523_title
+	desc = AP_PQ.523_desc
+	location = from
+	trigger = {
+		check_variable = {
+			which = quota_egalitarian
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	## Regular success
+	option = {
+		name = AP_PQ.523_1
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				alloys = 2500
+				minerals = 1000
+			}
+		}
+	}
+	## lesser success
+	option = {
+		name = AP_PQ.523_2
+		exclusive_trigger = {
+			free_amenities <= 5
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+		}
+		owner = {
+			add_resource = {
+				alloys = 500
+				minerals = 1000
+			}
+		}
+	}
+	## Special Merchant Guild
+	option = {
+		name = AP_PQ.523_3
+		trigger = {
+			owner = {
+				has_valid_civic = civic_merchant_guilds
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.524
+				days = 720
+				random = 720
+			}
+			add_modifier = {
+				modifier = planet_AP_discouraged_populace
+				days = 90
+			}
+		}
+		owner = {
+			add_resource = {
+				alloys = 3000
+				minerals = 1500
+			}
+		}
+	}
+}
+
+## Begin Phase 2
+planet_event = {
+	id = AP_PQ.524
+	title = AP_PQ.524_title
+	desc = AP_PQ.524_desc
+	picture = GFX_evt_mining_operations
+	location = from
+	is_triggered_only = yes
+	trigger = {
+		check_variable = {
+			which = quota_egalitarian
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_phase_1
+		add_modifier = {
+			modifier = planet_quota_phase_2
+		}
+	}
+	option = {
+		name = AP_PQ.524_1
+		hidden_effect = {
+			if = {
+				limit = {
+					planet_crime >= 5
+				}
+				else = {
+					planet_event = {
+						id = AP_PQ.526
+						days = 1800
+						random = 360
+					}
+				}
+				planet_event = {
+					id = AP_PQ.525
+					days = 1800
+					random = 360
+				}
+			}
+		}
+	}
+}
+
+## Fail crime check on phase 2
+planet_event = {
+	id = AP_PQ.525
+	title = AP_PQ.525_title
+	desc = AP_PQ.525_desc
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_tradestation_interior
+	trigger = {
+		check_variable = {
+			which = quota_egalitarian
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		change_variable = {
+			which = quota_delay
+			value = 1
+		}
+	}
+	## Ignore
+	option = {
+		name = AP_PQ.525_1
+		custom_tooltip = AP_PQ.525_1_tooltip
+		hidden_effect = {
+			random_list = {
+				# Caught
+				20 = {
+					owner = {
+						add_resource = {
+							unity = 500
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# Escaped
+				80 = {
+					add_modifier = {
+						modifier = planet_AP_discouraged_populace
+						days = 720
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+	## Invest in search and arrest
+	option = {
+		name = AP_PQ.525_2
+		custom_tooltip = AP_PQ.525_2_tooltip
+		owner = {
+			add_resource = {
+				energy = -1000
+			}
+		}
+		allow = {
+			owner = {
+				has_resource = {
+					type = energy
+					amount >= 1000
+				}
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				# Caught
+				55 = {
+					owner = {
+						add_resource = {
+							unity = 500
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# Escaped
+				45 = {
+					add_modifier = {
+						modifier = planet_AP_discouraged_populace
+						days = 540
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+	## Special Arrest (Police State)
+	option = {
+		name = AP_PQ.525_3
+		custom_tooltip = AP_PQ.525_3_tooltip
+		trigger = {
+			owner = {
+				has_valid_civic = civic_police_state
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				# Caught
+				95 = {
+					owner = {
+						add_resource = {
+							unity = 1000
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# escaped
+				5 = {
+					add_modifier = {
+						modifier = planet_AP_discouraged_populace
+						days = 360
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+	## Special Arrest (Cutthroat Politics)
+	option = {
+		name = AP_PQ.525_3
+		custom_tooltip = AP_PQ.525_3_tooltip
+		trigger = {
+			owner = {
+				has_valid_civic = civic_cutthroat_politics
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				# Caught
+				95 = {
+					owner = {
+						add_resource = {
+							unity = 1000
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# escaped
+				5 = {
+					add_modifier = {
+						modifier = planet_AP_discouraged_populace
+						days = 360
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+	## Special Isolate from society (Shadow Council)
+	option = {
+		name = AP_PQ.525_4
+		custom_tooltip = AP_PQ.525_3_tooltip
+		trigger = {
+			owner = {
+				has_valid_civic = civic_shadow_council
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				# Caught
+				95 = {
+					owner = {
+						add_resource = {
+							unity = 1000
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# escaped
+				5 = {
+					add_modifier = {
+						modifier = planet_AP_discouraged_populace
+						days = 360
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+	## Special Isolate from society (Idealist Foundaction)
+	option = {
+		name = AP_PQ.525_4
+		custom_tooltip = AP_PQ.525_3_tooltip
+		trigger = {
+			owner = {
+				has_valid_civic = civic_idealistic_foundation
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				# Caught
+				95 = {
+					owner = {
+						add_resource = {
+							unity = 1000
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# escaped
+				5 = {
+					add_modifier = {
+						modifier = planet_AP_discouraged_populace
+						days = 360
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+	## Special Criminal Heritage
+	option = {
+		name = AP_PQ.525_5
+		custom_tooltip = AP_PQ.525_3_tooltip
+		trigger = {
+			owner = {
+				has_valid_civic = civic_criminal_heritage
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				# Caught
+				99 = {
+					add_modifier = {
+						modifier = planet_AP_encourage_populace
+						days = 360
+					}
+					owner = {
+						add_resource = {
+							unity = 1000
+						}
+					}
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+				# escaped
+				1 = {
+					planet_event = {
+						id = AP_PQ.527
+						days = 1800
+						random = 360
+					}
+				}
+			}
+		}
+	}
+}
+
+## pass crime check on phase 2
+planet_event = {
+	id = AP_PQ.526
+	title = AP_PQ.526_title
+	desc = AP_PQ.526_desc
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_tradestation_interior
+	trigger = {
+		check_variable = {
+			which = quota_egalitarian
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = AP_PQ.526_1
+		add_modifier = {
+			modifier = planet_AP_encourage_populace
+			days = 720
+		}
+		owner = {
+			add_resource = {
+				unity = 1000
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.527
+				days = 1800
+				random = 360
+			}
+		}
+	}
+}
+
+## Begin phase 3
+planet_event = {
+	id = AP_PQ.527
+	title = AP_PQ.527_title
+	desc = AP_PQ.527_desc
+	is_triggered_only = yes
+	location = from
+	picture = GFX_evt_board_meeting
+	trigger = {
+		check_variable = {
+			which = quota_egalitarian
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	immediate = {
+		remove_modifier = planet_quota_phase_2
+		add_modifier = {
+			modifier = planet_quota_phase_3
+		}
+	}
+	## A decent alloy bonus for no delay
+	option = {
+		name = AP_PQ.527_1
+		trigger = {
+			check_variable = {
+				which = Quota_delay
+				value = 0
+			}
+		}
+		owner = {
+			add_resource = {
+				alloys = 1500
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.528
+				days = 1800
+				random = 180
+			}
+		}
+	}
+	## A small alloy bonus for 1 delay
+	option = {
+		name = AP_PQ.527_2
+		trigger = {
+			check_variable = {
+				which = Quota_delay
+				value = 1
+			}
+		}
+		owner = {
+			add_resource = {
+				alloys = 750
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.528
+				days = 1800
+				random = 180
+			}
+		}
+	}
+	## A very tiny bonus for more then 1 delay
+	option = {
+		name = AP_PQ.527_3
+		trigger = {
+			check_variable = {
+				which = Quota_delay
+				value > 1
+			}
+		}
+		owner = {
+			add_resource = {
+				alloys = 250
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.528
+				days = 1800
+				random = 180
+			}
+		}
+	}
+}
+
+## A choice of research regarding projects
+planet_event = {
+	id = AP_PQ.528
+	is_triggered_only = yes
+	location = from
+	title = AP_PQ.528_title
+	desc = AP_PQ.528_desc
+	picture = GFX_evt_board_meeting
+	trigger = {
+		check_variable = {
+			which = quota_egalitarian
+			value = 1
+		}
+	}
+	abort_trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = quota_active
+			}
+		}
+	}
+	abort_effect = {
+		IF = {
+			limit = {
+				OR = {
+					has_modifier = planet_quota_planned
+					has_modifier = planet_quota_phase_1
+					has_modifier = planet_quota_phase_2
+					has_modifier = planet_quota_phase_3
+				}
+			}
+			else = {
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			planet_event = {
+				id = AP_PQ.2
+				days = 5
+			}
+		}
+	}
+	## Megastructure bonus
+	option = {
+		name = AP_PQ.528_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_megastructure_bonus
+				days = 3600
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.529
+				days = 1800
+				random = 180
+			}
+		}
+	}
+	## Planet bonus
+	option = {
+		name = AP_PQ.528_2
+		owner = {
+			add_modifier = {
+				modifier = country_AP_planet_focused_bonus
+				days = 3600
+			}
+		}
+		hidden_effect = {
+			planet_event = {
+				id = AP_PQ.529
+				days = 1800
+				random = 180
+			}
+		}
+	}
+
+}
+
+## Silent completion of phase 3
+planet_event = {
+	id = AP_PQ.529
+	hide_window = yes
 	is_triggered_only = yes
 	location = from
 	trigger = {
@@ -5627,5 +6653,29 @@ planet_event = {
 			}
 		}
 	}
-	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				check_variable = {
+					which = quota_delay
+					value >= 2
+				}
+			}
+			set_variable = {
+				which = quota_fail
+				value = 1
+			}
+			else = {
+				set_variable = {
+					which = quota_success
+					value = 1
+				}
+			}
+		}
+		planet_event = {
+			id = AP_PQ.2
+			days = 5
+			random = 5
+		}
+	}
 }

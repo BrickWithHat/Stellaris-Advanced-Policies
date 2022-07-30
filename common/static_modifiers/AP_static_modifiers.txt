@@ -108,7 +108,7 @@ country_quota_fullfilled = {
 ##########################################################################
 # Events
 ##########################################################################
-planet_encourage_populace = {
+planet_AP_encourage_populace = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_atmospheric_entry.dds
 	pop_happiness = 0.1
@@ -116,7 +116,7 @@ planet_encourage_populace = {
 	planet_amenities_add = 20
 }
 
-planet_discouraged_populace = {
+planet_AP_discouraged_populace = {
 	icon_frame = 3
 	icon = gfx/interface/icons/planet_modifiers/pm_derelict_interior.dds
 	planet_crime_add = 10
@@ -124,22 +124,22 @@ planet_discouraged_populace = {
 	pop_growth_speed = -0.2
 }
 
-planet_unhappy_populace = {
+planet_AP_unhappy_populace = {
 	icon_frame = 3
 	icon = gfx/interface/icons/planet_modifiers/pm_derelict_interior.dds
 	planet_stability_add = -5
 	pop_happiness = -0.2
 }
 
-planet_organized_strike = {
-	icon_frame = 2
+planet_AP_organized_strike = {
+	icon_frame = 3
 	icon = gfx/interface/icons/planet_modifiers/pm_planet_separatist_supporter.dds
 	planet_jobs_produces_mult = -0.5
 	pop_growth_speed = -0.2
 	pop_assembly_speed = -0.5
 }
 
-planet_hunger_strike = {
+planet_AP_hunger_strike = {
 	icon_frame = 2
 	icon = gfx/interface/icons/planet_modifiers/pm_hunger_strike.dds
 	planet_pops_food_upkeep_mult = -0.1
@@ -148,7 +148,7 @@ planet_hunger_strike = {
 	pop_assembly_speed = -1
 }
 
-planet_mass_riot = {
+planet_AP_mass_riot = {
 	icon_frame = 3
 	icon = gfx/interface/icons/planet_modifiers/pm_unrest.dds
 	planet_crime_mult = 1
@@ -158,14 +158,14 @@ planet_mass_riot = {
 	job_criminal_add = 5
 }
 
-planet_labor_shortage = {
+planet_AP_labor_shortage = {
 	icon_frame = 3
 	icon = gfx/interface/icons/planet_modifiers/pm_archaeology.dds
 	pop_growth_speed = 0.25
 	planet_jobs_produces_mult = -0.1
 }
 
-planet_infrastructure_investment = {
+planet_AP_infrastructure_investment = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_drilling_for_gas.dds
 	planet_district_city_build_speed_mult = 0.25
@@ -173,7 +173,7 @@ planet_infrastructure_investment = {
 	planet_buildings_cost_mult = -0.5
 }
 
-planet_lack_of_oversight = {
+planet_AP_lack_of_oversight = {
 	icon_frame = 3
 	icon = gfx/interface/icons/planet_modifiers/pm_smugglers_in_bar.dds
 	planet_crime_mult = 0.2
@@ -181,7 +181,7 @@ planet_lack_of_oversight = {
 	pop_growth_speed = -0.1
 }
 
-planet_laying_down = {
+planet_AP_laying_down = {
 	icon_frame = 2
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
 	planet_pops_upkeep_mult = -0.25
@@ -189,7 +189,7 @@ planet_laying_down = {
 	pop_growth_speed = -0.25
 }
 
-planet_lower_production_quota = {
+planet_AP_lower_production_quota = {
 	icon_frame = 2
 	icon = gfx/interface/icons/planet_modifiers/pm_default.dds
 	planet_jobs_produces_mult = -0.3
@@ -198,7 +198,7 @@ planet_lower_production_quota = {
 	pop_cat_ruler_happiness = 0.05
 }
 
-country_troops_dismissed = {
+country_AP_troops_dismissed = {
 	icon = gfx/interface/icons/modifiers/mod_army_disengage_chance_mult.dds
 	army_attack_health_mult = -0.25
 	army_attack_morale_mult = -0.25
@@ -207,28 +207,98 @@ country_troops_dismissed = {
 	planet_army_build_time_mult = 0.5
 }
 
-country_worker_bonus = {
+country_AP_worker_bonus = {
 	icon = gfx/interface/icons/modifiers/mod_pop_housing_usage_mult.dds
 	planet_jobs_produces_mult = 0.25
 	planet_amenities_mult = 0.2
 }
 
-country_science_bonus = {
+country_AP_science_bonus = {
 	icon = gfx/interface/icons/modifiers/mod_ship_anomaly_research_speed.dds
 	planet_researchers_produces_mult = 0.33
 	all_technology_research_speed = 0.1
 	science_ship_survey_speed = 0.33
 }
 
-country_culture_bonus = {
+country_AP_culture_bonus = {
 	icon = gfx/interface/icons/modifiers/mod_pop_political_power.dds
 	country_unity_produces_mult = 0.5
-	country_influence_produces_add = 1
+	country_influence_produces_mult = 0.5
 	pop_happiness = 0.1
 }
 
+country_AP_megastructure_bonus = {
+	icon = gfx/interface/icons/modifiers/mod_starbase_module_capacity_add.dds
+	country_megastructure_build_cap_add = 1
+	megastructure_build_speed_mult = 0.33
+	megastructures_habitat_cost_mult = -0.5
+}
+
+country_AP_planet_focused_bonus = {
+	icon = gfx/interface/icons/modifiers/mod_habitability.dds
+	planet_buildings_cost_mult = -0.25
+	planet_districts_cost_mult = -0.25
+	deposit_blockers_cost_mult = -0.25
+	planet_clear_blocker_speed_mult = 0.25
+
+}
+
+country_AP_recent_quota = {
+	icon = gfx/interface/icons/modifiers/mod_planet_border_mult.dds
+}
+
+country_AP_gestalt_crime_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_planet_crime_mult.dds
+	planet_crime_no_happiness_mult = 0.25
+}
+
+country_AP_influence_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_influence_negative.dds
+	country_influence_produces_mult = -0.75
+	diplo_action_acceptance_add = -25
+}
+
+country_AP_food_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_pop_food_req.dds
+	country_food_produces_mult = -0.45
+}
+
+country_AP_consumer_goods_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_empire_size_pops_mult.dds
+	country_consumer_goods_produces_mult = -0.4
+	piracy_growth_mult = 5
+}
+
+country_AP_alloys_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_alloys_upkeep_add.dds
+	country_alloys_produces_mult = -0.5
+	ships_upkeep_mult = 0.25
+}
+
+country_AP_umployment_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_country_emigration_push_mult.dds
+	pop_demotion_time_mult = 1
+	planet_resettlement_unemployed_mult = -0.5
+}
+
+country_AP_factions_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_country_rivalry_influence_gain.dds
+	pop_factions_produces_mult = -0.75
+	country_unity_produces_mult = -0.25
+	planet_stability_add = -10
+}
+
+country_AP_mineral_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_minerals_upkeep_mult.dds
+	country_minerals_produces_mult = -0.5
+}
+
+country_AP_energy_debuff = {
+	icon = gfx/interface/icons/modifiers/mod_energy_upkeep_add.dds
+	country_energy_produces_mult = -0.5
+}
 ##########################################################################
-# Civics
+# Civics/origin
 ##########################################################################
 planet_mobile_construction_deployed = {
 	icon_frame = 1
@@ -245,6 +315,18 @@ country_mobile_construction_packed = {
 	planet_building_build_speed_mult = 0.1
 	planet_buildings_cost_mult = -0.2
 }
+
+planet_migritory_flyer_push = {
+	icon = gfx/interface/icons/planet_modifiers/pm_expel_population.dds
+	planet_resettlement_unemployed_mult = 0.5
+	planet_emigration_push_add = 100
+}
+
+planet_migritory_flyer_pull = {
+	icon = gfx/interface/icons/planet_modifiers/pm_expel_population.dds
+	planet_immigration_pull_mult = 0.5
+	planet_immigration_pull_add = 100
+}
 ##########################################################################
 # Planetary Decisions
 ##########################################################################
@@ -252,7 +334,6 @@ planet_trail_by_fire = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds
 	pop_happiness = 0.1
-	planet_amenities_mult = 0.1
 	pop_growth_from_immigration = 0.25
 	planet_army_build_speed_mult = 0.5
 	army_starting_experience_add = 250
@@ -262,7 +343,6 @@ planet_trail_by_fire = {
 planet_generation_of_peace = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds
-	trade_value_mult = 0.25
 	pop_growth_speed = 0.05
 	pop_growth_from_immigration = 0.05
 	planet_jobs_specialist_produces_mult = 0.1
@@ -273,9 +353,8 @@ planet_grand_sports_games = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
 	trade_value_mult = 0.1
-	pop_growth_from_immigration = 0.5
-	planet_migration_all_mult = 1
-	planet_amenities_mult = 0.2
+	pop_growth_from_immigration = 1
+	planet_amenities_mult = 0.1
 	planet_jobs_worker_produces_mult = 0.25
 }
 
@@ -283,7 +362,6 @@ planet_benevolant_gesture = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
 	planet_jobs_ruler_produces_mult = 0.5
-	planet_amenities_mult = 0.25
 	planet_crime_mult = -0.1
 	pop_happiness = 0.1
 }
@@ -294,16 +372,14 @@ planet_rite_of_the_heavens = {
 	planet_jobs_unity_produces_mult = 0.2
 	spiritualist_attraction = 0.25
 	pop_happiness = 0.1
-	trade_value_mult = 0.1
 	pop_growth_from_immigration = 0.25
+	pop_growth_speed = 0.05
 }
 
 planet_competition_of_the_minds = {
 	icon_frame = 1
 	icon = gfx/interface/icons/planet_modifiers/pm_medieval_alien_civilization.dds
 	planet_jobs_unity_produces_mult = 0.1
+	planet_researchers_produces_mult = 0.1
 	planet_researchers_upkeep_mult = -0.2
-	country_physics_research_produces_add = 25
-	country_society_research_produces_add = 25
-	country_engineering_research_produces_add = 25
 }

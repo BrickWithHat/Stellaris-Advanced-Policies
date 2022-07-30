@@ -5,7 +5,7 @@
  edict_AP_tight_admin:0 "Thightend Administration"
  edict_AP_tight_admin_desc:0 "A policy has been enacted binding every civilian department together. Costing some £energy£ §Yenergy§! up front but granting a higher efficiency."
  edict_AP_rationing:0 "Civilian Rationing"
- edict_AP_rationing_desc:0 "§YThis is an emergency measure! Does not take up an edict slot.§! The state can no longer allow it's people to waste all those resources. It could mean the diffrence between defeat and victory!"
+ edict_AP_rationing_desc:0 "The state can no longer allow it's people to waste all those resources. It could mean the diffrence between defeat and victory!"
  edict_AP_combat_drills:0 "Combat Drills"
  edict_AP_combat_drills_desc:0 "Enact a plan to sharpen our military forces for future conflicts."
  edict_AP_dirty_bomb:0 "Dirty Bombs"

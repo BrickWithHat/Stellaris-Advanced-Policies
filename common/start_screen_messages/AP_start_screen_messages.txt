@@ -3,13 +3,24 @@ part = {
 	location = 1
 	localization = "AP_START_SCREEN_CHILDREN_OF_THE_DARKNESS"
 	trigger = {
+		has_country_flag = custom_start_screen
 		has_origin = AP_children_of_the_darkness
+	}
+}
+
+# Origin Sky Treaders
+part = {
+	location = 1
+	localization = "AP_START_SCREEN_SKY_TREADERS"
+	trigger = {
+		has_country_flag = custom_start_screen
+		has_origin = AP_sky_treaders
 	}
 }
 
 # Has Ancient Remnats civic
 part = {
-	location = 1
+	location = 2
 	localization = "AP_START_SCREEN_ANCIENT_REMNANTS"
 	trigger = {
 		has_civic = civic_AP_ancient_remnants

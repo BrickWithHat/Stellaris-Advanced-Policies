@@ -1,0 +1,32 @@
+cb_AP_remove_hostile_regime = {
+	show_in_diplomacy = yes
+	show_notification = no
+	potential = {
+		is_country_type = default
+		NOT = { is_in_federation_with = FROM }
+		is_gestalt = no
+	}
+	is_valid = {
+		OR = {
+			is_rival = FROM
+			is_unfriendly_to = FROM
+			is_subject = no
+			overlord = { NOT = { is_same_value = from } }
+		}
+		is_neighbor_of = FROM
+		has_total_war_cb = NO
+		NOT = { 
+			has_policy_flag = liberation_wars
+			is_overlord_to = FROM
+			has_claim = FROM
+		}
+		from = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+	destroy_if = {
+		relative_power = {
+			who = FROM
+			category = all
+			value > superior
+		}
+	}
+}

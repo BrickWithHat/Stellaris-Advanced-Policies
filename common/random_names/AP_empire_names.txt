@@ -1,0 +1,176 @@
+# Ancient remnant parts
+empire_name_parts_list = {
+	key = "AP_ancient_desc"
+	parts = {
+		"Ancient" = 3
+		"Revitalized" = 2
+		"Resurrected" = 2
+		"Reclaimers" = 2
+		"Elderly" = 1
+		"Forgotten" = 1
+		"Reforged" = 1
+		"Rebirthed" = 1
+	}
+}
+
+# Children of Darkness parts
+empire_name_parts_list = {
+	key = AP_darkness
+	parts = {
+		"Tunnelers" = 1
+		"Deep-kin" = 1
+		"Depth Court" = 1
+		"Burrows" = 1
+		"Deep Guild" = 1
+	}
+}
+
+# Sky Treaders parts
+empire_name_parts_list = {
+	key = AP_sky_treader
+	parts = {
+		"Roamers" = 1
+		"Pilgrims" = 1
+		"Rovers" = 1
+		"Wanderers" = 1
+		"Nomads" = 1
+		"Navigators" = 1
+		"Wayfinders" = 1
+	}
+}
+
+# Children (Democracies/Oligrachies)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_origin = AP_children_of_the_darkness
+			OR = {
+				has_authority = auth_democratic
+				has_authority = auth_oligarchic
+			}
+			NOR = {
+				has_civic = civic_AP_ancient_remnants
+			}
+		}
+	}
+	lookups = "<democratic_gen_desc> <AP_darkness> [This.Capital.GetName]"
+	format = format.AP.children.1	# <democratic_gen_desc> [This.Capital.GetName] <AP_darkness>
+	noun = format.AP.children.species.1	# [This.Capital.GetName] <AP_darkness>
+}
+
+# Children (Dictatorships/Imperiums)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_origin = AP_children_of_the_darkness
+			OR = {
+				has_authority = auth_dictatorial
+				has_authority = auth_imperial
+			}
+			NOR = {
+				has_civic = civic_AP_ancient_remnants
+			}
+		}
+	}
+	lookups = "<imperial_gen_desc> <AP_darkness> [This.Capital.GetName]"
+	format = format.AP.children.2	# <imperial_gen_desc> [This.Capital.GetName] <AP_darkness>
+	noun = format.AP.children.species.1	# [This.Capital.GetName] <AP_darkness>
+}
+
+# Ancient (Democracies/Oligrachies)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR = {
+				has_authority = auth_democratic
+				has_authority = auth_oligarchic
+			}
+			NOT = {
+				has_government = gov_ancient_warhost
+			}
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	lookups = "<AP_ancient_desc> <democratic_gen> [This.GetSpeciesName]"
+	format = format.AP.ancient.1	# <AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>
+	noun = format.AP.ancient.species.1	# [This.GetSpeciesName] <democratic_gen>
+}
+
+# Ancient (Dictatorships/Imperiums)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR = {
+				has_authority = auth_dictatorial
+				has_authority = auth_imperial
+			}
+			NOT = {
+				has_government = gov_ancient_warhost
+			}
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	lookups = "<imperial_gen_desc> <AP_ancient_desc> <imperial_gen> [This.GetSpeciesName]"
+	format = format.AP.ancient.2	# <imperial_gen_desc> <AP_ancient_desc> [This.GetSpeciesName] <imperial_gen>
+	noun = format.AP.ancient.species.2	# [This.GetSpeciesName] <imperial_gen>
+}
+
+# Ancient Warhost (Democracies/Oligrachies)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR = {
+				has_authority = auth_democratic
+				has_authority = auth_oligarchic
+			}
+			has_government = gov_ancient_warhost
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	lookups = "<AP_ancient_desc> <democratic_mil> [This.GetSpeciesName]"
+	format = format.AP.ancient.3	# <AP_ancient_desc> [This.GetSpeciesName] <democratic_mil>
+	noun = format.AP.ancient.species.3	# [This.GetSpeciesName] <democratic_mil>
+}
+
+# Ancient Warhost (Dictatorships/Imperiums)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR = {
+				has_authority = auth_dictatorial
+				has_authority = auth_imperial
+			}
+			has_government = gov_ancient_warhost
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	lookups = "<imperial_mil_desc> <AP_ancient_desc> <dictatorial_mil> [This.GetSpeciesName]"
+	format = format.AP.ancient.4	# <imperial_mil_desc> <AP_ancient_desc> [This.GetSpeciesName] <dictatorial_mil>
+	noun = format.AP.ancient.species.4	# [This.GetSpeciesName] <dictatorial_mil>
+}
+
+# Sky Treaders Neutral
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_sky_treaders
+		}
+	}
+	lookups = "<AP_sky_treader> [This.GetSpeciesName] [Root.Capital.GetName]"
+	format = format.AP.skytreader.1 # <AP_sky_treader> of [Root.Capital.GetName]
+	noun = format.AP.skytreader.noun.1 # <AP_sky_treader> [This.GetSpeciesName]
+}

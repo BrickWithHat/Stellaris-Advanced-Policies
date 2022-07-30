@@ -26,13 +26,13 @@ civic_AP_advanced_administration = {
 		}
 	}
 	random_weight = {
-		base = 2
+		base = 4
 	}
 	modifier = {
 		edict_length_mult = 0.2
 		edicts_cost_mult = -0.2
 		leader_skill_levels = 1
-		country_edict_cap_add = 1
+		edicts_upkeep_mult = -0.1
 	}
 }
 
@@ -70,7 +70,7 @@ civic_AP_war_complex = {
 		country_consumer_goods_produces_mult = -0.05
 	}
 	random_weight = {
-		base = 2
+		base = 3
 	}
 }
 
@@ -91,7 +91,7 @@ civic_AP_grand_architecture = {
 	possible = {
 	}
 	random_weight = {
-		base = 3
+		weight = 3
 	}
 	modifier = {
 		planet_building_build_speed_mult = -0.1
@@ -136,8 +136,8 @@ civic_AP_mobile_construction = {
 		}
 	}
 	modification = no
-	ai_playable = {
-		is_ironman = yes
+	random_weight = {
+		weight = 1
 	}
 }
 
@@ -158,8 +158,9 @@ civic_AP_ancient_remnants = {
 	possible = {
 		origin = {
 			NOR = {
-				value = origin_default
+				value = origin_ocean_paradise
 				value = origin_scion
+				value = AP_children_of_the_darkness
 			}
 		}
 		civics = {
@@ -172,6 +173,9 @@ civic_AP_ancient_remnants = {
 	}
 	modifier = {
 		num_tech_alternatives_add = -2
+	}
+	random_weight = {
+		weight = 2
 	}
 }
 
@@ -199,6 +203,9 @@ civic_AP_workers_ethic = {
 		pop_cat_worker_political_power = 1
 		planet_jobs_produces_mult = 0.1
 		pop_happiness = -0.05
+	}
+	random_weight = {
+		weight = 3
 	}
 }
 
@@ -229,5 +236,46 @@ civic_AP_good_education = {
 		planet_job_educator_produces_mult = 0.33
 		planet_job_educator_upkeep_mult = -0.5
 		leader_skill_levels = 2
+	}
+	random_weight = {
+		weight = 2
+	}
+}
+
+civic_AP_ancestor_worship = {
+	potential = {
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_imperial_cult
+				value = civic_reanimated_armies
+			}
+		}
+	}
+	modifier = {
+		leader_skill_levels = +2
+		species_leader_exp_gain = 0.25
+		empire_size_pops_mult = -0.1
+	}
+	random_weight = {
+		weight = 2
 	}
 }

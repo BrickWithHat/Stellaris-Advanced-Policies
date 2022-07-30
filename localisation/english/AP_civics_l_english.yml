@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿l_english:
 ##########################################################################
 # Civics
@@ -44,4 +45,52 @@
 ##########################################################################
  AP_children_of_the_darkness:0 "Children of the Darkness"
  AP_children_of_the_darkness_desc:0 "This species always has had a hard time living on a planets surface. While they might not be a common sight on the planets surface, they are a very common sight underground. Digging out vast caverns and living off the gifts of the deep."
+=======
+﻿l_english:
+##########################################################################
+# Civics
+##########################################################################
+ civic_AP_advanced_administration:0 "Advanced Administration"
+ civic_AP_advanced_administration_desc:0 "The government has found many ways to enchance its efficiency. Making them slightly better in a lot of area's."
+ civic_AP_advanced_administration_effects:0 "Your §Ygovernemt§! has become more efficient the most other empires granting you:"
+ civic_AP_advanced_administration_corporate:0 "$civic_AP_advanced_administration$"
+ civic_AP_advanced_administration_corporate_desc:0 "$civic_AP_advanced_administration_desc$"
+ civic_AP_advanced_administration_corporate_effects:0 "$civic_AP_advanced_administration_effects$"
+
+ civic_AP_grand_architecture:0 "Grand Architecture"
+ civic_AP_grand_architecture_desc:0 "Our empire believes that all buildings should be made to display our power. To that end we build to inspire!"
+ civic_AP_grand_architecture_effects:0 "Our grand buildings may require some upkeep, but they do really inspire our populace."
+ civic_AP_grand_architecture_corporate:0 "$civic_AP_grand_architecture$"
+ civic_AP_grand_architecture_corporate_desc:0 "$civic_AP_grand_architecture_desc$"
+ civic_AP_grand_architecture_corporate_effects:0 "$civic_AP_grand_architecture_effects$"
+
+ civic_AP_war_complex:0 "Industrial War-Complex"
+ civic_AP_war_complex_desc:0 "This empire has been geared to mass war, it looks down on its civilians as a means to fund its armies."
+ civic_AP_war_complex_effects:0 "The army is our extension into the stars. Let them march forward with all our might!"
+
+ civic_AP_mobile_construction:0 "Mobile Construction"
+ civic_AP_mobile_construction_desc:0 "This empire has come to a point where there main construction comes from mobile construction yards. Though most of these are fairly small. They hold 1 with such scale it can build entire cities in a very short span of time. This vehicle can be moved to any colonized world within the empire."
+ civic_AP_mobile_construction_effects:0 "Spawns a §YMobile Construction Yard§! modifier on your capital world which can be relocated at your leisure. The planet it is preset on will recieved a big construction boost.\n Alternatively it can be moved to your country as a whole. This will grant less powerfull, but global benefits."
+
+ civic_AP_ancient_remnants:0 "Ancient Remnants"
+ civic_AP_ancient_remnants_desc:0 "Our empire used to span the stars, we were its rulers. Now we have been forced back. But our ancestors left us a gift..."
+ civic_AP_ancient_remnants_effects:0 "Spawns a very strong §HPlanetary Deposit§! on your §HCapital§!. This §HDeposit§! provide a set amount of §Y£job_evaluator£ $job_ancient_archaeologists$§! jobs based on the size of the §Ycapital building§!. These give §Y10% research speed§! per job allong with some science."
+
+ civic_AP_workers_ethic:0 "Workers Ethic"
+ civic_AP_workers_ethic_desc:0 "The Government was build upon a thorough work mentality frequantly skipping breaks to put in that maximum effort. While this results in consider output gain. It does make people less happy in the long run."
+ civic_AP_workers_ethic_corporate:0 "Solid Corporate Culture"
+ civic_AP_workers_ethic_corporate_desc:0 "This megacorp has as one of its corner stones that its employes work slightly harder then others which adds greatly to the bottom line. But does leave some employes less happy in the long run."
+
+ civic_AP_good_education:0 "Proper Education"
+ civic_AP_good_education_desc:0 "It is widely known that this empire has a solid base in education forcing it governments to invest regulary into it."
+ civic_AP_good_education_effect:0 "§YDisables the cheaper means of funding the education system. But grants other buffs to educators and leaders as a result.§!"
+ civic_AP_good_education_corporate:0 "Invested Education"
+ civic_AP_good_education_corporate_desc:0 "The Company sees value in teaching the next generation how to function in this society. As such little expence is spared when it comes to there educations."
+
+##########################################################################
+# Origins
+##########################################################################
+ AP_children_of_the_darkness:0 "Children of the Darkness"
+ AP_children_of_the_darkness_desc:0 "This species always has had a hard time living on a planets surface. While they might not be a common sight on the planets surface, they are a very common sight underground. Digging out vast caverns and living off the gifts of the deep."
+>>>>>>> Stashed changes
  AP_children_of_the_darkness_effects:0 "- Decreases base §Hhabitability§! by §R25%§! on all colonizable §HPlanets§! but increased §HColony Devolpment Speed§! by §G25%§!.\n - Gets access to the £decision£§H$AP_excavate_the_planet$§! Decision allowing for an increase in §Hhabitability§! and £planetsize£ §Hplanet-size§!. This can be done up to §H6 times§! unless it is an §HOcean world§! which can only be done §H2 times§!.\n - Starts with the §HUnderground Cities Complex§! Deposit on there homeworld.\n"

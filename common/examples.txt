@@ -1,116 +1,118 @@
-# Government Requirements
-# -----------------------
-#
-# playable = { host_has_dlc = "Federations" }
-#
-# Government authorities and civics use a custom list syntax instead of normal
-# triggers in potential and possible to specify valid combinations:
-#
-#
-#	possible = {
-#       
-#		ethics = {
-#			# All of these are required:
-#			value = ethic_1
-#			value = ethic_2
-#
-#			# One of these is required:
-#			OR = {
-#				text = translation_key		# optional, overrides the auto-generated tooltip text
-#				value = ethic_3
-#				value = ethic_4
-#			}
-#
-#			# This one must not be present:
-#			NOT = {
-#				text = translation_key		# optional
-#				value = ethic_5
-#				# May contain only one value!
-#			}
-#
-#			# None of these must be present:
-#			NOR = {
-#				text = translation_key		# optional
-#				value = ethic_6
-#				value = ethic_7
-#			}
-#		}
-#
-#		country_type = { ... }
-#
-#		authority = { ... }
-#
-#		civics = { ... }
-#
-#       # Outer scope is implicitly AND, which means that the result from all specified ethics, country_type, authority or civics blocks must be true
-#       # However, it's also possible to add inner OR or AND blocks:
-#       OR = {
-#            # Only one of these need to be present:
-#           authority = { value = my_authority }
-#			civics = { value = my_civic }
-#       
-#           # OR/AND blocks can be nested. In this case, that means that if the AND block is fulfilled, the outer OR block will also be fulfilled,
-#           # since the OR block only requires one of its constituents to be fulfilled
-#           AND = {
-#               ethics = { value = ethic_1 }
-#               civics = { my_other_civic }
-#           }
-#       }
-#
-#		text = translation_key				# optional
+
+#All scopes are this/root = situation. You can scope to owner for the country or target for the target.
+
+# test_situation = {
+# 	#Note on locs: it expects "test_situation", "test_situation_type", and "test_situation_desc"
+# 		#The difference between the first and second keys is that the first is the name while the Situation exists
+# 		#It can use [Target.GetName] and so on.
+# 		#The _type key is used in cases where the Situation does not exist yet, specifically the start_situation effect's tooltip
+# 		#Consequently, stuff like [Target.GetName] will not work there.
+
+#	desc = { text = x triggers = { } } #default is <key>_desc, but you can do triggered overrides
+
+#	picture = GFX_evt_alien_nature 		#Also supports triggered pictures like in events
+
+#	complete_icon = GFX_icon
+#	complete_icon_frame = GFX_icon_frame
+#	fail_icon = GFX_icon
+#	fail_icon_frame = GFX_icon_frame
+
+# 	category = positive #positive/negative/neutral - this affects the tone of various UI elements
+#	complete_category = positive #Only for progress_direction = bidirectional - only affects progress towards completetion (right)
+#	fail_category = negative #Only for progress_direction = bidirectional - only affects progress towards fail (left)
+
+#	progress_direction = bidirectional #monodirectional/bidirectional (defaults to monodirectional)
+
+# 	on_start = { }				#Effects when the Situation is created
+# 	on_progress_complete = {	#Effects when Situation's progress has reached 100
+# 		#You should always call destroy_situation = this from here or from an event fired by here
+# 	}
+# 	on_fail = {					#Effects when Situation's total progress is below 0
+# 		#You should always call destroy_situation = this from here or from an event fired by here
 #	}
-#
-#
-# Authorities support:
-#   - country_type
-#   - ethics
-#
-# Civics support:
-#   - country_type
-#   - ethics
-#   - authority
-#   - civics
-#
-# Species classes support:
-#   - country_type
-#   - ethics
-#   - authority
-#   - civics
-#
-#-----------------------
-# Example civic
-#-----------------------
-#civic_example = {
-#	playable = {}								# AND trigger, no scope; use this to prevent the civic from being selectable by the player (UI)
-#	potential = {}								# requirements list, see ../readme_requirements.txt
-#	possible = {}								# requirements list, see ../readme_requirements.txt
-#	pickable_at_start = yes / no				# default: yes
-#	modification = yes / no						# default: yes, set to no to prevent adding or removing this after creation of the empire
-#
-#	random_weight = { base = 5 }				# scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
-#
-#	modifier = {}								# modifier added to the country if the civic is selected and valid
-#	can_build_ruler_ship = yes / no				# default: no
-#	traits = { trait = ... }					# default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
-#	has_secondary_species = {					# default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
-#		traits = { trait = ... }					# default: empty; trait set to enforce on the secondary species. They cannot be removed, but more can be added if points/picks permit
+# 	on_abort = {}		#Effects when Situation is cancelled via abort_trigger trigger
+# 	abort_trigger = {} 	#Trigger for when a Situation should abort, firing on_abort
+
+#	 start_value = 20	#Situation will start at this number. Default is 0
+
+# 	modifier = { } 			#Modifier applying to the country experiencing the situation
+#	 triggered_modifier = {	#Triggered modifier applying to the country experiencing the situation, if the triggers are true
+#	 	potential = { }
+#	 	modifier = { }
+#	 }
+
+# 	target_modifier = { } 			#Modifier applying to the target planet of a Situation. Does not work on other scope types!
+# 	triggered_target_modifier = {	#Modifier applying to the target planet of a Situation, if the triggers are true. Does not work on other scope types!
+# 		potential = { }
+# 		modifier = { }
 #	}
-#	is_origin = yes / no 						# default: no, set to yes if civic should be treated as an Origin
-#
-#	swap_type = {								# triggered name/desc/custom desc based on species class, no scope
-#		name = ...
-#		description = ...						# the description is the effects tab not the flavour text you num-nuts.
-#		trigger = {
-#			local_human_species_class = ..
-#		}
+
+# 	#This behaves like an on_action. Note: technically, this is an on_action called test_situation. So don't call your situation "on_monthly_pulse"!
+# 	on_monthly = {
+# 		events = {
+#	    }
+# 		random_events = {
+#	    }
+#	 }
+
+#	stages = { #List all your stages here, in the correct order.
+#	 	low_level = {
+#			icon = GFX_asset_name
+#	 		end = 20
+#	    }
+
+#	    medium_level = {
+#		    icon = GFX_asset_name
+#	 	    end = 40
+#	    }
+
+#	    high_level = { 					#Expects the key to be localised. You can also define <key>_desc and it will show on the tooltip, but this is optional.
+#		    icon = GFX_asset_name
+#			background = GFX_asset_name
+#			end = 100
+#			on_first_enter = { }		#Effect for the first time this stage fires
+#			modifier/triggered_modifier/target_modifier/triggered_target_modifier = { } #as standard (applies only during this Stage)
+#			custom_tooltip = x 			#this will print in the stage tooltip (on_first_enter will not, because spoilers; modifiers will)
+#	    }
 #	}
-#	ai_playable = {}							# Similar to "playable", for AI
-#}
-#custom_tooltip = {
-#	custom_tooltip =  my_localisation_key
-#	hidden_trigger = { <stuff_to_hide> }
-#    text = <always_displays>
-#    success_text = <displays green check and this text when trigger passes>
-#    fail_text = <displays red X and this text when trigger fails>
-#    <any amount of triggers>
-#}
+
+# 	approach = {
+# 		name = approach_a 	#This is localised. If you add a loc key "approach_a_desc", it will also show, but this is optional.
+# 		icon = GFX_asset_icon
+#		icon_background = GFX_asset_icon_background
+# 		allow = { } 		#If this fails, the Approach is greyed out
+# 		potential = { } 	#If this fails, the Approach is not shown
+#		on_select = { } 	#Effect when you pick the Approach.
+
+#		default = yes 		#Sets the Approach to be the Situation's default. This means that it will be picked when the Situation starts, and if the current
+#							#Approach is invalidated (fails potential or allow check). This won't happen while the Situation is locked, so events which demand
+#							#a choice of Approach can lock the situation (set_situation_locked) in immediate (or the Situation's on_start) and unlock them in after.
+
+#		modifier/triggered_modifier/target_modifier/triggered_target_modifier = { } #as standard (applies only when this Approach is picked)
+
+# 		resources = { 				#Resource table as standard
+# 			category = situations
+# 			cost = { }
+# 			upkeep = { }
+# 			produces = { }
+# 		}
+# 		ai_weight = { } 			#AI will pick the one with the highest weight
+# 	}
+
+# 	approach = {
+# 		name = approach_b #all approaches must have at least a name
+
+# 		#They also need to display well in the UI. So the game will force you to at least add a custom tooltip if it cannot find any effects to localise.
+#		on_select = { custom_tooltip = deficit_approach_do_nothing_tooltip }
+# 	}
+
+# 	monthly_progress = {
+# 		base = 1
+# 		modifier = { 	#Standard weight fields, you can do everything that common/script_values/00_script_values.txt tells you about
+# 			add = 2
+# 			desc = federation_acceptance_reduce_fleet 	#Do not forget to add loc tooltips (the game will scream at you otherwise)
+# 			<triggers>
+# 		}
+# 	}
+# }
+

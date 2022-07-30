@@ -1,3 +1,5 @@
+# Administrative Focus
+# Ment to improve the admin efficiency of an empire.
 agenda_AP_admin_focus = {
 	weight_modifier = {
 		weight = 100
@@ -28,11 +30,13 @@ agenda_AP_admin_focus = {
 		}
 	}
 	modifier = {
-		country_admin_cap_mult = 0.1
-		leader_upkeep_empire_size_mult = -0.1
+		empire_size_colonies_mult = -0.25
+		leaders_upkeep_mult = -0.25
 	}
 }
 
+# Diplomatic Focus
+# Essentially a full focus on diplomacy, Allowing for more galactic power projection.
 agenda_AP_diplo_focus = {
 	weight_modifier = {
 		weight = 100
@@ -67,14 +71,22 @@ agenda_AP_diplo_focus = {
 	}
 	modifier = {
 		envoys_add = 1
-		diplomacy_upkeep_mult = -0.05
 		diplo_weight_mult = 0.05
+		country_power_projection_produces_mult = 0.1
 	}
 }
 
+# True Equallity
+# A agenda that focuses on increasing the workers pop power and improving egalitarian attraction.
 agenda_AP_equallity = {
 	weight_modifier = {
 		weight = 100
+		modifier = {
+			factor = 0
+			owner = {
+				allows_slavery = yes
+			}
+		}
 		modifier = {
 			factor = 2
 			owner = {
@@ -94,9 +106,12 @@ agenda_AP_equallity = {
 			}
 		}
 		modifier = {
-			factor =  2
+			factor = 2
 			owner = {
-				has_authority = auth_democratic
+				OR = {
+					has_authority = auth_democratic
+					has_authority = auth_oligarchic
+				}
 			}
 		}
 		modifier = {
@@ -108,17 +123,22 @@ agenda_AP_equallity = {
 		modifier = {
 			factor = 0
 			owner = {
-				has_authority = auth_imperial
+				OR = {
+					has_authority = auth_imperial
+					has_authority = auth_dictatorial
+				}
 			}
 		}
 	}
 	modifier = {
 		pop_ethic_egalitarian_attraction_mult = 0.1
-		pop_cat_worker_happiness = 0.025
+		pop_cat_worker_happiness = 0.05
 		pop_cat_worker_political_power = 2
 	}
 }
 
+# Birth-Right Reinforced
+# A agenda designed for autocratic empires, slavers also have a good chance of getting this.
 agenda_AP_autocracy = {
 	weight_modifier = {
 		weight = 100
@@ -126,6 +146,12 @@ agenda_AP_autocracy = {
 			factor = 0
 			owner = {
 				is_egalitarian = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				allows_slavery = yes
 			}
 		}
 		modifier = {
@@ -137,13 +163,10 @@ agenda_AP_autocracy = {
 		modifier = {
 			factor = 2
 			owner = {
-				has_authority = auth_dictatorial
-			}
-		}
-		modifier = {
-			factor = 2
-			owner = {
-				has_authority = auth_imperial
+				OR = {
+					has_authority = auth_dictatorial
+					has_authority = auth_imperial
+				}
 			}
 		}
 		modifier = {
@@ -158,6 +181,8 @@ agenda_AP_autocracy = {
 	}
 }
 
+# External Bussiness focus
+# A megacorp exclusive agenda, this one focuses on Branch Offices
 agenda_AP_branch_office = {
 	weight_modifier = {
 		weight = 100
@@ -165,6 +190,12 @@ agenda_AP_branch_office = {
 			factor = 0
 			owner = {
 				is_megacorp = no
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				num_commercial_pacts < 1
 			}
 		}
 		modifier = {
@@ -197,15 +228,11 @@ agenda_AP_branch_office = {
 	}
 }
 
+# Hearts and Minds
+# An agenda that simply aims to improve public perception of the rulers of the empire.
 agenda_AP_hearts_minds = {
 	weight_modifier = {
 		weight = 100
-		modifier = {
-			factor = 2
-			owner = {
-				is_egalitarian = yes
-			}
-		}
 		modifier = {
 			factor = 0.25
 			owner = {
@@ -214,12 +241,6 @@ agenda_AP_hearts_minds = {
 					has_civic = civic_warrior_culture
 					has_civic = civic_criminal_heritage
 				}
-			}
-		}
-		modifier = {
-			factor = 2
-			owner = {
-				is_egalitarian = yes
 			}
 		}
 		modifier = {
@@ -240,5 +261,32 @@ agenda_AP_hearts_minds = {
 	modifier = {
 		pop_government_ethic_attraction = 0.2
 		pop_happiness = 0.05
+	}
+}
+
+# Industrial Rerevolution
+# This agenda is purely designed to increase productivity for specialists.
+agenda_AP_specialist_revolution = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 1.5
+			leader_class = governor
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = scientist
+		}
+		modifier = {
+			factor = 1.25
+			end_game_years_passed >= 1
+		}
+		modifier = {
+			factor = 0
+			mid_game_years_passed <= 1
+		}
+	}
+	modifier = {
+		planet_jobs_specialist_produces_mult = 0.25
 	}
 }

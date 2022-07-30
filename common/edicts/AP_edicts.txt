@@ -10,29 +10,45 @@
 ##########################################################################
 # Toggle Edicts
 ##########################################################################
+AP_rationing = {
+	length = @EdictPerpetual
+	icon = "gfx_edicts_alert"
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = 20
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		planet_pops_upkeep_mult = -0.25
+		pop_happiness = -0.1
+	}
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	allow = {
+		OR = {
+			is_at_war = yes
+			is_authoritarian = yes
+			is_militarist = yes
+		}
+	}
+	# AI should not use this
+	ai_weight = {
+		weight = 0
+	}
+}
+
 AP_tight_admin = {
 	length = @EdictPerpetual
 	icon = "gfx_edicts_agenda"
-	edict_cap_usage = 1
 	resources = {
 		category = edicts
-		cost = {
-			#Activation Cost
-			trigger = {
-				NOT = {
-					has_edict = AP_tight_admin
-				}
-			}
-			influence = 50
-			energy = 1000
-		}
-		cost = {
-			#Deactivation Cost
-			trigger = {
-				has_edict = AP_tight_admin
-			}
-			influence = 100
-			energy = 2500
+		upkeep = {
+			unity = 15
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -44,7 +60,7 @@ AP_tight_admin = {
 		}
 	}
 	modifier = {
-		country_admin_cap_mult = 0.1
+		empire_size_mult = -0.1
 		building_time_mult = -0.1
 		local_trade_protection_add = 5
 	}
@@ -53,76 +69,14 @@ AP_tight_admin = {
 	}
 }
 
-AP_rationing = {
-	length = @EdictPerpetual
-	icon = "gfx_edicts_alert"
-	edict_cap_usage = 0
-	resources = {
-		category = edicts
-		cost = {
-			#Activation Cost
-			trigger = {
-				NOT = {
-					has_edict = AP_rationing
-				}
-			}
-			influence = 20
-		}
-		cost = {
-			#Deactivation Cost
-			trigger = {
-				has_edict = AP_rationing
-			}
-			energy = 500
-		}
-	}
-	modifier = {
-		planet_pops_upkeep_mult = -0.1
-		pop_happiness = -0.1
-	}
-	potential = {
-		NOT = {
-			has_ethic = ethic_gestalt_consciousness
-		}
-		OR = {
-			is_at_war = yes
-			is_authoritarian = yes
-			is_militarist = yes
-		}
-	}
-	# AI should not use this
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 0
-			is_ai = yes
-		}
-	}
-}
-
-##########################################################################
-# Temporary Edicts
-##########################################################################
 AP_combat_drills = {
-	length = @EdictDurationShort
+	length = @EdictPerpetual
 	icon = "gfx_edicts_ship"
 	resources = {
 		category = edicts
-		cost = {
-			alloys = 500
-			food = 100
-		}
-	}
-	allow = {
-		owner = {
-			has_resource = {
-				type = alloys
-				amount >= 500
-			}
-			has_resource = {
-				type = food
-				amount >= 100
-			}
+		upkeep = {
+			alloys = 15
+			multiplier = value:edict_size_effect
 		}
 	}
 	modifier = {
@@ -134,8 +88,7 @@ AP_combat_drills = {
 	potential = {
 		OR = {
 			NOR = {
-				has_ethic = "ethic_pacifist"
-				has_ethic = "ethic_fanatic_pacifist"
+				is_pacifist = yes
 				has_valid_civic = "civic_inwards_perfection"
 			}
 			is_at_war = yes
@@ -157,20 +110,17 @@ AP_combat_drills = {
 }
 
 AP_dirty_bomb = {
-	length = @EdictDurationShort
+	length = @EdictPerpetual
 	icon = "gfx_edicts_ship"
 	resources = {
 		category = edicts
-		cost = {
-			energy = 1500
+		upkeep = {
+			energy = 25
+			multiplier = value:edict_size_effect
 		}
 	}
 	allow = {
 		owner = {
-			has_resource = {
-				type = energy
-				amount >= 1500
-			}
 			has_technology = tech_interstellar_fleet_traditions
 		}
 	}
@@ -209,26 +159,14 @@ AP_dirty_bomb = {
 }
 
 AP_grand_banquette_lithoid = {
-	length = @EdictDurationShort
+	length = @EdictPerpetual
 	icon = gfx_edicts_grapes
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
-		cost = {
-			minerals = 5000
-			influence = 50
-		}
-	}
-	allow = {
-		owner = {
-			has_resource = {
-				type = minerals
-				amount >= 5000
-			}
-			has_resource = {
-				type = influence
-				amount >= 50
-			}
+		upkeep = {
+			minerals = 50
+			unity = 10
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -246,26 +184,14 @@ AP_grand_banquette_lithoid = {
 }
 
 AP_grand_banquette = {
-	length = @EdictDurationShort
+	length = @EdictPerpetual
 	icon = gfx_edicts_grapes
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
-		cost = {
-			food = 5000
-			influence = 50
-		}
-	}
-	allow = {
-		owner = {
-			has_resource = {
-				type = food
-				amount >= 5000
-			}
-			has_resource = {
-				type = influence
-				amount >= 50
-			}
+		upkeep = {
+			food = 50
+			unity = 10
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -283,21 +209,14 @@ AP_grand_banquette = {
 }
 
 AP_nobility = {
-	length = @EdictDurationDefault
+	length = @EdictPerpetual
 	icon = gfx_edicts_grapes
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
-		cost = {
-			energy = 5000
-		}
-	}
-	allow = {
-		owner = {
-			has_resource = {
-				type = energy
-				amount >= 5000
-			}
+		upkeep = {
+			unity = 15
+			energy = 20
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -320,14 +239,13 @@ AP_nobility = {
 }
 
 AP_greener_pasture = {
-	length = @EdictDurationDefault
+	length = @EdictPerpetual
 	icon = "gfx_edicts_agenda"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
-		cost = {
-			energy = 2000
-			consumer_goods = 500
+		upkeep = {
+			consumer_goods = 5
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -336,19 +254,11 @@ AP_greener_pasture = {
 	}
 	allow = {
 		owner = {
-			has_resource = {
-				type = energy
-				amount >= 2000
-			}
-			has_resource = {
-				type = consumer_goods
-				amount >= 500
-			}
 			has_technology = tech_planetary_unification
 		}
 	}
 	modifier = {
-		planet_migration_all_mult = 0.25
+		pop_growth_from_immigration = 0.25
 		planet_resettlement_unemployed_mult = 1
 		country_resettlement_cost_mult = -0.5
 		pop_demotion_time_mult = -0.25
@@ -359,13 +269,13 @@ AP_greener_pasture = {
 }
 
 AP_propaganda_campaign = {
-	length = @EdictDurationDefault
+	length = @EdictPerpetual
 	icon = "gfx_edicts_agenda"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
-		cost = {
-			energy = 2500
+		upkeep = {
+			unity = 20
+			multiplier = value:edict_size_effect
 		}
 	}
 	potential = {
@@ -374,10 +284,6 @@ AP_propaganda_campaign = {
 	}
 	allow = {
 		owner = {
-			has_resource = {
-				type = energy
-				amount >= 2500
-			}
 			has_technology = tech_planetary_unification
 		}
 	}
@@ -391,7 +297,7 @@ AP_propaganda_campaign = {
 		modifier = {
 			factor = 2
 			any_owned_planet = {
-				happiness_planet < 50 
+				happiness_planet < 50
 			}
 		}
 	}

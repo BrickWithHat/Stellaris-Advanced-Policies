@@ -18,11 +18,13 @@ AP_has_encountered_crisis = {
 			has_global_flag = sleepers_awake_happened
 			has_global_flag = galactic_crisis_happened
 		}
+		# Defeated stuff should not be considered a threat
 		NOR = {
 			has_global_flag = prethoryn_invasion_defeated
 			has_global_flag = extradimensional_invasion_defeated
 			has_global_flag = ai_invasion_defeated
 		}
+		# These do not have any regular flag so i had to get creative with the discovery of the data
 		OR = {
 			any_relation = {
 				has_communications = root
@@ -35,11 +37,11 @@ AP_has_encountered_crisis = {
 			any_relation = {
 				has_communications = root
 				is_country_type = awakened_marauders
-				
 			}
 		}
 	}
 }
+
 # A simple check to see if this empire has any owned worlds that are being occupied.
 AP_is_occupied = {
 	custom_tooltip = AP_is_occupied
@@ -66,13 +68,80 @@ AP_has_superior_opponent = {
 				}
 			}
 		}
-		OR = {
-			fleet_power > 0
-		}
 	}
 }
 
-######################################################################
-# Tests with a side of minor implosion of my test games (sorry playtesters)
-######################################################################
-
+AP_panic_button_valid = {
+	owner = {
+		is_ai = no
+		AP_has_encountered_crisis = no
+		AND = {
+			is_at_war = yes
+			any_war = {
+				OR = {
+					is_total_war = yes
+					attacker = {
+						has_casus_belli = {
+							target = FROM
+							type = cb_sublimation
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_purification
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_hunger
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_subjugation
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_megacorp_subjugate
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_end_threat_revenge_for_eaten_star
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_end_threat_renegade_containment
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_fe_punishment
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_existential_expulsion
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_scion
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_secession
+						}
+						has_casus_belli = {
+							target = FROM
+							type = cb_containment
+						}
+					}
+					defender = {
+						has_casus_belli = {
+							target = THIS
+							type = cb_stop_colossus
+						}
+						has_casus_belli = {
+							target = THIS
+							type = cb_containment
+						}
+					}
+				}
+			}
+		}
+	}
+}

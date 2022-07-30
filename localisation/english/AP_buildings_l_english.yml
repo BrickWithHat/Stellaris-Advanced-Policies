@@ -1,0 +1,30 @@
+﻿l_english:
+##########################################################################
+# Governmental Buildings
+##########################################################################
+ building_AP_democratic_parliment:0 "Parliamentary Assembly"
+ building_AP_democratic_parliment_desc:0 "The building where our choosen representatives meet and discuss the issues with our empire."
+ building_AP_oligarcy_assembly:0 "Oligarcical Assembly"
+ building_AP_oligarcy_assembly_desc:0 "A quiet but proper location for our leaders to come together and decide on a proper cource for our empire."
+ building_AP_dictators_palace:0 "Dictators Palace"
+ building_AP_dictators_palace_desc:0 "The place where the ruler decides what needs to be done for our empire."
+ building_AP_imperial_palace:0 "Imperial Palace"
+ building_AP_imperial_palace_desc:0 "The seat of the imperial family, They rule the empire from there throne in this building."
+ building_AP_executive:0 "Executive HQ"
+ building_AP_executive_desc:0 "A location where mostly administrion happens but also a lot of discussions by the higher brass on how to increase profits."
+ building_AP_gestalt_mech:0 "Central Processing Unit"
+ building_AP_gestalt_mech_desc:0 "Our central core is located here, it is where a big chunk of our operations come from."
+ building_AP_gestalt_hive:0 "Central Synapse Node"
+ building_AP_gestalt_hive_desc:0 "Our core synapse node is located here, This is where our mind first became one."
+##########################################################################
+# Origin Buildings
+##########################################################################
+ building_AP_migrant_waystation:0 "Waystation"
+ building_AP_migrant_waystation_desc:0 "Waystations are a cornerstone of any flyer empire. They provide space to sleep and offer services for travellers."
+ building_AP_migrant_capital_hacthery:0 "Elevated Nursery"
+ building_AP_migrant_capital_hacthery_desc:0 "This nursery is where most the population is born. Due to the hard breeding cycle many do not survive there early years beyond these walls."
+##########################################################################
+# Policy Buildings
+##########################################################################
+ building_AP_education_school:0 "Education Compound"
+ building_AP_education_school_desc:0 "This compound is the nerve centre for any organized education on the planet."

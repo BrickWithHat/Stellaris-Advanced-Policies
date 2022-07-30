@@ -1,0 +1,22 @@
+﻿l_english: 
+# Policy/Personality related
+ opinion_AP_dislike_unemployment:0 "Divergend Unemployment laws"
+ opinion_AP_liked_unemployment:0 "Similair Unemployment laws"
+ opinion_AP_disliked_religion:0 "Divergend Religious Laws"
+ opinion_AP_liked_religion:0 "Similair Religious Laws"
+ opinion_AP_disliked_eduction_rights:0 "Divergend Education Rights"
+ opinion_AP_liked_eduction_rights:0 "Similair Education Rights"
+ opinion_AP_war_stance:0 "Military Readiness"
+ opinion_AP_conscription_law:0 "Conscription Laws"
+ opinion_AP_tax_haven:0 "Tax Haven"
+ opinion_AP_tax_like:0 "Likeable Tax laws"
+ opinion_AP_tax_dislike:0 "Bad Tax laws"
+
+# Origin or special civic interactions
+ opinion_AP_child_of_dark:0 "Fellow Tunneler"
+ opinion_AP_ancient_remnants:0 "Unsettled Grudges"
+ opinion_AP_ancestor_worship:0 "Disrespecting Ancestors"
+
+# Unique Triggered
+ opinion_community_PR:0 "PR Campaign" #Community Tradition Effect
+ opinion_AP_panic_policy:0 "Emergency Powers"

@@ -43,6 +43,12 @@ subjects = {
         produces
     }
 }
+commercial_pacts = {
+	parent = diplomacy
+    generate_mult_modifiers = {
+        upkeep
+    }
+}
 ##########################################################################
 # Pop categories
 ##########################################################################
@@ -68,4 +74,17 @@ planet_job_educator = { # Is an parent to all Educator jobs
         produces
         upkeep
     }
+}
+planet_job_tarrif_clerk = {
+    parent = planet_jobs
+}
+planet_job_tunnel_lighter = {
+    parent = planet_jobs
+}
+##########################################################################
+# Custom Categories
+##########################################################################
+AP_special_decisions = {
+    use_for_ai_budget = yes
+    parent = decisions
 }

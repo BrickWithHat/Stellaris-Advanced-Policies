@@ -1,0 +1,106 @@
+﻿l_english:
+##########################################################################
+# Panic Situation
+##########################################################################
+ situation_AP_panic:0 "Empire Readiness"
+ situation_AP_panic_desc:0 "We have enacted Emergency powers to ourselfs as a means of ensureing our surivival as an empire. We cannot allow foreign entities to invade our lands and claim our people. We must protect or die trying, that is our duty."
+ situation_AP_panic_desc_gestalt:0 "Our union is under threat, We must focus our efforts on ridding ourselfs of this threat. There disruption cannot go unanswered as our survival might hang in the balanance."
+ situation_AP_panic_type:0 "$situation_AP_panic$"
+ situation_AP_panic_end:0 "Will end the situation and reset our emergency Policy.\n"
+ situation_AP_panic_complete:0 "We cannot Finish the complete escalation. At best we can allow ourselfs easier means of approaching specific solutions."
+ situation_AP_panic_monthly_change_tooltip:0 "War Readiness"
+
+ AP_panic_approach_idle:0 "Maintain Status Quo"
+ AP_panic_approach_idle_tooltip:0 "Maintains our current $situation_AP_panic_monthly_change_tooltip$."
+ AP_panic_approach_escalated:0 "Escalate"
+ AP_panic_approach_escalated_tooltip:0 "Adds a §G+3§! to $situation_AP_panic_monthly_change_tooltip$ every month.\nWe must prepare for the worst, our empire is at risk."
+ AP_panic_approach_escalate_not_allowed:0 "We can no longer escalte any further."
+ AP_panic_approach_deescalated:0 "Deescalate"
+ AP_panic_approach_deescalated_tooltip:0 "Removes a §G-3§! to $situation_AP_panic_monthly_change_tooltip$ every month.\nThere is no further need to hold onto our emergy status."
+
+ AP_panic_active:0 "Has enacted Emergency Policies"
+ AP_panic_1:0 "$AP_condition_green$"
+ AP_situation_panic_1_policy:0 "Policy §Y$AP_condition_green$§! has been set in the category §Y$policy_AP_policy_panic$§!.\nThus ending the §Y$situation_AP_panic$§! Situation."
+ AP_panic_2:0 "$AP_condition_yellow$"
+ AP_panic_2_desc:0 "§WOn first enter, Will set §Y$policy_AP_policy_panic$§! to §Y$AP_condition_yellow$§!.§!\n"
+ AP_situation_panic_2_policy:0 "Policy §Y$AP_condition_yellow$§! has been set in the category §Y$policy_AP_policy_panic$§!."
+ AP_panic_3:0 "$AP_condition_red$"
+ AP_panic_3_desc:0 "§WOn first enter, Will set §Y$policy_AP_policy_panic$§! to §Y$AP_condition_red$§!.§!\n"
+ AP_situation_panic_3_policy:0 "Policy §Y$AP_condition_red$§! has been set in the category §Y$policy_AP_policy_panic$§!."
+ AP_panic_4:0 "$AP_condition_void$"
+ AP_panic_4_desc:0 "§WOn first enter, Will set §Y$policy_AP_policy_panic$§! to §Y$AP_condition_void$§!.§!\n"
+ AP_situation_panic_4_policy:0 "Policy §Y$AP_condition_void$§! has been set in the category §Y$policy_AP_policy_panic$§!."
+
+ situation_AP_planetary_quota:0 "Planetary Quota"
+ situation_AP_planetary_quota_type:0 "$situation_AP_planetary_quota$"
+ situation_AP_planetary_quota_desc:0 ""
+##########################################################################
+# Panic Events
+##########################################################################
+ AP_panic.2_title:0 "Troop Surplus"
+ AP_panic.2_desc:0 "As recent battle has been shown to the public as a whole. The effect though horrifying to our populace has inspired many to consider service to avoid defeat by the hands of our enemies. As we speak many recruitment offices are recieving a big stream of potential voltunteers for our army!"
+ AP_panic.2_1:0 "Good, we might need the troops."
+
+ AP_panic.3_title:0 "Rumbles from below"
+ AP_panic.3_desc:0 "We have recieved reports that a decent number of individuals have become uncooperative. They seem to turn to crime to reach there basic needs, Recently they seem to have forced in aggresive gangs who prey on those alone on the streets."
+ AP_panic.3_desc_gestalt:0 "We are discorded, Something is disrupting our unity. Some drones appear to have deviated more then ussual. Probably cause has to be the emergency measures in place due to the ongoing problems."
+ AP_panic.3_1:0 "Unfortunate"
+
+ AP_panic.4_title:0 "Unexpected visitors."
+ AP_panic.4_desc:0 "Today marks a unique day, As there is a sudden yet organized strike taking place near the government building. This strike appears to delve into a large group of issues related to our empire. Most of these people do not even appear to be from our capital world. Regardless where they came from, they have layed down there work and are clearly obstructing others on the capital world as is. We sadly cannot do much about these strikes as even our officers and military personal appear to be stuck where they are due to the vast sea of people."
+ AP_panic.4_1:0 "That are indeed a lot of people."
+
+ AP_panic.5_title:0 "Echo of Discord"
+ AP_panic.5_desc:0 "Our collective has been disrupted, Something out in our space is calling to us. Faintly yet ever present. Whatever it might be it is not one of us that is the only thing we know.\n \nThe everlingering presence is eating awey at us however. We should consider investiging or lose our cohesion."
+ AP_panic.5_1:0 "Ignore, we cannot afford to investigate"
+ AP_panic.5_2:0 "Investigate we cannot risk the danger"
+
+ AP_panic.51_title:0 "Discorded Patterns"
+ AP_panic.51_desc:0 "The root of our discorded patterns has been found, an artifact was drifting through our space emitting a strange signal. From its markings it clearly is fabircated by someone or something advanced. Yet even in our labs it clearly is causing harm to us.\n \nWhile they are unable to trace back who made it, the question still remains what to do with it. We could try and open it and unlock its secrets or alternatively let someone else worry about it and restore our unity."
+ AP_panic.51_1:0 "This is not worth our effort, get it out of our space"
+ AP_panic.51_2:0 "Get our researchers to open it"
+
+ AP_panic.6_title:0 "Waining Influence"
+ AP_panic.6_desc:0 "Due to our focus on war and our aggrasive posture many empires have choosen to cut ties with us. It has been increasingly hard to maintain diplomatic relations with other empires as most simply see us as stuck in our own games. If we wish to hold any political relevance we should change our ways."
+ AP_panic.6_1:0 "How about, No"
+ AP_panic.6_2:0 "Maybe they are right..."
+
+ AP_panic.7_title:0 "Drying the Rations"
+ AP_panic.7_desc:0 "We have recieved a dozen or so messages from accros our empire that a good chunck of the argicultural sector is about to lay down there work in protest. While they represent a good chunck of the population. From our estimate they would take about 45% of our total food income with them during these protests."
+ AP_panic.7_desc_gestalt:0 "The galaxy weeps, our crops die as a result. We are unsure what is causing the lack of balance in our collective. But the lack of it causes even the ground beneath our feet to die. We are losing the crops before they are even fully matured."
+ AP_panic.7_1:0 "This, Could become a problem"
+
+ AP_panic.8_title:0 "Consumer Sabotage"
+ AP_panic.8_desc:0 "With our focus on the maintance of the emergency rights, we have lost oversight of much of our civilian sector. This has had a negative effect on there preformance as a whole. As it appears as if someone has infliltrated the logistics network of the goods required by our people. Many goods get shipped outwards when they are still needed back home. With a big chunk of them not even arriving as scheduled if at all."
+ AP_panic.8_1:0 "And so people suffer due to inefficiency"
+
+ AP_panic.9_title:0 "Poor Material"
+ AP_panic.9_desc:0 "Our measures have proven to be more draconian then expected as our ships in orbit have reported an increase in failed repairs. While initially not so odd, the frequancy had let to an investigation. Which has come up with a harrowing conclusion. We are prioritizing our materials wrongly, thus leading to inferior materials being used in the repairs.\n\nThe effect this has had on our fleet supply chain is proving to be a costly one. As about half of the new alloys are being shipped off to our fleets just to keep them functional."
+ AP_panic.9_1:0 "I guess, a ship with a hole did not work on an ocean so it probably won't work in space either."
+
+ AP_panic.10_title:0 "Job Security in peril"
+ AP_panic.10_desc:0 "With the recent policy changes and the emergency measures in effect, a lot of people have had trouble keeping there jobs. As the uncertianty of recent events have caused too many people to try and switch jobs at once. The economic disruption that comes from this while containted to a select few planets, have proven to be spiral out of control fast once left unchecked."
+ AP_panic.10_1:0 "Get me a task force to sort this out"
+
+ AP_panic.11_title:0 "Interal Bickering"
+ AP_panic.11_desc:0 "With the enactment of emergency measures a slow but building pressuare has been put on our government. Now after a while cracks have begun to form. Some have shown a desire to return to the old ways and manners. This has caused mass friction among both political parties and the populace as a whole."
+ AP_panic.11_1:0 "Unfortunate"
+
+ AP_panic.12_title:0 "Minerals Missing"
+ AP_panic.12_desc:0 "We have recieved reports that our mining operations and mineral purification facilities have undergone a labour shortage, This has caused many issues which effect our economy. While many unique reports have begun to show there head some just show sheer incompetiance. A truly perplexing situation was where a mining vessel managed to lose a pure asteriod of valueable minerals. How is yet to be determent but the achievement is sadly only the tip of the iceberg for our economic problems to come froth from all these increasing problems."
+ AP_panic.12_1:0 "How did you lose rocks of that size?!"
+
+ AP_panic.13_title:0 "Energy Crisis"
+ AP_panic.13_desc:0 "Due to increased demands and pressuare set upon by our emergency measures, we are now unable to fully unitilize our energy production capabilities. The effects are rampant across our empire. With some locations not even being able to sustain themselfs anymore, requiring external aid to stay functional."
+ AP_panic.13_1:0 "Unfortunate"
+
+##########################################################################
+# Quota Situation
+##########################################################################
+ 
+ situation_AP_planetary_quota_monthly_change_tooltip:0 "Progress"
+ AP_quota_approach_idle:0 "Maintain Course"
+ AP_quota_0:0 "Start-up"
+ AP_quota_1:0 "Phase 1"
+ AP_quota_2:0 "Phase 2"
+ AP_quota_3:0 "Phase 3"

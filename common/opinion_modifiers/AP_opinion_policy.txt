@@ -1,0 +1,528 @@
+# People like social security but it is not the most important to the vast mayority of people
+opinion_AP_dislike_unemployment = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has no unemployment support
+		modifier = {
+			add = -20
+			has_policy_flag = AP_unemployment_no_aid
+			from = {has_policy_flag = AP_unemployment_shared_burden}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_unemployment_no_aid
+			from = {has_policy_flag = AP_unemployment_aid}
+		}
+	# ROOT has some unemployment support
+		modifier = {
+			add = -10
+			has_policy_flag = AP_unemployment_aid
+			from = {has_policy_flag = AP_unemployment_shared_burden}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_unemployment_aid
+			from = {has_policy_flag = AP_unemployment_aid}
+		}
+	# ROOT has full unemployment support
+		modifier = {
+			add = -15
+			has_policy_flag = AP_unemployment_shared_burden
+			from = {has_policy_flag = AP_unemployment_aid}
+		}
+		modifier = {
+			add = -20
+			has_policy_flag = AP_unemployment_shared_burden
+			from = {has_policy_flag = AP_unemployment_no_aid}
+		}
+	}
+}
+
+opinion_AP_liked_unemployment = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has no unemployment support
+		modifier = {
+			add = 10
+			has_policy_flag = AP_unemployment_no_aid
+			from = {has_policy_flag = AP_unemployment_no_aid}
+		}
+	# ROOT has some unemployment support
+		modifier = {
+			add = 10
+			has_policy_flag = AP_unemployment_aid
+			from = {has_policy_flag = AP_unemployment_aid}
+		}
+	# ROOT has full unemployment support
+		modifier = {
+			add = 15
+			has_policy_flag = AP_unemployment_shared_burden
+			from = {has_policy_flag = AP_unemployment_shared_burden}
+		}
+	}
+}
+
+# Believes are intended to be a bit of spicy subject so opinions should way slightly heavier
+opinion_AP_disliked_religion = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has religion banned
+		modifier = {
+			add = -25
+			has_policy_flag = AP_religion_banned
+			from = {
+				OR = {
+					is_spiritualist = yes
+					has_policy_flag = AP_religion_enforced
+				}
+			}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_religion_banned
+			from = {
+				OR = {
+					has_policy_flag = AP_religion_endorsed
+					has_policy_flag = AP_religion_tolerated
+				}
+			}
+		}
+	# ROOT has religion tolerated
+		modifier = {
+			add = -5
+			has_policy_flag = AP_religion_tolerated
+			from = {
+				OR = {
+					has_policy_flag = AP_religion_banned
+					is_spiritualist = yes
+				}
+			}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_religion_tolerated
+			from = {
+				OR = {
+					has_policy_flag = AP_religion_endorsed
+					has_policy_flag = AP_religion_enforced
+				}
+			}
+		}
+	# ROOT has religion endorsed/enforced
+		modifier = {
+			add = -20
+			has_policy_flag = AP_religion_enforced
+			from = {has_policy_flag = AP_religion_banned}
+		}
+		modifier = {
+			add = -15
+			has_policy_flag = AP_religion_endorsed
+			from = {has_policy_flag = AP_religion_banned}
+		}
+		modifier = {
+			add = -5
+			has_policy_flag = AP_religion_endorsed
+			from = {has_policy_flag = AP_religion_tolerated}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_religion_enforced
+			from = {has_policy_flag = AP_religion_tolerated}
+		}
+	}
+
+}
+
+opinion_AP_liked_religion = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has religion banned
+		modifier = {
+			add = 10
+			has_policy_flag = AP_religion_banned
+			from = {
+				OR = {
+					is_materialist = yes
+					has_policy_flag = AP_religion_banned
+				}
+			}
+		}
+	# ROOT has religion tolerated
+		modifier = {
+			add = 10
+			has_policy_flag = AP_religion_tolerated
+			from = {has_policy_flag = AP_religion_tolerated}
+		}
+	# ROOT has religion endorsed/enforced
+		modifier = {
+			add = 15
+			OR = {
+				has_policy_flag = AP_religion_endorsed
+				has_policy_flag = AP_religion_enforced
+			}
+			from = {
+				OR = {
+					has_policy_flag = AP_religion_endorsed
+					has_policy_flag = AP_religion_enforced
+				}
+			}
+		}
+	}
+}
+
+# Education Rights are only held up high by those who know of its power, the opinions should reflect that
+opinion_AP_disliked_eduction_rights = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has education right for all
+		modifier = {
+			add = -5
+			has_policy_flag = AP_education_privledge_all
+			from = {has_policy_flag = AP_education_privledge_citizen}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_education_privledge_all
+			from = {has_policy_flag = AP_education_privledge_elite}
+		}
+		modifier = {
+			add = -5
+			has_policy_flag = AP_education_privledge_all
+			from = {is_authoritarian = yes}
+		}
+	# ROOT has education for citizens
+		modifier = {
+			add = -5
+			has_policy_flag = AP_education_privledge_citizen
+			from = {
+				OR = {
+					has_policy_flag = AP_education_privledge_elite
+					has_policy_flag = AP_education_privledge_all
+				}
+			}
+		}
+		modifier = {
+			add = -5
+			has_policy_flag = AP_education_privledge_citizen
+			from = {
+				NOT = {	has_policy_flag = AP_education_privledge_citizen	}
+				is_xenophile = yes
+			}
+		}
+	# ROOT has education for Elites
+		modifier = {
+			add = -15
+			has_policy_flag = AP_education_privledge_elite
+			from = {has_policy_flag = AP_education_privledge_all}
+		}
+		modifier = {
+			add = -5
+			has_policy_flag = AP_education_privledge_elite
+			from = {has_policy_flag = AP_education_privledge_citizen}
+		}
+		modifier = {
+			add = -5
+			has_policy_flag = AP_education_privledge_elite
+			from = {is_egalitarian = yes}
+		}
+	}
+}
+
+opinion_AP_liked_eduction_rights = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has education right for all
+		modifier = {
+			add = 15
+			has_policy_flag = AP_education_privledge_all
+			from = {has_policy_flag = AP_education_privledge_all}
+		}
+	# ROOT has education for citizens
+		modifier = {
+			add = 10
+			has_policy_flag = AP_education_privledge_citizen
+			from = {has_policy_flag = AP_education_privledge_citizen}
+		}
+	# ROOT has education for the elite
+		modifier = {
+			add = 10
+			has_policy_flag = AP_education_privledge_elite
+			from = {has_policy_flag = AP_education_privledge_elite}
+		}
+	}
+
+}
+
+# War stance, in short most of your neighboar do not like you getting a bigger gun everytime you meet unless it is a 'gun' measuring contest
+opinion_AP_war_stance = {
+	trigger = {has_communications = from
+	is_neighbor_of = FROM}
+	opinion = {
+	# ROOT has Stance Passive
+		modifier = {
+			add = 10
+			has_policy_flag = AP_war_stance_passive
+			from = {is_militarist = no}
+		}
+		modifier = {
+			add = 10
+			has_policy_flag = AP_war_stance_passive
+			from = {is_pacifist = yes}
+		}
+		modifier = {
+			add = -15
+			has_policy_flag = AP_war_stance_passive
+			from = {is_militarist = yes}
+		}
+	# ROOT has Stance Light
+		modifier = {
+			add = 5
+			has_policy_flag = AP_war_stance_light
+			from = {is_militarist = no}
+		}
+		modifier = {
+			add = 5
+			has_policy_flag = AP_war_stance_light
+			from = {is_pacifist = yes}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_war_stance_light
+			from = {is_militarist = yes}
+		}
+	# ROOT has Stance Pre Emptive
+		modifier = {
+			add = -20
+			has_policy_flag = AP_war_stance_pre_emptive
+			from = {is_militarist = no}
+		}
+		modifier = {
+			add = -20
+			has_policy_flag = AP_war_stance_pre_emptive
+			from = {is_pacifist = yes}
+		}
+		modifier = {
+			add = 10
+			has_policy_flag = AP_war_stance_pre_emptive
+			from = {is_militarist = yes}
+		}
+		modifier = {
+			add = 5
+			has_policy_flag = AP_war_stance_pre_emptive
+			from = {
+				OR = {
+					has_ai_personality = honorbound_warriors
+					has_ai_personality = depht_conquerors
+				}
+			}
+		}
+	# ROOT has Stance Aggrasive
+		modifier = {
+			add = -30
+			has_policy_flag = AP_war_stance_aggresive
+			from = {is_militarist = no}
+		}
+		modifier = {
+			add = -30
+			has_policy_flag = AP_war_stance_aggresive
+			from = {is_pacifist = yes}
+		}
+		modifier = {
+			add = 10
+			has_policy_flag = AP_war_stance_pre_emptive
+			from = {is_militarist = yes}
+		}
+		modifier = {
+			add = 5
+			has_policy_flag = AP_war_stance_pre_emptive
+			from = {
+				OR = {
+					has_ai_personality = honorbound_warriors
+					has_ai_personality = depht_conquerors
+				}
+			}
+		}
+	}
+}
+
+# Conscription, I am torn if i should even add this making a placeholder just in case
+opinion_AP_conscription_law = {
+	opinion = {	}
+}
+
+# A tax haven is a crime to any form of socialist
+opinion_AP_tax_haven = {
+	trigger = {has_communications = from}
+	opinion = {
+		modifier = {
+			add = 10
+			has_policy_flag = AP_tax_policy_none
+			from = {
+				NOT = {
+					is_egalitarian = yes
+				}
+				is_country_type = default
+			}
+		}
+		modifier = {
+			add = -25
+			has_policy_flag = AP_tax_policy_none
+			from = {
+				is_egalitarian = yes
+				is_country_type = default
+			}
+		}
+		modifier = {
+			add = -25
+			has_policy_flag = AP_tax_policy_none
+			from = {
+				is_country_type = default
+				has_valid_civic = civic_shared_burden
+			}
+		}
+		modifier = {
+			add = 20
+			has_policy_flag = AP_tax_policy_none
+			from = {is_megacorp = yes}
+		}
+		modifier = {
+			add = 10
+			has_policy_flag = AP_tax_policy_none
+			from = {has_valid_civic = civic_merchant_guilds}
+		}
+	}
+}
+
+# Tax Laws, The more autocratic the less tax they wish you to pay
+opinion_AP_tax_like = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has no tax
+		modifier = {
+			add = 10
+			has_policy_flag = AP_tax_policy_none
+			from = {is_authoritarian = yes}
+		}
+	# ROOT has flat tax
+		modifier = {
+			add = 10
+			has_policy_flag = AP_tax_policy_flat
+			from = {is_authoritarian = yes}
+		}
+		modifier = {
+			add = 15
+			has_policy_flag = AP_tax_policy_flat
+			from = {is_megacorp = yes}
+		}
+		modifier = {
+			add = 5
+			has_policy_flag = AP_tax_policy_flat
+			from = {has_valid_civic = civic_merchant_guilds}
+		}
+	# ROOT has scaled tax
+		modifier = {
+			add = 10
+			has_policy_flag = AP_tax_policy_wealth
+			from = {is_egalitarian = yes}
+		}
+		modifier = {
+			add = 10
+			has_policy_flag = AP_tax_policy_wealth
+			from = {has_valid_civic = civic_shared_burden}
+		}
+		modifier = {
+			add = 5
+			has_policy_flag = AP_tax_policy_wealth
+			from = {
+				OR = {
+					has_valid_civic = civic_AP_workers_ethic
+					has_valid_civic = civic_AP_workers_ethic_corporate
+				}
+			}
+		}
+	}
+	
+}
+
+opinion_AP_tax_dislike = {
+	trigger = {has_communications = from}
+	opinion = {
+	# ROOT has no tax
+		modifier = {
+			add = -15
+			has_policy_flag = AP_tax_policy_none
+			from = {is_egalitarian = yes}
+		}
+		modifier = {
+			add = -25
+			has_policy_flag = AP_tax_policy_none
+			from = {has_valid_civic = civic_shared_burden}
+		}
+		modifier = {
+			add = -5
+			has_policy_flag = AP_tax_policy_none
+			from = {
+				OR = {
+					has_valid_civic = civic_AP_workers_ethic
+					has_valid_civic = civic_AP_workers_ethic_corporate
+				}
+			}
+		}
+	# ROOT has flat tax
+		modifier = {
+			add = -10
+			has_policy_flag = AP_tax_policy_flat
+			from = {is_egalitarian = yes}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_tax_policy_flat
+			from = {has_valid_civic = civic_shared_burden}
+		}
+	# ROOT has scaled tax
+		modifier = {
+			add = -10
+			has_policy_flag = AP_tax_policy_wealth
+			from = {
+				is_authoritarian = yes
+				is_country_type = default
+			}
+		}
+		modifier = {
+			add = -20
+			has_policy_flag = AP_tax_policy_wealth
+			from = {is_megacorp = yes}
+		}
+		modifier = {
+			add = -10
+			has_policy_flag = AP_tax_policy_wealth
+			from = {has_valid_civic = civic_merchant_guilds}
+		}
+	}
+}
+
+# Opinion of empires that have a neighboar that has the emergency situation
+opinion_AP_panic_policy = {
+	trigger = {
+		is_neighbor_of = FROM
+		has_communications = FROM
+		FROM = {any_situation = {is_situation_type = situation_AP_panic}}
+		FROM = {is_at_war = no}
+		# Because i know the AI is a bit dumb i might as well not let this trigger with the AI, Saves a headache.
+		FROM = {is_ai = no}
+	}
+	opinion = {
+		modifier = {
+			add = -25
+			FROM = {has_policy_flag = AP_condition_yellow}
+		}
+		modifier = {
+			add = -50
+			FROM = {has_policy_flag = AP_condition_red}
+		}
+		modifier = {
+			add = -75
+			FROM = {has_policy_flag = AP_condition_red}
+		}
+	}
+}

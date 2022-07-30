@@ -23,7 +23,7 @@
  AP_benevolant_gesture_desc:0 "It is widely known that most of the people are beneath us. But even so, last i checked even they do something to aid in our society. Let us for a change give them that recognition."
  AP_rite_of_the_heavens:0 "Enact Rite of the Heavens"
  AP_rite_of_the_heavens_desc:0 "Give the word that this world is ment for a true blessing. Thus attracting some religious leaders to go to this world."
- AP_competition_of_the_minds:0 "Enact a Compitition of minds"
+ AP_competition_of_the_minds:0 "Enact a Compitition of Minds"
  AP_competition_of_the_minds_desc:0 "This world is a prime candidate for many minds to gather and discuss new findings."
 
 ##########################################################################
@@ -33,7 +33,11 @@
  AP_mobile_constrution_deploy_desc:0 "Deploy the empires Mobile Construction Vehicle granting some powerfull bonuses to contruction on the planet."
  AP_mobile_constrution_pack:0 "Recall Mobile Construction Vehicle"
  AP_mobile_constrution_pack_desc:0 "Recall the empires Mobile Construction Vehicle, Returning it out our empire as a whole grants usefull empire-wide bonuses."
- AP_excavate_the_planet:0 "Excavate the planet"
+ AP_excavate_the_planet:0 "Excavate the Planet"
  AP_excavate_the_planet_desc:0 "We have yet to properly excavate the inner layers of this planet. Doing so will grant us more build space and make our people feel more at home."
  AP_connect_underground:0 "Improve the Underground"
  AP_connect_underground_desc:0 "We have dug enough for us to have massive cities but there connections are not yet up to the correct standard. Let us improve these connections."
+ AP_migration_push:0 "Encourage Off-world Migration"
+ AP_migration_push_desc:0 "This are getting a bit crowded here, Might be a good idea to encourage some people to move off-world."
+ AP_migration_pull:0 "Encourage Off-world Immigration"
+ AP_migration_pull_desc:0 "We have the space, might as well get some more people to come help here."

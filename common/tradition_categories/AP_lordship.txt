@@ -1,0 +1,32 @@
+tradition_lordship = {
+	tree_template = "tree_12_11"
+	adoption_bonus = "tr_lordship_adopt"
+	finish_bonus = "tr_lordship_finish"
+	traditions = {
+		tr_lordship_benevolence
+		tr_lordship_streamlined_tribute
+		tr_lordship_understanding
+		tr_lordship_centralization
+		tr_lordship_greater_knowledge
+	}
+	potential = {
+		NOT = {
+			is_gestalt = yes
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 5
+			has_ai_personality_behaviour = dominator
+		}
+		modifier = {
+			factor = 5
+			is_overlord = yes
+		}
+		modifier = {
+			factor = 0.5
+			is_overlord = no
+		}
+	}
+}

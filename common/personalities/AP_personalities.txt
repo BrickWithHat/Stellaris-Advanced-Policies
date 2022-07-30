@@ -4,11 +4,9 @@ ancient_reclaimer = {
 	trade_willingness = 0.75
 	bravery = 1.2
 	combat_bravery = 1.5
-
 	# Budgetting
 	military_spending = 1.2
 	colony_spending = 1.2
-
 	# Diplomatic
 	federation_acceptance = -1000
 	nap_acceptance = -50
@@ -16,20 +14,17 @@ ancient_reclaimer = {
 	research_agreement_acceptance = -200
 	defensive_pact_acceptance = -50
 	migration_pact_acceptance = -250
-
 	# Military Stuff
 	advanced_start_chance = 90
 	weapon_preferences = weapon_type_kinetic
 	armor_ratio = 0.5
 	shields_ratio = 0.3
 	hull_ratio = 0.2
-
 	# Threat stuff
 	threat_modifier = 1.5
 	threat_others_modifier = 1
 	friction_modifier = 1.5
 	claims_modifier = 5
-
 	behaviour = {
 		conqueror = yes
 		subjugator = yes
@@ -48,7 +43,6 @@ ancient_reclaimer = {
 		crisis_fighter = no
 		attack_neutrals = yes
 	}
-	
 	allow = {
 		is_country_type = default
 		has_valid_civic = civic_AP_ancient_remnants
@@ -69,11 +63,9 @@ ancient_rebuilder = {
 	trade_willingness = 0.9
 	bravery = 1
 	combat_bravery = 1.5
-
 	# Budgetting
 	military_spending = 1
 	colony_spending = 1.4
-
 	# Diplomatic
 	federation_acceptance = -150
 	nap_acceptance = -50
@@ -81,20 +73,17 @@ ancient_rebuilder = {
 	research_agreement_acceptance = -200
 	defensive_pact_acceptance = -50
 	migration_pact_acceptance = -100
-
 	# Military Stuff
 	advanced_start_chance = 90
 	weapon_preferences = weapon_type_kinetic
 	armor_ratio = 0.4
 	shields_ratio = 0.4
 	hull_ratio = 0.2
-
 	# Threat stuff
 	threat_modifier = 1
 	threat_others_modifier = 1
 	friction_modifier = 1.5
 	claims_modifier = 5
-
 	behaviour = {
 		conqueror = yes
 		subjugator = no
@@ -123,6 +112,144 @@ ancient_rebuilder = {
 			OR = {
 				is_xenophile = yes
 				is_pacifist = yes
+			}
+		}
+	}
+}
+
+depht_seekers = {
+	# Base line mood
+	aggressiveness = 0.75
+	trade_willingness = 1
+	bravery = 1
+	combat_bravery = 1
+	# Budgetting
+	military_spending = 0.8
+	colony_spending = 1.2
+	# Diplomatic
+	federation_acceptance = -50
+	nap_acceptance = -50
+	commercial_pact_acceptance = -50
+	research_agreement_acceptance = -25
+	defensive_pact_acceptance = -50
+	migration_pact_acceptance = -500
+	# Military Stuff
+	advanced_start_chance = 50
+	weapon_preferences = weapon_type_kinetic
+	armor_ratio = 0.3
+	shields_ratio = 0.2
+	hull_ratio = 0.5
+	# Threat stuff
+	threat_modifier = 1.5
+	threat_others_modifier = 1.5
+	friction_modifier = 1.2
+	claims_modifier = 10
+	behaviour = {
+		conqueror = no
+		subjugator = yes
+		liberator = yes
+		opportunist = no
+		slaver = no
+		uplifter = yes
+		purger = no
+		displacer = no
+		dominator = yes
+		infiltrator = no
+		robot_exploiter = no
+		robot_liberator = no
+		propagator = no
+		multispecies = yes
+		crisis_fighter = yes
+		attack_neutrals = yes
+	}
+	allow = {
+		is_country_type = default
+		has_origin = AP_children_of_the_darkness
+	}
+	weight_modifier = {
+		weight = 1500
+		modifier = {
+			factor = 0
+			is_xenophobe = yes
+		}
+		modifier = {
+			factor = 0.75
+			is_authoritarian = yes
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_barbaric_despoilers
+			}
+		}
+	}
+}
+
+depht_conquerors = {
+	# Base line mood
+	aggressiveness = 1
+	trade_willingness = 0.8
+	bravery = 1.1
+	combat_bravery = 1.1
+	# Budgetting
+	military_spending = 1
+	colony_spending = 1.2
+	# Diplomatic
+	federation_acceptance = -100
+	nap_acceptance = -100
+	commercial_pact_acceptance = -50
+	research_agreement_acceptance = -200
+	defensive_pact_acceptance = -50
+	migration_pact_acceptance = -500
+	# Military Stuff
+	advanced_start_chance = 50
+	weapon_preferences = weapon_type_energy
+	armor_ratio = 0.5
+	shields_ratio = 0.3
+	hull_ratio = 0.2
+	# Threat stuff
+	threat_modifier = 2.5
+	threat_others_modifier = 2.5
+	friction_modifier = 1.5
+	claims_modifier = 25
+	behaviour = {
+		conqueror = yes
+		subjugator = no
+		liberator = no
+		opportunist = no
+		slaver = yes
+		uplifter = no
+		purger = yes
+		displacer = yes
+		dominator = yes
+		infiltrator = yes
+		robot_exploiter = yes
+		robot_liberator = no
+		propagator = yes
+		multispecies = no
+		crisis_fighter = yes
+		attack_neutrals = yes
+	}
+	allow = {
+		is_country_type = default
+		has_origin = AP_children_of_the_darkness
+	}
+	weight_modifier = {
+		weight = 1500
+		modifier = {
+			factor = 0.75
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 0
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_barbaric_despoilers
 			}
 		}
 	}

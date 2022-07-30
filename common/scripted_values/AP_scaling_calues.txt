@@ -1,0 +1,10 @@
+AP_edict_size_effect = {
+	base = 0
+	mult = trigger:empire_size
+	add = 0.5
+}
+AP_edict_size_effect_halfed = {
+	base = 0
+	mult = trigger:empire_size
+	add = 0.25
+}

@@ -23,6 +23,7 @@
 # Start screens
  AP_START_SCREEN_CHILDREN_OF_THE_DARKNESS:0 "Since the beginning of our civilization has the surface of [GetHomeWorldName] been alive with our natural predators. While our people had hard times learning to live among the surface dwellers they often hid inside some of the more common caves on the planet. They learned fast that these went deeper then expected and held the ability to foster live we bent to our survival.\n\nMany centuries have passed since those lessons have been learned, while most retreated towards the depths those few that remained died out. Reasuring our previous expepectations. Now with a vast network of caves having littered the planet and us having used our technology to reclaim the surface we now turn our gaze up further. We learned many secrets from the deep dark, now we leave the deep and reach onto the void a darkness not uncommon to us."
  AP_START_SCREEN_ANCIENT_REMNANTS:0 "\n With the discovery of ancient technologies on our homeworld layed bare by the search for there origin has taken us to the only place not explored by our kind. The very stars around us were once part of our ancestors yet there knowledge mostly lost to us. Now is our tale, a challange to overcome there mistakes and rise above there former glory."
+ AP_START_SCREEN_SKY_TREADERS:0 "As long as our ancestors first took flight on our homeworld of [GetHomeWorldName] we have always tried to fly as high as we could. Many tried and many failed, yet today we fly higher then even before. With that discovery we learned many things. The fact we could fly even higher then previously thought opens up many new options. As we go on towards the stars we have come to the conclusion that the end of our flight is not yet here."
 
 # AI Personalities
  personality_ancient_reclaimer:0 "Remnant Reclaimers"
@@ -38,9 +39,45 @@
  conscript_army_plural:0 "Conscript Armies"
  conscript_army:0 "Conscript Army" 
  conscript_army_desc:0 "While not the most hardiest of folk, they atleast show a suprising willingness to fight as a unit."
+ conscript_army_lithoid:0 "$conscript_army$"
+ conscript_army_lithoid_desc:0 "$conscript_army_desc$"
  religious_mob_plural:0 "Religious mobs"
  religious_mob:0 "Religious mob"
  religious_mob_desc:0 "An unruly mob of zealots being driven forward by a war-priest. While not very well trained there are a lot of them."
+ gladiators:0 "Gladiators"
+ gladiators_desc:0 "A grouping of trained and seasoned gladiators from the arenas, There combat powers in both coordinated strikes and single combat are a true show of our cultural experience."
+ ancient_sentinal:0 "Ancient Sentinals"
+ ancient_sentinal_desc:0 "An artistic rendition of our species given an efficient and sizable battle form. One of the peak achievement from our ancient past."
 
-# Opinion Modifiers
- opinion_community_PR:0 "PR Campaign"
+# Traits
+ trait_AP_tunneler:0 "Tunneler"
+ trait_AP_tunneler_desc:0 "This species has evolved from the underground, They feel right at home in cavernous depths but do not fare well on most surfaces."
+ trait_AP_migritory_flyer:0 "Migritory Flyer"
+ trait_AP_migritory_flyer_desc:0 "This species has a tendincy to migrate and fly a lot. As such they do not need steady housing but require more services while they travel accros vast distances."
+
+# Yellow Version of resources
+ AP_Y_food:0 "£food£ §Y$food$§!" # $AP_Y_food$
+ AP_Y_minerals:0 "£minerals£ §Y$minerals$§!" # $AP_Y_minerals$
+ AP_Y_unity:0 "£unity£ §Y$unity$§!"  # $AP_Y_unity$
+ AP_Y_alloys:0 "£alloys£ §Y$alloys$§!" # $AP_Y_alloys$
+ AP_Y_consumer_goods:0 "£consumer_goods£ §Y$consumer_goods$§!" # $AP_Y_consumer_goods$
+ AP_Y_minor_artifacts:0 "£minor_artifacts£ §Y$minor_artifacts$§!" # $AP_Y_minor_artifacts$
+ AP_Y_influence:0 "£influence£ §Y$influence$§!" # $AP_Y_influence$
+ AP_Y_physics_research:0 "£physics_research£ §Y$physics_research$§!"  # $AP_Y_physics_research$
+ AP_Y_society_research:0 "£society_research£ §Y$society_research$§!"  # $AP_Y_society_research$
+ AP_Y_engineering_research:0 "£engineering_research£ §Y$engineering_research$§!"  # $AP_Y_engineering_research$
+ AP_Y_pop_cat_ruler: "£pop_cat_ruler£ §Y$pop_cat_ruler$§!"  # $AP_Y_pop_cat_ruler$
+ AP_Y_pop_cat_specialist: "£pop_cat_specialist£ §Y$pop_cat_specialist$§!" # $AP_Y_pop_cat_specialist$
+ AP_Y_pop_cat_worker: "£pop_cat_worker£ §Y$pop_cat_worker$§!" # $AP_Y_pop_cat_worker$
+ AP_Y_pop_cat_slave: "£pop_cat_slave£ §Y$pop_cat_slave$§!"  # $AP_Y_pop_cat_slave$
+ AP_Y_pops:0 "£pops£ §Y$pops$§!" # $AP_Y_pops$
+ AP_Y_job:0 "£job£ §YPlanet Jobs§!" # $AP_Y_job$
+
+# Misc
+ AP_special_decisions:0 "Unique Decisions"
+ MESSAGE_AP_POLICY_CHANGE_TITLE:0 "Policy Changed"
+ planet_death_chronicler:0 "Death Chronicler"
+ planet_job_tunnel_lighter:0 "Tunnel Lighters"
+ casus_belli_cb_AP_remove_hostile_regime:0 "Install Friendly Regime"
+ war_goal_wg_AP_remove_hostile_regime:0 "Install Friendly Regime"
+ war_goal_wg_AP_remove_hostile_regime_desc:0 "Our goal is to remove this corrupt government to ensure the security of the region."

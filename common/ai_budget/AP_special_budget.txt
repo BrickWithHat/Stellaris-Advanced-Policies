@@ -1,0 +1,37 @@
+# A means for the AI to keep excivating the planet while other decisions might be denied by the AI_budget
+AP_decision_planet_excivation = {
+	resource = minerals
+	type = expenditure
+	category = AP_special_decisions
+	potential = {
+		has_origin = AP_children_of_the_darkness
+	}
+	fraction = {
+		weight = 1
+	}
+	static_min = {
+		base = 500
+	}
+	static_max = {
+		base = 1000
+	}
+}
+# The ability to use civic/origin specific decisions as else the AI gets a bit confused.
+# Relevant for, MCV civic, Sky treaders origin
+AP_decisions = {
+	resource = unity
+	type = expenditure
+	category = AP_special_decisions
+	potential = {
+		always = yes # Is always rather then specific because having it be done else risks bugs due to errors
+	}
+	fraction = {
+		weight = 0.5
+		modifier = {
+			add = 0.25
+			owner = {
+				has_origin = AP_sky_treaders
+			}
+		}
+	}	
+}

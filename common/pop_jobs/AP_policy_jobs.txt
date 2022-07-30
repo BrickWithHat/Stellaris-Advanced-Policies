@@ -1,3 +1,6 @@
+##########################################################################
+# Education Jobs
+##########################################################################
 worker_educator = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
@@ -63,16 +66,30 @@ worker_educator = {
 	resources = {
 		category = planet_job_educator
 		produces = {
-			physics_research = 0.5
-			engineering_research = 2
-			society_research = 0.5
+			physics_research = 5
+			society_research = 5
+			engineering_research = 8
 		}
 		upkeep = {
-			consumer_goods = 0.25
+			consumer_goods = 1
 		}
 	}
 	planet_modifier = {
-		planet_amenities_add = 2
+		planet_amenities_add = 3
+		planet_jobs_physics_research_produces_mult = 0.01
+		planet_jobs_society_research_produces_mult = 0.01
+		planet_jobs_engineering_research_produces_mult = 0.025
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					has_valid_civic = civic_AP_good_education
+					has_valid_civic = civic_AP_good_education_corporate
+				}
+			}
+		}
+		planet_amenities_add = 1
 	}
 }
 
@@ -142,15 +159,29 @@ specialist_educator = {
 	resources = {
 		category = planet_job_educator
 		produces = {
-			physics_research = 1
-			engineering_research = 1
-			society_research = 1
+			physics_research = 8
+			society_research = 5
+			engineering_research = 5
 		}
 		upkeep = {
-			consumer_goods = 0.5
+			consumer_goods = 1
 		}
 	}
 	planet_modifier = {
+		planet_amenities_add = 3
+		planet_jobs_physics_research_produces_mult = 0.025
+		planet_jobs_society_research_produces_mult = 0.01
+		planet_jobs_engineering_research_produces_mult = 0.01
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					has_valid_civic = civic_AP_good_education
+					has_valid_civic = civic_AP_good_education_corporate
+				}
+			}
+		}
 		planet_amenities_add = 1
 	}
 }
@@ -212,16 +243,140 @@ ruler_educator = {
 	resources = {
 		category = planet_job_educator
 		produces = {
-			physics_research = 1
-			engineering_research = 1
-			society_research = 2
-			unity = 2
+			physics_research = 5
+			society_research = 8
+			engineering_research = 5
 		}
 		upkeep = {
 			consumer_goods = 1
 		}
 	}
 	planet_modifier = {
-		planet_amenities_add = 4
+		planet_amenities_add = 3
+		planet_jobs_physics_research_produces_mult = 0.01
+		planet_jobs_society_research_produces_mult = 0.025
+		planet_jobs_engineering_research_produces_mult = 0.01
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					has_valid_civic = civic_AP_good_education
+					has_valid_civic = civic_AP_good_education_corporate
+				}
+			}
+		}
+		planet_amenities_add = 1
+	}
+}
+##########################################################################
+# Economic Jobs
+##########################################################################
+specialist_tarrifs_clerk = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_commercial_zone
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+		is_enslaved = no
+	}
+	possible_precalc = can_fill_specialist_job
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 2
+			owner = {
+				can_generate_trade_value = yes
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_thrifty
+				has_trait = trait_nuumismatic_administration
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				is_megacorp = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				is_xenophile = yes
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 2
+			solar_system = {
+				has_system_trade_value >= 50
+			}
+		}
+		modifier = {
+			factor = 2
+			solar_system = {
+				has_system_trade_value >= 100
+			}
+		}
+	}
+	resources = {
+		category = planet_job_tarrif_clerk
+		produces = {
+		}
+		upkeep = {
+			consumer_goods = 1.5
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		planet_amenities_add = 5
+		trade_value_mult = 0.05
+	}
+	# Positive Amenities
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 1
+		}
+	}
+	# Negative Amenities
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_repugnant
+				has_trait = trait_robot_uncanny
+			}
+		}
+		modifier = {
+			planet_amenities_add = -1
+		}
 	}
 }

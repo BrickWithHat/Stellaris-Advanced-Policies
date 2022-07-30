@@ -1,0 +1,35 @@
+tradition_community = {
+	tree_template = "tree_12_12"
+	adoption_bonus = "tr_community_adopt"
+	finish_bonus = "tr_community_finish"
+	traditions = {
+		tr_community_greater_goal
+		tr_community_proper_relations
+		tr_community_pr_campaign
+		tr_community_executive_order
+		tr_community_political_enactment
+	}
+	potential = {
+		NOT = {
+			is_gestalt = yes
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 2
+			is_xenophile = yes
+		}
+		# AI should consider this once it has finished its diplomacy not before
+		modifier = {
+			factor = 5
+			has_tradition = tr_diplomacy_finish
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tradition = tr_diplomacy_finish
+			}
+		}
+	}
+}

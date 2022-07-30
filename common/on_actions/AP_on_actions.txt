@@ -8,6 +8,13 @@ on_game_start_country = {
 		AP_civic.1
 		AP_civic.2
 		AP_origin.1
+		AP_origin.2
+	}
+}
+
+on_ground_combat_started = {
+	events = {
+		AP_effect.1
 	}
 }
 
@@ -17,7 +24,7 @@ on_policy_changed = {
 	}
 }
 
-on_monthly_pulse_country = {
+on_yearly_pulse_country = {
 	events = {
 	}
 }

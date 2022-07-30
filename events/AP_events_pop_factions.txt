@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ##########################################################################
 # pop factions
 ##########################################################################
@@ -118,4 +119,126 @@ pop_faction_event = {
 		}
 	}
 
+=======
+##########################################################################
+# pop factions
+##########################################################################
+namespace = AP_pop
+# Imperialist Faction Discouraged 
+pop_faction_event = {
+	id = AP_pop.10
+	picture = GFX_evt_arguing_senate
+	title = AP_pop.10_title
+	desc = AP_pop.10_desc
+	is_triggered_only = yes
+	auto_opens = yes
+	trigger = {
+		NOT = {
+			has_pop_faction_flag = AP_faction_rebelled
+		}
+		years_passed >= 25
+		owner = {
+			has_faction = imperialist
+		}
+		OR = {
+			AND = {
+				faction_approval <= 50
+				owner = {
+					is_militarist = yes
+				}
+			}
+			AND = {
+				faction_approval <= 50
+				owner = {
+					empire_sprawl_cap_fraction = 0.5
+				}
+			}
+		}
+	}
+	immediate = {
+		set_pop_faction_flag = AP_faction_rebelled
+	}
+	option = {
+		name = AP_pop.10_1
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = {
+						has_policy_flag = AP_weapons_law_government_only
+					}
+				}
+				pop_faction_event = {
+					id = AP_pop.11
+					days = 130
+					random = 30
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_policy_flag = AP_weapons_law_permit
+					}
+				}
+				pop_faction_event = {
+					id = AP_pop.11
+					days = 100
+					random = 30
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_policy_flag = AP_weapons_law_permit_easy
+					}
+				}
+				pop_faction_event = {
+					id = AP_pop.12
+					days = 100
+					random = 30
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_policy_flag = AP_weapons_law_free
+					}
+				}
+				pop_faction_event = {
+					id = AP_pop.12
+					days = 100
+					random = 30
+				}
+			}
+		}
+	}
+}
+pop_faction_event = {
+	id = AP_pop.11
+	picture = GFX_evt_dark_alley
+	title = AP_pop.11_title
+	desc = AP_pop.11_desc
+	is_triggered_only = yes
+	auto_opens = yes
+	trigger = {
+		owner = {
+			has_faction = imperialist
+		}
+	}
+
+}
+
+pop_faction_event = {
+	id = AP_pop.12
+	picture = GFX_evt_dark_alley
+	title = AP_pop.12_title
+	desc = AP_pop.12_desc
+	is_triggered_only = yes
+	auto_opens = yes
+	trigger = {
+		owner = {
+			has_faction = imperialist
+		}
+	}
+
+>>>>>>> Stashed changes
 }

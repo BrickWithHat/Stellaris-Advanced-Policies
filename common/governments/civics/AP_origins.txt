@@ -12,17 +12,73 @@ AP_children_of_the_darkness = {
 			}
 		}
 		authority = {
-			NOR = {
-				value = auth_ancient_machine_intelligence
-				value = auth_hive_mind
+			NOT = {
+				value = auth_machine_intelligence
 			}
 		}
 	}
+	ai_playable = {
+		if = {
+			limit = {
+				is_machine_empire = yes
+			}
+			always = no
+		}
+	}
 	modifier = {
-		pop_environment_tolerance = -0.25
 		planet_colony_development_speed_mult = 0.25
 	}
+	traits = {
+		trait = trait_AP_tunneler
+	}
+	flags = {
+		custom_start_screen
+	}
 	random_weight = {
-		base = 5
+		base = 30
+		modifier = {
+			factor = 0
+			OR = {
+				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
+			}
+		}
+	}
+}
+
+AP_sky_treaders = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_AP_sky_treaders.dds"
+	picture = GFX_origin_AP_sky_treaders
+	description = "AP_sky_treaders_effects"
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_slaver_guilds
+				value = civic_indentured_assets
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_machine_intelligence
+			}
+		}
+	}
+	flags = {
+		custom_start_screen
+	}
+	traits = {
+		trait = trait_AP_migritory_flyer
+	}
+	random_weight = {
+		base = 25
+		modifier = {
+			factor = 0
+			has_authority = auth_machine_intelligence
+		}
+	}
+	modifier = {
+		planet_districts_cost_mult = -0.1
+		planet_districts_upkeep_mult = 0.1
 	}
 }

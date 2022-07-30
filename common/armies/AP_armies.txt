@@ -9,15 +9,26 @@ conscript_army = {
 	time = 20
 	has_species = yes
 	potential = {
-		is_gestalt = no
+		owner = {
+			is_gestalt = no
+		}
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+			is_lithoid = no
+		}
+	}
+	allow = {
 		owner = {
 			OR = {
 				has_policy_flag = AP_conscription_mandatory
-				has_policy_flag = AP_conscription_war_time
-			}
-			OR = {
-				has_policy_flag = AP_condition_red
-				has_policy_flag = AP_condition_void
+				AND = {
+					has_policy_flag = AP_conscription_war_time
+					is_at_war = yes
+				}
 			}
 		}
 	}
@@ -29,6 +40,52 @@ conscript_army = {
 		}
 		upkeep = {
 			food = 0.7
+			energy = 0.3
+		}
+	}
+}
+
+conscript_army_lithoid = {
+	icon = gfx_army_type_conscript
+	damage = 1.25
+	health = 0.9
+	morale = 1.1
+	morale_damage = 1.25
+	collateral_damage = 1.1
+	war_exhaustion = 1.2
+	time = 20
+	has_species = yes
+	potential = {
+		owner = {
+			is_gestalt = no
+		}
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+			is_lithoid = yes
+		}
+	}
+	allow = {
+		owner = {
+			OR = {
+				has_policy_flag = AP_conscription_mandatory
+				AND = {
+					has_policy_flag = AP_conscription_war_time
+					is_at_war = yes
+				}
+			}
+		}
+	}
+	resources = {
+		category = armies
+		cost = {
+			minerals = 60
+		}
+		upkeep = {
+			minerals = 0.7
 			energy = 0.3
 		}
 	}
@@ -62,5 +119,52 @@ religious_mob = {
 		upkeep = {
 			energy = 1
 		}
+	}
+}
+
+gladiators = {
+	icon = gfx_army_type_gladiator
+	damage = 1
+	health = 1
+	morale = 2
+	morale_damage = 1.2
+	collateral_damage = 0.5
+	war_exhaustion = 0.5
+	time = 15
+	has_species = yes
+	potential = {
+		owner = {
+			OR = {
+				has_valid_civic = civic_warrior_culture
+				has_valid_civic = civic_barbaric_despoilers
+			}
+		}
+	}
+	allow = {
+
+	}
+	resources = {
+		category = armies
+		upkeep = {
+			alloys = 0.1
+		}
+		cost = {
+			energy = 50
+		}
+	}
+}
+
+# Is event based savior from attacking an Ancient Remnants homeworld
+ancient_sentinal = {
+	defensive = yes
+	damage = 5
+	morale_damage = 5
+	health = 10
+	has_morale = no
+	icon = gfx_army_type_ancient_sentinal
+	has_species = no
+	collateral_damage = 2.5
+	potential = {
+		always = no
 	}
 }

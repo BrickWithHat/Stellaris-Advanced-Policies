@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿l_default:
 # Ancient Remnants Components
  format.AP.ancient.1:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>"
@@ -7,4 +8,15 @@
 
 # Children of the Darkness Components
  format.AP.children.1:0 "<democratic_gen_desc> [This.Capital.GetName] <AP_darkness> "
+=======
+﻿l_default:
+# Ancient Remnants Components
+ format.AP.ancient.1:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>"
+ format.AP.ancient.2:0 "<imperial_gen_desc> <AP_ancient_desc> [This.GetSpeciesName] <imperial_gen>"
+ format.AP.ancient.3:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_mil>"
+ format.AP.ancient.4:0 "<imperial_mil_desc> <AP_ancient_desc> [This.GetSpeciesName] <dictatorial_mil>"
+
+# Children of the Darkness Components
+ format.AP.children.1:0 "<democratic_gen_desc> [This.Capital.GetName] <AP_darkness> "
+>>>>>>> Stashed changes
  format.AP.children.2:0 "<imperial_gen_desc> [This.Capital.GetName] <AP_darkness>"

@@ -1,0 +1,375 @@
+##########################################################################
+# Panic situation
+##########################################################################
+situation_AP_panic = {
+	picture = GFX_evt_crisis_declared
+	desc = {
+		text = situation_AP_panic_desc
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+	desc = {
+		text = situation_AP_panic_desc_gestalt
+		trigger = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+	}
+	on_monthly = {
+		random_events = {
+			100 = 0
+			10 = AP_panic.2	# Army Recruits Bonus
+			30 = AP_panic.3	# Crime Wave and Reinforces Crime worlds
+			30 = AP_panic.4	# Capital Strike
+			30 = AP_panic.5	# Gestalt Crime Debuff
+			30 = AP_panic.6	# Influence Debuff
+			30 = AP_panic.7 # Food Debuff
+			45 = AP_panic.8 # Consumer Goods Debuff
+			45 = AP_panic.9 # Alloys Debuff
+			25 = AP_panic.10 # Unemployment Debuff
+			25 = AP_panic.11 # Unity/Factions Debuff
+			15 = AP_panic.12 # Mineral Debuff
+			15 = AP_panic.13 # Energy Debuff
+		}
+	}
+	progress_direction = bidirectional
+	fail_icon = GFX_situation_outcome_meh
+	fail_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_positive
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	start_value = 15	# I want it to start low but slowly grow or be removed
+	abort_trigger = {
+		owner = {
+			has_policy_flag = AP_condition_green
+		}
+	}
+	on_start = {
+		situation_event = {
+			id = AP_panic.1
+		}
+	}
+	on_progress_complete = {
+		hidden_effect = {
+			owner = {
+				remove_country_flag = AP_panic_active
+				set_policy = {
+					policy = AP_policy_panic
+					option = AP_condition_green
+					cooldown = no
+				}
+			}
+			destroy_situation = this
+		}
+		custom_tooltip = situation_AP_panic_complete
+	}
+	on_abort = {
+		custom_tooltip = situation_AP_panic_end
+		owner = {
+			remove_country_flag = AP_panic_active
+			set_policy = {
+				policy = AP_policy_panic
+				option = AP_condition_green
+				cooldown = no
+			}
+			create_message = {
+				type = AP_POLICY_CHANGE
+				localization = AP_situation_panic_1_policy
+				days = 30
+				target = capital_scope
+			}
+		}
+		destroy_situation = this
+	}
+	on_fail = {
+		custom_tooltip = situation_AP_panic_end
+		owner = {
+			remove_country_flag = AP_panic_active
+			set_policy = {
+				policy = AP_policy_panic
+				option = AP_condition_green
+				cooldown = no
+			}
+			create_message = {
+				type = AP_POLICY_CHANGE
+				localization = AP_situation_panic_1_policy
+				days = 30
+				target = capital_scope
+			}
+		}
+		destroy_situation = this
+	}
+	monthly_progress = {
+		base = 0
+		modifier = {
+			add = +3
+			hidden_trigger = {
+				current_situation_approach = AP_panic_approach_escalated
+			}
+			desc = AP_panic_approach_escalated
+		}
+		modifier = {
+			add = -3
+			hidden_trigger = {
+				current_situation_approach = AP_panic_approach_deescalated
+			}
+			desc = AP_panic_approach_deescalated
+		}
+	}
+	stages = {
+		AP_panic_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 25
+			modifier = {
+				starbase_shipyard_build_speed_mult = 0.05
+				pop_demotion_time_mult = -0.05
+			}
+		}
+		AP_panic_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 50
+			on_first_enter = {
+				owner = {
+					set_policy = {
+						policy = AP_policy_panic
+						option = AP_condition_yellow
+						cooldown = yes
+					}
+					create_message = {
+						type = AP_POLICY_CHANGE
+						localization = AP_situation_panic_2_policy
+						days = 30
+						target = capital_scope
+					}
+				}
+			}
+			modifier = {
+				diplo_weight_mult = -0.2
+				trade_value_mult = -0.2
+				pop_amenities_usage_mult = 0.1
+				pop_ethic_militarist_attraction_mult = 0.05
+				starbase_shipyard_build_speed_mult = 0.1
+				pop_demotion_time_mult = -0.1
+				planet_metallurgists_upkeep_mult = -0.1
+			}
+		}
+		AP_panic_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 75
+			on_first_enter = {
+				owner = {
+					set_policy = {
+						policy = AP_policy_panic
+						option = AP_condition_red
+						cooldown = yes
+					}
+					create_message = {
+						type = AP_POLICY_CHANGE
+						localization = AP_situation_panic_3_policy
+						days = 30
+						target = capital_scope
+					}
+				}
+			}
+			modifier = {
+				diplo_weight_mult = -0.4
+				trade_value_mult = -0.4
+				pop_amenities_usage_mult = 0.25
+				pop_ethic_militarist_attraction_mult = 0.1
+				starbase_shipyard_build_speed_mult = 0.2
+				pop_demotion_time_mult = -0.15
+				planet_metallurgists_upkeep_mult = -0.2
+			}
+		}
+		AP_panic_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				owner = {
+					set_policy = {
+						policy = AP_policy_panic
+						option = AP_condition_void
+						cooldown = yes
+					}
+					create_message = {
+						type = AP_POLICY_CHANGE
+						localization = AP_situation_panic_4_policy
+						days = 30
+						target = capital_scope
+					}
+				}
+			}
+			modifier = {
+				diplo_weight_mult = -0.6
+				trade_value_mult = -0.6
+				pop_amenities_usage_mult = 0.5
+				pop_ethic_militarist_attraction_mult = 0.15
+				starbase_shipyard_build_speed_mult = 0.3
+				pop_demotion_time_mult = -0.2
+				planet_metallurgists_upkeep_mult = -0.3
+			}
+		}
+	}
+	approach = {
+		name = AP_panic_approach_deescalated
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = AP_panic_approach_deescalated_tooltip
+		}
+		allow = {
+		}
+		ai_weight = {
+			weight = 1
+			# Deescaltion only while at peace
+			modifier = {
+				factor = 10
+				owner = {
+					is_at_war = no
+				}
+			}
+			# Deescalation while at war
+			modifier = {
+				factor = 0
+				owner = {
+					is_at_war = yes
+				}
+			}
+		}
+	}
+	approach = {
+		name = AP_panic_approach_idle
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = AP_panic_approach_idle_tooltip
+		}
+		allow = {
+		}
+		ai_weight = {
+			weight = 1
+			# AI should only go to phase condition red not void, simply because i do not trust the AI
+			modifier = {
+				factor = 5
+				situation_progress >= 50
+			}
+		}
+	}
+	approach = {
+		name = AP_panic_approach_escalated
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = AP_panic_approach_escalated_tooltip
+		}
+		allow = {
+			hidden_trigger = {
+				# i do not want the player or AI to complete it but simply ride the buffs and policy changes
+				situation_progress < 99
+			}
+			custom_tooltip = {
+				fail_text = AP_panic_approach_escalate_not_allowed
+				situation_progress <= 99
+			}
+		}
+		ai_weight = {
+			weight = 1
+			modifier = {
+				factor = 0
+				OR = {
+					owner = {
+						is_at_war = no
+					}
+					situation_progress >= 50
+				}
+			}
+			modifier = {
+				factor = 10
+				situation_progress <= 50
+			}
+		}
+	}
+}
+##########################################################################
+# Planeterary Quota situation
+##########################################################################
+situation_AP_planetary_quota = {
+	picture = GFX_evt_financial_instruments
+	desc = {
+		text = situation_AP_planetary_quota_desc
+		trigger = { 
+			always = yes
+		}
+	}
+	on_monthly = {
+		events = {
+			
+		}
+		
+	}
+	on_start = {
+		
+	}
+	on_progress_complete = {
+		
+	}
+	on_abort = {
+		
+	}
+	on_fail = {
+		
+	}
+	monthly_progress = {
+		base = 0
+	}
+	progress_direction = bidirectional
+	fail_icon = GFX_situation_outcome_bankrupcy
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_meh
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	start_value = 1	# I want it to start low and all growth should come from events
+	stages = {
+		AP_quota_0 = {
+			end = 25
+			icon = GFX_situation_stage_frame_green
+			icon_background = GFX_situation_stage_frame_blue
+		}
+		AP_quota_1 = {
+			end = 50
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+		}
+		AP_quota_2 = {
+			end = 75
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+		}
+		AP_quota_3 = {
+			end = 100
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+		}
+	}
+	approach = {
+		name = AP_quota_approach_idle
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = AP_quota_approach_idle
+		}
+		allow = {
+		}
+		ai_weight = {
+			weight = 1
+		}
+	}
+}

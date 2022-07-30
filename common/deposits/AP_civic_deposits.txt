@@ -86,8 +86,30 @@ d_underground_cities = {
 		modifier = {
 			pop_environment_tolerance = 0.3
 			planet_max_districts_add = 6
-			planet_miners_produces_mult = 0.1
-			planet_miners_unity_produces_add = 0.5
+		}
+	}
+	# Non-gestalt job with correct origin
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_origin = AP_children_of_the_darkness
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_specialist_tunnel_lighter_per_pop = 0.05
+		}
+	}
+	# Gestalt job with correct origin
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_origin = AP_children_of_the_darkness
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_complex_tunnel_lighter_per_pop = 0.05
 		}
 	}
 	# The proper effects for those without the Children of the Darkness origin

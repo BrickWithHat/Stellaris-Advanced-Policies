@@ -33,7 +33,7 @@ AP_autonamy = {
 			AP_autonamy_shackled
 		}
 		modifier = {
-			planet_crime_no_happiness_add = 10
+			planet_crime_no_happiness_mult = 0.1
 			planet_jobs_produces_mult = 0.1
 			pop_amenities_usage_mult = -0.05
 		}
@@ -56,7 +56,7 @@ AP_autonamy = {
 			AP_autonamy_near_free
 		}
 		modifier = {
-			planet_crime_no_happiness_add = 15
+			planet_crime_no_happiness_mult = 0.15
 			planet_jobs_produces_mult = 0.2
 			pop_amenities_usage_mult = -0.1
 		}
@@ -83,10 +83,14 @@ AP_organic_recycling = {
 	}
 	option = {
 		name = AP_organic_recycling_none
+		policy_flags = {
+			AP_organic_recycling_none
+		}
 		modifier = {
 			planet_jobs_worker_produces_mult = 0.15
-			planet_pops_upkeep_mult = 0.15
 			planet_stability_add = 10
+			planet_pops_upkeep_mult = 0.15
+			
 		}
 		AI_weight = {
 			weight = 1
@@ -126,10 +130,14 @@ AP_organic_recycling = {
 	}
 	option = {
 		name = AP_organic_recycling_some
+		policy_flags = {
+			AP_organic_recycling_some
+		}
 		modifier = {
 			planet_jobs_worker_produces_mult = 0.1
-			planet_pops_upkeep_mult = 0.1
 			pop_growth_speed = 0.05
+			planet_pops_upkeep_mult = 0.1
+			
 		}
 		AI_weight = {
 			weight = 1
@@ -171,10 +179,14 @@ AP_organic_recycling = {
 	}
 	option = {
 		name = AP_organic_recycling_complete
+		policy_flags = {
+			AP_organic_recycling_complete
+		}
 		modifier = {
 			planet_jobs_worker_produces_mult = 0.05
-			planet_pops_upkeep_mult = 0.05
 			pop_growth_speed = 0.1
+			planet_pops_upkeep_mult = 0.05
+			
 		}
 		AI_weight = {
 			weight = 1
@@ -214,7 +226,6 @@ AP_component_recycling = {
 		name = AP_component_recycling_none
 		modifier = {
 			pop_amenities_usage_mult = -0.15
-			country_alloys_produces_mult = 0.1
 		}
 		AI_weight = {
 			weight = 1
@@ -242,7 +253,7 @@ AP_component_recycling = {
 		name = AP_component_recycling_some
 		modifier = {
 			pop_amenities_usage_mult = 0.05
-			country_alloys_produces_mult = 0.2
+			country_alloys_produces_mult = 0.05
 		}
 		AI_weight = {
 			weight = 1
@@ -275,8 +286,8 @@ AP_component_recycling = {
 	option = {
 		name = AP_component_recycling_complete
 		modifier = {
-			pop_amenities_usage_mult = 0.1
-			country_alloys_produces_mult = 0.33
+			pop_amenities_usage_mult = 0.15
+			country_alloys_produces_mult = 0.15
 		}
 		AI_weight = {
 			weight = 1

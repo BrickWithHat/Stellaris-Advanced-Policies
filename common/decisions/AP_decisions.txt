@@ -12,7 +12,7 @@ AP_planetary_quota = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 1000
 		}
 	}
 	potential = {
@@ -30,6 +30,9 @@ AP_planetary_quota = {
 			has_modifier = planet_quota_fulfilled
 			has_modifier = planet_quota_abolished
 			has_modifier = planet_quota_failed
+			owner = {
+				has_modifier = country_AP_recent_quota
+			}
 		}
 	}
 	effect = {
@@ -59,7 +62,7 @@ AP_abolish_planetary_quota = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 250
 		}
 	}
 	potential = {
@@ -113,7 +116,7 @@ AP_trail_by_fire = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -150,7 +153,7 @@ AP_generation_of_peace = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -186,7 +189,7 @@ AP_grand_sports_games = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -219,7 +222,7 @@ AP_benevolant_gesture = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -252,7 +255,7 @@ AP_rite_of_the_heavens = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -285,7 +288,7 @@ AP_competition_of_the_minds = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			unity = 500
 		}
 	}
 	potential = {
@@ -325,7 +328,7 @@ AP_conscription = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 10
+			unity = 100
 		}
 	}
 	potential = {
@@ -353,8 +356,8 @@ AP_conscription = {
 		}
 		owner = {
 			has_resource = {
-				type = influence
-				amount >= 10
+				type = unity
+				amount >= 100
 			}
 		}
 	}
@@ -397,7 +400,7 @@ AP_mobile_constrution_deploy = {
 	icon = decision_mining_station
 	sound = event_administrative_work
 	resources = {
-		category = decisions
+		category = AP_special_decisions
 	}
 	potential = {
 		owner = {
@@ -416,6 +419,27 @@ AP_mobile_constrution_deploy = {
 		}
 	}
 	enactment_time = 60
+	ai_weight = {
+		weight = 1
+		# More blockers to remove means a more attractice location to deploy
+		modifier = {
+			factor = 10
+			num_uncleared_blockers > 2
+		}
+		# The more districts to build the better the savings eh?
+		modifier = {
+			factor = 5
+			free_district_slots >= 5
+		}
+		# No deploying when all is already done
+		modifier = {
+			factor = 0
+			AND = {
+				free_district_slots <= 2
+				num_uncleared_blockers <= 2
+			}
+		}
+	}
 }
 
 AP_mobile_constrution_pack = {
@@ -423,7 +447,7 @@ AP_mobile_constrution_pack = {
 	icon = decision_mining_station
 	sound = event_administrative_work
 	resources = {
-		category = decisions
+		category = AP_special_decisions
 	}
 	potential = {
 		owner = {
@@ -442,8 +466,20 @@ AP_mobile_constrution_pack = {
 		}
 	}
 	enactment_time = 60
+	ai_weight = {
+		weight = 1
+		# AI cannot move the MCV while it is either building, or has more then 2 districts available to build
+		modifier = {
+			factor = 0
+			OR = {
+				has_building_construction = yes
+				NOT = {
+					free_district_slots <= 2
+				}
+			}
+		}
+	}
 }
-
 ##########################################################################
 # Origin Related
 ##########################################################################
@@ -453,35 +489,44 @@ AP_excavate_the_planet = {
 	icon = decision_drilling_for_gas
 	sound = event_construction
 	resources = {
-		category = decisions
+		category = AP_special_decisions
+		cost = {
+			minerals = 500
+		}
 	}
 	potential = {
 		owner = {
 			has_origin = AP_children_of_the_darkness
 		}
-		count_deposits = {
-			count < 6
-			type = d_underground_city
-		}
-		NOT = {
-			is_planet_class = pc_habitat
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_city
-			has_planet_flag = seismic_disturbance
-			has_deposit = d_underground_cities
+		planet = {
+			count_deposits = {
+				count < 6
+				type = d_underground_city
+			}
+			NOT = {
+				is_planet_class = pc_habitat
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_city
+				has_planet_flag = seismic_disturbance
+				has_deposit = d_underground_cities
+			}
 		}
 	}
 	allow = {
-		NAND = {
-			is_planet_class = pc_ocean
-			count_deposits = {
-				count >= 2
-				type = d_underground_city
+		planet = {
+			NAND = {
+				is_planet_class = pc_ocean
+				count_deposits = {
+					count >= 2
+					type = d_underground_city
+				}
 			}
 		}
 	}
 	effect = {
-		add_deposit = d_underground_city
+		planet = {
+			add_deposit = d_underground_city
+		}
 	}
 	enactment_time = 360
 	ai_weight = {
@@ -529,6 +574,33 @@ AP_excavate_the_planet = {
 				}
 			}
 		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 2500
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 5000
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 10000
+				}
+			}
+		}
 	}
 }
 
@@ -538,7 +610,10 @@ AP_connect_underground = {
 	icon = decision_alien_propaganda
 	sound = event_construction
 	resources = {
-		category = decisions
+		category = AP_special_decisions
+		cost = {
+			minerals = 1000
+		}
 	}
 	potential = {
 		owner = {
@@ -547,21 +622,180 @@ AP_connect_underground = {
 		has_deposit = d_underground_city
 	}
 	allow = {
-		count_deposits = {
-			count = 6
-			type = d_underground_city
+		planet = {
+			count_deposits = {
+				count = 6
+				type = d_underground_city
+			}
 		}
 	}
 	effect = {
-		while = {
-			count = 6
-			remove_deposit = d_underground_city
+		planet = {
+			while = {
+				count = 6
+				remove_deposit = d_underground_city
+			}
+			add_deposit = d_underground_cities
 		}
-		add_deposit = d_underground_cities
 	}
 	enactment_time = 720
-	# AI should always build this preferably as soon as possible
+	# AI should proritise this whenever possible
 	ai_weight = {
-		weight = 1000
+		weight = 10
+		modifier = {
+			factor = 10
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 500
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 2500
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 5000
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			owner = {
+				has_resource = {
+					type = minerals
+					amount >= 10000
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			num_districts = {
+				type = district_mining
+				value >= 1
+			}
+		}
+		modifier = {
+			factor = 10
+			num_districts = {
+				type = district_mining
+				value >= 3
+			}
+		}
+	}
+}
+
+# Migration Push for Migritory Flock origin
+AP_migration_push = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+	sound = event_administrative_work
+	resources = {
+		category = AP_special_decisions
+		cost = {
+			unity = 500
+		}
+	}
+	potential = {
+		owner = {
+			has_origin = AP_sky_treaders
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = planet_migritory_flyer_pull
+		}
+		owner = {
+			any_owned_planet = {
+				NOT = {
+					has_modifier = planet_migritory_flyer_push
+				}
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_migritory_flyer_push
+			days = 1800
+		}
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = 5
+			free_housing <= 5
+		}
+		modifier = {
+			add = 5
+			num_assigned_jobs = {
+				job = unemployed
+				value >= 1
+			}
+		}
+		modifier = {
+			add = 1
+			has_upgraded_capital = yes
+		}
+	}
+}
+
+# Migration Pull for Migritory Flock origin
+AP_migration_pull = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+	sound = event_administrative_work
+	resources = {
+		category = AP_special_decisions
+		cost = {
+			unity = 500
+		}
+	}
+	potential = {
+		owner = {
+			has_origin = AP_sky_treaders
+		}
+	}
+	allow = {
+		owner = {
+			NOT = {
+				has_modifier = planet_migritory_flyer_push
+			}
+			any_owned_planet = {
+				NOT = {
+					has_modifier = planet_migritory_flyer_pull
+				}
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_migritory_flyer_pull
+			days = 1800
+		}
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			factor = 5
+			free_housing >= 5
+		}
+		modifier = {
+			factor = 5
+			free_jobs >= 5
+		}
+		modifier = {
+			add = 1
+			has_upgraded_capital = yes
+		}
 	}
 }

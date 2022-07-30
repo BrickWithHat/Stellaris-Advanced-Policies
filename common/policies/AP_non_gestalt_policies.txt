@@ -15,9 +15,10 @@ AP_unemployment = {
 			AP_unemployment_no_aid
 		}
 		modifier = {
-			pop_government_ethic_attraction = -0.1
 			planet_pops_upkeep_mult = -0.1
-			pop_political_power = -0.1
+			planet_jobs_produces_mult = -0.05
+			pop_government_ethic_attraction = -0.1
+			pop_political_power = -0.5
 		}
 		AI_weight = {
 			weight = 10
@@ -53,10 +54,11 @@ AP_unemployment = {
 			AP_unemployment_aid
 		}
 		modifier = {
-			planet_pops_upkeep_mult = 0.05
+			planet_pops_upkeep_mult = 0.1
+			planet_jobs_produces_mult = 0.05
 			pop_government_ethic_attraction = 0.05
-			planet_resettlement_unemployed_mult = 0.5
-			pop_resettlement_cost_mult = -0.25
+			planet_resettlement_unemployed_mult = 0.25
+			pop_political_power = 0.1
 		}
 		AI_weight = {
 			weight = 10
@@ -88,11 +90,11 @@ AP_unemployment = {
 			AP_unemployment_shared_burden
 		}
 		modifier = {
-			planet_pops_upkeep_mult = 0.1
-			pop_government_ethic_attraction = 0.2
-			planet_resettlement_unemployed_mult = 1
-			pop_resettlement_cost_mult = -0.5
-			pop_political_power = 0.1
+			planet_pops_upkeep_mult = 0.2
+			planet_jobs_produces_mult = 0.1
+			pop_government_ethic_attraction = 0.15
+			planet_resettlement_unemployed_mult = 0.5
+			pop_political_power = 0.25
 		}
 		AI_weight = {
 			weight = 10
@@ -141,7 +143,7 @@ AP_religion = {
 		modifier = {
 			pop_government_ethic_attraction = 0.1
 			planet_researchers_produces_mult = 0.1
-			country_influence_produces_add = 0.5
+			country_influence_cost_mult = -0.25
 		}
 		AI_weight = {
 			weight = 10
@@ -179,7 +181,7 @@ AP_religion = {
 		modifier = {
 			pop_government_ethic_attraction = 0.2
 			planet_researchers_produces_mult = 0.2
-			country_influence_produces_add = 0.25
+			country_influence_cost_mult = -0.1
 		}
 		AI_weight = {
 			weight = 10
@@ -220,7 +222,7 @@ AP_religion = {
 		modifier = {
 			pop_government_ethic_attraction = 0.2
 			country_unity_produces_mult = 0.2
-			country_influence_produces_add = 0.25
+			country_influence_cost_mult = -0.1
 		}
 		AI_weight = {
 			weight = 10
@@ -261,7 +263,7 @@ AP_religion = {
 		modifier = {
 			pop_government_ethic_attraction = 0.1
 			country_unity_produces_mult = 0.1
-			country_influence_produces_add = 0.5
+			country_influence_cost_mult = -0.25
 		}
 		AI_weight = {
 			weight = 10
@@ -303,6 +305,150 @@ AP_religion = {
 	}
 }
 
+AP_justice = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	option = {
+		name = AP_justice_mob
+		policy_flags = {
+			AP_justice_mob
+		}
+		valid = {
+			
+		}
+		modifier = {
+			planet_enforcers_unity_produces_add = 4
+			pop_factions_unity_produces_mult = 0.05
+			pop_cat_worker_political_power = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.25
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					has_civic = civic_shared_burden
+					has_civic = civic_nationalistic_zeal
+					has_civic = civic_warrior_culture
+					has_civic = civic_barbaric_despoilers
+					has_civic = civic_criminal_heritage
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_justice_local_officials
+		policy_flags = {
+			AP_justice_local_officials
+		}
+		valid = {
+			
+		}
+		modifier = {
+			planet_enforcers_unity_produces_add = 3
+			pop_factions_unity_produces_mult = 0.1
+			pop_cat_specialist_political_power = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_civic = civic_police_state
+					has_civic = civic_ruthless_competition
+					has_civic = civic_feudal_realm
+					has_civic = civic_citizen_service
+					has_civic = civic_efficient_bureaucracy
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_justice_regional_officials
+		policy_flags = {
+			AP_justice_regional_officials
+		}
+		valid = {
+			
+		}
+		modifier = {
+			planet_enforcers_unity_produces_add = 2
+			pop_factions_unity_produces_mult = 0.15
+			pop_cat_ruler_political_power = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_civic = civic_aristocratic_elite
+					has_civic = civic_exalted_priesthood
+					has_civic = civic_death_cult
+					has_civic = civic_death_cult_corporate
+				}
+			}
+			modifier = {
+				factor = 0.5
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_justice_state_officials
+		policy_flags = {
+			AP_justice_state_officials
+		}
+		valid = {
+			
+		}
+		modifier = {
+			planet_enforcers_unity_produces_add = 1
+			pop_factions_unity_produces_mult = 0.2
+			planet_stability_add = 10
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.25
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 0.5
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					has_civic = civic_imperial_cult
+					has_civic = civic_parliamentary_system
+					has_civic = civic_shadow_council
+				}
+			}
+		}
+	}
+}
+
 ##########################################################################
 # education policies
 ##########################################################################
@@ -323,16 +469,7 @@ AP_education_privledge = {
 		modifier = {
 			pop_happiness = 0.05
 			planet_jobs_worker_produces_mult = 0.05
-			job_worker_educator_per_pop = 0.1 # One educator per 10 pops
-		}
-		on_enabled = {
-			hidden_effect = {
-				set_policy = {
-					policy = AP_education_stance_merged
-					option = AP_education_stance_merged_token_all
-					cooldown = no
-				}
-			}
+			job_worker_educator_per_pop = 0.02	# One educator per 50 pops
 		}
 		AI_weight = {
 			weight = 10
@@ -369,16 +506,7 @@ AP_education_privledge = {
 		modifier = {
 			pop_citizen_happiness = 0.05
 			planet_jobs_specialist_produces_mult = 0.05
-			job_specialist_educator_per_pop = 0.04 # One educator per 25 pops
-		}
-		on_enabled = {
-			hidden_effect = {
-				set_policy = {
-					policy = AP_education_stance_merged
-					option = AP_education_stance_merged_token_citizen
-					cooldown = no
-				}
-			}
+			job_specialist_educator_per_pop = 0.0133	# One educator per 75 pops
 		}
 		AI_weight = {
 			weight = 10
@@ -428,23 +556,14 @@ AP_education_privledge = {
 			pop_cat_specialist_political_power = -0.05
 			pop_cat_worker_political_power = -0.1
 			pop_cat_slave_political_power = -0.1
-			job_ruler_educator_per_pop = 0.025 # One educator per 40 pops
-		}
-		on_enabled = {
-			hidden_effect = {
-				set_policy = {
-					policy = AP_education_stance_merged
-					option = AP_education_stance_merged_token_elite
-					cooldown = no
-				}
-			}
+			job_ruler_educator_per_pop = 0.01	# One educator per 100 pops
 		}
 		AI_weight = {
 			weight = 10
 			modifier = {
 				factor = 2
 				OR = {
-					has_ethic = ethic_fanatic_authoritarian
+					is_authoritarian = yes
 					AND = {
 						owner_main_species = {
 							has_trait = trait_decadent
@@ -460,10 +579,9 @@ AP_education_privledge = {
 			modifier = {
 				factor = 1.25
 				is_xenophobe = yes
-				any_owned_species = {
-					has_slavery_type = {
-						type = slavery_normal
-					}
+				has_ai_personality_behaviour = slaver
+				NOT = {
+					has_ai_personality_behaviour = purger
 				}
 			}
 			modifier = {
@@ -506,6 +624,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_all
+				}
+			}
+			modifier = {
 				factor = 1.25
 				NOT = {
 					has_valid_civic = civic_technocracy
@@ -545,6 +669,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_all
+				}
+			}
+			modifier = {
 				factor = 2
 				is_authoritarian = yes
 			}
@@ -576,6 +706,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_all
+				}
+			}
+			modifier = {
 				factor = 2
 				OR = {
 					has_valid_civic = civic_corvee_system
@@ -594,7 +730,7 @@ AP_education_stance_merged = {
 			}
 			modifier = {
 				factor = 1.25
-				has_ethic = ethic_egalitarian
+				is_egalitarian = yes
 				has_ai_personality_behaviour = multispecies
 				OR = {
 					has_ai_personality_behaviour = robot_liberator
@@ -621,6 +757,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_all
+				}
+			}
+			modifier = {
 				factor = 2
 				OR = {
 					has_valid_civic = civic_shared_burden
@@ -629,7 +771,7 @@ AP_education_stance_merged = {
 			}
 			modifier = {
 				factor = 1.25
-				has_ethic = ethic_fanatic_egalitarian
+				is_egalitarian = yes
 				has_ai_personality_behaviour = multispecies
 				OR = {
 					has_ai_personality_behaviour = robot_liberator
@@ -667,6 +809,12 @@ AP_education_stance_merged = {
 		}
 		AI_weight = {
 			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_citizen
+				}
+			}
 			modifier = {
 				factor = 2
 				OR = {
@@ -715,6 +863,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_citizen
+				}
+			}
+			modifier = {
 				factor = 1.25
 				OR = {
 					has_authority = auth_corporate
@@ -755,6 +909,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_citizen
+				}
+			}
+			modifier = {
 				factor = 2
 				has_valid_civic = civic_citizen_service
 			}
@@ -785,6 +945,12 @@ AP_education_stance_merged = {
 		}
 		AI_weight = {
 			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_citizen
+				}
+			}
 			modifier = {
 				factor = 2
 				OR = {
@@ -828,6 +994,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_elite
+				}
+			}
+			modifier = {
 				factor = 2
 				OR = {
 					has_valid_civic = civic_slaver_guilds
@@ -864,6 +1036,12 @@ AP_education_stance_merged = {
 		AI_weight = {
 			weight = 10
 			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_elite
+				}
+			}
+			modifier = {
 				factor = 1.5
 				is_xenophobe = yes
 			}
@@ -885,11 +1063,17 @@ AP_education_stance_merged = {
 		}
 		modifier = {
 			leader_skill_levels = 2
-			pop_cat_ruler_happiness = 0.1
+			pop_cat_ruler_happiness = 0.05
 			leaders_upkeep_mult = 0.1
 		}
 		AI_weight = {
 			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_elite
+				}
+			}
 			modifier = {
 				factor = 2
 				OR = {
@@ -919,11 +1103,17 @@ AP_education_stance_merged = {
 		}
 		modifier = {
 			leader_skill_levels = 4
-			pop_cat_ruler_happiness = 0.05
+			pop_cat_ruler_happiness = 0.1
 			leaders_upkeep_mult = 0.2
 		}
 		AI_weight = {
 			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_education_privledge_elite
+				}
+			}
 			modifier = {
 				factor = 2
 				OR = {
@@ -1114,10 +1304,9 @@ AP_war_stance = {
 		}
 		modifier = {
 			country_alloys_produces_mult = 0.1
-			country_minerals_produces_mult = 0.05
 			ships_upkeep_mult = -0.1
 			starbase_shipyard_build_speed_mult = 0.1
-			country_naval_cap_mult = 0.05
+			country_energy_produces_mult = -0.05
 			country_consumer_goods_produces_mult = -0.1
 		}
 		policy_flags = {
@@ -1153,34 +1342,6 @@ AP_war_stance = {
 					has_ai_personality_behaviour = dominator
 				}
 			}
-		}
-	}
-	option = {
-		name = "AP_war_stance_emergency"
-		valid = {
-			has_policy_flag = AP_condition_void
-			OR = {
-				AP_has_encountered_crisis = yes
-				is_at_war = yes
-			}
-		}
-		modifier = {
-			country_alloys_produces_mult = 0.5
-			country_minerals_produces_mult = 0.2
-			planet_pops_upkeep_mult = -0.1
-			pop_demotion_time_mult = -0.25
-			starbase_shipyard_build_speed_mult = 0.25
-			ships_upkeep_mult = -0.2
-			country_naval_cap_mult = 0.1
-			pop_amenities_usage_mult = 0.1
-			country_consumer_goods_produces_mult = -0.1
-		}
-		policy_flags = {
-			AP_war_stance_emergency
-		}
-		# AI should not get access to this for a list of reasons i will not even get into.
-		AI_weight = {
-			weight = 0
 		}
 	}
 }
@@ -1385,9 +1546,8 @@ AP_weapons_law = {
 			AP_weapons_law_permit_easy
 		}
 		modifier = {
-			army_defense_damage_mult = 0.5
-			army_defense_health_mult = 0.5
-			army_defense_morale_mult = 0.5
+			army_defense_damage_mult = 0.15
+			army_defense_health_mult = 0.15
 			ship_starting_experience_add = 100
 			army_starting_experience_add = 100
 			general_skill_levels = 1
@@ -1422,10 +1582,8 @@ AP_weapons_law = {
 			AP_weapons_law_free
 		}
 		modifier = {
-			army_defense_damage_mult = 1
-			army_defense_health_mult = 1
-			army_defense_morale_mult = 1
-			army_damage_mult = 0.25
+			army_defense_damage_mult = 0.3
+			army_defense_health_mult = 0.3
 			ship_starting_experience_add = 250
 			army_starting_experience_add = 250
 			general_skill_levels = 2
@@ -1440,17 +1598,643 @@ AP_weapons_law = {
 			}
 			modifier = {
 				factor = 1.75
-				def_war_exhaustion_sum > 0.5
+				def_war_exhaustion_sum > 0.75
 				is_pacifist = no
 			}
 			modifier = {
 				factor = 1.5
-				def_war_exhaustion_sum > 0.5
+				def_war_exhaustion_sum > 0.75
 				is_pacifist = yes
 			}
 			modifier = {
-				factor = 3
+				factor = 1.5
 				AP_is_occupied = yes
+			}
+		}
+	}
+}
+
+##########################################################################
+# Economic policies
+##########################################################################
+AP_tax_policy = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	option = {
+		name = AP_tax_policy_none
+		policy_flags = {
+			AP_tax_policy_none
+		}
+		valid = {
+			NOR = {
+				has_civic = civic_shared_burden
+			}
+		}
+		modifier = {
+			country_trade_attractiveness = 0.25
+			commercial_pacts_upkeep_mult = -0.5
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					has_civic = civic_corporate_hedonism
+					has_civic = civic_pleasure_seekers
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_civic = civic_barbaric_despoilers
+					has_civic = civic_criminal_heritage
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_civic = civic_death_cult
+					has_civic = civic_death_cult_corporate
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_deviants
+				}
+			}
+			modifier = {
+				factor = 0.5
+				owner_main_species = {
+					has_trait = trait_conformists
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_tax_policy_flat
+		policy_flags = {
+			AP_tax_policy_flat
+		}
+		valid = {
+			NOT = {
+				has_civic = civic_shared_burden
+			}
+		}
+		modifier = {
+			country_energy_produces_mult = 0.02
+			planet_amenities_add = 5
+			pop_happiness = -0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_civic = civic_aristocratic_elite
+					has_civic = civic_imperial_cult
+					has_civic = civic_feudal_realm
+					has_civic = civic_shadow_council
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_civic = civic_merchant_guilds
+					has_civic = civic_slaver_guilds
+					has_civic = civic_mining_guilds
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_ai_personality_behaviour = multispecies
+			}
+		}
+	}
+	option = {
+		name = AP_tax_policy_wealth
+		policy_flags = {
+			AP_tax_policy_wealth
+		}
+		valid = {
+			NOR = {
+				has_civic = civic_aristocratic_elite
+				has_civic = civic_corporate_hedonism
+				has_civic = civic_pleasure_seekers
+			}
+		}
+		modifier = {
+			country_energy_produces_mult = 0.05
+			planet_amenities_add = 10
+			pop_happiness = -0.05
+			pop_cat_ruler_happiness = -0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				OR = {
+					has_civic = civic_meritocracy
+					has_civic = civic_technocracy
+					has_civic = civic_idealistic_foundation
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_civic = civic_parliamentary_system
+					has_civic = civic_free_traders
+					has_civic = civic_free_haven
+				}
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 2
+				has_ai_personality_behaviour = multispecies
+			}
+			modifier = {
+				factor = 0.5
+				has_ai_personality_behaviour = slaver
+			}
+			modifier = {
+				factor = 0.5
+				is_authoritarian = yes
+			}
+		}
+	}
+}
+
+AP_tax_amount = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	##########################################################################
+	# None
+	##########################################################################
+	option = {
+		name = AP_tax_amount_none
+		policy_flags = {
+			AP_tax_policy_none
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_none
+		}
+		modifier = {
+			planet_jobs_upkeep_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	##########################################################################
+	# Flat amount
+	##########################################################################
+	option = {
+		name = AP_tax_amount_flat_low
+		policy_flags = {
+			AP_tax_amount_flat_low
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_flat
+		}
+		modifier = {
+			planet_buildings_cost_mult = -0.05
+			planet_jobs_upkeep_mult = -0.05
+			pop_happiness = -0.025
+		}
+		AI_weight = {
+			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_tax_policy_flat
+				}
+			}
+			modifier = {
+				factor = 5
+				has_monthly_income = {
+					resource = energy
+					value >= 50
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_agrarian
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_resilient
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_quarrelsome
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_tax_amount_flat_medium
+		policy_flags = {
+			AP_tax_amount_flat_medium
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_flat
+		}
+		modifier = {
+			planet_buildings_cost_mult = -0.1
+			planet_jobs_upkeep_mult = -0.1
+			pop_happiness = -0.05
+		}
+		AI_weight = {
+			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_tax_policy_flat
+				}
+			}
+			modifier = {
+				factor = 0.5
+				capital_scope = {
+					happiness_planet <= 60
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_natural_sociologists
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_traditional
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_sedentary
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_tax_amount_flat_high
+		policy_flags = {
+			AP_tax_amount_flat_high
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_flat
+		}
+		modifier = {
+			planet_buildings_cost_mult = -0.15
+			planet_jobs_upkeep_mult = -0.15
+			pop_happiness = -0.075
+		}
+		AI_weight = {
+			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_tax_policy_flat
+				}
+			}
+			modifier = {
+				factor = 0.5
+				capital_scope = {
+					happiness_planet <= 60
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_docile
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_thrifty
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_decadent
+				}
+			}
+		}
+	}
+	##########################################################################
+	# Wealth Based
+	##########################################################################
+	option = {
+		name = AP_tax_amount_wealth_low
+		policy_flags = {
+			AP_tax_amount_wealth_low
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_wealth
+		}
+		modifier = {
+			planet_districts_cost_mult = -0.05
+			planet_pops_upkeep_mult = -0.05
+			pop_happiness = -0.025
+		}
+		AI_weight = {
+			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_tax_policy_wealth
+				}
+			}
+			modifier = {
+				factor = 5
+				has_monthly_income = {
+					resource = energy
+					value >= 50
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_agrarian
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_resilient
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_quarrelsome
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_tax_amount_wealth_medium
+		policy_flags = {
+			AP_tax_amount_wealth_medium
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_wealth
+		}
+		modifier = {
+			planet_districts_cost_mult = -0.1
+			planet_pops_upkeep_mult = -0.1
+			pop_happiness = -0.05
+		}
+		AI_weight = {
+			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_tax_policy_wealth
+				}
+			}
+			modifier = {
+				factor = 0.5
+				capital_scope = {
+					happiness_planet <= 60
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_natural_sociologists
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_traditional
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_sedentary
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_tax_amount_wealth_high
+		policy_flags = {
+			AP_tax_amount_wealth_high
+		}
+		potential = {
+			has_policy_flag = AP_tax_policy_wealth
+		}
+		modifier = {
+			planet_districts_cost_mult = -0.15
+			planet_pops_upkeep_mult = -0.15
+			pop_happiness = -0.075
+		}
+		AI_weight = {
+			weight = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					has_policy_flag = AP_tax_policy_wealth
+				}
+			}
+			modifier = {
+				factor = 0.5
+				capital_scope = {
+					happiness_planet <= 60
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_docile
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_thrifty
+				}
+			}
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_decadent
+				}
+			}
+		}
+	}
+}
+
+AP_outer_trade = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	option = {
+		name = AP_outer_trade_closed
+		policy_flags = {
+			AP_outer_trade_closed
+		}
+		valid = {
+			NOT = {
+				is_xenophile = yes
+				has_policy_flag = diplo_stance_cooperative
+			}
+		}
+		modifier = {
+			country_trade_attractiveness = -1
+			country_unity_produces_mult = 0.15
+			pop_government_ethic_attraction = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				is_unfriendly = yes
+			}
+			modifier = {
+				factor = 2
+				has_ai_personality_behaviour = isolationist
+			}
+			modifier = {
+				factor = 2
+				has_policy_flag = diplo_stance_isolationist
+			}
+			modifier = {
+				factor = 0
+				is_megacorp = yes
+			}
+		}
+	}
+	option = {
+		name = AP_outer_trade_minor
+		policy_flags = {
+			AP_outer_trade_minor
+		}
+		valid = {
+		}
+		modifier = {
+			country_trade_attractiveness = -0.25
+			country_unity_produces_mult = 0.1
+			pop_government_ethic_attraction = 0.1
+			job_specialist_tarrifs_clerk_per_pop = 0.025
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.25
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 2
+				is_authoritarian = yes
+			}
+			modifier = {
+				factor = 2
+				has_ai_personality_behaviour = slaver
+			}
+			modifier = {
+				factor = 2
+				has_ai_personality_behaviour = propagator
+			}
+		}
+	}
+	option = {
+		name = AP_outer_trade_medium
+		policy_flags = {
+			AP_outer_trade_medium
+		}
+		valid = {
+		}
+		modifier = {
+			country_unity_produces_mult = 0.05
+			job_specialist_tarrifs_clerk_per_pop = 0.033
+			planet_jobs_consumer_goods_upkeep_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				is_megacorp = no
+			}
+			modifier = {
+				factor = 0.5
+				is_xenophile = yes
+			}
+		}
+	}
+	option = {
+		name = AP_outer_trade_high
+		policy_flags = {
+			AP_outer_trade_high
+		}
+		valid = {
+		}
+		modifier = {
+			country_trade_attractiveness = 0.05
+			job_specialist_tarrifs_clerk_per_pop = 0.04
+			planet_jobs_consumer_goods_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				is_megacorp = yes
+			}
+			modifier = {
+				factor = 4
+				is_xenophile = yes
+			}
+		}
+	}
+	option = {
+		name = AP_outer_trade_open
+		policy_flags = {
+			AP_outer_trade_open
+		}
+		valid = {
+			NOT = {
+				is_xenophobe = yes
+				has_policy_flag = diplo_stance_isolationist
+			}
+		}
+		modifier = {
+			country_trade_attractiveness = 0.1
+			job_specialist_tarrifs_clerk_per_pop = 0.05
+			planet_jobs_consumer_goods_upkeep_mult = -0.2
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 100
+				has_civic = civic_merchant_guilds
 			}
 		}
 	}
@@ -1462,7 +2246,6 @@ AP_weapons_law = {
 AP_policy_panic = {
 	potential = {
 		is_country_type = default
-		is_gestalt = no
 	}
 	option = {
 		name = "AP_condition_green"
@@ -1472,7 +2255,7 @@ AP_policy_panic = {
 			AP_condition_green
 		}
 		AI_weight = {
-			weight = 1
+			weight = 5
 			modifier = {
 				factor = 10
 				is_at_war = no
@@ -1484,6 +2267,12 @@ AP_policy_panic = {
 		valid = {
 			OR = {
 				is_country_type = default
+				has_country_flag = AP_panic_active
+			}
+		}
+		on_enabled = {
+			start_situation = {
+				type = situation_AP_panic
 			}
 		}
 		policy_flags = {
@@ -1492,17 +2281,35 @@ AP_policy_panic = {
 		AI_weight = {
 			weight = 1
 			modifier = {
-				factor = 5
-				num_rivals > 1
-				num_truces < 2
+				factor = 0
+				is_at_war = no
 			}
 			modifier = {
 				factor = 5
-				is_at_war = yes
+				AP_has_encountered_crisis = yes
+				NOT = {
+					has_ai_personality_behaviour = crisis_fighter
+					has_ai_personality_behaviour = crisis_leader
+				}
 			}
 			modifier = {
-				factor = 5
-				def_war_exhaustion_sum >= 50
+				factor = 20
+				AP_has_encountered_crisis = yes
+				OR = {
+					has_ai_personality_behaviour = crisis_fighter
+					has_ai_personality_behaviour = crisis_leader
+				}
+			}
+			modifier = {
+				factor = 10
+				AP_panic_button_valid = yes
+				any_owned_planet = {
+					is_occupied_flag = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = AP_panic_active
 			}
 		}
 	}
@@ -1510,6 +2317,7 @@ AP_policy_panic = {
 		name = "AP_condition_red"
 		valid = {
 			OR = {
+				has_country_flag = AP_panic_active
 				has_policy_flag = AP_condition_yellow
 				has_policy_flag = AP_condition_red
 			}
@@ -1518,30 +2326,14 @@ AP_policy_panic = {
 			AP_condition_red
 		}
 		AI_weight = {
-			weight = 1
-			modifier = {
-				factor = 5
-				num_rivals > 2
-				num_truces < 1
-			}
-			modifier = {
-				factor = 5
-				is_at_war = yes
-			}
-			modifier = {
-				factor = 5
-				def_war_exhaustion_sum >= 50
-			}
-			modifier = {
-				factor = 5
-				AP_has_encountered_crisis = yes
-			}
+			weight = 0
 		}
 	}
 	option = {
 		name = "AP_condition_void"
 		valid = {
 			OR = {
+				has_country_flag = AP_panic_active
 				has_policy_flag = AP_condition_red
 				has_policy_flag = AP_condition_void
 				AP_has_encountered_crisis = yes

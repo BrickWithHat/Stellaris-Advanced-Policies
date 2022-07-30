@@ -119,7 +119,105 @@ country_event = {
 	}
 }
 
+# Start-up for the Sky Treaders start building
+country_event = {
+	id = AP_origin.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_origin = AP_sky_treaders
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_origin = AP_sky_treaders
+			}
+			capital_scope = {
+				add_building = building_AP_migrant_capital_hacthery
+			}
+		}
+	}
+}
+
 ##########################################################################
 # Effects components
 ##########################################################################
 namespace = AP_effect
+planet_event = {
+	id = AP_effect.1
+	is_triggered_only = yes
+	title = AP_effect.1_title
+	desc = AP_effect.1_desc
+	fire_only_once = yes
+	location = from
+	auto_opens = yes
+	show_sound = event_ground_battle
+	picture = GFX_evt_ground_combat
+	pre_triggers = {
+		has_ground_combat = yes
+		original_owner = yes
+		is_occupied_flag = no
+	}
+	trigger = {
+		has_deposit = d_ancient_site
+		owner = {
+			has_valid_civic = civic_AP_ancient_remnants
+		}
+	}
+	immediate = {
+		create_army = {
+			owner = THIS
+			type = ancient_sentinal
+			name = AP_effect.1_army_name
+		}
+		create_army = {
+			owner = THIS
+			type = ancient_sentinal
+			name = AP_effect.2_army_name
+		}
+		create_army = {
+			owner = THIS
+			type = ancient_sentinal
+			name = AP_effect.3_army_name
+		}
+	}
+	option = {
+		name = AP_effect.1_1
+		custom_tooltip = AP_effect.1_tooltip
+		add_modifier = {
+			modifier = army_inspiration
+			days = 30
+		}
+	}
+	option = {
+		name = AP_effect.1_2
+		custom_tooltip = AP_effect.1_tooltip
+		owner = {
+			add_resource = {
+				unity = 1500
+			}
+		}
+	}
+}
+
+##########################################################################
+# Test-fire components
+##########################################################################
+planet_event = {
+	id = AP_effect.999
+	is_triggered_only = yes
+	trigger = {
+		always = yes
+	}
+	hide_window = yes
+	immediate = {
+		create_pirate_country = yes
+		while = {
+			count = 10
+			create_army = {
+				owner = last_created_country
+				type = gene_warrior_army
+			}
+		}
+	}
+}

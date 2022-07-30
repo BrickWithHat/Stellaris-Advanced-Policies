@@ -1,0 +1,726 @@
+##########################################################################
+# Governmental Buildings
+##########################################################################
+building_AP_democratic_parliment = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_subversive_shrine
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_democratic
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOT = {
+			owner = {
+				has_authority = auth_democratic
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_politician_add = 2
+	}
+	# Spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_spiritualist = yes
+			}
+		}
+		job_high_priest_add = 1
+	}
+	# Materialist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Pacifist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_pacifist = yes
+			}
+		}
+		job_merchant_add = 1
+	}
+	# Militarist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_militarist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophile jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophile = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophobe jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophobe = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 5
+	}
+}
+
+building_AP_oligarcy_assembly = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_public_relations_office
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_oligarchic
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOR = {
+			owner = {
+				has_authority = auth_oligarchic
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_politician_add = 2
+	}
+	# Spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_spiritualist = yes
+			}
+		}
+		job_high_priest_add = 1
+	}
+	# Materialist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Pacifist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_pacifist = yes
+			}
+		}
+		job_merchant_add = 1
+	}
+	# Militarist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_militarist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophile jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophile = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophobe jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophobe = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+building_AP_dictators_palace = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_syndicate_outreach_office
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_dictatorial
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOR = {
+			owner = {
+				has_authority = auth_dictatorial
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_politician_add = 2
+	}
+	# Spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_spiritualist = yes
+			}
+		}
+		job_high_priest_add = 1
+	}
+	# Materialist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Pacifist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_pacifist = yes
+			}
+		}
+		job_merchant_add = 1
+	}
+	# Militarist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_militarist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophile jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophile = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophobe jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophobe = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+building_AP_imperial_palace = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_temple_of_prosperity
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_imperial
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOR = {
+			owner = {
+				has_authority = auth_imperial
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_politician_add = 2
+	}
+	# Spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_spiritualist = yes
+			}
+		}
+		job_high_priest_add = 1
+	}
+	# Materialist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Pacifist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_pacifist = yes
+			}
+		}
+		job_merchant_add = 1
+	}
+	# Militarist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_militarist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophile jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophile = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophobe jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophobe = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+building_AP_executive = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_corporate_embassy
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_corporate
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOR = {
+			owner = {
+				has_authority = auth_corporate
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_executive_add = 2
+	}
+	# Spiritualist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_spiritualist = yes
+			}
+		}
+		job_high_priest_add = 1
+	}
+	# Materialist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Pacifist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_pacifist = yes
+			}
+		}
+		job_merchant_add = 1
+	}
+	# Militarist jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_militarist = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophile jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophile = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	# Xenophobe jobs
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_xenophobe = yes
+			}
+		}
+		job_head_researcher_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+building_AP_gestalt_hive = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_imperial_hive_capital
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_hive_mind
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOR = {
+			owner = {
+				has_authority = auth_hive_mind
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_patrol_drone_add = 2
+		job_spawning_drone_add = 1
+		job_synapse_drone_add = 3
+		planet_orbital_bombardment_damage = -0.33
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+building_AP_gestalt_mech = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = building_disinformation_center
+	category = government
+	potential = {
+		owner = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		is_capital = yes
+	}
+	destroy_trigger = {
+		NOR = {
+			owner = {
+				has_authority = auth_machine_intelligence
+			}
+			planet = {
+				is_capital = YES
+			}
+		}
+	}
+	planet_modifier = {
+		job_patrol_drone_add = 2
+		job_coordinator_add = 2
+		job_evaluator_add = 2
+		planet_orbital_bombardment_damage = -0.33
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 1
+	}
+}
+
+##########################################################################
+# Origin Buildings
+##########################################################################
+building_AP_migrant_waystation = {
+	base_buildtime = @b1_time
+	category = amenity
+	icon = building_organic_sanctuary
+	base_cap_amount = 1
+	potential = {
+		owner = {
+			has_origin = AP_sky_treaders
+		}
+		is_capital = no
+	}
+	allow = {
+		has_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_sky_treaders
+			}
+		}
+	}
+	planet_modifier = {
+		planet_amenities_mult = 0.2
+		planet_resettlement_unemployed_mult = 0.5
+		planet_resettlement_unemployed_destination_mult = 0.5
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 3
+		}
+		produces = {
+			unity = 5
+		}
+	}
+	ai_weight = {
+		weight = 100
+	}
+}
+
+building_AP_migrant_capital_hacthery = {
+	base_buildtime = @b1_time
+	category = amenity
+	icon = building_offspring_nest
+	base_cap_amount = 1
+	potential = {
+		owner = {
+			has_origin = AP_sky_treaders
+		}
+		is_capital = yes
+	}
+	allow = {
+		has_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_sky_treaders
+			}
+		}
+	}
+	planet_modifier = {
+		planet_resettlement_unemployed_mult = 1
+		pop_growth_speed = 1
+		planet_amenities_mult = 0.5
+		planet_stability_add = 10
+		planet_max_buildings_add = +1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 100
+	}
+}
+
+##########################################################################
+# Civic Buildings
+##########################################################################
+building_AP_education_school = {
+	base_buildtime = @b2_time
+	category = research
+	icon = building_virtual_entertainment_studios
+	base_cap_amount = 1
+	potential = {
+		owner = {
+			is_gestalt = no
+			is_country_type = default
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		NOT = {
+			has_modifier = resort_colony
+		}
+		NOT = {
+			has_modifier = slave_colony
+		}
+	}
+	# Worker Educator
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_policy_flag = AP_education_privledge_all
+			}
+		}
+		job_worker_educator_add = 2
+	}
+	# Specialist Educator
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_policy_flag = AP_education_privledge_citizen
+			}
+		}
+		job_specialist_educator_add = 2
+	}
+	# Ruler Educator
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_policy_flag = AP_education_privledge_elite
+			}
+		}
+		job_ruler_educator_add = 2
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 100
+			owner = {
+				OR = {
+					has_valid_civic = civic_AP_good_education
+					has_valid_civic = civic_AP_good_education_corporate
+				}
+			}
+		}
+	}
+}

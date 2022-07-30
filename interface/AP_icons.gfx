@@ -25,89 +25,46 @@ spriteTypes = {
 		sprite_sheet_sprite_type = "GFX_army_icons"
 		default_frame = 5
 	}
+	spriteType = {
+		name = "gfx_army_type_gladiator"
+		textureFile = "gfx/interface/planetview/gladiator.dds"
+	}
+	spriteType = {
+		name = "gfx_army_type_ancient_sentinal"
+		textureFile = "gfx/interface/planetview/ancient sentinal.dds"
+	}
+	# Planet Modifiers
+	spritetype = {
+		name = "pm_military_proving_grounds"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_military_proving_grounds.dds"
+	}
+	spritetype = {
+		name = "pm_military_proving_grounds_cancel"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_military_proving_grounds_cancel.dds"
+	}
+	spritetype = {
+		name = "pm_seat_world"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_seat_world.dds"
+	}
+	spritetype = {
+		name = "pm_seat_world_cancel"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_seat_world_cancel.dds"
+	}
+	spritetype = {
+		name = "pm_throne_world"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_throne_world.dds"
+	}
+	spritetype = {
+		name = "pm_throne_world_cancel"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_throne_world_cancel.dds"
+	}
 	spritetype = {
 		name = "pm_resources_cancel"
 		textureFile = "gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds"
 	}
-	# Jobs
+	# War goal icon
 	spritetype = {
-		name = "gfx_education_icon"
-		textureFile = "gfx/interface/icons/education.dds"
-	}
-	spritetype = {
-		name = "gfx_jobs_worker_educator"
-		textureFile = "gfx/interface/icons/jobs/job_worker_educator.dds"
-	}
-	spritetype = {
-		name = "gfx_jobs_specialist_educator"
-		textureFile = "gfx/interface/icons/jobs/job_specialist_educator.dds"
-	}
-	spritetype = {
-		name = "gfx_jobs_ruler_educator"
-		textureFile = "gfx/interface/icons/jobs/job_ruler_educator.dds"
-	}
-	# Origins/civics
-	spritetype = {
-		name = "GFX_origin_AP_children_of_the_darkness"
-		textureFile = "gfx/event_pictures/origins/origin_AP_children_of_the_darkness.dds"
-		alwaysTransparent = yes
-	}
-	# Traditions Community
-	spritetype = {
-		name = "GFX_tradition_category_icon_tradition_community"
-		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_community.dds"
-	}
-	spriteType = {
-		name = "GFX_tradition_category_bg_tradition_community"
-		textureFile = "gfx/interface/icons/traditions/tradition_tile/tradition_category_tile_community.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_community_greater_goal"
-		textureFile = "gfx/interface/icons/traditions/tradition_community_greater_goal.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_community_proper_relations"
-		textureFile = "gfx/interface/icons/traditions/tradition_community_proper_relations.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_community_pr_campaign"
-		textureFile = "gfx/interface/icons/traditions/tradition_community_pr_campaign.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_community_executive_order"
-		textureFile = "gfx/interface/icons/traditions/tradition_community_executive_order.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_community_political_enactment"
-		textureFile = "gfx/interface/icons/traditions/tradition_community_political_enactment.dds"
-	}
-	# Traditions Lordship
-	spritetype = {
-		name = "GFX_tradition_category_icon_tradition_lordship"
-		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_lordship.dds"
-	}
-	spritetype = {
-		name = "GFX_tradition_category_bg_tradition_lordship"
-		textureFile = "gfx/interface/icons/traditions/tradition_tile/tradition_category_tile_lordship.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_lordship_benevolence"
-		textureFile = "gfx/interface/icons/traditions/tradition_lordship_benevolence.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_lordship_streamlined_tribute"
-		textureFile = "gfx/interface/icons/traditions/tradition_lordship_streamlined_tribute.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_lordship_understanding"
-		textureFile = "gfx/interface/icons/traditions/tradition_lordship_understanding.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_lordship_centralization"
-		textureFile = "gfx/interface/icons/traditions/tradition_lordship_centralization.dds"
-	}
-	spritetype = {
-		name = "GFX_tr_lordship_greater_knowledge"
-		textureFile = "gfx/interface/icons/traditions/tradition_lordship_greater_knowledge.dds"
+		name = "GFX_wg_AP_remove_hostile_regime"
+		textureFile = "gfx/interface/icons/diplomacy/diplomacy_isvassal.dds"
 	}
 }

@@ -1,0 +1,96 @@
+# Community PR campaign Tradition
+opinion_community_PR = {
+	opinion = {
+		modifier = {
+			add = 10
+			FROM = {
+				is_galactic_community_member = yes
+			}
+		}
+	}
+}
+
+# An opinion bonus for empires with both the Origin Children of the Darkness as both are tunnelers
+opinion_AP_child_of_dark = {
+	trigger = {
+		ROOT = {
+			OR = {
+				has_origin = AP_children_of_the_darkness
+				has_origin = origin_subterranean
+			}
+		}
+		from = {
+			OR = {
+				has_origin = AP_children_of_the_darkness
+				has_origin = origin_subterranean
+			}
+		}
+	}
+	opinion = 20
+}
+
+# An opinion penalty for empires with the civic Ancient Remnants
+opinion_AP_ancient_remnants = {
+	trigger = {
+		root = {
+			has_valid_civic = civic_AP_ancient_remnants
+		}
+		from = {
+			has_valid_civic = civic_AP_ancient_remnants
+		}
+	}
+	opinion = {
+		modifier = {
+			add = -25
+			root = {
+				has_government = gov_ancient_collective
+			}
+		}
+		modifier = {
+			add = -100
+			root = {
+				has_government = gov_ancient_warhost
+			}
+		}
+		modifier = {
+			add = -50
+			root = {
+				has_government = gov_ancient_imperium
+			}
+		}
+	}
+}
+
+# Ancestor worshippers haaaaate zombies and the walking dead, even if the reviews are good
+opinion_AP_ancestor_worship = {
+	trigger = {
+		root = {
+			has_valid_civic = civic_AP_ancestor_worship
+		}
+		from = {
+			OR = {
+				has_valid_civic = civic_reanimated_armies
+				has_valid_civic = civic_permanent_employment
+			}
+		}
+	}
+	opinion = {
+		modifier = {
+			add = -200
+			FROM = {
+				OR = {
+					has_valid_civic = civic_reanimated_armies
+					has_valid_civic = civic_permanent_employment
+				}
+			}
+		}
+		modifier = {
+			add = -10
+			FROM = {
+				any_owned_pop = {
+					has_trait = trait_zombie
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,496 @@
+##########################################################################
+# Basic setup
+##########################################################################
+namespace = AP_panic
+situation_event = {
+	id = AP_panic.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = AP_panic_active
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			set_country_flag = AP_panic_active
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.2
+	picture = GFX_evt_ground_combat
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			is_gestalt = no
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = army_inspiration
+			}
+		}
+		AP_panic_button_valid = no
+	}
+	fire_only_once = yes
+	title = AP_panic.2_title
+	desc = AP_panic.2_desc
+	option = {
+		name = AP_panic.2_1
+		owner = {
+			add_modifier = {
+				modifier = army_inspiration
+				days = 1800
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.3
+	picture = GFX_evt_engineering_bay
+	is_triggered_only = yes
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			any_owned_planet = {
+				NOR = {
+					has_modifier = drone_deviancy
+					has_modifier = crime_wave
+				}
+				OR = {
+					AND = {
+						happiness_planet <= 50
+						owner = {
+							is_gestalt = no
+						}
+					}
+					free_amenities <= 0
+					planet_crime >= 15
+				}
+			}
+		}
+	}
+	title = AP_panic.3_title
+	desc = {
+		text = AP_panic.3_desc
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+	}
+	desc = {
+		text = AP_panic.3_desc_gestalt
+		trigger = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+	}
+	option = {
+		name = AP_panic.3_1
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						is_gestalt = yes
+					}
+					random_owned_planet = {
+						add_modifier = {
+							modifier = drone_deviancy
+							days = 1080
+						}
+					}
+					else = {
+						random_owned_planet = {
+							add_modifier = {
+								modifier = crime_wave
+								days = 1080
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.4
+	picture = GFX_evt_burning_settlement
+	is_triggered_only = yes
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			is_gestalt = no
+			capital_scope = {
+				NOT = {
+					has_modifier = planet_AP_organized_strike
+				}
+			}
+		}
+	}
+	title = AP_panic.4_title
+	desc = AP_panic.4_desc
+	option = {
+		name = AP_panic.4_1
+		owner = {
+			capital_scope = {
+				add_modifier = {
+					modifier = planet_AP_organized_strike
+					days = 1080
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.5
+	picture = GFX_evt_hive
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			is_gestalt = yes
+			NOT = {
+				has_modifier = country_AP_gestalt_crime_debuff
+			}
+		}
+	}
+	title = AP_panic.5_title
+	desc = AP_panic.5_desc
+	option = {
+		name = AP_panic.5_1
+		hidden_effect = {
+			owner = {
+				add_modifier = {
+					modifier = country_AP_gestalt_crime_debuff
+					days = 1800
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_panic.5_2
+		hidden_effect = {
+			situation_event = {
+				id = AP_panic.51
+				days = 10
+				random = 20
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.51
+	picture = GFX_evt_analyzing_artifacts
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			is_gestalt = yes
+			NOT = {
+				has_modifier = country_AP_gestalt_crime_debuff
+			}
+		}
+	}
+	title = AP_panic.51_title
+	desc = AP_panic.51_desc
+	option = {
+		name = AP_panic.51_1
+		hidden_effect = {
+			owner = {
+				add_modifier = {
+					modifier = country_AP_gestalt_crime_debuff
+					days = 1080
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_panic.51_2
+		hidden_effect = {
+			owner = {
+				while = {
+					count = 2
+					every_owned_leader = {
+						limit = {
+							leader_class = scientist
+						}
+						kill_leader = {
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.6
+	is_triggered_only = yes
+	picture = GFX_evt_alien_city
+	title = AP_panic.6_title
+	desc = AP_panic.6_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_influence_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.6_1
+		hidden_effect = {
+			owner = {
+				add_modifier = {
+					modifier = country_AP_influence_debuff
+					days = 1800
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_panic.6_2
+		owner = {
+			every_situation = {
+				limit = {
+					is_situation_type = situation_AP_panic
+				}
+				set_situation_approach = AP_panic_approach_deescalated
+				add_situation_progress = -20
+			}
+			hidden_effect = {
+				add_modifier = {
+					modifier = country_AP_influence_debuff
+					days = 1080
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.7
+	is_triggered_only = yes
+	picture = GFX_evt_ship_in_orbit_2
+	title = AP_panic.7_title
+	desc = {
+		exclusive_trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		text = AP_panic.7_desc
+	}
+	desc = {
+		exclusive_trigger = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = AP_panic.7_desc_gestalt
+	}
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			country_uses_food = yes
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_food_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.7_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_food_debuff
+				days = 450
+			}
+			add_resource = {
+				food = -2500
+			}
+			if = {
+				limit = {
+					has_valid_civic = civic_agrarian_idyll
+				}
+				add_resource = {
+					unity = -2000
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.8
+	is_triggered_only = yes
+	picture = GFX_evt_black_market
+	title = AP_panic.8_title
+	desc = AP_panic.8_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			country_uses_consumer_goods = yes
+			NOT = {
+				has_modifier = country_AP_consumer_goods_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.8_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_consumer_goods_debuff
+				days = 1080
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.9
+	is_triggered_only = yes
+	picture = GFX_evt_black_market
+	title = AP_panic.9_title
+	desc = AP_panic.9_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_alloys_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.9_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_alloys_debuff
+				days = 1080
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.10
+	is_triggered_only = yes
+	picture = GFX_evt_alien_propaganda
+	title = AP_panic.10_title
+	desc = AP_panic.10_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			is_gestalt = no
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_umployment_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.10_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_umployment_debuff
+				days = 1080
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.11
+	is_triggered_only = yes
+	picture = GFX_evt_alien_propaganda
+	title = AP_panic.11_title
+	desc = AP_panic.11_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			is_gestalt = no
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_factions_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.11_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_factions_debuff
+				days = 1080
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.12
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station
+	title = AP_panic.12_title
+	desc = AP_panic.12_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_mineral_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.12_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_mineral_debuff
+				days = 1080
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AP_panic.13
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station
+	title = AP_panic.13_title
+	desc = AP_panic.13_desc
+	trigger = {
+		AP_panic_button_valid = no
+		owner = {
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = country_AP_energy_debuff
+			}
+		}
+	}
+	option = {
+		name = AP_panic.13_1
+		owner = {
+			add_modifier = {
+				modifier = country_AP_energy_debuff
+				days = 1080
+			}
+		}
+	}
+}
