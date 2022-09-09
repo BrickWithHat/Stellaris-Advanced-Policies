@@ -18,13 +18,8 @@ on_ground_combat_started = {
 	}
 }
 
-on_policy_changed = {
+on_war_ended = {
 	events = {
-
-	}
-}
-
-on_yearly_pulse_country = {
-	events = {
+		AP_panic.2
 	}
 }

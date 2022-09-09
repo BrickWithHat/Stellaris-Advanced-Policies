@@ -20,6 +20,16 @@ spriteTypes = {
 		name = "gfx_edicts_grapes"
 		texturefile = "gfx/interface/icons/edicts/grapes.dds"
 	}
+	# Planetary Decisions
+	spriteType = {
+		name = "decision_resources_cancel"
+		textureFile = "gfx/interface/icons/decisions/decision_resources_cancel.dds"
+	}
+	spriteType = {
+		name = "decision_ruler_agenda"
+		textureFile = "gfx/interface/icons/decisions/decision_ruler_agenda.dds"
+	}
+	# Army Types
 	spriteType = {
 		name = "gfx_army_type_conscript"
 		sprite_sheet_sprite_type = "GFX_army_icons"
@@ -32,35 +42,6 @@ spriteTypes = {
 	spriteType = {
 		name = "gfx_army_type_ancient_sentinal"
 		textureFile = "gfx/interface/planetview/ancient sentinal.dds"
-	}
-	# Planet Modifiers
-	spritetype = {
-		name = "pm_military_proving_grounds"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_military_proving_grounds.dds"
-	}
-	spritetype = {
-		name = "pm_military_proving_grounds_cancel"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_military_proving_grounds_cancel.dds"
-	}
-	spritetype = {
-		name = "pm_seat_world"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_seat_world.dds"
-	}
-	spritetype = {
-		name = "pm_seat_world_cancel"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_seat_world_cancel.dds"
-	}
-	spritetype = {
-		name = "pm_throne_world"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_throne_world.dds"
-	}
-	spritetype = {
-		name = "pm_throne_world_cancel"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_throne_world_cancel.dds"
-	}
-	spritetype = {
-		name = "pm_resources_cancel"
-		textureFile = "gfx/interface/icons/planet_modifiers/pm_resources_cancel.dds"
 	}
 	# War goal icon
 	spritetype = {

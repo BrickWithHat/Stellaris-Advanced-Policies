@@ -9,34 +9,36 @@
 AP_has_encountered_crisis = {
 	custom_tooltip = AP_has_encountered_crisis
 	hidden_trigger = {
-		OR = {
-			has_global_flag = prethoryn_invasion_happened
-			has_global_flag = extradimensional_invasion_happened
-			has_global_flag = ai_invasion_happened
-			has_global_flag = active_gray_goo
-			has_global_flag = great_khan_announcement
-			has_global_flag = sleepers_awake_happened
-			has_global_flag = galactic_crisis_happened
-		}
-		# Defeated stuff should not be considered a threat
-		NOR = {
-			has_global_flag = prethoryn_invasion_defeated
-			has_global_flag = extradimensional_invasion_defeated
-			has_global_flag = ai_invasion_defeated
-		}
-		# These do not have any regular flag so i had to get creative with the discovery of the data
-		OR = {
-			any_relation = {
-				has_communications = root
-				is_country_type = gray_goo
+		owner = {
+			OR = {
+				has_global_flag = prethoryn_invasion_happened
+				has_global_flag = extradimensional_invasion_happened
+				has_global_flag = ai_invasion_happened
+				has_global_flag = active_gray_goo
+				has_global_flag = great_khan_announcement
+				has_global_flag = sleepers_awake_happened
+				has_global_flag = galactic_crisis_happened
 			}
-			any_relation = {
-				has_communications = root
-				is_country_type = awakened_fallen_empire
+			# Defeated stuff should not be considered a threat
+			NOR = {
+				has_global_flag = prethoryn_invasion_defeated
+				has_global_flag = extradimensional_invasion_defeated
+				has_global_flag = ai_invasion_defeated
 			}
-			any_relation = {
-				has_communications = root
-				is_country_type = awakened_marauders
+			# These do not have any regular flag so i had to get creative with the discovery of the data
+			OR = {
+				any_relation = {
+					has_communications = root
+					is_country_type = gray_goo
+				}
+				any_relation = {
+					has_communications = root
+					is_country_type = awakened_fallen_empire
+				}
+				any_relation = {
+					has_communications = root
+					is_country_type = awakened_marauders
+				}
 			}
 		}
 	}
@@ -71,77 +73,117 @@ AP_has_superior_opponent = {
 	}
 }
 
-AP_panic_button_valid = {
+# Basic check to see if the player is at war
+AP_panic_valid_t1 = {
 	owner = {
-		is_ai = no
-		AP_has_encountered_crisis = no
-		AND = {
-			is_at_war = yes
+		is_at_war = yes
+		any_situation = {
+			is_situation_type = situation_AP_panic
+			situation_progress < 50
+		}
+	}
+}
+
+AP_panic_valid_t2 = {
+	owner = {
+		is_at_war = yes
+		any_situation = {
+			is_situation_type = situation_AP_panic
+			situation_progress < 75
+			situation_progress >= 50
+		}
+		OR = {
+			AP_is_occupied = yes
 			any_war = {
-				OR = {
-					is_total_war = yes
-					attacker = {
-						has_casus_belli = {
-							target = FROM
-							type = cb_sublimation
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_purification
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_hunger
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_subjugation
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_megacorp_subjugate
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_end_threat_revenge_for_eaten_star
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_end_threat_renegade_containment
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_fe_punishment
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_existential_expulsion
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_scion
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_secession
-						}
-						has_casus_belli = {
-							target = FROM
-							type = cb_containment
-						}
+				attacker = {
+					has_casus_belli = {
+						target = FROM
+						type = cb_claim
 					}
-					defender = {
-						has_casus_belli = {
-							target = THIS
-							type = cb_stop_colossus
-						}
-						has_casus_belli = {
-							target = THIS
-							type = cb_containment
-						}
+				}
+				defender = {
+					has_casus_belli = {
+						target = FROM
+						type = cb_claim
 					}
 				}
 			}
+		}
+	}
+}
+
+AP_panic_valid_t3 = {
+	owner = {
+		any_situation = {
+			is_situation_type = situation_AP_panic
+			situation_progress < 100
+			situation_progress >= 75
+		}
+		OR = {
+			any_war = {
+				is_total_war = yes
+				attacker = {
+					has_casus_belli = {
+						target = FROM
+						type = cb_sublimation
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_purification
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_hunger
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_subjugation
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_megacorp_subjugate
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_end_threat_revenge_for_eaten_star
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_end_threat_renegade_containment
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_fe_punishment
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_existential_expulsion
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_scion
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_secession
+					}
+					has_casus_belli = {
+						target = FROM
+						type = cb_containment
+					}
+				}
+				defender = {
+					has_casus_belli = {
+						target = THIS
+						type = cb_stop_colossus
+					}
+					has_casus_belli = {
+						target = THIS
+						type = cb_containment
+					}
+				}
+			}
+			AP_has_encountered_crisis = yes
 		}
 	}
 }

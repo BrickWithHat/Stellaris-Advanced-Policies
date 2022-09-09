@@ -8,3 +8,8 @@ AP_edict_size_effect_halfed = {
 	mult = trigger:empire_size
 	add = 0.25
 }
+AP_agenda_decision_effect = {
+	base = 0
+	mult = trigger:empire_size
+	add = 0.1
+}

@@ -302,7 +302,7 @@ specialist_tarrifs_clerk = {
 			}
 		}
 		modifier = {
-			factor = 5
+			factor = 10
 			owner = {
 				is_megacorp = yes
 			}

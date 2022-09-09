@@ -1,0 +1,79 @@
+##########################################################################
+# Agenda Based Decisions
+##########################################################################
+# AP_agenda_devolp_industry = {
+# 	owned_planets_only = yes
+# 	sound = event_airlock_02
+# 	icon = decision_ruler_agenda
+# 	resources = {
+# 		category = decisions
+# 		cost = {
+# 			unity = 100
+# 			energy = 500
+# 			multiplier = value:AP_agenda_decision_effect
+# 		}
+# 	}
+# 	potential = {
+# 		always = no
+# 		planet = {
+# 			NOT = {
+# 				has_planet_flag = AP_ruler_agenda_decision
+# 			}
+# 		}
+# 		owner = {
+			
+# 		}
+# 	}
+# 	allow = {
+# 	}
+# 	effect = {
+# 		planet = {
+# 			# Removes poor minerals modifier
+# 			if = {
+# 				limit = {
+# 					has_planet_modifier = pm_mineral_poor
+# 				}
+# 				remove_modifier = mineral_poor
+# 				set_timed_planet_flag = {
+# 					flag = AP_ruler_agenda_decision
+# 					days = 3600
+# 				}
+# 			}
+# 			# Adds the Rich Minerals Modifier for 3600 days
+# 			if = {
+# 				limit = {
+# 					NAND = {
+# 						has_planet_modifier = pm_mineral_poor
+# 						has_planet_modifier = pm_mineral_rich
+# 						has_planet_modifier = pm_ultra_rich
+# 					}
+# 				}
+# 				add_modifier = {
+# 					modifier = mineral_rich
+# 					days = 3600
+# 				}
+# 				set_timed_planet_flag = {
+# 					flag = AP_ruler_agenda_decision
+# 					days = 3600
+# 				}
+# 			}
+# 			# Upgrades the minerals found if you have rich minerals
+# 			if = {
+# 				limit = {
+# 					has_planet_modifier = pm_mineral_rich
+# 				}
+# 				remove_modifier = mineral_rich
+# 				add_modifier = {
+# 					modifier = ultra_rich
+# 				}
+# 				set_timed_planet_flag = {
+# 					flag = AP_ruler_agenda_decision
+# 					days = 3600
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_weight = {
+# 		weight = 10
+# 	}
+# }

@@ -316,7 +316,6 @@ AP_justice = {
 			AP_justice_mob
 		}
 		valid = {
-			
 		}
 		modifier = {
 			planet_enforcers_unity_produces_add = 4
@@ -353,7 +352,6 @@ AP_justice = {
 			AP_justice_local_officials
 		}
 		valid = {
-			
 		}
 		modifier = {
 			planet_enforcers_unity_produces_add = 3
@@ -386,7 +384,6 @@ AP_justice = {
 			AP_justice_regional_officials
 		}
 		valid = {
-			
 		}
 		modifier = {
 			planet_enforcers_unity_produces_add = 2
@@ -418,7 +415,6 @@ AP_justice = {
 			AP_justice_state_officials
 		}
 		valid = {
-			
 		}
 		modifier = {
 			planet_enforcers_unity_produces_add = 1
@@ -469,7 +465,7 @@ AP_education_privledge = {
 		modifier = {
 			pop_happiness = 0.05
 			planet_jobs_worker_produces_mult = 0.05
-			job_worker_educator_per_pop = 0.02	# One educator per 50 pops
+			job_worker_educator_per_pop = 0.02			# One educator per 50 pops
 		}
 		AI_weight = {
 			weight = 10
@@ -506,7 +502,7 @@ AP_education_privledge = {
 		modifier = {
 			pop_citizen_happiness = 0.05
 			planet_jobs_specialist_produces_mult = 0.05
-			job_specialist_educator_per_pop = 0.0133	# One educator per 75 pops
+			job_specialist_educator_per_pop = 0.0133			# One educator per 75 pops
 		}
 		AI_weight = {
 			weight = 10
@@ -556,7 +552,7 @@ AP_education_privledge = {
 			pop_cat_specialist_political_power = -0.05
 			pop_cat_worker_political_power = -0.1
 			pop_cat_slave_political_power = -0.1
-			job_ruler_educator_per_pop = 0.01	# One educator per 100 pops
+			job_ruler_educator_per_pop = 0.01			# One educator per 100 pops
 		}
 		AI_weight = {
 			weight = 10
@@ -2255,9 +2251,9 @@ AP_policy_panic = {
 			AP_condition_green
 		}
 		AI_weight = {
-			weight = 5
+			weight = 0
 			modifier = {
-				factor = 10
+				add = 10
 				is_at_war = no
 			}
 		}
@@ -2302,7 +2298,6 @@ AP_policy_panic = {
 			}
 			modifier = {
 				factor = 10
-				AP_panic_button_valid = yes
 				any_owned_planet = {
 					is_occupied_flag = yes
 				}

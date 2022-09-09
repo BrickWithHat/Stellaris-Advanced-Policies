@@ -1,7 +1,12 @@
 ##########################################################################
 # Basic setup
 ##########################################################################
+@Panic_super_short = 360
+@Panic_short = 720
+@Panic_medium = 1080
+@Panic_long = 1800
 namespace = AP_panic
+## Basic flag placer
 situation_event = {
 	id = AP_panic.1
 	hide_window = yes
@@ -20,41 +25,96 @@ situation_event = {
 	}
 }
 
-situation_event = {
+## Event to allow players to exit safely out of the situation
+country_event = {
 	id = AP_panic.2
-	picture = GFX_evt_ground_combat
+	title = AP_panic.2_title
+	desc = AP_panic.2_desc
+	picture = GFX_evt_announcement
 	is_triggered_only = yes
 	trigger = {
 		owner = {
-			is_gestalt = no
 			has_country_flag = AP_panic_active
-			NOT = {
-				has_modifier = army_inspiration
-			}
 		}
-		AP_panic_button_valid = no
 	}
-	fire_only_once = yes
-	title = AP_panic.2_title
-	desc = AP_panic.2_desc
 	option = {
 		name = AP_panic.2_1
-		owner = {
-			add_modifier = {
-				modifier = army_inspiration
-				days = 1800
+		custom_tooltip = AP_panic.2_1_tooltip
+		# AI should always do this
+		every_situation = {
+			limit = {
+				is_situation_type = situation_AP_panic
 			}
+			set_situation_approach = AP_panic_approach_deescalated
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = {
+						any_situation = {
+							is_situation_type = situation_AP_panic
+							situation_progress >= 75
+						}
+					}
+				}
+				# The amount removed needs to be a clear divide between 3 due to the design of the progress meter for this situation.
+				# If not cleanly dividable by 3, it could allow players to complete the wrong side of the situation.
+				every_situation = {
+					limit = {
+						is_situation_type = situation_AP_panic
+					}
+					add_situation_progress = -48
+				}
+			}
+			else_if = {
+				limit = {
+					owner = {
+						any_situation = {
+							is_situation_type = situation_AP_panic
+							situation_progress >= 50
+						}
+					}
+				}
+				every_situation = {
+					limit = {
+						is_situation_type = situation_AP_panic
+					}
+					add_situation_progress = -30
+				}
+			}
+		}
+		ai_chance = {
+			weight = 100
+		}
+	}
+	option = {
+		name = AP_panic.2_2
+		custom_tooltip = AP_panic.2_2_tooltip
+		ai_chance = {
+			weight = 0
 		}
 	}
 }
 
+## Crime Wave // T1 - T3
 situation_event = {
 	id = AP_panic.3
 	picture = GFX_evt_engineering_bay
 	is_triggered_only = yes
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t1 = YES
+			AP_panic_valid_t2 = YES
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 25
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			any_owned_planet = {
 				NOR = {
@@ -94,6 +154,12 @@ situation_event = {
 	option = {
 		name = AP_panic.3_1
 		hidden_effect = {
+			root = {
+				set_timed_situation_flag = {
+					flag = AP_panic_event
+					days = @Panic_medium
+				}
+			}
 			owner = {
 				if = {
 					limit = {
@@ -102,14 +168,14 @@ situation_event = {
 					random_owned_planet = {
 						add_modifier = {
 							modifier = drone_deviancy
-							days = 1080
+							days = @Panic_medium
 						}
 					}
 					else = {
 						random_owned_planet = {
 							add_modifier = {
 								modifier = crime_wave
-								days = 1080
+								days = @Panic_medium
 							}
 						}
 					}
@@ -119,13 +185,24 @@ situation_event = {
 	}
 }
 
+## Capital Strike // T2 - T3
 situation_event = {
 	id = AP_panic.4
 	picture = GFX_evt_burning_settlement
 	is_triggered_only = yes
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t2 = YES
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 50
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			is_gestalt = no
 			capital_scope = {
@@ -139,25 +216,41 @@ situation_event = {
 	desc = AP_panic.4_desc
 	option = {
 		name = AP_panic.4_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_medium
+			}
+		}
 		owner = {
 			capital_scope = {
 				add_modifier = {
 					modifier = planet_AP_organized_strike
-					days = 1080
+					days = @Panic_medium
 				}
 			}
 		}
 	}
 }
 
+## Gestalt Crime Debuff Part 1 // T3
 situation_event = {
 	id = AP_panic.5
 	picture = GFX_evt_hive
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			is_gestalt = yes
 			NOT = {
@@ -170,10 +263,16 @@ situation_event = {
 	option = {
 		name = AP_panic.5_1
 		hidden_effect = {
+			root = {
+				set_timed_situation_flag = {
+					flag = AP_panic_event
+					days = @Panic_long
+				}
+			}
 			owner = {
 				add_modifier = {
 					modifier = country_AP_gestalt_crime_debuff
-					days = 1800
+					days = @Panic_long
 				}
 			}
 		}
@@ -183,21 +282,36 @@ situation_event = {
 		hidden_effect = {
 			situation_event = {
 				id = AP_panic.51
-				days = 10
-				random = 20
+				days = 30
+			}
+			root = {
+				set_timed_situation_flag = {
+					flag = AP_panic_event
+					days = 30
+				}
 			}
 		}
 	}
 }
 
+## Gestalt Crime Debuff Part 2 // T3
 situation_event = {
 	id = AP_panic.51
 	picture = GFX_evt_analyzing_artifacts
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			is_gestalt = yes
 			NOT = {
@@ -210,10 +324,16 @@ situation_event = {
 	option = {
 		name = AP_panic.51_1
 		hidden_effect = {
+			root = {
+				set_timed_situation_flag = {
+					flag = AP_panic_event
+					days = @Panic_long
+				}
+			}
 			owner = {
 				add_modifier = {
 					modifier = country_AP_gestalt_crime_debuff
-					days = 1080
+					days = @Panic_long
 				}
 			}
 		}
@@ -237,6 +357,7 @@ situation_event = {
 	}
 }
 
+## Influence Debuff // T1 - T3
 situation_event = {
 	id = AP_panic.6
 	is_triggered_only = yes
@@ -244,8 +365,19 @@ situation_event = {
 	title = AP_panic.6_title
 	desc = AP_panic.6_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t1 = YES
+			AP_panic_valid_t2 = YES
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 25
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			NOT = {
 				has_modifier = country_AP_influence_debuff
@@ -255,10 +387,16 @@ situation_event = {
 	option = {
 		name = AP_panic.6_1
 		hidden_effect = {
+			root = {
+				set_timed_situation_flag = {
+					flag = AP_panic_event
+					days = @Panic_medium
+				}
+			}
 			owner = {
 				add_modifier = {
 					modifier = country_AP_influence_debuff
-					days = 1800
+					days = @Panic_medium
 				}
 			}
 		}
@@ -273,16 +411,20 @@ situation_event = {
 				set_situation_approach = AP_panic_approach_deescalated
 				add_situation_progress = -20
 			}
+			add_resource = {
+				unity = 500
+			}
 			hidden_effect = {
 				add_modifier = {
 					modifier = country_AP_influence_debuff
-					days = 1080
+					days = @Panic_short
 				}
 			}
 		}
 	}
 }
 
+## Food Debuff // T3
 situation_event = {
 	id = AP_panic.7
 	is_triggered_only = yes
@@ -305,8 +447,17 @@ situation_event = {
 		text = AP_panic.7_desc_gestalt
 	}
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			country_uses_food = yes
 			has_country_flag = AP_panic_active
 			NOT = {
@@ -316,13 +467,16 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.7_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_super_short
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_food_debuff
-				days = 450
-			}
-			add_resource = {
-				food = -2500
+				days = @Panic_super_short
 			}
 			if = {
 				limit = {
@@ -336,6 +490,7 @@ situation_event = {
 	}
 }
 
+## Consumer Goods Debuff // T3
 situation_event = {
 	id = AP_panic.8
 	is_triggered_only = yes
@@ -343,8 +498,17 @@ situation_event = {
 	title = AP_panic.8_title
 	desc = AP_panic.8_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			country_uses_consumer_goods = yes
 			NOT = {
@@ -354,15 +518,22 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.8_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_short
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_consumer_goods_debuff
-				days = 1080
+				days = @Panic_short
 			}
 		}
 	}
 }
 
+## Alloy Debuff // T3
 situation_event = {
 	id = AP_panic.9
 	is_triggered_only = yes
@@ -370,8 +541,17 @@ situation_event = {
 	title = AP_panic.9_title
 	desc = AP_panic.9_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			NOT = {
 				has_modifier = country_AP_alloys_debuff
@@ -380,15 +560,22 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.9_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_medium
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_alloys_debuff
-				days = 1080
+				days = @Panic_medium
 			}
 		}
 	}
 }
 
+## Unemployment Debuff // T1 - T3
 situation_event = {
 	id = AP_panic.10
 	is_triggered_only = yes
@@ -396,8 +583,19 @@ situation_event = {
 	title = AP_panic.10_title
 	desc = AP_panic.10_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t1 = YES
+			AP_panic_valid_t2 = YES
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 25
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			is_gestalt = no
 			has_country_flag = AP_panic_active
 			NOT = {
@@ -407,15 +605,22 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.10_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_long
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_umployment_debuff
-				days = 1080
+				days = @Panic_long
 			}
 		}
 	}
 }
 
+## Unity/Factions Debuff // T2 - T3
 situation_event = {
 	id = AP_panic.11
 	is_triggered_only = yes
@@ -423,8 +628,18 @@ situation_event = {
 	title = AP_panic.11_title
 	desc = AP_panic.11_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t2 = YES
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 50
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			is_gestalt = no
 			has_country_flag = AP_panic_active
 			NOT = {
@@ -434,15 +649,22 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.11_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_long
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_factions_debuff
-				days = 1080
+				days = @Panic_long
 			}
 		}
 	}
 }
 
+## Mineral Debuff // T3
 situation_event = {
 	id = AP_panic.12
 	is_triggered_only = yes
@@ -450,8 +672,17 @@ situation_event = {
 	title = AP_panic.12_title
 	desc = AP_panic.12_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			NOT = {
 				has_modifier = country_AP_mineral_debuff
@@ -460,15 +691,22 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.12_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_short
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_mineral_debuff
-				days = 1080
+				days = @Panic_short
 			}
 		}
 	}
 }
 
+## Energy Debuff // T3
 situation_event = {
 	id = AP_panic.13
 	is_triggered_only = yes
@@ -476,8 +714,17 @@ situation_event = {
 	title = AP_panic.13_title
 	desc = AP_panic.13_desc
 	trigger = {
-		AP_panic_button_valid = no
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
 		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
 			has_country_flag = AP_panic_active
 			NOT = {
 				has_modifier = country_AP_energy_debuff
@@ -486,10 +733,60 @@ situation_event = {
 	}
 	option = {
 		name = AP_panic.13_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_super_short
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = country_AP_energy_debuff
-				days = 1080
+				days = @Panic_super_short
+			}
+		}
+	}
+}
+
+## Army Recruits Bonus // T3
+situation_event = {
+	id = AP_panic.14
+	picture = GFX_evt_ground_combat
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			AP_panic_valid_t3 = YES
+		}
+		owner = {
+			any_situation = {
+				is_situation_type = situation_AP_panic
+				situation_progress >= 75
+				NOT = {
+					has_situation_flag = AP_panic_event
+				}
+			}
+			is_gestalt = no
+			has_country_flag = AP_panic_active
+			NOT = {
+				has_modifier = army_inspiration
+			}
+		}
+	}
+	fire_only_once = yes
+	title = AP_panic.14_title
+	desc = AP_panic.14_desc
+	option = {
+		name = AP_panic.14_1
+		root = {
+			set_timed_situation_flag = {
+				flag = AP_panic_event
+				days = @Panic_long
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = army_inspiration
+				days = @Panic_long
 			}
 		}
 	}

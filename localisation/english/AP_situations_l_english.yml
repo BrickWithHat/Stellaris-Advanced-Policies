@@ -30,16 +30,15 @@
  AP_panic_4:0 "$AP_condition_void$"
  AP_panic_4_desc:0 "§WOn first enter, Will set §Y$policy_AP_policy_panic$§! to §Y$AP_condition_void$§!.§!\n"
  AP_situation_panic_4_policy:0 "Policy §Y$AP_condition_void$§! has been set in the category §Y$policy_AP_policy_panic$§!."
-
- situation_AP_planetary_quota:0 "Planetary Quota"
- situation_AP_planetary_quota_type:0 "$situation_AP_planetary_quota$"
- situation_AP_planetary_quota_desc:0 ""
 ##########################################################################
 # Panic Events
 ##########################################################################
- AP_panic.2_title:0 "Troop Surplus"
- AP_panic.2_desc:0 "As recent battle has been shown to the public as a whole. The effect though horrifying to our populace has inspired many to consider service to avoid defeat by the hands of our enemies. As we speak many recruitment offices are recieving a big stream of potential voltunteers for our army!"
- AP_panic.2_1:0 "Good, we might need the troops."
+ AP_panic.2_title:0 "The burning cities"
+ AP_panic.2_desc:0 "With an end to a war the likes of which have not been seen for years, the people are becoming hopefull. Not just for peace. But for a more prosperous future, yet there fate lies in our hands. We now are presented a proper chance to end the emergency measures enacted to ensure our surival. These choices could influence our future for a good number of years to come."
+ AP_panic.2_1:0 "Let us return to the regular"
+ AP_panic.2_2:0 "Maybe we should hold onto this powers for just a bit longer..."
+ AP_panic.2_1_tooltip:0 "§YWill reduce the Emergency Measures progress considerly and set your stance to $AP_panic_approach_deescalated$§!"
+ AP_panic.2_2_tooltip:0 "§YWill maintain the Emergency Measures progress and stance as is.§!"
 
  AP_panic.3_title:0 "Rumbles from below"
  AP_panic.3_desc:0 "We have recieved reports that a decent number of individuals have become uncooperative. They seem to turn to crime to reach there basic needs, Recently they seem to have forced in aggresive gangs who prey on those alone on the streets."
@@ -94,11 +93,18 @@
  AP_panic.13_desc:0 "Due to increased demands and pressuare set upon by our emergency measures, we are now unable to fully unitilize our energy production capabilities. The effects are rampant across our empire. With some locations not even being able to sustain themselfs anymore, requiring external aid to stay functional."
  AP_panic.13_1:0 "Unfortunate"
 
+ AP_panic.14_title:0 "Troop Surplus"
+ AP_panic.14_desc:0 "As recent battle has been shown to the public as a whole. The effect though horrifying to our populace has inspired many to consider service to avoid defeat by the hands of our enemies. As we speak many recruitment offices are recieving a big stream of potential voltunteers for our army!"
+ AP_panic.14_1:0 "Good, we might need the troops."
+
 ##########################################################################
 # Quota Situation
 ##########################################################################
- 
+ situation_AP_planetary_quota:0 "Planetary Quota"
+ situation_AP_planetary_quota_type:0 "$situation_AP_planetary_quota$"
+ situation_AP_planetary_quota_desc:0 ""
  situation_AP_planetary_quota_monthly_change_tooltip:0 "Progress"
+
  AP_quota_approach_idle:0 "Maintain Course"
  AP_quota_0:0 "Start-up"
  AP_quota_1:0 "Phase 1"

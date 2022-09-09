@@ -22,18 +22,18 @@ situation_AP_panic = {
 	on_monthly = {
 		random_events = {
 			100 = 0
-			10 = AP_panic.2	# Army Recruits Bonus
-			30 = AP_panic.3	# Crime Wave and Reinforces Crime worlds
-			30 = AP_panic.4	# Capital Strike
-			30 = AP_panic.5	# Gestalt Crime Debuff
-			30 = AP_panic.6	# Influence Debuff
-			30 = AP_panic.7 # Food Debuff
-			45 = AP_panic.8 # Consumer Goods Debuff
-			45 = AP_panic.9 # Alloys Debuff
-			25 = AP_panic.10 # Unemployment Debuff
-			25 = AP_panic.11 # Unity/Factions Debuff
-			15 = AP_panic.12 # Mineral Debuff
-			15 = AP_panic.13 # Energy Debuff
+			25 = AP_panic.3	# Crime Wave and Reinforces Crime worlds // T1 - T3
+			25 = AP_panic.4	# Capital Strike // T2 - T3
+			25 = AP_panic.5	# Gestalt Crime Debuff // T3
+			10 = AP_panic.6	# Influence Debuff // T1 - T3
+			5 = AP_panic.7 # Food Debuff // T2 - T3
+			10 = AP_panic.8 # Consumer Goods Debuff // T3
+			10 = AP_panic.9 # Alloys Debuff // T3
+			25 = AP_panic.10 # Unemployment Debuff // T1 - T3
+			25 = AP_panic.11 # Unity/Factions Debuff // T2 - T3
+			5 = AP_panic.12 # Mineral Debuff // T3
+			5 = AP_panic.13 # Energy Debuff // T3
+			10 = AP_panic.14 # Army Recruits Bonus // T3
 		}
 	}
 	progress_direction = bidirectional
@@ -271,10 +271,8 @@ situation_AP_panic = {
 			custom_tooltip = AP_panic_approach_escalated_tooltip
 		}
 		allow = {
-			hidden_trigger = {
-				# i do not want the player or AI to complete it but simply ride the buffs and policy changes
-				situation_progress < 99
-			}
+			# i do not want the player or AI to complete it but simply ride the buffs and policy changes
+			situation_progress < 99
 			custom_tooltip = {
 				fail_text = AP_panic_approach_escalate_not_allowed
 				situation_progress <= 99

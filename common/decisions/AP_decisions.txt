@@ -435,7 +435,7 @@ AP_mobile_constrution_deploy = {
 		modifier = {
 			factor = 0
 			AND = {
-				free_district_slots <= 2
+				free_district_slots <= 3
 				num_uncleared_blockers <= 2
 			}
 		}
@@ -467,14 +467,31 @@ AP_mobile_constrution_pack = {
 	}
 	enactment_time = 60
 	ai_weight = {
-		weight = 1
-		# AI cannot move the MCV while it is either building, or has more then 2 districts available to build
+		weight = 10
+		# AI cannot move the MCV while it is either building, or has more then 5 districts available to build
 		modifier = {
 			factor = 0
 			OR = {
 				has_building_construction = yes
 				NOT = {
-					free_district_slots <= 2
+					free_district_slots <= 5
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				AND = {
+					num_unemployed >= 3
+					free_jobs <= 1
+					OR = {
+						free_district_slots >= 2
+						free_building_slots >= 1
+					}
+				}
+				AND = {
+					num_uncleared_blockers >= 2
+					free_district_slots <= 3
 				}
 			}
 		}
@@ -739,12 +756,21 @@ AP_migration_push = {
 			add = 5
 			num_assigned_jobs = {
 				job = unemployed
-				value >= 1
+				value >= 3
 			}
 		}
 		modifier = {
 			add = 1
 			has_upgraded_capital = yes
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_designation = col_default
+					has_building = building_colony_shelter
+				}
+			}
 		}
 	}
 }
@@ -791,11 +817,20 @@ AP_migration_pull = {
 		}
 		modifier = {
 			factor = 5
-			free_jobs >= 5
+			free_jobs >= 3
 		}
 		modifier = {
 			add = 1
 			has_upgraded_capital = yes
+		}
+		modifier = {
+			add = 5
+			planet = {
+				OR = {
+					has_designation = col_default
+					has_building = building_colony_shelter
+				}
+			}
 		}
 	}
 }
