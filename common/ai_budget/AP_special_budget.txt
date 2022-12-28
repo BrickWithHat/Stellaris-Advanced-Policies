@@ -6,15 +6,25 @@ AP_decision_planet_excivation = {
 	potential = {
 		has_origin = AP_children_of_the_darkness
 	}
-	fraction = {
+	weight = {
 		weight = 1
 	}
-	static_min = {
-		base = 500
+	desired_min = {
+		base = 0
+		modifier = {
+			add = 500
+			any_owned_planet = {
+				NOT = {
+					has_deposit = d_AP_underground_city
+					has_deposit = d_AP_underground_cities
+				}
+			}
+		}
 	}
-	static_max = {
+	desired_max = {
 		base = 1000
 	}
+	
 }
 # The ability to use civic/origin specific decisions as else the AI gets a bit confused.
 # Relevant for, MCV civic, Sky treaders origin
@@ -25,7 +35,7 @@ AP_decisions = {
 	potential = {
 		always = yes # Is always rather then specific because having it be done else risks bugs due to errors
 	}
-	fraction = {
+	weight = {
 		weight = 0.5
 		modifier = {
 			add = 0.25

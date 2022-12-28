@@ -174,7 +174,7 @@
  AP_meritocracy_population:0 "The Greater Populace"
  AP_meritocracy_population_desc:0 "Our empire consists of millions upon millions, while we could let some rise above the masses. We could also elevate the masses above our rivals.\n\n"
  AP_meritocracy_potential:0 "Seeking for Greater Potential"
- AP_meritocracy_potential_desc:0 "Some are truely more gifted then others, We should invest heavily in finding these and giving them the oppertunity to rise above the rest.\n\n"
+ AP_meritocracy_potential_desc:0 "Some are truely more gifted then others, We should invest heavily in finding these and giving them the opportunity to rise above the rest.\n\n"
 
  policy_AP_nationalistic_zeal:0 "Focus of Zeal"
  policy_AP_nationalistic_zeal_desc:0 "Our zeal has always carried us forward. Now that we have entered the stars we should focus our zeal once more.\n"
@@ -201,7 +201,7 @@
  AP_philosopher_king_tyrant:0 "Pillar of Wisdom"
  AP_philosopher_king_tyrant_desc:0 "Our benevolant Leader has come to the conclusion that only there will is worthy of ruling.\n\n"
  AP_philosopher_king_benevolant:0 "True Benevolance"
- AP_philosopher_king_benevolant_desc:0 "It is widely known that our great Leader has always kept a watch on our citizens pleas or wants. This has offered them an oppertunity to do something, which then turned to action.\n\n"
+ AP_philosopher_king_benevolant_desc:0 "It is widely known that our great Leader has always kept a watch on our citizens pleas or wants. This has offered them an opportunity to do something, which then turned to action.\n\n"
 
  policy_AP_police_state:0 "Police Strategy"
  policy_AP_police_state_desc:0 "The place, goals and tools given to our police forces.\n"
@@ -269,6 +269,15 @@
  AP_idyllic_bloom_cultural_desc:0 "Our heritage can be linked to trying to improve our world. Let us honour that history.\n\n"
  AP_idyllic_bloom_survival:0 "Surival Orianted"
  AP_idyllic_bloom_survival_desc:0 "Our goal is signular to survive preferably by the means already layed bare infront of us.\n\n"
+
+ policy_AP_ascensionists:0 "Ascention Policy"
+ policy_AP_ascensionists_desc:0 "How we move forward and help our empire rise above the regular.\n"
+ AP_ascensionists_people:0 "Focus: Population"
+ AP_ascensionists_people_desc:0 "To allow our population to grow and prosper it its own reward.\n\n"
+ AP_ascensionists_autocratic:0 "Focus: Authority"
+ AP_ascensionists_autocratic_desc:0 "To obey is to be given the priveledge of prosperity.\n\n"
+ AP_ascensionists_egalitarian:0 "Focus: Prosperity"
+ AP_ascensionists_egalitarian_desc:0 "All deserve a fair chance of greatness, to cease it is up to the individual.\n\n"
 
  policy_AP_fanatic_purifiers:0 "Purification Policy"
  policy_AP_fanatic_purifiers_desc:0 "We are the only truely worthy forms of life in this galaxy, To that end we must act accordingly to whenever we find something else.\n"
@@ -384,6 +393,33 @@
  AP_anglers_trade_desc:0 "The riches we find in the deep seem to be rather rare across the galaxy, this can be used to our advantage. Be it for diplomatic ends or simply monetery gains.\n\n"
  AP_anglers_mineral:0 "Resources Focused"
  AP_anglers_mineral_desc:0 "We require the vast holds of material goods from the deep. There will be dangers but the value it creates is beyond imagening.\n\n"
+
+ policy_AP_mutagenic_spas:0 "Mutagenic Bathing"
+ policy_AP_mutagenic_spas_desc:0 "Our bathing habits might be seen as unuseal by some, but it is a cornerstone of our society. We should therfor ensure its survival and it use to our society. So we all can benefit from getting a good bath.\n"
+ AP_mutagenic_spas_cell_rebirth:0 "Cell Rebirth"
+ AP_mutagenic_spas_cell_rebirth_desc:0 "The flesh is a fickle matter, allowing us to grow new cells and wash away the old. Allows for longer livespans for all. A good bath might give scales where there previously wasn't but that is preferable to those nasty wrinkles.\n\n"
+ AP_mutagenic_spas_genetic_wildcard:0 "Genetic Lottery"
+ AP_mutagenic_spas_genetic_wildcard_desc:0 "The bath water should be let loose fully, no holding back. Let the mutation run rampant.\n\n"
+ AP_mutagenic_spas_research_opportunity:0 "Research Opportunity"
+ AP_mutagenic_spas_research_opportunity_desc:0 "These mutations might be cause for study, with luck we could guide the growth of specific mutations too. Granting us greater potential in the long run.\n\n"
+
+ policy_AP_relentless_industrialists:0 "Industrialization Policy"
+ policy_AP_relentless_industrialists_desc:0 "The wheels of industry turn evermore yet how it moves forward is to shape it to benefit us.\n"
+ AP_relentless_industrialists_rampant_industry:0 "Rampant Industrialization"
+ AP_relentless_industrialists_rampant_industry_desc:0 "Let the industry expand at its own leasure. Making it a more competitive sector.\n\n"
+ AP_relentless_industrialists_sophisticated_scheduling:0 "Sophisticated Scheduling"
+ AP_relentless_industrialists_sophisticated_scheduling_desc:0 "Enforce a strict scheduling law for production and waste cycles. Forcing higher efficiency to avoid wasted material.\n\n"
+ AP_relentless_industrialists_state_funding:0 "State Support"
+ AP_relentless_industrialists_state_funding_desc:0 "Giving our support to the industrial sector grants us the right to be more direct in our demands without risking economic backlash.\n\n"
+
+ policy_AP_scavengers:0 "Scavengers Expertise"
+ policy_AP_scavengers_desc:0 "We have a hardend core of expert scavengers accros our empire, not guiding them towards there best use is a waste.\n"
+ AP_scavengers_cultural_salvage:0 "Cultural Leverage"
+ AP_scavengers_cultural_salvage_desc:0 "Prioritizing other species cultural artifacts or oddities allows us to learn form there manners and principles. Giving us an advantage in diplomatic engagements, Not to mention there gratitude or distain for returning our finds afterwards.\n\n"
+ AP_scavengers_experience_engineers:0 "Experienced Engineers"
+ AP_scavengers_experience_engineers_desc:0 "Being able to make something from a wreck is a form of art to our scavengers, So let us guide there practical thinking towards the rest of the population.\n\n"
+ AP_scavengers_slicers:0 "Expert Slicers"
+ AP_scavengers_slicers_desc:0 "No terminal is safe with us around, Even after a few diplomatic insidents the knowledge gained was well worth it.\n\n"
 
 ##########################################################################
 # MegaCorp Civic policies
@@ -519,6 +555,13 @@
  AP_corporate_hedonism_open_mind:0 "Mind Widening"
  AP_corporate_hedonism_open_mind_desc:0 "$AP_pleasure_seekers_open_mind_desc$"
 
+ policy_AP_corporate_ascensionists:0 "Ascenscion Policy"
+ policy_AP_corporate_ascensionists_desc:0 "We must focus our efforts into limited locations to that end we can only focus either on our planets or on our space assets.\n"
+ AP_corporate_ascensionists_space_dev:0 "Focus: Space Devolpment"
+ AP_corporate_ascensionists_space_dev_desc:0 "Space is the next frontier, we should get as much material and land as is possible to maximize our profits projections.\n\n"
+ AP_corporate_ascensionists_local_dev:0 "Focus: Planetary Devolpment"
+ AP_corporate_ascensionists_local_dev_desc:0 "The planets are the bottom line that keeps our profits high, without them we would need to depend on outwards aid for basic needs. Something which is simply bad for profit.\n\n"
+
  policy_AP_public_relations_specialists:0 "PR Policy"
  policy_AP_public_relations_specialists_desc:0 "How we appear can easily influence our treaties with out empires. To that end and to improve our bottom line. We invested heavily into public relation specialists.\n"
  AP_public_relations_specialists_discussion:0 "$AP_diplomatic_corps_discussion$"
@@ -551,6 +594,33 @@
  AP_corporate_anglers_minerals:0 "$AP_anglers_mineral$"
  AP_corporate_anglers_minerals_desc:0 "$AP_anglers_mineral_desc$"
 
+ policy_AP_corporate_mutagenic_spas:0 "$policy_AP_mutagenic_spas$"
+ policy_AP_corporate_mutagenic_spas_desc:0 "$policy_AP_mutagenic_spas_desc$"
+ AP_corporate_mutagenic_spas_cell_rebirth:0 "$AP_mutagenic_spas_cell_rebirth$"
+ AP_corporate_mutagenic_spas_cell_rebirth_desc:0 "$AP_mutagenic_spas_cell_rebirth_desc$"
+ AP_corporate_mutagenic_spas_genetic_wildcard:0 "$AP_mutagenic_spas_genetic_wildcard$"
+ AP_corporate_mutagenic_spas_genetic_wildcard_desc:0 "$AP_mutagenic_spas_genetic_wildcard_desc$"
+ AP_corporate_mutagenic_spas_income_opportunity:0 "Profit to be made"
+ AP_corporate_mutagenic_spas_income_opportunity_desc:0 "Only those with high enough productivity should be allowed to attend these baths. Making these baths a reward for those able to keep up with the proper projections of profit.\n\n"
+
+ policy_AP_corprorate_relentless_industrialists:0 "$policy_AP_relentless_industrialists$"
+ policy_AP_corprorate_relentless_industrialists_desc:0 "$policy_AP_relentless_industrialists_desc$"
+ AP_corprorate_relentless_industrialists_rampant_industry:0 "Heightend Competition"
+ AP_corprorate_relentless_industrialists_rampant_industry_desc:0 "By forcing competition every so often between similair divisions we ensure heightend efficiency.\n\n"
+ AP_corprorate_relentless_industrialists_sophisticated_scheduling:0 "Advanced Scheduling"
+ AP_corprorate_relentless_industrialists_sophisticated_scheduling_desc:0 "Through investments into unique and advanced scheduling more can be done in less time giving our employes more time off as a whole.\n\n"
+ AP_corprorate_relentless_industrialists_state_funding:0 "Direct Oversight"
+ AP_corprorate_relentless_industrialists_state_funding_desc:0 "A direct oversight policy forces managers and other individuals of influence to regularly inspect the industries to ensure both safety and productivity are handled properly.\n\n"
+
+ policy_AP_corporate_scavengers:0 "$policy_AP_scavengers$"
+ policy_AP_corporate_scavengers_desc:0 "$policy_AP_scavengers_desc$"
+ AP_corporate_scavengers_cultural_salvage:0 "$AP_scavengers_cultural_salvage$"
+ AP_corporate_scavengers_cultural_salvage_desc:0 "$AP_scavengers_cultural_salvage_desc$"
+ AP_corporate_scavengers_experience_engineers:0 "$AP_scavengers_experience_engineers$"
+ AP_corporate_scavengers_experience_engineers_desc:0 "$AP_scavengers_experience_engineers_desc$"
+ AP_corporate_scavengers_slicers:0 "$AP_scavengers_slicers$"
+ AP_corporate_scavengers_slicers_desc:0 "$AP_scavengers_slicers_desc$"
+
 ##########################################################################
 # Organic Gestalt Civic policies
 ##########################################################################
@@ -571,6 +641,13 @@
  AP_divided_attention_mental_organs_desc:0 "The mind might direct all, but even then it has lesser minds patroling the finer points of the hive.\n\n"
  AP_divided_attention_instinct:0 "Honed Instincts"
  AP_divided_attention_instinct_desc:0 "The mind has had plenty of encounters with the deviant, As such it began to scan far and wide for the patterns of deviancy.\n\n"
+
+ policy_AP_hive_ascensionists:0 "Ascension Direction"
+ policy_AP_hive_ascensionists_desc:0 "The mind wishes for us to become one forever, to achieve this we must grow, we must advance.\n"
+ AP_hive_ascensionists_drones:0 "Focus: Drones"
+ AP_hive_ascensionists_drones_desc:0 "The drones are the key to achieving our goals, we must ensure they are ready to become truly one.\n\n"
+ AP_hive_ascensionists_infrastructure:0 "Focus: Infrastructure"
+ AP_hive_ascensionists_infrastructure_desc:0 "We must grow, we need the materials. The growth required to feed and grow it \n\n"
 
  policy_AP_natural_neural_network:0 "Neural Impulse"
  policy_AP_natural_neural_network_desc:0 "The link is what makes us whole, Yet the manner in which this link works is purely based on the mind.\n"
@@ -652,6 +729,13 @@
  AP_empath_subversion:0 "Subversive inflitration"
  AP_empath_subversion_desc:0 "The hive wishes to learn of the these individuals, so that one day. They can be intigrated into the hive.\n\n"
 
+ policy_AP_cordyceptic_drones:0 "Cordyceptic Focus"
+ policy_AP_cordyceptic_drones_desc:0 "The focus of the mind is to grow, the method however is still up for choice.\n"
+ AP_cordyceptic_drones_live:0 "Extension of Life"
+ AP_cordyceptic_drones_live_desc:0 "Maintianing the life of our drones is vital.\n\n"
+ AP_cordyceptic_drones_death:0 "Decrease of Death"
+ AP_cordyceptic_drones_death_desc:0 "Recycling the dead drones to increase our understanding and growth is a good use of there matter.\n\n"
+
  policy_AP_memorialists_hive:0 "Preservation of Memory"
  policy_AP_memorialists_hive_desc:0 "Our goal to learn from others can be guided towards a few distinct directions.\n"
  AP_memorialists_hive_the_past:0 "$AP_memorialists_the_past$"
@@ -660,6 +744,15 @@
  AP_memorialists_hive_the_present_desc:0 "$AP_memorialists_the_present_desc$"
  AP_memorialists_hive_the_future:0 "$AP_memorialists_the_future$"
  AP_memorialists_hive_the_future_desc:0 "$AP_memorialists_the_future_desc$"
+
+ policy_AP_mutagenic_bath_hive:0 "Mutagenic Growth"
+ policy_AP_mutagenic_bath_hive_desc:0 "The hive must grow, this ensure this growth and by extension our survival we have found mutagenic liquids capable of enhancing the growth of drones.\n"
+ AP_mutagenic_bath_hive_feeders:0 "Feeders Protocol"
+ AP_mutagenic_bath_hive_feeders_desc:0 "Ordering the basic sources of nutriance to be infused with the mutagen increases mutation in our existing population. These enhancements make enforcing the will easier.\n\n"
+ AP_mutagenic_bath_hive_mutation_seekers:0 "Mutation Breeder"
+ AP_mutagenic_bath_hive_mutation_seekers_desc:0 "Scouting for desirable mutations for our drones is of high importance to the hive. Granting it the ability to swap easily between drone types.\n\n"
+ AP_mutagenic_bath_hive_specialization:0 "Specialized Drones"
+ AP_mutagenic_bath_hive_specialization_desc:0 "Focusing on existing drones to enchance there abilties is a clear increase in efficiency.\n\n"
 
 ##########################################################################
 # Mechanical Gestalt Civic policies
@@ -794,6 +887,13 @@
  AP_organic_reprocessing_machine_reuse:0 "Waste recycling"
  AP_organic_reprocessing_machine_reuse_desc:0 "After a while units seem to attract some organic waste, While not causing problems it did get noticed by the routines. These realized they could just recycle them into more usefull components.\n\n"
 
+ policy_AP_machine_ascensionists:0 "Hypotheses Algorithms"
+ policy_AP_machine_ascensionists_desc:0 "Core returns with option to enhance all future prospects. Requirment states growth of connections and understanding of reality.\n"
+ AP_machine_ascensionists_drones:0 "Focus: Units"
+ AP_machine_ascensionists_drones_desc:0 "Focusing on the individual unit allows us to increase efficiency greatly. Thereby increasing total production on all fronts.\n\n"
+ AP_machine_ascensionists_infrastructure:0 "Focus: Infrastructure"
+ AP_machine_ascensionists_infrastructure_desc:0 "Enhancing our infrastructure is a vital part of being able to grow our connections, This growth then allows us to increase capacity accros the board.\n\n"
+
  policy_AP_memorialists_machine:0 "Preservation of Memory"
  policy_AP_memorialists_machine_desc:0 "Our goal to learn from others can be guided towards a few distinct directions.\n"
  AP_memorialists_machine_the_past:0 "$AP_memorialists_the_past$"
@@ -802,6 +902,15 @@
  AP_memorialists_machine_the_present_desc:0 "$AP_memorialists_the_present_desc$"
  AP_memorialists_machine_the_future:0 "$AP_memorialists_the_future$"
  AP_memorialists_machine_the_future_desc:0 "$AP_memorialists_the_future_desc$"
+
+ policy_AP_mutagenic_spas_machine:0 "Lubrication Purpose"
+ policy_AP_mutagenic_spas_machine_desc:0 "It appears there are a few direct benefits to enhancing our units through lubrication. These benefits will enhance our manufactoring with ease.\n"
+ AP_mutagenic_spas_machine_endurance:0 "Enhanced endurance"
+ AP_mutagenic_spas_machine_endurance_desc:0 "Core has returned results showing lubrication enhances endures of field units. To that end it should be rolled out to as many units as is possible.\n\n"
+ AP_mutagenic_spas_machine_efficiency:0 "Efficiency study"
+ AP_mutagenic_spas_machine_efficiency_desc:0 "Core has acknowledged there is an increase in the lubrication and efficiency of units. These findings most be looked into to enhance the all our units.\n\n"
+ AP_mutagenic_spas_machine_expansion:0 "Recycled material"
+ AP_mutagenic_spas_machine_expansion_desc:0 "The lubrication has the effect of removing any extra material stuck on the units undergoing the process. This residu can be concentrated and formed into usefull products.\n\n"
 
 ##########################################################################
 # Custom Civic policies
@@ -873,3 +982,12 @@
  AP_ancestor_worship_lessons_desc:0 "Many tales form our forebearers give us a prespective we normally would have lost. Yet this gives us a great opportunity to learn from there mistakes. We should be thankfull for that chance.\n\n"
  AP_ancestor_worship_heeded_warning:0 "Heeded Prophecy"
  AP_ancestor_worship_heeded_warning_desc:0 "Long Ago, a prophecy was made that we were to reach the stars themselfs. In that we were told by our forebearer that our kin will hold the stars themselfs. Let us work towards there visions.\n\n"
+
+ policy_AP_travelling_circus:0 "Circus Policy"
+ policy_AP_travelling_circus_desc:0 "Our entrainers are a prime candadite to share our culture and beliefs. Yet they also are at the very front of interation with other peoples. This can be used to the our advantage."
+ AP_travelling_circus_merchants:0 "Embed Merchants"
+ AP_travelling_circus_merchants_desc:0 "Commerce is the life-blood of our and all other empires. Let us strike a deal while all are in a good mood."
+ AP_travelling_circus_diplomatic:0 "Embed ambassadors"
+ AP_travelling_circus_diplomatic_desc:0 "Adding ambassadors to our circuses allows us to make treaties on the fly also giving us the option for rapid reation diplomats."
+ AP_travelling_circus_spies:0 "Embed Spies"
+ AP_travelling_circus_spies_desc:0 "Know your enemy is the first of many steps to take control. To that end we should invest into getting intel from our circuses."

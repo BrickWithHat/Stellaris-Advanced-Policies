@@ -1,0 +1,41 @@
+# Children of Darkness parts
+empire_name_parts_list = {
+	key = AP_darkness
+	parts = {
+		"Tunnelers" = 1
+		"Deep-kin" = 1
+		"Depth Court" = 1
+		"Burrows" = 1
+		"Deep Guild" = 1
+	}
+}
+
+# Ancient remnant parts
+empire_name_parts_list = {
+	key = "AP_ancient_desc"
+	parts = {
+		"Ancient" = 3
+		"Revitalized" = 2
+		"Resurrected" = 2
+		"Reclaimers" = 2
+		"Elderly" = 1
+		"Forgotten" = 1
+		"Reforged" = 1
+		"Rebirthed" = 1
+	}
+}
+
+# Sky Treaders parts
+empire_name_parts_list = {
+	key = AP_sky_treader
+	parts = {
+		"Roamers" = 1
+		"Pilgrims" = 1
+		"Rovers" = 1
+		"Wanderers" = 1
+		"Nomads" = 1
+		"Navigators" = 1
+		"Wayfinders" = 1
+		"Pathfinders" = 1
+	}
+}

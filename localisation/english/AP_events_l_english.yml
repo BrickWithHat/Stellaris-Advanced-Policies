@@ -293,12 +293,32 @@
  AP_CR.12_name:0 "Wonderfull!"
  AP_CR.12_name:0 "A pity"
 
+# Origin Flavour events
+ AP_origin.11_title:0 "Unlocking the past"
+ AP_origin.11_desc:0 "With our great steps forward into the beyond we have had much to explore and learn. Yet in our victory of reaching the stars we had not yet looked everywhere on our every own planet. In a recent discovery an unknown chamber has been unearthed clearly designed for habitation. While that is not too unique of its own the depth that it is on is unusual as we abandonded those depths centuries ago, having moved to more stable depths to avoid calamity for our species.\n\nThis has caused exitement among our scientific community, as the idea of finding preserved and intact fossils or articats of our past are rare and few."
+ AP_origin.11_1:0 "Stabilize the area and begin digging!"
+ AP_origin.12_title:0 "The past in your hands"
+ AP_origin.12_desc:0 "Having stabilized the area our archeoligists and many civilians are keen to learn the secrets of the area. Many scientists from around our empire have come to unravel its secrets. So far we have already learned a few things related to there original survival as the tunnels they used seem to be outlined from a unique mineral. This mineral insulated them from most threats and was used for both crude tools and equipment. Though no fossils have been found yet the artifacts alone give us a great insight into the lives of our ancestors."
+ AP_origin.12_1:0 "Try and learn as much as you can."
+ AP_origin.13_title:0 "The past unraveled"
+ AP_origin.13_desc:0 "The final report is in, so far the expedition back home found artifacts, bones and even a preserved body! This was an extremely lucky and wonderfull find. To our surpise however it showed only vague resemblence of our current selfs, showing a clearly more animal-like beign then we have changed into. All findings have been cataloged and either send off to be studied or to museums throughout our empire."
+ AP_origin.13_1:0 "A wonderfull gift from the past."
+ AP_origin.13_11:0 "Adds a unique §HDeposit§! to your capital."
+
+ AP_origin.21_title:0 "A height yet to be reached"
+ AP_origin.21_desc:0 "Our past has always been linked by great migrations, This has chaned little even in our current state we still migrate on regular intervals. Something that has however passed now is the idea that we could not reach above the sun that grants us its heat and light. A symbol in many places on our homeworld, the fact we now are closer then ever to it gives us the opportunity to learn from a symbol so close to our cultural devolpment."
+ AP_origin.21_1:0 "Time to have a proper look then."
+ AP_origin.22_title:0 "Closing of a Chapter"
+ AP_origin.22_desc:0 "With a dedicated teams of both science and cultural heads we have made a few breakthroughs. Not just the simple science of our sun but it echoed a new era for our kind culturally. To put it into the words of a writer on one of the teams 'Now we have flown above the sun, and the stars are all above us. Yet in that victory we learned there is still much to see and explore'\n\nThis mentallity has spread across our empire. This expedition has brought all of us together in ways we could not have seen before. With our cultural sector booming beyond our wildest expectation there is an oppertunity to bring our kind futher together."
+ AP_origin.22_1:0 "I like that line of thinking."
+ AP_origin.23_title:0 "A means onwards"
+ AP_origin.23_desc:0 "With great effort and passion have our people gone to work. After the reveals and progression of our teams near our sun we have been filled with a true fervour. The outcome has been an improvemnt to our society as a whole. The love and passion to those we strive for have worked tirelessly to enhance our capital."
+ AP_origin.23_1:0 "Wonderfull!"
+
 # Flavour events
  AP_effect.1_title:0 "Ancients Wake"
  AP_effect.1_desc:0 "As the battle on our homeworld rages on, we have gained word of 3 gaint entities roaming the battlefield. Yet to our surpise they do not attack us. But our foe, while also looking like our ancient ancestors. Rumor among the ranks is that some scientists at the research bunker reactivated them. Whatever they are, they are putting up more resistance they the enemy has counted on. Driving them back while leaving a clear and horrendous trail of destruction."
  AP_effect.1_1:0 "Guess our ancestors still watch over us"
  AP_effect.1_2:0 "They do look a lot like us don't they?"
  AP_effect.1_tooltip:0 "§Y3 Ancient Sentinals have reactivated on your home world.§!\n"
- AP_effect.1_army_name:0 "Sentinal of Retribution"
- AP_effect.2_army_name:0 "Sentinal of Protection"
- AP_effect.3_army_name:0 "Sentinal of Desolation"
+

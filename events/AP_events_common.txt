@@ -5,6 +5,7 @@ namespace = AP_flag
 country_event = {
 	id = AP_flag.1
 	hide_window = yes
+	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
 		NOT = {
@@ -24,6 +25,7 @@ namespace = AP_civic
 country_event = {
 	id = AP_civic.1
 	hide_window = yes
+	is_triggered_only = yes
 	fire_only_once = no
 	trigger = {
 		owner = {
@@ -68,7 +70,7 @@ country_event = {
 			owner = {
 				set_country_flag = AP_ancient_remnant_installed
 				capital_scope = {
-					add_deposit = d_ancient_site
+					add_deposit = d_AP_ancient_site
 				}
 			}
 		}
@@ -95,10 +97,10 @@ country_event = {
 }
 
 ##########################################################################
-# Origin components
+# Origin Start-up
 ##########################################################################
 namespace = AP_origin
-# Start-up for the Children of the Darkness Origin
+# Start-up for the Children of the Darkness
 country_event = {
 	id = AP_origin.1
 	hide_window = yes
@@ -107,19 +109,18 @@ country_event = {
 		has_origin = AP_children_of_the_darkness
 	}
 	immediate = {
-		if = {
-			limit = {
-				has_origin = AP_children_of_the_darkness
-			}
-			capital_scope = {
-				add_deposit = d_underground_cities
-				set_planet_flag = AP_cave_full
+		capital_scope = {
+			add_deposit = d_AP_underground_cities
+			planet_event = {
+				id = AP_origin.11
+				days = 720
+				random = 2880
 			}
 		}
 	}
 }
 
-# Start-up for the Sky Treaders start building
+# Start-up for the Sky Treaders
 country_event = {
 	id = AP_origin.2
 	hide_window = yes
@@ -128,12 +129,12 @@ country_event = {
 		has_origin = AP_sky_treaders
 	}
 	immediate = {
-		if = {
-			limit = {
-				has_origin = AP_sky_treaders
-			}
-			capital_scope = {
-				add_building = building_AP_migrant_capital_hacthery
+		capital_scope = {
+			add_building = building_AP_migrant_capital_hacthery
+			planet_event = {
+				id = AP_origin.21
+				days = 360
+				random = 1440
 			}
 		}
 	}
@@ -159,7 +160,7 @@ planet_event = {
 		is_occupied_flag = no
 	}
 	trigger = {
-		has_deposit = d_ancient_site
+		has_deposit = d_AP_ancient_site
 		owner = {
 			has_valid_civic = civic_AP_ancient_remnants
 		}
@@ -200,6 +201,38 @@ planet_event = {
 	}
 }
 
+country_event = {
+	id = AP_effect.2
+	is_triggered_only = yes
+	hide_window = yes
+	location = from
+	trigger = {
+		NOT = {
+			has_country_flag = AP_WAR_POLICY_MESSAGE_RECIEVED
+		}
+		is_ai = no
+	}
+	immediate = {
+		create_message = {
+			type = AP_WAR_POLICY_RECOMENDATION
+			localization = AP_WAR_POLICY_RECOMENDATION_1
+			days = 30
+			target = THIS
+		}
+		set_country_flag = AP_WAR_POLICY_MESSAGE_RECIEVED
+	}
+}
+
+country_event = {
+	id = AP_effect.3
+	is_triggered_only = yes
+	hide_window = yes
+	location = from
+	immediate = {
+		remove_country_flag = AP_WAR_POLICY_MESSAGE_RECIEVED
+	}
+}
+
 ##########################################################################
 # Test-fire components
 ##########################################################################
@@ -213,7 +246,7 @@ planet_event = {
 	immediate = {
 		create_pirate_country = yes
 		while = {
-			count = 10
+			count = 6
 			create_army = {
 				owner = last_created_country
 				type = gene_warrior_army

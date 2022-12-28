@@ -8,10 +8,11 @@
  job_ancient_archaeologists_drone:0 "$job_ancient_archaeologists$"
  job_ancient_archaeologists_drone_plural:0 "$job_ancient_archaeologists_plural$"
  job_ancient_archaeologists_drone_desc:0 "Ancient Archaeologists Drones are specialised drones with a single goal of trying to uncover as much technology as is possible from the left over remnants."
-
+ planet_death_chronicler:0 "Death Chronicler" # Base game did not support this for some reason
 ##########################################################################
 # Origin jobs
 ##########################################################################
+ planet_job_tunnel_lighter:0 "Tunnel Lighters"
  job_specialist_tunnel_lighter:0 "Excavator"
  job_specialist_tunnel_lighter_plural:0 "Excavators"
  job_specialist_tunnel_lighter_desc:0 "These people, dig through the planet day in, day out. All in an effort to keep up with the space required for the population. They are a vital part of any major sub-terranian devolpment."
@@ -25,7 +26,7 @@
 ##########################################################################
 # Policy jobs
 ##########################################################################
- planet_job_educator:0 "Education jobs"
+ planet_educator:0 "Education jobs"
  job_worker_educator:0 "Educator"
  job_worker_educator_plural:0 "Educators"
  job_worker_educator_desc:0 "Educators provide the most accepted form of education in its society. There goal is to arm the next generation with knowledge deemed usefull for there succes in there society."

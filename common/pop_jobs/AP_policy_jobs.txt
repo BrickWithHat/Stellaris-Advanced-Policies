@@ -64,7 +64,7 @@ worker_educator = {
 		}
 	}
 	resources = {
-		category = planet_job_educator
+		category = planet_educator
 		produces = {
 			physics_research = 5
 			society_research = 5
@@ -157,7 +157,7 @@ specialist_educator = {
 		}
 	}
 	resources = {
-		category = planet_job_educator
+		category = planet_educator
 		produces = {
 			physics_research = 8
 			society_research = 5
@@ -241,7 +241,7 @@ ruler_educator = {
 		}
 	}
 	resources = {
-		category = planet_job_educator
+		category = planet_educator
 		produces = {
 			physics_research = 5
 			society_research = 8

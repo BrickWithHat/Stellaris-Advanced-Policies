@@ -33,6 +33,8 @@
  AP_mobile_constrution_deploy_desc:0 "Deploy the empires Mobile Construction Vehicle granting some powerfull bonuses to contruction on the planet."
  AP_mobile_constrution_pack:0 "Recall Mobile Construction Vehicle"
  AP_mobile_constrution_pack_desc:0 "Recall the empires Mobile Construction Vehicle, Returning it out our empire as a whole grants usefull empire-wide bonuses."
+ AP_build_circus_outpost:0 "Build Circus outpost"
+ AP_build_circus_outpost_desc:0 "Circus outposts are places for tired travelling entertainers to rest and wind down a little before returning to the rest of our space."
  AP_excavate_the_planet:0 "Excavate the Planet"
  AP_excavate_the_planet_desc:0 "We have yet to properly excavate the inner layers of this planet. Doing so will grant us more build space and make our people feel more at home."
  AP_connect_underground:0 "Improve the Underground"

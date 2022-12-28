@@ -1,0 +1,168 @@
+##########################################################################
+# Children of the Darkness deposit drops
+##########################################################################
+d_AP_core_access = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_fungal_caves
+	potential = {
+		always = no
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_owner = yes
+		}
+		modifier = {
+			planet_jobs_minerals_produces_mult = 0.2
+			planet_jobs_energy_produces_mult = 0.2
+		}
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			engineering_research = 5
+			society_research = 5
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_AP_ancient_burial_site = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_fungal_caves
+	potential = {
+		always = no
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_owner = yes
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.2
+			planet_jobs_society_research_produces_mult = 0.2
+		}
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			society_research = 15
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_AP_ancient_cave_network = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_fungal_caves
+	potential = {
+		always = no
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_owner = yes
+		}
+		modifier = {
+			planet_max_districts_add = +2
+		}
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			society_research = 15
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+##########################################################################
+# Sky Treaders deposit drops
+##########################################################################
+d_AP_monument_of_flight = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_monument
+	potential = {
+		always = no
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_owner = yes
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.1
+		}
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			unity = 10
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_AP_public_rest_stops = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_mountain_range
+	potential = {
+		always = no
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_owner = yes
+		}
+		modifier = {
+			pop_amenities_usage_mult = -0.2
+		}
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			society_research = 10
+			energy = 10
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_AP_pilgrims_park = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_infestation
+	potential = {
+		always = no
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_owner = yes
+			owner = {
+				has_origin = AP_sky_treaders
+			}
+		}
+		modifier = {
+			planet_resettlement_unemployed_mult = 0.5
+		}
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			unity = 20
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}

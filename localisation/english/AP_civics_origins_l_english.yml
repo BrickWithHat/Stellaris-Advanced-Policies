@@ -11,18 +11,15 @@
 
  civic_AP_grand_architecture:0 "Grand Architecture"
  civic_AP_grand_architecture_desc:0 "Our empire believes that all buildings should be made to display our power. To that end we build to inspire!"
- civic_AP_grand_architecture_effects:0 "Our grand buildings may require some upkeep, but they do really inspire our populace."
  civic_AP_grand_architecture_corporate:0 "$civic_AP_grand_architecture$"
  civic_AP_grand_architecture_corporate_desc:0 "$civic_AP_grand_architecture_desc$"
- civic_AP_grand_architecture_corporate_effects:0 "$civic_AP_grand_architecture_effects$"
 
  civic_AP_war_complex:0 "Industrial War-Complex"
  civic_AP_war_complex_desc:0 "This empire has been geared to mass war, it looks down on its civilians as a means to fund its armies."
- civic_AP_war_complex_effects:0 "The army is our extension into the stars. Let them march forward with all our might!"
 
  civic_AP_mobile_construction:0 "Mobile Construction"
- civic_AP_mobile_construction_desc:0 "This empire has come to a point where there main construction comes from mobile construction yards. Though most of these are fairly small. They hold 1 with such scale it can build entire cities in a very short span of time. This vehicle can be moved to any colonized world within the empire."
- civic_AP_mobile_construction_effects:0 "Spawns a §YMobile Construction Yard§! modifier on your capital world which can be relocated at your leisure. The planet it is preset on will recieved a big construction boost.\n Alternatively it can be moved to your country as a whole. This will grant less powerfull, but global benefits."
+ civic_AP_mobile_construction_desc:0 "This empire has come to a point where there main construction comes from mobile construction yards. Though most of these are fairly small. They hold 1 with such scale it can build entire cities in a very short span of time. This vehicle can be moved to any colonized world within the empire.\n"
+ civic_AP_mobile_construction_effects:0 "Spawns a §YMobile Construction Yard§! modifier on your capital world which can be relocated at your leisure. The planet it is preset on will recieved a big construction boost.\nAlternatively it can be moved to your country as a whole. This will grant less powerfull, but global benefits."
 
  civic_AP_ancient_remnants:0 "Ancient Remnants"
  civic_AP_ancient_remnants_desc:0 "Our empire used to span the stars, we were its rulers. Now we have been forced back. But our ancestors left us a gift..."
@@ -35,19 +32,26 @@
 
  civic_AP_good_education:0 "Proper Education"
  civic_AP_good_education_desc:0 "It is widely known that this empire has a solid base in education forcing it governments to invest regulary into it."
- civic_AP_good_education_effect:0 "§YDisables the cheaper means of funding the education system. But grants other buffs to educators and leaders as a result.§!"
+ civic_AP_good_education_effect:0 "§YDisables the cheaper means of funding the education system. But grants other buffs to educators and leaders as a result.§!\n\n"
  civic_AP_good_education_corporate:0 "Invested Education"
  civic_AP_good_education_corporate_desc:0 "The Company sees value in teaching the next generation how to function in this society. As such little expence is spared when it comes to there educations."
 
  civic_AP_ancestor_worship:0 "Ancestor Worship"
  civic_AP_ancestor_worship_desc:0 "Respect for there forebearers is seen as a cornerstone of this civilization. Failure to show respect is often seen a kin to treason to the state. As well as insulting to there forebearers and by extension there decendends."
 
+ civic_AP_travelling_circus:0 "Travelling Circus"
+ civic_AP_travelling_circus_desc:0 "This empire has a long tradition of travelling entertainers, something which they retain to this day. Making entertainment a true expression of culture and virtue as these events are not always accessable."
+ civic_AP_travelling_circus_effects:0 "- Gives access to a unique £decision£§HPlanetary Decision§! that gives the abilty to make a §HCircus outposts§!.\n- §HCircus outposts§! add some £job£§Hjobs§! and §Gdecrease the total upkeep§! for all £job£§Hjobs§! of the same type on that £planet£§Hplanet§!.\n- Gives access to a unique §HHolding§!.\n\n"
+ civic_AP_travelling_circus_corporate:0 "$civic_AP_travelling_circus$"
+ civic_AP_travelling_circus_corporate_desc:0 "$civic_AP_travelling_circus_desc$"
+ civic_AP_travelling_circus_corporate_effects:0 "- Gives access to a unique £decision£§HPlanetary Decision§! that gives the abilty to make a §HCircus outposts§!.\n- §HCircus outposts§! add some £job£§Hjobs§! and §Gdecrease the total upkeep§! for all £job£§Hjobs§! of the same type on that £planet£§Hplanet§!.\n- Gives access to a unique §HHolding§!.\n- Gives access to a unique §HBranch Office§!.\n\n"
+
 ##########################################################################
 # Origins
 ##########################################################################
  AP_children_of_the_darkness:0 "Children of the Darkness"
  AP_children_of_the_darkness_desc:0 "This species always has had a hard time living on a planets surface. While they might not be a common sight on the planets surface, they are a very common sight underground. Digging out vast caverns and living off the gifts of the deep."
- AP_children_of_the_darkness_effects:0 "- Grants the §H$trait_AP_tunneler$§! trait to the starting species. Which decreases base §Hhabitability§! by §R25%§! on all §HPlanets§! \n - Gets access to the £decision£§H$AP_excavate_the_planet$§! Decision allowing for an increase in §Hhabitability§! and £planetsize£ §Hplanet-size§!. This can be done up to §H6 times§! unless it is an §HOcean world§! which can only be done §H2 times§!.\n- Starts with the §HUnderground Cities Complex§! Deposit on there homeworld.\n"
+ AP_children_of_the_darkness_effects:0 "- Grants the §H$trait_AP_tunneler$§! trait to the starting species. Which decreases base §Hhabitability§! by §R25%§! on all §HPlanets§! \n - Gets access to the £decision£§H$AP_excavate_the_planet$§! Decision allowing for an increase in §Hhabitability§! and £planetsize£ §Hplanet-size§!. This can be done up to §H6 times§! unless it is an §HOcean world§! which can only be done §H2 times§!.\n- Starts with the §HUnderground Cities Complex§! Deposit on there homeworld.\n- §HMining Districts§! are uncapped.\n"
  AP_sky_treaders:0 "Sky Treaders"
  AP_sky_treaders_desc:0 "The species from this world has always preferd being in the sky. Be it through the help of technology or through other means of flight. This is reflected in there infrastructure. Meaning they rarely need steady housing but require a lot more for on the go supplies."
  AP_sky_treaders_effects:0 "- Grants the §H$trait_AP_migritory_flyer$§! Trait to starting species.\n- §YCapital world§! starts with a §H$building_AP_migrant_capital_hacthery$§! which increases §Ypop growth§! by a full §G100%§!.\n- Gives access to the §H$building_AP_migrant_waystation$§! on all non-captial worlds, Which helps boost the planets £amenities£§Yamenities§! by §G20%§! and stimulates migration.\n- Gives access to two £decision£§Hplanetary decisions§!, which give greater control over migration or immigration.\n"

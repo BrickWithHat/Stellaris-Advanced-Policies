@@ -123,6 +123,7 @@ AP_panic_valid_t3 = {
 			any_war = {
 				is_total_war = yes
 				attacker = {
+					off_war_exhaustion_sum >= 75
 					has_casus_belli = {
 						target = FROM
 						type = cb_sublimation
@@ -173,6 +174,7 @@ AP_panic_valid_t3 = {
 					}
 				}
 				defender = {
+					def_war_exhaustion_sum >= 75
 					has_casus_belli = {
 						target = THIS
 						type = cb_stop_colossus
@@ -185,5 +187,12 @@ AP_panic_valid_t3 = {
 			}
 			AP_has_encountered_crisis = yes
 		}
+	}
+}
+
+is_subterranean_empire = {
+	OR = {
+		has_origin = origin_subterranean
+		has_origin = AP_children_of_the_darkness
 	}
 }

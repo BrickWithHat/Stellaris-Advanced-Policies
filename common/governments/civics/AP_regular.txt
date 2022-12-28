@@ -32,12 +32,11 @@ civic_AP_advanced_administration = {
 		edict_length_mult = 0.2
 		edicts_cost_mult = -0.2
 		leader_skill_levels = 1
-		edicts_upkeep_mult = -0.1
+		edicts_upkeep_mult = -0.2
 	}
 }
 
 civic_AP_war_complex = {
-	description = "civic_AP_war_complex_effects"
 	potential = {
 		ethics = {
 			NOT = {
@@ -75,7 +74,6 @@ civic_AP_war_complex = {
 }
 
 civic_AP_grand_architecture = {
-	description = "civic_AP_grand_architecture_effects"
 	potential = {
 		ethics = {
 			NOT = {
@@ -142,6 +140,7 @@ civic_AP_mobile_construction = {
 }
 
 civic_AP_ancient_remnants = {
+	modification = no
 	description = "civic_AP_ancient_remnants_effects"
 	potential = {
 		ethics = {
@@ -233,8 +232,8 @@ civic_AP_good_education = {
 		}
 	}
 	modifier = {
-		planet_job_educator_produces_mult = 0.33
-		planet_job_educator_upkeep_mult = -0.5
+		planet_educator_produces_mult = 0.33
+		planet_educator_upkeep_mult = -0.5
 		leader_skill_levels = 2
 	}
 	random_weight = {
@@ -274,6 +273,41 @@ civic_AP_ancestor_worship = {
 		leader_skill_levels = +2
 		species_leader_exp_gain = 0.25
 		empire_size_pops_mult = -0.1
+	}
+	random_weight = {
+		weight = 2
+	}
+}
+
+civic_AP_travelling_circus = {
+	description = "civic_AP_travelling_circus_effects"
+	potential = {
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_barbaric_despoilers
+			}
+			NOT = {
+				value = civic_fanatic_purifiers
+			}
+			NOT = {
+				value = civic_death_cult
+			}
+		}
+	}
+	modifier = {
+		
 	}
 	random_weight = {
 		weight = 2

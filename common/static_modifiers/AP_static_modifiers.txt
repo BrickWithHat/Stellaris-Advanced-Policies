@@ -136,7 +136,7 @@ planet_AP_organized_strike = {
 	icon = gfx/interface/icons/planet_modifiers/pm_planet_separatist_supporter.dds
 	planet_jobs_produces_mult = -0.5
 	pop_growth_speed = -0.2
-	pop_assembly_speed = -0.5
+	planet_pop_assembly_mult = -0.5
 }
 
 planet_AP_hunger_strike = {
@@ -145,7 +145,7 @@ planet_AP_hunger_strike = {
 	planet_pops_food_upkeep_mult = -0.1
 	planet_jobs_produces_mult = -0.25
 	pop_growth_speed = -0.5
-	pop_assembly_speed = -1
+	planet_pop_assembly_mult = -1
 }
 
 planet_AP_mass_riot = {
@@ -314,6 +314,28 @@ country_mobile_construction_packed = {
 	trade_value_mult = 0.1
 	planet_building_build_speed_mult = 0.1
 	planet_buildings_cost_mult = -0.2
+}
+
+planet_traveling_circus_outpost = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_minor_artifact_decision.dds
+	planet_jobs_unity_produces_mult = 0.1
+	job_culture_worker_add = 2
+	job_entertainer_add = 4
+	planet_housing_add = 6
+	planet_culture_workers_upkeep_mult = -0.2
+	planet_entertainers_upkeep_mult = -0.2
+}
+
+planet_traveling_circus_outpost_warrior = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_minor_artifact_decision.dds
+	planet_jobs_unity_produces_mult = 0.1
+	job_culture_worker_add = 2
+	job_duelist_add = 4
+	planet_housing_add = 6
+	planet_culture_workers_upkeep_mult = -0.2
+	planet_entertainers_upkeep_mult = -0.2
 }
 
 planet_migritory_flyer_push = {

@@ -5,33 +5,63 @@ opinion_AP_dislike_unemployment = {
 	# ROOT has no unemployment support
 		modifier = {
 			add = -20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_no_aid
 			from = {has_policy_flag = AP_unemployment_shared_burden}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_no_aid
 			from = {has_policy_flag = AP_unemployment_aid}
 		}
 	# ROOT has some unemployment support
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_aid
 			from = {has_policy_flag = AP_unemployment_shared_burden}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_aid
 			from = {has_policy_flag = AP_unemployment_aid}
 		}
 	# ROOT has full unemployment support
 		modifier = {
 			add = -15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_shared_burden
 			from = {has_policy_flag = AP_unemployment_aid}
 		}
 		modifier = {
 			add = -20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_shared_burden
 			from = {has_policy_flag = AP_unemployment_no_aid}
 		}
@@ -44,18 +74,33 @@ opinion_AP_liked_unemployment = {
 	# ROOT has no unemployment support
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_no_aid
 			from = {has_policy_flag = AP_unemployment_no_aid}
 		}
 	# ROOT has some unemployment support
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_aid
 			from = {has_policy_flag = AP_unemployment_aid}
 		}
 	# ROOT has full unemployment support
 		modifier = {
 			add = 15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_unemployment_shared_burden
 			from = {has_policy_flag = AP_unemployment_shared_burden}
 		}
@@ -69,6 +114,11 @@ opinion_AP_disliked_religion = {
 	# ROOT has religion banned
 		modifier = {
 			add = -25
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_banned
 			from = {
 				OR = {
@@ -79,6 +129,11 @@ opinion_AP_disliked_religion = {
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_banned
 			from = {
 				OR = {
@@ -90,6 +145,11 @@ opinion_AP_disliked_religion = {
 	# ROOT has religion tolerated
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_tolerated
 			from = {
 				OR = {
@@ -100,6 +160,11 @@ opinion_AP_disliked_religion = {
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_tolerated
 			from = {
 				OR = {
@@ -111,21 +176,41 @@ opinion_AP_disliked_religion = {
 	# ROOT has religion endorsed/enforced
 		modifier = {
 			add = -20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_enforced
 			from = {has_policy_flag = AP_religion_banned}
 		}
 		modifier = {
 			add = -15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_endorsed
 			from = {has_policy_flag = AP_religion_banned}
 		}
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_endorsed
 			from = {has_policy_flag = AP_religion_tolerated}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_enforced
 			from = {has_policy_flag = AP_religion_tolerated}
 		}
@@ -139,6 +224,11 @@ opinion_AP_liked_religion = {
 	# ROOT has religion banned
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_banned
 			from = {
 				OR = {
@@ -150,12 +240,22 @@ opinion_AP_liked_religion = {
 	# ROOT has religion tolerated
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_religion_tolerated
 			from = {has_policy_flag = AP_religion_tolerated}
 		}
 	# ROOT has religion endorsed/enforced
 		modifier = {
 			add = 15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			OR = {
 				has_policy_flag = AP_religion_endorsed
 				has_policy_flag = AP_religion_enforced
@@ -177,22 +277,42 @@ opinion_AP_disliked_eduction_rights = {
 	# ROOT has education right for all
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_all
 			from = {has_policy_flag = AP_education_privledge_citizen}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_all
 			from = {has_policy_flag = AP_education_privledge_elite}
 		}
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_all
 			from = {is_authoritarian = yes}
 		}
 	# ROOT has education for citizens
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_citizen
 			from = {
 				OR = {
@@ -203,6 +323,11 @@ opinion_AP_disliked_eduction_rights = {
 		}
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_citizen
 			from = {
 				NOT = {	has_policy_flag = AP_education_privledge_citizen	}
@@ -212,16 +337,31 @@ opinion_AP_disliked_eduction_rights = {
 	# ROOT has education for Elites
 		modifier = {
 			add = -15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_elite
 			from = {has_policy_flag = AP_education_privledge_all}
 		}
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_elite
 			from = {has_policy_flag = AP_education_privledge_citizen}
 		}
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_elite
 			from = {is_egalitarian = yes}
 		}
@@ -234,18 +374,33 @@ opinion_AP_liked_eduction_rights = {
 	# ROOT has education right for all
 		modifier = {
 			add = 15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_all
 			from = {has_policy_flag = AP_education_privledge_all}
 		}
 	# ROOT has education for citizens
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_citizen
 			from = {has_policy_flag = AP_education_privledge_citizen}
 		}
 	# ROOT has education for the elite
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_education_privledge_elite
 			from = {has_policy_flag = AP_education_privledge_elite}
 		}
@@ -261,53 +416,103 @@ opinion_AP_war_stance = {
 	# ROOT has Stance Passive
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_passive
 			from = {is_militarist = no}
 		}
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_passive
 			from = {is_pacifist = yes}
 		}
 		modifier = {
 			add = -15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_passive
 			from = {is_militarist = yes}
 		}
 	# ROOT has Stance Light
 		modifier = {
 			add = 5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_light
 			from = {is_militarist = no}
 		}
 		modifier = {
 			add = 5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_light
 			from = {is_pacifist = yes}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_light
 			from = {is_militarist = yes}
 		}
 	# ROOT has Stance Pre Emptive
 		modifier = {
 			add = -20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_pre_emptive
 			from = {is_militarist = no}
 		}
 		modifier = {
 			add = -20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_pre_emptive
 			from = {is_pacifist = yes}
 		}
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_pre_emptive
 			from = {is_militarist = yes}
 		}
 		modifier = {
 			add = 5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_pre_emptive
 			from = {
 				OR = {
@@ -319,21 +524,41 @@ opinion_AP_war_stance = {
 	# ROOT has Stance Aggrasive
 		modifier = {
 			add = -30
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_aggresive
 			from = {is_militarist = no}
 		}
 		modifier = {
 			add = -30
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_aggresive
 			from = {is_pacifist = yes}
 		}
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_pre_emptive
 			from = {is_militarist = yes}
 		}
 		modifier = {
 			add = 5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_war_stance_pre_emptive
 			from = {
 				OR = {
@@ -345,7 +570,7 @@ opinion_AP_war_stance = {
 	}
 }
 
-# Conscription, I am torn if i should even add this making a placeholder just in case
+# Conscription, I am torn if i should even add FROM, making a placeholder just in case
 opinion_AP_conscription_law = {
 	opinion = {	}
 }
@@ -356,6 +581,11 @@ opinion_AP_tax_haven = {
 	opinion = {
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {
 				NOT = {
@@ -366,6 +596,11 @@ opinion_AP_tax_haven = {
 		}
 		modifier = {
 			add = -25
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {
 				is_egalitarian = yes
@@ -374,6 +609,11 @@ opinion_AP_tax_haven = {
 		}
 		modifier = {
 			add = -25
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {
 				is_country_type = default
@@ -382,11 +622,21 @@ opinion_AP_tax_haven = {
 		}
 		modifier = {
 			add = 20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {is_megacorp = yes}
 		}
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {has_valid_civic = civic_merchant_guilds}
 		}
@@ -400,38 +650,73 @@ opinion_AP_tax_like = {
 	# ROOT has no tax
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {is_authoritarian = yes}
 		}
 	# ROOT has flat tax
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_flat
 			from = {is_authoritarian = yes}
 		}
 		modifier = {
 			add = 15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_flat
 			from = {is_megacorp = yes}
 		}
 		modifier = {
 			add = 5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_flat
 			from = {has_valid_civic = civic_merchant_guilds}
 		}
 	# ROOT has scaled tax
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_wealth
 			from = {is_egalitarian = yes}
 		}
 		modifier = {
 			add = 10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_wealth
 			from = {has_valid_civic = civic_shared_burden}
 		}
 		modifier = {
 			add = 5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_wealth
 			from = {
 				OR = {
@@ -450,16 +735,31 @@ opinion_AP_tax_dislike = {
 	# ROOT has no tax
 		modifier = {
 			add = -15
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {is_egalitarian = yes}
 		}
 		modifier = {
 			add = -25
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {has_valid_civic = civic_shared_burden}
 		}
 		modifier = {
 			add = -5
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_none
 			from = {
 				OR = {
@@ -471,17 +771,32 @@ opinion_AP_tax_dislike = {
 	# ROOT has flat tax
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_flat
 			from = {is_egalitarian = yes}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_flat
 			from = {has_valid_civic = civic_shared_burden}
 		}
 	# ROOT has scaled tax
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_wealth
 			from = {
 				is_authoritarian = yes
@@ -490,11 +805,21 @@ opinion_AP_tax_dislike = {
 		}
 		modifier = {
 			add = -20
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_wealth
 			from = {is_megacorp = yes}
 		}
 		modifier = {
 			add = -10
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			has_policy_flag = AP_tax_policy_wealth
 			from = {has_valid_civic = civic_merchant_guilds}
 		}
@@ -508,20 +833,35 @@ opinion_AP_panic_policy = {
 		has_communications = FROM
 		FROM = {any_situation = {is_situation_type = situation_AP_panic}}
 		FROM = {is_at_war = no}
-		# Because i know the AI is a bit dumb i might as well not let this trigger with the AI, Saves a headache.
+		# Because i know the AI is a bit dumb i might as well not let FROM trigger with the AI, Saves a headache.
 		FROM = {is_ai = no}
 	}
 	opinion = {
 		modifier = {
 			add = -25
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			FROM = {has_policy_flag = AP_condition_yellow}
 		}
 		modifier = {
 			add = -50
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			FROM = {has_policy_flag = AP_condition_red}
 		}
 		modifier = {
 			add = -75
+			has_intel_level = {
+				who = FROM
+				category = government
+				level = 1
+			}
 			FROM = {has_policy_flag = AP_condition_red}
 		}
 	}

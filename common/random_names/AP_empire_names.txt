@@ -1,50 +1,12 @@
-# Ancient remnant parts
-empire_name_parts_list = {
-	key = "AP_ancient_desc"
-	parts = {
-		"Ancient" = 3
-		"Revitalized" = 2
-		"Resurrected" = 2
-		"Reclaimers" = 2
-		"Elderly" = 1
-		"Forgotten" = 1
-		"Reforged" = 1
-		"Rebirthed" = 1
-	}
-}
-
-# Children of Darkness parts
-empire_name_parts_list = {
-	key = AP_darkness
-	parts = {
-		"Tunnelers" = 1
-		"Deep-kin" = 1
-		"Depth Court" = 1
-		"Burrows" = 1
-		"Deep Guild" = 1
-	}
-}
-
-# Sky Treaders parts
-empire_name_parts_list = {
-	key = AP_sky_treader
-	parts = {
-		"Roamers" = 1
-		"Pilgrims" = 1
-		"Rovers" = 1
-		"Wanderers" = 1
-		"Nomads" = 1
-		"Navigators" = 1
-		"Wayfinders" = 1
-	}
-}
-
-# Children (Democracies/Oligrachies)
+##########################################################################
+# Children of the Darkness
+##########################################################################
+# Children (Democracies/Oligrachies) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 50
 			has_origin = AP_children_of_the_darkness
 			OR = {
 				has_authority = auth_democratic
@@ -55,17 +17,16 @@ empire_name_format = {
 			}
 		}
 	}
-	lookups = "<democratic_gen_desc> <AP_darkness> [This.Capital.GetName]"
-	format = format.AP.children.1	# <democratic_gen_desc> [This.Capital.GetName] <AP_darkness>
-	noun = format.AP.children.species.1	# [This.Capital.GetName] <AP_darkness>
+	format = "{<democratic_gen_desc> {[This.Capital.GetName] {<AP_darkness>}}}"
+	noun = "{[This.Capital.GetName] <AP_darkness>}"
 }
 
-# Children (Dictatorships/Imperiums)
+# Children (Dictatorships/Imperiums) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 50
 			has_origin = AP_children_of_the_darkness
 			OR = {
 				has_authority = auth_dictatorial
@@ -76,17 +37,86 @@ empire_name_format = {
 			}
 		}
 	}
-	lookups = "<imperial_gen_desc> <AP_darkness> [This.Capital.GetName]"
-	format = format.AP.children.2	# <imperial_gen_desc> [This.Capital.GetName] <AP_darkness>
-	noun = format.AP.children.species.1	# [This.Capital.GetName] <AP_darkness>
+	format = "{<imperial_gen_desc> {[This.Capital.GetName] {<AP_darkness>}}}"
+	noun = "{[This.Capital.GetName] <AP_darkness>}"
 }
 
-# Ancient (Democracies/Oligrachies)
+# Children (Megacorp) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 50
+			has_origin = AP_children_of_the_darkness
+			has_authority = auth_corporate
+		}
+	}
+	format = "{AofB{<AP_darkness> [This.Capital.GetName] {<oligarchic_corp>}}}"
+	noun = "{[This.Capital.GetName] <oligarchic_corp>}"
+}
+
+# Children (Democracies/Oligrachies) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_children_of_the_darkness
+			OR = {
+				has_authority = auth_democratic
+				has_authority = auth_oligarchic
+			}
+			NOR = {
+				has_civic = civic_AP_ancient_remnants
+			}
+		}
+	}
+	format = "{<democratic_gen_desc> {[This.GetSpeciesAdj] {<AP_darkness>}}}"
+	noun = "{[This.GetSpeciesName] <AP_darkness>}"
+}
+
+# Children (Dictatorships/Imperiums) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_children_of_the_darkness
+			OR = {
+				has_authority = auth_dictatorial
+				has_authority = auth_imperial
+			}
+			NOR = {
+				has_civic = civic_AP_ancient_remnants
+			}
+		}
+	}
+	format = "{<imperial_gen_desc> {[This.GetSpeciesAdj] {<AP_darkness>}}}"
+	noun = "{[This.GetSpeciesName] <AP_darkness>}"
+}
+
+# Children (Megacorp) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_children_of_the_darkness
+			has_authority = auth_corporate
+		}
+	}
+	format = "{AofB{<AP_darkness> [This.GetSpeciesName] {<oligarchic_corp>}}}"
+	noun = "{[This.GetSpeciesName] <oligarchic_corp>}"
+}
+##########################################################################
+# Ancient Remnants
+##########################################################################
+# Ancient (Democracies/Oligrachies) (Capital)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
 			OR = {
 				has_authority = auth_democratic
 				has_authority = auth_oligarchic
@@ -97,17 +127,16 @@ empire_name_format = {
 			has_civic = civic_AP_ancient_remnants
 		}
 	}
-	lookups = "<AP_ancient_desc> <democratic_gen> [This.GetSpeciesName]"
-	format = format.AP.ancient.1	# <AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>
-	noun = format.AP.ancient.species.1	# [This.GetSpeciesName] <democratic_gen>
+	format = "{<AP_ancient_desc> {AofB{<democratic_gen> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName] <democratic_gen>}"
 }
 
-# Ancient (Dictatorships/Imperiums)
+# Ancient (Dictatorships/Imperiums) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 50
 			OR = {
 				has_authority = auth_dictatorial
 				has_authority = auth_imperial
@@ -118,17 +147,16 @@ empire_name_format = {
 			has_civic = civic_AP_ancient_remnants
 		}
 	}
-	lookups = "<imperial_gen_desc> <AP_ancient_desc> <imperial_gen> [This.GetSpeciesName]"
-	format = format.AP.ancient.2	# <imperial_gen_desc> <AP_ancient_desc> [This.GetSpeciesName] <imperial_gen>
-	noun = format.AP.ancient.species.2	# [This.GetSpeciesName] <imperial_gen>
+	format = "{<AP_ancient_desc> {AofB{<imperial_gen> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName] <imperial_gen>}"
 }
 
-# Ancient Warhost (Democracies/Oligrachies)
+# Ancient Warhost (Democracies/Oligrachies) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 50
 			OR = {
 				has_authority = auth_democratic
 				has_authority = auth_oligarchic
@@ -137,17 +165,16 @@ empire_name_format = {
 			has_civic = civic_AP_ancient_remnants
 		}
 	}
-	lookups = "<AP_ancient_desc> <democratic_mil> [This.GetSpeciesName]"
-	format = format.AP.ancient.3	# <AP_ancient_desc> [This.GetSpeciesName] <democratic_mil>
-	noun = format.AP.ancient.species.3	# [This.GetSpeciesName] <democratic_mil>
+	format = "{<AP_ancient_desc> {AofB{<democratic_mil> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName] <democratic_mil>}"
 }
 
-# Ancient Warhost (Dictatorships/Imperiums)
+# Ancient Warhost (Dictatorships/Imperiums) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 50
 			OR = {
 				has_authority = auth_dictatorial
 				has_authority = auth_imperial
@@ -156,21 +183,146 @@ empire_name_format = {
 			has_civic = civic_AP_ancient_remnants
 		}
 	}
-	lookups = "<imperial_mil_desc> <AP_ancient_desc> <dictatorial_mil> [This.GetSpeciesName]"
-	format = format.AP.ancient.4	# <imperial_mil_desc> <AP_ancient_desc> [This.GetSpeciesName] <dictatorial_mil>
-	noun = format.AP.ancient.species.4	# [This.GetSpeciesName] <dictatorial_mil>
+	format = "{<AP_ancient_desc> {AofB{<dictatorial_mil> [This.Capital.GetName]}}}"
+	noun = "{[This.Capital.GetName] {<dictatorial_mil>}}"
+}
+# Ancient (Democracies/Oligrachies) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_authority = auth_democratic
+				has_authority = auth_oligarchic
+			}
+			NOT = {
+				has_government = gov_ancient_warhost
+			}
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	format = "{<AP_ancient_desc> {AofB{<democratic_gen> [This.GetSpeciesName]}}}"
+	noun = "{[This.GetSpeciesName] <democratic_gen>}"
 }
 
-# Sky Treaders Neutral
+# Ancient (Dictatorships/Imperiums) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_authority = auth_dictatorial
+				has_authority = auth_imperial
+			}
+			NOT = {
+				has_government = gov_ancient_warhost
+			}
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	format = "{<AP_ancient_desc> {AofB{<imperial_gen> [This.GetSpeciesName]}}}"
+	noun = "{[This.GetSpeciesName] <imperial_gen>}"
+}
+
+# Ancient Warhost (Democracies/Oligrachies) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_authority = auth_democratic
+				has_authority = auth_oligarchic
+			}
+			has_government = gov_ancient_warhost
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	format = "{<AP_ancient_desc> {AofB{<democratic_mil> [This.GetSpeciesName]}}}"
+	noun = "{[This.GetSpeciesName] <democratic_mil>}"
+}
+
+# Ancient Warhost (Dictatorships/Imperiums) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			OR = {
+				has_authority = auth_dictatorial
+				has_authority = auth_imperial
+			}
+			has_government = gov_ancient_warhost
+			has_civic = civic_AP_ancient_remnants
+		}
+	}
+	format = "{<AP_ancient_desc> {AofB{<dictatorial_mil> [This.GetSpeciesName]}}}"
+	noun = "{[This.GetSpeciesName] {<dictatorial_mil>}}"
+}
+
+##########################################################################
+# Sky Treaders
+##########################################################################
+# Sky Treaders (Regular) (Capital)
 empire_name_format = {
 	random_weight = {
 		factor = 0
 		modifier = {
 			add = 50
 			has_origin = AP_sky_treaders
+			NOT = {
+				has_authority = auth_corporate
+				has_ethic = ethic_gestalt_consciousness
+			}
 		}
 	}
-	lookups = "<AP_sky_treader> [This.GetSpeciesName] [Root.Capital.GetName]"
-	format = format.AP.skytreader.1 # <AP_sky_treader> of [Root.Capital.GetName]
-	noun = format.AP.skytreader.noun.1 # <AP_sky_treader> [This.GetSpeciesName]
+	format = "{AofB{<AP_sky_treader> [This.Capital.GetName]}}"
+	noun = "{[This.Capital.GetName] {<AP_sky_treader>}}"
+}
+
+# Sky Treaders (Megacorp) (Capital)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_sky_treaders
+			has_authority = auth_corporate
+		}
+	}
+	format = "{AofB{<AP_sky_treader> [This.Capital.GetName]{<oligarchic_corp>}}}"
+	noun = "{[This.Capital.GetName] {<AP_sky_treader>}}"
+}
+
+# Sky Treaders (Regular) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_sky_treaders
+			NOT = {
+				has_authority = auth_corporate
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	format = "{AofB{<AP_sky_treader> [This.GetSpeciesName]}}"
+	noun = "{[This.GetSpeciesName] {<AP_sky_treader>}}"
+}
+
+# Sky Treaders (Megacorp) (Species)
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 50
+			has_origin = AP_sky_treaders
+			has_authority = auth_corporate
+		}
+	}
+	format = "{AofB{<AP_sky_treader> [This.GetSpeciesName]{<oligarchic_corp>}}}"
+	noun = "{[This.GetSpeciesName] {<AP_sky_treader>}}"
 }

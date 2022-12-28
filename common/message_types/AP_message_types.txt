@@ -18,3 +18,11 @@ message_type = {
 	sound = "notification"
 	ping = "ping_notification_green"
 }
+message_type = {
+	key = AP_WAR_POLICY_RECOMENDATION
+	icon = GFX_message_event_ruler
+	icon_frame = 1
+
+	sound = "notification"
+	ping = "ping_notification_green"
+}

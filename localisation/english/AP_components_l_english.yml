@@ -5,12 +5,24 @@
  AP_is_occupied:0 "Has owned planets being occupied."
 
 # Deposits
- d_ancient_site:0 "Ancient Cashe"
- d_ancient_site_desc:0 "This stronghold is a secure location where most of the ancient knowledge of our the forebearers is kept for study."
- d_underground_cities:0 "Underground City Complex"
- d_underground_cities_desc:0 "This Complex used to be a bunch of big cities, all linked together through long and wide caves. After many years they all grew so close together they became one big city."
- d_underground_city:0 "Underground City"
- d_underground_city_desc:0 "A single underground city housing our population."
+ d_AP_ancient_site:0 "Ancient Cashe"
+ d_AP_ancient_site_desc:0 "This stronghold is a secure location where most of the ancient knowledge of our the forebearers is kept for study."
+ d_AP_underground_cities:0 "Underground City Complex"
+ d_AP_underground_cities_desc:0 "This Complex used to be a bunch of big cities, all linked together through long and wide caves. After many years they all grew so close together they became one big city."
+ d_AP_underground_city:0 "Underground City"
+ d_AP_underground_city_desc:0 "A single underground city housing our population."
+ d_AP_core_access:0 "Core Access"
+ d_AP_core_access_desc:0 "A direct route to the planets core, a dangerous yet rather enriching route."
+ d_AP_ancient_burial_site:0 "Old Burial Site"
+ d_AP_ancient_burial_site_desc:0 "An old graveyard used by our great ancestors."
+ d_AP_ancient_cave_network:0 "Ancient Cave Network"
+ d_AP_ancient_cave_network_desc:0 "A long and wide network of open caves, once inhabited by our great ancestors."
+ d_AP_monument_of_flight:0 "Monument of Flight"
+ d_AP_monument_of_flight_desc:0 "A simple yet elegant monument setup to remind us of our very nature."
+ d_AP_public_rest_stops:0 "Public Rest Stops"
+ d_AP_public_rest_stops_desc:0 "A large planet scale network of state supported rest stops."
+ d_AP_pilgrims_park:0 "Pilgrims Park"
+ d_AP_pilgrims_park_desc:0 "A place considered by some to be the birthplace of our kind, for all to come and visit, it is a cultural highlight and welcomes all that are enter."
 
 # Governments
  gov_ancient_collective:0 "Ancient Collective"
@@ -48,6 +60,9 @@
  gladiators_desc:0 "A grouping of trained and seasoned gladiators from the arenas, There combat powers in both coordinated strikes and single combat are a true show of our cultural experience."
  ancient_sentinal:0 "Ancient Sentinals"
  ancient_sentinal_desc:0 "An artistic rendition of our species given an efficient and sizable battle form. One of the peak achievement from our ancient past."
+ AP_effect.1_army_name:0 "Sentinal of Retribution"
+ AP_effect.2_army_name:0 "Sentinal of Protection"
+ AP_effect.3_army_name:0 "Sentinal of Desolation"
 
 # Traits
  trait_AP_tunneler:0 "Tunneler"
@@ -55,7 +70,21 @@
  trait_AP_migritory_flyer:0 "Migritory Flyer"
  trait_AP_migritory_flyer_desc:0 "This species has a tendincy to migrate and fly a lot. As such they do not need steady housing but require more services while they travel accros vast distances."
 
+ trait_ruler_eye_for_admin:0 "Eye for Administration"
+ trait_ruler_eye_for_admin_desc:0 "This leader has a great insight how to increase adminstrative effectiveness."
+ trait_ruler_war_vet:0 "War Veteran"
+ trait_ruler_war_vet_desc:0 "This leader is a veteran of a warzone. Having the scars and trauma to prove it."
+ leader_trait_social_enthusiast:0 "Social Enthusiast"
+ leader_trait_social_enthusiast_desc:0 "This leader has a great passion for partying, While not great for there health. It does benefit the arts and its people."
+ leader_trait_ecoligist:0 "Ecoligist"
+ leader_trait_ecoligist_desc:0 "This leader has experience with both nature and the waste-flows of our empire."
+ leader_trait_industrialist:0 "Industrialist"
+ leader_trait_industrialist_desc:0 "Some people are more pulled towards efficiency then pretty scenery. This leader is the prime example of that."
+ leader_trait_merchant_connections:0 "Merchant Connection"
+ leader_trait_merchant_connections_desc:0 "This leader is well known for his connection to the traders and companies of our empire."
+
 # Yellow Version of resources
+ AP_Y_energy:0 "£energy£ §Y$energy$§!" # $AP_Y_energy$
  AP_Y_food:0 "£food£ §Y$food$§!" # $AP_Y_food$
  AP_Y_minerals:0 "£minerals£ §Y$minerals$§!" # $AP_Y_minerals$
  AP_Y_unity:0 "£unity£ §Y$unity$§!"  # $AP_Y_unity$
@@ -73,11 +102,26 @@
  AP_Y_pops:0 "£pops£ §Y$pops$§!" # $AP_Y_pops$
  AP_Y_job:0 "£job£ §YPlanet Jobs§!" # $AP_Y_job$
 
+# Special Projects
+ AP_event_children_of_the_darkness_title:0 "Ancestors Home"
+ AP_event_children_of_the_darkness_desc:0 "A tunnel was recently found at an unuseal depth containing arctifacts from our past."
+ AP_CHILDREN_OF_THE_DARKNESS_1:0 "Stabilize the Tunnels"
+ AP_CHILDREN_OF_THE_DARKNESS_1_DESC:0 "The ancient tunnel on our homeworld is a depth that is rather dangerous to us. Though we in modern day do live at these depths. This cave while primitive is odd for that unique depth at which it is located. The prospect of us finding intact fossils and artifacts is rare enough so this lead must be followed. The area however is rather unstable and requires reinforcement before being usefull to navigate."
+ AP_CHILDREN_OF_THE_DARKNESS_2:0 "Research the Tunnels"
+ AP_CHILDREN_OF_THE_DARKNESS_2_DESC:0 "With the ancient tunnel network there and stabilized we now can begin proper excavation of our ancient find. So far the amount of arctifacts has been great, now we can employ a full team of scientists and archeoligists to uncover what truly lays here."
+
+ AP_event_sky_treaders_title:0 "Flying with Grace"
+ AP_event_sky_treaders_desc:0 "Our ancestors flew through the skies many times before us, while we only know so much about them we should honour there past with great respect."
+ AP_SKY_TREADERS_1:0 "Highlight of the Sky"
+ AP_SKY_TREADERS_1_DESC:0 "Our heritage was to fly, the sun was always beyond our reach. Until now, we have to ensure we understand it properly given the fact we have always looked up to it. Both literal and figuratively."
+ AP_SKY_TREADERS_2:0 "Decending once more"
+ AP_SKY_TREADERS_2_DESC:0 "Armed with the knowledge our ancestors saught for generations we are the first to fly above the very sun. Something to mark into our society, The sheer joy has given us a moment of unity unlike anything we have seen before. Let us forge that into progress."
+
 # Misc
  AP_special_decisions:0 "Unique Decisions"
  MESSAGE_AP_POLICY_CHANGE_TITLE:0 "Policy Changed"
- planet_death_chronicler:0 "Death Chronicler"
- planet_job_tunnel_lighter:0 "Tunnel Lighters"
+ MESSAGE_AP_WAR_POLICY_RECOMENDATION_TITLE:0 "War Policies Unlocked"
+ AP_WAR_POLICY_RECOMENDATION_1:0 "Due to the war we have gained access to new policy options."
  casus_belli_cb_AP_remove_hostile_regime:0 "Install Friendly Regime"
  war_goal_wg_AP_remove_hostile_regime:0 "Install Friendly Regime"
  war_goal_wg_AP_remove_hostile_regime_desc:0 "Our goal is to remove this corrupt government to ensure the security of the region."

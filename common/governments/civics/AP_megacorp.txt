@@ -24,7 +24,6 @@ civic_AP_advanced_administration_corporate = {
 }
 
 civic_AP_grand_architecture_corporate = {
-	description = "civic_AP_grand_architecture_corporate_effects"
 	potential = {
 		ethics = {
 			NOT = {
@@ -99,9 +98,31 @@ civic_AP_good_education_corporate = {
 		}
 	}
 	modifier = {
-		planet_job_educator_produces_mult = 0.33
-		planet_job_educator_upkeep_mult = -0.5
+		planet_educator_produces_mult = 0.33
+		planet_educator_upkeep_mult = -0.5
 		leader_skill_levels = 2
+	}
+	random_weight = {
+		weight = 2
+	}
+}
+
+civic_AP_travelling_circus_corporate = {
+	description = "civic_AP_travelling_circus_corporate_effects"
+	potential = {
+		authority = {
+			value = auth_corporate
+		}
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		
+	}
+	modifier = {
 	}
 	random_weight = {
 		weight = 2

@@ -1,0 +1,24 @@
+AP_edict_size_effect_halfed = {
+	base = 0.01
+	mult = trigger:empire_size
+	add = 0.5
+}
+AP_edict_pop_count_effect = {
+	base = 0.05
+	mult = trigger:num_pops
+	add = 0.1
+}
+AP_planet_count_circus = {
+	base = 1 # the base value of what you are working with
+	complex_trigger_modifier = {
+		trigger_scope = owner # starting scope, default is THIS
+		trigger = count_owned_planet # finding this was a pain so please future me look up those documents for once.
+		parameters = {
+			limit = {
+				has_modifier = planet_traveling_circus_outpost
+			}
+		}
+		mode = add # means it is additive
+		mult = 0.5 # the amount i wish to add from the base cost
+	}
+}

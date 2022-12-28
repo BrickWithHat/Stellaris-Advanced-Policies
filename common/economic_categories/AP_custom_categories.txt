@@ -12,18 +12,24 @@
 ##########################################################################
 planet_priests = {
     icon = "job_priest"
-    parent = planet_jobs
-    generate_add_modifiers = {
+	parent = planet_administrators
+    generate_mult_modifiers = {
+		produces
+	}
+	generate_add_modifiers = {
 		produces
         upkeep
 	}
-
 }
-planet_soldiers = {
-    icon = "job_soldier"
+planet_entertainers = {
 	parent = planet_jobs
-    generate_add_modifiers = {
-        produces
+    generate_mult_modifiers = {
+        upkeep
+    }
+}
+planet_culture_workers = {
+	parent = planet_administrators
+    generate_mult_modifiers = {
         upkeep
     }
 }
@@ -32,6 +38,28 @@ planet_death_chronicler = {
     parent = planet_jobs
     generate_add_modifiers = {
         produces
+    }
+}
+planet_bath_attendants = {
+	icon = "job_bath_attendant"
+	parent = planet_jobs
+    generate_add_modifiers = {
+        produces
+    }
+}
+planet_bath_attendants_hive = {
+	icon = "job_bath_attendant"
+	parent = planet_jobs
+    generate_add_modifiers = {
+        produces
+    }
+}
+planet_bath_attendants_machine = {
+	icon = "job_bath_attendant"
+	parent = planet_jobs
+    generate_add_modifiers = {
+        produces
+        upkeep
     }
 }
 ##########################################################################
@@ -68,18 +96,18 @@ pop_category_slave = {
 ##########################################################################
 # Custom jobs
 ##########################################################################
-planet_job_educator = { # Is an parent to all Educator jobs
-    parent = planet_jobs
+planet_educator = { # Is an parent to all Educator jobs
+    parent = planet_jobs_productive
     generate_mult_modifiers = {
         produces
         upkeep
     }
 }
 planet_job_tarrif_clerk = {
-    parent = planet_jobs
+    parent = planet_jobs_productive
 }
 planet_job_tunnel_lighter = {
-    parent = planet_jobs
+    parent = planet_jobs_productive
 }
 ##########################################################################
 # Custom Categories

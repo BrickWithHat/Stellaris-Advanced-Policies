@@ -1,0 +1,1370 @@
+##########################################################################
+# Organic Hive Civic Policies
+##########################################################################
+# To play as hive mind it requires at minimum the Utopia DLC.
+
+AP_ascetic = {
+	potential = {
+		has_valid_civic = civic_hive_ascetic
+	}
+	option = {
+		name = AP_ascetic_symbiot
+		modifier = {
+			country_food_produces_mult = -0.05
+			planet_jobs_complex_drone_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_ascetic_caretaker
+		modifier = {
+			planet_colony_development_speed_mult = -0.33
+			stations_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_ascetic_unimportant
+		modifier = {
+			leader_age = +5
+			leaders_cost_mult = -0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_docile
+				}
+			}
+		}
+	}
+}
+
+AP_divided_attention = {
+	potential = {
+		has_valid_civic = civic_hive_divided_attention
+	}
+	option = {
+		name = AP_divided_attention_compartment
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_divided_attention_mental_organs
+		modifier = {
+			country_unity_produces_mult = 0.1
+			planet_jobs_complex_drone_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				OR = {
+					owner_main_species = {
+						has_trait = trait_docile
+						has_trait = trait_adaptive
+						has_trait = trait_extremely_adaptive
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_divided_attention_instinct
+		modifier = {
+			army_defense_health_mult = 0.5
+			planet_crime_no_happiness_add = -10
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_hive_ascensionists = {
+	potential = {
+		has_valid_civic = civic_hive_ascensionists
+	}
+	option = {
+		name = AP_hive_ascensionists_drones
+		modifier = {
+			species_empire_size_mult = -0.1
+			BIOLOGICAL_species_trait_points_add = +1
+			LITHOID_species_trait_points_add = +1
+			modify_species_cost_mult = -0.2
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_hive_ascensionists_infrastructure
+		modifier = {
+			planet_buildings_cost_mult = -0.1
+			planet_districts_cost_mult = -0.1
+			planet_building_build_speed_mult = 0.2
+			colony_start_num_pops_add = +2
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				years_passed <= 50
+			}
+		}
+	}
+}
+
+AP_natural_neural_network = {
+	potential = {
+		has_valid_civic = civic_hive_natural_neural_network
+	}
+	option = {
+		name = AP_natural_neural_network_knowledge
+		modifier = {
+			intel_encryption_add = -1
+			intel_decryption_add = 1
+			job_brain_drone_per_pop = 0.04
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_natural_neural_network_secrecy
+		modifier = {
+			intel_encryption_add = 2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_one_mind = {
+	potential = {
+		has_valid_civic = civic_hive_one_mind
+	}
+	option = {
+		name = AP_one_mind_bound
+		modifier = {
+			planet_crime_no_happiness_add = -5
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_one_mind_enhancement
+		modifier = {
+			leader_skill_levels = +2
+			species_leader_exp_gain = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_origin = origin_progenitor_hive
+			}
+		}
+	}
+}
+
+AP_pooled_knowledge = {
+	potential = {
+		has_valid_civic = civic_hive_pooled_knowledge
+	}
+	option = {
+		name = AP_pooled_knowledge_afterlife
+		modifier = {
+			leader_skills_spawn = +1
+			leader_skill_levels = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_necrophage
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_pooled_knowledge_managed_autonomy
+		modifier = {
+			country_unity_produces_mult = 0.05
+			planet_jobs_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_policy_flag = AP_autonamy_near_free
+			}
+		}
+	}
+	option = {
+		name = AP_pooled_knowledge_deeper_understanding
+		modifier = {
+			all_technology_research_speed = 0.05
+			intel_decryption_add = +1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_strenght_of_legions = {
+	potential = {
+		has_valid_civic = civic_hive_strength_of_legions
+	}
+	option = {
+		name = AP_strenght_of_legions_evolotion
+		modifier = {
+			modify_species_cost_mult = -0.1
+			planet_pop_assembly_organic_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_strenght_of_legions_harsh_survival
+		modifier = {
+			pop_environment_tolerance = 0.1
+			planet_pops_upkeep_mult = -0.15
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_strenght_of_legions_expansion
+		modifier = {
+			country_claim_influence_cost_mult = -0.1
+			ship_orbital_bombardment_mult = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_unfriendly = yes
+			}
+		}
+	}
+}
+
+AP_subspace_ephapse = {
+	potential = {
+		has_valid_civic = civic_hive_subspace_ephapse
+	}
+	option = {
+		name = AP_subspace_ephapse_etherial_thoughts
+		modifier = {
+			country_base_influence_produces_add = +1
+			country_unity_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_subspace_ephapse_vision_beyond_sight
+		modifier = {
+			country_physics_tech_research_speed = 0.1
+			ship_anomaly_generation_chance_mult = 0.05
+			station_gatherers_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_subsumed_will = {
+	potential = {
+		has_valid_civic = civic_hive_subsumed_will
+	}
+	option = {
+		name = AP_subsumed_will_efficiency
+		modifier = {
+			edicts_upkeep_mult = -0.2
+			country_resettlement_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_subsumed_will_directed_control
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.1
+			planet_jobs_complex_drone_produces_mult = 0.05
+			planet_pops_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_unruly
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_subsumed_will_beyond_survival
+		modifier = {
+			planet_jobs_society_research_produces_mult = 0.25
+			modify_species_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_nonadaptive
+				}
+			}
+		}
+	}
+}
+
+AP_devouring_swarm = {
+	potential = {
+		has_valid_civic = civic_hive_devouring_swarm
+	}
+	option = {
+		name = AP_devouring_swarm_growth
+		modifier = {
+			planet_pops_upkeep_mult = 0.25
+			ship_fire_rate_mult = -0.1
+			pop_growth_speed = 0.15
+			planet_pop_assembly_organic_mult = 0.15
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_devouring_swarm_hunger
+		modifier = {
+			planet_pops_upkeep_mult = 0.25
+			pop_growth_speed = -0.5
+			planet_pop_assembly_organic_mult = -0.5
+			pop_purge_speed = 0.25
+			ship_orbital_bombardment_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_organic_reprocessing = {
+	potential = {
+		has_valid_civic = civic_hive_catalytic_processing
+	}
+	option = {
+		name = AP_organic_reprocessing_practical
+		modifier = {
+			planet_jobs_food_produces_mult = 0.1
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		potential = {
+			is_lithoid = no
+		}
+		valid = {
+			NOT = {
+				has_policy_flag = AP_organic_recycling_none
+			}
+		}
+		name = AP_organic_reprocessing_recycling
+		modifier = {
+			country_alloys_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		potential = {
+			is_lithoid = yes
+		}
+		valid = {
+			NOT = {
+				has_policy_flag = AP_organic_recycling_none
+			}
+		}
+		name = AP_organic_reprocessing_repurpose
+		modifier = {
+			country_alloys_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_idyllic_bloom_hive = {
+	potential = {
+		has_valid_civic = civic_hive_idyllic_bloom
+	}
+	option = {
+		name = AP_idyllic_bloom_invasive
+		modifier = {
+			pop_growth_speed = 0.1
+			pop_amenities_usage_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_idyllic_bloom_dominance
+		modifier = {
+			terraforming_cost_mult = -0.25
+			terraform_speed_mult = 0.1
+			pop_environment_tolerance = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+# Federations DLC required
+AP_empath = {
+	potential = {
+		has_valid_civic = civic_hive_empath
+	}
+	option = {
+		name = AP_empath_seeker
+		modifier = {
+			science_ship_survey_speed = 0.25
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_empath_learner
+		modifier = {
+			job_brain_drone_per_pop = 0.04
+			ship_anomaly_research_speed_mult = 0.1
+			country_border_friction_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_empath_subversion
+		modifier = {
+			country_subject_acceptance_add = +5
+			intel_decryption_add = +1
+			intel_decryption_mult = 0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				is_overlord = yes
+			}
+		}
+	}
+}
+
+# Necroid DLC required
+AP_cordyceptic_drones = {
+	potential = {
+		has_valid_civic = civic_hive_cordyceptic_drones
+	}
+	option = {
+		name = AP_cordyceptic_drones_live
+		modifier = {
+			country_engineering_tech_research_speed = 0.1
+			leader_age = +10
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_cordyceptic_drones_death
+		modifier = {
+			country_society_tech_research_speed = 0.1
+			pop_growth_speed = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+# Necroid DLC required
+AP_memorialists_hive = {
+	potential = {
+		has_valid_civic = civic_hive_memorialist
+	}
+	option = {
+		name = AP_memorialists_hive_the_past
+		modifier = {
+			country_physics_research_produces_mult = 0.15
+			country_society_research_produces_mult = 0.15
+			country_engineering_research_produces_mult = 0.15
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_memorialists_hive_the_present
+		modifier = {
+			tradition_cost_empire_size_mult = -0.25
+			country_unity_produces_mult = 0.05
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_memorialists_hive_the_future
+		modifier = {
+			all_technology_research_speed = 0.1
+			envoys_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+# Toxoids DLC required
+AP_mutagenic_bath_hive = {
+	potential = {
+		has_valid_civic = civic_hive_toxic_baths
+	}
+	option = {
+		name = AP_mutagenic_bath_hive_feeders
+		modifier = {
+			planet_pops_upkeep_mult = -0.1
+			planet_bath_attendants_hive_unity_produces_add = 4
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_mutagenic_bath_hive_mutation_seekers
+		modifier = {
+			modify_species_cost_mult = -0.1
+			planet_bath_attendants_hive_society_research_produces_add = 6
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = {
+					OR = {
+						has_valid_civic = civic_hive_ascetic
+						has_valid_civic = civic_hive_strength_of_legions
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					OR = {
+						has_valid_civic = civic_hive_natural_neural_network
+						has_valid_civic = civic_hive_subspace_ephapse
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_mutagenic_bath_hive_specialization
+		modifier = {
+			planet_jobs_produces_mult = 0.15
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = {
+					OR = {
+						has_valid_civic = civic_hive_natural_neural_network
+						has_valid_civic = civic_hive_subspace_ephapse
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					OR = {
+						has_valid_civic = civic_hive_ascetic
+						has_valid_civic = civic_hive_strength_of_legions
+					}
+				}
+			}
+		}
+	}
+}
+
+##########################################################################
+# Mechanical Hive Civic Policies
+##########################################################################
+# To even play as machine empires, one needs the Synthetic Dawn DLC
+AP_constructobot = {
+	potential = {
+		has_valid_civic = civic_machine_builder
+	}
+	option = {
+		name = AP_constructobot_resource_shortage
+		modifier = {
+			planet_jobs_minerals_upkeep_mult = -0.1
+			planet_building_build_speed_mult = -0.2
+		}
+		AI_weight = {
+			weight = 2
+			modifier = {
+				factor = 0.5
+				has_origin = origin_machine
+			}
+		}
+	}
+	option = {
+		name = AP_constructobot_need
+		modifier = {
+			planet_housing_mult = 0.1
+			planet_amenities_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_constructobot_cheap
+		modifier = {
+			planet_building_build_speed_mult = 0.1
+			empire_size_districts_mult = -0.1
+			planet_buildings_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				any_neighbor_country = {
+					is_rival = from
+				}
+			}
+		}
+	}
+}
+
+AP_delegated_functions = {
+	potential = {
+		has_valid_civic = civic_machine_delegated_functions
+	}
+	option = {
+		name = AP_delegated_functions_sum_of_our_parts
+		modifier = {
+			planet_amenities_mult = 0.05
+			planet_crime_no_happiness_add = -10
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_delegated_functions_makers_foresight
+		modifier = {
+			planet_pops_upkeep_mult = -0.05
+			modify_species_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+	option = {
+		name = AP_delegated_functions_practical
+		modifier = {
+			planet_jobs_produces_mult = 0.15
+			pop_amenities_usage_mult = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_factory_overclock = {
+	potential = {
+		has_valid_civic = civic_machine_factory_overclock
+	}
+	option = {
+		name = AP_factory_overclock_directive
+		modifier = {
+			leader_age = +10
+			species_leader_exp_gain = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_streamlined_protocols
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_factory_overclock_limit
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+			planet_pops_upkeep_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_learning_algorithms
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_factory_overclock_expendable
+		modifier = {
+			planet_pops_upkeep_mult = -0.1
+			planet_crime_no_happiness_add = 10
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_introspective = {
+	potential = {
+		has_valid_civic = civic_machine_introspective
+	}
+	option = {
+		name = AP_introspective_purpose_routine
+		modifier = {
+			country_unity_produces_mult = 0.05
+			envoys_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_introspective_innovation_routine
+		modifier = {
+			intel_decryption_add = +1
+			country_base_influence_produces_add = +1
+		}
+		AI_weight = {
+			weight = 2
+			modifier = {
+				factor = 0.25
+				NOT = {
+					owner_main_species = {
+						has_trait = trait_robot_logic_engines
+					}
+				}
+			}
+		}
+	}
+}
+
+AP_maintenance_protocols = {
+	potential = {
+		has_valid_civic = civic_machine_maintenance_protocols
+	}
+	option = {
+		name = AP_maintenance_protocols_control
+		modifier = {
+			pop_amenities_usage_mult = -0.1
+			planet_crime_no_happiness_add = -10
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_maintenance_protocols_innovation
+		modifier = {
+			country_engineering_research_produces_mult = 0.1
+			planet_pop_assembly_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_efficient_processors
+				}
+			}
+		}
+	}
+}
+
+AP_ota_updates = {
+	potential = {
+		has_valid_civic = civic_machine_ota_updates
+	}
+	option = {
+		name = AP_ota_updates_hotjoin
+		modifier = {
+			leaders_unity_upkeep_mult = -0.25
+			planet_crime_no_happiness_add = -5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_ota_updates_peer_to_peer
+		modifier = {
+			intel_encryption_add = -1
+			pop_amenities_usage_mult = -0.15
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_rapid_replicator = {
+	potential = {
+		has_valid_civic = civic_machine_replication
+	}
+	option = {
+		name = AP_rapid_replicator_quantity
+		modifier = {
+			planet_pop_assembly_mult = 0.1
+			species_leader_exp_gain = -0.05
+			pop_amenities_usage_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_rapid_replicator_quality
+		modifier = {
+			planet_pop_assembly_mult = -0.1
+			species_leader_exp_gain = 0.25
+			leader_skill_levels = +2
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_rockbreakers = {
+	potential = {
+		has_valid_civic = civic_machine_rockbreakers
+	}
+	option = {
+		name = AP_rockbreakers_prospector
+		modifier = {
+			category_materials_research_speed_mult = 0.25
+			planet_sensor_range_add = +1
+			science_ship_survey_speed = 0.25
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_rockbreakers_rationer
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.15
+			planet_pops_upkeep_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_rockbreakers_fabricator
+		modifier = {
+			planet_jobs_complex_drone_produces_mult = 0.15
+			planet_buildings_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+}
+
+AP_static_research_analysis = {
+	potential = {
+		has_valid_civic = civic_machine_predictive_analysis
+	}
+	option = {
+		name = AP_static_research_analysis_physics
+		modifier = {
+			country_physics_research_produces_mult = 0.1
+			science_ship_survey_speed = 0.1
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_static_research_analysis_society
+		modifier = {
+			country_society_research_produces_mult = 0.1
+			diplo_weight_mult = 0.05
+			envoys_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.5
+				is_unfriendly = yes
+			}
+		}
+	}
+	option = {
+		name = AP_static_research_analysis_engineering
+		modifier = {
+			country_engineering_research_produces_mult = 0.1
+			planet_buildings_upkeep_mult = -0.05
+			planet_districts_upkeep_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_unitary_cohesion = {
+	potential = {
+		has_valid_civic = civic_machine_unitary_cohesion
+	}
+	option = {
+		name = AP_unitary_cohesion_override
+		modifier = {
+			pop_amenities_usage_mult = -0.1
+			country_leader_pool_size = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_unitary_cohesion_as_one
+		modifier = {
+			species_leader_exp_gain = 0.05
+			planet_crime_no_happiness_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_warbots = {
+	potential = {
+		has_valid_civic = civic_machine_warbots
+	}
+	option = {
+		name = AP_warbots_core_directive
+		modifier = {
+			starbase_upgrade_cost_mult = -0.1
+			ship_military_cost_mult = -0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_warbots_guardian
+		valid = {
+			NOT = {
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		modifier = {
+			starbase_upgrade_speed_mult = 0.25
+			ship_home_territory_fire_rate_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_valid_civic = civic_machine_terminator
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_warbots_eradicator
+		modifier = {
+			ship_speed_mult = 0.2
+			ship_fire_rate_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				is_unfriendly = yes
+			}
+		}
+	}
+}
+
+AP_zero_waste_protocols = {
+	potential = {
+		has_valid_civic = civic_machine_zero_waste_protocols
+	}
+	option = {
+		name = AP_zero_waste_protocols_jobs
+		modifier = {
+			planet_jobs_upkeep_mult = -0.2
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 2
+				owner_main_species = {
+					has_trait = trait_robot_mass_produced
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_zero_waste_protocols_space
+		modifier = {
+			station_gatherers_produces_mult = 0.1
+			station_gatherers_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+AP_determined_exterminator = {
+	potential = {
+		has_valid_civic = civic_machine_terminator
+	}
+	option = {
+		name = AP_determined_exterminator_locate
+		modifier = {
+			planet_sensor_range_add = +1
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_determined_exterminator_build
+		modifier = {
+			planet_districts_cost_mult = -0.1
+			planet_buildings_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_determined_exterminator_eradicate
+		modifier = {
+			pop_purge_speed = 0.33
+			army_health = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+AP_driven_assimilator = {
+	potential = {
+		has_valid_civic = civic_machine_assimilator
+	}
+	option = {
+		name = AP_driven_assimilator_locate
+		modifier = {
+			planet_sensor_range_add = +1
+			ship_sensor_range_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_driven_assimilator_build
+		modifier = {
+			planet_districts_cost_mult = -0.1
+			planet_buildings_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_driven_assimilator_assimilate
+		modifier = {
+			ship_fire_rate_mult = 0.05
+			army_collateral_damage_mult = -0.25
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+AP_rogue_servitor = {
+	potential = {
+		has_valid_civic = civic_machine_servitor
+	}
+	option = {
+		name = AP_rogue_servitor_caretaker
+		modifier = {
+			envoys_add = +1
+			envoy_improve_relations_mult = 0.1
+			country_trust_cap_add = +10
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_rogue_servitor_obligated_to_serve
+		modifier = {
+			planet_bio_trophies_unity_produces_mult = 0.25
+			pop_amenities_usage_mult = 0.25
+			planet_housing_mult = +0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner_main_species = {
+					has_trait = trait_robot_emotion_emulators
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_rogue_servitor_savior
+		modifier = {
+			country_hostile_claim_influence_cost_mult = -0.33
+			ship_speed_mult = 0.1
+			ship_fire_rate_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				has_tradition = tr_supremacy_adopt
+			}
+		}
+	}
+}
+
+# Plantoid DLC required
+AP_organic_reprocessing_machine = {
+	potential = {
+		has_valid_civic = civic_machine_catalytic_processing
+	}
+	option = {
+		name = AP_organic_reprocessing_machine_excess
+		modifier = {
+			planet_jobs_food_produces_mult = 0.1
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_organic_reprocessing_machine_reuse
+		modifier = {
+			country_alloys_produces_mult = 0.2
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+}
+
+# Utopia DLC required
+AP_machine_ascensionists = {
+	potential = {
+		has_valid_civic = civic_machine_ascensionists
+	}
+	option = {
+		name = AP_machine_ascensionists_drones
+		modifier = {
+			species_empire_size_mult = -0.1
+			ROBOT_species_trait_points_add = +1
+			modify_species_cost_mult = -0.2
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_machine_ascensionists_infrastructure
+		modifier = {
+			planet_buildings_cost_mult = -0.15
+			planet_districts_cost_mult = -0.15
+			planet_building_build_speed_mult = 0.3
+			colony_start_num_pops_add = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				years_passed <= 50
+			}
+		}
+	}
+}
+
+# Necroid DLC required
+AP_memorialists_machine = {
+	potential = {
+		has_valid_civic = civic_machine_memorialist
+	}
+	option = {
+		name = AP_memorialists_machine_the_past
+		modifier = {
+			country_physics_research_produces_mult = 0.15
+			country_society_research_produces_mult = 0.15
+			country_engineering_research_produces_mult = 0.15
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed <= 50
+			}
+		}
+	}
+	option = {
+		name = AP_memorialists_machine_the_present
+		modifier = {
+			tradition_cost_empire_size_mult = -0.25
+			country_unity_produces_mult = 0.05
+			planet_stability_add = 5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_memorialists_machine_the_future
+		modifier = {
+			all_technology_research_speed = 0.1
+			envoys_add = 1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				years_passed >= 100
+			}
+		}
+	}
+}
+
+# Toxoids DLC required
+AP_mutagenic_spas_machine = {
+	potential = {
+		has_valid_civic = civic_machine_toxic_baths
+	}
+	option = {
+		name = AP_mutagenic_spas_machine_endurance
+		modifier = {
+			planet_pops_upkeep_mult = -0.1
+			planet_amenities_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_mutagenic_spas_machine_efficiency
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+			planet_bath_attendants_machine_engineering_research_produces_add = 3
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_mutagenic_spas_machine_expansion
+		modifier = {
+			planet_bath_attendants_machine_alloys_produces_add = 3
+			planet_bath_attendants_machine_energy_upkeep_add = 2
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}

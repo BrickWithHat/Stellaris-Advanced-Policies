@@ -1,0 +1,219 @@
+##########################################################################
+# Origin artifacts
+##########################################################################
+namespace = AP_origin
+# Start-up for the Children of the Darkness Origin
+planet_event = {
+	id = AP_origin.11
+	title = AP_origin.11_title
+	desc = AP_origin.11_desc
+	picture = GFX_evt_archaeology_camp
+	is_triggered_only = yes
+	location = THIS
+	pre_triggers = {
+		is_homeworld = yes
+		is_occupied_flag = no
+	}
+	option = {
+		name = AP_origin.11_1
+		begin_event_chain = {
+			event_chain = AP_event_children_of_the_darkness
+			target = ROOT
+		}
+		enable_special_project = {
+			name = AP_CHILDREN_OF_THE_DARKNESS_1
+			owner = root
+		}
+	}
+}
+
+# In between for the Children of the Darkness Origin
+planet_event = {
+	id = AP_origin.12
+	title = AP_origin.12_title
+	desc = AP_origin.12_desc
+	picture = GFX_evt_archaeology_camp
+	is_triggered_only = yes
+	location = THIS
+	pre_triggers = {
+		is_homeworld = yes
+		is_occupied_flag = no
+	}
+	option = {
+		name = AP_origin.12_1
+		enable_special_project = {
+			name = AP_CHILDREN_OF_THE_DARKNESS_2
+			owner = root
+		}
+		owner = {
+			if = {
+				limit = {
+					host_has_dlc = "Ancient Relics Story Pack"
+				}
+				add_resource = {
+					minor_artifacts = 5
+				}
+				else = {
+					add_resource = {
+						energy = 500
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+# Ending for the Children of the Darkness Origin
+planet_event = {
+	id = AP_origin.13
+	title = AP_origin.13_title
+	desc = AP_origin.13_desc
+	picture = GFX_evt_archaeology_camp
+	is_triggered_only = yes
+	location = THIS
+	pre_triggers = {
+		is_homeworld = yes
+		is_occupied_flag = no
+	}
+	option = {
+		name = AP_origin.13_1
+		custom_tooltip = AP_origin.13_11
+		owner = {
+			if = {
+				limit = {
+					host_has_dlc = "Ancient Relics Story Pack"
+				}
+				add_resource = {
+					minor_artifacts = 5
+				}
+				else = {
+					add_resource = {
+						energy = 500
+					}
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			end_event_chain = AP_event_children_of_the_darkness
+		}
+		hidden_effect = {
+			random_list = {
+				30 = {
+					add_deposit = d_AP_ancient_burial_site
+				}
+				30 = {
+					add_deposit = d_AP_core_access
+				}
+				30 = {
+					add_deposit = d_AP_ancient_cave_network
+				}
+			}
+		}
+	}
+}
+
+# Sky treaders begining 
+planet_event = {
+	id = AP_origin.21
+	title = AP_origin.21_title
+	desc = AP_origin.21_desc
+	picture = GFX_evt_archaeology_camp
+	is_triggered_only = yes
+	location = THIS
+	option = {
+		name = AP_origin.21_1
+		begin_event_chain = {
+			event_chain = AP_event_sky_treaders
+			target = space_owner
+		}
+		enable_special_project = {
+			name = AP_SKY_TREADERS_1
+			owner = space_owner
+			location = system_star
+		}
+	}
+}
+
+# Sky treaders middle
+planet_event = {
+	id = AP_origin.22
+	title = AP_origin.22_title
+	desc = AP_origin.22_desc
+	picture = GFX_evt_archaeology_camp
+	is_triggered_only = yes
+	pre_triggers = {
+		is_homeworld = yes
+		is_occupied_flag = no
+	}
+	option = {
+		name = AP_origin.22_1
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3unityreward
+				min = @tier3unitymin
+				max = @tier3unitymax
+			}
+			enable_special_project = {
+				name = AP_SKY_TREADERS_2
+				owner = space_owner
+				location = capital_scope
+			}
+		}
+	}
+}
+
+# Sky treaders end
+planet_event = {
+	id = AP_origin.23
+	title = AP_origin.23_title
+	desc = AP_origin.23_desc
+	picture = GFX_evt_archaeology_camp
+	is_triggered_only = yes
+	location = THIS
+	pre_triggers = {
+		is_homeworld = yes
+		is_occupied_flag = no
+	}
+	option = {
+		name = AP_origin.23_1
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		hidden_effect = {
+			custom_tooltip = AP_origin.13_11
+			random_list = {
+				30 = {
+					add_deposit = d_AP_pilgrims_park
+				}
+				30 = {
+					add_deposit = d_AP_monument_of_flight
+				}
+				30 = {
+					add_deposit = d_AP_public_rest_stops
+				}
+			}
+		}
+	}
+}

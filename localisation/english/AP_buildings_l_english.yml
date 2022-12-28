@@ -28,3 +28,15 @@
 ##########################################################################
  building_AP_education_school:0 "Education Compound"
  building_AP_education_school_desc:0 "This compound is the nerve centre for any organized education on the planet."
+##########################################################################
+# Holding Buildings
+##########################################################################
+ holding_circus_outpost:0 "Offworld Circus Outpost"
+ holding_circus_outpost_desc:0 "A remote zone set aside for the overlords travelling entertainers. Many of which enjoy mingling with the local population."
+##########################################################################
+# Branch Office Buildings
+##########################################################################
+ building_offworld_circus:0 "Offworld Circus"
+ building_offworld_circus_desc:0 "An expansive fairground where many great attrations and activities are held on a semi-regular basis."
+ building_shady_fairgrounds:0 "Shady Fairgrounds"
+ building_shady_fairgrounds_desc:0 "These fairgrounds might provide a good time for most, but thievery, murder and disapearances happen here a bit to often."

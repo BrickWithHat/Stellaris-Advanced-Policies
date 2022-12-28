@@ -6,27 +6,39 @@ building_AP_democratic_parliment = {
 	base_cap_amount = 1
 	icon = building_subversive_shrine
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_democratic
+			is_fallen_empire = no
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
-	}
-	destroy_trigger = {
-		NOR = {
-			owner = {
-				has_authority = auth_democratic
-			}
-			planet = {
-				is_capital = YES
-			}
-		}
 	}
 	planet_modifier = {
 		job_politician_add = 3
+		planet_stability_add = 5
+	}
+	convert_to = {
+		building_AP_imperial_palace
+		building_AP_dictators_palace
+		building_AP_oligarcy_assembly
+		building_AP_executive
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			NOT = {
+				owner = {
+					has_authority = auth_democratic
+				}
+			}
+			planet = {
+				is_capital = NO
+			}
+		}
 	}
 	# Spiritualist jobs
 	triggered_planet_modifier = {
@@ -107,27 +119,39 @@ building_AP_oligarcy_assembly = {
 	base_cap_amount = 1
 	icon = building_public_relations_office
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_oligarchic
+			is_fallen_empire = no
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
-	}
-	destroy_trigger = {
-		NOR = {
-			owner = {
-				has_authority = auth_oligarchic
-			}
-			planet = {
-				is_capital = YES
-			}
-		}
 	}
 	planet_modifier = {
 		job_politician_add = 3
+		planet_stability_add = 5
+	}
+	convert_to = {
+		building_AP_imperial_palace
+		building_AP_dictators_palace
+		building_AP_democratic_parliment
+		building_AP_executive
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			NOT = {
+				owner = {
+					has_authority = auth_oligarchic
+				}
+			}
+			planet = {
+				is_capital = NO
+			}
+		}
 	}
 	# Spiritualist jobs
 	triggered_planet_modifier = {
@@ -208,27 +232,39 @@ building_AP_dictators_palace = {
 	base_cap_amount = 1
 	icon = building_syndicate_outreach_office
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_dictatorial
+			is_fallen_empire = no
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
-	}
-	destroy_trigger = {
-		NOR = {
-			owner = {
-				has_authority = auth_dictatorial
-			}
-			planet = {
-				is_capital = YES
-			}
-		}
 	}
 	planet_modifier = {
 		job_politician_add = 3
+		planet_stability_add = 5
+	}
+	convert_to = {
+		building_AP_imperial_palace
+		building_AP_oligarcy_assembly
+		building_AP_democratic_parliment
+		building_AP_executive
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			NOT = {
+				owner = {
+					has_authority = auth_dictatorial
+				}
+			}
+			planet = {
+				is_capital = NO
+			}
+		}
 	}
 	# Spiritualist jobs
 	triggered_planet_modifier = {
@@ -309,27 +345,39 @@ building_AP_imperial_palace = {
 	base_cap_amount = 1
 	icon = building_temple_of_prosperity
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_imperial
+			is_fallen_empire = no
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
-	}
-	destroy_trigger = {
-		NOR = {
-			owner = {
-				has_authority = auth_imperial
-			}
-			planet = {
-				is_capital = YES
-			}
-		}
 	}
 	planet_modifier = {
 		job_politician_add = 3
+		planet_stability_add = 5
+	}
+	convert_to = {
+		building_AP_dictators_palace
+		building_AP_oligarcy_assembly
+		building_AP_democratic_parliment
+		building_AP_executive
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			NOT = {
+				owner = {
+					has_authority = auth_imperial
+				}
+			}
+			planet = {
+				is_capital = NO
+			}
+		}
 	}
 	# Spiritualist jobs
 	triggered_planet_modifier = {
@@ -410,27 +458,39 @@ building_AP_executive = {
 	base_cap_amount = 1
 	icon = building_corporate_embassy
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_corporate
+			is_fallen_empire = no
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
+	}
+	convert_to = {
+		building_AP_imperial_palace
+		building_AP_dictators_palace
+		building_AP_oligarcy_assembly
+		building_AP_democratic_parliment
 	}
 	destroy_trigger = {
-		NOR = {
-			owner = {
-				has_authority = auth_corporate
+		exists = owner
+		OR = {
+			NOT = {
+				owner = {
+					has_authority = auth_corporate
+				}
 			}
 			planet = {
-				is_capital = YES
+				is_capital = NO
 			}
 		}
 	}
 	planet_modifier = {
 		job_executive_add = 3
+		planet_stability_add = 5
 	}
 	# Spiritualist jobs
 	triggered_planet_modifier = {
@@ -511,17 +571,18 @@ building_AP_gestalt_hive = {
 	base_cap_amount = 1
 	icon = building_imperial_hive_capital
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_hive_mind
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
 	}
 	destroy_trigger = {
-		NOR = {
+		NOT = {
 			owner = {
 				has_authority = auth_hive_mind
 			}
@@ -555,17 +616,18 @@ building_AP_gestalt_mech = {
 	base_cap_amount = 1
 	icon = building_disinformation_center
 	category = government
+	position_priority = 50
 	potential = {
 		owner = {
 			has_authority = auth_machine_intelligence
 		}
+		is_capital = yes
 	}
 	allow = {
 		has_upgraded_capital = yes
-		is_capital = yes
 	}
 	destroy_trigger = {
-		NOR = {
+		NOT = {
 			owner = {
 				has_authority = auth_machine_intelligence
 			}
@@ -602,6 +664,7 @@ building_AP_migrant_waystation = {
 	category = unity
 	icon = building_organic_sanctuary
 	base_cap_amount = 1
+	position_priority = 100
 	potential = {
 		owner = {
 			has_origin = AP_sky_treaders
@@ -645,6 +708,7 @@ building_AP_migrant_capital_hacthery = {
 	category = unity
 	icon = building_offspring_nest
 	base_cap_amount = 1
+	position_priority = 75
 	potential = {
 		owner = {
 			has_origin = AP_sky_treaders
@@ -690,6 +754,7 @@ building_AP_education_school = {
 	category = research
 	icon = building_virtual_entertainment_studios
 	base_cap_amount = 1
+	position_priority = 75
 	potential = {
 		owner = {
 			is_gestalt = no
@@ -752,5 +817,133 @@ building_AP_education_school = {
 				}
 			}
 		}
+	}
+}
+
+##########################################################################
+# Branch Office Buildings
+##########################################################################
+building_offworld_circus = {
+	base_buildtime = @b1_time
+	owner_type = corporate
+	base_cap_amount = 1
+	icon = building_organic_sanctuary
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = {
+			is_criminal_syndicate = no
+		}
+	}
+	planet_modifier = {
+		job_culture_worker_add = 2
+		planet_amenities_mult = 0.05
+	}
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			unity = 15
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+
+building_shady_fairgrounds = {
+	base_buildtime = @b1_time
+	owner_type = corporate
+	base_cap_amount = 1
+	icon = building_organic_sanctuary
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = {
+			is_criminal_syndicate = yes
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 30
+		planet_amenities_mult = 0.05
+	}
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			unity = 15
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+
+##########################################################################
+# Holdings Buildings
+##########################################################################
+holding_circus_outpost = {
+	base_buildtime = @b1_time
+	owner_type = subject_holding
+	icon = building_organic_sanctuary
+	base_cap_amount = 1
+	potential = {
+		owner.overlord = {
+			OR = {
+				has_valid_civic = civic_AP_travelling_circus
+				has_valid_civic = civic_AP_travelling_circus_corporate
+			}
+		}
+	}
+	allow = {
+		planet.owner = {
+			is_gestalt = no
+		}
+	}
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+		produces = {
+			unity = 15
+		}
+	}
+	planet_modifier = {
+		monthly_loyalty = +1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				has_valid_civic = civic_warrior_culture
+			}
+		}
+		job_duelist_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				NOT = {
+					has_valid_civic = civic_warrior_culture
+				}
+			}
+		}
+		job_entertainer_add = 2
+	}
+	ai_weight = {
+		weight = 10
 	}
 }

@@ -1,0 +1,9 @@
+AP_event_children_of_the_darkness = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_ancient_records
+}
+
+AP_event_sky_treaders = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_ancient_records
+}

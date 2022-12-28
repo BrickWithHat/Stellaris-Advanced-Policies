@@ -167,4 +167,14 @@ ancient_sentinal = {
 	potential = {
 		always = no
 	}
+	resources = {
+		category = armies
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+			}
+			unity = 0.5
+		}
+	}
 }

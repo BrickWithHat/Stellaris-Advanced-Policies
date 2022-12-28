@@ -142,7 +142,7 @@ AP_trail_by_fire = {
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = 0.5
 	}
 }
 
@@ -178,7 +178,7 @@ AP_generation_of_peace = {
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = 0.5
 	}
 }
 
@@ -211,7 +211,7 @@ AP_grand_sports_games = {
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = 0.5
 	}
 }
 
@@ -244,7 +244,7 @@ AP_benevolant_gesture = {
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = 0.5
 	}
 }
 
@@ -277,7 +277,7 @@ AP_rite_of_the_heavens = {
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = 0.5
 	}
 }
 
@@ -314,7 +314,7 @@ AP_competition_of_the_minds = {
 		}
 	}
 	ai_weight = {
-		weight = 1
+		weight = 0.5
 	}
 }
 
@@ -394,7 +394,7 @@ AP_conscription = {
 ##########################################################################
 # Civic Related
 ##########################################################################
-# Mobile Construction civic related
+# Mobile Construction
 AP_mobile_constrution_deploy = {
 	owned_planets_only = yes
 	icon = decision_mining_station
@@ -424,7 +424,7 @@ AP_mobile_constrution_deploy = {
 		# More blockers to remove means a more attractice location to deploy
 		modifier = {
 			factor = 10
-			num_uncleared_blockers > 2
+			num_uncleared_blockers > 3
 		}
 		# The more districts to build the better the savings eh?
 		modifier = {
@@ -435,8 +435,14 @@ AP_mobile_constrution_deploy = {
 		modifier = {
 			factor = 0
 			AND = {
-				free_district_slots <= 3
+				free_district_slots <= 4
 				num_uncleared_blockers <= 2
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				is_megacorp = yes
 			}
 		}
 	}
@@ -468,13 +474,13 @@ AP_mobile_constrution_pack = {
 	enactment_time = 60
 	ai_weight = {
 		weight = 10
-		# AI cannot move the MCV while it is either building, or has more then 5 districts available to build
+		# AI cannot move the MCV while it is either building, or has more then 3 districts available to build
 		modifier = {
 			factor = 0
 			OR = {
 				has_building_construction = yes
 				NOT = {
-					free_district_slots <= 5
+					free_district_slots <= 3
 				}
 			}
 		}
@@ -497,6 +503,77 @@ AP_mobile_constrution_pack = {
 		}
 	}
 }
+
+# Traveling Circus
+AP_build_circus_outpost = {
+	potential = {
+		owner = {
+			OR = {
+				has_valid_civic = civic_AP_travelling_circus
+				has_valid_civic = civic_AP_travelling_circus_corporate
+			}
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		NOT = {
+			has_modifier = planet_traveling_circus_outpost_warrior
+			has_modifier = planet_traveling_circus_outpost
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				owner = {
+					has_valid_civic = civic_warrior_culture
+				}
+			}
+			add_modifier = {
+				modifier = planet_traveling_circus_outpost_warrior
+			}
+			else = {
+				add_modifier = {
+					modifier = planet_traveling_circus_outpost
+				}
+			}
+		}
+
+	}
+	resources = {
+		category = AP_special_decisions
+		cost = {
+			unity = 500
+			mult = value:AP_planet_count_circus
+		}
+	}
+	enactment_time = 360
+	owned_planets_only = yes
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 10
+			planet_size >= 15
+		}
+		modifier = {
+			factor = 5
+			planet_size >= 20
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				is_planet_class = pc_city
+				is_planet_class = pc_gaia
+				is_planet_class = pc_relic
+			}
+			
+		}
+		modifier = {
+			factor = 5
+			free_amenities <= 5
+		}
+	}
+}
+
 ##########################################################################
 # Origin Related
 ##########################################################################
@@ -518,14 +595,14 @@ AP_excavate_the_planet = {
 		planet = {
 			count_deposits = {
 				count < 6
-				type = d_underground_city
+				type = d_AP_underground_city
 			}
 			NOT = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_ringworld_habitable
 				is_planet_class = pc_city
 				has_planet_flag = seismic_disturbance
-				has_deposit = d_underground_cities
+				has_deposit = d_AP_underground_cities
 			}
 		}
 	}
@@ -535,14 +612,14 @@ AP_excavate_the_planet = {
 				is_planet_class = pc_ocean
 				count_deposits = {
 					count >= 2
-					type = d_underground_city
+					type = d_AP_underground_city
 				}
 			}
 		}
 	}
 	effect = {
 		planet = {
-			add_deposit = d_underground_city
+			add_deposit = d_AP_underground_city
 		}
 	}
 	enactment_time = 360
@@ -636,13 +713,13 @@ AP_connect_underground = {
 		owner = {
 			has_origin = AP_children_of_the_darkness
 		}
-		has_deposit = d_underground_city
+		has_deposit = d_AP_underground_city
 	}
 	allow = {
 		planet = {
 			count_deposits = {
 				count = 6
-				type = d_underground_city
+				type = d_AP_underground_city
 			}
 		}
 	}
@@ -650,9 +727,9 @@ AP_connect_underground = {
 		planet = {
 			while = {
 				count = 6
-				remove_deposit = d_underground_city
+				remove_deposit = d_AP_underground_city
 			}
-			add_deposit = d_underground_cities
+			add_deposit = d_AP_underground_cities
 		}
 	}
 	enactment_time = 720

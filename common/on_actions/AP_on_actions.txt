@@ -1,7 +1,8 @@
 # Thanks to those wonderfull lads at the stellaris discord,
-# i learned from some people that copying a term is not an overwrite but an addition.
+# I learned from some people that copying a term is not an overwrite but an addition.
 # I bloody love those people
 ##########################################################################
+# Country
 on_game_start_country = {
 	events = {
 		AP_flag.1
@@ -12,14 +13,27 @@ on_game_start_country = {
 	}
 }
 
+# This = planet
+# From = country attacking
 on_ground_combat_started = {
 	events = {
 		AP_effect.1
 	}
 }
 
+# Root = Loser
+# From = Main Winner
 on_war_ended = {
 	events = {
 		AP_panic.2
+		AP_effect.3
+	}
+}
+
+# Root = Country
+# From = War
+on_war_beginning = {
+	events = {
+		AP_effect.2
 	}
 }

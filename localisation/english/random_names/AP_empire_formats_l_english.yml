@@ -1,4 +1,4 @@
-﻿l_default:
+﻿l_english:
 # Ancient Remnants Components
  format.AP.ancient.1:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>"
  format.AP.ancient.2:0 "<imperial_gen_desc> <AP_ancient_desc> [This.GetSpeciesName] <imperial_gen>"
@@ -16,5 +16,5 @@
  format.AP.children.species.1:0 "[This.Capital.GetName] <AP_darkness>"
 
 # Sky Treaders Components
- format.AP.skytreader.1:0 "<AP_sky_treader> of [Root.Capital.GetName]"
+ format.AP.skytreader.1:0 "<AP_sky_treader> of [This.Capital.GetName]"
  format.AP.skytreader.noun.1:0 "[This.GetSpeciesName] <AP_sky_treader>"

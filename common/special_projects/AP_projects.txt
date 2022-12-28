@@ -1,0 +1,57 @@
+# Children of the darkness Special Project
+special_project = {
+	key = "AP_CHILDREN_OF_THE_DARKNESS_1"
+	event_chain = AP_event_children_of_the_darkness
+	event_scope = planet_event
+	days_to_research = 360
+	tech_department = engineering_technology
+	location = yes
+	on_success = {
+		planet_event = {
+			id = AP_origin.12
+		}
+	}
+}
+
+special_project = {
+	key = "AP_CHILDREN_OF_THE_DARKNESS_2"
+	event_chain = AP_event_children_of_the_darkness
+	event_scope = planet_event
+	days_to_research = 360
+	tech_department = society_technology
+	location = yes
+	on_success = {
+		planet_event = {
+			id = AP_origin.13
+		}
+	}
+}
+
+special_project = {
+	key = "AP_SKY_TREADERS_1"
+	event_chain = AP_event_sky_treaders
+	event_scope = planet_event
+	days_to_research = 360
+	tech_department = physics_technology
+	location = yes
+	on_success = {
+		FROM.space_owner.capital_scope = {
+			planet_event = {
+				id = AP_origin.22
+			}
+		}
+	}
+}
+
+special_project = {
+	key = "AP_SKY_TREADERS_2"
+	event_chain = AP_event_sky_treaders
+	event_scope = planet_event
+	days_to_research = 360
+	location = yes
+	on_success = {
+		planet_event = {
+			id = AP_origin.23
+		}
+	}
+}
