@@ -50,4 +50,9 @@
  job_specialist_tarrifs_clerk_desc:0 "Tarrif Clerks go through long lists of payments made in the past period and ensure all have paid there tax. Be that import tax, export tax, pet tax or whatever the governemt desires to tax."
  mod_job_specialist_tarrifs_clerk_add:0 "£job_specialist_tarrifs_clerk£ $job_specialist_tarrifs_clerk$ jobs added"
 
+ job_drone_mind_melder:0 "Knowledge Melder"
+ job_drone_mind_melder_plural:0 "Knowledge Melders"
+ job_drone_mind_melder_desc:0 "These entities plant pre-disposed knowledge into the next generation of the gestalt."
+ mod_job_drone_mind_melder_add:0 "£job_drone_mind_melder£ $job_drone_mind_melder$ jobs added"
+
 

@@ -307,7 +307,6 @@ civic_AP_travelling_circus = {
 		}
 	}
 	modifier = {
-		
 	}
 	random_weight = {
 		weight = 2

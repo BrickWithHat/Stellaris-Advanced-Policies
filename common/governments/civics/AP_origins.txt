@@ -17,6 +17,9 @@ AP_children_of_the_darkness = {
 			}
 		}
 	}
+	potential = {
+		always = yes
+	}
 	ai_playable = {
 		if = {
 			limit = {
@@ -35,7 +38,7 @@ AP_children_of_the_darkness = {
 		custom_start_screen
 	}
 	random_weight = {
-		base = 30
+		base = 40
 		modifier = {
 			factor = 0
 			OR = {
@@ -63,6 +66,9 @@ AP_sky_treaders = {
 				value = auth_machine_intelligence
 			}
 		}
+	}
+	potential = {
+		always = yes
 	}
 	flags = {
 		custom_start_screen

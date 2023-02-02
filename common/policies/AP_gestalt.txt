@@ -74,6 +74,309 @@ AP_autonamy = {
 		}
 	}
 }
+
+AP_entity_linking = {
+	potential = {
+		is_gestalt = yes
+	}
+	option = {
+		name = AP_entity_linking_few
+		policy_flags = {
+			AP_entity_linking_few
+		}
+		modifier = {
+			species_leader_exp_gain = 0.05
+			leader_skill_levels = +1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_divided_attention
+					has_valid_civic = civic_hive_empath
+					has_valid_civic = civic_machine_delegated_functions
+					has_valid_civic = civic_machine_servitor
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_entity_linking_frequant
+		policy_flags = {
+			AP_entity_linking_frequant
+		}
+		modifier = {
+			planet_crime_no_happiness_mult = -0.05
+			country_unity_produces_mult = 0.05
+			planet_pops_upkeep_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_memorialist
+					has_valid_civic = civic_machine_memorialist
+					has_valid_civic = civic_machine_introspective
+					has_valid_civic = civic_machine_predictive_analysis
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_entity_linking_constant
+		policy_flags = {
+			AP_entity_linking_constant
+		}
+		modifier = {
+			planet_crime_no_happiness_mult = -0.1
+			country_unity_produces_mult = 0.1
+			planet_pops_upkeep_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_one_mind
+					has_valid_civic = civic_hive_subsumed_will
+					has_valid_civic = civic_machine_unitary_cohesion
+					has_valid_civic = civic_machine_terminator
+					has_valid_civic = civic_machine_assimilator
+				}
+			}
+		}
+	}
+}
+
+AP_instinctive_knowledge = {
+	potential = {
+		is_gestalt = yes
+	}
+	option = {
+		name = AP_instinctive_knowledge_none
+		policy_flags = {
+			AP_instinctive_knowledge_none
+		}
+		modifier = {
+			species_empire_size_mult = -0.2
+			species_leader_exp_gain = 0.25
+			leader_skills_spawn = +1
+			planet_pops_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+			# Machine Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_machine_replication
+					has_valid_civic = civic_machine_unitary_cohesion
+					has_valid_civic = civic_machine_warbots
+					has_valid_civic = civic_machine_terminator
+				}
+			}
+			# Hive Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_one_mind
+					has_valid_civic = civic_hive_strength_of_legions
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_instinctive_knowledge_few
+		policy_flags = {
+			AP_instinctive_knowledge_few
+		}
+		modifier = {
+			job_drone_mind_melder_per_pop = 0.02
+			planet_jobs_produces_mult = 0.1
+			species_empire_size_mult = -0.15
+			planet_pops_upkeep_mult = 0.05
+			leader_cost_empire_size_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			# Machine Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_machine_factory_overclock
+					has_valid_civic = civic_machine_toxic_baths
+				}
+			}
+			# Hive Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_subspace_ephapse
+					has_valid_civic = civic_hive_subsumed_will
+					has_valid_civic = civic_hive_cordyceptic_drones
+					has_valid_civic = civic_hive_toxic_baths
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_instinctive_knowledge_some
+		policy_flags = {
+			AP_instinctive_knowledge_some
+		}
+		modifier = {
+			job_drone_mind_melder_per_pop = 0.025
+			planet_jobs_produces_mult = 0.15
+			species_empire_size_mult = -0.1
+			planet_pops_upkeep_mult = 0.1
+			leader_cost_empire_size_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+			# Machine Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_machine_maintenance_protocols
+					has_valid_civic = civic_machine_rockbreakers
+					has_valid_civic = civic_machine_servitor
+					has_valid_civic = civic_machine_catalytic_processing
+				}
+			}
+			# Hive Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_ascetic
+					has_valid_civic = civic_hive_devouring_swarm
+					has_valid_civic = civic_hive_idyllic_bloom
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_instinctive_knowledge_most
+		policy_flags = {
+			AP_instinctive_knowledge_most
+		}
+		modifier = {
+			job_drone_mind_melder_per_pop = 0.033
+			planet_jobs_produces_mult = 0.2
+			species_empire_size_mult = -0.05
+			planet_pops_upkeep_mult = 0.15
+			leader_cost_empire_size_mult = 0.15
+		}
+		AI_weight = {
+			weight = 1
+			# Machine Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_machine_delegated_functions
+					has_valid_civic = civic_machine_ota_updates
+					has_valid_civic = civic_machine_predictive_analysis
+					has_valid_civic = civic_machine_memorialist
+				}
+			}
+			# Hive Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_divided_attention
+					has_valid_civic = civic_hive_natural_neural_network
+					has_valid_civic = civic_hive_empath
+					has_valid_civic = civic_hive_memorialist
+				}
+			}
+		}
+	}
+	option = {
+		name = AP_instinctive_knowledge_all
+		policy_flags = {
+			AP_instinctive_knowledge_all
+		}
+		modifier = {
+			job_drone_mind_melder_per_pop = 0.04
+			planet_jobs_produces_mult = 0.25
+			planet_pops_upkeep_mult = 0.2
+			leader_cost_empire_size_mult = 0.2
+		}
+		AI_weight = {
+			weight = 1
+			# Machine Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_machine_introspective
+					has_valid_civic = civic_machine_zero_waste_protocols
+					has_valid_civic = civic_machine_assimilator
+					has_valid_civic = civic_machine_ascensionists
+				}
+			}
+			# Hive Weight
+			modifier = {
+				factor = 10
+				OR = {
+					has_valid_civic = civic_hive_ascensionists
+					has_valid_civic = civic_hive_pooled_knowledge
+				}
+			}
+		}
+	}
+}
+
+AP_drone_policy = {
+	potential = {
+		is_gestalt = yes
+	}
+	option = {
+		name = AP_drone_policy_quantity
+		policy_flags = {
+			AP_drone_policy_quantity
+		}
+		modifier = {
+			planet_pop_assembly_organic_mult = 0.25
+			planet_pop_assembly_mult = 0.25
+			country_leader_pool_size = +1
+			intel_decryption_add = +1
+			species_leader_exp_gain = -0.25
+		}
+		AI_weight = {
+			weight = 0
+		}
+	}
+	option = {
+		name = AP_drone_policy_balanced
+		policy_flags = {
+			AP_drone_policy_balanced
+		}
+		modifier = {
+			add_base_country_intel = +10
+			envoys_add = +1			
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_drone_policy_quality
+		policy_flags = {
+			AP_drone_policy_quality
+		}
+		modifier = {
+			planet_pop_assembly_organic_mult = -0.25
+			planet_pop_assembly_mult = -0.25
+			leader_skills_spawn = +1
+			species_leader_exp_gain = 0.25
+			intel_encryption_add = +1
+		}
+		AI_weight = {
+			weight = 0
+		}
+	}
+}
 ##########################################################################
 # Hive mind Policies
 ##########################################################################
@@ -224,6 +527,9 @@ AP_component_recycling = {
 	}
 	option = {
 		name = AP_component_recycling_none
+		policy_flags = {
+			AP_component_recycling_none
+		}
 		modifier = {
 			pop_amenities_usage_mult = -0.15
 		}
@@ -251,6 +557,9 @@ AP_component_recycling = {
 	}
 	option = {
 		name = AP_component_recycling_some
+		policy_flags = {
+			AP_component_recycling_some
+		}
 		modifier = {
 			pop_amenities_usage_mult = 0.05
 			country_alloys_produces_mult = 0.05
@@ -285,6 +594,9 @@ AP_component_recycling = {
 	}
 	option = {
 		name = AP_component_recycling_complete
+		policy_flags = {
+			AP_component_recycling_complete
+		}
 		modifier = {
 			pop_amenities_usage_mult = 0.15
 			country_alloys_produces_mult = 0.15

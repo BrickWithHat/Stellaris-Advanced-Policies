@@ -83,6 +83,13 @@
  leader_trait_merchant_connections:0 "Merchant Connection"
  leader_trait_merchant_connections_desc:0 "This leader is well known for his connection to the traders and companies of our empire."
 
+ leader_trait_gestalt_ecoligist:0 "Ecoligist"
+ leader_trait_gestalt_ecoligist_desc:0 "This one has a fondness for other living entities beyond the collective. Giving it greater understanding of the planets itself."
+ leader_trait_gestalt_industrialist:0 "Industrialist"
+ leader_trait_gestalt_industrialist_desc:0 "This one has a relentless desire to grow our industrial capacity."
+ leader_trait_gestalt_mind_wiper:0 "Greater Uplink"
+ leader_trait_gestalt_mind_wiper_desc:0 "This one is known for improving the connection to our collective just by being nearby."
+
 # Yellow Version of resources
  AP_Y_energy:0 "£energy£ §Y$energy$§!" # $AP_Y_energy$
  AP_Y_food:0 "£food£ §Y$food$§!" # $AP_Y_food$

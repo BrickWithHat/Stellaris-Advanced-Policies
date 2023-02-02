@@ -1,4 +1,5 @@
 ﻿l_english:
+# Old and outdated, maintaining the file in case i even need a mental back-up of what i did before.
 # Ancient Remnants Components
  format.AP.ancient.1:0 "<AP_ancient_desc> [This.GetSpeciesName] <democratic_gen>"
  format.AP.ancient.2:0 "<imperial_gen_desc> <AP_ancient_desc> [This.GetSpeciesName] <imperial_gen>"

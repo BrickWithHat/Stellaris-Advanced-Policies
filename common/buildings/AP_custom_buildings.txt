@@ -596,6 +596,7 @@ building_AP_gestalt_hive = {
 		job_spawning_drone_add = 1
 		job_synapse_drone_add = 3
 		planet_orbital_bombardment_damage = -0.33
+		planet_housing_add = 6
 	}
 	resources = {
 		category = planet_buildings
@@ -641,6 +642,7 @@ building_AP_gestalt_mech = {
 		job_coordinator_add = 2
 		job_evaluator_add = 2
 		planet_orbital_bombardment_damage = -0.33
+		planet_housing_add = +6
 	}
 	resources = {
 		category = planet_buildings
@@ -659,6 +661,7 @@ building_AP_gestalt_mech = {
 ##########################################################################
 # Origin Buildings
 ##########################################################################
+# Migritory Flyers
 building_AP_migrant_waystation = {
 	base_buildtime = @b1_time
 	category = unity
@@ -746,8 +749,531 @@ building_AP_migrant_capital_hacthery = {
 	}
 }
 
+# Children of the Darkness
+building_AP_access_tunnel_t1 = {
+	base_buildtime = 360
+	category = government
+	base_cap_amount = 1
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	triggered_desc = {
+		text = AP_children_of_the_darkness_tunnel_access
+		trigger = {
+			NOT = {
+				has_building = building_AP_access_tunnel_t1
+				has_building = building_AP_access_tunnel_t2
+				has_building = building_AP_access_tunnel_t3
+				has_building = building_AP_access_tunnel_t4
+				has_building = building_AP_access_tunnel_t5
+				has_building = building_AP_access_tunnel_t6
+				has_building = building_AP_access_tunnel_complete
+			}
+			count_deposits = {
+				count >= 1
+				type = d_AP_underground_city
+			}
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+	}
+	allow = {
+		NOT = {
+			has_building = building_AP_access_tunnel_t1
+			has_building = building_AP_access_tunnel_t2
+			has_building = building_AP_access_tunnel_t3
+			has_building = building_AP_access_tunnel_t4
+			has_building = building_AP_access_tunnel_t5
+			has_building = building_AP_access_tunnel_t6
+			has_building = building_AP_access_tunnel_complete
+		}
+	}
+	potential = {
+		owner = {
+			is_ai = no
+			has_origin = AP_children_of_the_darkness
+		}
+		planet = {
+			NOT = {
+				has_deposit = d_AP_underground_cities
+			}
+		}
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	upgrades = {
+		building_AP_access_tunnel_t2
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+}
+
+building_AP_access_tunnel_t2 = {
+	base_buildtime = 360
+	category = government
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	can_build = no
+	potential = {
+		always = yes
+	}
+	allow = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	upgrades = {
+		building_AP_access_tunnel_t3
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+}
+
+building_AP_access_tunnel_t3 = {
+	base_buildtime = 360
+	category = government
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	can_build = no
+	potential = {
+		always = yes
+	}
+	allow = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		NOT = {
+			is_planet_class = pc_ocean
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+		planet_job_tunnel_lighter_unity_produces_add = 1
+		planet_job_tunnel_lighter_engineering_research_produces_add = 1
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	upgrades = {
+		building_AP_access_tunnel_t4
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_specialist_tunnel_lighter_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_complex_tunnel_lighter_add = 1
+	}
+}
+
+building_AP_access_tunnel_t4 = {
+	base_buildtime = 360
+	category = government
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	can_build = no
+	potential = {
+		always = yes
+	}
+	allow = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		NOT = {
+			is_planet_class = pc_ocean
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+		planet_job_tunnel_lighter_minerals_upkeep_add = -1
+		planet_job_tunnel_lighter_unity_produces_add = 1
+		planet_job_tunnel_lighter_engineering_research_produces_add = 1
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	upgrades = {
+		building_AP_access_tunnel_t5
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_specialist_tunnel_lighter_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_complex_tunnel_lighter_add = 1
+	}
+}
+
+building_AP_access_tunnel_t5 = {
+	base_buildtime = 360
+	category = government
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	can_build = no
+	potential = {
+		always = yes
+	}
+	allow = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		NOT = {
+			is_planet_class = pc_ocean
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+		planet_job_tunnel_lighter_minerals_upkeep_add = -2
+		planet_job_tunnel_lighter_unity_produces_add = 1
+		planet_job_tunnel_lighter_engineering_research_produces_add = 1
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	upgrades = {
+		building_AP_access_tunnel_t6
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_specialist_tunnel_lighter_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_complex_tunnel_lighter_add = 1
+	}
+}
+
+building_AP_access_tunnel_t6 = {
+	base_buildtime = 360
+	category = government
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	can_build = no
+	potential = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+		planet_job_tunnel_lighter_minerals_upkeep_add = -2
+		planet_job_tunnel_lighter_unity_produces_add = 1
+		planet_job_tunnel_lighter_engineering_research_produces_add = 2
+	}
+	allow = {
+		NOT = {
+			is_planet_class = pc_ocean
+		}
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	upgrades = {
+		building_AP_access_tunnel_complete
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_specialist_tunnel_lighter_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_complex_tunnel_lighter_add = 1
+	}
+}
+
+building_AP_access_tunnel_complete = {
+	base_buildtime = 360
+	category = government
+	position_priority = 75
+	can_be_disabled = no
+	can_demolish = no
+	can_build = no
+	potential = {
+		always = yes
+	}
+	allow = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		NOT = {
+			is_planet_class = pc_ocean
+		}
+	}
+	triggered_desc = {
+		text = AP_children_of_the_darkness_tunnel_access
+		trigger = {
+			NOT = {
+				has_building = building_AP_access_tunnel_t1
+				has_building = building_AP_access_tunnel_t2
+				has_building = building_AP_access_tunnel_t3
+				has_building = building_AP_access_tunnel_t4
+				has_building = building_AP_access_tunnel_t5
+				has_building = building_AP_access_tunnel_t6
+				has_building = building_AP_access_tunnel_complete
+			}
+			OR = {
+				count_deposits = {
+					count >= 1
+					type = d_AP_underground_city
+				}
+				has_deposit = d_AP_underground_cities
+			}
+		}
+	}
+	destroy_trigger = {
+		owner = {
+			NOT = {
+				has_origin = AP_children_of_the_darkness
+			}
+		}
+	}
+	convert_to = {
+		building_mineral_purification_hub
+	}
+	planet_modifier = {
+		planet_max_buildings_add = +1
+		planet_job_tunnel_lighter_minerals_upkeep_add = -2
+		planet_job_tunnel_lighter_unity_produces_add = 2
+		planet_job_tunnel_lighter_engineering_research_produces_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_specialist_tunnel_lighter_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_complex_tunnel_lighter_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	on_queued = {
+		planet_event = {
+			id = AP_effect.4
+		}
+	}
+	on_unqueued = {
+		planet_event = {
+			id = AP_effect.5
+		}
+	}
+}
+
 ##########################################################################
-# Civic Buildings
+# Policy Buildings
 ##########################################################################
 building_AP_education_school = {
 	base_buildtime = @b2_time
@@ -757,8 +1283,23 @@ building_AP_education_school = {
 	position_priority = 75
 	potential = {
 		owner = {
-			is_gestalt = no
-			is_country_type = default
+			OR = {
+				has_policy_flag = AP_education_privledge_all
+				has_policy_flag = AP_education_privledge_citizen
+				has_policy_flag = AP_education_privledge_elite
+			}
+		}
+	}
+	destroy_trigger = {
+		owner = {
+			OR = {
+				NOT = {
+					has_policy_flag = AP_education_privledge_all
+					has_policy_flag = AP_education_privledge_citizen
+					has_policy_flag = AP_education_privledge_elite
+				}
+				is_gestalt = yes
+			}
 		}
 	}
 	allow = {
@@ -820,128 +1361,58 @@ building_AP_education_school = {
 	}
 }
 
-##########################################################################
-# Branch Office Buildings
-##########################################################################
-building_offworld_circus = {
-	base_buildtime = @b1_time
-	owner_type = corporate
+building_AP_mind_controler = {
+	base_buildtime = @b2_time
+	category = research
+	icon = building_fe_xeno_zoo
 	base_cap_amount = 1
-	icon = building_organic_sanctuary
+	position_priority = 75
 	potential = {
-		has_branch_office = yes
-		branch_office_owner = {
-			is_criminal_syndicate = no
-		}
-	}
-	planet_modifier = {
-		job_culture_worker_add = 2
-		planet_amenities_mult = 0.05
-	}
-	resources = {
-		category = planet_branch_office_buildings
-		cost = {
-			minerals = 500
-		}
-		produces = {
-			unity = 15
-		}
-		upkeep = {
-			energy = 5
-		}
-	}
-	ai_weight = {
-		weight = 10
-	}
-}
-
-building_shady_fairgrounds = {
-	base_buildtime = @b1_time
-	owner_type = corporate
-	base_cap_amount = 1
-	icon = building_organic_sanctuary
-	potential = {
-		has_branch_office = yes
-		branch_office_owner = {
-			is_criminal_syndicate = yes
-		}
-	}
-	planet_modifier = {
-		planet_crime_add = 30
-		planet_amenities_mult = 0.05
-	}
-	resources = {
-		category = planet_branch_office_buildings
-		cost = {
-			minerals = 500
-		}
-		produces = {
-			unity = 15
-		}
-		upkeep = {
-			energy = 5
-		}
-	}
-	ai_weight = {
-		weight = 10
-	}
-}
-
-##########################################################################
-# Holdings Buildings
-##########################################################################
-holding_circus_outpost = {
-	base_buildtime = @b1_time
-	owner_type = subject_holding
-	icon = building_organic_sanctuary
-	base_cap_amount = 1
-	potential = {
-		owner.overlord = {
+		owner = {
 			OR = {
-				has_valid_civic = civic_AP_travelling_circus
-				has_valid_civic = civic_AP_travelling_circus_corporate
+				has_policy_flag = AP_instinctive_knowledge_all
+				has_policy_flag = AP_instinctive_knowledge_most
+				has_policy_flag = AP_instinctive_knowledge_some
+				has_policy_flag = AP_instinctive_knowledge_few
+				has_policy_flag = AP_instinctive_knowledge_none
 			}
 		}
 	}
 	allow = {
-		planet.owner = {
+		OR = {
+			has_upgraded_capital = yes
+			has_building = building_spawning_pool
+			has_building = building_machine_assembly_plant
+			has_building = building_machine_assembly_complex
+		}
+	}
+	destroy_trigger = {
+		OR = {
+			has_upgraded_capital = yes
+			has_building = building_spawning_pool
+			has_building = building_machine_assembly_plant
+			has_building = building_machine_assembly_complex
+		}
+		owner = {
 			is_gestalt = no
 		}
 	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_drone_mind_melder_add = 2
+	}
 	resources = {
-		category = planet_holdings
+		category = planet_buildings
 		cost = {
-			minerals = 500
+			minerals = @b1_minerals
 		}
 		upkeep = {
-			energy = @b1_upkeep
+			energy = 3
 		}
-		produces = {
-			unity = 15
-		}
-	}
-	planet_modifier = {
-		monthly_loyalty = +1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = {
-				has_valid_civic = civic_warrior_culture
-			}
-		}
-		job_duelist_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = {
-				NOT = {
-					has_valid_civic = civic_warrior_culture
-				}
-			}
-		}
-		job_entertainer_add = 2
 	}
 	ai_weight = {
 		weight = 10

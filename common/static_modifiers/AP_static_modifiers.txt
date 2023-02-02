@@ -405,3 +405,17 @@ planet_competition_of_the_minds = {
 	planet_researchers_produces_mult = 0.1
 	planet_researchers_upkeep_mult = -0.2
 }
+
+planet_uplink_strengthend = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_symbiotic_link.dds
+	planet_crime_no_happiness_add = -50
+	planet_jobs_simple_drone_produces_mult = 0.1
+}
+
+planet_as_one = {
+	icon_frame = 1
+	icon = gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds
+	planet_crime_no_happiness_add = -50
+	planet_jobs_complex_drone_produces_mult = 0.1
+}

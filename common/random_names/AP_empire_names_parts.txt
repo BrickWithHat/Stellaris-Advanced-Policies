@@ -10,6 +10,17 @@ empire_name_parts_list = {
 	}
 }
 
+# Children of Darkness Hive Parts
+empire_name_parts_list = {
+	key = AP_darkness_adj
+	parts = {
+		"Tunneling" = 1
+		"Deep" = 1
+		"Burrowered" = 1
+		"Excavator" = 1
+	}
+}
+
 # Ancient remnant parts
 empire_name_parts_list = {
 	key = "AP_ancient_desc"

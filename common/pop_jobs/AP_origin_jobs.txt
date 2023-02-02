@@ -68,6 +68,13 @@ specialist_tunnel_lighter = {
 	planet_modifier = {
 		planet_housing_add = 5
 	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 2
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
 }
 
 complex_tunnel_lighter = {
@@ -96,6 +103,13 @@ complex_tunnel_lighter = {
 	}
 	planet_modifier = {
 		planet_housing_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 2
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 	weight = {
 		weight = @complex_drone_job_weight

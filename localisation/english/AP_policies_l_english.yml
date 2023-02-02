@@ -47,7 +47,6 @@
  policy_AP_justice:0 "Justice System"
  policy_AP_justice_desc:0 "We need a system in place to judge and sentence the dangers to our society, The manner in which this happens can have great influence on civilian life and should thus been seen as important to our citizens wellbeing.\n"
 
-
 # Panic Stance
  AP_condition_green:0 "Status Quo"
  AP_condition_green_name:0 "$AP_condition_green$"
@@ -234,7 +233,6 @@
 # Gestalt Policies
  policy_AP_autonamy:0 "Autonomy"
  policy_AP_autonamy_desc:0 "The amount of free thinking granted to an 'individual' in our collective.\n"
-
  AP_autonamy_none_name:0 "$AP_autonamy_none$"
  AP_autonamy_none:0 "None"
  AP_autonamy_none_desc:0 "They serve the will of the mind. The mind speaks, they listen.\n\n"
@@ -247,7 +245,6 @@
 
  policy_AP_organic_recycling:0 "Handling waste matter"
  policy_AP_organic_recycling_desc:0 "We should ensure that we waste as little material or time to maxumize our potential.\n"
-
  AP_organic_recycling_none_name:0 "Waste handling: $AP_organic_recycling_none$"
  AP_organic_recycling_none:0 "No Recycling"
  AP_organic_recycling_none_desc:0 "We do not have reason to repurose organic matter left by our drones. It is waste of time.\n\n"
@@ -260,10 +257,55 @@
 
  policy_AP_component_recycling:0 "Handling of scrap"
  policy_AP_component_recycling_desc:0 "Sometimes we leave material from ourselfs behind. We did not really have any direct reason to deal with it until now.\n"
-
  AP_component_recycling_none:0 "Priority: Zero"
  AP_component_recycling_none_desc:0 "We have more important matters to attent to then dealing with left over components.\n\n"
+ AP_component_recycling_none_name:0 "$AP_component_recycling_none$"
  AP_component_recycling_some:0 "Priority: Occasional Scrapping"
  AP_component_recycling_some_desc:0 "Some of these materials are definatly usefull for other drones. We can save the production cost in recourses by just using what we already have.\n\n"
+ AP_component_recycling_some_name:0 "$AP_component_recycling_some$"
  AP_component_recycling_complete:0 "Priority: Mass recycling"
  AP_component_recycling_complete_desc:0 "Materials already owned but unused should be used. Let us give purpose to what we already have.\n\n"
+ AP_component_recycling_complete_name:0 "$AP_component_recycling_complete$"
+
+ policy_AP_entity_linking:0 "Entity Linking"
+ policy_AP_entity_linking_desc:0 "How often we connect ourself to one another can change the view on many things, we must decide how to proceed now that we are in such numbers.\n"
+ AP_entity_linking_few:0 "Infrequent"
+ AP_entity_linking_few_desc:0 "There is little need to consistantly enforce a connection. We are one, but minor diviation gives way to change and improvement.\n\n"
+ AP_entity_linking_few_name:0 "$AP_entity_linking_few$"
+ AP_entity_linking_frequant:0 "Regular"
+ AP_entity_linking_frequant_desc:0 "We should watch ourselfs to not leave the directed path.\n\n"
+ AP_entity_linking_frequant_name:0 "$AP_entity_linking_frequant$"
+ AP_entity_linking_constant:0 "Constant"
+ AP_entity_linking_constant_desc:0 "We are one, Nothing can and will change that.\n\n"
+ AP_entity_linking_constant_name:0 "$AP_entity_linking_constant$"
+
+ policy_AP_instinctive_knowledge:0 "Instinctive Knowledge"
+ policy_AP_instinctive_knowledge_desc:0 "Knowledge has value when it can enhance an outcome or process. To hold knowledge without prupose is to waste time and energy. We should prepare to grant knowledge to those that can make most use of it.\n"
+ AP_instinctive_knowledge_none:0 "Knowledge: Leader Only"
+ AP_instinctive_knowledge_none_desc:0 "Only a select few ment to guide our directive are in a proper position to use the vast knowledge we have gained.\n\n"
+ AP_instinctive_knowledge_none_name:0 "$AP_instinctive_knowledge_none$"
+ AP_instinctive_knowledge_few:0 "Knowledge: Few"
+ AP_instinctive_knowledge_few_desc:0 "While our leaders follow us closely some of there lesser forms are in a prime position to improve simple efficiency.\n\n"
+ AP_instinctive_knowledge_few_name:0 "$AP_instinctive_knowledge_few$"
+ AP_instinctive_knowledge_some:0 "Knowledge: Some"
+ AP_instinctive_knowledge_some_desc:0 "Selectively dotting knowledge into our gestalt gives us easy access across our empire. Keeping the chance of using knowledge as high as possible without only a minimal risk of losing the benefits.\n\n"
+ AP_instinctive_knowledge_some_name:0 "$AP_instinctive_knowledge_some$"
+ AP_instinctive_knowledge_most:0 "Knowledge: Most"
+ AP_instinctive_knowledge_most_desc:0 "Giving knowledge to most is a risk but grants a greater efficiency accros the board. Sure it costs a bit more but the improvement is a guarantee rather then a likely chance.\n\n"
+ AP_instinctive_knowledge_most_name:0 "$AP_instinctive_knowledge_most$"
+ AP_instinctive_knowledge_all:0 "Knowledge: All"
+ AP_instinctive_knowledge_all_desc:0 "We should not blind ourselfs to the potential progress of our kind. Giving knowledge to all will enhance our growth even faster.\n\n"
+ AP_instinctive_knowledge_all_name:0 "$AP_instinctive_knowledge_all$"
+
+ policy_AP_drone_policy:0 "Drone Policy"
+ policy_AP_drone_policy_desc:0 "We should put clear priorities on where we put our resources. The extenstions of our desires are met through our drones let us decide on there purpose.\n"
+ AP_drone_policy_quantity_name:0 "$AP_drone_policy_quantity$"
+ AP_drone_policy_quantity:0 "Quantity"
+ AP_drone_policy_quantity_desc:0 "We need as many drones as is possible to ensure the successfull growth of our gestalt.\n\n"
+ AP_drone_policy_balanced_name:0 "$AP_drone_policy_balanced$"
+ AP_drone_policy_balanced:0 "Balanced"
+ AP_drone_policy_balanced_desc:0 "We should not favor either sections much. We need many drones but leaving there skills lesser might give our enemies an opening.\n\n"
+ AP_drone_policy_quality_name:0 "$AP_drone_policy_quality$"
+ AP_drone_policy_quality:0 "Quality"
+ AP_drone_policy_quality_desc:0 "We must have the most capabible drones we can afford. It will bring a cost, but it will enchance our future.\n\n"
+

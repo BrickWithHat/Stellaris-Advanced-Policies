@@ -1157,9 +1157,9 @@ AP_war_stance = {
 		}
 		modifier = {
 			tradition_cost_empire_size_mult = -0.1
-			country_consumer_goods_produces_mult = 0.2
 			country_unity_produces_mult = 0.1
 			country_alloys_produces_mult = -0.2
+			planet_stability_add = 10
 		}
 		policy_flags = {
 			AP_war_stance_passive
@@ -1199,8 +1199,8 @@ AP_war_stance = {
 		}
 		modifier = {
 			tradition_cost_empire_size_mult = -0.05
+			country_alloys_produces_mult = -0.1
 			planet_stability_add = 5
-			country_alloys_produces_mult = -0.05
 		}
 		policy_flags = {
 			AP_war_stance_light
@@ -1262,6 +1262,7 @@ AP_war_stance = {
 			starbase_shipyard_build_speed_mult = 0.05
 			country_alloys_produces_mult = 0.05
 			ships_upkeep_mult = -0.05
+			country_energy_produces_mult = -0.05
 		}
 		policy_flags = {
 			AP_war_stance_pre_emptive
@@ -1301,9 +1302,8 @@ AP_war_stance = {
 		modifier = {
 			country_alloys_produces_mult = 0.1
 			ships_upkeep_mult = -0.1
-			starbase_shipyard_build_speed_mult = 0.1
-			country_energy_produces_mult = -0.05
-			country_consumer_goods_produces_mult = -0.1
+			starbase_shipyard_build_speed_mult = 0.25
+			country_energy_produces_mult = -0.1
 		}
 		policy_flags = {
 			AP_war_stance_aggresive

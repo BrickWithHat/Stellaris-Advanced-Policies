@@ -11,7 +11,7 @@
  AP_conscription_effect_desc:0 "Will spawn between 5-25 conscript units in orbit based on the planet population. Will only trigger on the end of the month."
 
 ##########################################################################
-# Decisions without event chains
+# Decisions without event chains (Non-Gestalt)
 ##########################################################################
  AP_trail_by_fire:0 "Begin the Trail by Fire"
  AP_trail_by_fire_desc:0 "Our culture demands we sharpen our martial abilities. To do this is a must, in the past we arranged a means of letting our warriors fight in special locations. This world is bound to have sufficient locations for our warriors to enact there trails."
@@ -27,6 +27,14 @@
  AP_competition_of_the_minds_desc:0 "This world is a prime candidate for many minds to gather and discuss new findings."
 
 ##########################################################################
+# Decisions without events (Gestalt)
+##########################################################################
+ AP_uplink_strenghtend:0 "Strengthen uplink"
+ AP_uplink_strenghtend_desc:0 "The Core has considered boosting the control signal to this world to improve its direct control.\n\n§YCan only have 1 active at a time!§!"
+ AP_as_one:0 "As one"
+ AP_as_one_desc:0 "We hunger for progress, this world is a prime candidate to strengthen our hold over ourselfs.\n\n§YCan only have 1 active at a time!§!"
+
+##########################################################################
 # Civic/Origin Decisions
 ##########################################################################
  AP_mobile_constrution_deploy:0 "Deploy Mobile Construction Vehicle"
@@ -39,6 +47,8 @@
  AP_excavate_the_planet_desc:0 "We have yet to properly excavate the inner layers of this planet. Doing so will grant us more build space and make our people feel more at home."
  AP_connect_underground:0 "Improve the Underground"
  AP_connect_underground_desc:0 "We have dug enough for us to have massive cities but there connections are not yet up to the correct standard. Let us improve these connections."
+ AP_rebuild_tunnel_access:0 "Open up new Tunnel access"
+ AP_rebuild_tunnel_access_desc:0 "While the old tunnel entrance has collapsed we can still make a new one."
  AP_migration_push:0 "Encourage Off-world Migration"
  AP_migration_push_desc:0 "This are getting a bit crowded here, Might be a good idea to encourage some people to move off-world."
  AP_migration_pull:0 "Encourage Off-world Immigration"

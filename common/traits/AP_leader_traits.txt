@@ -1,3 +1,6 @@
+##########################################################################
+# Non-Gestalt traits
+##########################################################################
 trait_ruler_eye_for_admin = {
 	cost = 1
 	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_scroll.dds"
@@ -95,7 +98,7 @@ leader_trait_ecoligist = {
 		governor
 	}
 	opposites = {
-		trait_ruler_industrialist
+		leader_trait_industrialist
 	}
 }
 
@@ -145,6 +148,74 @@ leader_trait_merchant_connections = {
 	}
 	modifier = {
 		trade_value_mult = 0.1
+	}
+	leader_trait = {
+		governor
+	}
+	leader_class = {
+		governor
+	}
+}
+
+##########################################################################
+# Non-Gestalt traits
+##########################################################################
+leader_trait_gestalt_ecoligist = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_recycle.dds"
+	leader_potential_add = {
+		FROM = {
+			is_gestalt = yes
+		}
+	}
+	modifier = {
+		terraforming_cost_mult = -0.1
+		planet_pops_upkeep_mult = -0.1
+	}
+	leader_trait = {
+		governor
+	}
+	leader_class = {
+		governor
+	}
+	opposites = {
+		leader_trait_gestalt_industrialist
+	}
+}
+
+leader_trait_gestalt_industrialist = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_industry.dds"
+	leader_potential_add = {
+		FROM = {
+			is_gestalt = yes
+		}
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_add = +1
+		planet_jobs_simple_drone_produces_mult = 0.1
+	}
+	leader_trait = {
+		governor
+	}
+	leader_class = {
+		governor
+	}
+	opposites = {
+		leader_trait_gestalt_ecoligist
+	}
+}
+
+leader_trait_gestalt_mind_wiper = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_clone.dds"
+	leader_potential_add = {
+		FROM = {
+			is_gestalt = yes
+		}
+	}
+	modifier = {
+		planet_crime_no_happiness_add = -25
 	}
 	leader_trait = {
 		governor

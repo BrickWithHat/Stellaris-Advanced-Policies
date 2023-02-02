@@ -23,11 +23,29 @@
  building_AP_migrant_waystation_desc:0 "Waystations are a cornerstone of any flyer empire. They provide space to sleep and offer services for travellers."
  building_AP_migrant_capital_hacthery:0 "Elevated Nursery"
  building_AP_migrant_capital_hacthery_desc:0 "This nursery is where most the population is born. Due to the hard breeding cycle many do not survive there early years beyond these walls."
+ building_AP_access_tunnel_t1:0 "Colonizing Tunneling Site"
+ building_AP_access_tunnel_t1_desc:0 "This site is used to start the tunneling for our new cities on the planet. For every teir it will spawn a new §H$d_AP_underground_city$§! until it reaches the last teir where it links all the §Hdeposits§! into §H$d_AP_underground_cities$§!"
+ building_AP_access_tunnel_t2:0 "Minor Access Tunnel"
+ building_AP_access_tunnel_t2_desc:0 "A tunnel ment to give access to the local city below the surface."
+ building_AP_access_tunnel_t3:0 "Rural Access Tunnel"
+ building_AP_access_tunnel_t3_desc:0 "A entrance towards the cities below, there seems to be mild activity around this on a daily basis."
+ building_AP_access_tunnel_t4:0 "Metro Access Tunnel"
+ building_AP_access_tunnel_t4_desc:0 "A decently sized access port, other species seem to mistake it for space-port access but in truth it is the way towards our vast cities."
+ building_AP_access_tunnel_t5:0 "Industrial Access Tunnel"
+ building_AP_access_tunnel_t5_desc:0 "Industrial needs ment this tunnel has been increased in size and scope. While a lot of traffic is coming and going through here the control team does wonders when regulating traffic."
+ building_AP_access_tunnel_t6:0 "City Access Tunnel"
+ building_AP_access_tunnel_t6_desc:0 "While not as busy as the cities below the surface, this place is still busy enough to warrent its own traffic control centre."
+ building_AP_access_tunnel_complete:0 "Metropolis Access Tunnel"
+ building_AP_access_tunnel_complete_desc:0 "A hub for all the underground cities linked to one another. While busy beyond believe this is the cross section where the entire network links to each other."
+
+ AP_children_of_the_darkness_tunnel_access:0 "§YThere already are tunnels present! Use the planetary Decision to re-open the tunnel access.§!"
 ##########################################################################
 # Policy Buildings
 ##########################################################################
  building_AP_education_school:0 "Education Compound"
  building_AP_education_school_desc:0 "This compound is the nerve centre for any organized education on the planet."
+ building_AP_mind_controler:0 "Knowledge Hub"
+ building_AP_mind_controler_desc:0 "This building plans and plants knowledge into the next generation of drones."
 ##########################################################################
 # Holding Buildings
 ##########################################################################
@@ -40,3 +58,5 @@
  building_offworld_circus_desc:0 "An expansive fairground where many great attrations and activities are held on a semi-regular basis."
  building_shady_fairgrounds:0 "Shady Fairgrounds"
  building_shady_fairgrounds_desc:0 "These fairgrounds might provide a good time for most, but thievery, murder and disapearances happen here a bit to often."
+ holding_war_foundry:0 "War Forge"
+ holding_war_foundry_desc:0 "This facility is an off-world black-site where the top of the line arms and tested and prepared for larger scale deployment."

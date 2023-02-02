@@ -5,6 +5,7 @@ AP_decision_planet_excivation = {
 	category = AP_special_decisions
 	potential = {
 		has_origin = AP_children_of_the_darkness
+		is_ai = yes
 	}
 	weight = {
 		weight = 1
@@ -24,7 +25,6 @@ AP_decision_planet_excivation = {
 	desired_max = {
 		base = 1000
 	}
-	
 }
 # The ability to use civic/origin specific decisions as else the AI gets a bit confused.
 # Relevant for, MCV civic, Sky treaders origin

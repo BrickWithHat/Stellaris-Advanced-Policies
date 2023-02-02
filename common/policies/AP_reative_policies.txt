@@ -1,0 +1,27 @@
+##########################################################################
+# Higher Armaments
+##########################################################################
+# AP_colussus_doctrine = {
+# 	potential = {
+# 		has_completed_special_project_in_log = COLOSSUS_PROJECT
+# 	}
+# 	option = {
+# 		name = AP_colussus_doctrine_focused
+# 		modifier = {
+# 			shipsize_colossus_disengage_chance_mult = 0.5
+# 			shipsize_colossus_hull_mult = 0.1
+# 		}
+# 		AI_weight = {
+# 			weight = 1
+# 		}
+# 	}
+# 	option = {
+# 		name = AP_colussus_doctrine_spread
+# 		modifier = {
+			
+# 		}
+# 		AI_weight = {
+# 			weight = 0
+# 		}
+# 	}
+# }

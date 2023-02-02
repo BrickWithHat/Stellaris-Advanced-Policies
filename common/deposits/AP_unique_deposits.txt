@@ -1,3 +1,6 @@
+##########################################################################
+# Civic Based
+##########################################################################
 d_AP_ancient_site = {
 	is_for_colonizable = no
 	category = deposit_cat_rare
@@ -69,6 +72,9 @@ d_AP_ancient_site = {
 	}
 }
 
+##########################################################################
+# Origin based
+##########################################################################
 d_AP_underground_cities = {
 	is_for_colonizable = no
 	category = deposit_cat_rare
@@ -105,7 +111,7 @@ d_AP_underground_cities = {
 			}
 		}
 		modifier = {
-			job_specialist_tunnel_lighter_per_pop = 0.05
+			job_specialist_tunnel_lighter_per_pop = 0.04
 		}
 	}
 	# Gestalt job with correct origin
@@ -121,7 +127,7 @@ d_AP_underground_cities = {
 			}
 		}
 		modifier = {
-			job_complex_tunnel_lighter_per_pop = 0.05
+			job_complex_tunnel_lighter_per_pop = 0.04
 		}
 	}
 	# The proper effects for those without the Children of the Darkness origin

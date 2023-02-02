@@ -107,7 +107,7 @@ AP_abolish_planetary_quota = {
 }
 
 ##########################################################################
-# Decisions without events
+# Decisions without events (Non-Gestalt)
 ##########################################################################
 AP_trail_by_fire = {
 	owned_planets_only = yes
@@ -315,6 +315,97 @@ AP_competition_of_the_minds = {
 	}
 	ai_weight = {
 		weight = 0.5
+	}
+}
+
+##########################################################################
+# Decisions without events (Gestalt)
+##########################################################################
+AP_uplink_strenghtend = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_glitchy_matrix
+	resources = {
+		category = decisions
+		cost = {
+			unity = 500
+		}
+	}
+	potential = {
+		owner = {
+			is_gestalt = yes
+			has_authority = auth_machine_intelligence
+		}
+	}
+	allow = {
+		owner = {
+			any_owned_planet = {
+				NOT = {
+					has_modifier = planet_uplink_strengthend
+				}
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_uplink_strengthend
+			days = @mediumlength
+		}
+	}
+	ai_weight = {
+		weight = 0.5
+		modifier = {
+			factor = 0
+			num_pops <= 20
+		}
+		modifier = {
+			factor = 1.5
+			num_pops >= 60
+		}
+	}
+}
+
+AP_as_one = {
+	owned_planets_only = yes
+	sound = event_celebration
+	icon = decision_unity_symbol
+	resources = {
+		category = decisions
+		cost = {
+			unity = 500
+		}
+	}
+	potential = {
+		owner = {
+			is_gestalt = yes
+			has_authority = auth_hive_mind
+		}
+	}
+	allow = {
+		owner = {
+			any_owned_planet = {
+				NOT = {
+					has_modifier = planet_as_one
+				}
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_as_one
+			days = @mediumlength
+		}
+	}
+	ai_weight = {
+		weight = 0.5
+		modifier = {
+			factor = 0
+			num_pops <= 20
+		}
+		modifier = {
+			factor = 1.5
+			num_pops >= 60
+		}
 	}
 }
 
@@ -537,7 +628,6 @@ AP_build_circus_outpost = {
 				}
 			}
 		}
-
 	}
 	resources = {
 		category = AP_special_decisions
@@ -565,7 +655,6 @@ AP_build_circus_outpost = {
 				is_planet_class = pc_gaia
 				is_planet_class = pc_relic
 			}
-			
 		}
 		modifier = {
 			factor = 5
@@ -577,7 +666,7 @@ AP_build_circus_outpost = {
 ##########################################################################
 # Origin Related
 ##########################################################################
-# Children of the Darkness origin expansion 
+# Children of the Darkness origin expansion (AI Only)
 AP_excavate_the_planet = {
 	owned_planets_only = yes
 	icon = decision_drilling_for_gas
@@ -590,6 +679,7 @@ AP_excavate_the_planet = {
 	}
 	potential = {
 		owner = {
+			is_ai = yes
 			has_origin = AP_children_of_the_darkness
 		}
 		planet = {
@@ -698,7 +788,7 @@ AP_excavate_the_planet = {
 	}
 }
 
-# Children of the Darkness the ability to link the 6 cities into one bigger city
+# Children of the Darkness the ability to link the 6 cities into one bigger city (AI Only)
 AP_connect_underground = {
 	owned_planets_only = yes
 	icon = decision_alien_propaganda
@@ -711,6 +801,7 @@ AP_connect_underground = {
 	}
 	potential = {
 		owner = {
+			is_ai = yes
 			has_origin = AP_children_of_the_darkness
 		}
 		has_deposit = d_AP_underground_city
@@ -789,6 +880,139 @@ AP_connect_underground = {
 	}
 }
 
+# Children of the Darkness, the ability to reopen destroyed tunnel access. (No AI allowed)
+AP_rebuild_tunnel_access = {
+	owned_planets_only = yes
+	icon = decision_drilling_for_gas
+	sound = event_construction
+	potential = {
+		owner = {
+			has_origin = AP_children_of_the_darkness
+		}
+		planet = {
+			OR = {
+				has_deposit = d_AP_underground_cities
+				has_deposit = d_AP_underground_city
+			}
+			NOT = {
+				has_building = building_AP_access_tunnel_complete
+				has_building = building_AP_access_tunnel_t1
+				has_building = building_AP_access_tunnel_t2
+				has_building = building_AP_access_tunnel_t3
+				has_building = building_AP_access_tunnel_t4
+				has_building = building_AP_access_tunnel_t5
+				has_building = building_AP_access_tunnel_t6
+			}
+		}
+	}
+	allow = {
+		OR = {
+			hidden_trigger = {
+				AND = {
+					owner = {
+						is_ai = yes
+					}
+					planet = {
+						has_deposit = d_AP_underground_cities
+					}
+				}
+			}
+			AND = {
+				hidden_trigger = {
+					owner = {
+						is_ai = no
+					}
+				}
+				planet = {
+					NAND = {
+						is_planet_class = pc_ocean
+						count_deposits = {
+							count >= 2
+							type = d_AP_underground_city
+						}
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		# Has complete city complex
+		if = {
+			limit = {
+				has_deposit = d_AP_underground_cities
+			}
+			add_building = building_AP_access_tunnel_complete
+		}
+		# Has 6 cities but not linked
+		if = {
+			limit = {
+				count_deposits = {
+					count = 6
+					type = d_AP_underground_city
+				}
+			}
+			add_building = building_AP_access_tunnel_t6
+		}
+		# Has 5 cities
+		if = {
+			limit = {
+				count_deposits = {
+					count = 5
+					type = d_AP_underground_city
+				}
+			}
+			add_building = building_AP_access_tunnel_t5
+		}
+		# Has 4 cities
+		if = {
+			limit = {
+				count_deposits = {
+					count = 4
+					type = d_AP_underground_city
+				}
+			}
+			add_building = building_AP_access_tunnel_t4
+		}
+		# Has 3 cities
+		if = {
+			limit = {
+				count_deposits = {
+					count = 3
+					type = d_AP_underground_city
+				}
+			}
+			add_building = building_AP_access_tunnel_t3
+		}
+		# Has 2 cities
+		if = {
+			limit = {
+				count_deposits = {
+					count = 2
+					type = d_AP_underground_city
+				}
+			}
+			add_building = building_AP_access_tunnel_t2
+		}
+		# Has 1 city
+		if = {
+			limit = {
+				count_deposits = {
+					count = 1
+					type = d_AP_underground_city
+				}
+			}
+			add_building = building_AP_access_tunnel_t1
+		}
+	}
+	enactment_time = 360
+	ai_weight = {
+		weight = 1000
+	}
+	resources = {
+		category = AP_special_decisions
+	}
+}
+
 # Migration Push for Migritory Flock origin
 AP_migration_push = {
 	owned_planets_only = yes
@@ -825,6 +1049,10 @@ AP_migration_push = {
 	}
 	ai_weight = {
 		weight = 0
+		modifier = {
+			factor = 0
+			has_modifier = planet_migritory_flyer_pull
+		}
 		modifier = {
 			add = 5
 			free_housing <= 5
@@ -888,6 +1116,10 @@ AP_migration_pull = {
 	}
 	ai_weight = {
 		weight = 0
+		modifier = {
+			factor = 0
+			has_modifier = planet_migritory_flyer_push
+		}
 		modifier = {
 			factor = 5
 			free_housing >= 5

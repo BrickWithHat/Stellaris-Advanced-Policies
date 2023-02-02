@@ -1,5 +1,5 @@
 trait_AP_tunneler = {
-	cost = 1
+	cost = 0
 	sorting_priority = 20
 	potential_crossbreeding_chance = 1
 	allowed_archetypes = {
@@ -35,8 +35,9 @@ trait_AP_tunneler = {
 		trait_cave_dweller
 	}
 	modifier = {
-		pop_environment_tolerance = -0.25
+		habitability_floor_add = 0.4
 		planet_jobs_minerals_produces_mult = 0.25
+		pop_environment_tolerance = -0.25
 	}
 	assembly_score = {
 		modifier = {
@@ -58,7 +59,7 @@ trait_AP_tunneler = {
 }
 
 trait_AP_migritory_flyer = {
-	cost = 1
+	cost = 0
 	sorting_priority = 20
 	potential_crossbreeding_chance = 1
 	allowed_archetypes = {

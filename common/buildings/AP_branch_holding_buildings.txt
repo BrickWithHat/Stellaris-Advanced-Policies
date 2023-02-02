@@ -1,0 +1,231 @@
+##########################################################################
+# Branch Office Buildings
+##########################################################################
+# Circus Civic
+building_offworld_circus = {
+	base_buildtime = @b1_time
+	owner_type = corporate
+	base_cap_amount = 1
+	icon = building_organic_sanctuary
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = {
+			is_criminal_syndicate = no
+		}
+	}
+	planet_modifier = {
+		job_culture_worker_add = 2
+		planet_amenities_mult = 0.05
+	}
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			unity = 15
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+	destroy_trigger = {
+		exists = planet.owner
+		planet.owner = {
+			is_subject = no
+		}
+	}
+}
+
+# Circus Civic + Criminal
+building_shady_fairgrounds = {
+	base_buildtime = @b1_time
+	owner_type = corporate
+	base_cap_amount = 1
+	icon = building_organic_sanctuary
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = {
+			is_criminal_syndicate = yes
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 30
+		planet_amenities_mult = 0.05
+	}
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			unity = 15
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	ai_weight = {
+		weight = 10
+	}
+}
+
+##########################################################################
+# Holdings Buildings
+##########################################################################
+# Circus Civic
+holding_circus_outpost = {
+	base_buildtime = @b1_time
+	owner_type = subject_holding
+	icon = building_organic_sanctuary
+	base_cap_amount = 1
+	potential = {
+		owner.overlord = {
+			OR = {
+				has_valid_civic = civic_AP_travelling_circus
+				has_valid_civic = civic_AP_travelling_circus_corporate
+			}
+		}
+	}
+	allow = {
+		planet.owner = {
+			is_gestalt = no
+		}
+	}
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+		produces = {
+			unity = 15
+		}
+	}
+	planet_modifier = {
+		monthly_loyalty = +1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				has_valid_civic = civic_warrior_culture
+			}
+		}
+		job_duelist_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				NOT = {
+					has_valid_civic = civic_warrior_culture
+				}
+			}
+		}
+		job_entertainer_add = 2
+	}
+	ai_weight = {
+		weight = 10
+	}
+	destroy_trigger = {
+		exists = planet.owner
+		planet.owner = {
+			is_subject = no
+		}
+	}
+}
+
+holding_war_foundry = {
+	base_buildtime = @b1_time
+	owner_type = subject_holding
+	icon = building_underground_chemists
+	base_cap_amount = 1
+	potential = {
+		owner.overlord = {
+				has_valid_civic = civic_AP_war_complex
+		}
+	}
+	allow = {
+	}
+	resources = {
+		category = planet_holdings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	planet_modifier = {
+		planet_metallurgists_upkeep_mult = -0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				is_gestalt = no
+				is_catalytic_empire = no
+			}
+		}
+		job_overlord_metallurgist_add = 1
+		job_overlord_academic_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		job_overlord_foundry_drone_add = 1
+		job_overlord_academic_drone_add = 1
+	}
+	# Pacifist do note like guns being made on there world
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				is_pacifist = yes
+			}
+		}
+		monthly_loyalty = -0.5
+	}
+	# Militarist though, like guns being made on there world
+	triggered_planet_modifier = {
+		potential = {
+			exists = planet.owner
+			planet.owner = {
+				is_militarist = yes
+			}
+		}
+		monthly_loyalty = 0.5
+	}
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			planet.owner = {
+				is_pacifist = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			planet.owner = {
+				is_militarist = yes
+			}
+		}
+	}
+	destroy_trigger = {
+		exists = planet.owner
+		planet.owner = {
+			is_subject = no
+		}
+	}
+}
