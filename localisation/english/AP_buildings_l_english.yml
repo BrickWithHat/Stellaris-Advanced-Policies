@@ -34,7 +34,7 @@
  building_AP_access_tunnel_t5:0 "Industrial Access Tunnel"
  building_AP_access_tunnel_t5_desc:0 "Industrial needs ment this tunnel has been increased in size and scope. While a lot of traffic is coming and going through here the control team does wonders when regulating traffic."
  building_AP_access_tunnel_t6:0 "City Access Tunnel"
- building_AP_access_tunnel_t6_desc:0 "While not as busy as the cities below the surface, this place is still busy enough to warrent its own traffic control centre."
+ building_AP_access_tunnel_t6_desc:0 "While not as busy as the cities below the surface, this place is still busy enough to warrent its own traffic control center."
  building_AP_access_tunnel_complete:0 "Metropolis Access Tunnel"
  building_AP_access_tunnel_complete_desc:0 "A hub for all the underground cities linked to one another. While busy beyond believe this is the cross section where the entire network links to each other."
 
@@ -43,7 +43,7 @@
 # Policy Buildings
 ##########################################################################
  building_AP_education_school:0 "Education Compound"
- building_AP_education_school_desc:0 "This compound is the nerve centre for any organized education on the planet."
+ building_AP_education_school_desc:0 "This compound is the nerve center for any organized education on the planet."
  building_AP_mind_controler:0 "Knowledge Hub"
  building_AP_mind_controler_desc:0 "This building plans and plants knowledge into the next generation of drones."
 ##########################################################################

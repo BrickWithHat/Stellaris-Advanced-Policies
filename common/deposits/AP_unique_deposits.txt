@@ -197,3 +197,23 @@ d_AP_underground_city = {
 		weight = 0
 	}
 }
+
+d_AP_nesting_ground = {
+	is_for_colonizable = no
+	category = deposit_cat_rare
+	icon = d_city_ruins
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_origin = AP_sky_treaders
+			}
+		}
+		modifier = {
+			pop_growth_speed = 0.1
+			planet_jobs_produces_mult = 0.1
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}

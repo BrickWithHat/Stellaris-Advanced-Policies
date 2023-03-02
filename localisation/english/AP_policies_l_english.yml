@@ -230,6 +230,25 @@
  AP_justice_state_officials_name:0 "$AP_justice_state_officials$"
  AP_justice_state_officials_desc:0 "The state rules over all, there is no higher authority or autonamy. We judge, we sentance, we punish.\n\n"
 
+# Migration Laws
+ policy_AP_migration:0 "Migration Law"
+ policy_AP_migration_desc:0 "Our Stance on migration in our empire, might be able to grant us access to people and places we normally do not get access to.\n"
+ AP_migration_xenophobe_none_name:0 "Migration: None"
+ AP_migration_xenophobe_none:0 "None"
+ AP_migration_xenophobe_none_desc:0 "We should not allow the xeno to roam freely wherever they please. We have standards after all.\n§YThis has a Xenophobe unique bonus!§!\n"
+ AP_migration_none_name:0 "Migration: None"
+ AP_migration_none:0 "None"
+ AP_migration_none_desc:0 "We have no reason to allow outsiders in, Let us maintain our control.\n\n"
+ AP_migration_selective_name:0 "Migration: Selective"
+ AP_migration_selective:0 "Selective"
+ AP_migration_selective_desc:0 "Gathering information and possible make some connections does not do us harm.\n\n- Gives access to unique £decision£§Hplanetary decisions§! to influence §Hplanetary migration§!.\n"
+ AP_migration_encouraged_name:0 "Migration: Encouraged"
+ AP_migration_encouraged:0 "Encouraged"
+ AP_migration_encouraged_desc:0 "We should encourage our people to see the universe where they can. These experiences can aid us to grow and a society.\n\n- Gives access to unique £decision£§Hplanetary decisions§! to influence §Hplanetary migration§!.\n"
+ AP_migration_xenophile_encouraged_name:0 "Migration: Encouraged"
+ AP_migration_xenophile_encouraged:0 "Encouraged"
+ AP_migration_xenophile_encouraged_desc:0 "Learning from the unknown is a great thing, we should not ignore the possibility of growth that comes with that.\n\n§YThis has a Xenophile unique bonus!§!\n- Gives access to unique £decision£§Hplanetary decisions§! to influence §Hplanetary migration§!.\n"
+
 # Gestalt Policies
  policy_AP_autonamy:0 "Autonomy"
  policy_AP_autonamy_desc:0 "The amount of free thinking granted to an 'individual' in our collective.\n"

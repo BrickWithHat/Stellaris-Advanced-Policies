@@ -45,3 +45,30 @@ AP_decisions = {
 		}
 	}	
 }
+# Sky Treaders Nest making
+AP_decision_planet_excivation = {
+	resource = minerals
+	type = expenditure
+	category = AP_special_decisions
+	potential = {
+		has_origin = AP_sky_treaders
+		is_ai = yes
+	}
+	weight = {
+		weight = 1
+	}
+	desired_min = {
+		base = 0
+		modifier = {
+			add = 200
+			any_owned_planet = {
+				NOT = {
+					has_deposit = d_AP_nesting_ground
+				}
+			}
+		}
+	}
+	desired_max = {
+		base = 1000
+	}
+}

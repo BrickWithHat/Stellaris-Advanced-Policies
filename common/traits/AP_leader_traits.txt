@@ -158,7 +158,7 @@ leader_trait_merchant_connections = {
 }
 
 ##########################################################################
-# Non-Gestalt traits
+# Gestalt traits
 ##########################################################################
 leader_trait_gestalt_ecoligist = {
 	cost = 1

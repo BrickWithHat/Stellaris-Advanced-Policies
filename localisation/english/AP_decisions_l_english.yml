@@ -25,6 +25,10 @@
  AP_rite_of_the_heavens_desc:0 "Give the word that this world is ment for a true blessing. Thus attracting some religious leaders to go to this world."
  AP_competition_of_the_minds:0 "Enact a Compitition of Minds"
  AP_competition_of_the_minds_desc:0 "This world is a prime candidate for many minds to gather and discuss new findings."
+ AP_PD_migration_push:0 "Encourage Off-world Migration"
+ AP_PD_migration_push_desc:0 "This are getting a bit crowded here, Might be a good idea to encourage some people to move off-world."
+ AP_PD_migration_pull:0 "Encourage Off-world Immigration"
+ AP_PD_migration_pull_desc:0 "We have the space, might as well get some more people to come help here."
 
 ##########################################################################
 # Decisions without events (Gestalt)
@@ -49,7 +53,5 @@
  AP_connect_underground_desc:0 "We have dug enough for us to have massive cities but there connections are not yet up to the correct standard. Let us improve these connections."
  AP_rebuild_tunnel_access:0 "Open up new Tunnel access"
  AP_rebuild_tunnel_access_desc:0 "While the old tunnel entrance has collapsed we can still make a new one."
- AP_migration_push:0 "Encourage Off-world Migration"
- AP_migration_push_desc:0 "This are getting a bit crowded here, Might be a good idea to encourage some people to move off-world."
- AP_migration_pull:0 "Encourage Off-world Immigration"
- AP_migration_pull_desc:0 "We have the space, might as well get some more people to come help here."
+ AP_sky_make_nest:0 "Make nesting grounds"
+ AP_sky_make_nest_desc:0 "Making a small nesting ground allows for minor improvement of the planet as a whole while giving a small amount of population growth."

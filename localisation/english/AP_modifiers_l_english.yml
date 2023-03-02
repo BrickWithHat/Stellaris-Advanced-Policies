@@ -74,8 +74,8 @@
  planet_traveling_circus_outpost_desc:0 "Circus outposts are places for tired travelling entertainers to rest and wind down a little before returning to the rest of our space."
  planet_traveling_circus_outpost_warrior:0 "Warrior Circus Outpost"
  planet_traveling_circus_outpost_warrior_desc:0 "Blood flows, Blades clash, Fun to be had and above all glory to be won!"
- planet_migritory_flyer_pull:0 "Encouraged Immigration"
- planet_migritory_flyer_push:0 "Encouraged Migration"
+ planet_AP_migration_pull:0 "Encouraged Immigration"
+ planet_AP_migration_push:0 "Encouraged Migration"
 
 # broken ass generated modifiers that i guess i should fix cause the auto generator seems to lack a local/text generator #FeelsBadMan
  mod_planet_jobs_alloys_upkeep_mult:0 "$AP_Y_alloys$ §Y$mod_planet_jobs_upkeep_mult$§! "

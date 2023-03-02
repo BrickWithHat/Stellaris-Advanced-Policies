@@ -42,11 +42,22 @@
  civic_AP_travelling_circus:0 "Travelling Circus"
  civic_AP_travelling_circus_desc:0 "This empire has a long tradition of travelling entertainers, something which they retain to this day. Making entertainment a true expression of culture and virtue as these events are not always accessable."
  civic_AP_travelling_circus_effects:0 "- Gives access to a unique £decision£§HPlanetary Decision§! that gives the abilty to make a §HCircus outposts§!.\n- §HCircus outposts§! add some £job£§Hjobs§! and §Gdecrease the total upkeep§! for all £job£§Hjobs§! of the same type on that £planet£§Hplanet§!.\n- Gives access to a unique §HHolding§!.\n\n"
+
  civic_AP_travelling_circus_corporate:0 "$civic_AP_travelling_circus$"
  civic_AP_travelling_circus_corporate_desc:0 "$civic_AP_travelling_circus_desc$"
  civic_AP_travelling_circus_corporate_effects:0 "- Gives access to a unique £decision£§HPlanetary Decision§! that gives the abilty to make a §HCircus outposts§!.\n- §HCircus outposts§! add some £job£§Hjobs§! and §Gdecrease the total upkeep§! for all £job£§Hjobs§! of the same type on that £planet£§Hplanet§!.\n- Gives access to a unique §HHolding§!.\n- Gives access to a unique §HBranch Office§!.\n\n"
 
+ civic_AP_implanted_directive_hive:0 "Implanted Directive"
+ civic_AP_implanted_directive_hive_desc:0 "The hive realizes that sometimes it is best to enchance an individual to aid our cause."
 
+ civic_AP_implanted_directive_machine:0 "Implanted Directive"
+ civic_AP_implanted_directive_machine_desc:0 "It can be deemed benefitial to prepare a specific unit to aid in deligating functions."
+
+ civic_AP_warren_builder_hive:0 "Warren Builders"
+ civic_AP_warren_builder_hive_desc:0 "The hive has always been living in warrens, it has been doing so for as long as it existed. This had had great benefit to its burrowing abilities and use of the found materials."
+
+ civic_AP_cataloging_routine_machine:0 "Cataloging Routine"
+ civic_AP_cataloging_routine_machine_desc:0 "Our Core was designed to analyse anomalies found by our makers, We should utilize that knowledge and experience."
 
 ##########################################################################
 # Origins
@@ -56,4 +67,4 @@
  AP_children_of_the_darkness_effects:0 "- Grants the §H$trait_AP_tunneler$§! trait to the starting species. Which decreases base §Hhabitability§! by §R25%§! on all §HPlanets§! \n - Gets access to a unique building chain £building£§H$building_AP_access_tunnel_t1$§! allowing for an increase in §Hhabitability§! and £planetsize£ §Hplanet-size§!. This can be upgraded up to §H6 times§! unless it is an £planet£§HOcean world§! which can only be done §H2 times§!.\n- Starts with the £district£§H$d_AP_underground_cities$§! Deposit on there homeworld.\n- §HMining Districts§! are uncapped.\n"
  AP_sky_treaders:0 "Sky Treaders"
  AP_sky_treaders_desc:0 "The species from this world has always preferd being in the sky. Be it through the help of technology or through other means of flight. This is reflected in there infrastructure. Meaning they rarely need steady housing but require a lot more for on the go supplies."
- AP_sky_treaders_effects:0 "- Grants the §H$trait_AP_migritory_flyer$§! Trait to starting species.\n- §YCapital world§! starts with a §H$building_AP_migrant_capital_hacthery$§! which increases §Ypop growth§! by a full §G100%§!.\n- Gives access to the §H$building_AP_migrant_waystation$§! on all non-captial worlds, Which helps boost the planets £amenities£§Yamenities§! by §G20%§! and stimulates migration.\n- Gives access to two £decision£§Hplanetary decisions§!, which give greater control over migration or immigration.\n"
+ AP_sky_treaders_effects:0 "- Grants the §H$trait_AP_migritory_flyer$§! Trait to starting species.\n- §YCapital world§! starts with a §H$building_AP_migrant_capital_hacthery$§! which increases §Ypop growth§! by a full §G100%§!.\n- Gives access to the §H$building_AP_migrant_waystation$§! on all non-captial worlds, Which helps boost the planets £amenities£§Yamenities§! by §G20%§! and stimulates migration.\n- Gives access to a unique £decision£§Hplanetary decision§!, which helps the planet as a whole.\n"

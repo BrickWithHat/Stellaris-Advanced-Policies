@@ -731,8 +731,7 @@ AP_distinguished_admiralty = {
 	option = {
 		name = AP_distinguished_admiralty_teaching
 		modifier = {
-			leader_skill_levels = 2
-			leader_skills_spawn = 1
+			leader_skill_levels = 3
 			leaders_upkeep_mult = -0.2
 		}
 		AI_weight = {
@@ -1798,7 +1797,7 @@ AP_ascensionists = {
 			pop_cat_ruler_political_power = 1
 			planet_jobs_ruler_produces_mult = 0.25
 			country_leader_pool_size = +1
-			leader_skills_spawn = +1
+			species_leader_exp_gain = 0.1
 		}
 		AI_weight = {
 			weight = 2

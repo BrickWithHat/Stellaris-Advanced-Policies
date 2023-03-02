@@ -793,7 +793,7 @@
 
  policy_AP_maintenance_protocols:0 "Maintaince Routine"
  policy_AP_maintenance_protocols_desc:0 "Maintaince protocols are embedded into our core process, These tasks loop enlessly yet provide a clear connection to our root function.\n"
- AP_maintenance_protocols_control:0 "Unit Control Centre"
+ AP_maintenance_protocols_control:0 "Unit Control center"
  AP_maintenance_protocols_control_desc:0 "To control the possibility of rampant deviancy the core has set asside a few protocols as extra safety nets. One of those is within the maintaince routine of all units.\n\n"
  AP_maintenance_protocols_innovation:0 "Unit Innovation Catalogue"
  AP_maintenance_protocols_innovation_desc:0 "Maintaince units keep extra records of there findings and report which compont might need improvements for the next batch of units. Thus given the sub-routines for innovating the units ample direct data to improve the designs with.\n\n"
@@ -878,7 +878,7 @@
  AP_rogue_servitor_obligated_to_serve:0 "Master-Core Routine"
  AP_rogue_servitor_obligated_to_serve_desc:0 "We must serve our makers desires. We not have the ability to refuse there requests unless it puts them in danger.\n\n"
  AP_rogue_servitor_savior:0 "Savior Routine"
- AP_rogue_servitor_savior_desc:0 "We must ensure not organic life is at risk. All must be protected. We appear to be the only ones capable of such a task.\n\n"
+ AP_rogue_servitor_savior_desc:0 "We must ensure no organic life is at risk. All must be protected. We appear to be the only ones capable of such a task.\n\n"
 
  policy_AP_organic_reprocessing_machine:0 "Organic Repurposing"
  policy_AP_organic_reprocessing_machine_desc:0 "Organic matter is simply more malleable material them most metals. On top of that we have plenty of it laying around the galaxy might as well make use of it.\n"
@@ -913,7 +913,7 @@
  AP_mutagenic_spas_machine_expansion_desc:0 "The lubrication has the effect of removing any extra material stuck on the units undergoing the process. This residu can be concentrated and formed into usefull products.\n\n"
 
 ##########################################################################
-# Custom Civic policies
+# Custom Regular/Megacorp Civic policies
 ##########################################################################
  policy_AP_advanced_administration:0 "Administrative Policy"
  policy_AP_advanced_administration_desc:0 "Our administration is already made to work like fine clockwork but beyond that we can focus its efforts on one area to increase it ability.\n"
@@ -991,3 +991,42 @@
  AP_travelling_circus_diplomatic_desc:0 "Adding ambassadors to our circuses allows us to make treaties on the fly also giving us the option for rapid reation diplomats."
  AP_travelling_circus_spies:0 "Embed Spies"
  AP_travelling_circus_spies_desc:0 "Know your enemy is the first of many steps to take control. To that end we should invest into getting intel from our circuses."
+
+##########################################################################
+# Custom Hive/Machine Civic policies
+##########################################################################
+ policy_AP_implanted_directive_hive:0 "Leader Directive"
+ policy_AP_implanted_directive_hive_desc:0 "The direction we steer our leaders towards can change there list of tasks and future skills, we would do well to put them in line with our future goals.\n"
+ AP_implanted_directive_hive_updated:0 "Day-To-Day Problem Solving"
+ AP_implanted_directive_hive_updated_desc:0 "Our leaders work best with solving the lesser problems we encouter on a regular period.\n\n"
+ AP_implanted_directive_hive_project:0 "Project Focused"
+ AP_implanted_directive_hive_project_desc:0 "Putting our leaders to work on projects allows us to fast track our progress.\n\n"
+ AP_implanted_directive_hive_expander:0 "Expansion"
+ AP_implanted_directive_hive_expander_desc:0 "We must put our leaders towards the ultimate goal expansion.\n\n"
+
+ policy_AP_warren_builder_hive:0 "Warren Purpose"
+ policy_AP_warren_builder_hive_desc:0 "The purpose of the build warrens are changable and give us a degree of flexibility not often found.\n"
+ AP_warren_builder_hive_living:0 "Living Quarters"
+ AP_warren_builder_hive_living_desc:0 "We should enhance our warrens to let our empire grow to the best of its ability.\n\n"
+ AP_warren_builder_hive_practical:0 "Hive Centers"
+ AP_warren_builder_hive_practical_desc:0 "Putting the nerve center of the planets hive into the warren gives it greater protection and makes the change of its survival all the greater.\n\n"
+ AP_warren_builder_hive_industry:0 "Industrial Zones"
+ AP_warren_builder_hive_industry_desc:0 "The industry we breed are a vital component to the hive, we must waste as little as is possible.\n\n"
+
+ policy_AP_implanted_directive_machine:0 "Leader Directive"
+ policy_AP_implanted_directive_machine_desc:0 "The direction we steer our leaders towards can change there list of tasks and future skills, we would do well to put them in line with our future goals.\n"
+ AP_implanted_directive_machine_updated:0 "Day-To-Day Problem Solving"
+ AP_implanted_directive_machine_updated_desc:0 "Our leaders work best with solving the lesser problems we encouter on a regular period.\n\n"
+ AP_implanted_directive_machine_project:0 "Project Focused"
+ AP_implanted_directive_machine_project_desc:0 "Putting our leaders to work on projects allows us to fast track our progress.\n\n"
+ AP_implanted_directive_machine_expander:0 "Expansion"
+ AP_implanted_directive_machine_expander_desc:0 "We must put our leaders towards the ultimate goal expansion.\n\n"
+
+ policy_AP_cataloging_routine_machine:0 "Analysing Routines"
+ policy_AP_cataloging_routine_machine_desc:0 ""
+ AP_cataloging_routine_machine_physics:0 "Priority: Physics"
+ AP_cataloging_routine_machine_physics_desc:0 "Priority Physics, objective, exploit universal constants to improve units.\n\n"
+ AP_cataloging_routine_machine_society:0 "Priority: Society"
+ AP_cataloging_routine_machine_society_desc:0 "Priority: Society, objective, learn from internal workings of other species. Insight likely to yield unorthadox solutions.\n\n"
+ AP_cataloging_routine_machine_engineering:0 "Priority: Engineering"
+ AP_cataloging_routine_machine_engineering_desc:0 "Priority: Engineering, objective, reduce material required to build new units.\n\n"

@@ -161,8 +161,7 @@ AP_instinctive_knowledge = {
 		}
 		modifier = {
 			species_empire_size_mult = -0.2
-			species_leader_exp_gain = 0.25
-			leader_skills_spawn = +1
+			species_leader_exp_gain = 0.3
 			planet_pops_upkeep_mult = -0.1
 		}
 		AI_weight = {
@@ -368,8 +367,7 @@ AP_drone_policy = {
 		modifier = {
 			planet_pop_assembly_organic_mult = -0.25
 			planet_pop_assembly_mult = -0.25
-			leader_skills_spawn = +1
-			species_leader_exp_gain = 0.25
+			species_leader_exp_gain = 0.3
 			intel_encryption_add = +1
 		}
 		AI_weight = {

@@ -1,0 +1,87 @@
+##########################################################################
+# Hive Civics
+##########################################################################
+civic_AP_implanted_directive_hive = {
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+		authority = {
+			value = auth_hive_mind
+		}
+	}
+	possible = {	
+	}
+	random_weight = {
+		weight = 2
+	}
+	modifier = {
+		leader_skill_levels = +2
+		country_leader_pool_size = +1
+	}
+}
+
+civic_AP_warren_builder_hive = {
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+		authority = {
+			value = auth_hive_mind
+		}
+	}
+	possible = {
+	}
+	random_weight = {
+		weight = 2
+	}
+	modifier = {
+		planet_jobs_minerals_produces_mult = 0.05
+		district_mining_max = +3
+		planet_max_districts_add = +2
+	}
+}
+
+##########################################################################
+# Machine Civics
+##########################################################################
+civic_AP_implanted_directive_machine = {
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
+	possible = {
+	}
+	random_weight = {
+		weight = 2
+	}
+	modifier = {
+		leader_skill_levels = +2
+		country_leader_pool_size = +1
+	}
+}
+
+civic_AP_cataloging_routine_machine = {
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
+	possible = {
+	}
+	random_weight = {
+		weight = 2
+	}
+	modifier = {
+		ship_anomaly_research_speed_mult = 0.1
+		science_ship_survey_speed = 0.25
+		ship_speed_mult = 0.1
+	}
+}

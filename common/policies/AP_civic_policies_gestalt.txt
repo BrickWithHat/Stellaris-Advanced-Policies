@@ -188,8 +188,8 @@ AP_pooled_knowledge = {
 	option = {
 		name = AP_pooled_knowledge_afterlife
 		modifier = {
-			leader_skills_spawn = +1
-			leader_skill_levels = +1
+			species_leader_exp_gain = 0.1
+			leader_skill_levels = +2
 		}
 		AI_weight = {
 			weight = 1
@@ -1362,6 +1362,157 @@ AP_mutagenic_spas_machine = {
 		modifier = {
 			planet_bath_attendants_machine_alloys_produces_add = 3
 			planet_bath_attendants_machine_energy_upkeep_add = 2
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+
+##########################################################################
+# Custom Organic Hive Civic Policies
+##########################################################################
+AP_implanted_directive_hive = {
+	potential = {
+		has_valid_civic = civic_AP_implanted_directive_hive
+	}
+	option = {
+		name = AP_implanted_directive_hive_updated
+		modifier = {
+			species_leader_exp_gain = 0.1
+			envoys_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_implanted_directive_hive_project
+		modifier = {
+			country_unity_produces_mult = 0.05
+			all_technology_research_speed = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_implanted_directive_hive_expander
+		modifier = {
+			empire_size_colonies_mult = -0.1
+			empire_size_pops_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_warren_builder_hive = {
+	potential = {
+		has_valid_civic = civic_AP_warren_builder_hive
+	}
+	option = {
+		name = AP_warren_builder_hive_living
+		modifier = {
+			planet_orbital_bombardment_damage = -0.1
+			pop_growth_speed = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_warren_builder_hive_practical
+		modifier = {
+			planet_orbital_bombardment_damage = -0.25
+			planet_districts_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_warren_builder_hive_industry
+		modifier = {
+			planet_orbital_bombardment_damage = -0.1
+			planet_jobs_upkeep_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+##########################################################################
+# Custom Machine Civic Policies
+##########################################################################
+AP_implanted_directive_machine = {
+	potential = {
+		has_valid_civic = civic_AP_implanted_directive_machine
+	}
+	option = {
+		name = AP_implanted_directive_machine_updated
+		modifier = {
+			species_leader_exp_gain = 0.1
+			envoys_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_implanted_directive_machine_project
+		modifier = {
+			country_unity_produces_mult = 0.05
+			all_technology_research_speed = 0.05
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_implanted_directive_machine_expander
+		modifier = {
+			empire_size_colonies_mult = -0.1
+			empire_size_pops_mult = -0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
+
+AP_cataloging_routine_machine = {
+	potential = {
+		has_valid_civic = civic_AP_cataloging_routine_machine
+	}
+	option = {
+		name = AP_cataloging_routine_machine_physics
+		modifier = {
+			country_physics_tech_research_speed = 0.05
+			ship_shield_mult = 0.1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_cataloging_routine_machine_society
+		modifier = {
+			country_society_tech_research_speed = 0.05
+			ship_evasion_mult = 0.25
+			ship_fire_rate_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_cataloging_routine_machine_engineering
+		modifier = {
+			country_engineering_tech_research_speed = 0.05
+			ship_armor_mult = 0.1
 		}
 		AI_weight = {
 			weight = 1

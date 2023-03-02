@@ -11,6 +11,8 @@
  d_AP_underground_cities_desc:0 "This Complex used to be a bunch of big cities, all linked together through long and wide caves. After many years they all grew so close together they became one big city."
  d_AP_underground_city:0 "Underground City"
  d_AP_underground_city_desc:0 "A single underground city housing our population."
+ d_AP_nesting_ground:0 "Nesting Ground"
+ d_AP_nesting_ground_desc:0 "A small but local nesting spot for people to have there young grow."
  d_AP_core_access:0 "Core Access"
  d_AP_core_access_desc:0 "A direct route to the planets core, a dangerous yet rather enriching route."
  d_AP_ancient_burial_site:0 "Old Burial Site"

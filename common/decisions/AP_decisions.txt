@@ -482,6 +482,143 @@ AP_conscription = {
 	}
 }
 
+AP_PD_migration_push = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+	sound = event_administrative_work
+	resources = {
+		category = AP_special_decisions
+		cost = {
+			unity = 500
+		}
+	}
+	potential = {
+		owner = {
+			is_country_type = default
+			is_gestalt = no
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = planet_AP_migration_pull
+		}
+		owner = {
+			OR = {
+				has_policy_flag = AP_migration_selective
+				has_policy_flag = AP_migration_encouraged
+				has_policy_flag = AP_migration_xenophile_encouraged
+			}
+			any_owned_planet = {
+				NOT = {
+					has_modifier = planet_AP_migration_push
+				}
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_AP_migration_push
+			days = 1800
+		}
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			factor = 0
+			has_modifier = planet_AP_migration_pull
+		}
+		modifier = {
+			add = 5
+			free_housing <= 5
+		}
+		modifier = {
+			add = 5
+			num_assigned_jobs = {
+				job = unemployed
+				value >= 3
+			}
+		}
+		modifier = {
+			add = 1
+			has_upgraded_capital = yes
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				OR = {
+					has_designation = col_default
+					has_building = building_colony_shelter
+				}
+			}
+		}
+	}
+}
+
+AP_PD_migration_pull = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+	sound = event_administrative_work
+	resources = {
+		category = AP_special_decisions
+		cost = {
+			unity = 500
+		}
+	}
+	potential = {
+		owner = {
+			is_country_type = default
+			is_gestalt = no
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = planet_AP_migration_push
+		}
+		owner = {
+			OR = {
+				has_policy_flag = AP_migration_selective
+				has_policy_flag = AP_migration_encouraged
+				has_policy_flag = AP_migration_xenophile_encouraged
+			}
+			any_owned_planet = {
+				NOT = {
+					has_modifier = planet_AP_migration_pull
+				}
+			}
+		}
+	}
+	effect = {
+		add_modifier = {
+			modifier = planet_AP_migration_pull
+			days = 1800
+		}
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			factor = 0
+			has_modifier = planet_AP_migration_push
+		}
+		modifier = {
+			factor = 5
+			free_housing >= 5
+		}
+		modifier = {
+			factor = 5
+			free_jobs >= 3
+		}
+		modifier = {
+			add = 5
+			planet = {
+				OR = {
+					has_designation = col_default
+					has_building = building_colony_shelter
+				}
+			}
+		}
+	}
+}
+
 ##########################################################################
 # Civic Related
 ##########################################################################
@@ -1013,133 +1150,32 @@ AP_rebuild_tunnel_access = {
 	}
 }
 
-# Migration Push for Migritory Flock origin
-AP_migration_push = {
+# Sky Treaders
+AP_sky_make_nest = {
 	owned_planets_only = yes
-	icon = decision_expel_population
-	sound = event_administrative_work
-	resources = {
-		category = AP_special_decisions
-		cost = {
-			unity = 500
-		}
-	}
+	icon = decision_animal_wildlife
+	sound = event_construction
 	potential = {
 		owner = {
 			has_origin = AP_sky_treaders
 		}
-	}
-	allow = {
-		NOT = {
-			has_modifier = planet_migritory_flyer_pull
-		}
-		owner = {
-			any_owned_planet = {
-				NOT = {
-					has_modifier = planet_migritory_flyer_push
-				}
-			}
-		}
-	}
-	effect = {
-		add_modifier = {
-			modifier = planet_migritory_flyer_push
-			days = 1800
-		}
-	}
-	ai_weight = {
-		weight = 0
-		modifier = {
-			factor = 0
-			has_modifier = planet_migritory_flyer_pull
-		}
-		modifier = {
-			add = 5
-			free_housing <= 5
-		}
-		modifier = {
-			add = 5
-			num_assigned_jobs = {
-				job = unemployed
-				value >= 3
-			}
-		}
-		modifier = {
-			add = 1
-			has_upgraded_capital = yes
-		}
-		modifier = {
-			factor = 0
-			planet = {
-				OR = {
-					has_designation = col_default
-					has_building = building_colony_shelter
-				}
-			}
-		}
-	}
-}
-
-# Migration Pull for Migritory Flock origin
-AP_migration_pull = {
-	owned_planets_only = yes
-	icon = decision_expel_population
-	sound = event_administrative_work
-	resources = {
-		category = AP_special_decisions
-		cost = {
-			unity = 500
-		}
-	}
-	potential = {
-		owner = {
-			has_origin = AP_sky_treaders
-		}
-	}
-	allow = {
-		owner = {
+		planet = {
 			NOT = {
-				has_modifier = planet_migritory_flyer_push
-			}
-			any_owned_planet = {
-				NOT = {
-					has_modifier = planet_migritory_flyer_pull
-				}
+				has_deposit = d_AP_nesting_ground
 			}
 		}
 	}
 	effect = {
-		add_modifier = {
-			modifier = planet_migritory_flyer_pull
-			days = 1800
-		}
+		add_deposit = d_AP_nesting_ground
 	}
+	enactment_time = 360
 	ai_weight = {
-		weight = 0
-		modifier = {
-			factor = 0
-			has_modifier = planet_migritory_flyer_push
-		}
-		modifier = {
-			factor = 5
-			free_housing >= 5
-		}
-		modifier = {
-			factor = 5
-			free_jobs >= 3
-		}
-		modifier = {
-			add = 1
-			has_upgraded_capital = yes
-		}
-		modifier = {
-			add = 5
-			planet = {
-				OR = {
-					has_designation = col_default
-					has_building = building_colony_shelter
-				}
-			}
+		weight = 1000
+	}
+	resources = {
+		category = AP_special_decisions
+		cost = {
+			minerals = 200
 		}
 	}
 }

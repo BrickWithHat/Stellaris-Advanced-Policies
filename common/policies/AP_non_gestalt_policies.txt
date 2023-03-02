@@ -445,6 +445,119 @@ AP_justice = {
 	}
 }
 
+AP_migration = {
+	potential = {
+		is_country_type = default
+		is_gestalt = no
+	}
+	option = {
+		name = AP_migration_xenophobe_none
+		potential = {
+			is_xenophobe = yes
+		}
+		valid = {
+			has_policy_flag = refugees_not_allowed
+		}
+		policy_flags = {
+			AP_migration_xenophobe_none
+		}
+		modifier = {
+			pop_demotion_time_mult = -0.33
+			pop_happiness = 0.05
+			intel_encryption_add = +1
+		}
+		AI_weight = {
+			weight = 10
+		}
+	}
+	option = {
+		name = AP_migration_none
+		potential = {
+			is_xenophobe = no
+		}
+		valid = {
+			NOT = {
+				has_policy_flag = refugees_allowed
+				has_policy_flag = refugees_only_citizens
+			}
+		}
+		policy_flags = {
+			AP_migration_none
+		}
+		modifier = {
+			pop_demotion_time_mult = -0.33
+			intel_encryption_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_migration_selective
+		potential = {
+			always = yes
+		}
+		valid = {
+		}
+		policy_flags = {
+			AP_migration_selective
+		}
+		modifier = {
+			pop_resettlement_cost_mult = -0.1
+			planet_resettlement_unemployed_mult = 0.1
+			add_base_country_intel = +5
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_migration_encouraged
+		potential = {
+			is_xenophile = no
+		}
+		valid = {
+			NOT = {
+				owner_main_species = {
+					has_migration_control = {
+						value = yes
+					}
+				}
+				has_policy_flag = refugees_not_allowed
+			}
+		}
+		policy_flags = {
+			AP_migration_encouraged
+		}
+		modifier = {
+			species_leader_exp_gain = 0.1
+			intel_decryption_add = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_migration_xenophile_encouraged
+		potential = {
+			is_xenophile = yes
+		}
+		valid = {
+		}
+		policy_flags = {
+			AP_migration_xenophile_encouraged
+		}
+		modifier = {
+			species_leader_exp_gain = 0.1
+			diplo_weight_pops_mult = 0.05
+			intel_decryption_add = +1
+		}
+		AI_weight = {
+			weight = 10
+		}
+	}
+}
+
 ##########################################################################
 # education policies
 ##########################################################################
