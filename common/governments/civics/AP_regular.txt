@@ -64,7 +64,7 @@ civic_AP_war_complex = {
 		}
 	}
 	modifier = {
-		country_alloys_produces_mult = 0.2
+		country_alloys_produces_mult = 0.1
 		country_naval_cap_mult = 0.1
 		country_consumer_goods_produces_mult = -0.05
 	}

@@ -1,0 +1,63 @@
+tech_AP_bombartment = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = {
+		military_theory
+	}
+	modifier = {
+		ship_orbital_bombardment_mult = 0.1
+		
+	}
+	weight = 10 # allows tech to show after research_all_technologies
+	weight_modifier = {
+		modifier = {
+			add = -10
+			always = yes
+		}
+		modifier = {
+			factor = 2
+			mid_game_years_passed > 5
+		}
+		modifier = {
+			factor = 2
+			mid_game_years_passed > 10
+		}
+		modifier = {
+			factor = 2
+			mid_game_years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			mid_game_years_passed > 20
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = 2
+			is_militarist = yes
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	prereqfor_desc = {
+		ship = {
+			title = "AP_DISSOLVENT_BOM"
+			desc = "AP_DISSOLVENT_BOM_DESC"
+		}
+	}
+}

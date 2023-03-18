@@ -1,4 +1,4 @@
-version="1.1.8"
+version="1.1.9"
 tags={
 	"Overhaul"
 	"Economy"
@@ -8,5 +8,5 @@ tags={
 }
 name="Advanced Policies"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.7.*"
 remote_file_id="2573783359"

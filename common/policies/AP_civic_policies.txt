@@ -2639,6 +2639,63 @@ AP_scavengers = {
 	}
 }
 
+# First Contact DLC required
+AP_eager_explorers = {
+	potential = {
+		has_valid_civic = civic_eager_explorers
+	}
+	option = {
+		name = AP_eager_explorers_covent
+		potential = {
+			is_spiritualist = yes
+		}
+		modifier = {
+			ship_sensor_range_add = +2
+			first_contact_speed_mult = 0.33
+			country_influence_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+	option = {
+		name = AP_eager_explorers_catalog
+		modifier = {
+			ship_sensor_range_add = +1
+			ship_speed_mult = 0.1
+			planet_researchers_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_eager_explorers_lack_of_space
+		modifier = {
+			ship_sensor_range_add = +1
+			colony_start_num_pops_add = +1
+			planet_colony_development_speed_mult = 0.2
+			pop_growth_speed = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_eager_explorers_science
+		potential = {
+			is_materialist = yes
+		}
+		modifier = {
+			ship_sensor_range_add = +2
+			all_technology_research_speed = 0.05
+			country_influence_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+}
 ##########################################################################
 # Megacorp Civic Policies (All required Megacorp DLC)
 ##########################################################################
@@ -3693,6 +3750,63 @@ AP_corporate_scavengers = {
 	}
 }
 
+# First Contact DLC required
+AP_privatized_exploration = {
+	potential = {
+		has_valid_civic = civic_privatized_exploration
+	}
+	option = {
+		name = AP_privatized_exploration_covent
+		potential = {
+			is_spiritualist = yes
+		}
+		modifier = {
+			ship_sensor_range_add = +2
+			first_contact_speed_mult = 0.33
+			country_influence_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+	option = {
+		name = AP_eager_privatized_exploration_wealth
+		modifier = {
+			ship_sensor_range_add = +1
+			local_trade_protection_add = +5
+			station_gatherers_cost_mult = -0.1
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_privatized_exploration_lack_of_space
+		modifier = {
+			ship_sensor_range_add = +1
+			colony_start_num_pops_add = +1
+			planet_colony_development_speed_mult = 0.2
+			pop_growth_speed = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	option = {
+		name = AP_privatized_exploration_science
+		potential = {
+			is_materialist = yes
+		}
+		modifier = {
+			ship_sensor_range_add = +2
+			all_technology_research_speed = 0.05
+			country_influence_produces_mult = 0.1
+		}
+		AI_weight = {
+			weight = 3
+		}
+	}
+}
 ##########################################################################
 # Custom Civic policies (For Advanced Policies)
 ##########################################################################

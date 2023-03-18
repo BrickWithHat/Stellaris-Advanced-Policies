@@ -126,7 +126,15 @@
  AP_SKY_TREADERS_2:0 "Decending once more"
  AP_SKY_TREADERS_2_DESC:0 "Armed with the knowledge our ancestors saught for generations we are the first to fly above the very sun. Something to mark into our society, The sheer joy has given us a moment of unity unlike anything we have seen before. Let us forge that into progress."
 
+# Technology
+ tech_AP_bombartment:0 "Dissolvent Bombardment"
+ tech_AP_bombartment_desc:0 "By using highly aggressive materials combined with bio-components allows us to munitions capable of erroding most defences and cause significant damage to anything in the area."
+ AP_DISSOLVENT_BOM:0 "§HBombardment Stance:§! $bombardment_AP_dissolvent$"
+ AP_DISSOLVENT_BOM_DESC:0 "A Bombardment stance designed with the purpose of clearing an entire planetary body from any 'potential' hostile entity."
+
 # Misc
+ bombardment_AP_dissolvent:0 "Dissolvent"
+ bombardment_AP_dissolvent_desc:0 "This bombardment is §Hment to cause as much damage to a planet as possible§! while keeping the planet intact, §RThis means civilian and military targets are seen as equal and will be bombed till completely gone.§!\n- §RMassive§! damage to §YArmies§!\n- §RMassive§! damage to §YPlanet§!\n- §RMassive§! damage to §YPops§!\n- Will bombard undefended planets."
  AP_special_decisions:0 "Unique Decisions"
  MESSAGE_AP_POLICY_CHANGE_TITLE:0 "Policy Changed"
  MESSAGE_AP_WAR_POLICY_RECOMENDATION_TITLE:0 "War Policies Unlocked"

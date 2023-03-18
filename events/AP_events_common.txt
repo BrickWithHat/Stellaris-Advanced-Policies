@@ -18,10 +18,10 @@ country_event = {
 }
 
 ##########################################################################
-# Civic components
+# Start-up Civic
 ##########################################################################
 namespace = AP_civic
-# Mobile Construction Vehicle civic setup
+# Mobile Construction Vehicle
 country_event = {
 	id = AP_civic.1
 	hide_window = yes
@@ -96,8 +96,23 @@ country_event = {
 	}
 }
 
+# Industrial War Complex
+country_event = {
+	id = AP_civic.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = civic_AP_war_complex
+	}
+	immediate = {
+		give_technology = {
+			tech = tech_AP_bombartment
+			message = no
+		}
+	}
+}
 ##########################################################################
-# Origin Start-up
+# Start-up Origins
 ##########################################################################
 namespace = AP_origin
 # Start-up for the Children of the Darkness
@@ -140,7 +155,6 @@ country_event = {
 		}
 	}
 }
-
 ##########################################################################
 # Effects components
 ##########################################################################
@@ -310,11 +324,45 @@ planet_event = {
 	}
 }
 
+# Dissolvent Bombardment blocker add
+planet_event = {
+	id = AP_effect.100
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		FROM = {
+			has_orbital_bombardment_stance = AP_dissolvent
+		}
+	}
+	immediate = {
+		random_list = {
+			1 = {
+				add_blocker = {
+					type = d_active_volcano
+				}
+			}
+			1 = {
+				add_blocker = {
+					type = d_radioactive_wasteland
+				}
+			}
+			1 = {
+				add_blocker = {
+					type = d_city_ruins
+				}
+			}
+			27 = {
+			}
+		}
+	}
+}
+
 ##########################################################################
 # Test-fire components
 ##########################################################################
+namespace = AP_debug
 planet_event = {
-	id = AP_effect.999
+	id = AP_debug.1
 	is_triggered_only = yes
 	trigger = {
 		always = yes

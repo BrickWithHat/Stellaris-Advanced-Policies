@@ -518,11 +518,6 @@ AP_migration = {
 		}
 		valid = {
 			NOT = {
-				owner_main_species = {
-					has_migration_control = {
-						value = yes
-					}
-				}
 				has_policy_flag = refugees_not_allowed
 			}
 		}

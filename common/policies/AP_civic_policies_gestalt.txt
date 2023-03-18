@@ -644,6 +644,50 @@ AP_mutagenic_bath_hive = {
 	}
 }
 
+# First Contact DLC required
+AP_stargazers = {
+	potential = {
+		has_valid_civic = civic_hive_stargazers
+	}
+	option = {
+		name = AP_stargazers_seeker
+		modifier = {
+			first_contact_speed_mult = 0.33
+			science_ship_survey_speed = 0.1
+			ship_anomaly_generation_chance_mult = 0.05
+			country_society_research_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+			modifier = {
+				factor = 20
+				years_passed <= 20
+			}
+		}
+	}
+	option = {
+		name = AP_stargazers_growth
+		modifier = {
+			station_gatherers_produces_mult = 0.1
+			station_gatherers_cost_mult = -0.1
+			country_engineering_research_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 5
+		}
+	}
+	option = {
+		name = AP_stargazers_desire
+		modifier = {
+			empire_size_pops_mult = -0.1
+			ship_ftl_jumpdrive_range_mult = 0.1
+			country_physics_research_produces_mult = 0.05
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
 ##########################################################################
 # Mechanical Hive Civic Policies
 ##########################################################################
@@ -1369,7 +1413,34 @@ AP_mutagenic_spas_machine = {
 	}
 }
 
-
+# First Contact DLC required
+AP_exploration_protocol = {
+	potential = {
+		has_valid_civic = civic_machine_exploration_protocol
+	}
+	option = {
+		name = AP_exploration_protocol_core
+		modifier = {
+			ship_anomaly_generation_chance_mult = 0.1
+			ship_anomaly_research_speed_mult = 0.33
+			scientist_skill_levels = +2
+		}
+		AI_weight = {
+			weight = 2
+		}
+	}
+	option = {
+		name = AP_exploration_protocol_subroutine
+		modifier = {
+			science_ship_survey_speed = 0.2
+			planet_researchers_upkeep_mult = -0.1
+			leader_skill_levels = +1
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+}
 ##########################################################################
 # Custom Organic Hive Civic Policies
 ##########################################################################

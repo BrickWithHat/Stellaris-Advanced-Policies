@@ -8,11 +8,11 @@ on_game_start_country = {
 		AP_flag.1
 		AP_civic.1
 		AP_civic.2
+		AP_civic.3
 		AP_origin.1
 		AP_origin.2
 	}
 }
-
 # This = planet
 # From = country attacking
 on_ground_combat_started = {
@@ -20,7 +20,6 @@ on_ground_combat_started = {
 		AP_effect.1
 	}
 }
-
 # Root = Loser
 # From = Main Winner
 on_war_ended = {
@@ -29,11 +28,18 @@ on_war_ended = {
 		AP_effect.3
 	}
 }
-
 # Root = Country
 # From = War
 on_war_beginning = {
 	events = {
 		AP_effect.2
+	}
+}
+# Planet has taken damage from orbital bombardment - Damage is applied daily
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		#AP_effect.100
 	}
 }

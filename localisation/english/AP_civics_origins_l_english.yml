@@ -15,7 +15,7 @@
  civic_AP_grand_architecture_corporate_desc:0 "$civic_AP_grand_architecture_desc$"
 
  civic_AP_war_complex:0 "Industrial War-Complex"
- civic_AP_war_complex_desc:0 "- Gives access to a unique §HHolding§!.\n\n"
+ civic_AP_war_complex_desc:0 "- Start the game with the technology §H$tech_AP_bombartment$§!.\n- Gives access to a unique §HHolding§!.\n"
 
  civic_AP_mobile_construction:0 "Mobile Construction"
  civic_AP_mobile_construction_desc:0 "This empire has come to a point where there main construction comes from mobile construction yards. Though most of these are fairly small. They hold 1 with such scale it can build entire cities in a very short span of time. This vehicle can be moved to any colonized world within the empire.\n"

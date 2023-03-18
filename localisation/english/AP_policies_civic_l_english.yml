@@ -421,6 +421,17 @@
  AP_scavengers_slicers:0 "Expert Slicers"
  AP_scavengers_slicers_desc:0 "No terminal is safe with us around, Even after a few diplomatic insidents the knowledge gained was well worth it.\n\n"
 
+ policy_AP_eager_explorers:0 "Exploration Priority"
+ policy_AP_eager_explorers_desc:0 "Having the technology to explore the vast depths of space is a key step towards the growth of our species and empire. Let us move towards the stars and see what is out there.\n"
+ AP_eager_explorers_covent:0 "Trail of Faith"
+ AP_eager_explorers_covent_desc:0 "Our faith has show us the way forward. Now we must take to the stars and spread the truth as far and wide as we can!\n\n"
+ AP_eager_explorers_catalog:0 "Catalog of Knowledge"
+ AP_eager_explorers_catalog_desc:0 "We need more knowledge to start building our empire up. These actions will take a while but from this we may one day grow beyond our wildest dreams.\n\n"
+ AP_eager_explorers_lack_of_space:0 "Requirement of Space"
+ AP_eager_explorers_lack_of_space_desc:0 "Planets, while big to an individual are on a galactic scale. Rather small, we should be out there getting more space while we can.\n\n"
+ AP_eager_explorers_science:0 "Scientific Duty"
+ AP_eager_explorers_science_desc:0 "It is our duty as a society to learn as much and to enhance our lives where we can. Where better to learn then the unknown? The stars our path forwards.\n\n"
+
 ##########################################################################
 # MegaCorp Civic policies
 ##########################################################################
@@ -621,6 +632,17 @@
  AP_corporate_scavengers_slicers:0 "$AP_scavengers_slicers$"
  AP_corporate_scavengers_slicers_desc:0 "$AP_scavengers_slicers_desc$"
 
+ policy_AP_privatized_exploration:0 "Exploration"
+ policy_AP_privatized_exploration_desc:0 "We are limited by the amount of customers we have access to, while we can force a lot through our populace. We still need a bigger customer base to sell to if we wish to improve our bottom line.\n"
+ AP_privatized_exploration_covent:0 "Preach of Profit"
+ AP_privatized_exploration_covent_desc:0 "Blessed be, Let prosperity reach you as our wealth flows through thy!\n\n"
+ AP_eager_privatized_exploration_wealth:0 "Gain Wealth"
+ AP_eager_privatized_exploration_wealth_desc:0 "Motive? Well my wallet can only hold so much, so might as well get some assets while at it.\n\n"
+ AP_privatized_exploration_lack_of_space:0 "Lack of Space"
+ AP_privatized_exploration_lack_of_space_desc:0 "While management has tried building more buildings, the workers have said that they can only fit so much in one space. While there warning are usually ignored there is a truth there they could not ignore. So lets get some more space.\n\n"
+ AP_privatized_exploration_science:0 "Need for knowledge"
+ AP_privatized_exploration_science_desc:0 "Due to a poor preformance the last quarter the decision has been made to 'learn' a bit as a means of developing new products. This has to increase profits.\n\n"
+
 ##########################################################################
 # Organic Gestalt Civic policies
 ##########################################################################
@@ -753,6 +775,15 @@
  AP_mutagenic_bath_hive_mutation_seekers_desc:0 "Scouting for desirable mutations for our drones is of high importance to the hive. Granting it the ability to swap easily between drone types.\n\n"
  AP_mutagenic_bath_hive_specialization:0 "Specialized Drones"
  AP_mutagenic_bath_hive_specialization_desc:0 "Focusing on existing drones to enchance there abilties is a clear increase in efficiency.\n\n"
+
+ policy_AP_stargazers:0 "Star Seeking"
+ policy_AP_stargazers_desc:0 "Somehow we have always been drawn to the stars, there mystery ever luring us. Now within our grasp we move forward. Grasping at the lure placed in the skies of our homeworld.\n"
+ AP_stargazers_seeker:0 "Seeker Instinct"
+ AP_stargazers_seeker_desc:0 "Seek, Learn, Grow. This is how we will survive for the future.\n\n"
+ AP_stargazers_growth:0 "Growth Instinct"
+ AP_stargazers_growth_desc:0 "Growth is vital to our surivival yet to grow as fast as possible we need more space. A lot more space.\n\n"
+ AP_stargazers_desire:0 "Desire of the Void"
+ AP_stargazers_desire_desc:0 "The stars taunted us to come and we answer there call. Yet in this victory others still lurk there. Taunting us...\n\n"
 
 ##########################################################################
 # Mechanical Gestalt Civic policies
@@ -912,6 +943,12 @@
  AP_mutagenic_spas_machine_expansion:0 "Recycled material"
  AP_mutagenic_spas_machine_expansion_desc:0 "The lubrication has the effect of removing any extra material stuck on the units undergoing the process. This residu can be concentrated and formed into usefull products.\n\n"
 
+ policy_AP_exploration_protocol:0 "Exploration Protocol"
+ policy_AP_exploration_protocol_desc:0 "Exploration has been given as one of our directives yet where we place it in the priority list for our functions is something we have direct control over.\n"
+ AP_exploration_protocol_core:0 "Exploration Core Objective"
+ AP_exploration_protocol_core_desc:0 "With the implementation of the exploration routines in the CORE, it has gained improved capabilities and speeds up the effects of research into the unknown.\n\n"
+ AP_exploration_protocol_subroutine:0 "Exploration Sub Objective"
+ AP_exploration_protocol_subroutine_desc:0 "While exploration is not the CORE function of our design we are capable of enhanced routines to validate many new findings giving us a great advantage in exploration.\n\n"
 ##########################################################################
 # Custom Regular/Megacorp Civic policies
 ##########################################################################
@@ -1023,7 +1060,7 @@
  AP_implanted_directive_machine_expander_desc:0 "We must put our leaders towards the ultimate goal expansion.\n\n"
 
  policy_AP_cataloging_routine_machine:0 "Analysing Routines"
- policy_AP_cataloging_routine_machine_desc:0 ""
+ policy_AP_cataloging_routine_machine_desc:0 "Logic is our core principle, to grow is to learn. We must focus our knowledge to grow accordingly."
  AP_cataloging_routine_machine_physics:0 "Priority: Physics"
  AP_cataloging_routine_machine_physics_desc:0 "Priority Physics, objective, exploit universal constants to improve units.\n\n"
  AP_cataloging_routine_machine_society:0 "Priority: Society"

@@ -1,5 +1,5 @@
 # A means for the AI to keep excivating the planet while other decisions might be denied by the AI_budget
-AP_decision_planet_excivation = {
+AP_decision_planet_excivation_tunnelers = {
 	resource = minerals
 	type = expenditure
 	category = AP_special_decisions
@@ -46,7 +46,7 @@ AP_decisions = {
 	}	
 }
 # Sky Treaders Nest making
-AP_decision_planet_excivation = {
+AP_decision_planet_excivation_sky_treader = {
 	resource = minerals
 	type = expenditure
 	category = AP_special_decisions
